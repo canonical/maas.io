@@ -1,7 +1,9 @@
 {% extends "base_index.html" %}
 
+{% block page-class %}homepage{% endblock %}
+
 {% block content %}
-	<div class="row row-hero">
+	<section class="row row-hero">
 		<div class="inner-wrapper">
 			<div class="seven-col">
 				<h1>Metal as a Service</h1>
@@ -12,5 +14,35 @@
 
 			</div>
 		</div>
-	</div>
+	</section>
+
+	<section class="row strip-white row-why-use-maas">
+        <div class="inner-wrapper">
+            <div class="twelve-col align-center">
+                <h2>Why use MAAS?</h2>
+            </div>
+            <ul class="no-bullets">
+                <li class="three-col align-center">
+                    <img class="why__icon" src="/static/img/icon-speed.svg" alt="">
+                    <h3 class="why__title">Speed</h3>
+                    <p>Reduce the time to deploy Hadoop and other solutions from days to minutes.</p>
+                </li>
+                <li class="three-col align-center">
+                    <img class="why__icon" src="/static/img/icon-agility.svg" alt="">
+                    <h3 class="why__title">Agility</h3>
+                    <p>Experiment with different configurations and solutions to choose what works for you.</p>
+                </li>
+                <li class="three-col align-center">
+                    <img class="why__icon" src="/static/img/icon-flexibility.svg" alt="">
+                    <h3 class="why__title">Flexibility</h3>
+                    <p>Port your solution from one infrastructure to another quickly and seamlessly.</p>
+                </li>
+                <li class="three-col last-col align-center">
+                    <img class="why__icon" src="/static/img/icon-expertise.svg" alt="">
+                    <h3 class="why__title">Expertise</h3>
+                    <p>Charms encapsulate best practice allowing you to focus on your work</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 {% endblock %}

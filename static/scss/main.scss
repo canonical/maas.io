@@ -1,2 +1,9 @@
 @import '../../node_modules/cloud-vanilla-theme/scss/theme';
-@include ubuntu-vanilla-theme;
+@include cloud-vanilla-theme;
+
+.homepage {
+
+  .row-why-use-maas .why__icon {
+    margin-bottom: 1em;
+  }
+}
