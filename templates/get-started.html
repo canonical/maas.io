@@ -1,0 +1,120 @@
+{% extends "base_index.html" %}
+
+{% block content %}
+    <section class="row row-hero">
+        <div class="inner-wrapper">
+            <div class="seven-col">
+                <h1>Get started</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quidem. Nobis non nihil labore quaerat numquam fugiat iusto. Consequuntur aliquam, dolorem beatae ut. Iste sapiente debitis maiores consequuntur fugiat rem eos dolorum, facilis tempora, qui!</p>
+            </div>
+            <div class="five-col last-col">
+                <img src="http://placehold.it/400x375" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="row stripe-white">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h2><span class="numbered-step">1</span> Installing MAAS</h2>
+                <p>This is how MAAS should be installed</p>
+                <ol>
+                    <li>Install Ubuntu server 14.04 LTS on the machine you want to use for MAAS</li>
+                    <li><code>sudo add-apt-repository ppa:maas-maintainers/stable</code></li>
+                    <li><code>sudo apt-get update</code></li>
+                    <li><code>sudo apt-get install maas</code></li>
+                    <li>Access the MAAS UI at <code>http://maas.ip/MAAS/</code> and follow the instructions to create the administrator, then login with those credentials</li>
+                    <li>Import disk images for 14.04 LTS (Trusty) 64 bits. This will take a few minutes, depending on your bandwidth.</li>
+                    <li>Add your SSH key to your user profile – <code>http://maas.ip/MAAS/account/prefs/</code></li>
+                    <li>Go to the Networks tab in MAAS and verify that auto-created networks exist for each NIC of your MAAS server. You may have networks created for virtual interfaces like <code>lxcbr0</code> or <code>virbr0</code>: we don’t care about those, only about real physical interfaces.</li>
+                    <li>Fill in the missing details, like gateway and DNS, in the networks that were auto-created for each NIC</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h2><span class="numbered-step">2</span> Configuring MAAS Cluster</h2>
+                <ol>
+                    <li>Click on the “Clusters” tab and then click on your cluster</li>
+                    <li>Choose a DNS zone name</li>
+                    <li>You should see a list of NICs on the machine. Click the edit symbol for the NIC that’s connected to the private network, that is, the network where all the nodes are</li>
+                    <li>Set this NIC to manage DHCP and DNS.</li>
+                    <li>If needed, configure the IP, subnet mask, broadcast IP.</li>
+                    <li>Set the “Router IP” to the default gateway for this private network</li>
+                    <li>Carve up your network space into ranges like this:
+                    <ul>
+                    <li>for the split network case: <em>dynamic range</em> and <em>static range</em></li>
+                    <li>for the flat network case: <em>dynamic range</em>, <em>static range</em> and <em>floating IP range</em></li>
+                    </ul>
+                    </li>
+                </ol>
+                <p>Where:</p>
+                <ul>
+                    <li><em>dynamic range</em>: used by all the NICs in the nodes while they enlist and commission. Also used by LXC containers, when they are deployed to allocated nodes.</li>
+                    <li><em>static range</em>: used by nodes when they are allocated to a user</li>
+                    <li><em>floating IP range</em>: used by OpenStack floating IPs. This is not a MAAS configuration, but you should leave room for them</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="row white-strip">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h2><span class="numbered-step">3</span> Enlist and commission machines</h2>
+                <ol>
+                    <li>Ensure all other machines are set to PXE boot, if possible disable all other boot options (including local disk) in the BIOS</li>
+                    <li>Enlist the machines by powering them on. This can usually be done by some sort of virtual console. Eventually they will all appear in the node list in MAAS and be powered down again.</li>
+                    <li>Edit each machine in the nodes list and fill in the Power type and power parameters so that MAAS can turn them on and off as needed</li>
+                    <li>Select all of the machines and, using the Bulk action dropdown, Commission them</li>
+                    <li>Wait until all machines are commissioned (i.e. in Ready state)</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h2><span class="numbered-step">4</span> MAAS Networks</h2>
+                <ol>
+                    <li>Go to the Networks tab and verify that you have the nodes listed in what is your private network and with their respective NICs selected</li>
+                    <li>If using the flat network topology, the node that has two NICs should have been automatically detected as having both NICs connected to the network. Just verify that this is the case.</li>
+                    <li>If using the split network topology, edit the public network and look for the node that has two NICs. Select the NIC that is connected to the public network.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row white-strip">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h2><span class="numbered-step">5</span> Testing things</h2>
+                <p>To make sure juju can drive MAAS and provision machines, let’s take it for a spin. It’s best to try it out now and fix any issues before more complex services like the Autopilot make use of it.</p>
+                <p>On the machine being used to drive the installation, run these commands:</p>
+                <ol>
+                    <li><code>sudo add-apt-repository ppa:juju/stable</code></li>
+                    <li><code>sudo apt-get update</code></li>
+                    <li><code>sudo apt-get install juju-core juju-deployer</code></li>
+                    <li>Follow <a title="Juju docs for configuring MAAS" href="https://jujucharms.com/docs/config-maas" rel="nofollow" class="external">Juju docs for configuring MAAS</a></li>
+                </ol>
+                <p>The remainder of this document will assume that the MAAS Juju environment you just configured is the default one.</p>
+                <p>For a simple test, we will deploy Ubuntu to all nodes. On the machine that is driving the installation, run these commands:</p>
+                <ol>
+                    <li><code>juju bootstrap</code> this will use one of the MAAS nodes to bootstrap juju. It will take a few minutes to complete</li>
+                    <li><code>juju deploy ubuntu -n N</code> deploy <code>ubuntu</code> to all remaining nodes. Replace <code>N</code> with the number of nodes minus one, which was used for the bootstrap above. This command returns after a few seconds, but it just starts the process.</li>
+                    <li>watch the nodes list in the MAAS UI. You should see nodes being allocated and deployed</li>
+                    <li>watch the output of <code>juju status</code> periodically until everything is started</li>
+                    <li>login into a random node via ssh and try to reach the internet from it. For example, try <code>juju ssh ubuntu/0</code> and <code>wget http://www.ubuntu.com</code> from there</li>
+                    <li>if everything worked correctly, destroy the environment <code>juju destroy-environment $(juju env)</code></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="inner-wrapper">
+            <div class="eight-col push-two align-centered">
+                <h2>Congratulations</h2>
+                <p>MAAS is setup and ready to be used by the OpenStack Autopilot.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
