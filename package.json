@@ -1,0 +1,18 @@
+{
+  "name": "ubuntu-maas",
+  "version": "0.0.1",
+  "description": "Static Django website blueprint ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "maas",
+    "ubuntu"
+  ],
+  "author": "Canonical webteam",
+  "license": "LGPL v3",
+  "dependencies": {
+    "cloud-vanilla-theme": "0.0.2"
+  }
+}

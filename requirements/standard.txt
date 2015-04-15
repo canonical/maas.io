@@ -1,0 +1,2 @@
+-r base.txt
+-e git+ssh://git@github.com/nottrobin/fenchurch.git#egg=fenchurch

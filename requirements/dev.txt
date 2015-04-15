@@ -1,0 +1,5 @@
+-r standard.txt
+django-extensions
+werkzeug
+ipdb
+gunicorn
