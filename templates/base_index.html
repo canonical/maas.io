@@ -1,0 +1,41 @@
+{% load versioned_static %}
+<!doctype html>
+<html lang="en" dir="ltr">
+
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="description" content="" />
+	    <meta name="keywords" content="" />
+	    <meta name="author" content="Canonical webteam" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	    <title>Ubuntu MAAS</title>
+
+	    <!-- stylesheets -->
+	    <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
+	    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
+	</head>
+
+    <body>
+    	<header class="banner global" role="banner">
+	        <nav role="navigation" class="nav-primary nav-right">
+	            <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
+	            <div class="logo">
+	                <a href="/">
+	                	<img src="{{ STATIC_URL }}img/maas-logo.png" alt="MAAS" />
+	                </a>
+	            </div>
+	            <ul>
+	                <li><a href="/about">About</a></li>
+	                <li><a href="/get-started">Get started</a></li>
+	                <li><a href="/docs">Docs</a></li>
+	            </ul>
+	        </nav>
+	    </header>
+	    <div class="wrapper">
+	        <div id="main-content">
+	        	{% block content %}{% endblock %}
+			</div>
+		</div>
+    </body>
+</html>
