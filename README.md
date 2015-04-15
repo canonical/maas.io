@@ -11,6 +11,7 @@ To run the site locally:
 
 ``` bash
 make setup    # Install dependencies - only needed the first time
+npm install   # Install all node dependencies and vanilla theme
 make develop  # Auto-compile sass files and run the dev server
 ```
 
