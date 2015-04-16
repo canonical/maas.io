@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+$(document).ready(function(){
 
     // Set accordion variable
     var accordion = $('.accordion');
