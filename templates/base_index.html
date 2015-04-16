@@ -20,7 +20,7 @@
 
     <body class="{% block page_class %}{% endblock %}">
     	<header class="banner global" role="banner">
-	        <nav role="navigation" class="nav-primary nav-right">
+	        <nav role="navigation" class="nav-primary nav-right" id="nav">
 	            <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
 	            <div class="logo">
 	                <a href="/">
@@ -33,6 +33,10 @@
 	                <li><a href="/docs" {% if level_1 == 'docs' %}class="active"{% endif %}>Docs</a></li>
 	            </ul>
 	        </nav>
+	        <div class="nav-toggle">
+                <a href="#nav" class="nav-toggle__link open"></a>
+                <a href="#" class="nav-toggle__link close"></a>
+            </div>
 	    </header>
 	    <div class="wrapper">
 	        <div id="main-content">

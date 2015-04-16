@@ -170,16 +170,45 @@ body {
   font-size: 16px;
 }
 
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    top: 0;
 
-////
-/// MAAS accordion styles
-///
-/// @project     MAAS
-/// @author      Web Team at Canonical Ltd
-/// @copyright   2015 Canonical Ltd
-///
-////
+    .nav-toggle__link {
+      background: url('../img/navigation-menu.svg');
+      width: 48px;
+      height: 48px;
 
+      &.open {
+        display: block;
+      }
+
+      &.close {
+        display: none;
+      }
+    }
+  }
+
+  #nav:target {
+    ul {
+        display: block;
+    }
+  }
+
+  #nav:target + .nav-toggle {
+    .nav-toggle__link {
+      &.open {
+        display: none;
+      }
+
+      &.close {
+        display: block;
+      }
+    }
+  }
+}
+
+// accordion
 .accordion {
     box-sizing: border-box;
     border-radius: 2px;
