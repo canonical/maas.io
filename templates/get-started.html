@@ -1,5 +1,7 @@
 {% extends "base_index.html" %}
 
+{% block page-class %}get-started-page{% endblock %}
+
 {% block content %}
     <section class="row row-hero">
         <div class="inner-wrapper">
@@ -7,12 +9,9 @@
                 <h1>Get started</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quidem. Nobis non nihil labore quaerat numquam fugiat iusto. Consequuntur aliquam, dolorem beatae ut. Iste sapiente debitis maiores consequuntur fugiat rem eos dolorum, facilis tempora, qui!</p>
             </div>
-            <div class="five-col last-col">
-                <img src="http://placehold.it/400x375" alt="">
-            </div>
         </div>
     </section>
-    <section class="row stripe-white">
+    <section class="row strip-trans">
         <div class="inner-wrapper">
             <div class="eight-col">
                 <h2><span class="numbered-step">1</span> Installing MAAS</h2>
@@ -58,7 +57,7 @@
             </div>
         </div>
     </section>
-    <section class="row white-strip">
+    <section class="row strip-trans">
         <div class="inner-wrapper">
             <div class="eight-col">
                 <h2><span class="numbered-step">3</span> Enlist and commission machines</h2>
@@ -84,7 +83,7 @@
             </div>
         </div>
     </section>
-    <section class="row white-strip">
+    <section class="row strip-trans ">
         <div class="inner-wrapper">
             <div class="eight-col">
                 <h2><span class="numbered-step">5</span> Testing things</h2>
@@ -111,7 +110,7 @@
     </section>
     <section class="row">
         <div class="inner-wrapper">
-            <div class="eight-col push-two align-centered">
+            <div class="twelve-col align-center">
                 <h2>Congratulations</h2>
                 <p>MAAS is setup and ready to be used by the OpenStack Autopilot.</p>
             </div>

@@ -3,7 +3,68 @@
 
 .homepage {
 
+  .banner {
+    box-shadow: none;
+  }
+
+  .row-hero {
+    background-image: url('../img/hero-background.jpg');
+    background-position: center;
+    height: 520px;
+    min-height: 250px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      background: rgba(0, 0, 0, .3);
+    }
+  }
+
   .row-why-use-maas .why__icon {
     margin-bottom: 1em;
   }
 }
+
+.get-started-page {
+  .numbered-step {
+    -moz-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
+    background: $white;
+    border-radius: 50%;
+    padding: .3em .68em;
+    display: inline-block;
+    color: $button-primary-color;
+    margin-right: .34375em;
+    margin-bottom: .625em;
+  }
+}
+
+$folds-color: #5e66b4;
+
+.about-page {
+  .row-features {
+    background-image: url('../img/folds.png') ;
+    background-repeat: no-repeat;
+    background-color: $folds-color;
+    background-size: contain;
+    color: $white;
+    box-shadow: inset 0 4px 6px -4px rgba(0, 0, 0, 0.4), inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+// Move into cloud theme
+
+.strip-trans {
+  background: transparent;
+}
+
