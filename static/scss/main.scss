@@ -138,10 +138,10 @@ header.banner nav.nav-primary ul li a:visited {
 }
 
 header.banner nav.nav-primary ul li a.active {
-  border-bottom-color: $button-primary-color;
+  border-bottom: 3px solid $button-primary-color;
 
   @media screen and (max-width : 768px) {
-    border-bottom-color: #CCC;
+    border-bottom: 1px solid #CCC;
     background-color: #DDD;
   }
 }
