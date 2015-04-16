@@ -1,6 +1,7 @@
 {% extends "base_index.html" %}
 
-{% block page-class %}get-started-page{% endblock %}
+{% block page_class %}get-started-page{% endblock %}
+{% block page-title %}| Get started{% endblock %}
 
 {% block content %}
     <section class="row row-hero">
@@ -17,11 +18,11 @@
                 <h2><span class="numbered-step">1</span> Installing MAAS</h2>
                 <p>This is how MAAS should be installed</p>
                 <ol>
-                    <li>Install Ubuntu server 14.04 LTS on the machine you want to use for MAAS</li>
-                    <li><code>sudo add-apt-repository ppa:maas-maintainers/stable</code></li>
-                    <li><code>sudo apt-get update</code></li>
-                    <li><code>sudo apt-get install maas</code></li>
-                    <li>Access the MAAS UI at <code>http://maas.ip/MAAS/</code> and follow the instructions to create the administrator, then login with those credentials</li>
+                    <li><p>Install Ubuntu server 14.04 LTS on the machine you want to use for MAAS:</p>
+                    <pre><code>sudo add-apt-repository ppa:maas-maintainers/stable
+sudo apt-get update
+sudo apt-get install maas</code></pre></li>
+                    <li><p>Access the MAAS UI at <code>http://maas.ip/MAAS/</code> and follow the instructions to create the administrator, then login with those credentials</p></li>
                     <li>Import disk images for 14.04 LTS (Trusty) 64 bits. This will take a few minutes, depending on your bandwidth.</li>
                     <li>Add your SSH key to your user profile – <code>http://maas.ip/MAAS/account/prefs/</code></li>
                     <li>Go to the Networks tab in MAAS and verify that auto-created networks exist for each NIC of your MAAS server. You may have networks created for virtual interfaces like <code>lxcbr0</code> or <code>virbr0</code>: we don’t care about those, only about real physical interfaces.</li>
@@ -89,10 +90,9 @@
                 <h2><span class="numbered-step">5</span> Testing things</h2>
                 <p>To make sure juju can drive MAAS and provision machines, let’s take it for a spin. It’s best to try it out now and fix any issues before more complex services like the Autopilot make use of it.</p>
                 <p>On the machine being used to drive the installation, run these commands:</p>
-                <ol>
-                    <li><code>sudo add-apt-repository ppa:juju/stable</code></li>
-                    <li><code>sudo apt-get update</code></li>
-                    <li><code>sudo apt-get install juju-core juju-deployer</code></li>
+                <pre><code>sudo add-apt-repository ppa:juju/stable
+sudo apt-get update
+sudo apt-get install juju-core juju-deployer</code></pre>
                     <li>Follow <a title="Juju docs for configuring MAAS" href="https://jujucharms.com/docs/config-maas" rel="nofollow" class="external">Juju docs for configuring MAAS</a></li>
                 </ol>
                 <p>The remainder of this document will assume that the MAAS Juju environment you just configured is the default one.</p>
@@ -111,6 +111,9 @@
     <section class="row">
         <div class="inner-wrapper">
             <div class="twelve-col align-center">
+                <div class="twelve-col">
+                    <img src="../static/img/icon-success.svg" alt="" width="100px" height="100px" />
+                </div>
                 <h2>Congratulations</h2>
                 <p>MAAS is setup and ready to be used by the OpenStack Autopilot.</p>
             </div>

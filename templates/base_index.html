@@ -9,14 +9,16 @@
 	    <meta name="author" content="Canonical webteam" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	    <title>Ubuntu MAAS</title>
+	    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+	    <title>MAAS {% block page-title %}{% endblock %}</title>
 
 	    <!-- stylesheets -->
 	    <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
 	    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
 	</head>
 
-    <body class="{% block page-class %}{% endblock %}">
+    <body class="{% block page_class %}{% endblock %}">
     	<header class="banner global" role="banner">
 	        <nav role="navigation" class="nav-primary nav-right">
 	            <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
@@ -26,9 +28,9 @@
 	                </a>
 	            </div>
 	            <ul>
-	                <li><a href="/about">About</a></li>
-	                <li><a href="/get-started">Get started</a></li>
-	                <li><a href="/docs">Docs</a></li>
+	                <li><a href="/about" {% if level_1 == 'about' %}class="active"{% endif %}>About</a></li>
+	                <li><a href="/get-started" {% if level_1 == 'get-started' %}class="active"{% endif %}>Get started</a></li>
+	                <li><a href="/docs" {% if level_1 == 'docs' %}class="active"{% endif %}>Docs</a></li>
 	            </ul>
 	        </nav>
 	    </header>

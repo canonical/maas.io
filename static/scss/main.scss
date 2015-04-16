@@ -19,6 +19,10 @@
     color: white;
   }
 
+  .homepage-logo {
+    vertical-align: middle;
+  }
+
   .row-why-use-maas .why__icon {
     margin-bottom: 1em;
   }
@@ -57,4 +61,19 @@ $folds-color: #5e66b4;
 
 .strip-trans {
   background: transparent;
+}
+
+pre {
+  color: $white;
+}
+
+header.banner nav.nav-primary ul li a:link,
+header.banner nav.nav-primary ul li a:visited {
+  border-bottom: 3px solid $black;
+  border-bottom-color: $black;
+  padding: 14px 14px 10px;
+}
+
+header.banner nav.nav-primary ul li a.active {
+  border-bottom-color: $button-primary-color;
 }
