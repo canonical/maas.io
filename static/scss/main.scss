@@ -177,16 +177,7 @@ a.button--primary:visited {
                         font-weight: 400;
 
                         .accordion__tab-link {
-                            background: transparent url('../img/icons/filter-remove.svg') top 7px right 0px no-repeat;
-                        }
-
-                        &:hover {
-                            color: $button-primary-color;
-
-                            .accordion__tab-link {
-                                color: $button-primary-color;
-                                background-image: url('../img/icons/remove-orange.svg');
-                            }
+                            border-left: 3px solid $button-primary-color;
                         }
                     }
                 }
