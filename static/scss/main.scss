@@ -3,28 +3,59 @@
 
 .homepage {
 
-  .banner {
+  .banner,
+  .banner .nav-primary {
     box-shadow: none;
   }
 
   .row-hero {
     background-image: url('../img/hero-background.jpg');
     background-position: center;
-    height: 520px;
+    padding-bottom: 30px;
+    @media only screen and (min-width : 768px) {
+      height: 520px;
+    }
     min-height: 250px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     color: white;
+    margin-top: 0;
+
+    .intro {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
   }
 
   .homepage-logo {
-    vertical-align: middle;
+    padding-top: 20px;
+    width: 2em;
+    height: 2em;
+    position: relative;
+    top: -.1em;
+    @media only screen and (min-width : 768px) {
+      padding-top: 0;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  @media only screen and (min-width : 768px) {
+    .homepage-logo {
+      vertical-align: middle;
+      display: inline;
+      margin: 0;
+    }
   }
 
   .row-why-use-maas .why__icon {
     margin-bottom: 1em;
+  }
+
+  .small {
+    font-size: 14px;
   }
 }
 
@@ -46,8 +77,34 @@
 $folds-color: #5e66b4;
 
 .about-page {
+  .banner,
+  .banner .nav-primary {
+    box-shadow: none;
+  }
+  .row-hero {
+    background-image: url('../img/hero-about-background.jpg');
+    background-position: center;
+    padding-bottom: 30px;
+    @media only screen and (min-width : 768px) {
+      height: 420px;
+    }
+    min-height: 250px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    margin-top: 0;
+
+    .intro {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
   .row-features {
-    background-image: url('../img/folds.png') ;
+    @media only screen and (min-width : 768px) {
+      background-image: url('../img/folds.png') ;
+    }
     background-repeat: no-repeat;
     background-color: $folds-color;
     background-size: contain;
@@ -93,4 +150,22 @@ a:visited {
 a.button--primary:link,
 a.button--primary:visited {
   color: $white;
+}
+
+@media only screen and (max-width : 768px) {
+  .row-hero {
+    padding-top: 20px;
+    margin-top: 0;
+  }
+
+  footer.global {
+    padding-top: 0;
+  }
+  .row {
+    padding-bottom: 20px;
+  }
+}
+
+body {
+  font-size: 16px;
 }
