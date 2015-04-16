@@ -259,7 +259,7 @@ body {
 
                 & + .accordion__tab-content {
                     max-height: 1000px;
-                    transition: max-height .5s ease-in;
+                    transition: max-height .2s ease-in;
                 }
             }
         }
@@ -267,7 +267,7 @@ body {
         // Filter list
         .accordion__tab-content {
             max-height: 0;
-            transition: max-height .5s ease-out;
+            transition: max-height .2s ease-out;
             overflow: hidden;
 
             .accordion__tab-list {
