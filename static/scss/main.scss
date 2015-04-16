@@ -289,13 +289,11 @@ body {
                             color: $button-primary-color;
                             text-decoration: none;
                         }
-                    }
 
-                    &.active {
-                        font-weight: 400;
-
-                        .accordion__tab-link {
-                            border-left: 3px solid $button-primary-color;
+                        &.active {
+                          font-weight: 400;
+                          padding-left: 10px;
+                          border-left: 3px solid $button-primary-color;
                         }
                     }
                 }
