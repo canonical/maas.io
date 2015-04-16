@@ -7,7 +7,7 @@ $(document).ready(function(){
         event.preventDefault();
 
         // Find and 'active' class in the accordion and removes it
-        accordion.find('.active').removeClass('active');
+        accordion.find('.accordion__tab-title').removeClass('active');
 
         // Sets active class to clicked tab title
         $(this).addClass('active');
