@@ -77,3 +77,14 @@ header.banner nav.nav-primary ul li a:visited {
 header.banner nav.nav-primary ul li a.active {
   border-bottom-color: $button-primary-color;
 }
+
+
+a:link,
+a:visited {
+  color: $button-primary-color;
+}
+
+a.button--primary:link,
+a.button--primary:visited {
+  color: $white;
+}
