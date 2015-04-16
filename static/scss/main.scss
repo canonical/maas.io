@@ -119,6 +119,12 @@ $folds-color: #5e66b4;
   }
 }
 
+.docs {
+  .headerlink {
+    display: none;
+  }
+}
+
 
 // Move into cloud theme
 
@@ -304,3 +310,4 @@ body {
         }
     }
 }
+
