@@ -132,13 +132,25 @@ pre {
 
 header.banner nav.nav-primary ul li a:link,
 header.banner nav.nav-primary ul li a:visited {
-  border-bottom: 3px solid $black;
-  border-bottom-color: $black;
   padding: 14px 14px 10px;
+  box-sizing: border-box;
+  float: left;
 }
 
 header.banner nav.nav-primary ul li a.active {
   border-bottom-color: $button-primary-color;
+
+  @media screen and (max-width : 768px) {
+    border-bottom-color: #CCC;
+    background-color: #DDD;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .banner .nav-primary ul li:nth-last-child(-n+2) a:link,
+  .banner .nav-primary ul li:nth-last-child(-n+2) a:visited {
+    border-bottom: 1px solid #CCC;
+  }
 }
 
 
