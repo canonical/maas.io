@@ -1,15 +1,15 @@
-{% load versioned_static %}
-<!doctype html>
+{% extends "base_index.html" %}
 
-<html>
-    <head>
-        <title>500 - Server error</title>
-        
-        <link rel="stylesheet" href="{% versioned_static 'css/global.css' %}" />
-    </head>
+{% block page_class %}500{% endblock %}
+{% block page-title %}| 500 - server error{% endblock %}
 
-    <body>
-        <h1>500 - Server error</h1>
-        <p>There has been an error with the site.</p>
-    </body>
-</html>
+{% block content %}
+    <section class="row row-hero">
+        <div class="inner-wrapper">
+            <div class="eight-col">
+                <h1>Sever error</h1>
+                <p>You can make a fresh start at the <a href="/">MAAS home page</a>.<br> Still can't find what you're looking for? <a href="http://www.ubuntu.com/contact-us" class="external">Get in touch today</a>.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
