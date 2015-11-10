@@ -1,4 +1,4 @@
-@import '../../node_modules/cloud-vanilla-theme/scss/theme';
+@import '../../node_modules/cloud-vanilla-theme/scss/build';
 @include cloud-vanilla-theme;
 
 .homepage {
@@ -226,88 +226,291 @@ body {
   }
 }
 
-// accordion
-.accordion {
-    box-sizing: border-box;
-    border-radius: 2px;
-    list-style: none;
-    background: $white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
-    margin-bottom: 40px;
+.instruction {
+  padding: 0;
+  border-bottom: 1px solid #EFEDEC;
 
+  .instruction__bullet,
+  .instruction__details {
+    padding: 60px 40px;
+    margin-bottom: 0;
+  }
 
-    // accordion main sidebar title
-    .accordion__title {
-        border-bottom: 1px dotted #B2B2B2;
-        padding: 13px 20px 12px;
-        margin: 0;
-        font-size: 1.3em;
-    }
+  .instruction__bullet {
+    margin-right: 0;
+  }
 
-    // accordion data block, contains all filter links and controls.
-    .accordion__tab {
-        border-bottom: 1px dotted #B2B2B2;
+  .instruction__step {
+    $size: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    background-color: #ccc;
+    color: #fff;
+    text-align: center;
+    vertical-align: top;
+    font-size: 2em;
+    font-weight: 400;
+  }
 
-        &:last-of-type {
-            border: none;
-        }
+  .instruction__title {
+    display: inline;
+    position: relative;
+    top: 6px;
+    line-height: 1.6;
+  }
 
-        // Block level title
-        .accordion__tab-title {
-            padding: 12px 20px;
-            margin: 0;
-            color: $cool-grey;
-            cursor: pointer;
-            background: transparent url('../img/icons/accordion-open.svg') top 20px right 20px no-repeat;
-
-            &.active {
-                background-image: url('../img/icons/accordion-close.svg');
-
-                & + .accordion__tab-content {
-                    max-height: 1000px;
-                    transition: max-height .2s ease-in;
-                }
-            }
-        }
-
-        // Filter list
-        .accordion__tab-content {
-            max-height: 0;
-            transition: max-height .2s ease-out;
-            overflow: hidden;
-
-            .accordion__tab-list {
-                list-style-type: none;
-                padding: 0 20px 14px;
-                margin: 0;
-
-                .accordion__tab-item {
-                    margin-bottom: 0.15em;
-
-                    .accordion__tab-link {
-                        box-sizing: border-box;
-                        color: $cool-grey;
-                        width: 100%;
-                        display: inline-block;
-                        padding-right: 20px;
-
-                        &:hover {
-                            color: $button-primary-color;
-                            text-decoration: none;
-                        }
-
-                        &.active {
-                          font-weight: 400;
-                          padding-left: 10px;
-                          border-left: 3px solid $button-primary-color;
-                        }
-                    }
-                }
-            }
-            .accordion__tab-list > .accordion__tab-item {
-              margin-bottom: 1em;
-            }
-        }
-    }
+  .instruction__details {
+    background-color: $light-grey;
+  }
 }
 
+.jujudocs {
+  background-color: #fff;
+
+  .jujudocs-nav {
+    padding-bottom: 0;
+
+    @media only screen and (max-width : 769px) {
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 0;
+      margin-bottom: $gutter_width;
+    }
+
+    .jujudocs-menu {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .expanded {
+      h4 {
+        background: url("../img/icons/chevron-up.svg") no-repeat right center;
+        background-position: right 20px center;
+        cursor: pointer;
+        color: $cool_grey;
+      }
+
+      span.toggle-target:after {
+        content: '\2212';  // Hex for the 'minus' character.
+      }
+    }
+
+    .collapsed {
+      h4 {
+        background: url("../img/icons/chevron-down.svg") no-repeat right center;
+        background-position: right 20px center;
+        cursor: pointer;
+        color: $warm_grey;
+      }
+
+      span.toggle-target:after {
+        content: '+';
+      }
+    }
+
+    span.toggle-target {
+      float: right;
+      cursor: pointer;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+      color: $cool_grey;
+      transition: 0.5s ease;
+      border: 1px solid $white;
+      &:hover {
+          border: 1px solid $nav_border_mid;
+      }
+    }
+
+    h4 {
+      @extend %sub-heading;
+      $height: 40px;
+      height: $height;
+      border-top: 1px dotted $light_mid_grey;
+      margin: 0;
+      padding: 0 20px;
+      line-height: $height;
+    }
+
+    ul {
+      $gutter: 20px;
+      $selected_border_width: 3px;
+
+      list-style: none;
+      margin: 0;
+      padding-bottom: 1em;
+
+      li {
+        margin: 0;
+
+        a {
+          display: block;
+          padding: 0.1em 0  0.1em $gutter;
+          margin-right: $gutter + 10px;
+
+          &.selected {
+            border-left: $selected_border_width solid $ubuntu_orange;
+            // Take into account the left border.
+            padding-left: $gutter - $selected_border_width;
+            color: $cool_grey;
+          }
+        }
+
+        > ul {
+          padding: 0;
+        }
+      }
+
+      .sub {
+        $gutter: $gutter + 10;
+
+        a {
+          padding-left: $gutter;
+
+          &.selected {
+            // Take into account the left border.
+            padding-left: $gutter - $selected_border_width;
+          }
+        }
+      }
+    }
+
+    // Top level sections get bottom padding.
+    .section {
+      padding: 0 0 20px;
+
+      // Subsections & collapsed sections get no padding.
+      &.collapsed, .section {
+        padding: 0;
+      }
+    }
+
+    .search-form {
+      @include rounded_corners(3px);
+      position: relative;
+      width: 100%;
+      margin: 0 0 10px 0;
+
+      input[type="text"] {
+        @include box-shadow(none);
+        height: 40px;
+        border: 1px solid $light_mid_grey;
+        padding-left: 35px;
+
+        &:focus {
+          border: 1px solid #9D9C9A;
+          outline: none;
+        }
+      }
+
+      button[type="submit"] {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        line-height: 0;
+        -webkit-appearance: none;
+        display: block;
+        background: transparent;
+        background-image: url("../img/icons/search_16.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px;
+        text-indent: -9999px;
+      }
+    }
+
+    .versions-nav {
+      padding-bottom: 1em;
+      font-size: 12px;
+
+      .unavailable {
+        text-decoration: line-through;
+        color: $warm-grey;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: .5em;
+      }
+
+      ul {
+        display: inline;
+
+        li {
+          font-size: 12px;
+          display: inline-block;
+          margin-right: .3em;
+
+          a {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+
+      .stable {
+        padding-left: .5em;
+        border-left: 1px solid $light_mid_grey;
+      }
+    }
+  }
+
+  .note {
+    padding: 20px;
+    background-color: #fdf6e7;
+    border: 1px solid #eca918;
+    border-radius: 2px;
+    color: inherit;
+  }
+
+  .jujudocs-content {
+    padding-left: 30px;
+
+    h1 {
+      @extend %heading;
+      margin-top: 0.5em;
+    }
+
+    h2 {
+      @extend %sub-heading;
+    }
+
+    iframe {
+      margin: 0.25em 0 1em 0;
+      width: 100%;
+    }
+
+    dl+h2 {
+      margin-top: .563em;
+    }
+
+    dl+p {
+      margin-top: .75em;
+    }
+
+    dt {
+      margin: 1em 0 0.5em;
+    }
+
+    pre {
+      background-color: $cool_grey;
+      border: none;
+      color: $mid_grey;
+
+      code {
+        margin-bottom: 0;
+        color: $mid_grey;
+      }
+    }
+  }
+
+  .archived-warning {
+    padding-left: 30px;
+  }
+}
