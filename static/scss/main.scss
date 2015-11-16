@@ -140,12 +140,20 @@ pre {
 
 .homepage {
 
+  .banner {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  }
   .row-hero {
     padding-bottom: 30px;
     overflow-y: hidden;
     min-height: 250px;
     margin-top: 0;
-    background: url('../media/background-header-home.png') 0 0 repeat $white;
+    color: $white;
+    // background: url('../media/background-header-home.png') 0 0 repeat $white;
+    background: -webkit-linear-gradient(45deg, #260e1e 0%,#f57453 100%);
+		background:    -moz-linear-gradient(45deg, #260e1e 0%,#f57453 100%);
+		background:      -o-linear-gradient(45deg, #260e1e 0%,#f57453 100%);
+    box-shadow: inset 0 -1px 5px rgba(0,0,0,0.4);
 
     .inner-wrapper {
       height: 100%;
@@ -158,10 +166,10 @@ pre {
     }
 
     .row-hero__text {
-
+      color: $white;
       @media only screen and (min-width : 768px) {
         position: relative;
-        left: 40px;
+        left: 60px;
         top: 50%;
         width: 50%;
       }
@@ -179,7 +187,7 @@ pre {
       right: 20px;
       position: absolute;
       z-index: 1;
-      border-radius: 2px 2px 0 0;
+      border-radius: 4px 4px 0 0;
       box-shadow: 0px 1px 12px rgba(0,0,0,0.15);
 
       &.row-hero__image--alt {
@@ -259,6 +267,7 @@ pre {
     width: 100%;
     border-top: 1px dotted #EEE;
     padding-top: 20px;
+    background: url('../media/logos/logo-ubuntu-grey.png') 100% 20px no-repeat;
 
     p {
       color: $warm-grey;
@@ -666,4 +675,37 @@ pre {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+// vertical divider
+
+.vertical-divider {
+  position: relative;
+
+  > article {
+    padding-left: ($gutter-width / 2);
+    padding-right: ($gutter-width / 2);
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: -($gutter-width / 2);
+      top: 0;
+      height: 100%;
+      width: 1px;
+      border-left: 1px dotted $warm-grey;
+    }
+  }
+
+  > article:last-of-type{
+    padding-right: 0;
+
+    &:before {
+      border-left: 0;
+    }
+  }
+
+  > article:first-of-type {
+    padding-left: 0;
+  }
 }
