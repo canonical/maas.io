@@ -1,6 +1,8 @@
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
 @include cloud-vanilla-theme;
 
+$ubuntu-orange: #dd4814;
+
 .homepage {
 
   .banner,
@@ -12,9 +14,11 @@
     background-image: url('../img/hero-background.jpg');
     background-position: center;
     padding-bottom: 30px;
+
     @media only screen and (min-width : 768px) {
       height: 520px;
     }
+
     min-height: 250px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -125,6 +129,15 @@ $folds-color: #5e66b4;
   }
 }
 
+.equal-height {
+
+  > article {
+    box-sizing: border-box;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+  }
+}
 
 // Move into cloud theme
 
@@ -229,6 +242,9 @@ body {
 .instruction {
   padding: 0;
   border-bottom: 1px solid #EFEDEC;
+  position: relative;
+  float: left;
+  width: 100%;
 
   .instruction__bullet,
   .instruction__details {
@@ -264,6 +280,20 @@ body {
 
   .instruction__details {
     background-color: $light-grey;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 200%;
+      min-height: 190px;
+      background-color: $light-grey;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      position: absolute;
+    }
   }
 }
 
@@ -320,16 +350,16 @@ body {
       color: $cool_grey;
       transition: 0.5s ease;
       border: 1px solid $white;
+
       &:hover {
-          border: 1px solid $nav_border_mid;
+          border: 1px solid $cool-grey;
       }
     }
 
     h4 {
-      @extend %sub-heading;
       $height: 40px;
       height: $height;
-      border-top: 1px dotted $light_mid_grey;
+      border-top: 1px dotted $cool-grey;
       margin: 0;
       padding: 0 20px;
       line-height: $height;
@@ -352,10 +382,10 @@ body {
           margin-right: $gutter + 10px;
 
           &.selected {
-            border-left: $selected_border_width solid $ubuntu_orange;
+            border-left: 3px solid $ubuntu-orange;
             // Take into account the left border.
-            padding-left: $gutter - $selected_border_width;
-            color: $cool_grey;
+            padding-left: $gutter - 1px;
+            color: $cool-grey;
           }
         }
 
@@ -389,15 +419,15 @@ body {
     }
 
     .search-form {
-      @include rounded_corners(3px);
+      border-radius: 3px;
       position: relative;
       width: 100%;
       margin: 0 0 10px 0;
 
       input[type="text"] {
-        @include box-shadow(none);
+        box-shadow: none;
         height: 40px;
-        border: 1px solid $light_mid_grey;
+        border: 1px solid $cool-grey;
         padding-left: 35px;
 
         &:focus {
@@ -456,7 +486,7 @@ body {
 
       .stable {
         padding-left: .5em;
-        border-left: 1px solid $light_mid_grey;
+        border-left: 1px solid $cool-grey;
       }
     }
   }
@@ -473,12 +503,10 @@ body {
     padding-left: 30px;
 
     h1 {
-      @extend %heading;
       margin-top: 0.5em;
     }
 
     h2 {
-      @extend %sub-heading;
     }
 
     iframe {
@@ -499,13 +527,13 @@ body {
     }
 
     pre {
-      background-color: $cool_grey;
+      background-color: $cool-grey;
       border: none;
-      color: $mid_grey;
+      color: $mid-grey;
 
       code {
         margin-bottom: 0;
-        color: $mid_grey;
+        color: $mid-grey;
       }
     }
   }
@@ -513,4 +541,37 @@ body {
   .archived-warning {
     padding-left: 30px;
   }
+}
+
+// Misc styles
+
+.no-padding {
+  padding: 0;
+
+  &--left {
+    padding-left: 0;
+  }
+
+  &--right {
+    padding-right: 0;
+  }
+
+  &--bottom {
+    padding-bottom: 0;
+  }
+}
+
+.no-margin {
+  margin: 0;
+
+  &--bottom {
+    margin-bottom: 0;
+  }
+}
+
+// Image touch border
+
+.touch-border {
+  float: left;
+  margin-bottom: -40px;
 }
