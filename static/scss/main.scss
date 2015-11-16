@@ -1,14 +1,144 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+////
+/// MAAS Website styles
+///
+/// Navigation
+///
+/// @variables
+/// @base styles
+/// @header
+/// @footer
+/// @homepage
+/// @misc
+///
+////
+
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
 @include cloud-vanilla-theme;
 
+/// @varibles
+
 $ubuntu-orange: #dd4814;
 
-.homepage {
 
-  .banner,
-  .banner .nav-primary {
-    box-shadow: none;
+/// @base styles
+//
+
+body {
+  font-size: 16px;
+}
+
+a:link,
+a:visited {
+  color: $button-primary-color;
+}
+
+a.button--primary:link,
+a.button--primary:visited {
+  color: $white;
+}
+
+pre {
+  color: $white;
+}
+
+// Row styles
+
+@media only screen and (max-width : 768px) {
+  .row-hero {
+    padding-top: 20px;
+    margin-top: 0;
   }
+
+  footer.global {
+    padding-top: 0;
+  }
+  .row {
+    padding-bottom: 20px;
+  }
+}
+
+.strip-trans {
+  background: transparent;
+}
+
+
+/// @header
+//
+// Main navigation styles
+
+header.banner nav.nav-primary ul li a:link,
+header.banner nav.nav-primary ul li a:visited {
+  padding: 14px 14px 10px;
+  box-sizing: border-box;
+  float: left;
+}
+
+header.banner nav.nav-primary ul li a.active {
+  border-bottom: 3px solid $button-primary-color;
+
+  @media screen and (max-width : 768px) {
+    border-bottom: 1px solid #CCC;
+    background-color: #DDD;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .banner .nav-primary ul li:nth-last-child(-n+2) a:link,
+  .banner .nav-primary ul li:nth-last-child(-n+2) a:visited {
+    border-bottom: 1px solid #CCC;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    top: 0;
+
+    .nav-toggle__link {
+      background: url('../img/navigation-menu.svg');
+      width: 48px;
+      height: 48px;
+
+      &.open {
+        display: block;
+      }
+
+      &.close {
+        display: none;
+      }
+    }
+  }
+
+  #nav:target {
+    ul {
+        display: block;
+    }
+  }
+
+  #nav:target + .nav-toggle {
+    .nav-toggle__link {
+      &.open {
+        display: none;
+      }
+
+      &.close {
+        display: block;
+      }
+    }
+  }
+}
+
+
+/// @homepage
+//
+// Specific home page styles
+
+.homepage {
 
   .row-hero {
     background-image: url('../img/hero-background.jpg');
@@ -54,217 +184,38 @@ $ubuntu-orange: #dd4814;
     }
   }
 
-  .row-why-use-maas .why__icon {
-    margin-bottom: 1em;
-  }
+  .maas-pricing {
 
-  .small {
-    font-size: 14px;
-  }
-}
+    .box {
+      background-color: #f8f8f9;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      transition: all .2s ease-in-out;
 
-.get-started-page {
-  .numbered-step {
-    -moz-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.15);
-    background: $white;
-    border-radius: 50%;
-    padding: .3em .68em;
-    display: inline-block;
-    color: $button-primary-color;
-    margin-right: .34375em;
-    margin-bottom: .625em;
-  }
-}
-
-$folds-color: #5e66b4;
-
-.about-page {
-  .banner,
-  .banner .nav-primary {
-    box-shadow: none;
-  }
-  .row-hero {
-    background-image: url('../img/hero-about-background.jpg');
-    background-position: center;
-    padding-bottom: 30px;
-    @media only screen and (min-width : 768px) {
-      height: 420px;
-    }
-    min-height: 250px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: white;
-    margin-top: 0;
-
-    .intro {
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-  }
-  .row-features {
-    @media only screen and (min-width : 768px) {
-      background-image: url('../img/folds.png') ;
-    }
-    background-repeat: no-repeat;
-    background-color: $folds-color;
-    background-size: contain;
-    color: $white;
-    box-shadow: inset 0 4px 6px -4px rgba(0, 0, 0, 0.4), inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
-
-    .list li {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      border-color: rgba(255, 255, 255, .5);
-    }
-  }
-}
-
-.docs {
-  .headerlink {
-    display: none;
-  }
-}
-
-.equal-height {
-
-  > article {
-    box-sizing: border-box;
-    display: flex;
-    flex: auto;
-    flex-direction: column;
-  }
-}
-
-// Move into cloud theme
-
-.strip-trans {
-  background: transparent;
-}
-
-pre {
-  color: $white;
-}
-
-header.banner nav.nav-primary ul li a:link,
-header.banner nav.nav-primary ul li a:visited {
-  padding: 14px 14px 10px;
-  box-sizing: border-box;
-  float: left;
-}
-
-header.banner nav.nav-primary ul li a.active {
-  border-bottom: 3px solid $button-primary-color;
-
-  @media screen and (max-width : 768px) {
-    border-bottom: 1px solid #CCC;
-    background-color: #DDD;
-  }
-}
-
-@media screen and (max-width : 768px) {
-  .banner .nav-primary ul li:nth-last-child(-n+2) a:link,
-  .banner .nav-primary ul li:nth-last-child(-n+2) a:visited {
-    border-bottom: 1px solid #CCC;
-  }
-}
-
-
-a:link,
-a:visited {
-  color: $button-primary-color;
-}
-
-a.button--primary:link,
-a.button--primary:visited {
-  color: $white;
-}
-
-@media only screen and (max-width : 768px) {
-  .row-hero {
-    padding-top: 20px;
-    margin-top: 0;
-  }
-
-  footer.global {
-    padding-top: 0;
-  }
-  .row {
-    padding-bottom: 20px;
-  }
-}
-
-body {
-  font-size: 16px;
-}
-
-@media screen and (max-width: 768px) {
-  .nav-toggle {
-    top: 0;
-
-    .nav-toggle__link {
-      background: url('../img/navigation-menu.svg');
-      width: 48px;
-      height: 48px;
-
-      &.open {
-        display: block;
-      }
-
-      &.close {
-        display: none;
-      }
-    }
-  }
-
-  #nav:target {
-    ul {
-        display: block;
-    }
-  }
-
-  #nav:target + .nav-toggle {
-    .nav-toggle__link {
-      &.open {
-        display: none;
-      }
-
-      &.close {
-        display: block;
+      &:hover {
+        transform: scale(1.2);
+        z-index: 1000;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       }
     }
   }
 }
 
-/// #Index
+
+/// @footer
 //
-///
+// MAAS footer styles
 
-.maas-pricing {
+.footer {
 
-  .box {
-    background-color: #f8f8f9;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    transition: all .2s ease-in-out;
-
-    &:hover {
-      transform: scale(1.2);
-      z-index: 1000;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    }
+  .footer__link {
+    color: $cool-grey;
   }
 }
 
-
-/// #Getting started
+/// @Getting-started
 //
 //  Instruction styles for the getting started page
-//
-///
 
 .instruction {
   padding: 0;
@@ -323,6 +274,10 @@ body {
     }
   }
 }
+
+/// @docs
+//
+// Documentation styles
 
 .jujudocs {
   background-color: #fff;
@@ -570,7 +525,12 @@ body {
   }
 }
 
-// Misc styles
+/// @misc
+//
+// Generic styles for the MAAS website, to be imported into Cloud / Vanilla
+
+
+// No padding
 
 .no-padding {
   padding: 0;
@@ -587,6 +547,8 @@ body {
     padding-bottom: 0;
   }
 }
+
+// No margin
 
 .no-margin {
   margin: 0;
@@ -611,4 +573,16 @@ body {
   border-radius: 4px;
   padding: 1.333em 20px;
   border: 1px solid #dfdcd9;
+}
+
+// Equal height
+
+.equal-height {
+
+  > article {
+    box-sizing: border-box;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+  }
 }

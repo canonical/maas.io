@@ -47,19 +47,76 @@
 	        	{% block content %}{% endblock %}
 			</div>
 		</div>
-	    <footer class="global clearfix no-global">
-	      <nav id="main-navigation" role="navigation" class="clearfix">
-	        <div class="legal clearfix has-cookie">
-	            <p class="twelve-col">© 2015 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
-	            <ul class="inline-list clear">
-	                <li><a href="/legal"><small>Legal information</small></a>
-	                </li>
-	                <li><a href="https://bugs.launchpad.net/maas-website/"><small>Report a bug on this site</small></a>
-	                </li>
-	            </ul>
-	            <span class="accessibility-aid"><a href="#">Got to the top of the page</a></span>
-	        </div>
-	      </nav>
+	    <footer class="footer global clearfix no-global">
+			<div class="inner-wrapper">
+				<div class="three-col">
+					<h3>MAAS</h3>
+					<ul class="no-bullets">
+						<li>
+							<a class="footer__link" href="/">Home</a>
+						</li>
+						<li>
+							<a class="footer__link" href="/get-started">Get started</a>
+						</li>
+						<li>
+							<a class="footer__link" href="/documentation">Docs</a>
+						</li>
+						<!-- <li>
+							<a class="footer__link" href="http://maas.ubuntu.com/docs1.7/api.html">API</a>
+						</li>
+						<li>
+							<a class="footer__link" href="[http://maas.ubuntu.com/docs1.7/maascli.html">CLI</a>
+						</li> -->
+						<li>
+							<a class="footer__link" href="/tour">Tour</a>
+						</li>
+					</ul>
+				</div>
+				<div class="three-col">
+					<h3>Commerical support</h3>
+					<p>MAAS is part of the Ubuntu Advantage service package, delivered by Canonical. Talk to a member of our team about the benefits it could bring to your organisation.</p>
+					<p><a class="footer__link" href="http://www.ubuntu.com/management/contact-us" class="external">Contact us</a></p>
+				</div>
+				<div class="three-col">
+					<h3>Need help?</h3>
+					<ul class="no-bullets">
+						<li>
+							<a class="footer__link" href="http://askubuntu.com/">Ask Ubuntu</a>
+						</li>
+						<li>
+							<a class="footer__link" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
+						</li>
+						<li>
+							<a class="footer__link" href="https://launchpad.net/~maas-devel">Join the mailing list</a>
+						</li>
+					</ul>
+				</div>
+				<div class="three-col last-col">
+					<h3>Contribute</h3>
+					<ul class="no-bullets">
+						<li>
+							<a class="footer__link" href="https://launchpad.net/maas">Launchpad</a>
+						</li>
+						<li>
+							<a class="footer__link" href="/docs">Documentation</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+	    	<nav id="main-navigation" role="navigation" class="clearfix">
+		        <div class="legal clearfix has-cookie">
+		            <p class="twelve-col">© 2015 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
+		            <ul class="inline-list clear">
+		                <li>
+							<a class="footer__link" href="/legal"><small>Legal information</small></a>
+		                </li>
+		                <li>
+							<a class="footer__link" href="https://bugs.launchpad.net/maas-website/"><small>Report a bug on this site</small></a>
+		                </li>
+		            </ul>
+		            <span class="accessibility-aid"><a class="footer__link" href="#">Got to the top of the page</a></span>
+		        </div>
+	    	</nav>
 	    </footer>
     </body>
 </html>
