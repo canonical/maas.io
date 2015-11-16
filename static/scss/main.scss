@@ -161,7 +161,7 @@ pre {
 
       @media only screen and (min-width : 768px) {
         position: relative;
-        left: 20px;
+        left: 40px;
         top: 50%;
         width: 50%;
       }
@@ -180,7 +180,7 @@ pre {
       position: absolute;
       z-index: 1;
       border-radius: 2px 2px 0 0;
-      box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+      box-shadow: 0px 1px 12px rgba(0,0,0,0.15);
 
       &.row-hero__image--alt {
         right: 120px;
