@@ -4,7 +4,7 @@
 {% block page-title %}| Get started{% endblock %}
 
 {% block content %}
-    <section class="row">
+    <section class="row strip-white">
         <div class="inner-wrapper">
             <div class="seven-col append-one">
                 <h1>Get started</h1>
@@ -17,7 +17,7 @@
             </div>
         </div>
     </section>
-    <section class="clearfix instruction" id="download-help">
+    <section class="row clearfix instruction" id="download-help">
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </section>
-    <section class="clearfix instruction" id="download-help">
+    <section class="row clearfix instruction" id="download-help">
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
@@ -45,13 +45,99 @@
             <div class="seven-col last-col instruction__details">
                 <p>From the command line type the commands below. Follow the step-by-step instructions to update relevant packages and install MAAS:</p>
                 <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
-                    <input class="command-line__input" value="$ sudo apt-get updat" readonly="readonly">
+                    <input class="command-line__input" value="sudo apt-get updat" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
                 <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
-                    <input class="command-line__input" value="$ sudo apt-get updat" readonly="readonly">
+                    <input class="command-line__input" value="sudo apt-get updat" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
+            </div>
+        </div>
+    </section>
+    <section class="row clearfix instruction" id="download-help">
+        <div class="inner-wrapper">
+            <div class="five-col instruction__bullet">
+                <div class="one-col">
+                    <span class="instruction__step">3</span>
+                </div>
+                <div class="four-col last-col">
+                    <h3 class="instruction__title">Create admin user</h3>
+                </div>
+            </div>
+            <div class="seven-col last-col instruction__details">
+                <p>Create your admin credentials by typing:</p>
+                <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
+                    <input class="command-line__input" value="sudo maas-region-admin createadmin" readonly="readonly">
+                    <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
+                </p>
+                <p>Login to the MAAS UI at http://<maas.ip>/MAAS/</p>
+            </div>
+        </div>
+    </section>
+    <section class="row clearfix instruction" id="download-help">
+        <div class="inner-wrapper">
+            <div class="five-col instruction__bullet">
+                <div class="one-col">
+                    <span class="instruction__step">4</span>
+                </div>
+                <div class="four-col last-col">
+                    <h3 class="instruction__title">Configure cluster interface</h3>
+                </div>
+            </div>
+            <div class="seven-col last-col instruction__details">
+                <p>Go to the “Clusters” tab, open the “Cluster master” link, hover over the row for the interface that is connected to the private network and select the edit icon.</p>
+                <ol>
+                    <li>Set this interface to manage DHCP and DNS</li>
+                    <li>Set the “Router IP” to the default gateway</li>
+                </ol>
+                <p>Fill in details for the dynamic and static ranges, remembering to leave gaps for the floating IPs.</p>
+                <ol>
+                    <li>Dynamic range — that has as many IPs as there are total NICs connected to the network (minimum 15)</li>
+                    <li>Static range — that has as many IPs as there are machines connected to the network</li>
+                    <li>Floating IP range — that has as many IPs as instances that you’ll have in your cloud</li>
+                </ol>
+                <img src="http://placehold.it/500x400" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="row clearfix instruction" id="download-help">
+        <div class="inner-wrapper">
+            <div class="five-col instruction__bullet">
+                <div class="one-col">
+                    <span class="instruction__step">5</span>
+                </div>
+                <div class="four-col last-col">
+                    <h3 class="instruction__title">Import images</h3>
+                </div>
+            </div>
+            <div class="seven-col last-col instruction__details">
+                <p>Go to the “Images” tab and import disk images for relevant releases and architectures:</p>
+                <img src="http://placehold.it/500x400" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="row clearfix instruction" id="download-help">
+        <div class="inner-wrapper">
+            <div class="five-col instruction__bullet">
+                <div class="one-col">
+                    <span class="instruction__step">6</span>
+                </div>
+                <div class="four-col last-col">
+                    <h3 class="instruction__title">Start enlisting machines!</h3>
+                </div>
+            </div>
+            <div class="seven-col last-col instruction__details">
+                <p>Now you need to enlist and commission machines:</p>
+                <ol>
+                    <li>Ensure all machines are set to PXE boot, if possible disable all other boot options, including local disk, in the BIOS</li>
+                    <li>Power the machines on so they will all appear in the “Nodes” tab of MAAS</li>
+                    <li>Alternatively, add machines or chassis by selecting the add hardware button</li>
+                    <li>Edit each machine filling in the power type and parameters</li>
+                    <li>Select all the machines and, using the “Take action” dropdown, “Commission” them.</li>
+                    <li>Wait until all machines have a “Ready” status</li>
+                </ol>
+                <img src="http://placehold.it/500x400" alt="">
             </div>
         </div>
     </section>
