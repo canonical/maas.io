@@ -194,12 +194,14 @@ pre {
       transition: all .2s ease-in-out;
 
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.3);
         z-index: 1000;
         box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       }
     }
   }
+
+
 }
 
 
@@ -636,5 +638,17 @@ pre {
     display: flex;
     flex: auto;
     flex-direction: column;
+  }
+}
+
+// inline logos
+
+.inline-logos {
+
+  li {
+
+    img {
+      max-height: inherit;
+    }
   }
 }
