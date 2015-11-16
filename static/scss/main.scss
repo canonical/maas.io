@@ -72,62 +72,63 @@ pre {
 //
 // Main navigation styles
 
-header.banner nav.nav-primary ul li a:link,
-header.banner nav.nav-primary ul li a:visited {
-  padding: 14px 14px 10px;
-  box-sizing: border-box;
-  float: left;
-}
+.banner {
+  background: $black;
+  border-bottom: 0;
+  box-shadow: 0;
 
-header.banner nav.nav-primary ul li a.active {
-  border-bottom: 3px solid $button-primary-color;
-
-  @media screen and (max-width : 768px) {
-    border-bottom: 1px solid #CCC;
-    background-color: #DDD;
+  @media only screen and (min-width: $navigation-threshold) {
+    border-bottom: 0;
+    box-shadow: none;
   }
-}
 
-@media screen and (max-width : 768px) {
-  .banner .nav-primary ul li:nth-last-child(-n+2) a:link,
-  .banner .nav-primary ul li:nth-last-child(-n+2) a:visited {
-    border-bottom: 1px solid #CCC;
-  }
-}
+  .nav-primary {
 
-@media screen and (max-width: 768px) {
-  .nav-toggle {
-    top: 0;
-
-    .nav-toggle__link {
-      background: url('../img/navigation-menu.svg');
-      width: 48px;
-      height: 48px;
-
-      &.open {
-        display: block;
-      }
-
-      &.close {
-        display: none;
-      }
+    @media only screen and (min-width: $navigation-threshold) {
+      width: auto;
     }
-  }
 
-  #nav:target {
     ul {
-        display: block;
-    }
-  }
 
-  #nav:target + .nav-toggle {
-    .nav-toggle__link {
-      &.open {
-        display: none;
+      @media only screen and (min-width: $navigation-threshold) {
+        border-top: 0;
+        border-right: 0;
+        box-shadow: none;
       }
 
-      &.close {
-        display: block;
+      li {
+
+        @media only screen and (min-width: $navigation-threshold) {
+          width: auto;
+          border-right: 0;
+          border-bottom: 0;
+          border-left: 1px solid $cool-grey;
+
+          &:last-child {
+            border-right: 1px solid $cool-grey;
+            border-left: 1px solid $cool-grey;
+
+            a {
+              border-right: 0;
+            }
+          }
+        }
+
+        @media only screen and (max-width: $navigation-threshold) {
+          &:nth-child(2n+2) {
+            border-right: 0;
+          }
+        }
+
+        a,
+        a:link,
+        a:visited {
+
+          @media only screen and (min-width: $navigation-threshold) {
+            border-left: 0;
+            color: $white;
+          }
+        }
       }
     }
   }
@@ -207,9 +208,60 @@ header.banner nav.nav-primary ul li a.active {
 // MAAS footer styles
 
 .footer {
+  background-color: $white;
+  padding-top: 60px;
+
+  h3,
+  p {
+    color: $warm-grey;
+  }
 
   .footer__link {
     color: $cool-grey;
+
+    &:hover {
+      color: $ubuntu-orange;
+    }
+
+    &.footer__link--alt {
+      color: $ubuntu-orange;
+    }
+  }
+
+  .footer__legal {
+    float: left;
+    width: 100%;
+    border-top: 1px dotted #EEE;
+    padding-top: 20px;
+
+    p {
+      color: $warm-grey;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer__bullets {
+
+    li {
+      margin-right: 0;
+
+      .footer__link {
+        color: $warm-grey;
+      }
+
+      &:after {
+        line-height: 1;
+        color: $warm-grey;
+        content: "•";
+        vertical-align: middle;
+        margin: 0 5px
+      }
+
+      &:last-child:after {
+        content: '';
+      }
+    }
   }
 }
 
