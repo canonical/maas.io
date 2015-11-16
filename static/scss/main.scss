@@ -239,6 +239,33 @@ body {
   }
 }
 
+/// #Index
+//
+///
+
+.maas-pricing {
+
+  .box {
+    background-color: #f8f8f9;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      z-index: 1000;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+  }
+}
+
+
+/// #Getting started
+//
+//  Instruction styles for the getting started page
+//
+///
+
 .instruction {
   padding: 0;
   border-bottom: 1px solid #EFEDEC;
@@ -574,4 +601,14 @@ body {
 .touch-border {
   float: left;
   margin-bottom: -40px;
+}
+
+// Box styles
+
+.box {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 1.333em 20px;
+  border: 1px solid #dfdcd9;
 }
