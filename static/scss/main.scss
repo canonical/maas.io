@@ -93,14 +93,10 @@ img {
 
 .homepage {
 
-  .banner {
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-  }
-
   .row-hero {
     padding-bottom: 30px;
     overflow-y: hidden;
-    min-height: 250px;
+    min-height: 450px;
     margin-top: 0;
     color: $black;
     background: url('../media/background-header-home.png') 0 0 repeat $white;
@@ -156,26 +152,6 @@ img {
 
   .video-hero {
     box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
-  }
-
-  .pricing {
-
-    .box {
-      background-color: #f8f8f9;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      transition: all .2s ease-in-out;
-
-      &:hover {
-        z-index: 1000;
-        background-color: #FDFDFD;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.075);
-      }
-
-      a {
-        width: auto;
-      }
-    }
   }
 }
 
