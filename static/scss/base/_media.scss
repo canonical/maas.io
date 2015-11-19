@@ -1,0 +1,15 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Media element styles
+/// @group Media
+@mixin maas-media {
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+}

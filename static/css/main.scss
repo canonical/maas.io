@@ -1,16 +1,17 @@
 // import required files
 
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
-@import 'base/footer';
-@import 'base/header';
-@import 'generic/equal-height';
-@import 'generic/helpers';
-@import 'generic/inline-logos';
-@import 'generic/vertical-divider';
-@import 'objects/box';
-@import 'objects/documentation';
-@import 'objects/instructions';
-@import 'objects/rowhero';
+@import '../scss/base/footer';
+@import '../scss/base/header';
+@import '../scss/base/media';
+@import '../scss/generic/equal-height';
+@import '../scss/generic/helpers';
+@import '../scss/generic/inline-logos';
+@import '../scss/generic/vertical-divider';
+@import '../scss/objects/box';
+@import '../scss/objects/documentation';
+@import '../scss/objects/instructions';
+@import '../scss/objects/rowhero';
 
 @include cloud-vanilla-theme;
 @include maas-box;
@@ -21,5 +22,6 @@
 @include maas-helpers;
 @include maas-inline-logos;
 @include maas-instructions;
+@include maas-media;
 @include maas-rowhero;
 @include maas-vertical-divider;

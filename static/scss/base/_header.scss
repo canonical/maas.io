@@ -9,6 +9,13 @@
 @mixin maas-header {
   .banner {
 
+    .logo {
+
+      img {
+        margin-bottom: 0;
+      }
+    }
+    
     .nav-primary {
 
       @media only screen and (min-width: $navigation-threshold) {
