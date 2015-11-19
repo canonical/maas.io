@@ -1,0 +1,66 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Row hero
+/// @group Row hero
+@mixin maas-rowhero {
+  .row-hero {
+    padding-bottom: 30px;
+    overflow-y: hidden;
+    min-height: 450px;
+    margin-top: 0;
+    color: $black;
+    background: url('../media/background-header-home.png') 0 0 repeat $white;
+
+    .row-hero__logo {
+      position: relative;
+      top: -.1em;
+      padding-top: 0;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      display: inline;
+      margin: 0;
+    }
+    
+    .row-hero__text {
+      color: $black;
+
+      .row-hero__intro {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .row-hero__image {
+      display: none;
+
+      @media only screen and (min-width : 768px) {
+        display: block;
+        max-width: 768px;
+        width: 100%;
+        bottom: -50px;
+        right: 20px;
+        position: absolute;
+        z-index: 1;
+        border-radius: 4px 4px 0 0;
+        box-shadow: 0px 1px 12px rgba(0,0,0,0.15);
+
+        &.row-hero__image--alt {
+          right: inherit;
+          left: 0;
+          z-index: 0;
+          max-width: 960px;
+          display: none;
+
+          @media only screen and (min-width : 1439px) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

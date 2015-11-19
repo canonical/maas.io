@@ -1,0 +1,20 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// MAAS Header
+/// @group MAAS Header
+@mixin maas-header {
+  .banner {
+
+    .nav-primary {
+
+      @media only screen and (min-width: $navigation-threshold) {
+        width: auto;
+        max-width: inherit;
+      }
+    }
+  }
+}
