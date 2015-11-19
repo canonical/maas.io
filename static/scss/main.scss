@@ -150,8 +150,15 @@ img {
     margin: 0;
   }
 
-  .video-hero {
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+  .benifits {
+
+    .list {
+
+      li {
+        font-size: 18px;
+        padding: 20px 0;
+      }
+    }
   }
 }
 
@@ -166,9 +173,9 @@ img {
   padding-left: 10px;
   padding-right: 10px;
 
-  h3,
-  p {
+  .footer__title {
     color: $warm-grey;
+    font-size: 14px;
   }
 
   .footer__link {
@@ -184,13 +191,14 @@ img {
   }
 
   .footer__legal {
+    color: $warm-grey;
     float: left;
     width: 100%;
     border-top: 1px dotted #EEE;
     padding-top: 20px;
     background: url('../media/logos/logo-ubuntu-grey.png') 100% 20px no-repeat;
 
-    p {
+    .footer__legal-text {
       color: $warm-grey;
       font-size: 12px;
       margin-bottom: 0;
@@ -199,7 +207,7 @@ img {
 
   .footer__bullets {
 
-    li {
+    .footer__bullets-item {
       margin-right: 0;
 
       .footer__link {
@@ -249,7 +257,7 @@ img {
     height: $size;
     line-height: $size;
     background-color: #ccc;
-    color: #fff;
+    color: $white;
     text-align: center;
     vertical-align: top;
     font-size: 2em;
@@ -278,7 +286,7 @@ img {
       font-family: Ubuntu Mono;
       font-weight: 300;
       padding: .7em 1em;
-      color: #fff;
+      color: $white;
       width: 100%;
     }
 
@@ -295,7 +303,7 @@ img {
       background-image: url(https://assets.ubuntu.com/v1/994e60f9-get-link-url_16.svg);
       background-repeat: no-repeat;
       background-position: center;
-      background-color: #fff;
+      background-color: $white;
     }
   }
 }
@@ -304,10 +312,10 @@ img {
 //
 // Documentation styles
 
-.jujudocs {
-  background-color: #fff;
+.docs {
+  background-color: $white;
 
-  .jujudocs-nav {
+  .docs-nav {
     padding-bottom: 0;
 
     @media only screen and (max-width : 769px) {
@@ -317,7 +325,7 @@ img {
       margin-bottom: $gutter_width;
     }
 
-    .jujudocs-menu {
+    .docs-menu {
         margin-left: -20px;
         margin-right: -20px;
     }
@@ -506,7 +514,7 @@ img {
     color: inherit;
   }
 
-  .jujudocs-content {
+  .docs-content {
     padding-left: 30px;
 
     h1 {
@@ -642,7 +650,9 @@ img {
   li {
 
     img {
-      max-height: inherit;
+      height: auto;
+      max-width: 230px;
+      max-height: 65px;
     }
   }
 }
