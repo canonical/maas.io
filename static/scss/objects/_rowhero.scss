@@ -12,8 +12,29 @@
     overflow-y: hidden;
     min-height: 450px;
     margin-top: 0;
-    color: $black;
-    background: url('../media/background-header-home.png') 0 0 repeat $white;
+    background-color: #222;
+    color: $white;
+    text-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+
+    &:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.55;
+      background-image: url('../media/hero-images/hero-2.jpg');
+      background-repeat: no-repeat;
+      background-position: 0 45%;
+      -ms-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
 
     .row-hero__logo {
       position: relative;
@@ -24,10 +45,12 @@
       vertical-align: middle;
       display: inline;
       margin: 0;
+      z-index: 2;
     }
-    
+
     .row-hero__text {
-      color: $black;
+      color: $white;
+      z-index: 2;
 
       .row-hero__intro {
         margin-top: 30px;
@@ -37,6 +60,7 @@
 
     .row-hero__image {
       display: none;
+      z-index: 2;
 
       @media only screen and (min-width : 768px) {
         display: block;
@@ -61,6 +85,27 @@
           }
         }
       }
+    }
+
+    .row-hero__play {
+      z-index: 2;
+      margin: 40px 0 0 0;
+      width: 100%;
+      float: left;
+      opacity: 0.8;
+      transition: all .2s;
+
+      img {
+        max-width: 80px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .row-hero__modal {
+      z-index: 2;
     }
   }
 }
