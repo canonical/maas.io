@@ -15,12 +15,27 @@
         margin-bottom: 0;
       }
     }
-    
+
     .nav-primary {
 
       @media only screen and (min-width: $navigation-threshold) {
         width: auto;
         max-width: inherit;
+      }
+
+      ul li a {
+        &.external {
+          background-image: url('https://jujucharms.com/static/img/icons/external-link-dark.svg');
+          background-position: right 10px bottom 20px !important;
+          padding-right: 30px;
+
+          &:hover {
+            background-position: right 10px bottom 20px !important;
+            background-image: url('https://jujucharms.com/static/img/icons/external-link-dark.svg');
+            background-repeat: no-repeat;
+            background-size: 9.8px 9.8px;
+          }
+        }
       }
     }
   }
