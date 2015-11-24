@@ -11,7 +11,8 @@
     padding: 0;
     position: relative;
     width: 100%;
-    border-bottom: 1px dotted #DDD;
+    border-top: 1px dotted #DDD;
+    position: relative;
 
     .instruction__bullet,
     .instruction__details {
@@ -21,6 +22,20 @@
 
     .instruction__bullet {
       margin-right: 0;
+      background-color: $white;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 200%;
+        background-color: $white;
+        z-index: -1;
+      }
     }
 
     .instruction__step {
@@ -43,6 +58,23 @@
       position: relative;
       top: 6px;
       line-height: 1.6;
+    }
+
+    .instruction__details {
+      background: none;
+      border-left: 1px dotted #DDD;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        width: 200%;
+        background-color: $white;
+        z-index: -1;
+      }
     }
 
     .command-line {
@@ -74,7 +106,7 @@
         height: 100%;
         display: block;
         text-indent: -9999px;
-        background-image: url(https://assets.ubuntu.com/v1/994e60f9-get-link-url_16.svg);
+        background-image: url('https://assets.ubuntu.com/v1/994e60f9-get-link-url_16.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-color: $white;
