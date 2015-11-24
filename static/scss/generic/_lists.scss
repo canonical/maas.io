@@ -1,0 +1,14 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Lists
+/// @group Lists
+@mixin maas-lists {
+  .list--large li {
+    font-size: 18px;
+    padding: 20px 0;
+  }
+}

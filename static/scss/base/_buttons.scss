@@ -1,0 +1,14 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// MAAS buttons
+/// @group MAAS buttons
+@mixin maas-buttons {
+  .button--large {
+    font-size: 20px;
+    padding: 11px 38px;
+  }
+}
