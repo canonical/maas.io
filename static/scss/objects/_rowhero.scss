@@ -94,9 +94,11 @@
       float: left;
       opacity: 0.8;
       transition: all .2s;
+      outline: 0;
 
       img {
         max-width: 80px;
+        outline: 0;
       }
 
       &:hover {
