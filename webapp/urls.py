@@ -1,13 +1,12 @@
 from django.conf.urls import url
 from django_redirects_file import load_redirects
-from fenchurch import TemplateFinder
-from views import custom_404, custom_500
+from views import MaasTemplateFinder, custom_404, custom_500
 
 urlpatterns = load_redirects()
 
 # Standard patterns
 urlpatterns += [
-    url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),  # Fenchurch
+    url(r'^(?P<template>.*)/?$', MaasTemplateFinder.as_view()),  # Fenchurch
 ]
 
 # Error handlers
