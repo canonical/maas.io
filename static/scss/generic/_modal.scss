@@ -1,5 +1,7 @@
 /* ------ venobox.css --------*/
-.vbox-overlay *, .vbox-overlay *:before, .vbox-overlay *:after{
+.vbox-overlay *,
+.vbox-overlay *:before,
+.vbox-overlay *:after{
     -webkit-backface-visibility: hidden;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -276,8 +278,8 @@
 /* ------- Video & iFrames window ------ */
 .venoframe{
     border: none;
-    width: 960px;
-    height: 720px;
+    width: 100%;
+    height: auto;
 }
 @media (max-width: 992px) {
     .venoframe{
