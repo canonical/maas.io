@@ -32,15 +32,5 @@
         position: absolute;
       }
     }
-
-    &.list__bullets--orange {
-
-      li {
-
-        &:before {
-          color: $primary-button-color;
-        }
-      }
-    }
   }
 }
