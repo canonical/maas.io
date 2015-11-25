@@ -15,21 +15,21 @@
   .list__bullets {
 
     li {
-      padding-left: 20px;
+      padding-left: 25px;
+      position: relative;
 
       &:before {
-        /* For a round bullet */
-        content: '\2022';
-        /* For a square bullet */
-        /*content:'\25A0';*/
+        content: '';
+        background-image: url("http://assets.ubuntu.com/sites/ubuntu/latest/u/img/patterns/tick-orange.svg");
+        background-repeat: no-repeat;
         display: block;
-        position: relative;
-        max-width: 0;
-        max-height: 0;
-        left: -17px;
-        top: 0;
+        left: 2px;
+        top: 26px;
         color: $black;
         font-size: 20px;
+        width: 16px;
+        height: 16px;
+        position: absolute;
       }
     }
 
