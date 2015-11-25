@@ -35,7 +35,6 @@
       color: $warm-grey;
       float: left;
       width: 100%;
-      border-top: 1px dotted #EEE;
       padding-top: 20px;
       background: url('../media/logos/logo-ubuntu-grey.png') 100% 20px no-repeat;
 
@@ -53,6 +52,10 @@
 
         .footer__link {
           color: $warm-grey;
+
+          &:hover {
+            color: $button-primary-color;
+          }
         }
 
         &:after {
