@@ -8,6 +8,7 @@
 /// @group MAAS Header
 @mixin maas-header {
   .banner {
+    box-shadow: none;
 
     .logo {
 
@@ -25,13 +26,13 @@
 
       ul li a {
         &.external {
-          background-image: url('https://jujucharms.com/static/img/icons/external-link-dark.svg');
+          background-image: url('../img/icons/external-link-dark.svg');
           background-position: right 10px bottom 20px !important;
           padding-right: 30px;
 
           &:hover {
             background-position: right 10px bottom 20px !important;
-            background-image: url('https://jujucharms.com/static/img/icons/external-link-dark.svg');
+            background-image: url('../img/icons/external-link-dark.svg');
             background-repeat: no-repeat;
             background-size: 9.8px 9.8px;
           }
