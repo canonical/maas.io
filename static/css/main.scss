@@ -4,6 +4,7 @@
 @import '../scss/base/buttons';
 @import '../scss/base/footer';
 @import '../scss/base/header';
+@import '../scss/base/main';
 @import '../scss/base/media';
 @import '../scss/base/row';
 @import '../scss/generic/equal-height';
@@ -28,6 +29,7 @@
 @include maas-inline-logos;
 @include maas-instructions;
 @include maas-lists;
+@include maas-main;
 @include maas-media;
 @include maas-row;
 @include maas-rowhero;

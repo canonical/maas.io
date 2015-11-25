@@ -1,0 +1,14 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// main
+/// @group main
+@mixin maas-main {
+  .inner-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+}
