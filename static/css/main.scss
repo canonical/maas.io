@@ -5,6 +5,7 @@
 @import '../scss/base/footer';
 @import '../scss/base/header';
 @import '../scss/base/media';
+@import '../scss/base/row';
 @import '../scss/generic/equal-height';
 @import '../scss/generic/helpers';
 @import '../scss/generic/inline-logos';
@@ -28,5 +29,6 @@
 @include maas-instructions;
 @include maas-lists;
 @include maas-media;
+@include maas-row;
 @include maas-rowhero;
 @include maas-vertical-divider;

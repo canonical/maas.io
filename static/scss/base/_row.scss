@@ -1,0 +1,26 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// row element styles
+/// @group row
+@mixin maas-row {
+  .row {
+    background-color: $light-grey;
+
+    &.strip-white {
+      background: $white;
+    }
+
+    &.strip-dark {
+      background: $cool-grey;
+      color: $white;
+    }
+
+    &.strip-trans {
+      background: $transparent;
+    }
+  }
+}
