@@ -15,25 +15,24 @@
 }
 
 // scss-lint:disable ImportantRule
-@mixin maas-borders($border-color: $warm-grey, $border-width: 1px) {
+@mixin maas-borders($border-color: #DDD, $border-width: 1px) {
   .border {
-    border-color: $border-color;
-    border: $border-width dotted;
+    border: $border-width dotted $border-color;
 
     &--top {
-      border-top: $border-width dotted;
+      border-top: $border-width dotted $border-color;
     }
 
     &--right {
-      border-right: $border-width dotted;
+      border-right: $border-width dotted $border-color;
     }
 
     &--bottom {
-      border-bottom: $border-width dotted;
+      border-bottom: $border-width dotted $border-color;
     }
 
     &--left {
-      border-left: $border-width dotted;
+      border-left: $border-width dotted $border-color;
     }
 
     &--solid {
