@@ -35,6 +35,7 @@ STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = ['django_static_root_finder.StaticRootFinder']
 TEMPLATE_DIRS = ['templates']
+ASSET_SERVER_URL = '//assets.ubuntu.com/v1/'
 
 # See http://tinyurl.com/django-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = [
