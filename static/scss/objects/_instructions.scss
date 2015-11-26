@@ -14,6 +14,10 @@
     border-top: 1px dotted #DDD;
     position: relative;
 
+    &:last-of-type {
+      border-bottom: 1px dotted #DDD;
+    }
+
     .instruction__bullet,
     .instruction__details {
       padding: 60px 40px;
@@ -35,6 +39,7 @@
         width: 200%;
         background-color: $white;
         z-index: -1;
+        border-right: 1px dotted #DDD;
       }
     }
 
@@ -62,7 +67,6 @@
 
     .instruction__details {
       background: none;
-      border-left: 1px dotted #DDD;
 
       &::after {
         content: '';
@@ -73,7 +77,8 @@
         bottom: 0;
         width: 200%;
         background-color: $white;
-        z-index: -1;
+        z-index: 0;
+        border-right: 1px dotted #DDD;
       }
     }
 

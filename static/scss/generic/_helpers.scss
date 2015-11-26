@@ -105,6 +105,11 @@
   .hidden {
     display: none !important;
   }
+
+  .overflow-hidden {
+    overflow: hidden;
+    position: relative;
+  }
 }
 
 /// Add and remove paddings
