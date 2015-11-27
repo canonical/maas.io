@@ -16,6 +16,7 @@
 @import '../scss/objects/box';
 @import '../scss/objects/documentation';
 @import '../scss/objects/instructions';
+@import '../scss/objects/pricing';
 @import '../scss/objects/rowhero';
 
 @include cloud-vanilla-theme;
@@ -31,6 +32,7 @@
 @include maas-lists;
 @include maas-main;
 @include maas-media;
+@include maas-pricing;
 @include maas-row;
 @include maas-rowhero;
 @include maas-vertical-divider;
