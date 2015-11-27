@@ -3,6 +3,7 @@
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
 @import '../scss/base/buttons';
 @import '../scss/base/footer';
+@import '../scss/base/forms';
 @import '../scss/base/header';
 @import '../scss/base/main';
 @import '../scss/base/media';
@@ -25,6 +26,7 @@
 @include maas-documentation;
 @include maas-equal-height;
 @include maas-footer;
+@include maas-forms;
 @include maas-header;
 @include maas-helpers;
 @include maas-inline-logos;

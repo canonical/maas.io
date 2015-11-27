@@ -1,0 +1,47 @@
+@mixin maas-forms {
+  // Select dropdown styles
+  select {
+    @extend %input-elements;
+    display: block;
+    clear: both;
+    cursor: pointer;
+    margin: 0;
+    background-image: url('../img/icons/accordion-open.svg');
+    background-repeat: no-repeat;
+    background-position: top 18px right 10px;
+    background-color: $white;
+    //scss-lint:disabled ImportantRule
+    padding: 11px 13px;
+    //scss-lint:enable ImportantRule
+    box-shadow: none;
+    width: 100%;
+
+    // Removes firefox select styles & arrow
+    appearance: none;
+    text-indent: .01px;
+    text-overflow: '';
+
+    &[multiple],
+    &[size] {
+      height: auto;
+      background-image: none;
+      padding-top: 10px;
+    }
+
+    &[disabled] {
+      color: $warm-grey;
+      background-image: none;
+      background-color: $transparent;
+    }
+
+    // Removes firefox dotted outline focusing
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $black;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
