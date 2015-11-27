@@ -13,10 +13,12 @@
   }
 
   .list__bullets {
+    margin-left: 0;
 
     li {
       padding-left: 25px;
       position: relative;
+      list-style: none;
 
       &:before {
         content: '';
@@ -24,12 +26,26 @@
         background-repeat: no-repeat;
         display: block;
         left: 2px;
-        top: 26px;
-        color: $black;
+        top: 5px;
+        color: $white;
         font-size: 20px;
         width: 16px;
         height: 16px;
         position: absolute;
+      }
+    }
+  }
+
+  .list {
+
+    &.list__bullets {
+
+      li {
+
+        &:before {
+          left: 2px;
+          top: 26px;
+        }
       }
     }
   }
