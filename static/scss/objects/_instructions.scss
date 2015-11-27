@@ -20,7 +20,6 @@
 
     .instruction__bullet,
     .instruction__details {
-      padding: 60px 40px;
       margin-bottom: 0;
     }
 
@@ -28,6 +27,7 @@
       margin-right: 0;
       background-color: $white;
       z-index: 1;
+      padding: 60px 40px 60px 0;
 
       &::after {
         content: '';
@@ -67,6 +67,7 @@
 
     .instruction__details {
       background: none;
+      padding: 60px 0 60px 40px;
 
       &::after {
         content: '';
