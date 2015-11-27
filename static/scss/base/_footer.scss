@@ -22,6 +22,10 @@
     .footer__link {
       color: $cool-grey;
 
+      &.external {
+        background-image: url('../img/icons/external-link-footer.svg');
+      }
+
       &:hover {
         color: $button-primary-color;
       }
