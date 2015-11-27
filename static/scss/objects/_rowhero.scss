@@ -8,7 +8,7 @@
 /// @group Row hero
 @mixin maas-rowhero {
   .row-hero {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     position: relative;
     overflow-y: hidden;
     min-height: 450px;
@@ -86,18 +86,31 @@
       }
     }
 
+    .row-hero__cta {
+      float: left;
+      margin-right: 40px;
+      position: relative;
+    }
+
     .row-hero__play {
       z-index: 3;
-      margin: 40px 0 0 0;
-      width: 100%;
+      margin: 0;
+      width: auto;
       float: left;
       opacity: 0.8;
       transition: all .2s;
       outline: 0;
+      vertical-align: middle;
+      line-height: 46px;
+      color: $white;
+      font-size: 23px;
 
       img {
-        max-width: 80px;
+        max-width: 46px;
         outline: 0;
+        float: left;
+        vertical-align: middle;
+        margin: 0 20px 0 0;
       }
 
       &:hover {
