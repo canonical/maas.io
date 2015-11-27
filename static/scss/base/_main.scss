@@ -7,5 +7,14 @@
 /// main
 /// @group main
 @mixin maas-main {
+  html {
+    background-color: $white;  
+  }
 
+  .gigantic {
+    font-size: 90px;
+  }
+  .mega {
+    font-size: 45px;
+  }
 }
