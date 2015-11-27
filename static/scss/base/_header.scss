@@ -24,7 +24,20 @@
         max-width: inherit;
       }
 
-      ul li a {
+      ul li a,
+      ul li a:link,
+      ul li a:visited {
+
+        @media only screen and (min-width: 768px) {
+          &.active {
+            box-shadow: inset 0px -3px 0 $button-primary-color;
+          }
+
+          &:hover {
+            background-color: $button-primary-color;
+          }
+        }
+
         &.external {
           background-image: url('../img/icons/external-link-dark.svg');
           background-position: right 10px bottom 20px !important;
