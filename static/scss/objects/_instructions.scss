@@ -8,11 +8,14 @@
 /// @group Instructions
 @mixin maas-instructions {
   .instruction {
-    padding: 0;
+    padding: 0 10px;
     position: relative;
     width: 100%;
     border-top: 1px dotted #DDD;
-    position: relative;
+
+    @media only screen and (min-width : $breakpoint-medium) {
+      padding: 0 20px;
+    }
 
     &:last-of-type {
       border-bottom: 1px dotted #DDD;
@@ -27,7 +30,11 @@
       margin-right: 0;
       background-color: $white;
       z-index: 1;
-      padding: 60px 40px 60px 0;
+      padding: 20px 10px;
+
+      @media only screen and (min-width : $breakpoint-medium) {
+        padding: 60px 40px 60px 0;
+      }
 
       &::after {
         content: '';
@@ -67,7 +74,11 @@
 
     .instruction__details {
       background: none;
-      padding: 60px 0 60px 40px;
+      padding: 30px 10px;
+
+      @media only screen and (min-width : $breakpoint-medium) {
+        padding: 60px 0 60px 40px;
+      }
 
       &::after {
         content: '';
