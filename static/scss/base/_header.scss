@@ -39,15 +39,25 @@
         }
 
         &.external {
-          background-image: url('../img/icons/external-link-dark.svg');
-          background-position: right 10px bottom 20px !important;
-          padding-right: 30px;
+          background-image: url("../img/icons/external-link-footer.svg");
+          background-position: right 20px bottom 15px;
 
           &:hover {
-            background-position: right 10px bottom 20px !important;
-            background-image: url('../img/icons/external-link-dark.svg');
             background-repeat: no-repeat;
-            background-size: 9.8px 9.8px;
+            background-size: 11px 11px;
+          }
+
+          @media only screen and (min-width: 768px) {
+            background-image: url('../img/icons/external-link-dark.svg');
+            background-position: right 10px bottom 20px !important;
+            padding-right: 30px;
+
+            &:hover {
+              background-position: right 10px bottom 20px !important;
+              background-image: url('../img/icons/external-link-dark.svg');
+              background-repeat: no-repeat;
+              background-size: 9.8px 9.8px;
+            }
           }
         }
       }
