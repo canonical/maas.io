@@ -13,6 +13,8 @@
 
 	    <title>MAAS {% block page-title %}{% endblock %}</title>
 
+		{% block head-extra %}{% endblock %}
+
 	    <!-- stylesheets -->
 	    <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
 	</head>

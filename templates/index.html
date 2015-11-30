@@ -3,6 +3,11 @@
 {% block page_class %}homepage{% endblock %}
 {% block page-title %}| Home{% endblock %}
 
+{% block head-extra %}
+<script src="https://www.google.com/jsapi"></script>
+<script>google.load("feeds", "1");</script>
+{% endblock %}
+
 {% block content %}
 	<!-- Hero banner -->
 	<section class="row row-hero">
@@ -204,33 +209,48 @@
 
 	<!-- News -->
 	<section class="row">
-        <div class="inner-wrapper">
-            <div class="twelve-col">
+		<div class="inner-wrapper">
+			<div class="twelve-col">
                 <h2>The latest MAAS news</h2>
             </div>
-			<div class="equal-height vertical-divider twelve-col">
-				<article class="four-col">
-					<h3>
-						<a href="#" class="external">New features in MAAS 1.9</a>
-					</h3>
-					<footer>
-						<time datetime="2015-11-16">16th November 2015</time>
-					</footer>
-				</article>
-				<article class="four-col">
-					<h3>
-						<a href="#" class="external">PC Power Control with a Raspberry Pi and MAAS</a>
-					</h3>
-					<footer>
-						<time datetime="2015-09-23">23rd September 2015</time>
-					</footer>
-				</article>
-				<article class="four-col last-col">
-					<h3>
-						<a href="http://insights.ubuntu.com/?s=maas" class="external">Read more MAAS news on Ubuntu insights</a>
-					</h3>
-				</article>
-			</div>
-        </div>
-    </section>
+			<div id="insights-cloud-feed"></div>
+			<script>
+			  var feedcontainer=document.getElementById("insights-cloud-feed");
+			  var feedurl=document.location.protocol+"//insights.ubuntu.com/feed/?tag=maas";
+			  var feedlimit=3;
+			  var rssoutput="<div class='equal-height vertical-divider twelve-col'>";
+
+			  function rssfeedsetup() {
+				var feedpointer=new google.feeds.Feed(feedurl); //Google Feed API method
+				feedpointer.setNumEntries(feedlimit); //Google Feed API method
+				feedpointer.load(displayfeed2); //Google Feed API method
+			  }
+
+			  function displayfeed2(result) {
+				if (!result.error) {
+				  var thefeeds=result.feed.entries;
+				  var lastClass = '';
+				  for (var i=0; i<thefeeds.length; i++){
+					if (i != 0 && i % 2 == 0) {
+					  lastClass = ' last-col';
+					}
+					var pubDate = thefeeds[i].publishedDate;
+					var date = new Date(pubDate);
+					var months = Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+					var thedate = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+					rssoutput+="<article class='four-col" + lastClass + "'><h3><a class='external' href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></h3><footer><time pubdate datetime='" + pubDate + "'>" + thedate + "</time></footer></article>";
+				  }
+				  rssoutput+="</div>";
+				  feedcontainer.innerHTML=rssoutput;
+				} else {
+				  console.warn("An error occurred while fetching rss");
+				}
+			  }
+
+			  window.onload=function() {
+				rssfeedsetup();
+			  }
+			</script>
+		</div>
+	</section>
 {% endblock %}
