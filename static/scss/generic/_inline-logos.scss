@@ -14,11 +14,19 @@
   .inline-logos {
 
     li {
-
+      @media only screen and (max-width : $breakpoint-medium) {
+        width: 30%;
+        margin: 10px 0;
+      }
       img {
         height: auto;
-        max-width: 230px;
-        max-height: 65px;
+        margin: 0 auto;
+        max-width: 100px;
+
+        @media only screen and (min-width : $breakpoint-medium) {
+          max-width: 230px;
+          max-height: 65px;
+        }
       }
     }
   }
