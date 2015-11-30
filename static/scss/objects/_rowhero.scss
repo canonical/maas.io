@@ -105,6 +105,15 @@
       color: $white;
       font-size: 23px;
 
+      @media only screen and (max-width: 768px) {
+        margin-top: 20px;
+        position: relative;
+        left: 0;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+      }
+
       img {
         max-width: 46px;
         outline: 0;

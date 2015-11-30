@@ -46,6 +46,13 @@
           left: 2px;
           top: 26px;
         }
+
+        @media only screen and (max-width : $breakpoint-medium) {
+          &.last-item {
+            border-bottom: 1px dotted #888;
+            padding-bottom: 20px;
+          }
+        }
       }
     }
   }
