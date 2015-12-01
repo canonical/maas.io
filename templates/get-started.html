@@ -24,11 +24,11 @@
                     <span class="instruction__step">1</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Install Ubuntu Server</h3>
+                    <h3 class="instruction__title">Setup your hardware</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Download <a href="http://www.ubuntu.com/download/server" class="external">Ubuntu Server LTS</a> and follow the step-by-step.</p>
+                <p>You need one small server for MAAS, and at least one server with a BMC that you will manager. MAAS will provide DHCP and DNS on the network. We recommend you put it these two machines on their own switch, with a router.</p>
             </div>
         </div>
     </section>
@@ -37,6 +37,21 @@
             <div class="five-col instruction__bullet">
                 <div class="one-col">
                     <span class="instruction__step">2</span>
+                </div>
+                <div class="four-col last-col">
+                    <h3 class="instruction__title">Install Ubuntu Server</h3>
+                </div>
+            </div>
+            <div class="seven-col last-col instruction__details">
+                <p>Download <a href="http://www.ubuntu.com/download/server" class="external">Ubuntu Server LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
+            </div>
+        </div>
+    </section>
+    <section class="row clearfix instruction">
+        <div class="inner-wrapper">
+            <div class="five-col instruction__bullet">
+                <div class="one-col">
+                    <span class="instruction__step">3</span>
                 </div>
                 <div class="four-col last-col">
                     <h3 class="instruction__title">Install MAAS</h3>
@@ -49,11 +64,7 @@
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
                 <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
-                    <input class="command-line__input" value="sudo apt-get dist-upgrade" readonly="readonly">
-                    <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
-                </p>
-                <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
-                    <input class="command-line__input" value="sudo apt-get install maas maas-dhcp maas-dns" readonly="readonly">
+                    <input class="command-line__input" value="sudo apt install maas" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
             </div>
@@ -63,7 +74,7 @@
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
-                    <span class="instruction__step">3</span>
+                    <span class="instruction__step">4</span>
                 </div>
                 <div class="four-col last-col">
                     <h3 class="instruction__title">Create admin user</h3>
@@ -83,10 +94,10 @@
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
-                    <span class="instruction__step">4</span>
+                    <span class="instruction__step">5</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Configure cluster interface</h3>
+                    <h3 class="instruction__title">Turn on DHCP and DNS</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
@@ -94,8 +105,8 @@
                 <ol>
                     <li>Set this interface to manage DHCP and DNS</li>
                     <li>Set the “Router IP” to the default gateway</li>
+                    <li>Fill in details for the dynamic and static ranges.</li>
                 </ol>
-                <p>Fill in details for the dynamic and static ranges.</p>
                 <img src="/static/media/screen-grabs/get-started/clusters.png" alt="MAAS Clusters">
             </div>
         </div>
@@ -104,14 +115,14 @@
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
-                    <span class="instruction__step">5</span>
+                    <span class="instruction__step">6</span>
                 </div>
                 <div class="four-col last-col">
                     <h3 class="instruction__title">Import images</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the “Images” tab and import disk images for relevant releases and architectures.</p>
+                <p>Go to the “Images” tab and choose the OS releases and architectures you want to install dynamically.</p>
                 <img src="/static/media/screen-grabs/get-started/images.png" alt="MAAS Images">
             </div>
         </div>
@@ -120,20 +131,20 @@
         <div class="inner-wrapper">
             <div class="five-col instruction__bullet">
                 <div class="one-col">
-                    <span class="instruction__step">6</span>
+                    <span class="instruction__step">7</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Start enlisting and deploying your machines</h3>
+                    <h3 class="instruction__title">Enlist and commission servers</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
                 <p>Now you need to enlist and commission machines.</p>
                 <ol>
-                    <li>Ensure all machines are set to PXE boot, if possible disable all other boot options, including local disk, in the BIOS</li>
-                    <li>Power the machines on so they will all appear in the “Nodes” tab of MAAS</li>
-                    <li>Alternatively, add machines or chassis by selecting the add hardware button</li>
-                    <li>Edit each machine filling in the power type and parameters</li>
-                    <li>Select all the machines and, using the “Take action” dropdown, “Commission” them</li>
+                    <li>PXE boot each machine once.</li>
+                    <li>You should see these machines appear in MAAS.</li>
+                    <li>You might need to set machines to PXE boot every time.</li>
+                    <li>Alternatively, add machines or chassis by selecting the add hardware button, and providing the BMC details.</li>
+                    <li>Select all the machines and “Commission” them using the “Take action” button.</li>
                     <li>Wait until all machines have a “Ready” status and start deploying</li>
                 </ol>
                 <img src="/static/media/screen-grabs/get-started/list.png" alt="MAAS node listing">
