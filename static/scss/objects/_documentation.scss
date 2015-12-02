@@ -8,7 +8,7 @@
 /// @group Documentation
 @mixin maas-documentation {
   .docs {
-    background-color: $white;
+    background-color: $white !important;
 
     .docs-nav {
       padding-bottom: 0;
@@ -26,11 +26,13 @@
       }
 
       .expanded {
+
         h4 {
-          background: url("../img/icons/chevron-up.svg") no-repeat right center;
+          background: url("../img/icons/accordion-close.svg") no-repeat right center;
           background-position: right 20px center;
           cursor: pointer;
-          color: $cool_grey;
+          color: $cool-grey;
+          font-weight: 100;
         }
 
         span.toggle-target:after {
@@ -39,11 +41,13 @@
       }
 
       .collapsed {
+
         h4 {
-          background: url("../img/icons/chevron-down.svg") no-repeat right center;
+          background: url("../img/icons/accordion-open.svg") no-repeat right center;
           background-position: right 20px center;
           cursor: pointer;
-          color: $warm_grey;
+          color: $warm-grey;
+          font-weight: 100;
         }
 
         span.toggle-target:after {
@@ -57,7 +61,7 @@
         margin-right: 10px;
         width: 20px;
         text-align: center;
-        color: $cool_grey;
+        color: $cool-grey;
         transition: 0.5s ease;
         border: 1px solid $white;
 
