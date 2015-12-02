@@ -39,10 +39,17 @@ $(document).ready(function(){
         }
     });
 
-    var current = window.location.href.split('/'),
-        page;
+    var current = window.location.pathname;
 
-    page = current[current.length - 1];
+    $('.section a[href="' + current + '"]').addClass('selected').parent().parent().parent().addClass('active');
 
-    $('.section a[href*="' + page + '"]').addClass('selected');
+    $('.section').each(function() {
+        var self = $(this);
+
+        if (self.hasClass('active')) {
+            self.find('ul').show();
+            self.addClass('expanded');
+            self.removeClass('collapsed');
+        }
+    });
 });

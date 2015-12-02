@@ -73,7 +73,7 @@
       h4 {
         $height: 40px;
         height: $height;
-        border-top: 1px dotted $cool-grey;
+        border-top: 1px dotted #d4d4d4;
         margin: 0;
         padding: 0 20px;
         line-height: $height;
@@ -129,6 +129,10 @@
         // Subsections & collapsed sections get no padding.
         &.collapsed, .section {
           padding: 0;
+        }
+
+        &:first-of-type h4 {
+          border-top: 0;
         }
       }
 
