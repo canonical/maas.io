@@ -100,10 +100,10 @@ docs:
 	cp config/docs-base.tpl maas-docs/src/base.tpl
 
 	@echo "- Replace '../media' links with '/static/docs'"
-	find maas-docs/src/en -name '*.md' -exec sed -i "s|\(../\)\+media/|/static/docs/|" {} \;
+	find maas-docs/src/en -name '*.md' -exec sed -ie "s|\(../\)\+media/|/static/docs/|" {} \;
 
 	@echo "- Replace relative page links with '/docs/{page}'"
-	find maas-docs/src/en -name '*.md' -exec sed -i "s|](\(../\)*\([a-zA-Z][.a-zA-Z/]\+\).html|](/docs/\2|" {} \;
+	find maas-docs/src/en -name '*.md' -exec sed -ie "s|](\(../\)*\([a-zA-Z][.a-zA-Z/]\+\).html|](/docs/\2|" {} \;
 
 	@echo "- Build the docs templates"
 	sh -c "virtualenv docs-env; docs-env/bin/pip install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
