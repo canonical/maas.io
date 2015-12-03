@@ -115,7 +115,7 @@ docs:
 	cp -r maas-docs/_build/media/* static/docs/.
 
 	@echo "- Fix links in navigation"
-	sed -i "s|href=\" *\([a-zA-Z0-9-]\+\).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl
+	sed -ie "s|href=\" *\([a-zA-Z0-9-]\+\).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl
 
 	@echo "- Copy navigation to /docs/_navigation.html"
 	cp maas-docs/src/navigation.tpl templates/docs/_navigation.html
