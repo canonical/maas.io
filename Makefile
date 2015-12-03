@@ -77,6 +77,53 @@ setup: install-dependencies update-env
 dev-server:
 	${VEX} ./manage.py runserver_plus 0.0.0.0:${PORT}
 
+
+##
+# Pull and build docs from maas-docs repo
+##
+docs:
+
+	@echo "- Clean: Remove maas-docs and docs-env"
+	rm -rf maas-docs
+	rm -rf docs-env
+
+	@echo "- Remove all existing built docs and media files"
+	find static/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
+	find templates/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
+
+	@echo "- Pull down the maas-docs repository"
+	#git clone git@github.com:maas-docs/maas-docs.git
+	# TODO: Remove once branch is merged
+	git clone -b requirements git@github.com:nottrobin/maas-docs.git
+
+	@echo "- Substitu our own base.tpl"
+	cp config/docs-base.tpl maas-docs/src/base.tpl
+
+	@echo "- Replace '../media' links with '/static/docs'"
+	find maas-docs/src/en -name '*.md' -exec sed -i "s|\(../\)\+media/|/static/docs/|" {} \;
+
+	@echo "- Replace relative page links with '/docs/{page}'"
+	find maas-docs/src/en -name '*.md' -exec sed -i "s|](\(../\)*\([a-zA-Z][.a-zA-Z/]\+\).html|](/docs/\2|" {} \;
+
+	@echo "- Build the docs templates"
+	sh -c "virtualenv docs-env; docs-env/bin/pip install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
+
+	@echo "- Copy templates to templates/docs"
+	cp -r maas-docs/_build/en/* templates/docs/.
+
+	@echo "- Copy media to static/docs"
+	cp -r maas-docs/_build/media/* static/docs/.
+
+	@echo "- Fix links in navigation"
+	sed -i "s|href=\" *\([a-zA-Z0-9-]\+\).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl
+
+	@echo "- Copy navigation to /docs/_navigation.html"
+	cp maas-docs/src/navigation.tpl templates/docs/_navigation.html
+
+	@echo "- Cleaning up: removing maas-docs and docs-env"
+	rm -rf maas-docs/
+	rm -rf docs-env/
+
 ##
 # Build SASS
 ##
