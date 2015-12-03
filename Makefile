@@ -98,10 +98,10 @@ docs:
 	cp config/docs-base.tpl maas-docs/src/base.tpl
 
 	@echo "- Replace '../media' links with '/static/docs'"
-	find maas-docs/src/en -name '*.md' -exec sed -i -E -e "s|(../)+media/|/static/docs/|" {} \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|(../)+media/|/static/docs/|" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Replace relative page links with '/docs/{page}'"
-	find maas-docs/src/en -name '*.md' -exec sed -i -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Build the docs templates"
 	sh -c "virtualenv docs-env; docs-env/bin/pip install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
@@ -113,7 +113,7 @@ docs:
 	cp -r maas-docs/_build/media/* static/docs/.
 
 	@echo "- Fix links in navigation"
-	sed -i -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl
+	sed -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl > maas-docs/src/navigation.tpl.new; mv maas-docs/src/navigation.tpl.new maas-docs/src/navigation.tpl
 
 	@echo "- Copy navigation to /docs/_navigation.html"
 	cp maas-docs/src/navigation.tpl templates/docs/_navigation.html
