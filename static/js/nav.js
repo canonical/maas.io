@@ -41,7 +41,7 @@ $(document).ready(function(){
 
     var current = window.location.pathname;
 
-    $('.section a[href="' + current + '"]').addClass('selected').parent().parent().parent().addClass('active');
+    $('.section a[href="' + current + '"]').addClass('selected').closest('.section').addClass('active');
 
     $('.section').each(function() {
         var self = $(this);
