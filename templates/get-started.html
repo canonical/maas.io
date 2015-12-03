@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>You need one small server for MAAS, and at least one server with a BMC that you will manager. MAAS will provide DHCP and DNS on the network. We recommend you put it these two machines on their own switch, with a router.</p>
+                <p>You need one small server for MAAS and at least one server which can be managed with a BMC. It is recommended to have the MAAS server provide DHCP and DNS on a network the managed machines are connected to.</p>
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Download <a href="http://www.ubuntu.com/download/server" class="external">Ubuntu Server LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
+                <p>Download <a href="http://www.ubuntu.com/download/server" class="external">Ubuntu Server LTS</a> and follow the  step-by-step installation instructions on your MAAS server.</p>
             </div>
         </div>
     </section>
@@ -58,13 +58,13 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>From the command line type the commands below. Follow the step-by-step instructions to update relevant packages and install MAAS.</p>
+                <p>Install MAAS.</p>
                 <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
                     <input class="command-line__input" value="sudo apt-get update" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
                 <p class="command-line" id="yui_3_15_0_2_1447251073897_64">
-                    <input class="command-line__input" value="sudo apt install maas" readonly="readonly">
+                    <input class="command-line__input" value="sudo apt-get install maas" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
             </div>
@@ -86,7 +86,7 @@
                     <input class="command-line__input" value="sudo maas-region-admin createadmin" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
-                <p>Login to the MAAS UI at http://&lt;maas.ip&gt;/MAAS/</p>
+                <p>Login to the MAAS UI at http://&lt;your.maas.ip&gt;/MAAS/</p>
             </div>
         </div>
     </section>
