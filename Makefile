@@ -92,9 +92,7 @@ docs:
 	find templates/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
 
 	@echo "- Pull down the maas-docs repository"
-	#git clone git@github.com:maas-docs/maas-docs.git
-	# TODO: Remove once branch is merged
-	git clone -b requirements git@github.com:nottrobin/maas-docs.git
+	git clone git@github.com:maas-docs/maas-docs.git
 
 	@echo "- Substitu our own base.tpl"
 	cp config/docs-base.tpl maas-docs/src/base.tpl
