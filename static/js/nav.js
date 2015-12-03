@@ -39,10 +39,13 @@ $(document).ready(function(){
         }
     });
 
+    // Current path URL name
     var current = window.location.pathname;
 
+    // Set active and selected class based on the current URL
     $('.section a[href="' + current + '"]').addClass('selected').closest('.section').addClass('active');
 
+    // Make the section active onload if it has the class of active
     $('.section').each(function() {
         var self = $(this);
 
