@@ -110,6 +110,17 @@
     overflow: hidden;
     position: relative;
   }
+
+  .position {
+
+    &--right {
+      right: 0 !important;
+    }
+
+    &--left {
+      left: 0 !important;
+    }
+  }
 }
 
 /// Add and remove paddings
