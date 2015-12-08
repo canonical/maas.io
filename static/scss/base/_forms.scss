@@ -1,4 +1,13 @@
 @mixin maas-forms {
+  input,
+  select,
+  textarea {
+
+    &.mktError {
+      border: 1px solid $error;
+    }
+  }
+
   // Select dropdown styles
   select {
     @extend %input-elements;
@@ -42,6 +51,15 @@
 
     &::-ms-expand {
       display: none;
+    }
+  }
+
+  span.mktFormMsg {
+    margin-top: 10px;
+    display: block;
+
+    &.mktError {
+      color: $error;
     }
   }
 }
