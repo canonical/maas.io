@@ -1,6 +1,6 @@
 {% load versioned_static %}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Product">
 
 	<head>
 	    <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     	<header class="banner global" role="banner">
 	        <nav role="navigation" class="nav-primary nav-right" id="nav">
 	            <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
-	            <div class="logo">
+	            <div class="logo" itemprop="logo">
 	                <a href="/">
 	                	<img src="{{ STATIC_URL }}img/maas-logo.png" alt="MAAS" />
 	                </a>
