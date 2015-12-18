@@ -1,144 +1,141 @@
 {% load versioned_static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Canonical webteam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<head>
-	    <meta charset="UTF-8" />
-	    <meta name="description" content="" />
-	    <meta name="keywords" content="" />
-	    <meta name="author" content="Canonical webteam" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
 
-	    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+    <title>MAAS {% block page-title %}{% endblock %}</title>
 
-	    <title>MAAS {% block page-title %}{% endblock %}</title>
+    {% block head-extra %}{% endblock %}
 
-		{% block head-extra %}{% endblock %}
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
 
-	    <!-- stylesheets -->
-	    <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ubuntucloud">
+    <meta name="twitter:creator" content="@ubuntucloud">
+    <meta name="twitter:domain" content="maas.io">
+    <meta name="twitter:title" content="Metal as a Service | MAAS">
+    <meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
+    <meta name="twitter:image" content="https://assets.ubuntu.com/v1/6c4a1064-maas-twitter-logo.jpg">
+  </head>
 
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:site" content="@ubuntucloud">
-		<meta name="twitter:creator" content="@ubuntucloud">
-		<meta name="twitter:domain" content="maas.io">
-		<meta name="twitter:title" content="Metal as a Service | MAAS">
-		<meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
-		<meta name="twitter:image" content="https://assets.ubuntu.com/v1/6c4a1064-maas-twitter-logo.jpg">
-	</head>
+  <body class="{% block page_class %}{% endblock %}">
+    <header class="banner global" role="banner">
+      <nav role="navigation" class="nav-primary nav-right" id="nav">
+        <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
+        <div class="logo">
+          <a href="/">
+            <img src="{{ STATIC_URL }}img/maas-logo.png" alt="MAAS" />
+          </a>
+        </div>
+        <ul>
+          <li><a href="/get-started" {% if level_1 == 'get-started' %} class="active"{% endif %}>Get started</a></li>
+          <li><a href="/tour" {% if level_1 == 'tour' %} class="active"{% endif %}>Tour</a></li>
+          <li><a href="http://maas.ubuntu.com/docs" class="external" {% if level_1 == 'docs' %} class="active"{% endif %}>Docs</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle">
+        <a href="#nav" class="nav-toggle__link open"></a>
+        <a href="#" class="nav-toggle__link close"></a>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div id="main-content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <footer class="footer clearfix">
+      <div class="inner-wrapper">
+        <div class="footer__col">
+          <div class="four-col">
+            <h3 class="footer__title">MAAS</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link" href="/">Home</a>
+              </li>
+              <li>
+                <a class="footer__link" href="/get-started">Get started</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://maas.ubuntu.com/docs">Docs</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://maas.ubuntu.com/docs/api.html">API</a>
+              </li>
+              <li>
+                <a class="footer__link" href="/tour">Tour</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__col">
+          <div class="four-col">
+            <h3 class="footer__title">Need help?</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link external" href="http://askubuntu.com/">Ask Ubuntu</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="https://launchpad.net/~maas-devel">Join the mailing list</a>
+              </li>
+              <li>
+                <a href="/contact-us" class="footer__link">Commercial support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="four-col last-col">
+            <h3 class="footer__title">Contribute</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link external" href="https://launchpad.net/maas">Launchpad</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://maas.ubuntu.com/docs">Docs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <nav id="main-navigation" role="navigation" class="inner-wrapper clearfix">
+        <div class="footer__legal clearfix has-cookie">
+            <p class="twelve-col footer__legal-text">© 2015 Canonical Ltd. <a href="http://www.ubuntu.com">Ubuntu</a> and <a href="http://www.canonical.com">Canonical</a> are registered trademarks of Canonical Ltd.</p>
+            <ul class="twelve-col inline-list footer__bullets clear">
+              <li class="footer__bullets-item">
+                <a class="footer__link" href="http://www.ubuntu.com/legal"><small>Legal information</small></a>
+              </li>
+              <li class="footer__bullets-item">
+                <a class="footer__link" href="https://github.com/ubuntudesign/maas.io/issues"><small>Report a bug on this site</small></a>
+              </li>
+            </ul>
+            <span class="accessibility-aid"><a class="footer__link" href="#">Got to the top of the page</a></span>
+        </div>
+      </nav>
+    </footer>
+  </body>
 
-    <body class="{% block page_class %}{% endblock %}">
-    	<header class="banner global" role="banner">
-	        <nav role="navigation" class="nav-primary nav-right" id="nav">
-	            <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
-	            <div class="logo">
-	                <a href="/">
-	                	<img src="{{ STATIC_URL }}img/maas-logo.png" alt="MAAS" />
-	                </a>
-	            </div>
-	            <ul>
-	                <li><a href="/get-started" {% if level_1 == 'get-started' %} class="active"{% endif %}>Get started</a></li>
-					<li><a href="/tour" {% if level_1 == 'tour' %} class="active"{% endif %}>Tour</a></li>
-	                <li><a href="http://maas.ubuntu.com/docs" class="external" {% if level_1 == 'docs' %} class="active"{% endif %}>Docs</a></li>
-	            </ul>
-	        </nav>
-	        <div class="nav-toggle">
-                <a href="#nav" class="nav-toggle__link open"></a>
-                <a href="#" class="nav-toggle__link close"></a>
-            </div>
-	    </header>
-	    <div class="wrapper">
-	        <div id="main-content">
-	        	{% block content %}{% endblock %}
-			</div>
-		</div>
-		<footer class="footer clearfix">
-			<div class="inner-wrapper">
-				<div class="footer__col">
-					<div class="four-col">
-						<h3 class="footer__title">MAAS</h3>
-						<ul class="no-bullets">
-							<li>
-								<a class="footer__link" href="/">Home</a>
-							</li>
-							<li>
-								<a class="footer__link" href="/get-started">Get started</a>
-							</li>
-							<li>
-								<a class="footer__link external" href="http://maas.ubuntu.com/docs">Docs</a>
-							</li>
-							<li>
-								<a class="footer__link external" href="http://maas.ubuntu.com/docs/api.html">API</a>
-							</li>
-							<li>
-								<a class="footer__link" href="/tour">Tour</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="footer__col">
-					<div class="four-col">
-						<h3 class="footer__title">Need help?</h3>
-						<ul class="no-bullets">
-							<li>
-								<a class="footer__link external" href="http://askubuntu.com/">Ask Ubuntu</a>
-							</li>
-							<li>
-								<a class="footer__link external" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
-							</li>
-							<li>
-								<a class="footer__link external" href="https://launchpad.net/~maas-devel">Join the mailing list</a>
-							</li>
-							<li>
-								<a href="/contact-us" class="footer__link">Commercial support</a>
-							</li>
-						</ul>
-					</div>
-					<div class="four-col last-col">
-						<h3 class="footer__title">Contribute</h3>
-						<ul class="no-bullets">
-							<li>
-								<a class="footer__link external" href="https://launchpad.net/maas">Launchpad</a>
-							</li>
-							<li>
-								<a class="footer__link external" href="http://maas.ubuntu.com/docs">Docs</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<nav id="main-navigation" role="navigation" class="inner-wrapper clearfix">
-		        <div class="footer__legal clearfix has-cookie">
-		            <p class="twelve-col footer__legal-text">© 2015 Canonical Ltd. <a href="http://www.ubuntu.com">Ubuntu</a> and <a href="http://www.canonical.com">Canonical</a> are registered trademarks of Canonical Ltd.</p>
-		            <ul class="twelve-col inline-list footer__bullets clear">
-		                <li class="footer__bullets-item">
-							<a class="footer__link" href="http://www.ubuntu.com/legal"><small>Legal information</small></a>
-		                </li>
-		                <li class="footer__bullets-item">
-							<a class="footer__link" href="https://github.com/ubuntudesign/maas.io/issues"><small>Report a bug on this site</small></a>
-		                </li>
-		            </ul>
-		            <span class="accessibility-aid"><a class="footer__link" href="#">Got to the top of the page</a></span>
-		        </div>
-	    	</nav>
-	    </footer>
-    </body>
+  <!-- javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="/static/js/jquery.accordion.js"></script>
+  <script src="/static/js/jquery.command-line.js"></script>
+  <script src="/static/js/jquery.modal.min.js"></script>
+  {% block js-extra %}{% endblock %}
 
-	<!-- javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="/static/js/jquery.accordion.js"></script>
-	<script src="/static/js/jquery.command-line.js"></script>
-	<script src="/static/js/jquery.modal.min.js"></script>
-	{% block js-extra %}{% endblock %}
-
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-1018242-58', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1018242-58', 'auto');
+    ga('send', 'pageview');
+  </script>
 </html>
