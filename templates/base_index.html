@@ -1,6 +1,6 @@
 {% load versioned_static %}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Product">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
@@ -10,9 +10,7 @@
 
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
 
-    <title>MAAS {% block page-title %}{% endblock %}</title>
-
-    {% block head-extra %}{% endblock %}
+	<title itemprop="name">MAAS {% block page-title %}{% endblock %}</title>
 
     <!-- stylesheets -->
     <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/main.css' %}" />
@@ -38,7 +36,6 @@
       })(window,document,'script','dataLayer','GTM-K92JCQ');
     </script>
     <!-- end google tag manager -->
-
     <header class="banner global" role="banner">
       <nav role="navigation" class="nav-primary nav-right" id="nav">
         <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
@@ -143,4 +140,3 @@
   {% block js-extra %}{% endblock %}
 </html>
 <!-- This comment was updated at 17:07 on 2016-01-26 -->
-
