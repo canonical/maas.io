@@ -87,14 +87,14 @@ docs:
 	rm -rf maas-docs
 	rm -rf docs-env
 
+	@echo "- Pull down the maas-docs repository"
+	git clone git@github.com:maas-docs/maas-docs.git
+
 	@echo "- Remove all existing built docs and media files"
 	find static/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
 	find templates/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
 
-	@echo "- Pull down the maas-docs repository"
-	git clone git@github.com:maas-docs/maas-docs.git
-
-	@echo "- Substitu our own base.tpl"
+	@echo "- Substitute our own base.tpl"
 	cp config/docs-base.tpl maas-docs/src/base.tpl
 
 	@echo "- Replace '../media' links with '/static/docs'"
@@ -114,9 +114,6 @@ docs:
 
 	@echo "- Fix links in navigation"
 	sed -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl > maas-docs/src/navigation.tpl.new; mv maas-docs/src/navigation.tpl.new maas-docs/src/navigation.tpl
-
-	@echo "- Copy navigation to /docs/_navigation.html"
-	cp maas-docs/src/navigation.tpl templates/docs/_navigation.html
 
 	@echo "- Cleaning up: removing maas-docs and docs-env"
 	rm -rf maas-docs/
