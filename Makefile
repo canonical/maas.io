@@ -115,6 +115,9 @@ docs:
 	@echo "- Fix links in navigation"
 	sed -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl > maas-docs/src/navigation.tpl.new; mv maas-docs/src/navigation.tpl.new maas-docs/src/navigation.tpl
 
+	@echo "- Remove classes from navigation"
+	sed -Ei 's/class="[^"]+"//' maas-docs/src/navigation.tpl
+
 	@echo "- Copy navigation to /docs/_navigation.html"
 	cp maas-docs/src/navigation.tpl templates/includes/docs_navigation.html
 
