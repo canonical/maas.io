@@ -88,7 +88,7 @@ docs:
 	rm -rf docs-env
 
 	@echo "- Pull down the maas-docs repository"
-	git clone git@github.com:maas-docs/maas-docs.git
+	git clone git@github.com:canonicalltd/maas-docs.git
 
 	@echo "- Remove all existing built docs and media files"
 	find static/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
@@ -104,13 +104,13 @@ docs:
 	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Build the docs templates"
-	sh -c "virtualenv docs-env; docs-env/bin/pip install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
+	sh -c "pyvenv docs-env; docs-env/bin/pip3 install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
 
 	@echo "- Copy templates to templates/docs"
-	cp -r maas-docs/_build/en/* templates/docs/.
+	cp -r maas-docs/htmldocs/en/* templates/docs/.
 
 	@echo "- Copy media to static/docs"
-	cp -r maas-docs/_build/media/* static/docs/.
+	cp -r maas-docs/media/* static/docs/.
 
 	@echo "- Fix links in navigation"
 	sed -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl > maas-docs/src/navigation.tpl.new; mv maas-docs/src/navigation.tpl.new maas-docs/src/navigation.tpl
