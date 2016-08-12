@@ -20,6 +20,10 @@
   height: 2.25em;
 }
 
+.documentation .inner-wrapper img {
+  max-width: 100%;
+}
+
 // Import normal site header & footer
 // ===
 @import '../../node_modules/cloud-vanilla-theme/scss/build';

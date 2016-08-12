@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   {% include "includes/head.html" with css_file="css/docs.css" title="%%TITLE%%" %}
 
-  <body>
+  <body class="documentation">
     {% include "includes/tag_manager.html" %}
 
     {% include "includes/header.html" %}
