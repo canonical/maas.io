@@ -31,7 +31,7 @@
     }
   }
 
-  var items = document.querySelectorAll('.documentation__nav ul li');
+  var items = document.querySelectorAll('.documentation__nav>ul>li');
 
   for(var num = 0; num < items.length; num++) {
     var item = items[num];
@@ -39,11 +39,35 @@
 
     if (! heading) {continue;}
 
+    var section = 'docs/' + heading.innerText.toLowerCase().substring(0,4)
+    var currentPath = location.pathname.replace(/(^\/|\/$)/g, "");
+
     // For lists with child lists, add expand/collapse functionality
     if (item.querySelector('ul')) {
-      item.classList.add('collapsed');
+      if (currentPath.startsWith(section)) {
+          item.classList.add('expanded');
+      } else {
+          item.classList.add('collapsed');
+      }
 
       item.addEventListener('click', expandCollapse);
+    }
+
+    var links = item.querySelectorAll('[href]');
+
+    for(var linkNum = 0; linkNum < links.length; linkNum++) {
+      link = links[linkNum];
+
+      // Get paths, removing leading and trailing slashes for consistency
+      linkPath = link.pathname.replace(/(^\/|\/$)/g, "");
+
+      // Make current navigation item appear active
+      // @TODO: Replace this with a static JS-less solution
+      //        once we have a more intelligent
+      //        docs navigation mechanism.
+      if (linkPath == currentPath) {
+          link.classList.add('active');
+      }
     }
   }
 </script>
