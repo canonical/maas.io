@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-  {% include "includes/head.html" with css_file="css/docs.css" %}
+  {% include "includes/head.html" with css_file="css/docs.css" title="%%TITLE%%" %}
 
   <body>
     {% include "includes/tag_manager.html" %}
@@ -16,7 +16,6 @@
 
       <main id="main-content" class="inner-wrapper">
         <div class="row">
-          <h1 id="introduction">%%TITLE%%</h1>
           %%CONTENT%%
         </div>
       </main>
