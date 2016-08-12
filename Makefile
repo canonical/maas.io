@@ -98,10 +98,10 @@ docs:
 	cp config/docs-base.tpl maas-docs/src/base.tpl
 
 	@echo "- Replace '../media' links with '/static/docs'"
-	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|(../)+media/|/static/docs/|" {} > {}.new; mv {}.new {}' \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s~(\.\./|\./)+media/~/static/docs/~" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Replace relative page links with '/docs/{page}'"
-	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} > {}.new; mv {}.new {}' \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s~\]\((.?./|/docs/)*([a-zA-Z][\.a-zA-Z/-]+).html~](/docs/\2~" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Build the docs templates"
 	sh -c "python3 -m venv docs-env; . docs-env/bin/activate; pip3 install -r maas-docs/requirements.txt; make -C maas-docs build"
