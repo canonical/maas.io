@@ -1,0 +1,31 @@
+// Import docs vanilla them
+// ===
+@import '../../node_modules/docs-vanilla-theme/scss/theme';
+@include vanilla;
+@include docs-base;
+// We don't want the header - we're using MAAS's
+// @include docs-header;
+@include docs-nav;
+@include docs-notes;
+@include docs-rows;
+@include docs-wrapper;
+@include docs-toc;
+
+.documentation__nav h3 {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.documentation__nav ul li:after {
+  height: 2.5em;
+}
+
+// Import normal site header & footer
+// ===
+@import '../../node_modules/cloud-vanilla-theme/scss/build';
+@import '../scss/base/header';
+@import '../scss/base/footer';
+@include cloud-header;
+@include cloud-footer;
+@include maas-header;
+@include maas-footer;
