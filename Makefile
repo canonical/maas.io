@@ -104,7 +104,7 @@ docs:
 	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Build the docs templates"
-	sh -c "python3 -m venv docs-env; docs-env/bin/pip3 install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
+	sh -c "python3 -m venv docs-env; . docs-env/bin/activate; pip3 install -r maas-docs/requirements.txt; make -C maas-docs build"
 
 	@echo "- Copy templates to templates/docs"
 	cp -r maas-docs/htmldocs/en/* templates/docs/.
