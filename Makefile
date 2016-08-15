@@ -87,36 +87,39 @@ docs:
 	rm -rf maas-docs
 	rm -rf docs-env
 
+	@echo "- Pull down the maas-docs repository"
+	git clone git@github.com:canonicalltd/maas-docs.git
+
 	@echo "- Remove all existing built docs and media files"
 	find static/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
 	find templates/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
 
-	@echo "- Pull down the maas-docs repository"
-	git clone git@github.com:maas-docs/maas-docs.git
-
-	@echo "- Substitu our own base.tpl"
+	@echo "- Substitute our own base.tpl"
 	cp config/docs-base.tpl maas-docs/src/base.tpl
 
 	@echo "- Replace '../media' links with '/static/docs'"
-	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|(../)+media/|/static/docs/|" {} > {}.new; mv {}.new {}' \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s~(\.\./|\./)+media/~/static/docs/~" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Replace relative page links with '/docs/{page}'"
-	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s|\]\((../)*([a-zA-Z][.a-zA-Z/]+).html|](/docs/\2|" {} > {}.new; mv {}.new {}' \;
+	find maas-docs/src/en -name '*.md' -exec bash -c 'sed -E -e "s~\]\((.?./|/docs/)*([a-zA-Z][\.a-zA-Z/-]+).html~](/docs/\2~" {} > {}.new; mv {}.new {}' \;
 
 	@echo "- Build the docs templates"
-	sh -c "virtualenv docs-env; docs-env/bin/pip install -r maas-docs/requirements.txt; . docs-env/bin/activate; make -C maas-docs build"
+	sh -c "python3 -m venv docs-env; . docs-env/bin/activate; pip3 install -r maas-docs/requirements.txt; make -C maas-docs build"
 
 	@echo "- Copy templates to templates/docs"
-	cp -r maas-docs/_build/en/* templates/docs/.
+	cp -r maas-docs/htmldocs/en/* templates/docs/.
 
 	@echo "- Copy media to static/docs"
-	cp -r maas-docs/_build/media/* static/docs/.
+	cp -r maas-docs/media/* static/docs/.
 
 	@echo "- Fix links in navigation"
 	sed -E -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" maas-docs/src/navigation.tpl > maas-docs/src/navigation.tpl.new; mv maas-docs/src/navigation.tpl.new maas-docs/src/navigation.tpl
 
+	@echo "- Remove classes from navigation"
+	sed -Ei -e 's/class="[^"]+"//' maas-docs/src/navigation.tpl
+
 	@echo "- Copy navigation to /docs/_navigation.html"
-	cp maas-docs/src/navigation.tpl templates/docs/_navigation.html
+	cp maas-docs/src/navigation.tpl templates/includes/docs_navigation.html
 
 	@echo "- Cleaning up: removing maas-docs and docs-env"
 	rm -rf maas-docs/

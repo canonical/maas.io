@@ -1,0 +1,23 @@
+{% load versioned_static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Canonical webteam" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+  <title itemprop="name">MAAS {% block page-title %}| {{ title }}{% endblock %}</title>
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static css_file %}" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ubuntucloud">
+  <meta name="twitter:creator" content="@ubuntucloud">
+  <meta name="twitter:domain" content="maas.io">
+  <meta name="twitter:title" content="Metal as a Service | MAAS">
+  <meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
+  <meta name="twitter:image" content="https://assets.ubuntu.com/v1/6c4a1064-maas-twitter-logo.jpg">
+</head>

@@ -16,3 +16,4 @@ static/docs/*
 !static/docs/README.md
 maas-docs/
 docs-env/
+templates/includes/docs_navigation.html
