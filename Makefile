@@ -103,6 +103,7 @@ docs:
 
 	@echo "- Fix links in navigation"
 	sed -Ei -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" tmp/maas-docs/src/navigation.tpl
+	sed -Ei -e "s|href=\"http|class="external" href=\"http|" tmp/maas-docs/src/navigation.tpl
 
 	@echo "- Remove classes from navigation"
 	sed -Ei -e 's/class="[^"]+"//' tmp/maas-docs/src/navigation.tpl
