@@ -66,6 +66,25 @@
   }
 }
 
+.documentation__versions {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px dotted #cdcdcd;
+  overflow: hidden;
+
+  li {
+    float: left;
+    border-left: 1px dotted #cdcdcd;
+    &:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+}
+
 // Import normal site header & footer
 // ===
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
