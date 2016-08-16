@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   {% include "includes/head.html" with css_file="css/docs.css" title="%%TITLE%%" %}
 
-  <body class="documentation-area">
+  <body>
     {% include "includes/tag_manager.html" %}
 
     {% include "includes/header.html" %}
@@ -14,7 +14,7 @@
 
       {% include "includes/docs_nav_js.html" %}
 
-      <main id="main-content" class="inner-wrapper documentation__content">
+      <main id="main-content" class="inner-wrapper documentation__contents">
         <div class="row">
           %%CONTENT%%
         </div>

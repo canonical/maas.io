@@ -20,12 +20,18 @@
   height: 2.25em;
 }
 
-.documentation-area .inner-wrapper img {
-  max-width: 100%;
+.documentation__contents, .documentation__contents.inner-wrapper {
+  margin-left: 0;
+  display: flex;
+
+  img {
+    max-width: 100%;
+  }
 }
 
-.documentation__content {
-  display: flex;
+.toc {
+  position: sticky;
+  padding-left: 40px;
 }
 
 // Import normal site header & footer
