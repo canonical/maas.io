@@ -74,6 +74,15 @@
   img {
     max-width: 100%;
   }
+
+  code {
+    color: inherit;
+  }
+
+  pre {
+    @extend .command-line;
+    @extend .code-block;
+  }
 }
 
 .documentation__versions {
