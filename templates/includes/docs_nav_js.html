@@ -20,15 +20,10 @@
 
 
   function expandCollapse(clickEvent) {
-    var item = clickEvent.target;
-    var link = item.querySelector('[href]');
-    var linkWidth = link.offsetWidth;
-    var clickOffset = clickEvent.offsetX;
-
-    if (clickOffset > linkWidth) {
-      collapsed = ! item.classList.toggle('expanded');
-      item.classList.toggle('collapsed', collapsed);
-    }
+    var heading = clickEvent.target;
+    var item = heading.parentNode;
+    collapsed = ! item.classList.toggle('expanded');
+    item.classList.toggle('collapsed', collapsed);
   }
 
   var items = document.querySelectorAll('.documentation__nav>ul>li');
@@ -56,7 +51,11 @@
           item.classList.add('collapsed');
       }
 
-      item.addEventListener('click', expandCollapse);
+      heading = item.querySelector('h4');
+
+      if (heading && heading.parentNode == item) {
+        heading.addEventListener('click', expandCollapse);
+      }
     }
 
     var links = item.querySelectorAll('[href]');

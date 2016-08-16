@@ -17,6 +17,10 @@
   @media only screen and (min-width : $breakpoint-medium) {
     flex-direction: row;
   }
+
+  .external {
+    background-image: url('https://assets.ubuntu.com/v1/769fa468-dark-external-link.svg');
+  }
 }
 
 .documentation__jump {
@@ -45,16 +49,22 @@
   ul li:after {
     height: 2.25em;
   }
+
+  .collapsed, .expanded {
+    cursor: pointer;
+  }
+
+  & > ul > li > a {
+    font-size: 1em;
+  }
 }
 
 .documentation__contents, .documentation__contents.inner-wrapper {
   margin-left: 0;
-  border-right: 1px solid rgb(205, 205, 205);
   display: flex;
 
   @media only screen and (max-width : $breakpoint-medium) {
     padding-top: 0;
-    border-right: none;
   }
 
   .row {
@@ -94,3 +104,11 @@
 @include cloud-footer;
 @include maas-header;
 @include maas-footer;
+
+body {
+  background-image: none;
+  background-color: white;
+}
+.footer {
+  border-top:   1px solid rgb(205, 205, 205);
+}
