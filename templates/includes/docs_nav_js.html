@@ -33,6 +33,13 @@
 
   var items = document.querySelectorAll('.documentation__nav>ul>li');
 
+  var currentPath = location.pathname.replace(/(^\/|\/$)/g, "") + location.hash;
+
+  // Expand first item if we're on landing page
+  if (currentPath == 'docs/' || currentPath == 'docs') {
+    items[0].classList.add('expanded');
+  }
+
   for(var num = 0; num < items.length; num++) {
     var item = items[num];
     var heading = item.querySelector('h4');
@@ -40,7 +47,6 @@
     if (! heading) {continue;}
 
     var section = 'docs/' + heading.innerText.toLowerCase().substring(0,4)
-    var currentPath = location.pathname.replace(/(^\/|\/$)/g, "") + location.hash;
 
     // For lists with child lists, add expand/collapse functionality
     if (item.querySelector('ul')) {

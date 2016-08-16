@@ -17,3 +17,4 @@ static/docs/*
 maas-docs/
 docs-env/
 templates/includes/docs_navigation.html
+/tmp/
