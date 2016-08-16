@@ -14,7 +14,7 @@
 
       {% include "includes/docs_nav_js.html" %}
 
-      <main id="main-content" class="inner-wrapper">
+      <main id="main-content" class="inner-wrapper documentation__content">
         <div class="row">
           %%CONTENT%%
         </div>
