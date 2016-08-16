@@ -40,7 +40,7 @@
     if (! heading) {continue;}
 
     var section = 'docs/' + heading.innerText.toLowerCase().substring(0,4)
-    var currentPath = location.pathname.replace(/(^\/|\/$)/g, "");
+    var currentPath = location.pathname.replace(/(^\/|\/$)/g, "") + location.hash;
 
     // For lists with child lists, add expand/collapse functionality
     if (item.querySelector('ul')) {
@@ -59,7 +59,7 @@
       link = links[linkNum];
 
       // Get paths, removing leading and trailing slashes for consistency
-      linkPath = link.pathname.replace(/(^\/|\/$)/g, "");
+      linkPath = link.pathname.replace(/(^\/|\/$)/g, "") + link.hash;
 
       // Make current navigation item appear active
       // @TODO: Replace this with a static JS-less solution
