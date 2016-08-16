@@ -53,6 +53,10 @@
   .collapsed, .expanded {
     cursor: pointer;
   }
+
+  & > ul > li > a {
+    font-size: 1em;
+  }
 }
 
 .documentation__contents, .documentation__contents.inner-wrapper {
@@ -106,5 +110,5 @@ body {
   background-color: white;
 }
 .footer {
-  border-top: 1px solid rgb(205, 205, 205);
+  border-top:   1px solid rgb(205, 205, 205);
 }
