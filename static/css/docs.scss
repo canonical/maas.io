@@ -80,7 +80,18 @@
   }
 
   pre {
-    @extend .command-line;
+    position: relative;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    font-size: 1em;
+    font-family: Ubuntu Mono;
+    font-weight: 300;
+    padding: .7em 1em;
+    color: #333;
+    width: 100%;
+
     @extend .code-block;
   }
 }
