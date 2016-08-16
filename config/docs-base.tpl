@@ -12,6 +12,7 @@
         <section class="documentation__jump">
           <a href="#">Back to top</a>
         </section>
+        {% include "includes/docs_versions.html" %}
         {% include "includes/docs_navigation.html" %}
       </nav>
 
