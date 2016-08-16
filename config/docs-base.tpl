@@ -19,8 +19,6 @@
           %%CONTENT%%
         </div>
       </main>
-      <aside class="toc">
-      </aside>
     </div>
 
     {% include "includes/footer.html" %}
