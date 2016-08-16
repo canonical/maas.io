@@ -45,6 +45,10 @@
   ul li:after {
     height: 2.25em;
   }
+
+  .collapsed, .expanded {
+    cursor: pointer;
+  }
 }
 
 .documentation__contents, .documentation__contents.inner-wrapper {
