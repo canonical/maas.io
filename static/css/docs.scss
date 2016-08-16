@@ -24,6 +24,10 @@
   max-width: 100%;
 }
 
+.documentation__content {
+  display: flex;
+}
+
 // Import normal site header & footer
 // ===
 @import '../../node_modules/cloud-vanilla-theme/scss/build';
