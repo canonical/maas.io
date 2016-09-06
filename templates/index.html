@@ -1,9 +1,4 @@
 {% extends "base_index.html" %} {% block page_class %}homepage{% endblock %} {% block page-title %}| Home{% endblock %} {% block head-extra %}
-<script src="https://www.google.com/jsapi"></script>
-<script>
-	google.load("feeds", "1");
-
-</script>
 {% endblock %} {% block content %}
 	<!-- Hero banner -->
 	<section class="row row-hero">
@@ -57,50 +52,6 @@
 			</div>
 		</div>
 	</section>
-	<section class="row strip-white">
-		<div class="inner-wrapper padding-top--30">
-			<div class="six-col padding-bottom--30">
-				<h2>The smartest way to manage
-					<br /> bare metal</h2>
-				<p>MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer. Setup the RAID and Network configuration you want through the MAAS web UI or CLI, then press a button and come back in minutes to a fully-deployed
-					OS.
-				</p>
-				<p>MAAS is designed for devops at scale, in places where bare metal is the best way to run your app. Big data, private cloud, PAAS and HPC all thrive on MAAS.</p>
-			</div>
-			<div class="six-col last-col">
-				<ul class="inline-logos">
-					<li>
-						<img src="https://assets.ubuntu.com/v1/c037fd75-ubuntu-logo.png" width="150" alt="Ubuntu logo">
-					</li>
-					<li>
-						<img src="https://assets.ubuntu.com/v1/30574235-windows-logo.svg" width="120" alt="Windows logo">
-					</li>
-					<li class="last-item">
-						<img src="https://assets.ubuntu.com/v1/c69a8b3c-centos-logo.png" width="150" alt="CentOS logo">
-					</li>
-					<li>
-						<img src="https://assets.ubuntu.com/v1/eda6b94a-redhat-logo.svg" width="140" alt="Redhat logo">
-					</li>
-					<li>
-						<img src="https://assets.ubuntu.com/v1/6697a21a-suse-logo.png" width="100" alt="Suse logo">
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section class="row strip-white border--bottom">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
-				<img class="image--shadow" src="/static/media/screen-grabs/homepage-ui2.gif" alt="MAAS Node listing">
-			</div>
-			<div class="twelve-col align-center">
-				<p class="align-center">
-					<a href="/tour" class="button--primary button--large">Take the tour</a>
-				</p>
-			</div>
-		</div>
-	</section>
-
 	<section class="row strip-white">
 		<div class="inner-wrapper padding-top--30">
 			<div class="six-col padding-bottom--30">
@@ -259,7 +210,10 @@
 				<h2>The latest MAAS news</h2>
 			</div>
 			<div id="insights-cloud-feed"></div>
-			<script>
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script type="text/javascript">
+				google.load("feeds", "1");
+
 				var feedcontainer = document.getElementById("insights-cloud-feed");
 				var feedurl = document.location.protocol + "//insights.ubuntu.com/feed/?tag=maas";
 				var feedlimit = 3;
@@ -291,10 +245,7 @@
 						console.warn("An error occurred while fetching rss");
 					}
 				}
-
-				window.onload = function() {
-					rssfeedsetup();
-				}
+				google.setOnLoadCallback(rssfeedsetup);
 
 			</script>
 			<p><a href="http://insights.ubuntu.com/tag/maas" class="external">More MAAS news from Ubuntu Insights</a></p>
