@@ -1,9 +1,4 @@
 {% extends "base_index.html" %} {% block page_class %}homepage{% endblock %} {% block page-title %}| Home{% endblock %} {% block head-extra %}
-<script src="https://www.google.com/jsapi"></script>
-<script>
-	google.load("feeds", "1");
-
-</script>
 {% endblock %} {% block content %}
 	<!-- Hero banner -->
 	<section class="row row-hero">
@@ -215,7 +210,10 @@
 				<h2>The latest MAAS news</h2>
 			</div>
 			<div id="insights-cloud-feed"></div>
-			<script>
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script type="text/javascript">
+				google.load("feeds", "1");
+
 				var feedcontainer = document.getElementById("insights-cloud-feed");
 				var feedurl = document.location.protocol + "//insights.ubuntu.com/feed/?tag=maas";
 				var feedlimit = 3;
@@ -247,10 +245,7 @@
 						console.warn("An error occurred while fetching rss");
 					}
 				}
-
-				window.onload = function() {
-					rssfeedsetup();
-				}
+				google.setOnLoadCallback(rssfeedsetup);
 
 			</script>
 			<p><a href="http://insights.ubuntu.com/tag/maas" class="external">More MAAS news from Ubuntu Insights</a></p>
