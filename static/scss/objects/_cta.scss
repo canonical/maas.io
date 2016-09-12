@@ -21,9 +21,8 @@
       }
     }
 
-
-    @media only screen and (min-width : 768px) {
-      &__link {
+    &__link {
+      @media only screen and (min-width : 768px) {
         float: left;
       }
     }
