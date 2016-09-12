@@ -1,0 +1,30 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// CTA strip styles
+/// @group CTA styles
+@mixin maas-cta {
+  .cta {
+    @media only screen and (max-width : 769px) {
+      margin-bottom: 0;
+    }
+
+    &__text {
+      line-height: 1.5;
+      margin-right: 30px;
+    }
+
+
+    @media only screen and (min-width : 768px) {
+      &__text {
+        float: left;
+      }
+      &__link {
+        float: left;
+      }
+    }
+  }
+}
