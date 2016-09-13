@@ -9,8 +9,8 @@
         <div class="seven-col">
             <div class="align-vertically">
                 <h1>How it works</h1>
-                <p>MAAS has a tiered architecture with a central postgres database backing a &lsquo;region and rackd&rsquo; that deals with operator requests. Distributed gateways provide high-bandwidth services to multiple racks. The controller itself is stateless and horizontally scalable, presenting only a REST API.</p>
-                <p>Rackd provide DHCP, IPMI, PXE, TFTP and other local services. They cache large items like operating system install images at the rack level for performance but maintain no exclusive state other than credentials to talk to the controller.</p>
+                <p>MAAS has a tiered architecture with a central postgres database backing a &lsquo;regiond and rackd&rsquo; that deals with operator requests. Distributed gateways provide high-bandwidth services to multiple racks. The controller itself is stateless and horizontally scalable, presenting only a REST API.</p>
+                <p>Rackd provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, <abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Preboot Execution Environment">PXE</abbr>, <abbr title="Trivial File Transfer Protocol">TFTP</abbr> and other local services. They cache large items like operating system install images at the rack level for performance but maintain no exclusive state other than credentials to talk to the controller.</p>
             </div>
         </div>
         <div class="five-col last-col">
@@ -39,7 +39,7 @@
     <div class="inner-wrapper equal-height">
         <div class="eight-col">
             <h2>Protocols</h2>
-            <p>MAAS uses standard server BMC and NIC services such as IPMI and PXE to control the machines in your data centre. For converged infrastructure, MAAS talks to the chassis controller of the rack or hyperscale chassis such as Cisco UCS or HP Moonshot. Custom plugins extend MAAS for alternative BMC protocols.</p>
+            <p>MAAS uses standard server <abbr title="Baseboard Management Controller">BMC</abbr> and <abbr title="Network Interface Controller">NIC</abbr> services such as IPMI and PXE to control the machines in your data centre. For converged infrastructure, MAAS talks to the chassis controller of the rack or hyperscale chassis such as Cisco UCS or HP Moonshot. Custom plugins extend MAAS for alternative BMC protocols.</p>
             <p>Initial machine inventory and commissioning is done from an ephemeral Ubuntu image that works across all major servers from all major vendors. It is possible to add custom scripts for firmware updates and reporting.</p>
         </div>
         <div class="prepend-one three-col last-col">
@@ -72,9 +72,9 @@
             <p>Each machine (&ldquo;node&rdquo;) managed by MAAS goes through a lifecycle &mdash; from its enlistment or onboarding to MAAS, through commissioning when we inventory and can setup firmware or other hardware-specific elements, then allocation to a user and deployment, and finally they are released back to the pool or retired altogether.</p>
         </div>
         <div class="equal-height">
-            <div class="five-col">
+            <div class="five-col not-for-medium">
                 <div class="align-vertically">
-                    <img src="https://assets.ubuntu.com/v1/b2cec06d-maas.io-node-lifecycle.svg" class="not-for-small padding-right--20" alt="Node lifecycle chart" />
+                    <img src="https://assets.ubuntu.com/v1/b2cec06d-maas.io-node-lifecycle.svg" class="padding-right--20" alt="Node lifecycle chart" />
                 </div>
             </div>
             <div class="seven-col last-col">
@@ -103,13 +103,18 @@
                     <p>When a user has finished with the machine, they can release it back to the shared pool of capacity. You can ask MAAS to ensure that there is a full disk-wipe of the machine when that happens.</p>
                 </div>
             </div>
+            <div class="five-col">
+              {% comment %}
+                Empty div stops flexbox breaking column widths at medium viewport
+              {% endcomment %}
+            </div>
         </div>
     </div>
 </section>
 <section class="row strip-dark">
     <div class="inner-wrapper">
         <div class="twelve-col cta">
-            <h3 class="cta__text">MAAS is a bare-metal server provisioning tool. It is open source and free to use!</h3>
+            <h3 class="cta__text">MAAS is a bare-metal server provisioning tool. It is open source and free to use.</h3>
             <a href="/get-started" class="button--primary cta__link">Get started</a>
         </div>
     </div>
