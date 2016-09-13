@@ -9,8 +9,8 @@
         <div class="seven-col">
             <div class="align-vertically">
                 <h1>How it works</h1>
-                <p>MAAS has a tiered architecture with a central postgres database backing a &lsquo;regiond and rackd&rsquo; that deals with operator requests. Distributed gateways provide high-bandwidth services to multiple racks. The controller itself is stateless and horizontally scalable, presenting only a REST API.</p>
-                <p>Rackd provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, <abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Preboot Execution Environment">PXE</abbr>, <abbr title="Trivial File Transfer Protocol">TFTP</abbr> and other local services. They cache large items like operating system install images at the rack level for performance but maintain no exclusive state other than credentials to talk to the controller.</p>
+                <p>MAAS has a tiered architecture with a central postgres database backing a &lsquo;Region Controller (regiond)&rsquo; that deals with operator requests. Distributed gateways provide high-bandwidth services to multiple racks. The controller itself is stateless and horizontally scalable, presenting only a REST API.</p>
+                <p>Rack Controller (rackd) provides <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, <abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Preboot Execution Environment">PXE</abbr>, <abbr title="Trivial File Transfer Protocol">TFTP</abbr> and other local services. They cache large items like operating system install images at the rack level for performance but maintain no exclusive state other than credentials to talk to the controller.</p>
             </div>
         </div>
         <div class="five-col last-col">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="twelve-col">
                     <h3>Ready</h3>
-                    <p>A machine that is successfully commissioned is considered &ldquo;Ready&rdquo;. It will have configured BMC credentials for ongoing  power control, ensuring that MAAS can start or stop the machine. And the ability to allocate or (re)deploy it with a fresh operating system.</p>
+                    <p>A machine that is successfully commissioned is considered &ldquo;Ready&rdquo;. It will have configured BMC credentials (on IPMI based BMCs) for ongoing  power control, ensuring that MAAS can start or stop the machine and allocate or (re)deploy it with a fresh operating system.</p>
                 </div>
                 <div class="twelve-col">
                     <h3>Allocated</h3>
