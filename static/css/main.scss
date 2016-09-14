@@ -15,6 +15,7 @@
 @import '../scss/generic/modal';
 @import '../scss/generic/vertical-divider';
 @import '../scss/objects/box';
+@import '../scss/objects/cta';
 @import '../scss/objects/documentation';
 @import '../scss/objects/instructions';
 @import '../scss/objects/pricing';
@@ -23,6 +24,7 @@
 @include cloud-vanilla-theme;
 @include maas-buttons;
 @include maas-box;
+@include maas-cta;
 @include maas-documentation;
 @include maas-equal-height;
 @include maas-footer;

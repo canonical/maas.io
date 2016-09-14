@@ -8,13 +8,20 @@
 /// @group main
 @mixin maas-main {
   html {
-    background-color: $white;  
+    background-color: $white;
   }
 
   .gigantic {
     font-size: 90px;
   }
+
   .mega {
     font-size: 45px;
+  }
+
+  @media only screen and (max-width : 984px) {
+    .not-for-medium {
+      display: none !important;
+    }
   }
 }
