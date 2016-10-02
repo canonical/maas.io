@@ -1,0 +1,3 @@
+docs/?: /docs/en/
+docs/en/index(.html)?: /docs/en/
+docs/(en|(?P<docs>[^/]*)): /docs/en/{docs}
