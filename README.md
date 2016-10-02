@@ -31,7 +31,7 @@ and the [wrapper.jinja2](config/wrapper.jinja2) template.
 Build the docs:
 
 ``` bash
-pip3 install documentation-builder
+pip3 install ubuntudesign.documentation-builder
 make docs
 ```
 
