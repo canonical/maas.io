@@ -85,7 +85,7 @@ docs:
 	  --repository git@github.com:canonicalltd/maas-docs.git \
 	  --media-url /static/docs \
 	  --output-media-path static/docs \
-	  --template-path config/wrapper.jinja2 \
+	  --template-path config/docs-wrapper.jinja2 \
 	  --output-path templates/docs \
 	  --no-link-extensions
 
