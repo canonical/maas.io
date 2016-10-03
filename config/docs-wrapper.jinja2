@@ -78,7 +78,9 @@
           {% for item in navigation %}
           <li>
             {% if item.location %}
-            <a href="{{ item.location | replace('.html', '') }}">{{ item.title }}</a>
+            <a href="{{ item.location if '//' in item.location else item.location | replace('.html', '') }}">
+              {{ item.title }}
+            </a>
             {% else %}
             <h4 class="header toggle-target">{{ item.title }}</h4>
             {% endif %}
@@ -88,7 +90,9 @@
               {% for child in item.children %}
               <li class"section">
                 {% if child.location %}
-                <a class"header" href="{{ child.location | replace('.html', '') }}">{{ child.title }}</a>
+                <a class"header" href="{{ child.location if '//' in child.location else child.location | replace('.html', '') }}">
+                  {{ child.title }}
+                </a>
                 {% else %}
                 {{ child.title }}
                 {% endif %}
@@ -96,7 +100,11 @@
                 {% if child.children %}
                 <ul>
                   {% for grandchild in child.children %}
-                  <li><a href="{{ grandchild.location | replace('.html', '') }}">{{ grandchild.title }}</a></li>
+                  <li>
+                    <a href="{{ grandchild.location if '//' in grandchild.location else grandchild.location | replace('.html', '') }}">
+                      {{ grandchild.title }}
+                    </a>
+                  </li>
                   {% endfor %}
                 </ul>
                 {% endif %}
