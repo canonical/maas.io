@@ -152,14 +152,19 @@
 
           if (! heading) {continue;}
 
-          var section = 'docs/' + heading.innerText.toLowerCase().substring(0,4)
+          var section = 'docs/en/' + heading.innerText.toLowerCase().substring(0,4);
 
           // For lists with child lists, add expand/collapse functionality
           if (item.querySelector('ul')) {
-            if (currentPath.startsWith(section)) {
-                item.classList.add('expanded');
+            if (
+              currentPath.startsWith(section) ||
+              currentPath == 'docs/en' && section == 'docs/en/intr'
+            ) {
+              item.classList.add('expanded');
+              item.classList.remove('collapsed');
             } else {
-                item.classList.add('collapsed');
+              item.classList.add('collapsed');
+              item.classList.remove('expanded');
             }
 
             heading = item.querySelector('h4');
@@ -175,7 +180,7 @@
             link = links[linkNum];
 
             // Get paths, removing leading and trailing slashes for consistency
-            linkPath = link.pathname.replace(/(^\/|\/$)/g, "") + link.hash;
+            linkPath = link.pathname.replace(/(^\/|\/(index)?$)/g, "") + link.hash;
 
             // Make current navigation item appear active
             // @TODO: Replace this with a static JS-less solution
