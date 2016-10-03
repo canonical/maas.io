@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Canonical webteam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+    <title itemprop="name">MAAS {% block page_title %}| {{ title }}{% endblock %}</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/docs.css" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ubuntucloud">
+    <meta name="twitter:creator" content="@ubuntucloud">
+    <meta name="twitter:domain" content="maas.io">
+    <meta name="twitter:title" content="Metal as a Service | MAAS">
+    <meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
+    <meta name="twitter:image" content="https://assets.ubuntu.com/v1/6c4a1064-maas-twitter-logo.jpg">
+  </head>
+
+  <body>
+    <!-- google tag manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K92JCQ"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+      dataLayer = [];
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K92JCQ');
+    </script>
+    <!-- end google tag manager -->
+
+    <header class="banner global" role="banner">
+      <nav role="navigation" class="nav-primary nav-right" id="nav">
+        <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
+        <div class="logo">
+          <a href="/">
+            <img src="/static/img/maas-logo.png" alt="MAAS" />
+          </a>
+        </div>
+        <ul>
+          <li><a href="/get-started" {% if level_1 == 'get-started' %} class="active"{% endif %}>Get started</a></li>
+          <li><a href="/how-it-works" {% if level_1 == 'how-it-works' %} class="active"{% endif %}>How it works</a></li>
+          <li><a href="/tour" {% if level_1 == 'tour' %} class="active"{% endif %}>Tour</a></li>
+          <li><a href="/docs" {% if level_1 == 'docs' %} class="active"{% endif %}>Docs</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle">
+        <a href="#nav" class="nav-toggle__link open"></a>
+        <a href="#" class="nav-toggle__link close"></a>
+      </div>
+    </header>
+
+    <div class="wrapper documentation__wrapper">
+      <nav class="documentation__nav" id="section-nav">
+        <section class="documentation__jump">
+          <a href="#">Back to top</a>
+        </section>
+
+        <section class="documentation__versions">
+          <h4>Versions</h4>
+
+          <ul>
+            <li><a class="active" href="/docs">2.0</a></li>
+            <li><a class="external" href="http://maas.ubuntu.com/docs1.9/">1.9</a></li>
+            <li><a class="external" href="http://maas.ubuntu.com/docs1.7/">1.7</a></li>
+            <li><a class="external" href="http://maas.ubuntu.com/docs1.5/">1.5</a></li>
+          </ul>
+        </section>
+
+        <ul>
+          {% for item in navigation %}
+          <li>
+            {% if item.location %}
+            <a href="{{ item.location | replace('.html', '') }}">{{ item.title }}</a>
+            {% else %}
+            <h4 class="header toggle-target">{{ item.title }}</h4>
+            {% endif %}
+
+            {% if item.children %}
+            <ul>
+              {% for child in item.children %}
+              <li class"section">
+                {% if child.location %}
+                <a class"header" href="{{ child.location | replace('.html', '') }}">{{ child.title }}</a>
+                {% else %}
+                {{ child.title }}
+                {% endif %}
+
+                {% if child.children %}
+                <ul>
+                  {% for grandchild in child.children %}
+                  <li><a href="{{ grandchild.location | replace('.html', '') }}">{{ grandchild.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <script>
+        /**
+         * Polyfills:
+         *
+         * Element.classList requires polyfill for IE 8&9
+         * String.startsWith requires polyfill for all IEs
+         * Element.addEventListener requires polyfill for IE8
+         */
+
+        /* Element.prototype.classList polyfill, by Eli Grey, http://eligrey.com
+         * https://github.com/eligrey/classList.js */
+        if("document"in self){if(!("classList"in document.createElement("_"))||document.createElementNS&&!("classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))){(function(t){"use strict";if(!("Element"in t))return;var e="classList",i="prototype",n=t.Element[i],s=Object,r=String[i].trim||function(){return this.replace(/^\s+|\s+$/g,"")},a=Array[i].indexOf||function(t){var e=0,i=this.length;for(;e<i;e++){if(e in this&&this[e]===t){return e}}return-1},o=function(t,e){this.name=t;this.code=DOMException[t];this.message=e},l=function(t,e){if(e===""){throw new o("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(e)){throw new o("INVALID_CHARACTER_ERR","String contains an invalid character")}return a.call(t,e)},c=function(t){var e=r.call(t.getAttribute("class")||""),i=e?e.split(/\s+/):[],n=0,s=i.length;for(;n<s;n++){this.push(i[n])}this._updateClassName=function(){t.setAttribute("class",this.toString())}},u=c[i]=[],f=function(){return new c(this)};o[i]=Error[i];u.item=function(t){return this[t]||null};u.contains=function(t){t+="";return l(this,t)!==-1};u.add=function(){var t=arguments,e=0,i=t.length,n,s=false;do{n=t[e]+"";if(l(this,n)===-1){this.push(n);s=true}}while(++e<i);if(s){this._updateClassName()}};u.remove=function(){var t=arguments,e=0,i=t.length,n,s=false,r;do{n=t[e]+"";r=l(this,n);while(r!==-1){this.splice(r,1);s=true;r=l(this,n)}}while(++e<i);if(s){this._updateClassName()}};u.toggle=function(t,e){t+="";var i=this.contains(t),n=i?e!==true&&"remove":e!==false&&"add";if(n){this[n](t)}if(e===true||e===false){return e}else{return!i}};u.toString=function(){return this.join(" ")};if(s.defineProperty){var h={get:f,enumerable:true,configurable:true};try{s.defineProperty(n,e,h)}catch(d){if(d.number===-2146823252){h.enumerable=false;s.defineProperty(n,e,h)}}}else if(s[i].__defineGetter__){n.__defineGetter__(e,f)}})(self)}else{(function(){"use strict";var t=document.createElement("_");t.classList.add("c1","c2");if(!t.classList.contains("c2")){var e=function(t){var e=DOMTokenList.prototype[t];DOMTokenList.prototype[t]=function(t){var i,n=arguments.length;for(i=0;i<n;i++){t=arguments[i];e.call(this,t)}}};e("add");e("remove")}t.classList.toggle("c3",false);if(t.classList.contains("c3")){var i=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(t,e){if(1 in arguments&&!this.contains(t)===!e){return e}else{return i.call(this,t)}}}t=null})()}}
+
+        /* Element.prototype.addEventListener (https://gist.github.com/jonathantneal/3748027) */
+        !window.addEventListener&&function(e,t,n,r,i,s,o){e[r]=t[r]=n[r]=function(e,t){var n=this;o.unshift([n,e,t,function(e){e.currentTarget=n,e.preventDefault=function(){e.returnValue=!1},e.stopPropagation=function(){e.cancelBubble=!0},e.target=e.srcElement||n,t.call(n,e)}]),this.attachEvent("on"+e,o[0][3])},e[i]=t[i]=n[i]=function(e,t){for(var n=0,r;r=o[n];++n)if(r[0]==this&&r[1]==e&&r[2]==t)return this.detachEvent("on"+e,o.splice(n,1)[0][3])},e[s]=t[s]=n[s]=function(e){return this.fireEvent("on"+e.type,e)}}(Window.prototype,HTMLDocument.prototype,Element.prototype,"addEventListener","removeEventListener","dispatchEvent",[])
+
+        /* String.prototype.startsWith polyfill, by Mathius Bynens, https://mathiasbynens.be/
+         * https://github.com/mathiasbynens/String.prototype.startsWith */
+        String.prototype.startsWith||!function(){"use strict";var t=function(){try{var t={},r=Object.defineProperty,e=r(t,t,t)&&r}catch(n){}return e}(),r={}.toString,e=function(t){if(null==this)throw TypeError();var e=String(this);if(t&&"[object RegExp]"==r.call(t))throw TypeError();var n=e.length,i=String(t),a=i.length,o=arguments.length>1?arguments[1]:void 0,h=o?Number(o):0;h!=h&&(h=0);var u=Math.min(Math.max(h,0),n);if(a+u>n)return!1;for(var g=-1;++g<a;)if(e.charCodeAt(u+g)!=i.charCodeAt(g))return!1;return!0};t?t(String.prototype,"startsWith",{value:e,configurable:!0,writable:!0}):String.prototype.startsWith=e}();
+
+
+        function expandCollapse(clickEvent) {
+          var heading = clickEvent.target;
+          var item = heading.parentNode;
+          collapsed = ! item.classList.toggle('expanded');
+          item.classList.toggle('collapsed', collapsed);
+        }
+
+        var items = document.querySelectorAll('.documentation__nav>ul>li');
+
+        var currentPath = location.pathname.replace(/(^\/|\/$)/g, "") + location.hash;
+
+        // Expand first item if we're on landing page
+        if (currentPath == 'docs/' || currentPath == 'docs') {
+          items[0].classList.add('expanded');
+        }
+
+        for(var num = 0; num < items.length; num++) {
+          var item = items[num];
+          var heading = item.querySelector('h4');
+
+          if (! heading) {continue;}
+
+          var section = 'docs/' + heading.innerText.toLowerCase().substring(0,4)
+
+          // For lists with child lists, add expand/collapse functionality
+          if (item.querySelector('ul')) {
+            if (currentPath.startsWith(section)) {
+                item.classList.add('expanded');
+            } else {
+                item.classList.add('collapsed');
+            }
+
+            heading = item.querySelector('h4');
+
+            if (heading && heading.parentNode == item) {
+              heading.addEventListener('click', expandCollapse);
+            }
+          }
+
+          var links = item.querySelectorAll('[href]');
+
+          for(var linkNum = 0; linkNum < links.length; linkNum++) {
+            link = links[linkNum];
+
+            // Get paths, removing leading and trailing slashes for consistency
+            linkPath = link.pathname.replace(/(^\/|\/$)/g, "") + link.hash;
+
+            // Make current navigation item appear active
+            // @TODO: Replace this with a static JS-less solution
+            //        once we have a more intelligent
+            //        docs navigation mechanism.
+            if (linkPath == currentPath) {
+                link.classList.add('active');
+            }
+          }
+        }
+      </script>
+
+      <section class="documentation__jump">
+        <a href="#section-nav">Jump to section navigation</a>
+      </section>
+
+      <main id="main-content" class="inner-wrapper documentation__contents">
+        <div class="row">
+          {{ content }}
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer clearfix">
+      <div class="inner-wrapper">
+        <div class="footer__col">
+          <div class="four-col">
+            <h3 class="footer__title">MAAS</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link" href="/">Home</a>
+              </li>
+              <li>
+                <a class="footer__link" href="/get-started">Get started</a>
+              </li>
+              <li>
+                <a class="footer__link" href="/docs">Docs</a>
+              </li>
+              <li>
+                <a class="footer__link" href="/tour">Tour</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__col">
+          <div class="four-col">
+            <h3 class="footer__title">Need help?</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link external" href="http://askubuntu.com/">Ask Ubuntu</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="https://launchpad.net/~maas-devel">Join the mailing list</a>
+              </li>
+              <li>
+                <a href="/contact-us" class="footer__link">Commercial support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="four-col last-col">
+            <h3 class="footer__title">Contribute</h3>
+            <ul class="no-bullets">
+              <li>
+                <a class="footer__link external" href="https://launchpad.net/maas">Launchpad</a>
+              </li>
+              <li>
+                <a class="footer__link external" href="http://maas.ubuntu.com/docs">Docs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <nav id="main-navigation" role="navigation" class="inner-wrapper clearfix">
+        <div class="footer__legal clearfix has-cookie">
+            <p class="twelve-col footer__legal-text">© 2015 Canonical Ltd. <a href="http://www.ubuntu.com">Ubuntu</a> and <a href="http://www.canonical.com">Canonical</a> are registered trademarks of Canonical Ltd.</p>
+            <ul class="twelve-col inline-list footer__bullets clear">
+              <li class="footer__bullets-item">
+                <a class="footer__link" href="http://www.ubuntu.com/legal"><small>Legal information</small></a>
+              </li>
+              <li class="footer__bullets-item">
+                <a class="footer__link" href="https://github.com/ubuntudesign/maas.io/issues"><small>Report a bug on this site</small></a>
+              </li>
+            </ul>
+            <span class="accessibility-aid"><a class="footer__link" href="#">Got to the top of the page</a></span>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>

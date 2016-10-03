@@ -81,51 +81,13 @@ dev-server:
 # Pull and build docs from maas-docs repo
 ##
 docs:
-	@echo "- Creating tmp/ directory"
-	mkdir -p tmp
-
-	@echo "- Updating maas-docs repository"
-	if [ -d tmp/maas-docs ]; then cd tmp/maas-docs && git fetch origin && git reset --hard origin/master && git clean -fd; fi
-	if [ ! -d tmp/maas-docs ]; then git clone git@github.com:canonicalltd/maas-docs.git tmp/maas-docs; fi
-
-	@echo "- Remove all existing built docs and media files"
-	find static/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
-	find templates/docs/* ! -name 'README.md' -type f -exec rm -rf {} +
-
-	@echo "- Substitute our own base.tpl"
-	cp config/docs-base.tpl tmp/maas-docs/src/base.tpl
-
-	@echo "- Replace '../media' links with '/static/docs'"
-	find tmp/maas-docs/src/en -name '*.md' -exec sed -Ei -e "s~(\.\./|\./)+media/~/static/docs/~" {} \;
-
-	@echo "- Replace relative page links with '/docs/{page}'"
-	find tmp/maas-docs/src/en -name '*.md' -exec sed -Ei -e "s~\]\((.?./|/docs/)*([a-zA-Z][\.a-zA-Z/-]+).html~](/docs/\2~" {} \;
-
-	@echo "- Fix links in navigation"
-	sed -Ei -e "s|href=\" *([a-zA-Z0-9-]+).html|href=\"/docs/\1|" tmp/maas-docs/src/navigation.tpl
-	sed -Ei -e "s|href=\"http|class="external" href=\"http|" tmp/maas-docs/src/navigation.tpl
-
-	@echo "- Remove classes from navigation"
-	sed -Ei -e 's/class="[^"]+"//' tmp/maas-docs/src/navigation.tpl
-	sed -Ei -e 's~intro-about-maas.html~/docs/~' tmp/maas-docs/src/navigation.tpl
-
-	@echo "- Create landing page"
-	if [ ! -e tmp/maas-docs/src/en/index.md ] && [ -e tmp/maas-docs/src/en/intro-about-maas.md ]; then \
-		mv tmp/maas-docs/src/en/intro-about-maas.md tmp/maas-docs/src/en/index.md; \
-		find tmp/maas-docs/src -name '*.md' -o -name '*.tpl' -exec sed -Ei -e "s~/docs/intro-about-maas/?~/docs/~" {} \; ; \
-	fi
-
-	@echo "- Build the docs templates"
-	sh -c "python3 -m venv tmp/docs-env; . tmp/docs-env/bin/activate; pip3 install -r tmp/maas-docs/requirements.txt; make -C tmp/maas-docs build"
-
-	@echo "- Copy templates to templates/docs"
-	cp -r tmp/maas-docs/htmldocs/en/* templates/docs/.
-
-	@echo "- Copy media to static/docs"
-	cp -r tmp/maas-docs/media/* static/docs/.
-
-	@echo "- Copy navigation to /docs/_navigation.html"
-	cp tmp/maas-docs/src/navigation.tpl templates/includes/docs_navigation.html
+	documentation-builder \
+	  --repository git@github.com:canonicalltd/maas-docs.git \
+	  --media-url /static/docs \
+	  --output-media-path static/docs \
+	  --template-path config/docs-wrapper.jinja2 \
+	  --output-path templates/docs \
+	  --no-link-extensions
 
 ##
 # Build SASS
