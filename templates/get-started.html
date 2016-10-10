@@ -7,9 +7,7 @@
     <section class="row strip-white">
         <div class="inner-wrapper">
             <div class="seven-col append-one">
-                <h1>Get started</h1>
-                <h3>Why am I here?</h3>
-                <p itemprop="description">MAAS is a bare-metal server provisioning tool. It is open source and free to use, with commercial support available from Canonical. Follow the instructions below to download, configure and install MAAS.</p>
+                <h1>Get started with MAAS 2.0</h1>
             </div>
             <div class="four-col last-col box">
                 <h3>Talk to our experts</h3>
@@ -44,7 +42,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Download <a href="http://www.ubuntu.com/download/server" class="external">Ubuntu Server LTS</a> and follow the  step-by-step installation instructions on your MAAS server.</p>
+                <p><a href="http://www.ubuntu.com/download/server" class="external">Download Ubuntu Server 16.04 LTS</a> and follow the  step-by-step installation instructions on your MAAS server. </p>
             </div>
         </div>
     </section>
@@ -67,11 +65,6 @@
                     <input class="command-line__input" value="sudo apt-get install maas" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
-                <p>If you want to  stay up to date with the latest version of MAAS, add the MAAS PPA.</p>
-                <p class="command-line">
-                    <input class="command-line__input" value="sudo add-apt-repository ppa:maas/stable" readonly="readonly">
-                    <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
-                </p>
             </div>
         </div>
     </section>
@@ -88,7 +81,7 @@
             <div class="seven-col last-col instruction__details">
                 <p>Create your admin credentials by typing.</p>
                 <p class="command-line">
-                    <input class="command-line__input" value="sudo maas-region-admin createadmin" readonly="readonly">
+                    <input class="command-line__input" value="sudo maas createadmin" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
                 <p>Login to the MAAS UI at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
@@ -102,17 +95,17 @@
                     <span class="instruction__step">5</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Turn on DHCP and DNS</h3>
+                    <h3 class="instruction__title">Turn on DHCP</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the “Clusters” tab, open the “Cluster master” link, hover over the row for the interface that is connected to the private network and select the edit icon.</p>
+                <p>Go to the &ldquo;Networks&rdquo; tab, and select the VLAN for which you want to enable DHCP, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide DHCP&rdquo;.</p>
                 <ol>
-                    <li>Set this interface to manage DHCP and DNS</li>
-                    <li>Set the “Router IP” to the default gateway</li>
-                    <li>Fill in details for the dynamic and static ranges.</li>
+                    <li>Set the Rack controller that will manage DHCP.</li>
+                    <li>Select the subnet where to create the DHCP Dynamic range on.</li>
+                    <li>Fill in details for the dynamic range.</li>
                 </ol>
-                <img src="/static/media/screen-grabs/get-started/clusters.png" alt="MAAS Clusters">
+                <img src="https://assets.ubuntu.com/v1/ab018774-vlan-details.png" class="image--shadow" alt="VLAN details">
             </div>
         </div>
     </section>
@@ -127,8 +120,8 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the “Images” tab and choose the OS releases and architectures you want to install dynamically.</p>
-                <img src="/static/media/screen-grabs/get-started/images.png" alt="MAAS Images">
+                <p>Go to the &ldquo;Images&rdquo; tab and choose the OS releases and architectures you want to install dynamically.</p>
+                <img src="https://assets.ubuntu.com/v1/0d6e71e1-boot-images.png" class="image--shadow" alt="MAAS Images">
             </div>
         </div>
     </section>
@@ -147,11 +140,11 @@
                 <ol>
                     <li>Set all the servers to PXE boot</li>
                     <li>Boot each machine once. You should see these machines appear in MAAS</li>
-                    <li>Edit the nodes and enter the BMC details</li>
-                    <li>Select all the machines and “Commission” them using the “Take action” button</li>
+                    <li>If your machines do not have a IPMI based BMC, proceed to edit them and enter their BMC details</li>
+                    <li>Select all the machines and &ldquo;Commission&rdquo; them using the &ldquo;Take action&rdquo; button</li>
                     <li>When machines have a “Ready” status you can start deploying</li>
                 </ol>
-                <img src="/static/media/screen-grabs/get-started/list.png" alt="MAAS node listing">
+                <img src="https://assets.ubuntu.com/v1/cdc79a2b-node-listing.png" class="image--shadow" alt="MAAS node listing">
             </div>
         </div>
     </section>
