@@ -81,13 +81,7 @@ dev-server:
 # Pull and build docs from maas-docs repo
 ##
 docs:
-	documentation-builder \
-	  --repository git@github.com:canonicalltd/maas-docs.git \
-	  --media-url /static/docs \
-	  --output-media-path static/docs \
-	  --template-path config/docs-wrapper.jinja2 \
-	  --output-path templates/docs \
-	  --no-link-extensions
+	./import-docs
 
 ##
 # Build SASS

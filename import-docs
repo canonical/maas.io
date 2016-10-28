@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+maas_dir=`mktemp -u XXX-maas-docs`
+git clone http://github.com/canonicalltd/maas-docs.git ${maas_dir}
+documentation-builder --base-directory ${maas_dir}  \
+					  --media-url /static/docs \
+					  --output-media-path static/docs \
+					  --template-path config/docs-wrapper.jinja2 \
+					  --output-path templates/docs \
+					  --no-link-extensions
+#rm -rf ${maas_dir}
+
