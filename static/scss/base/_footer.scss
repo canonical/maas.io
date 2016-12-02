@@ -23,7 +23,7 @@
       color: $cool-grey;
 
       &.external {
-        background-image: url('../img/icons/external-link-footer.svg');
+        background-image: url('https://assets.ubuntu.com/v1/769fa468-external-link-footer.svg');
       }
 
       &:hover {
@@ -46,7 +46,7 @@
       }
 
       @media only screen and (min-width: 768px) {
-        background: url('../media/logos/logo-ubuntu-grey.png') 100% 20px no-repeat;
+        background: url('https://assets.ubuntu.com/v1/aa68c005-logo-ubuntu-grey.png') 100% 20px no-repeat;
       }
 
       .footer__legal-text {
