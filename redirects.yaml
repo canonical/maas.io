@@ -1,3 +1,3 @@
-docs/?: /docs/en/
-docs/en/index(.html)?: /docs/en/
-docs/(en|(?P<docs>[^/]*)): /docs/en/{docs}
+docs(/en/?)?: http://docs.ubuntu.com/maas/2.1/en/
+docs/en/(?P<docs>[^/]*): http://docs.ubuntu.com/maas/2.1/en/{docs}
+
