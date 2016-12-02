@@ -1,4 +1,12 @@
 .bzr/
+*.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 *.css
 *.pyc
 db.sqlite3
