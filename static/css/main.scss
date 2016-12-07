@@ -22,6 +22,10 @@
 @import '../scss/objects/rowhero';
 
 @include cloud-vanilla-theme;
+
+// MAAS variables
+$asset-path: 'https://assets.ubuntu.com/v1/';
+
 @include maas-buttons;
 @include maas-box;
 @include maas-cta;

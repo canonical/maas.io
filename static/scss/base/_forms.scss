@@ -15,7 +15,7 @@
     clear: both;
     cursor: pointer;
     margin: 0;
-    background-image: url('https://assets.ubuntu.com/v1/04d2075a-accordion-open.svg');
+    background-image: url('#{$asset-path}04d2075a-accordion-open.svg');
     background-repeat: no-repeat;
     background-position: top 18px right 10px;
     background-color: $white;

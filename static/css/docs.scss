@@ -19,7 +19,7 @@
   }
 
   .external {
-    background-image: url('https://assets.ubuntu.com/v1/769fa468-dark-external-link.svg');
+    background-image: url('#{$asset-path}769fa468-dark-external-link.svg');
   }
 }
 

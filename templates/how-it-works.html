@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="five-col last-col">
-            <img src="https://assets.ubuntu.com/v1/e8471c6d-maas.io-how-it-works.svg" alt="MAAS structure diagram" />
+            <img src="{{ ASSET_SERVER_URL }}e8471c6d-maas.io-how-it-works.svg" alt="MAAS structure diagram" />
         </div>
     </div>
 </section>
@@ -26,7 +26,7 @@
             <p>MAAS is  mission critical service, providing infrastructure coordination upon which HPC and cloud infrastructures depend. High availability in the region controller is achieved at the database level. The region controller will automatically switch gateways to ensure high availability of services to network segments in the event of a rackd failure.</p>
         </div>
         <div class="twelve-col">
-            <img src="https://assets.ubuntu.com/v1/d788fae0-maas.io-high-availability.svg" class="padding-top--20 not-for-small" alt="High availability network diagram" />
+            <img src="{{ ASSET_SERVER_URL }}d788fae0-maas.io-high-availability.svg" class="padding-top--20 not-for-small" alt="High availability network diagram" />
         </div>
         <div class="eight-col">
             <p>Rackds are not in the primary data path, they are not routers or otherwise involved in the flow of data traffic, this diagram shows only the role that MAAS Rackds play in providing local services to racks, and the way in which they can cover for one another in the event of a failure.</p>
@@ -43,7 +43,7 @@
             <p>Initial machine inventory and commissioning is done from an ephemeral Ubuntu image that works across all major servers from all major vendors. It is possible to add custom scripts for firmware updates and reporting.</p>
         </div>
         <div class="prepend-one three-col last-col">
-            <img src="https://assets.ubuntu.com/v1/1e561874-maas.io-protocols.svg" class="not-for-small align-vertically" alt="" />
+            <img src="{{ ASSET_SERVER_URL }}1e561874-maas.io-protocols.svg" class="not-for-small align-vertically" alt="" />
         </div>
     </div>
 </section>
@@ -55,7 +55,7 @@
             <p>In keeping with the notion of a &lsquo;physical cloud&rsquo; MAAS lets you designate machines as belonging to a particular availability zone. It is typical to group sets of machines by rack or room or building into an availability zone based on common points of failure. The natural boundaries of a zone depend largely on the scale of deployment and the design of physical interconnects in the data centre.</p>
             <p>Nevertheless the effect is to be able to a scale-out service across multiple failure domains very easily, just as you would expect on a public cloud. Higher-level infrastructure offerings like OpenStack or Mesos can present that information to their API clients as well, enabling very straightforward deployment of sophisticated solutions from metal to container.</p>
             <div class="twelve-col">
-                <img src="https://assets.ubuntu.com/v1/d1dc00ae-maas.io-physical-availability-zones.svg" class="padding-top--20 not-for-small" alt="Availability zone diagram" />
+                <img src="{{ ASSET_SERVER_URL }}d1dc00ae-maas.io-physical-availability-zones.svg" class="padding-top--20 not-for-small" alt="Availability zone diagram" />
             </div>
             <p>The MAAS API allows for discovery of the zones in the region. Chef, Puppet, Ansible and Juju can transparently spread services across the available zones.</p>
             <p>Users can also specifically request machines in particular AZs.</p>
@@ -74,7 +74,7 @@
         <div class="equal-height">
             <div class="five-col not-for-medium">
                 <div class="align-vertically">
-                    <img src="https://assets.ubuntu.com/v1/b2cec06d-maas.io-node-lifecycle.svg" class="padding-right--20" alt="Node lifecycle chart" />
+                    <img src="{{ ASSET_SERVER_URL }}b2cec06d-maas.io-node-lifecycle.svg" class="padding-right--20" alt="Node lifecycle chart" />
                 </div>
             </div>
             <div class="seven-col last-col">
