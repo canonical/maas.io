@@ -1,3 +1,2 @@
-docs(/en/?)?: http://docs.ubuntu.com/maas/2.1/en/
-docs/en/(?P<docs>[^/]*): http://docs.ubuntu.com/maas/2.1/en/{docs}
-
+docs: http://docs.ubuntu.com/maas/2.1/en/
+docs/(?P<docs>.*): http://docs.ubuntu.com/maas/2.1/{docs}
