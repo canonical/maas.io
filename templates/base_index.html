@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Product">
-  {% include "includes/head.html" with css_file="css/main.css" %}
-
+  <head>
+    <title itemprop="name">MAAS {% block page-title %}{% endblock %}</title>
+    {% include "includes/head.html" with css_file="css/main.css" %}
+  </head>
   <body class="{% block page_class %}{% endblock %}">
     {% include "includes/tag_manager.html" %}
 
