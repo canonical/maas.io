@@ -28,7 +28,7 @@
       .expanded {
 
         h4 {
-          background: url("../img/icons/accordion-close.svg") no-repeat right center;
+          background: url("#{$asset-path}f3f43376-accordion-close.svg") no-repeat right center;
           background-position: right 20px center;
           cursor: pointer;
           color: $cool-grey;
@@ -43,7 +43,7 @@
       .collapsed {
 
         h4 {
-          background: url("../img/icons/accordion-open.svg") no-repeat right center;
+          background: url('#{$asset-path}04d2075a-accordion-open.svg') no-repeat right center;
           background-position: right 20px center;
           cursor: pointer;
           color: $warm-grey;
