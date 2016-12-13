@@ -16,7 +16,6 @@
 @import '../scss/generic/vertical-divider';
 @import '../scss/objects/box';
 @import '../scss/objects/cta';
-@import '../scss/objects/documentation';
 @import '../scss/objects/instructions';
 @import '../scss/objects/pricing';
 @import '../scss/objects/rowhero';
@@ -29,7 +28,6 @@ $asset-path: 'https://assets.ubuntu.com/v1/';
 @include maas-buttons;
 @include maas-box;
 @include maas-cta;
-@include maas-documentation;
 @include maas-equal-height;
 @include maas-footer;
 @include maas-forms;

@@ -78,12 +78,6 @@ dev-server:
 	${VEX} ./manage.py runserver_plus 0.0.0.0:${PORT}
 
 ##
-# Pull and build docs from maas-docs repo
-##
-docs:
-	./import-docs
-
-##
 # Build SASS
 ##
 sass:
