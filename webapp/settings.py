@@ -18,7 +18,10 @@ Django project settings
 SECRET_KEY = 'SECRET_KEY_INSECURE_PLACEHOLDER'  # !! CHANGE ME !!
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
-INSTALLED_APPS = ['django_versioned_static_url']
+INSTALLED_APPS = [
+    'django_versioned_static_url',
+    'webapp',
+]
 
 ALLOWED_HOSTS = ['*']
 
