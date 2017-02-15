@@ -1,5 +1,7 @@
 {% extends "base_index.html" %}
 
+{% load get_rss_feed from feeds %}
+
 {% block page_class %}homepage{% endblock %}
 {% block page-title %}| Metal as a Service{% endblock %}
 {% block head-extra %}
@@ -220,45 +222,19 @@
 			<div class="twelve-col">
 				<h2>The latest MAAS news</h2>
 			</div>
-			<div id="insights-cloud-feed"></div>
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script type="text/javascript">
-				google.load("feeds", "1");
-
-				var feedcontainer = document.getElementById("insights-cloud-feed");
-				var feedurl = document.location.protocol + "//insights.ubuntu.com/feed/?tag=maas";
-				var feedlimit = 3;
-				var rssoutput = "<div class='equal-height vertical-divider twelve-col'>";
-
-				function rssfeedsetup() {
-					var feedpointer = new google.feeds.Feed(feedurl); //Google Feed API method
-					feedpointer.setNumEntries(feedlimit); //Google Feed API method
-					feedpointer.load(displayfeed2); //Google Feed API method
-				}
-
-				function displayfeed2(result) {
-					if (!result.error) {
-						var thefeeds = result.feed.entries;
-						var lastClass = '';
-						for (var i = 0; i < thefeeds.length; i++) {
-							if (i != 0 && i % 2 == 0) {
-								lastClass = ' last-col';
-							}
-							var pubDate = thefeeds[i].publishedDate;
-							var date = new Date(pubDate);
-							var months = Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-							var thedate = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
-							rssoutput += "<article class='four-col" + lastClass + "'><h3><a class='external' href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></h3><footer><time pubdate datetime='" + pubDate + "'>" + thedate + "</time></footer></article>";
-						}
-						rssoutput += "</div>";
-						feedcontainer.innerHTML = rssoutput;
-					} else {
-						console.warn("An error occurred while fetching rss");
-					}
-				}
-				google.setOnLoadCallback(rssfeedsetup);
-
-			</script>
+			<div id="insights-cloud-feed">
+				<div class="equal-height vertical-divider twelve-col">
+					{% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
+					{% for item in insights_feed %}
+						<article class="four-col {% if forloop.last %}last-col{% endif %}">
+							<h3><a href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
+							<footer>
+								<time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
+							</footer>
+						</article>
+					{% endfor %}
+				</div>
+			</div>
 			<p><a href="http://insights.ubuntu.com/tag/maas" class="external">More MAAS news from Ubuntu Insights</a></p>
 		</div>
 	</section>
