@@ -81,7 +81,7 @@ dev-server:
 # Build SASS
 ##
 sass:
-	sass --style compressed --update static/css
+	sass -I node_modules --style compressed --update static/css
 
 ##
 # Run SASS watcher
@@ -89,7 +89,7 @@ sass:
 # - Auto-compiles SASS files to CSS on changes
 ##
 watch-sass:
-	sass --debug-info --watch static/css &
+	sass -I node_modules --debug-info --watch static/css &
 
 ##
 # Get virtualenv ready
