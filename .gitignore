@@ -20,3 +20,4 @@ django-error.log
 /node_modules/
 /tmp/
 cache.sqlite
+npm-debug.log
