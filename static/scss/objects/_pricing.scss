@@ -9,18 +9,26 @@
 @mixin maas-pricing {
   .pricing {
 
-    .pricing__option {
+    &__option {
       padding: 30px;
       border: 1px solid #d2d2d2;
       border-radius: 3px;
 
-      .pricing__option-title {
-        font-size: 1.75em;
+      &-title {
+        font-size: 1.25em;
         margin-bottom: 12px;
+
+        @media only screen and (min-width: $breakpoint-medium) {
+          font-size: 1.5em;
+        }
+
+        @media only screen and (min-width: $breakpoint-large) {
+          font-size: 1.75em;
+        }
       }
 
-      .pricing__option-cost {
-        font-size: 1.75em;
+      &-cost {
+        font-size: 1.25em;
         text-align: left;
         color: $cool-grey;
         font-weight: 300;
@@ -28,13 +36,21 @@
         padding-top: 12px;
         margin-top: 12px;
 
-        .pricing__option-unit {
-          font-size: .75em;
-          color: #666;
+        @media only screen and (min-width: $breakpoint-medium) {
+          font-size: 1.5em;
+        }
+
+        @media only screen and (min-width: $breakpoint-large) {
+          font-size: 1.75em;
         }
       }
 
-      .pricing__option-detail {
+      &-unit {
+        font-size: .75em;
+        color: #666;
+      }
+
+      &-detail {
         border-top: 1px solid #d2d2d2;
         padding: 15px 0 0;
         box-sizing: border-box;
