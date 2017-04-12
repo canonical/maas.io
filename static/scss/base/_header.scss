@@ -10,6 +10,10 @@
   .banner {
     box-shadow: none;
 
+    @media only screen and (min-width: $navigation-threshold) {
+      border-bottom: 0;
+    }
+
     .logo {
 
       img {

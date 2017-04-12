@@ -24,4 +24,8 @@
       display: none !important;
     }
   }
+
+  .external {
+    background-image: url('#{$asset-path}b2e7072f-external-link-blue.svg');
+  }
 }
