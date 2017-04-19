@@ -24,6 +24,8 @@
 
 // MAAS variables
 $asset-path: 'https://assets.ubuntu.com/v1/';
+$color-x-light: #fff;
+$color-light: #f7f7f7;
 
 @include maas-buttons;
 @include maas-box;

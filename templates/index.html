@@ -10,18 +10,18 @@
 {% block content %}
 	<!-- Hero banner -->
 	<section class="row row-hero">
-		<div class="inner-wrapper overflow-hidden">
-			<div class="row-hero__text row-hero__col eight-col margin-top--30 padding-top--30">
-				<h1>
-					<img src="{{ ASSET_SERVER_URL }}33b96a7f-maas-logo.svg" alt="" class="row-hero__logo" itemprop="image" />Metal as a Service
-					<br/>Say hello to your physical cloud</h1>
-				<p class="intro padding-bottom--30" itemprop="description">Total automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
-				<p>
-					<a href="/get-started" class="row-hero__cta button--positive button--inline-positive" itemprop="url">Get started</a>
-					<a class="row-hero__play venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/J1XH0SQARgo">
-						<img src="{{ ASSET_SERVER_URL }}9d9ceb09-video-play.svg" width="100" alt=""> Watch the video
-					</a>
-				</p>
+		<div class="inner-wrapper equal-height">
+			<div class="row-hero__text row-hero__col six-col">
+				<h2><img src="{{ ASSET_SERVER_URL }}33b96a7f-maas-logo.svg" alt="" class="row-hero__logo" itemprop="image" />Metal as a Service</h2>
+				<h1>Say hello to your physical cloud</h1>
+				<p class="row-hero__intro" itemprop="description">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
+				<div class="row-hero__button-group">
+					<a href="/get-started" class="row-hero__button button--positive button--inline-positive" itemprop="url">Install MAAS</a>
+					<a class="row-hero__button row-hero__button--video button--neutral button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/J1XH0SQARgo">Watch the video</a>
+				</div>
+			</div>
+			<div class="six-col last-col row-hero__image">
+				<img src="https://assets.ubuntu.com/v1/04f378fe-MAAS-hero-ui-image.png" alt="">
 			</div>
 		</div>
 	</section>
@@ -45,20 +45,6 @@
 					<li>Automatically enable remote access through SSH and Powershell</li>
 					<li>REST API, Web UI and CLI</li>
 				</ul>
-			</div>
-		</div>
-	</section>
-	<section class="row strip-white border--bottom">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
-				<img class="image--shadow"
-					 src="{{ ASSET_SERVER_URL }}9d549659-homepage-ui.gif"
-					 alt="MAAS Node listing">
-			</div>
-			<div class="twelve-col align-center">
-				<p class="align-center">
-					<a href="/tour" class="button--positive button--inline-positive button--large" itemprop="url">Take the tour</a>
-				</p>
 			</div>
 		</div>
 	</section>
