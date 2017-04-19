@@ -22,16 +22,17 @@
     .footer__link {
       color: $cool-grey;
 
+      &:hover {
+        color: $link-color;
+      }
+
       &.external {
         background-image: url('#{$asset-path}769fa468-external-link-footer.svg');
-      }
+        background-size: 10px;
 
-      &:hover {
-        color: $button-primary-color;
-      }
-
-      &.footer__link--alt {
-        color: $button-primary-color;
+        &:hover {
+          background-image: url('#{$asset-path}b2e7072f-external-link-blue.svg');
+        }
       }
     }
 
@@ -57,17 +58,11 @@
     }
 
     .footer__bullets {
+      margin-left: 0;
 
       .footer__bullets-item {
+        display: inline;
         margin-right: 0;
-
-        .footer__link {
-          color: $warm-grey;
-
-          &:hover {
-            color: $button-primary-color;
-          }
-        }
 
         &:after {
           line-height: 1;

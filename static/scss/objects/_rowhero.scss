@@ -92,6 +92,10 @@
       margin-right: 40px;
       position: relative;
       font-size: 18px;
+
+      @media only screen and (max-width : $breakpoint-medium) {
+        width: 100%;
+      }
     }
 
     .row-hero__play {

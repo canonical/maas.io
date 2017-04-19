@@ -11,6 +11,10 @@
     background-color: $white;
   }
 
+  body {
+    background-image: none;
+  }
+  
   .gigantic {
     font-size: 90px;
   }
@@ -23,5 +27,9 @@
     .not-for-medium {
       display: none !important;
     }
+  }
+
+  .external {
+    background-image: url('#{$asset-path}b2e7072f-external-link-blue.svg');
   }
 }

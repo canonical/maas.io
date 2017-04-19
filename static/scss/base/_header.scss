@@ -10,6 +10,10 @@
   .banner {
     box-shadow: none;
 
+    @media only screen and (min-width: $navigation-threshold) {
+      border-bottom: 0;
+    }
+
     .logo {
 
       img {
@@ -59,6 +63,24 @@
               background-size: 9.8px 9.8px;
             }
           }
+        }
+      }
+    }
+
+    #nav:target {
+
+      ul {
+        display: block;
+      }
+
+      + .nav-toggle .nav-toggle__link {
+
+        &.close {
+          display: block;
+        }
+
+        &.open {
+          display: none;
         }
       }
     }

@@ -13,6 +13,6 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "dependencies": {
-    "cloud-vanilla-theme": "0.0.14"
+    "cloud-vanilla-theme": "0.1.1"
   }
 }
