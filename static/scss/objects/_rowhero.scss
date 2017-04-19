@@ -9,8 +9,11 @@
 @mixin maas-rowhero {
   .row-hero {
     position: relative;
-    padding-bottom: 60px;
     margin-top: 0;
+    padding: {
+      bottom: 90px;
+      top: 90px;
+    }
     background-color: $cool-grey;
     background-image: url('#{$asset-path}6e4b2b20-MAAS-hero-background.png');
     background-position: center;
@@ -19,7 +22,15 @@
     color: $white;
 
     @media only screen and (max-width : $breakpoint-medium) {
-      padding-bottom: 0;
+      padding: {
+        bottom: 40px;
+        top: 40px;
+      }
+    }
+
+    .row-hero__link {
+      color: $white;
+      font-weight: 400;
     }
 
     .row-hero__logo {
@@ -41,6 +52,7 @@
 
       @media only screen and (max-width: $breakpoint-medium) {
         width: 100%;
+        margin-right: 0;
       }
 
       .row-hero__intro {
@@ -57,27 +69,20 @@
     }
 
     .row-hero__image {
-      margin-bottom: -60px;
+      margin-bottom: -90px;
       overflow: visible;
+      position: relative;
 
       @media only screen and (max-width : $breakpoint-medium) {
-        display: block;
-        margin-bottom: 0;
-        width: 100%;
+        display: none;
       }
 
       img {
         max-width: initial;
         margin-bottom: 0;
         margin-left: 60px;
-
-        @media only screen and (max-width : $breakpoint-medium) {
-          margin: {
-            left: 0;
-            top: 20px;
-          }
-          max-width: 100%;
-        }
+        height: 100%;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.5);
       }
     }
 
@@ -89,7 +94,7 @@
       display: flex;
 
       @media only screen and (max-width : $breakpoint-medium) {
-        display: block;
+        margin-top: 20px;
       }
     }
 
@@ -104,11 +109,6 @@
 
       + .row-hero__button {
         margin-left: 20px;
-
-        @media only screen and (max-width : $breakpoint-medium) {
-          margin-left: 0;
-          margin-top: 20px;
-        }
       }
 
       &--video {

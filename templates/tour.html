@@ -4,11 +4,16 @@
 {% block page-title %}| Tour{% endblock %}
 
 {% block content %}
-    <section class="row strip-white">
-        <div class="inner-wrapper">
+    <section class="row row-hero">
+        <div class="inner-wrapper equal-height">
             <div class="eight-col">
-                <h1>Take a tour</h1>
-                <p itemprop="description">MAAS is accessible through both a webUI and the CLI, and has a restful API as well. Take a tour to see all MAAS features, including new features in the MAAS 1.9 release.</p>
+                <div class="align-vertically">
+                    <h1>Take a tour</h1>
+                    <p itemprop="description">MAAS is accessible through both a webUI and the CLI, and has a restful API as well. Take a tour to see all MAAS features, including new features in the MAAS 1.9 release.</p>
+                </div>
+            </div>
+            <div class="two-col prepend-two last-col row-hero__col no-margin--bottom">
+                <img src="{{ ASSET_SERVER_URL }}381e216f-MAAS-GUI.svg" class="no-margin--bottom" alt="MAAS UI icon">
             </div>
         </div>
     </section>
