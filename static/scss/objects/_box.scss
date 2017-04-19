@@ -13,5 +13,14 @@
     border-radius: 4px;
     padding: 1.333em 20px;
     border: 1px solid #dfdcd9;
-  }  
+  }
+
+  .row-hero {
+
+    .box {
+      background-color: $transparent;
+      border-color: $warm-grey;
+      border-style: dotted;
+    }
+  }
 }

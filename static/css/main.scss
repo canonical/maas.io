@@ -25,6 +25,7 @@
 // MAAS variables
 $asset-path: 'https://assets.ubuntu.com/v1/';
 
+@include maas-row;
 @include maas-buttons;
 @include maas-box;
 @include maas-cta;
@@ -39,6 +40,5 @@ $asset-path: 'https://assets.ubuntu.com/v1/';
 @include maas-main;
 @include maas-media;
 @include maas-pricing;
-@include maas-row;
 @include maas-rowhero;
 @include maas-dividers;

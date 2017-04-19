@@ -9,9 +9,9 @@
 @mixin maas-row {
   .row {
     background-color: $light-grey;
-    padding: {
-      top: 90px;
-      bottom: 70px;
+
+    @media screen and (min-width: ($breakpoint-medium + 1)) {
+      padding: 90px 20px 70px;
     }
 
     &.strip-white {
