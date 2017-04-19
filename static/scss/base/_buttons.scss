@@ -20,12 +20,12 @@
   }
 
   .button--neutral {
-    background-color: $white;
+    background-color: $color-x-light;
     border: 0;
     color: $text-color;
 
     &:hover {
-      background-color: darken($white, 30%);
+      background-color: $color-light;
     }
   }
 }

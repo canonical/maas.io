@@ -28,12 +28,12 @@
       }
     }
 
-    .row-hero__link {
+    &__link {
       color: $white;
       font-weight: 400;
     }
 
-    .row-hero__logo {
+    &__logo {
       position: relative;
       top: -.1em;
       padding-top: 0;
@@ -45,7 +45,7 @@
       z-index: 2;
     }
 
-    .row-hero__text {
+    &__text {
       color: $white;
       margin-bottom: 0;
       z-index: 2;
@@ -54,17 +54,17 @@
         width: 100%;
         margin-right: 0;
       }
+    }
 
-      .row-hero__intro {
-        font-size: 24px;
+    &__intro {
+      font-size: 1.5rem;
 
-        @media only screen and (max-width: 1030px) and (min-width: 768px) {
-          font-size: 20px;
-        }
+      @media only screen and (max-width: 1030px) and (min-width: 768px) {
+        font-size: 1.25rem;
+      }
 
-        @media only screen and (max-width: $breakpoint-medium) {
-          font-size: .875rem;
-        }
+      @media only screen and (max-width: $breakpoint-medium) {
+        font-size: .875rem;
       }
     }
 
@@ -78,7 +78,7 @@
       }
 
       img {
-        max-width: initial;
+        max-width: none;
         margin-bottom: 0;
         margin-left: 90px;
         height: 100%;
@@ -87,10 +87,6 @@
     }
 
     .row-hero__button-group {
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
 
       @media only screen and (max-width : $breakpoint-medium) {
