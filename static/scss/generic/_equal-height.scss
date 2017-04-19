@@ -22,6 +22,10 @@
         flex: auto;
         flex-direction: column;
       }
+
+      &--align-middle {
+        align-items: center;
+      }
     }
   }
 }
