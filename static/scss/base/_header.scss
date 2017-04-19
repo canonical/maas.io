@@ -66,5 +66,23 @@
         }
       }
     }
+
+    #nav:target {
+
+      ul {
+        display: block;
+      }
+
+      + .nav-toggle .nav-toggle__link {
+
+        &.close {
+          display: block;
+        }
+
+        &.open {
+          display: none;
+        }
+      }
+    }
   }
 }

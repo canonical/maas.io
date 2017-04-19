@@ -10,6 +10,10 @@
   .list--large li {
     font-size: 18px;
     padding: 20px 0;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: .875rem;
+    }
   }
 
   .list__bullets {
@@ -39,12 +43,17 @@
   .list {
 
     &.list__bullets {
+      margin: 0;
 
       li {
 
         &:before {
           left: 2px;
           top: 26px;
+
+          @media screen and (max-width: $breakpoint-medium) {
+            top: 23px;
+          }
         }
 
         @media only screen and (max-width : $breakpoint-medium) {
