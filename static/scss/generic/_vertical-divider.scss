@@ -15,7 +15,7 @@
   .vertical-divider {
     position: relative;
 
-    > article {
+    > * {
       padding: 0;
 
       @media only screen and (min-width : 768px) {
@@ -34,7 +34,7 @@
       }
     }
 
-    > article:last-of-type{
+    > *:last-of-type{
       padding-right: 0;
 
       &:before {
@@ -42,7 +42,7 @@
       }
     }
 
-    > article:first-of-type {
+    > *:first-of-type {
       padding-left: 0;
     }
   }

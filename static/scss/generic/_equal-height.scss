@@ -14,7 +14,7 @@
 @mixin maas-equal-height {
   @media only screen and (min-width : $breakpoint-medium) {
     .equal-height {
-
+    
       > article {
         padding: 0;
         box-sizing: border-box;
