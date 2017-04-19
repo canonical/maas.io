@@ -9,6 +9,10 @@
 @mixin maas-row {
   .row {
     background-color: $light-grey;
+    padding: {
+      top: 90px;
+      bottom: 70px;
+    }
 
     &.strip-white {
       background: $white;

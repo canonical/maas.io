@@ -11,7 +11,7 @@
 ///     <div class="six-col">...</div>
 ///   <div class="six-col last-col">...</div>
 ///   </div>
-@mixin maas-vertical-divider {
+@mixin maas-dividers {
   .vertical-divider {
     position: relative;
 
@@ -44,6 +44,22 @@
 
     > *:first-of-type {
       padding-left: 0;
+    }
+  }
+
+  .horizontal-divider {
+    position: relative;
+
+    > * {
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        width: calc(100% - #{$gutter-width});
+        height: 1px;
+        border-bottom: 1px dotted $warm-grey;
+      }
     }
   }
 }
