@@ -8,32 +8,18 @@
 /// @group Row hero
 @mixin maas-rowhero {
   .row-hero {
-    padding-top: 0;
-    padding-bottom: 60px;
     position: relative;
-    overflow-y: hidden;
-    min-height: 450px;
+    padding-bottom: 60px;
     margin-top: 0;
-    background-color: #222;
+    background-color: $cool-grey;
+    background-image: url('#{$asset-path}6e4b2b20-MAAS-hero-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: $white;
 
-    &:before {
-      content: ' ';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background-image: url('#{$asset-path}8ce3e107-hero-1.jpg');
-      background-repeat: no-repeat;
-      background-position: 0 12%;
-      -ms-background-size: cover;
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
-      background-size: cover;
+    @media only screen and (max-width : $breakpoint-medium) {
+      padding-bottom: 0;
     }
 
     .row-hero__logo {
@@ -50,44 +36,38 @@
 
     .row-hero__text {
       color: $white;
+      margin-bottom: 0;
       z-index: 2;
 
       .row-hero__intro {
-        margin-top: 30px;
-        margin-bottom: 30px;
+        font-size: 24px;
       }
     }
 
     .row-hero__image {
-      display: none;
-      z-index: 2;
+      margin-bottom: -60px;
+      overflow: visible;
 
-      @media only screen and (min-width : 768px) {
-        display: block;
-        max-width: 768px;
-        width: 100%;
-        bottom: -50px;
-        right: 20px;
-        position: absolute;
-        z-index: 1;
-        border-radius: 4px 4px 0 0;
-        box-shadow: 0px 1px 12px rgba(0,0,0,0.15);
+      @media only screen and (max-width : $breakpoint-medium) {
+        margin-bottom: 0;
+      }
 
-        &.row-hero__image--alt {
-          right: inherit;
-          left: 0;
-          z-index: 0;
-          max-width: 960px;
-          display: none;
+      img {
+        max-width: initial;
+        margin-bottom: 0;
+        margin-left: 60px;
 
-          @media only screen and (min-width : 1439px) {
-            display: block;
+        @media only screen and (max-width : $breakpoint-medium) {
+          margin: {
+            left: 0;
+            top: 20px;
           }
+          max-width: 100%;
         }
       }
     }
 
-    .row-hero__cta {
+    .row-hero__button {
       float: left;
       margin-right: 40px;
       position: relative;
@@ -95,6 +75,19 @@
 
       @media only screen and (max-width : $breakpoint-medium) {
         width: 100%;
+
+        + .row-hero__button {
+          margin-top: 20px;
+        }
+      }
+
+      &--video {
+        background: {
+          image: url('#{$asset-path}17e7ea51-play-icon.svg');
+          position: right 18px center;
+          repeat: no-repeat;
+        }
+        padding-right: 48px;
       }
     }
 
