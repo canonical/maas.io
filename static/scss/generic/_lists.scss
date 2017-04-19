@@ -20,20 +20,20 @@
     margin-left: 0;
 
     li {
-      padding-left: 25px;
+      padding-left: 40px;
       position: relative;
       list-style: none;
 
       &:before {
         content: '';
-        background-image: url("#{$asset-path}2ccda8d7-tick-orange.svg");
+        background-image: url("#{$asset-path}90067499-green-tick.svg");
         background-repeat: no-repeat;
         display: block;
         left: 2px;
         top: 5px;
         color: $white;
         font-size: 20px;
-        width: 16px;
+        width: 22px;
         height: 16px;
         position: absolute;
       }
