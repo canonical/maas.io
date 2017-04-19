@@ -39,8 +39,20 @@
       margin-bottom: 0;
       z-index: 2;
 
+      @media only screen and (max-width: $breakpoint-medium) {
+        width: 100%;
+      }
+
       .row-hero__intro {
         font-size: 24px;
+
+        @media only screen and (max-width: 1030px) and (min-width: 768px) {
+          font-size: 20px;
+        }
+
+        @media only screen and (max-width: $breakpoint-medium) {
+          font-size: .875rem;
+        }
       }
     }
 
@@ -49,7 +61,9 @@
       overflow: visible;
 
       @media only screen and (max-width : $breakpoint-medium) {
+        display: block;
         margin-bottom: 0;
+        width: 100%;
       }
 
       img {
@@ -67,16 +81,32 @@
       }
     }
 
+    .row-hero__button-group {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+
+      @media only screen and (max-width : $breakpoint-medium) {
+        display: block;
+      }
+    }
+
     .row-hero__button {
       float: left;
-      margin-right: 40px;
       position: relative;
       font-size: 18px;
 
       @media only screen and (max-width : $breakpoint-medium) {
         width: 100%;
+      }
 
-        + .row-hero__button {
+      + .row-hero__button {
+        margin-left: 20px;
+
+        @media only screen and (max-width : $breakpoint-medium) {
+          margin-left: 0;
           margin-top: 20px;
         }
       }
