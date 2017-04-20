@@ -13,7 +13,7 @@
 @import '../scss/generic/inline-logos';
 @import '../scss/generic/lists';
 @import '../scss/generic/modal';
-@import '../scss/generic/vertical-divider';
+@import '../scss/generic/dividers';
 @import '../scss/objects/box';
 @import '../scss/objects/cta';
 @import '../scss/objects/instructions';
@@ -27,6 +27,7 @@ $asset-path: 'https://assets.ubuntu.com/v1/';
 $color-x-light: #fff;
 $color-light: #f7f7f7;
 
+@include maas-row;
 @include maas-buttons;
 @include maas-box;
 @include maas-cta;
@@ -41,6 +42,5 @@ $color-light: #f7f7f7;
 @include maas-main;
 @include maas-media;
 @include maas-pricing;
-@include maas-row;
 @include maas-rowhero;
-@include maas-vertical-divider;
+@include maas-dividers;

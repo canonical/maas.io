@@ -10,6 +10,10 @@
   .row {
     background-color: $light-grey;
 
+    @media screen and (min-width: ($breakpoint-medium + 1)) {
+      padding: 90px 20px 70px;
+    }
+
     &.strip-white {
       background: $white;
     }

@@ -68,7 +68,7 @@
       }
     }
 
-    .row-hero__image {
+    &__image {
       margin-bottom: -90px;
       overflow: visible;
       position: relative;
@@ -80,21 +80,22 @@
       img {
         max-width: none;
         margin-bottom: 0;
-        margin-left: 60px;
+        margin-left: 90px;
         height: 100%;
         box-shadow: 0 10px 35px rgba(0,0,0,0.5);
       }
     }
 
-    .row-hero__button-group {
+    &__button-group {
       display: flex;
 
       @media only screen and (max-width : $breakpoint-medium) {
         margin-top: 20px;
+        display: block;
       }
     }
 
-    .row-hero__button {
+    &__button {
       float: left;
       position: relative;
       font-size: 18px;
@@ -105,6 +106,11 @@
 
       + .row-hero__button {
         margin-left: 20px;
+
+        @media only screen and (max-width : $breakpoint-medium) {
+          margin-left: 0;
+          margin-top: 10px;
+        }
       }
 
       &--video {
@@ -117,7 +123,7 @@
       }
     }
 
-    .row-hero__play {
+    &__play {
       z-index: 3;
       margin: 0;
       width: auto;
@@ -147,7 +153,7 @@
       }
     }
 
-    .row-hero__modal {
+    &__modal {
       z-index: 2;
     }
   }
