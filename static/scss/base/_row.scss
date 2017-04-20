@@ -18,15 +18,31 @@
       background: $cool-grey;
       color: $white;
 
-      &--two-tone {
+      a {
 
-        > *:nth-child(2) {
+        &:hover {
+          color: $white;
+        }
+      }
+
+      .strip-dark__col {
+        width: 50%;
+        margin-right: 0;
+        padding: 0 40px;
+
+        &--light {
+          z-index: 1;
 
           &:after {
             background-color: $warm-grey;
             content: '';
             position: absolute;
             width: 50vw;
+            top: -60px;
+            right: 0;
+            bottom: -60px;
+            left: 0;
+            z-index: -1;
           }
         }
       }
