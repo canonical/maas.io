@@ -13,9 +13,10 @@
 ///   </div>
 @mixin maas-vertical-divider {
   .vertical-divider {
+    margin-left: -10px;
     position: relative;
 
-    > article {
+    > * {
       padding: 0;
 
       @media only screen and (min-width : 768px) {
@@ -34,16 +35,11 @@
       }
     }
 
-    > article:last-of-type{
-      padding-right: 0;
+    > *:last-of-type{
 
       &:before {
         border-left: 0;
       }
-    }
-
-    > article:first-of-type {
-      padding-left: 0;
     }
   }
 }

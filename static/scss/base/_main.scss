@@ -14,7 +14,12 @@
   body {
     background-image: none;
   }
-  
+
+  sup {
+    top: initial;
+    vertical-align: super;
+  }
+
   .gigantic {
     font-size: 90px;
   }
