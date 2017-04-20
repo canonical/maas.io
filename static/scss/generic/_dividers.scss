@@ -12,60 +12,76 @@
 ///   <div class="six-col last-col">...</div>
 ///   </div>
 @mixin maas-dividers {
-  .vertical-divider {
-    position: relative;
+  .divider {
 
-    > * {
-      padding: 0;
+    &--vertical {
+      position: relative;
 
-      @media only screen and (min-width : 768px) {
-        padding-left: ($gutter-width / 2);
-        padding-right: ($gutter-width / 2);
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        right: -($gutter-width / 2);
-        top: 0;
-        height: 100%;
-        width: 1px;
-        border-left: 1px dotted $warm-grey;
+      > .divider__col {
+        padding: 0;
 
         @media only screen and (max-width: $breakpoint-medium) {
-          display: none;
+          border-top: 1px dotted $warm-grey;
+          padding-top: 20px;
+        }
+
+        @media only screen and (min-width : 768px) {
+          padding-left: ($gutter-width / 2);
+          padding-right: ($gutter-width / 2);
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          right: -($gutter-width / 2);
+          top: 0;
+          height: 100%;
+          width: 1px;
+          border-left: 1px dotted $warm-grey;
+
+          @media only screen and (max-width: $breakpoint-medium) {
+            display: none;
+          }
+        }
+      }
+
+      > .divider__col:last-of-type{
+        padding-right: 0;
+
+        &:before {
+          border-left: 0;
+        }
+      }
+
+      > .divider__col:first-of-type {
+        padding-left: 0;
+
+        @media only screen and (max-width: $breakpoint-medium) {
+          border-top: 0;
         }
       }
     }
 
-    > *:last-of-type{
-      padding-right: 0;
+    &--horizontal {
+      position: relative;
 
-      &:before {
-        border-left: 0;
-      }
-    }
-
-    > *:first-of-type {
-      padding-left: 0;
-    }
-  }
-
-  .horizontal-divider {
-    position: relative;
-
-    > * {
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        width: calc(100% - #{$gutter-width});
-        height: 1px;
+      @media only screen and (max-width: $breakpoint-medium) {
         border-bottom: 1px dotted $warm-grey;
+      }
 
-        @media only screen and (max-width: $breakpoint-medium) {
-          display: none;
+      > .divider__col {
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -20px;
+          width: calc(100% - #{$gutter-width});
+          height: 1px;
+          border-bottom: 1px dotted $warm-grey;
+
+          @media only screen and (max-width: $breakpoint-medium) {
+            display: none;
+          }
         }
       }
     }

@@ -32,8 +32,8 @@
 			<div class="twelve-col">
 				<h2>Key features</h2>
 			</div>
-			<div class="equal-height vertical-divider horizontal-divider twelve-col">
-				<div class="four-col">
+			<div class="equal-height divider--vertical divider--horizontal twelve-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/6dc7d9af-automation.svg" class="no-margin" alt="Automation cog icon">&nbsp;&nbsp;
 						<a href="#">Automation &rsaquo;</a>
@@ -41,7 +41,7 @@
 					<p>Automatic discovery and registration of every device on the network.</p>
 					<p>BMC (IPMI, AMT and more) and PXE (IPv4 and IPv6) automation.</p>
 				</div>
-				<div class="four-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/0b5aa4f7-fast-deployment.svg" height="32" alt="Deploymeny in the cloud icon" class="no-margin">&nbsp;&nbsp;
 						<a href="#">Fast deployment &rsaquo;</a>
@@ -49,7 +49,7 @@
 					<p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
 					<p>Deploy linux distros in less than 5 minutes.</p>
 				</div>
-				<div class="four-col last-col">
+				<div class="four-col divider__col last-col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/067eafa7-machine-configuration.svg" height="32" alt="Machine configuration icon" class="no-margin">&nbsp;&nbsp;
 						<a href="#">Machine configuration &rsaquo;</a>
@@ -58,8 +58,8 @@
 					<p>Create advanced filesystem layouts with RAID, bcache, LVM and more.</p>
 				</div>
 			</div>
-			<div class="equal-height vertical-divider horizontal-divider twelve-col">
-				<div class="four-col">
+			<div class="equal-height divider--vertical divider--horizontal twelve-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/d519342f-icon-intro-server.svg" class="no-margin" width="32" alt="Chassis icon">&nbsp;&nbsp;
 						<a href="#">Chassis management &rsaquo;</a>
@@ -67,7 +67,7 @@
 					<p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
 					<p>Dynamic hardware resource management with Intel RSD.</p>
 				</div>
-				<div class="four-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/1654f286-network-management.svg" height="32" alt="Network management image" class="no-margin">&nbsp;&nbsp;
 						<a href="#">Network management &rsaquo;</a>
@@ -75,7 +75,7 @@
 					<p>Observes and catalogs every IP address on the network (IPAM).</p>
 					<p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
 				</div>
-				<div class="four-col last-col">
+				<div class="four-col divider__col last-col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/ba1b536d-devops-integration.svg" height="32" alt="DevOps image" class="no-margin">&nbsp;&nbsp;
 						<a href="#">DevOps intergration&rsaquo;</a>
@@ -83,22 +83,21 @@
 					<p>Integration with devops automation tools like Conjure-up, Juju, Chef, Puppet, SALT, Ansible and more.</p>
 				</div>
 			</div>
-			<div class="equal-height vertical-divider twelve-col">
-				<div class="four-col">
+			<div class="equal-height divider--vertical twelve-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/78a2d30f-service-tracking.svg" height="32" alt="Server tracking image" class="no-margin">&nbsp;&nbsp;
 						<a href="#">Server tracking &rsaquo;</a>
 					</h4>
 					<p>Monitors and tracks critical services to ensure proper tracking.</p>
 				</div>
-				<div class="four-col">
+				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="https://assets.ubuntu.com/v1/d3fc3f10-manage.svg" height="32" alt="Manage icon" class="no-margin">&nbsp;&nbsp;
 						<a href="#">Manage &rsaquo;</a>
 					</h4>
 					<p>Comes with a REST API, Web UI and CLI.</p>
 				</div>
-				<div class="four-col"></div>
 			</div>
 		</div>
 	</section>
@@ -264,10 +263,10 @@
 				<h2>The latest MAAS news</h2>
 			</div>
 			<div id="insights-cloud-feed">
-				<div class="equal-height vertical-divider twelve-col">
+				<div class="equal-height divider--vertical twelve-col">
 					{% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
 					{% for item in insights_feed %}
-						<article class="four-col {% if forloop.last %}last-col{% endif %}">
+						<article class="four-col divider__col {% if forloop.last %}last-col{% endif %}">
 							<h3><a href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
 							<footer>
 								<time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
