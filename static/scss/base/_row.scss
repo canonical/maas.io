@@ -17,6 +17,19 @@
     &.strip-dark {
       background: $cool-grey;
       color: $white;
+
+      &--two-tone {
+
+        > *:nth-child(2) {
+
+          &:after {
+            background-color: $warm-grey;
+            content: '';
+            position: absolute;
+            width: 50vw;
+          }
+        }
+      }
     }
 
     &.strip-trans {
