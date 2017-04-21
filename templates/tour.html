@@ -9,7 +9,7 @@
             <div class="eight-col">
                 <div class="align-vertically">
                     <h1>Take a tour</h1>
-                    <p itemprop="description">MAAS is accessible through both a web <abbr title="User interface">UI</abbr> and the <abbr title="Command line interface">CLI</abbr>, and has a restful <abbr title="Application programming interface">API</abbr> as well. Take a tour to see all MAAS features, including new features in the MAAS 2.2 release.</p>
+                    <p class="row-hero__intro" itemprop="description">Take a tour and get an overview of MAAS, including new features from the latest release.</p>
                 </div>
             </div>
             <div class="two-col prepend-two last-col row-hero__col no-margin--bottom">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </section>
-    <section class="row">
+    <section class="row" id="automation">
         <div class="inner-wrapper">
             <div class="twelve-col">
                 <h2>Automate your infrastructure setup</h2>
@@ -61,7 +61,7 @@
             </div>
         </div>
     </section>
-    <section class="row strip-white">
+    <section class="row strip-white" id="fast-deployment">
         <div class="inner-wrapper">
             <div class="eight-col">
                 <h2>Manage your servers without leaving your seat</h2>
@@ -104,19 +104,19 @@
                             <li>Ubuntu</li>
                             <li>CentOS</li>
                             <li>Windows</li>
-                            <li>REHL</li>
+
                         </ul>
                     </div>
                     <div class="three-col last-col">
                         <ul>
+                            <li>REHL</li>
                             <li>Suse</li>
-                            <li>Custom images</li>
                         </ul>
                     </div>
                     <div class="six-col">
                         <p>Import, update or sync the images or connect to an onsite mirror to work offline.</p>
-                        <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-images" class="external" aria-label="External link to the install config images page on MAAS documentation">Learn more about images</a></p>
                         <p id="image-info"><small><sup>*</sup> Images other than Ubuntu and CentOS require an <a href="https://www.ubuntu.com/support" class="external" aria-label="External link to the Ubuntu Advantage page on ubuntu dot com">Ubuntu Advantage</a> licence</small></p>
+                        <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-images" class="external" aria-label="External link to the install config images page on MAAS documentation">Learn more about images</a></p>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                     </ol>
                     <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-nodes-deploy" class="external" aria-label="External link to the install and config page of node deployment on MAAS documentation">Learn more about deployment</a></p>
                 </div>
-                <div class="six-col last-col divider__col">
+                <div class="six-col last-col divider__col" id="hardware-tracking">
                     <a href="{{ ASSET_SERVER_URL }}20e84205-Keep-an-eye-on-your-hardware.png" class="venobox" aria-label="Modal link to view larger screenshot of node details commissioning output">
                         <img src="{{ ASSET_SERVER_URL }}20e84205-Keep-an-eye-on-your-hardware.png?w=494" class="image--shadow" alt="Screenshot of node details commissioning output">
                     </a>
@@ -142,7 +142,7 @@
                     <ul>
                         <li>Inspecting the hardware information that MAAS gathers during commissioning</li>
                         <li>Review a complete list of events for each machine</li>
-                        <li>Run the hardware test that ship with MAAS or importing your custom tests</li>
+                        <li>Run the hardware test that ship with MAAS or import your custom tests</li>
                     </ul>
                     <p><a href="https://docs.ubuntu.com/maas/devel/en/installconfig-nodes-hw-testing" class="external" aria-label="External link to the install and configure hardware testing on MAAS documentation">Learn more about hardware testing</a></p>
                 </div>
@@ -157,7 +157,7 @@
             </div>
         </div>
     </section>
-    <section class="row">
+    <section class="row" id="configure-servers">
         <div class="inner-wrapper">
             <div class="twelve-col">
                 <h2>Configure your servers with a few clicks</h2>
@@ -204,7 +204,7 @@
             </div>
         </div>
     </section>
-    <section class="row strip-white">
+    <section class="row strip-white" id="manage-network">
         <div class="inner-wrapper">
             <div class="twelve-col">
                 <h2>Manage your network with MAAS</h2>

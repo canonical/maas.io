@@ -39,7 +39,7 @@
     <div class="inner-wrapper equal-height">
         <div class="eight-col">
             <h2>Protocols</h2>
-            <p>MAAS uses standard server <abbr title="Baseboard Management Controller">BMC</abbr> and <abbr title="Network Interface Controller">NIC</abbr> services such as IPMI and PXE to control the machines in your data centre. For converged infrastructure, MAAS talks to the chassis controller of the rack or hyperscale chassis such as Cisco UCS or HP Moonshot. Custom plugins extend MAAS for alternative BMC protocols.</p>
+            <p>MAAS uses standard server <abbr title="Baseboard Management Controller">BMC</abbr> and <abbr title="Network Interface Controller">NIC</abbr> services such as <abbr title="Intelligent Platform Management Interface">IPMI</abbr> and PXE to control the machines in your data centre. For converged infrastructure, MAAS talks to the chassis controller of the rack or hyperscale chassis such as Intel RSD, Cisco UCS or HP Moonshot. Custom plugins extend MAAS for alternative BMC protocols.</p>
             <p>Initial machine inventory and commissioning is done from an ephemeral Ubuntu image that works across all major servers from all major vendors. It is possible to add custom scripts for firmware updates and reporting.</p>
         </div>
         <div class="prepend-one three-col last-col">
@@ -80,7 +80,7 @@
             <div class="seven-col last-col">
                 <div class="twelve-col">
                     <h3>New</h3>
-                    <p>New machines which PXE-boot on a MAAS network will be enlisted automatically if MAAS can detect their BMC parameters. The easiest way to enlist standard IPMI servers is simply to PXE-boot them on the MAAS network.</p>
+                    <p>New machines which PXE-boot on a MAAS network will be enlisted automatically if MAAS can detect their BMC parameters. The easiest way to enlist standard <abbr title="Intelligent Platform Management Interface">IPMI</abbr> servers is simply to PXE-boot them on the MAAS network.</p>
                 </div>
                 <div class="twelve-col">
                     <h3>Commissioning</h3>
@@ -115,7 +115,7 @@
     <div class="inner-wrapper">
         <div class="twelve-col cta">
             <h3 class="cta__text">MAAS is a bare-metal server provisioning tool. It is open source and free to use.</h3>
-            <a href="/get-started" class="button--positive button--inline-positive">Get started</a>
+            <a href="/install" class="button--positive button--inline-positive">Install MAAS</a>
         </div>
     </div>
 </section>

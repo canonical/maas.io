@@ -11,16 +11,16 @@
 	<!-- Hero banner -->
 	<section class="row row-hero">
 		<div class="inner-wrapper equal-height">
-			<div class="row-hero__text row-hero__col six-col">
+			<div class="row-hero__text row-hero__col five-col">
 				<h2><img src="{{ ASSET_SERVER_URL }}33b96a7f-maas-logo.svg" alt="" class="row-hero__logo" itemprop="image" />Metal as a Service</h2>
 				<h1>Say hello to your physical cloud</h1>
 				<p class="row-hero__intro" itemprop="description">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
 				<div class="row-hero__button-group">
-					<a href="/get-started" class="row-hero__button button--positive button--inline-positive" itemprop="url">Install MAAS</a>
+					<a href="/install" class="row-hero__button button--positive button--inline-positive" itemprop="url">Install MAAS</a>
 					<a class="row-hero__button row-hero__button--video button--neutral button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/J1XH0SQARgo">Watch the video</a>
 				</div>
 			</div>
-			<div class="six-col last-col row-hero__image">
+			<div class="six-col prepend-one last-col row-hero__image">
 				<img src="{{ ASSET_SERVER_URL }}04f378fe-MAAS-hero-ui-image.png" alt="">
 			</div>
 		</div>
@@ -36,15 +36,15 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}6dc7d9af-automation.svg" class="no-margin" alt="Automation cog icon">&nbsp;&nbsp;
-						<a href="#">Automation &rsaquo;</a>
+						<a href="/tour#automation">Automation &rsaquo;</a>
 					</h4>
 					<p>Automatic discovery and registration of every device on the network.</p>
-					<p>BMC (IPMI, AMT and more) and PXE (IPv4 and IPv6) automation.</p>
+					<p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 4">IPv6</abbr>) automation.</p>
 				</div>
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}0b5aa4f7-fast-deployment.svg" height="32" alt="Deploymeny in the cloud icon" class="no-margin">&nbsp;&nbsp;
-						<a href="#">Fast deployment &rsaquo;</a>
+						<a href="/tour#fast-deployment">Fast deployment &rsaquo;</a>
 					</h4>
 					<p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
 					<p>Deploy linux distros in less than 5 minutes.</p>
@@ -52,17 +52,17 @@
 				<div class="four-col divider__col last-col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}067eafa7-machine-configuration.svg" height="32" alt="Machine configuration icon" class="no-margin">&nbsp;&nbsp;
-						<a href="#">Machine configuration &rsaquo;</a>
+						<a href="/tour#configure-servers">Machine configuration &rsaquo;</a>
 					</h4>
-					<p>Configure the machine’s network interfaces with bridges, VLANs, bonds and more.</p>
-					<p>Create advanced filesystem layouts with RAID, bcache, LVM and more.</p>
+					<p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
+					<p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
 				</div>
 			</div>
 			<div class="equal-height divider--vertical divider--horizontal twelve-col">
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}d519342f-icon-intro-server.svg" class="no-margin" width="32" alt="Chassis icon">&nbsp;&nbsp;
-						<a href="#">Chassis management &rsaquo;</a>
+						<a href="https://docs.ubuntu.com/maas/devel/en/intel-rsd" class="external">Chassis management</a>
 					</h4>
 					<p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
 					<p>Dynamic hardware resource management with Intel RSD.</p>
@@ -70,7 +70,7 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}1654f286-network-management.svg" height="32" alt="Network management image" class="no-margin">&nbsp;&nbsp;
-						<a href="#">Network management &rsaquo;</a>
+						<a href="/tour#manage-network ">Network management &rsaquo;</a>
 					</h4>
 					<p>Observes and catalogs every IP address on the network (IPAM).</p>
 					<p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
@@ -78,25 +78,25 @@
 				<div class="four-col divider__col last-col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}ba1b536d-devops-integration.svg" height="32" alt="DevOps image" class="no-margin">&nbsp;&nbsp;
-						<a href="#">DevOps intergration&rsaquo;</a>
+						<span>DevOps intergration</span>
 					</h4>
-					<p>Integration with devops automation tools like Conjure-up, Juju, Chef, Puppet, SALT, Ansible and more.</p>
+					<p>Integration with devops automation tools like Conjure-up, <a href="https://jujucharms.com/" class="external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
 				</div>
 			</div>
 			<div class="equal-height divider--vertical twelve-col">
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}78a2d30f-service-tracking.svg" height="32" alt="Server tracking image" class="no-margin">&nbsp;&nbsp;
-						<a href="#">Server tracking &rsaquo;</a>
+						<img src="{{ ASSET_SERVER_URL }}78a2d30f-service-tracking.svg" height="32" alt="Service tracking image" class="no-margin">&nbsp;&nbsp;
+						<a href="/tour#hardware-tracking">Service tracking &rsaquo;</a>
 					</h4>
-					<p>Monitors and tracks critical services to ensure proper tracking.</p>
+					<p>Monitors and tracks critical services to ensure proper opperations.</p>
 				</div>
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}d3fc3f10-manage.svg" height="32" alt="Manage icon" class="no-margin">&nbsp;&nbsp;
-						<a href="#">Manage &rsaquo;</a>
+						<span>Manage</span>
 					</h4>
-					<p>Comes with a REST API, Web UI and CLI.</p>
+					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.1/en/api" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.1/en/manage-cli" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
 				</div>
 			</div>
 		</div>
@@ -221,9 +221,8 @@
 					<div class="pricing__option-detail">
 						<ul class="list__bullets">
 							<li>Ubuntu and CentOS</li>
-							<li>Install MAAS</li>
 						</ul>
-						<p><a href="/get-started">Get started&nbsp;&rsaquo;</a></p>
+						<p><a href="/install">Install MAAS&nbsp;&rsaquo;</a></p>
 					</div>
 				</div>
 				<div class="pricing__option four-col">
