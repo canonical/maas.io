@@ -78,5 +78,14 @@
     &.strip-trans {
       background: $transparent;
     }
+
+    &--features {
+
+      .row__image {
+        height: 100%;
+        margin: 0;
+        max-height: 32px;
+      }
+    }
   }
 }
