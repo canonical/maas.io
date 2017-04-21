@@ -31,6 +31,14 @@
     &__link {
       color: $white;
       font-weight: 400;
+
+      &--external {
+        background-image: url("https://assets.ubuntu.com/v1/789283ff-external-link-dark.svg");
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 10px;
+        padding: 0 15px 0 0;
+      }
     }
 
     &__logo {
