@@ -33,7 +33,7 @@
       font-weight: 400;
 
       &--external {
-        background-image: url("https://assets.ubuntu.com/v1/789283ff-external-link-dark.svg");
+        background-image: url('#{$asset-path}789283ff-external-link-dark.svg');
         background-position: top right;
         background-repeat: no-repeat;
         background-size: 10px;
