@@ -6,6 +6,8 @@
 
 /// MAAS Footer
 /// @group MAAS Footer
+$title-color: #767676;
+
 @mixin maas-footer {
   .footer {
     background-color: $white;
@@ -14,7 +16,7 @@
     padding-right: 10px;
 
     .footer__title {
-      color: $warm-grey;
+      color: $title-color;
       font-size: 14px;
       text-transform: uppercase;
     }

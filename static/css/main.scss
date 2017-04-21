@@ -1,5 +1,7 @@
 // import required files
 
+$asset-path: 'https://assets.ubuntu.com/v1/';
+
 @import 'cloud-vanilla-theme/scss/build';
 @import '../scss/base/buttons';
 @import '../scss/base/footer';
@@ -8,6 +10,7 @@
 @import '../scss/base/main';
 @import '../scss/base/media';
 @import '../scss/base/row';
+@import '../scss/generic/external';
 @import '../scss/generic/equal-height';
 @import '../scss/generic/helpers';
 @import '../scss/generic/inline-logos';
@@ -23,10 +26,10 @@
 @include cloud-vanilla-theme;
 
 // MAAS variables
-$asset-path: 'https://assets.ubuntu.com/v1/';
 $color-x-light: #fff;
 $color-light: #f7f7f7;
 
+@include maas-main;
 @include maas-row;
 @include maas-buttons;
 @include maas-box;
@@ -39,7 +42,7 @@ $color-light: #f7f7f7;
 @include maas-inline-logos;
 @include maas-instructions;
 @include maas-lists;
-@include maas-main;
+@include maas-external-link;
 @include maas-media;
 @include maas-pricing;
 @include maas-rowhero;
