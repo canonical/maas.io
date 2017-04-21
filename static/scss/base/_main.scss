@@ -20,6 +20,11 @@
     vertical-align: super;
   }
 
+  abbr[title] {
+    text-decoration: none;
+    border-bottom: 1px dotted $silver;
+  }
+
   .gigantic {
     font-size: 90px;
   }
