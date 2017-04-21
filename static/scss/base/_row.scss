@@ -10,7 +10,7 @@
   .row {
     background-color: $light-grey;
 
-    @media screen and (min-width: ($breakpoint-medium + 1)) {
+    @media screen and (min-width: $breakpoint-large) {
       padding: 90px 20px 70px;
     }
 
