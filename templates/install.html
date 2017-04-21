@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard management controller">BMC</abbr>. It is recommended to have the MAAS server provide DHCP and DNS on a network the managed machines are connected to.</p>
+                <p>You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard management controller">BMC</abbr>. It is recommended to have the MAAS server provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> and <abbr title="Domain name service">DNS</abbr> on a network the managed machines are connected to.</p>
             </div>
         </div>
     </section>
@@ -85,7 +85,7 @@
                     <input class="command-line__input" value="sudo maas createadmin" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
-                <p>Login to the MAAS UI at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
+                <p>Login to the MAAS <abbr title="User interface">UI</abbr> at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
             </div>
         </div>
     </section>
@@ -103,12 +103,14 @@
                 <p>Follow the instructions on screen to complete the first installation of MAAS. We recommended using the default values unless your installation has different requirements.</p>
                 <p>By the end of the journey you should have the following configured</p>
                 <ul>
-                    <li>MAAS name (region name)</li>
+                    <li>Region name</li>
                     <li>Ubuntu archive, Ubuntu extra architectures</li>
                     <li>Ubuntu images</li>
-                    <li>SSH keys (for currently logged in user)</li>
+                    <li><abbr title="Secure shell">SSH</abbr> keys (for currently logged in user)</li>
                 </ul>
-                <img src="{{ ASSET_SERVER_URL }}a36ffd9c-first-use-journey.png" class="image--shadow" alt="MAAS Images">
+                <a href="{{ ASSET_SERVER_URL }}a36ffd9c-first-use-journey.png" class="venobox">
+                    <img src="{{ ASSET_SERVER_URL }}a36ffd9c-first-use-journey.png?w=552" class="image--shadow" alt="MAAS Images">
+                </a>
             </div>
         </div>
     </section>
@@ -119,17 +121,19 @@
                     <span class="instruction__step">6</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Turn on DHCP</h3>
+                    <h3 class="instruction__title">Turn on <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the &ldquo;Subnets&rdquo; tab, and select the VLAN for which you want to enable DHCP, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide DHCP&rdquo;.</p>
+                <p>Go to the &ldquo;Subnets&rdquo; tab, and select the <abbr title="Virtual local area network">VLAN</abbr> for which you want to enable <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>&rdquo;.</p>
                 <ol>
-                    <li>Set the Rack controller that will manage DHCP.</li>
-                    <li>Select the subnet where to create the DHCP Dynamic range on.</li>
+                    <li>Set the Rack controller that will manage <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>.</li>
+                    <li>Select the subnet where to create the <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> Dynamic range on.</li>
                     <li>Fill in the details for the dynamic range.</li>
                 </ol>
-                <img src="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png" class="image--shadow" alt="VLAN details">
+                <a href="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png" class="venobox">
+                    <img src="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png?w=552" class="image--shadow" alt="VLAN details">
+                </a>
             </div>
         </div>
     </section>
@@ -146,13 +150,15 @@
             <div class="seven-col last-col instruction__details">
                 <p>Now MAAS is ready to enlist and commission machines.</p>
                 <ol>
-                    <li>Set all the servers to PXE boot</li>
+                    <li>Set all the servers to <abbr title="Preboot Execution Environment">PXE</abbr> boot</li>
                     <li>Boot each machine once. You should see these machines appear in MAAS</li>
-                    <li>If your machines do not have a IPMI based <abbr title="Baseboard management controller">BMC</abbr>, proceed to edit them and enter their <abbr title="Baseboard management controller">BMC</abbr> details</li>
+                    <li>If your machines do not have a <abbr title="Intelligent Platform Management Interface">IPMI</abbr> based <abbr title="Baseboard management controller">BMC</abbr>, proceed to edit them and enter their <abbr title="Baseboard management controller">BMC</abbr> details</li>
                     <li>Select all the machines and &ldquo;Commission&rdquo; them using the &ldquo;Take action&rdquo; button</li>
-                    <li>When machines have a “Ready” status you can start deploying</li>
+                    <li>When machines have a &ldquo;Ready&rdquo; status you can start deploying</li>
                 </ol>
-                <img src="{{ ASSET_SERVER_URL }}c1196090-node-listing.png" class="image--shadow" alt="MAAS node listing">
+                <a href="{{ ASSET_SERVER_URL }}c1196090-node-listing.png" class="venobox">
+                    <img src="{{ ASSET_SERVER_URL }}c1196090-node-listing.png?w=552" class="image--shadow" alt="MAAS node listing">
+                </a>
             </div>
         </div>
     </section>
