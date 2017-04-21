@@ -1,5 +1,7 @@
 // import required files
 
+$asset-path: 'https://assets.ubuntu.com/v1/';
+
 @import 'cloud-vanilla-theme/scss/build';
 @import '../scss/base/buttons';
 @import '../scss/base/footer';
@@ -24,7 +26,6 @@
 @include cloud-vanilla-theme;
 
 // MAAS variables
-$asset-path: 'https://assets.ubuntu.com/v1/';
 $color-x-light: #fff;
 $color-light: #f7f7f7;
 
