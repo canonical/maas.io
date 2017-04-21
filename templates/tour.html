@@ -9,11 +9,11 @@
             <div class="eight-col">
                 <div class="align-vertically">
                     <h1>Take a tour</h1>
-                    <p itemprop="description">MAAS is accessible through both a webUI and the CLI, and has a restful API as well. Take a tour to see all MAAS features, including new features in the MAAS 1.9 release.</p>
+                    <p itemprop="description">MAAS is accessible through both a web <abbr title="User interface">UI</abbr> and the <abbr title="Command line interface">CLI</abbr>, and has a restful <abbr title="Application programming interface">API</abbr> as well. Take a tour to see all MAAS features, including new features in the MAAS 2.2 release.</p>
                 </div>
             </div>
             <div class="two-col prepend-two last-col row-hero__col no-margin--bottom">
-                <img src="{{ ASSET_SERVER_URL }}381e216f-MAAS-GUI.svg" class="no-margin--bottom" alt="MAAS UI icon">
+                <img src="{{ ASSET_SERVER_URL }}381e216f-MAAS-GUI.svg" class="no-margin--bottom" alt="MAAS user interface icon">
             </div>
         </div>
     </section>
@@ -28,8 +28,8 @@
                         <img src="https://assets.ubuntu.com/v1/1ed0920a-Unattended-node-discovery-and-listing.png?w=308" class="image--shadow" width="308" alt="Screenshot of node listing">
                     </a>
                     <h3>Unattended node discovery and listing</h3>
-                    <p>PXE boot your servers and containers and they will be automatically discovered and enlisted in MAAS.</p>
-                    <p>IPMI enabled nodes work seamlessly with MAAS.</p>
+                    <p><abbr title="Preboot eXecution Environment">PXE</abbr> boot your servers and containers and they will be automatically discovered and enlisted in MAAS.</p>
+                    <p><abbr title="Intelligent Platform Management Interface">IPMI</abbr> enabled nodes work seamlessly with MAAS.</p>
                     <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-add-nodes" class="external" aira-label="External link to adding nodes page on MAAS documentation">Learn more about adding nodes to MAAS</a></p>
                 </div>
                 <div class="four-col divider__col">
@@ -40,7 +40,7 @@
                     <p>MAAS will automatically discover your network infrastructure’s:</p>
                     <ul>
                         <li>Attached switch fabrics</li>
-                        <li>Accessible VLANs</li>
+                        <li>Accessible <abbr title="Virtual local area network">VLAN</abbr>s</li>
                         <li>Subnets</li>
                     </ul>
                     <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-networking" class="external" aria-label="External link to the configuring networking page on MAAS documentation">Find out more about MAAS networking</a></p>
@@ -65,7 +65,7 @@
         <div class="inner-wrapper">
             <div class="eight-col">
                 <h2>Manage your servers without leaving your seat</h2>
-                <p>Use the Web UI or the command line (CLI) to remotely manage your nodes or use the API to automate management.</p>
+                <p>Use the Web <abbr title="User interface">UI</abbr> or the command line (<abbr title="Command line interface">CLI</abbr>) to remotely manage your nodes or use the <abbr title="Application programming interface">API</abbr> to automate management.</p>
             </div>
             <div class="twelve-col equal-height divider--vertical divider--horizontal">
                 <div class="six-col divider__col">
@@ -98,7 +98,7 @@
                         <img src="https://assets.ubuntu.com/v1/6ecf284f-Provision-with-any-OS-image.png" class="image--shadow" alt="Screenshot of the opperating system image page">
                     </a>
                     <h3>Provision with any <abbr title="Opperating system">OS</abbr> image</h3>
-                    <p>Select the <abbr title="Opperating system">OS</abbr> you require in your data centre <sup>*</sup></p>
+                    <p>Select the <abbr title="Opperating system">OS</abbr> you require in your data centre <sup aria-describedby="image-info">*</sup></p>
                     <div class="three-col">
                         <ul>
                             <li>Ubuntu</li>
@@ -116,7 +116,7 @@
                     <div class="six-col">
                         <p>Import, update or sync the images or connect to an onsite mirror to work offline.</p>
                         <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-images" class="external" aria-label="External link to the install config images page on MAAS documentation">Learn more about images</a></p>
-                        <p><small><sup>*</sup> Images other than Ubuntu and CentOS require an <a href="https://www.ubuntu.com/support" class="external" aria-label="External link to the Ubuntu Advantage page on ubuntu dot com">Ubuntu Advantage</a> licence</small></p>
+                        <p id="image-info"><small><sup>*</sup> Images other than Ubuntu and CentOS require an <a href="https://www.ubuntu.com/support" class="external" aria-label="External link to the Ubuntu Advantage page on ubuntu dot com">Ubuntu Advantage</a> licence</small></p>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                     <h3>Deploy with the press of a button</h3>
                     <ol>
                         <li>Select the machine</li>
-                        <li>Choose the OS and architecture</li>
+                        <li>Choose the <abbr title="Opperating system">OS</abbr> and architecture</li>
                         <li>Press 'deploy'</li>
                     </ol>
                     <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-nodes-deploy" class="external" aria-label="External link to the install and config page of node deployment on MAAS documentation">Learn more about deployment</a></p>
@@ -153,7 +153,7 @@
         <div class="inner-wrapper">
             <div class="twelve-col">
                 <h2>Want to understand the core concepts and get a high-level overview of MAAS and its architecture?</h2>
-                <p><a href="/how-it-works" class="row-hero__link">Read how it works&nbsp;&rsaquo;</a></p>
+                <p><a href="/how-it-works" class="row-hero__link" aria-label="Link to the how it works page on maas dot i o">Read how it works&nbsp;&rsaquo;</a></p>
             </div>
         </div>
     </section>
@@ -167,9 +167,9 @@
                 <p>Set up your Ethernet interfaces easily and get your nodes ready to work as soon as they're deployed. MAAS supports:</p>
                 <div class="four-col">
                     <ul>
-                        <li>IP address assignment</li>
+                        <li><abbr title="Internet Protocol address">IP address</abbr> assignment</li>
                         <li>Bonding</li>
-                        <li>VLAN configuration</li>
+                        <li><abbr title="Virtual local area network">VLAN</abbr> configuration</li>
                     </ul>
                 </div>
                 <div class="four-col last-col">
@@ -179,27 +179,27 @@
                     </ul>
                 </div>
                 <div class="eight-col">
-                    <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-commission-nodes" class="external">Learn more about interfaces</a></p>
+                    <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-commission-nodes" class="external" aria-label="External link to the install config and commission nodes page on MAAS documentation">Learn more about interfaces</a></p>
                 </div>
             </div>
             <div class="four-col last-col">
-                <a href="https://placehold.it/600x375" class="venobox">
-                    <img src="https://placehold.it/600x375" class="image--shadow" alt="">
+                <a href="https://assets.ubuntu.com/v1/f85b983e-Easily-manage-your-network-interfaces.png" class="venobox" aria-label="Modal link to larger screenshot of node details network management">
+                    <img src="https://assets.ubuntu.com/v1/f85b983e-Easily-manage-your-network-interfaces.png?w=328" class="image--shadow" alt="Screenshot of node details network management">
                 </a>
             </div>
             <div class="eight-col">
                 <h3>Configure any storage layout no matter how complex</h3>
                 <p>Setup your storage, from simple partitioning to complex storage layouts including:</p>
                 <ul>
-                    <li>Bcache</li>
-                    <li>RAID</li>
-                    <li>LVM</li>
+                    <li><abbr title="Block cache">Bcache</abbr></li>
+                    <li><abbr title="Redundant array of independent disks">RAID</abbr></li>
+                    <li><abbr title="Logical Volume Management">LVM</abbr></li>
                 </ul>
-                <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-storage" class="external">Learn more about storage</a></p>
+                <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-storage" class="external" aria-label="External link to install and configure storage on MAAS documentation">Learn more about storage</a></p>
             </div>
             <div class="four-col last-col">
-                <a href="https://placehold.it/600x375" class="venobox">
-                    <img src="https://placehold.it/600x375" class="image--shadow" alt="">
+                <a href="https://assets.ubuntu.com/v1/9e57be0f-Configure-any-storage-layout-no-matter-how-complex.png" class="venobox" aria-label="Modal link to view larger screenshot of node details storage management">
+                    <img src="https://assets.ubuntu.com/v1/9e57be0f-Configure-any-storage-layout-no-matter-how-complex.png?w=328" class="image--shadow" alt="Screenshot of node details storage management">
                 </a>
             </div>
         </div>
@@ -208,24 +208,24 @@
         <div class="inner-wrapper">
             <div class="twelve-col">
                 <h2>Manage your network with MAAS</h2>
-                <h3>IPAM (IP address management ) for operational efficiency</h3>
+                <h3><abbr title="IP address management">IPAM</abbr> (IP address management) for operational efficiency</h3>
                 <div class="six-col">
-                    <p>With MAAS managing DHCP, you can easily:</p>
+                    <p>With MAAS managing <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, you can easily:</p>
                     <ul>
-                        <li>Define IP ranges</li>
+                        <li>Define <abbr title="Internet Protocol address">IP address</abbr> ranges</li>
                         <li>Create persistent leases</li>
                         <li>Boot your machines from the network</li>
-                        <li>Receive DHCP requests relayed from remote networks</li>
+                        <li>Receive <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> requests relayed from remote networks</li>
                     </ul>
-                    <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-dhcp" class="external">Learn more about DHCP in MAAS</a></p>
+                    <p><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-dhcp" class="external" aria-label="External link to install and configure network dhcp page on MAAS documentation">Learn more about <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> in MAAS</a></p>
                 </div>
                 <div class="six-col last-col">
-                    <p>With full DNS management you can:</p>
+                    <p>With full <abbr title="Domain name system">DNS</abbr> management you can:</p>
                     <ul>
-                        <li>Create multiple DNS domains</li>
+                        <li>Create multiple <abbr title="Domain name system">DNS</abbr> domains</li>
                         <li>Add multiple records per domain</li>
                         <li>Select the domain for machines and devices</li>
-                        <li>Assign additional names to IP addresses and more&hellip;</li>
+                        <li>Assign additional names to <abbr title="Internet Protocol address">IP addresses</abbr> and more&hellip;</li>
                     </ul>
                 </div>
             </div>
@@ -234,23 +234,23 @@
                 <p>MAAS can easily manage the most complex network environments, including all your:</p>
                 <div class="two-col">
                     <ul>
-                        <li>Pv4 and <a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-ipv6" class="external">IPv6</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/devel/en/installconfig-network-subnet-management" class="external">Subnets</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#vlans" class="external">VLAN</a></li>
+                        <li><abbr title="Internet Protocol version 4">IPv4</abbr> and <a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-ipv6" class="external" aria-label="External link to install and configure network Internet Protocol version 6 on MAAS documentation"><abbr title="Internet Protocol version 6">IPv6</abbr></a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/devel/en/installconfig-network-subnet-management" class="external" aria-label="External link to install and configure network subnet management on MAAS documentation">Subnets</a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#vlans" class="external" aria-label="External link to intro concepts about virtual local area networks on MAAS documentation"><abbr title="Virtual local area network">VLAN</abbr></a></li>
                     </ul>
                 </div>
                 <div class="two-col">
                     <ul>
-                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#fabrics" class="external">Fabrics</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#spaces" class="external">Spaces</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/devel/en/installconfig-network-ntp" class="external">NTP</a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#fabrics" class="external" aria-label="External link to intro concepts about fabrics on MAAS documentation">Fabrics</a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/devel/en/intro-concepts#spaces" class="external" aria-label="External link to intro concepts about spaces on MAAS documentation">Spaces</a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/devel/en/installconfig-network-ntp" class="external" aria-label="External link to install and configure network ntp on MAAS documentation"><abbr title="Network Time Protocol">NTP</abbr></a></li>
                     </ul>
                 </div>
                 <div class="two-col">
                     <ul>
-                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-ssl" class="external">SSL</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-stp" class="external">STP</a></li>
-                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-proxy" class="external">Proxy</a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-ssl" class="external" aria-label="External link to install and configure secure sockets layer on MAAS documentation"><abbr title="Secure sockets layer">SSL</abbr></a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-stp" class="external" aria-label="External link to install and configure spanning tree protocol on MAAS documentation"><abbr title="Spanning tree protocol">STP</abbr></a></li>
+                        <li><a href="https://docs.ubuntu.com/maas/2.1/en/installconfig-network-proxy" class="external" aria-label="External link to install and configure network proxy on MAAS documentation">Proxy</a></li>
                     </ul>
                 </div>
             </div>
@@ -260,18 +260,18 @@
         <div class="inner-wrapper">
             <div class="six-col strip-dark__col equal-height">
                 <div class="two-col">
-                    <img src="{{ ASSET_SERVER_URL }}4508bba8-maas-cli.svg" class="image--shadow" alt="">
+                    <img src="{{ ASSET_SERVER_URL }}4508bba8-maas-cli.svg" class="image--shadow" alt="MAAS command line interface icon">
                 </div>
                 <div class="four-col last-col">
-                    <h3><a href="https://docs.ubuntu.com/maas/2.1/en/manage-cli">See MAAS CLI on how to get started with the CLI&nbsp;&rsaquo;</a></h3>
+                    <h3><a href="https://docs.ubuntu.com/maas/2.1/en/manage-cli" aria-label="External link to manage command line interface page on MAAS documentation">See MAAS <abbr title="Command line interface">CLI</abbr> on how to get started with the <abbr title="Command line interface">CLI</abbr>&nbsp;&rsaquo;</a></h3>
                 </div>
             </div>
             <div class="six-col last-col strip-dark__col strip-dark__col--light equal-height">
                 <div class="two-col">
-                    <img src="{{ ASSET_SERVER_URL }}a92a0e74-maas-api.svg" class="image--shadow" alt="">
+                    <img src="{{ ASSET_SERVER_URL }}a92a0e74-maas-api.svg" class="image--shadow" alt="MAAS application programming interface icon">
                 </div>
                 <div class="four-col last-col">
-                    <h3><a href="https://docs.ubuntu.com/maas/2.1/en/api">See the API documentation to automate and extend MAAS&nbsp;&rsaquo;</a></h3>
+                    <h3><a href="https://docs.ubuntu.com/maas/2.1/en/api" aria-label="External link to application programming interface page on MAAS documentation">See the <abbr title="Application programming interface">API</abbr> documentation to automate and extend MAAS&nbsp;&rsaquo;</a></h3>
                 </div>
             </div>
         </div>
