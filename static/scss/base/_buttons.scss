@@ -24,7 +24,9 @@
     border: 0;
     color: $text-color;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $color-light;
     }
   }
