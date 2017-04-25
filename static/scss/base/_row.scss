@@ -22,6 +22,10 @@
       background: $cool-grey;
       color: $white;
 
+      a:hover {
+        color: $white;
+      }
+
       &--fluid {
 
         @media only screen and (max-width: $breakpoint-medium) {
