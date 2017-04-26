@@ -1,23 +1,39 @@
-.bzr/
-*.DS_Store
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
+# OS files
+Desktop.ini
 Thumbs.db
-*.css
+._*
+*.DS_Store
+*~
+\#*\#
+
+# Cache and backup
+*.bak
 *.pyc
-db.sqlite3
-env*/
-.sass-cache
-templates/static/css/styles.css
+*-cache/
+__pycache__/
+
+# Local data
+*.sqlite*
+*.log
+logs/
+pids
 *.pid
+*.seed
+
+# Local dependencies
+.bundle/
+node_modules/
+
+# Local environment settings
+.docker-project
+.envrc
+env/
+env3/
+
+# Sass
+*.css
 *.css.map
+
+# Local project ignores
 bzr-repo/
-django-error.log
-/node_modules/
 /tmp/
-cache.sqlite
-npm-debug.log
