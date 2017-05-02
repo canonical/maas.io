@@ -31,7 +31,7 @@
     }
   }
 
-  /* ------ venobox.css --------*/
+  // venobox.css 
   .vbox-overlay *,
   .vbox-overlay *:before,
   .vbox-overlay *:after{
@@ -40,7 +40,7 @@
       -moz-box-sizing:border-box;
       box-sizing:border-box;
   }
-  /* ------- overlay: change here background color and opacity ----- */
+  // overlay: change here background color and opacity ----- */
   .vbox-overlay{
       background: #fdfdfd;
       background: rgba(0,0,0,0.85);
@@ -56,9 +56,9 @@
       overflow-y: auto;
   }
 
-  /* ----- preloader - choose between CIRCLE, IOS, DOTS, QUADS ----- */
+  // preloader - choose between CIRCLE, IOS, DOTS, QUADS
 
-  /* circle preloader */
+  // circle preloader
   .vbox-preloader{
       position:fixed;
       width:32px;
@@ -97,134 +97,7 @@
        to { background-position: -576px; }
   }
 
-
-  /* IOS preloader */
-
-  /*.vbox-preloader{
-      position:fixed;
-      width:32px;
-      height:32px;
-      left:50%;
-      top:50%;
-      margin-left:-16px;
-      margin-top:-16px;
-      background-image: url(preload-ios.png);
-      text-indent: -100px;
-      overflow: hidden;
-      -webkit-animation: playload 1.4s steps(12) infinite;
-         -moz-animation: playload 1.4s steps(12) infinite;
-          -ms-animation: playload 1.4s steps(12) infinite;
-           -o-animation: playload 1.4s steps(12) infinite;
-              animation: playload 1.4s steps(12) infinite;
-  }
-
-  @-webkit-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-moz-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-ms-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-o-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  */
-
-
-  /* dots preloader */
-  /*
-  .vbox-preloader{
-      position:fixed;
-      width:32px;
-      height:11px;
-      left:50%;
-      top:50%;
-      margin-left:-16px;
-      margin-top:-16px;
-      background-image: url(preload-dots.png);
-      text-indent: -100px;
-      overflow: hidden;
-      -webkit-animation: playload 1.4s steps(24) infinite;
-         -moz-animation: playload 1.4s steps(24) infinite;
-          -ms-animation: playload 1.4s steps(24) infinite;
-           -o-animation: playload 1.4s steps(24) infinite;
-              animation: playload 1.4s steps(24) infinite;
-  }
-
-  @-webkit-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -768px; }
-  }
-  @-moz-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -768px; }
-  }
-  @-ms-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -768px; }
-  }
-  @-o-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -768px; }
-  }
-  @keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -768px; }
-  }
-  */
-
-
-  /* quads preloader */
-  /*
-  .vbox-preloader{
-      position:fixed;
-      width:32px;
-      height:10px;
-      left:50%;
-      top:50%;
-      margin-left:-16px;
-      margin-top:-16px;
-      background-image: url(preload-quads.png);
-      text-indent: -100px;
-      overflow: hidden;
-      -webkit-animation: playload 1.4s steps(12) infinite;
-         -moz-animation: playload 1.4s steps(12) infinite;
-          -ms-animation: playload 1.4s steps(12) infinite;
-           -o-animation: playload 1.4s steps(12) infinite;
-              animation: playload 1.4s steps(12) infinite;
-  }
-  @-webkit-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-moz-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-ms-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @-o-keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  @keyframes playload {
-     from { background-position:    0px; }
-       to { background-position: -384px; }
-  }
-  */
-  /* ----- navigation ----- */
+  // navigation
   .vbox-close{
       cursor: pointer;
       position: fixed;
@@ -255,7 +128,7 @@
       height: 170px;
       margin-top: -85px;
       text-indent: -100px;
-      border: solid transparent; /* Using border instead of padding to keep bg image in place */
+      border: solid transparent; // Using border instead of padding to keep bg image in place
       overflow: hidden;
       background-color: rgba(0,0,0,.2);
   }
@@ -309,7 +182,7 @@
       background: #161617;
       display: none;
   }
-  /* ------- inline window ------ */
+  // inline window
   .vbox-inline{
       width: 420px;
       height: 315px;
@@ -320,7 +193,7 @@
       overflow: auto;
   }
 
-  /* ------- Video & iFrames window ------ */
+  // Video & iFrames window
   .venoframe{
       border: none;
       width: 100%;
@@ -353,7 +226,7 @@
       }
   }
 
-  /* ------- PLease do NOT edit this! (or do it at your own risk) ------ */
+  // PLease do NOT edit this! (or do it at your own risk)
   .vbox-open{
       overflow: hidden;
   }
