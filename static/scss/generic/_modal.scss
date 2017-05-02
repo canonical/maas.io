@@ -1,4 +1,36 @@
 @mixin maas-modal {
+  .venobox {
+
+    &--expand {
+      position: relative;
+      margin: 0 auto 20px;
+      overflow: visible;
+      display: block;
+
+      > img {
+        margin: 0 auto;
+      }
+
+      &:after {
+        content: '';
+        bottom: 15px;
+        right: 15px;
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: {
+          color: $color-dark;
+          image: url('#{$asset-path}495995ef-fullscreen-white.svg');
+          size: 50%;
+          position: center;
+          repeat: no-repeat;
+        }
+        box-shadow: 0 5px 10px 0px rgba(0,0,0,.2);
+      }
+    }
+  }
+
   /* ------ venobox.css --------*/
   .vbox-overlay *,
   .vbox-overlay *:before,
