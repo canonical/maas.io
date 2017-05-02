@@ -22,6 +22,10 @@
       background: $cool-grey;
       color: $white;
 
+      a:hover {
+        color: $white;
+      }
+
       &--fluid {
 
         @media only screen and (max-width: $breakpoint-medium) {
@@ -85,6 +89,19 @@
         height: 100%;
         margin: 0;
         max-height: 32px;
+      }
+    }
+
+    &.row--works-on-all-your-hardware {
+      @media only screen and (max-width: $breakpoint-medium) {
+        .two-col {
+          width: 48%;
+          margin-right: 2%;
+
+          &:nth-child(even) {
+            margin-right: 0;
+          }
+        }
       }
     }
   }

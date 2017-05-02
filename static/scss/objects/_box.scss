@@ -18,9 +18,12 @@
   .row-hero {
 
     .box {
-      background-color: $transparent;
-      border-color: $warm-grey;
-      border-style: dotted;
+      background-color: $color-x-light;
+      color: $color-dark;
+
+      .row-hero__link {
+        color: $link-color;
+      }
     }
   }
 }

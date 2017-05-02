@@ -28,6 +28,7 @@ $asset-path: 'https://assets.ubuntu.com/v1/';
 // MAAS variables
 $color-x-light: #fff;
 $color-light: #f7f7f7;
+$color-dark: #111;
 
 @include maas-main;
 @include maas-row;

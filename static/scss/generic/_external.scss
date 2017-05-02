@@ -8,9 +8,17 @@
 /// @group MAAS Header
 @mixin maas-external-link {
 
-  .external {
-    color: $text-color;
-    font-weight: 400;
-    background-image: url('#{$asset-path}769fa468-external-link-footer.svg');
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li {
+    .external {
+      color: $text-color;
+      font-weight: 400;
+      background-image: url('#{$asset-path}769fa468-external-link-footer.svg');
+    }
   }
 }
