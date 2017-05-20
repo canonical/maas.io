@@ -1,16 +1,19 @@
-# OS files
+# OS & editor files
 Desktop.ini
 Thumbs.db
 ._*
 *.DS_Store
 *~
 \#*\#
+__*
+.AppleDouble
+.LSOverride
+.spelling
 
 # Cache and backup
 *.bak
 *.pyc
 *-cache/
-__pycache__/
 
 # Local data
 *.sqlite*
@@ -19,10 +22,17 @@ logs/
 pids
 *.pid
 *.seed
+.*-metadata
 
 # Local dependencies
 .bundle/
 node_modules/
+bower_components/
+vendor/
+
+# Build files
+/build/
+_site/
 
 # Local environment settings
 .docker-project
@@ -34,6 +44,6 @@ env3/
 *.css
 *.css.map
 
-# Local project ignores
+# Project-specific ignores
 bzr-repo/
 /tmp/
