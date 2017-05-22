@@ -1,21 +1,24 @@
 MAAS website project
 ===
 
-This is a simple databaseless informational website project, based on
-[static-django-bootstrap](https://github.com/ubuntudesign/static-django-bootstrap).
+This is the simple databaseless Django project behind <https://maas.io>.
 
-Basic usage
----
+## Local development
 
-To run the site locally:
+The simplest way to run the site locally is to first [install Docker](https://docs.docker.com/engine/installation/) (on Linux you may need to [add your user to the `docker` group](https://docs.docker.com/engine/installation/linux/linux-postinstall/)), and then use the `./run` script:
 
 ``` bash
-make setup    # Install dependencies - only needed the first time
-npm install   # Install all node dependencies and vanilla theme
-make develop  # Auto-compile sass files and run the dev server
+./run
 ```
 
-Now visit <http://127.0.0.1:8000>.
+Once the containers are setup, you can visit <http://127.0.0.1:8004> in your browser.
 
-To see what other `make` commands are available, run `make help`.
+### Building CSS
 
+For working on [Sass files](_sass), you may want to dynamically watch for changes to rebuild the CSS whenever something changes.
+
+To setup the watcher, open a new terminal window and run:
+
+``` bash
+./run watch
+```
