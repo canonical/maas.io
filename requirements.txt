@@ -1,4 +1,4 @@
-Django==1.11
+Django==1.11.1
 dj-static==0.0.6
 django-versioned-static-url==0.8
 django-static-root-finder==0.1
