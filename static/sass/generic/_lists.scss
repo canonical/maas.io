@@ -1,0 +1,68 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Lists
+/// @group Lists
+@mixin maas-lists {
+  .list--large li {
+    font-size: 18px;
+    padding: 20px 0;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: .875rem;
+    }
+  }
+
+  .list__bullets {
+    margin-left: 0;
+
+    li {
+      padding-left: 40px;
+      position: relative;
+      list-style: none;
+
+      &:before {
+        content: '';
+        background-image: url("#{$asset-path}90067499-green-tick.svg");
+        background-repeat: no-repeat;
+        display: block;
+        left: 2px;
+        top: 5px;
+        color: $white;
+        font-size: 20px;
+        width: 22px;
+        height: 16px;
+        position: absolute;
+      }
+    }
+  }
+
+  .list {
+
+    &.list__bullets {
+      margin: 0;
+
+      li {
+
+        &:before {
+          left: 2px;
+          top: 26px;
+
+          @media screen and (max-width: $breakpoint-medium) {
+            top: 23px;
+          }
+        }
+
+        @media only screen and (max-width : $breakpoint-medium) {
+          &.last-item {
+            border-bottom: 1px dotted #888;
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

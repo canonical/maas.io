@@ -1,0 +1,37 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Equal heights makes all immediate child divs and li's heights equal
+/// @group Utils
+/// @example
+///   <div class="row equal-height">
+///     <div class="six-col">...</div>
+///     <div class="six-col last-col">...</div>
+///   </div>
+@mixin maas-equal-height {
+
+  .equal-height {
+    @media only screen and (min-width : $breakpoint-medium + 1) {
+      > article {
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+      }
+    }
+
+    &--mobile {
+      @media screen and (max-width: $breakpoint-medium) {
+        display: flex;
+      }
+    }
+
+    &--align-middle {
+      align-items: center;
+    }
+  }
+}

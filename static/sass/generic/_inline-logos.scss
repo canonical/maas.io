@@ -1,0 +1,42 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Inline logos component
+/// @group Lists
+/// @example
+///   <ul class="inline-logos">
+///     <li>...</li>
+///   </ul>
+@mixin maas-inline-logos {
+  .inline-logos {
+
+    &__item {
+      clear: none;
+      display: inline-block;
+      float: none;
+      height: auto;
+      margin: 20px 0;
+      line-height: 60px;
+      padding: 0 40px;
+
+      @media only screen and (max-width : $breakpoint-medium) {
+        width: 30%;
+        margin: 10px 0;
+      }
+    }
+
+    &__image {
+      height: auto;
+      margin: 0 auto;
+      max-width: 100px;
+
+      @media only screen and (min-width : $breakpoint-medium) {
+        max-width: 230px;
+        max-height: 65px;
+      }
+    }
+  }
+}

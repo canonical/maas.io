@@ -1,0 +1,29 @@
+////
+/// @author       Web Team at Canonical Ltd
+/// @link         https://github.com/ubuntudesign/ubuntu-maas
+/// @since        1.0.0
+////
+
+/// Box styles
+/// @group Box styles
+@mixin maas-box {
+  .box {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 1.333em 20px;
+    border: 1px solid #dfdcd9;
+  }
+
+  .row-hero {
+
+    .box {
+      background-color: $color-x-light;
+      color: $color-dark;
+
+      .row-hero__link {
+        color: $link-color;
+      }
+    }
+  }
+}
