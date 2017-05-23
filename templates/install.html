@@ -1,19 +1,19 @@
 {% extends "base_index.html" %}
 
-{% block page_class %}get-started-page{% endblock %}
-{% block page-title %}| Get started{% endblock %}
+{% block page_class %}install{% endblock %}
+{% block page-title %}| Install MAAS{% endblock %}
 
 {% block content %}
-    <section class="row strip-white">
+    <section class="row row-hero">
         <div class="inner-wrapper">
             <div class="seven-col append-one">
-                <h1>Get started with MAAS 2.0</h1>
-                <p>Follow the instructions below to download, configure and install MAAS.</p>
+                <h1>Install MAAS</h1>
+                <p class="row-hero__intro">Follow the instructions below to download, configure and install MAAS.</p>
             </div>
-            <div class="four-col last-col box">
+            <div class="box four-col last-col">
                 <h3>Talk to our experts</h3>
-                <p>We make MAAS amazing and we help people run critical infrastructure at scale with it. Contact us for more information or to discuss your specific needs.</p>
-                <p><a href="/contact-us">Contact us &nbsp;&rsaquo;</a></p>
+                <p>We make MAAS amazing, and we help people run critical infrastructure at scale with it. Contact us for more information or to discuss your specific needs.</p>
+                <p><a href="/contact-us" class="row-hero__link">Contact us&nbsp;&rsaquo;</a></p>
             </div>
         </div>
     </section>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>You need one small server for MAAS and at least one server which can be managed with a BMC. It is recommended to have the MAAS server provide DHCP and DNS on a network the managed machines are connected to.</p>
+                <p>You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard management controller">BMC</abbr>. It is recommended to have the MAAS server provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> and <abbr title="Domain name service">DNS</abbr> on a network the managed machines are connected to.</p>
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p><a href="http://www.ubuntu.com/download/server" class="external">Download Ubuntu Server 16.04 LTS</a> and follow the  step-by-step installation instructions on your MAAS server. </p>
+                <p><a href="http://www.ubuntu.com/download/server" class="external">Download Ubuntu Server 16.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
             </div>
         </div>
     </section>
@@ -85,7 +85,7 @@
                     <input class="command-line__input" value="sudo maas createadmin" readonly="readonly">
                     <button class="js-copy-to-clipboard command-line__copy-button">Copy to clipboard</button>
                 </p>
-                <p>Login to the MAAS UI at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
+                <p>Login to the MAAS <abbr title="User interface">UI</abbr> at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
             </div>
         </div>
     </section>
@@ -96,17 +96,21 @@
                     <span class="instruction__step">5</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Turn on DHCP</h3>
+                    <h3 class="instruction__title">Complete the first user configuration journey</h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the &ldquo;Networks&rdquo; tab, and select the VLAN for which you want to enable DHCP, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide DHCP&rdquo;.</p>
-                <ol>
-                    <li>Set the Rack controller that will manage DHCP.</li>
-                    <li>Select the subnet where to create the DHCP Dynamic range on.</li>
-                    <li>Fill in details for the dynamic range.</li>
-                </ol>
-                <img src="{{ ASSET_SERVER_URL }}ab018774-vlan-details.png" class="image--shadow" alt="VLAN details">
+                <p>Follow the instructions on screen to complete the first installation of MAAS. We recommended using the default values unless your installation has different requirements.</p>
+                <p>By the end of the journey you should have the following configured;</p>
+                <ul>
+                    <li>Region name</li>
+                    <li>Ubuntu archive, Ubuntu extra architectures</li>
+                    <li>Ubuntu images</li>
+                    <li><abbr title="Secure shell">SSH</abbr> keys (for currently logged in user)</li>
+                </ul>
+                <a href="{{ ASSET_SERVER_URL }}a36ffd9c-first-use-journey.png" class="venobox venobox--expand" data-gall="installGallery" title="Initial screen of the first use journey">
+                    <img src="{{ ASSET_SERVER_URL }}a36ffd9c-first-use-journey.png?w=552" class="image--shadow" alt="First user journey screenshot">
+                </a>
             </div>
         </div>
     </section>
@@ -117,12 +121,19 @@
                     <span class="instruction__step">6</span>
                 </div>
                 <div class="four-col last-col">
-                    <h3 class="instruction__title">Import images</h3>
+                    <h3 class="instruction__title">Turn on <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></h3>
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Go to the &ldquo;Images&rdquo; tab and choose the OS releases and architectures you want to install dynamically.</p>
-                <img src="{{ ASSET_SERVER_URL }}e4a4fc29-boot-images.png" class="image--shadow" alt="MAAS Images">
+                <p>Go to the &ldquo;Subnets&rdquo; tab, and select the <abbr title="Virtual local area network">VLAN</abbr> for which you want to enable <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>&rdquo;.</p>
+                <ol>
+                    <li>Set the Rack controller that will manage <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>.</li>
+                    <li>Select the subnet where to create the <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> Dynamic range on.</li>
+                    <li>Fill in the details for the dynamic range.</li>
+                </ol>
+                <a href="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png" class="venobox venobox--expand" data-gall="installGallery" title="VLAN details page in an active MAAS">
+                    <img src="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png?w=552" class="image--shadow" alt="VLAN details">
+                </a>
             </div>
         </div>
     </section>
@@ -137,15 +148,17 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p>Now you are ready to enlist and commission machines.</p>
+                <p>Now MAAS is ready to enlist and commission machines.</p>
                 <ol>
-                    <li>Set all the servers to PXE boot</li>
+                    <li>Set all the servers to <abbr title="Preboot Execution Environment">PXE</abbr> boot</li>
                     <li>Boot each machine once. You should see these machines appear in MAAS</li>
-                    <li>If your machines do not have a IPMI based BMC, proceed to edit them and enter their BMC details</li>
+                    <li>If your machines do not have a <abbr title="Intelligent Platform Management Interface">IPMI</abbr> based <abbr title="Baseboard management controller">BMC</abbr>, proceed to edit them and enter their <abbr title="Baseboard management controller">BMC</abbr> details</li>
                     <li>Select all the machines and &ldquo;Commission&rdquo; them using the &ldquo;Take action&rdquo; button</li>
-                    <li>When machines have a “Ready” status you can start deploying</li>
+                    <li>When machines have a &ldquo;Ready&rdquo; status you can start deploying</li>
                 </ol>
-                <img src="{{ ASSET_SERVER_URL }}cdc79a2b-node-listing.png" class="image--shadow" alt="MAAS node listing">
+                <a href="{{ ASSET_SERVER_URL }}c1196090-node-listing.png" class="venobox venobox--expand" data-gall="installGallery" title="The node listing page in MAAS">
+                    <img src="{{ ASSET_SERVER_URL }}c1196090-node-listing.png?w=552" class="image--shadow" alt="MAAS node listing">
+                </a>
             </div>
         </div>
     </section>
