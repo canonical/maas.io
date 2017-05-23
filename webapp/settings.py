@@ -2,10 +2,12 @@
 Django project settings
 """
 
-# Although the insecure, easily guessed SECRET_KEY
-# 'SECRET_KEY_INSECURE_PLACEHOLDER' *will work* with Django,
-# you *should* change it when you get the chance.
-# E.g. from http://www.miniwebtool.com/django-secret-key-generator/
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+# This will set the SECRET_KEY to "no_secret", unless the SECRET_KEY
+# environment variable is set.
 #
 # While this static-django-bootstrap app is only being used as intended -
 # to serve essentially static templates with no dynamic functionality,
@@ -15,7 +17,11 @@ Django project settings
 # or anything that uses django.utils.crypt.get_random_string(),
 # you will need a strong SECRET_KEY to ensure your app remains secure
 # (see: http://stackoverflow.com/a/15383766/613540)
-SECRET_KEY = 'SECRET_KEY_INSECURE_PLACEHOLDER'  # !! CHANGE ME !!
+#
+# At this point you should ensure the SECRET_KEY environment variable is set
+# in the Production deployment with a secure key, e.g. from
+# http://www.miniwebtool.com/django-secret-key-generator/
+SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
@@ -27,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 MIDDLEWARE_CLASSES = []
 
+DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 ROOT_URLCONF = 'webapp.urls'
 WSGI_APPLICATION = 'webapp.wsgi.application'
 LANGUAGE_CODE = 'en-us'
@@ -37,17 +44,24 @@ USE_TZ = False
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = ['django_static_root_finder.StaticRootFinder']
-TEMPLATE_DIRS = ['templates']
 ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
 
-# See http://tinyurl.com/django-context-processors
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.core.context_processors.static",  # {{ STATIC_URL }}
-    "django_asset_server_url.asset_server_url",  # {{ ASSET_SERVER_URL }}
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'builtins': [
+                'webapp.templatetags.feeds',
+                'webapp.templatetags.utils',
+            ],
+            'context_processors': [
+                'django_asset_server_url.asset_server_url',
+            ],
+        },
+    },
 ]
-
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 LOGGING = {
     'version': 1,
@@ -56,7 +70,7 @@ LOGGING = {
         'error_file': {
             'level': 'ERROR',
             'filename': os.path.join(BASE_DIR, 'django-error.log'),
-            'class':'logging.handlers.RotatingFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'maxBytes': 1 * 1024 * 1024,
             'backupCount': 2
         }

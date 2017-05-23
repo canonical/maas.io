@@ -1,6 +1,9 @@
+# Third party
 from django.conf.urls import url
 from django_yaml_redirects import load_redirects
-from views import MaasTemplateFinder, custom_404, custom_500
+
+# Local
+from .views import MaasTemplateFinder, custom_404, custom_500
 
 urlpatterns = load_redirects()
 

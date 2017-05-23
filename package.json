@@ -1,18 +1,17 @@
 {
   "name": "ubuntu-maas",
-  "version": "0.0.1",
   "description": "Static Django website blueprint ===",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sass-lint static/**/*.scss --verbose --no-exit",
+    "clean": "rm -rf node_modules yarn-error.log static/css, django-error.log cache.sqlite",
+    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
+    "build": "node-sass --include-path node_modules static/sass --output static/css"
   },
-  "keywords": [
-    "maas",
-    "ubuntu"
-  ],
   "author": "Canonical webteam",
   "license": "LGPL v3",
-  "dependencies": {
-    "cloud-vanilla-theme": "0.1.1"
+  "devDependencies": {
+    "sass-lint": "^1.10.2",
+    "cloud-vanilla-theme": "0.1.2",
+    "node-sass": "^4.5.3"
   }
 }
