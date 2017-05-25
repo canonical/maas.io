@@ -25,7 +25,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
-    'django_versioned_static_url',
+    'canonicalwebteam',
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     'webapp',
 ]
 
