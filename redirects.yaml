@@ -1,2 +1,2 @@
-docs: http://docs.ubuntu.com/maas/2.1/en/
-docs/(?P<docs>.*): http://docs.ubuntu.com/maas/2.1/{docs}
+docs: http://docs.ubuntu.com/maas/2.2/en/
+docs/(?P<docs>.*): http://docs.ubuntu.com/maas/2.2/{docs}
