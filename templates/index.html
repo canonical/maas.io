@@ -16,8 +16,8 @@
 				<h1>Say hello to your physical cloud</h1>
 				<p class="row-hero__intro" itemprop="description">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
 				<div class="row-hero__button-group">
-					<a href="/install" class="row-hero__button button--positive button--inline-positive" itemprop="url">Install MAAS</a>
-					<a class="row-hero__button button--neutral row-hero__button--video button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/J1XH0SQARgo">
+					<a href="/install" class="row-hero__button button--positive button--inline-positive" itemprop="url" >Install MAAS</a>
+					<a class="row-hero__button button--neutral row-hero__button--video button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/J1XH0SQARgo" onClick="ga(‘send’, ‘event’, ‘Video’, ‘Play’, ‘Watch the video’);">
 						<span>Watch the video</span>
 					</a>
 				</div>
@@ -38,7 +38,9 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" class="no-margin" alt="Automation cog icon">&nbsp;&nbsp;
-						<a href="/tour#automation">Automation &rsaquo;</a>
+						<a href="/tour#automation"
+						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Automation’);
+						   			ga(‘send’, ‘event’, ‘Interested in feature’, ‘Click’, ‘Learn more about device discovery and subnet mapping’);">Automation &rsaquo;</a>
 					</h4>
 					<p>Automatic discovery and registration of every device on the network.</p>
 					<p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 4">IPv6</abbr>) automation.</p>
@@ -46,7 +48,9 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#fast-deployment">Fast deployment &rsaquo;</a>
+						<a href="/tour#fast-deployment"
+						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Learn more about images’);
+						   			ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Fast deployment’);">Fast deployment &rsaquo;</a>
 					</h4>
 					<p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
 					<p>Deploy linux distros in less than 5 minutes.</p>
@@ -54,7 +58,9 @@
 				<div class="four-col divider__col last-col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#configure-servers">Machine configuration &rsaquo;</a>
+						<a href="/tour#configure-servers"
+						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Learn more about storage’);
+						   			ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Machine configuration’);">Machine configuration &rsaquo;</a>
 					</h4>
 					<p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
 					<p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
@@ -64,7 +70,8 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" class="no-margin" width="32" alt="Chassis icon">&nbsp;&nbsp;
-						<a href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd" class="external">Chassis management</a>
+						<a href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd"
+						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Chassis management’);" class="external">Chassis management</a>
 					</h4>
 					<p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
 					<p>Dynamic hardware resource management with Intel RSD.</p>
@@ -72,7 +79,8 @@
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#manage-network ">Network management &rsaquo;</a>
+						<a href="/tour#manage-network"
+						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Network management’);">Network management &rsaquo;</a>
 					</h4>
 					<p>Observes and catalogs every IP address on the network (IPAM).</p>
 					<p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
@@ -82,14 +90,14 @@
 						<img src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" class="no-margin">&nbsp;&nbsp;
 						<span>DevOps integration</span>
 					</h4>
-                    <p>Integration with devops automation tools like <a href="http://conjure-up.io/" class="external">conjure-up</a>, <a href="https://jujucharms.com/" class="external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
+                    <p>Integration with devops automation tools like <a href="http://conjure-up.io/" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘DevOps integration’);" class="external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘DevOps integration’);" class="external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
 				</div>
 			</div>
 			<div class="equal-height divider--vertical twelve-col">
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Service tracking image" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#hardware-tracking">Service tracking &rsaquo;</a>
+						<a href="/tour#hardware-tracking" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Service tracking’);">Service tracking &rsaquo;</a>
 					</h4>
 					<p>Monitors and tracks critical services to ensure proper opperations.</p>
 				</div>
@@ -98,7 +106,7 @@
 						<img src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" class="no-margin">&nbsp;&nbsp;
 						<span>Manage</span>
 					</h4>
-					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.2/en/api" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
+					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘REST API, CLI’);" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘REST API, CLI’);" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
 				</div>
 			</div>
 		</div>
