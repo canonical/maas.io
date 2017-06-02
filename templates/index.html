@@ -17,7 +17,7 @@
 				<p class="row-hero__intro" itemprop="description">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
 				<div class="row-hero__button-group">
 					<a href="/install" class="row-hero__button button--positive button--inline-positive" itemprop="url" >Install MAAS</a>
-					<a class="row-hero__button button--neutral row-hero__button--video button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="ga(‘send’, ‘event’, ‘Video’, ‘Play’, ‘Watch the video’);">
+					<a class="row-hero__button button--neutral row-hero__button--video button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the video' });">
 						<span>Watch the video</span>
 					</a>
 				</div>
@@ -27,7 +27,6 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- Benifits of MAAS -->
 	<section class="row strip-white">
 		<div class="inner-wrapper">
@@ -39,8 +38,8 @@
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" class="no-margin" alt="Automation cog icon">&nbsp;&nbsp;
 						<a href="/tour#automation"
-						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Automation’);
-						   			ga(‘send’, ‘event’, ‘Interested in feature’, ‘Click’, ‘Learn more about device discovery and subnet mapping’);">Automation &rsaquo;</a>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' });
+						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation &rsaquo;</a>
 					</h4>
 					<p>Automatic discovery and registration of every device on the network.</p>
 					<p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 4">IPv6</abbr>) automation.</p>
@@ -49,8 +48,8 @@
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" class="no-margin">&nbsp;&nbsp;
 						<a href="/tour#fast-deployment"
-						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Learn more about images’);
-						   			ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Fast deployment’);">Fast deployment &rsaquo;</a>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' });
+						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Fast deployment &rsaquo;</a>
 					</h4>
 					<p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
 					<p>Deploy linux distros in less than 5 minutes.</p>
@@ -59,8 +58,8 @@
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" class="no-margin">&nbsp;&nbsp;
 						<a href="/tour#configure-servers"
-						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Learn more about storage’);
-						   			ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Machine configuration’);">Machine configuration &rsaquo;</a>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' });
+						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">Machine configuration &rsaquo;</a>
 					</h4>
 					<p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
 					<p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
@@ -71,7 +70,7 @@
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" class="no-margin" width="32" alt="Chassis icon">&nbsp;&nbsp;
 						<a href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd"
-						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Chassis management’);" class="external">Chassis management</a>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });" class="external">Chassis management</a>
 					</h4>
 					<p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
 					<p>Dynamic hardware resource management with Intel RSD.</p>
@@ -80,7 +79,7 @@
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" class="no-margin">&nbsp;&nbsp;
 						<a href="/tour#manage-network"
-						   onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Network management’);">Network management &rsaquo;</a>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">Network management &rsaquo;</a>
 					</h4>
 					<p>Observes and catalogs every IP address on the network (IPAM).</p>
 					<p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
@@ -90,14 +89,14 @@
 						<img src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" class="no-margin">&nbsp;&nbsp;
 						<span>DevOps integration</span>
 					</h4>
-                    <p>Integration with devops automation tools like <a href="http://conjure-up.io/" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘DevOps integration’);" class="external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘DevOps integration’);" class="external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
+					<p>Integration with devops automation tools like <a href="http://conjure-up.io/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="external">Juju</a>, Chef, Puppet, SALTAnsible and more.</p>
 				</div>
 			</div>
 			<div class="equal-height divider--vertical twelve-col">
 				<div class="four-col divider__col">
 					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
 						<img src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Service tracking image" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#hardware-tracking" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘Service tracking’);">Service tracking &rsaquo;</a>
+						<a href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });">Service tracking &rsaquo;</a>
 					</h4>
 					<p>Monitors and tracks critical services to ensure proper opperations.</p>
 				</div>
@@ -106,7 +105,7 @@
 						<img src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" class="no-margin">&nbsp;&nbsp;
 						<span>Manage</span>
 					</h4>
-					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘REST API, CLI’);" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="ga(‘send’, ‘event’, ‘Feature’, ‘Click’, ‘REST API, CLI’);" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
+					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
 				</div>
 			</div>
 		</div>
@@ -185,7 +184,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="row">
 		<div class="inner-wrapper">
 			<div class="twevle-col align-center">
@@ -216,13 +214,11 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="row strip-white pricing">
 		<div class="inner-wrapper">
 			<div class="twelve-col">
 				<h2>Pricing</h2>
-				<p class="eight-col">MAAS is supported by Canonical under the <a href="http://www.ubuntu.com/management/ubuntu-advantage" class="external">Ubuntu Advantage</a> service program. Ubuntu Advantage MAAS includes tools that enable deployment of a wider range of operating systems,
-					SLAs on support and high availability reference architectures.</p>
+				<p class="eight-col">MAAS is supported by Canonical under the <a href="http://www.ubuntu.com/management/ubuntu-advantage" class="external">Ubuntu Advantage</a> service program. Ubuntu Advantage MAAS includes tools that enable deployment of a wider range of operating systems, SLAs on support and high availability reference architectures.</p>
 			</div>
 			<div class="pricing twelve-col equal-height">
 				<div class="pricing__option four-col">
@@ -245,7 +241,7 @@
 							<li>All operating systems</li>
 							<li>9 to 5 support on weekdays (US and Europe only)</li>
 						</ul>
-						<p><a href="/contact-us" onClick="ga(‘send’, ‘event’, ‘Interested in Professional’, ‘Click’, ‘Contact us’);">Contact us&nbsp;&rsaquo;</a></p>
+						<p><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
 					</div>
 				</div>
 				<div class="pricing__option four-col last-col">
@@ -258,7 +254,8 @@
 							<li>All operating systems</li>
 							<li>24/7 support</li>
 						</ul>
-						<p><a href="/contact-us" onClick="ga(‘send’, ‘event’, ‘Interested in Professional’, ‘Click’, ‘Contact us’);">Contact us&nbsp;&rsaquo;</a></p>
+						<p><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
+
 					</div>
 				</div>
 			</div>

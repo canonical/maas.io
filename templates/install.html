@@ -13,7 +13,7 @@
             <div class="box four-col last-col">
                 <h3>Talk to our experts</h3>
                 <p>We make MAAS amazing, and we help people run critical infrastructure at scale with it. Contact us for more information or to discuss your specific needs.</p>
-                <p><a href="/contact-us" onClick="ga(‘send’, ‘event’, ‘Interested in Professional’, ‘Click’, ‘Contact us’);" class="row-hero__link">Contact us&nbsp;&rsaquo;</a></p>
+                <p><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });" class="row-hero__link">Contact us&nbsp;&rsaquo;</a></p>
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="seven-col last-col instruction__details">
-                <p><a href="http://www.ubuntu.com/download/server" onClick="ga(‘send’, ‘event’, ‘Downloaded Ubuntu Server’, ‘Click’, ‘Download Ubuntu Server 16.04 LTS’);" class="external">Download Ubuntu Server 16.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
+                <p><a href="http://www.ubuntu.com/download/server" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download Ubuntu Server', 'eventAction' : 'Click', 'eventLabel' : 'Download Ubuntu Server 16.04 LTS' });" class="external">Download Ubuntu Server 16.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
             </div>
         </div>
     </section>
@@ -83,7 +83,7 @@
                 <p>Create your admin credentials by typing.</p>
                 <p class="command-line">
                     <input class="command-line__input" value="sudo maas createadmin" readonly="readonly">
-                    <button class="js-copy-to-clipboard command-line__copy-button" onClick="ga(‘send’, ‘event’, ‘Completion’, ‘Click’, ‘Install’);">Copy to clipboard</button>
+                    <button class="js-copy-to-clipboard command-line__copy-button" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Completion', 'eventAction' : 'Click', 'eventLabel' : 'Install' });">Copy to clipboard</button>
                 </p>
                 <p>Login to the MAAS <abbr title="User interface">UI</abbr> at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
             </div>
