@@ -14,12 +14,12 @@
       bottom: 90px;
       top: 90px;
     }
-    background-color: $cool-grey;
+    background-color: $color-dark;
     background-image: url('#{$asset-path}6e4b2b20-MAAS-hero-background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: $white;
+    color: $color-x-light;
 
     @media only screen and (max-width : $breakpoint-medium) {
       padding: {
@@ -29,7 +29,7 @@
     }
 
     &__link {
-      color: $white;
+      color: $color-x-light;
       font-weight: 400;
 
       &--external {
@@ -54,7 +54,7 @@
     }
 
     &__text {
-      color: $white;
+      color: $color-x-light;
       margin-bottom: 0;
       z-index: 2;
 
@@ -141,7 +141,7 @@
       outline: 0;
       vertical-align: middle;
       line-height: 46px;
-      color: $white;
+      color: $color-x-light;
       font-size: 18px;
 
       @media only screen and (max-width: 768px) {

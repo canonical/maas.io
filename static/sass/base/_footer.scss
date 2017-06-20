@@ -10,7 +10,7 @@ $title-color: #767676;
 
 @mixin maas-footer {
   .footer {
-    background-color: $white;
+    background-color: $color-x-light;
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
@@ -22,10 +22,10 @@ $title-color: #767676;
     }
 
     .footer__link {
-      color: $cool-grey;
+      color: $color-dark;
 
       &:hover {
-        color: $link-color;
+        color: $color-link;
       }
 
       &.external {
@@ -39,13 +39,13 @@ $title-color: #767676;
     }
 
     .footer__legal {
-      color: $warm-grey;
+      color: $color-mid-dark;
       float: left;
       width: 100%;
       padding-top: 20px;
 
       a {
-        color: $warm-grey;
+        color: $color-mid-dark;
       }
 
       @media only screen and (min-width: 768px) {
@@ -53,7 +53,7 @@ $title-color: #767676;
       }
 
       .footer__legal-text {
-        color: $warm-grey;
+        color: $color-mid-dark;
         font-size: 12px;
         margin-bottom: 0;
       }
@@ -68,7 +68,7 @@ $title-color: #767676;
 
         &:after {
           line-height: 1;
-          color: $warm-grey;
+          color: $color-mid-dark;
           content: "•";
           vertical-align: middle;
           margin: 0 5px

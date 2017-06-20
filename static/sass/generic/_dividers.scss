@@ -21,23 +21,23 @@
         padding: 0;
 
         @media only screen and (max-width: $breakpoint-medium) {
-          border-top: 1px dotted $warm-grey;
+          border-top: 1px dotted $color-mid-dark;
           padding-top: 20px;
         }
 
         @media only screen and (min-width : 768px) {
-          padding-left: ($gutter-width / 2);
-          padding-right: ($gutter-width / 2);
+          padding-left: ($grid-gutter-width / 2);
+          padding-right: ($grid-gutter-width / 2);
         }
 
         &:before {
           content: '';
           position: absolute;
-          right: -($gutter-width / 2);
+          right: -($grid-gutter-width / 2);
           top: 0;
           height: 100%;
           width: 1px;
-          border-left: 1px dotted $warm-grey;
+          border-left: 1px dotted $color-mid-dark;
 
           @media only screen and (max-width: $breakpoint-medium) {
             display: none;
@@ -66,7 +66,7 @@
       position: relative;
 
       @media only screen and (max-width: $breakpoint-medium) {
-        border-bottom: 1px dotted $warm-grey;
+        border-bottom: 1px dotted $color-mid-dark;
       }
 
       > .divider__col {
@@ -75,9 +75,9 @@
           content: '';
           position: absolute;
           bottom: -20px;
-          width: calc(100% - #{$gutter-width});
+          width: calc(100% - #{$grid-gutter-width});
           height: 1px;
-          border-bottom: 1px dotted $warm-grey;
+          border-bottom: 1px dotted $color-mid-dark;
 
           @media only screen and (max-width: $breakpoint-medium) {
             display: none;

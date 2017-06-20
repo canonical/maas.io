@@ -4,13 +4,13 @@
   textarea {
 
     &.mktError {
-      border: 1px solid $error;
+      border: 1px solid $color-negative;
     }
   }
 
   // Select dropdown styles
   select {
-    @extend %input-elements;
+    @include input-elements;
     display: block;
     clear: both;
     cursor: pointer;
@@ -18,10 +18,8 @@
     background-image: url('#{$asset-path}04d2075a-accordion-open.svg');
     background-repeat: no-repeat;
     background-position: top 18px right 10px;
-    background-color: $white;
-    //scss-lint:disabled ImportantRule
+    background-color: $color-x-light;
     padding: 11px 13px;
-    //scss-lint:enable ImportantRule
     box-shadow: none;
     width: 100%;
 
@@ -38,15 +36,15 @@
     }
 
     &[disabled] {
-      color: $warm-grey;
+      color: $color-mid-dark;
       background-image: none;
-      background-color: $transparent;
+      background-color: transparent;
     }
 
     // Removes firefox dotted outline focusing
-    &:-moz-focusring {
+    &:-moz-focusing {
       color: transparent;
-      text-shadow: 0 0 0 $black;
+      text-shadow: 0 0 0 $color-x-dark;
     }
 
     &::-ms-expand {
@@ -59,7 +57,7 @@
     display: block;
 
     &.mktError {
-      color: $error;
+      color: $color-negative;
     }
   }
 }

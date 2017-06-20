@@ -28,7 +28,7 @@
 
     .instruction__bullet {
       margin-right: 0;
-      background-color: $white;
+      background-color: $color-x-light;
       z-index: 1;
       padding: 20px 10px;
 
@@ -44,7 +44,7 @@
         right: 0;
         bottom: 0;
         width: 200%;
-        background-color: $white;
+        background-color: $color-x-light;
         z-index: -1;
         border-right: 1px dotted #DDD;
       }
@@ -58,7 +58,7 @@
       height: $size;
       line-height: $size;
       background-color: #ccc;
-      color: $white;
+      color: $color-x-light;
       text-align: center;
       vertical-align: top;
       font-size: 2em;
@@ -88,7 +88,7 @@
         right: 100%;
         bottom: 0;
         width: 200%;
-        background-color: $white;
+        background-color: $color-x-light;
         z-index: 0;
         border-right: 1px dotted #DDD;
       }
@@ -109,7 +109,7 @@
         font-family: Ubuntu Mono;
         font-weight: 300;
         padding: .7em 1em;
-        color: $white;
+        color: $color-x-light;
         width: 100%;
       }
 
@@ -126,7 +126,7 @@
         background-image: url('#{$asset-path}994e60f9-get-link-url_16.svg');
         background-repeat: no-repeat;
         background-position: center;
-        background-color: $white;
+        background-color: $color-x-light;
       }
     }
   }

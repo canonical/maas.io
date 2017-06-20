@@ -10,7 +10,7 @@
   .banner {
     box-shadow: none;
 
-    @media only screen and (min-width: $navigation-threshold) {
+    @media only screen and (min-width: $breakpoint-navigation-threshold) {
       border-bottom: 0;
     }
 
@@ -23,7 +23,7 @@
 
     .nav-primary {
 
-      @media only screen and (min-width: $navigation-threshold) {
+      @media only screen and (min-width: $breakpoint-navigation-threshold) {
         width: auto;
         max-width: inherit;
       }

@@ -2,7 +2,7 @@
 
 $asset-path: 'https://assets.ubuntu.com/v1/';
 
-@import 'cloud-vanilla-theme/scss/build';
+@import '../../node_modules/vanilla-brochure-theme/scss/theme';
 @import 'base/buttons';
 @import 'base/footer';
 @import 'base/forms';
@@ -22,8 +22,9 @@ $asset-path: 'https://assets.ubuntu.com/v1/';
 @import 'objects/instructions';
 @import 'objects/pricing';
 @import 'objects/rowhero';
+@import 'settings_colors';
 
-@include cloud-vanilla-theme;
+@include vanilla-brochure-theme;
 
 // MAAS variables
 $color-x-light: #fff;

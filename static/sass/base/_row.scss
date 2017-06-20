@@ -8,22 +8,22 @@
 /// @group row
 @mixin maas-row {
   .row {
-    background-color: $light-grey;
+    background-color: $color-light;
 
     @media screen and (min-width: $breakpoint-large) {
       padding: 90px 20px 70px;
     }
 
     &.strip-white {
-      background: $white;
+      background: $color-x-light;
     }
 
     &.strip-dark {
-      background: $cool-grey;
-      color: $white;
+      background: $color-dark;
+      color: $color-x-light;
 
       a:hover {
-        color: $white;
+        color: $color-x-light;
       }
 
       &--fluid {
@@ -54,7 +54,7 @@
           z-index: 1;
 
           &:after {
-            background-color: $warm-grey;
+            background-color: $color-mid-dark;
             content: '';
             position: absolute;
             width: 50vw;
@@ -80,7 +80,7 @@
     }
 
     &.strip-trans {
-      background: $transparent;
+      background: transparent;
     }
 
     &--features {

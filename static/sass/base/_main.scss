@@ -8,7 +8,7 @@
 /// @group main
 @mixin maas-main {
   html {
-    background-color: $white;
+    background-color: $color-x-light;
   }
 
   body {
@@ -23,7 +23,7 @@
 
   abbr[title] {
     text-decoration: none;
-    border-bottom: 1px dotted $silver;
+    border-bottom: 1px dotted $color-mid-light;
   }
 
   h1, h2, h3, h4, h5 {
