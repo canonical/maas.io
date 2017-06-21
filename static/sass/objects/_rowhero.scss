@@ -7,7 +7,7 @@
 /// Row hero
 /// @group Row hero
 @mixin maas-rowhero {
-  .row-hero {
+  .strip-hero {
     position: relative;
     margin-top: 0;
     padding: {
@@ -15,7 +15,7 @@
       top: 90px;
     }
     background-color: $color-dark;
-    background-image: url('#{$asset-path}6e4b2b20-MAAS-hero-background.png');
+    background-image: url('#{$assets-path}6e4b2b20-MAAS-hero-background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,7 +33,7 @@
       font-weight: 400;
 
       &--external {
-        background-image: url('#{$asset-path}789283ff-external-link-dark.svg');
+        background-image: url('#{$assets-path}789283ff-external-link-dark.svg');
         background-position: top right;
         background-repeat: no-repeat;
         background-size: 10px;
@@ -124,7 +124,7 @@
 
       &--video {
         background: {
-          image: url('#{$asset-path}17e7ea51-play-icon.svg');
+          image: url('#{$assets-path}17e7ea51-play-icon.svg');
           position: right 18px center;
           repeat: no-repeat;
         }

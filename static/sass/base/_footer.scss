@@ -29,11 +29,11 @@ $title-color: #767676;
       }
 
       &.external {
-        background-image: url('#{$asset-path}769fa468-external-link-footer.svg');
+        background-image: url('#{$assets-path}769fa468-external-link-footer.svg');
         background-size: 10px;
 
         &:hover {
-          background-image: url('#{$asset-path}b2e7072f-external-link-blue.svg');
+          background-image: url('#{$assets-path}b2e7072f-external-link-blue.svg');
         }
       }
     }
@@ -49,7 +49,7 @@ $title-color: #767676;
       }
 
       @media only screen and (min-width: 768px) {
-        background: url('#{$asset-path}aa68c005-logo-ubuntu-grey.png') 100% 20px no-repeat;
+        background: url('#{$assets-path}aa68c005-logo-ubuntu-grey.png') 100% 20px no-repeat;
       }
 
       .footer__legal-text {
