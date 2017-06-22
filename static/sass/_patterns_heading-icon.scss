@@ -1,0 +1,17 @@
+@mixin maas-p-heading-icon {
+
+  .p-heading-icon {
+
+    &__img {
+      flex-shrink: 0;
+      height: 2.6666rem;
+      margin-right: 1rem;
+      width: 2.6666rem;
+
+      @media (min-width: $breakpoint-medium) {
+        height: 2.6666rem;
+        width: 2.6666rem;
+      }
+    }
+  }
+}
