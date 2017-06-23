@@ -1,7 +1,36 @@
 // site specific header styling
 
 @mixin maas-p-navigation {
-  .p-navigation .p-navigation__links .p-navigation__link {
-    border-left: 0;
+  .p-navigation {
+
+    background: $color-x-dark;
+
+    .p-navigation__links {
+
+      &:last-of-type {
+        border-right: 0;
+      }
+
+      .p-navigation__link {
+        border-left: 0;
+        padding: 0;
+
+        a {
+          -moz-osx-font-smoothing: auto;
+          float: left;
+          font-weight: 300;
+          padding: .8rem 1.25rem;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &:hover {
+          background: $button-primary-color;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
