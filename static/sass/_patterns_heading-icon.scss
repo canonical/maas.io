@@ -1,6 +1,7 @@
 @mixin maas-p-heading-icon {
 
   .p-heading-icon {
+    color: inherit;
 
     &__img {
       flex-shrink: 0;
