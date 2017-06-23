@@ -1,52 +1,28 @@
-// import required files
-
-$asset-path: 'https://assets.ubuntu.com/v1/';
-
+// import vanilla-brochure-theme
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
-@import 'base/buttons';
-@import 'base/footer';
-@import 'base/forms';
-@import 'base/header';
-@import 'base/main';
-@import 'base/media';
-@import 'base/row';
-@import 'generic/external';
-@import 'generic/equal-height';
-@import 'generic/helpers';
-@import 'generic/inline-logos';
-@import 'generic/lists';
-@import 'generic/modal';
-@import 'generic/dividers';
-@import 'objects/box';
-@import 'objects/cta';
-@import 'objects/instructions';
-@import 'objects/pricing';
-@import 'objects/rowhero';
-@import 'settings_colors';
-
 @include vanilla-brochure-theme;
 
-// MAAS variables
-$color-x-light: #fff;
-$color-light: #f7f7f7;
-$color-dark: #111;
 
-@include maas-main;
-@include maas-row;
-@include maas-buttons;
-@include maas-box;
-@include maas-cta;
-@include maas-equal-height;
-@include maas-footer;
-@include maas-forms;
-@include maas-header;
-@include maas-helpers;
-@include maas-inline-logos;
-@include maas-instructions;
-@include maas-lists;
-@include maas-external-link;
-@include maas-media;
-@include maas-pricing;
-@include maas-rowhero;
-@include maas-dividers;
-@include maas-modal;
+// settings
+@import
+'settings_colors',
+'settings_grid';
+
+// patterns
+@import
+'patterns_hero',
+'patterns_footer',
+'patterns_heading-icon',
+'patterns_inline-images',
+'patterns_card',
+'patterns_matrix',
+'patterns_navigation';
+
+// patterns
+@include maas-p-footer;
+@include maas-p-heading-icon;
+@include maas-p-hero;
+@include maas-p-card;
+@include maas-p-inline-images;
+@include maas-p-matrix;
+@include maas-p-navigation;
