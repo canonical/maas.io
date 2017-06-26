@@ -283,15 +283,15 @@
 		<div class="row">
 			<h2>The latest MAAS news</h2>
 			<div id="insights-cloud-feed" class="p-divider col-12">
-				{# get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed #}
-				{# for item in insights_feed #}
+				{% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
+				{% for item in insights_feed %}
 					<article class="col-4 p-divider__block">
 						<h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
 						<footer>
 							<time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
 						</footer>
 					</article>
-				{# endfor #}
+				{% endfor %}
 			</div>
 			<p><a href="http://insights.ubuntu.com/tag/maas" class="p-link--external">More MAAS news from Ubuntu Insights</a></p>
 		</div>
