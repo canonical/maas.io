@@ -1,8 +1,6 @@
 // XXX Extension of the inline images to add logo support
 // This should be proposed up to vanilla-brochure-theme once approved
 @mixin maas-p-inline-images {
-  @include vf-p-inline-images;
-
   .p-inline-images {
     margin-left: 0;
     padding-left: 0;
@@ -16,18 +14,18 @@
     &__item--compact {
       margin: $sp-medium;
     }
-  }
 
-  // XXX Extension of the inline images to add logo support
-  // This should be proposed up to vanilla-brochure-theme once approved
-  .p-inline-images__logo {
-    max-height: $sp-xxx-large;
-    max-width: 7rem;
-    width: auto;
+    // XXX Extension of the inline images to add logo support
+    // This should be proposed up to vanilla-brochure-theme once approved
+    &__logo {
+      max-height: $sp-xxx-large;
+      max-width: 7rem;
+      width: auto;
 
-    @media only screen and (min-width : $breakpoint-medium) {
-      max-height: 5.5rem;
-      max-width: 9rem;
+      @media only screen and (min-width : $breakpoint-medium) {
+        max-height: 5.5rem;
+        max-width: 9rem;
+      }
     }
   }
 }
