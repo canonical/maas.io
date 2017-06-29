@@ -28,9 +28,9 @@
       }
 
       .p-navigation__link a {
-        // scss-lint:disable no-vendor-prefixes
+        // sass-lint:disable no-vendor-prefixes
         -moz-osx-font-smoothing: auto;
-        // scss-lint:enable no-vendor-prefixes
+        // sass-lint:enable no-vendor-prefixes
         background: $color-x-light;
         display: block;
         float: left;
