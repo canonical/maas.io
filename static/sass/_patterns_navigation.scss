@@ -2,7 +2,6 @@
 
 @mixin maas-p-navigation {
   .p-navigation {
-
     background: $color-x-dark;
 
     .p-navigation__links {
@@ -12,23 +11,41 @@
       }
 
       .p-navigation__link {
-        border-left: 0;
+        border-left: 1px solid $color-mid-light;
+        display: block;
+        float: left;
         padding: 0;
+        width: 50%;
 
-        a {
-          -moz-osx-font-smoothing: auto;
-          float: left;
-          font-weight: 300;
-          padding: .8rem 1.25rem;
-
-          &:hover {
-            text-decoration: none;
-          }
+        @media (min-width: $breakpoint-navigation-threshold + 1) {
+          border-left: 0;
+          width: auto;
         }
 
         &:hover {
-          background: $button-primary-color;
           text-decoration: none;
+        }
+      }
+
+      .p-navigation__link a {
+        background: $color-x-light;
+        display: block;
+        float: left;
+        font-weight: 300;
+        padding: .8rem 1.25rem;
+        width: 100%;
+
+        @media (min-width: $breakpoint-navigation-threshold + 1) {
+          background: transparent;
+        }
+
+        &:hover {
+          background: $color-light;
+          text-decoration: none;
+
+          @media (min-width: $breakpoint-navigation-threshold + 1) {
+            background: $button-primary-color;
+          }
         }
       }
     }
