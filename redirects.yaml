@@ -1,2 +1,3 @@
 docs: http://docs.ubuntu.com/maas/2.2/en/
 docs/(?P<docs>.*): http://docs.ubuntu.com/maas/2.2/{docs}
+get-started: "/install"
