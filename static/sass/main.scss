@@ -10,10 +10,11 @@
 
 // patterns
 @import
-'patterns_hero',
 'patterns_footer',
 'patterns_heading-icon',
+'patterns_hero',
 'patterns_inline-images',
+'patterns_lists',
 'patterns_matrix',
 'patterns_navigation';
 
@@ -22,5 +23,7 @@
 @include maas-p-heading-icon;
 @include maas-p-hero;
 @include maas-p-inline-images;
+@include maas-p-lists;
 @include maas-p-matrix;
 @include maas-p-navigation;
+

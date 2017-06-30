@@ -22,31 +22,30 @@
           width: auto;
         }
 
-        a {
-          -moz-osx-font-smoothing: auto;
-          background: $color-x-light;
-          display: block;
-          float: left;
-          font-weight: 300;
-          padding: .8rem 1.25rem;
-          width: 100%;
+        &:hover {
+          text-decoration: none;
+        }
+      }
 
-          @media (min-width: $breakpoint-navigation-threshold + 1) {
-            background: transparent;
-          }
+      .p-navigation__link a {
+        background: $color-x-light;
+        display: block;
+        float: left;
+        font-weight: 300;
+        padding: .8rem 1.25rem;
+        width: 100%;
 
-          &:hover {
-            background: $color-light;
-            text-decoration: none;
-
-            @media (min-width: $breakpoint-navigation-threshold + 1) {
-              background: $button-primary-color;
-            }
-          }
+        @media (min-width: $breakpoint-navigation-threshold + 1) {
+          background: transparent;
         }
 
         &:hover {
+          background: $color-light;
           text-decoration: none;
+
+          @media (min-width: $breakpoint-navigation-threshold + 1) {
+            background: $button-primary-color;
+          }
         }
       }
     }
