@@ -17,7 +17,7 @@
     </div>
 </section>
 
-<section class="p-strip is-deep">
+<section class="p-strip is-deep u-no-padding--bottom">
     <div class="row">
         <div class="col-8">
             <h2>High availability in MAAS 2.0</h2>
@@ -25,14 +25,15 @@
         </div>
     </div>
 </section>
-<section class="p-strip">
+
+<section class="p-strip is-shallow">
     <div class="row">
         <div class="col-12">
             <img src="{{ ASSET_SERVER_URL }}d788fae0-maas.io-high-availability.svg" class="u-hidden--small" alt="High availability network diagram" />
         </div>
     </div>
 </section>
-<section class="p-strip is-deep">
+<section class="p-strip is-deep u-no-padding--top">
     <div class="row">
         <div class="col-8">
             <p>Rackds are not in the primary data path, they are not routers or otherwise involved in the flow of data traffic, this diagram shows only the role that MAAS Rackds play in providing local services to racks, and the way in which they can cover for one another in the event of a failure.</p>
