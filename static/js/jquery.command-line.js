@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.command-line').each(function() {
+    $('.p-code-snippet').each(function() {
       var self = $(this),
           copyButton = self.find('.p-code-snippet__action'),
           commandInput = self.find('.p-code-snippet__input');
