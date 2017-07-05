@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $('.command-line').each(function() {
       var self = $(this),
-          copyButton = self.find('.js-copy-to-clipboard'),
-          commandInput = self.find('.command-line__input');
+          copyButton = self.find('.p-code-snippet__action'),
+          commandInput = self.find('.p-code-snippet__input');
 
       if (copyButton && commandInput) {
         copyButton.on('click', function(e) {
