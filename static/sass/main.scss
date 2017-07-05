@@ -16,6 +16,7 @@
 'patterns_inline-images',
 'patterns_lists',
 'patterns_matrix',
+'patterns_modal',
 'patterns_navigation';
 
 // patterns
@@ -25,5 +26,6 @@
 @include maas-p-inline-images;
 @include maas-p-lists;
 @include maas-p-matrix;
+@include maas-p-modal;
 @include maas-p-navigation;
 
