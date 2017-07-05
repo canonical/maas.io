@@ -1,15 +1,16 @@
-// import vanilla-brochure-theme
-@import 'vanilla-brochure-theme/scss/theme';
-@include vanilla-brochure-theme;
-
-
 // settings
 @import
 'settings_colors',
 'settings_grid';
 
+// import vanilla-brochure-theme
+@import '../../node_modules/vanilla-brochure-theme/scss/theme';
+@include vanilla-brochure-theme;
+
+
 // patterns
 @import
+'patterns_card',
 'patterns_footer',
 'patterns_heading-icon',
 'patterns_hero',
@@ -20,6 +21,7 @@
 'patterns_navigation';
 
 // patterns
+@include maas-p-card;
 @include maas-p-footer;
 @include maas-p-heading-icon;
 @include maas-p-hero;
