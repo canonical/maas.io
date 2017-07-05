@@ -47,6 +47,10 @@
             background: $button-primary-color;
           }
         }
+
+        &.active {
+          box-shadow: 0 -3px 0 $button-primary-color inset;
+        }
       }
     }
   }
