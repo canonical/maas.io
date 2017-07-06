@@ -30,8 +30,8 @@
         flex-wrap: wrap;
 
         .p-list__item {
-          width: calc(33.33% - .75rem);
           margin-right: 1rem;
+          width: calc(33.33% - .75rem);
 
           &:nth-child(3n+3) {
             margin-right: 0;
