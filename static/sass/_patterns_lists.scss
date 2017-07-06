@@ -1,5 +1,6 @@
 @mixin maas-p-lists {
   @include maas-p-is-ticked;
+  @include maas-p-is-trisected;
 }
 
 // use a different tick
@@ -15,5 +16,32 @@
   .is-ticked {
     background-image: svg-tick($color-tick);
     padding-left: 35px;
+  }
+}
+
+@mixin maas-p-is-trisected {
+
+  [class*='p-list'] {
+
+    &.is-trisected {
+
+      @media (min-width: $breakpoint-medium) {
+        display: flex;
+        flex-wrap: wrap;
+
+        .p-list__item {
+          width: calc(33.33% - .75rem);
+          margin-right: 1rem;
+
+          &:nth-child(3n+3) {
+            margin-right: 0;
+          }
+
+          &:nth-last-child(0) {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
   }
 }
