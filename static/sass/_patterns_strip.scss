@@ -1,0 +1,9 @@
+@mixin maas-p-strip {
+
+  .p-strip {
+
+    &--light {
+      background-color: $color-light;
+    }
+  }
+}

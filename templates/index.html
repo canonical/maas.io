@@ -9,7 +9,7 @@
 
 {% block content %}
 <!-- Hero banner -->
-<section class="p-strip--image is-dark" style="overflow: hidden; background-color: #333; background-image:url('https://assets.ubuntu.com/v1/6e4b2b20-MAAS-hero-background.png')">
+<section class="u-image-position p-strip--image is-dark" style="overflow: hidden; background-color: #333; background-image:url('https://assets.ubuntu.com/v1/6e4b2b20-MAAS-hero-background.png')">
   <div class="row u-equal-height u-vertically-center">
     <div class="col-6">
       <div class="p-heading-icon">
@@ -25,14 +25,12 @@
         <li class="p-inline-list__item"><a aria-label="Watch the MAAS video on YouTube" class="p-button--neutral" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">Watch the video</a></li>
       </ul>
     </div>
-    <div class="col-6 p-hero u-hidden--small">
-      <img class="p-hero__image" src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png" width="870" alt="MAAS screenshot showing Nodes" />
-    </div>
+    <img src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400" srcset="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400 800w, {{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=750 1600w" class="u-hidden--small u-image-position--bottom u-image-position--right" alt="MAAS screenshot showing Nodes" />
   </div>
 </section>
 
 	<!-- Benifits of MAAS -->
-	<section class="p-strip--x-light is-deep">
+	<section class="p-strip is-deep">
 		<div class="row">
 		  <h2>Key features</h2>
 			<ul class="p-matrix is-trisected">
@@ -74,7 +72,7 @@
             <div class="p-heading-icon__header">
               <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" alt="Chassis icon" />
               <h4 class="p-heading-icon__title"><a class="p-link--strong p-heading--five p-link--external" href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management&nbsp;&rsaquo;</a></h4>
+						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management</a></h4>
             </div>
             <p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
             <p>Dynamic hardware resource management with Intel RSD.</p>
@@ -154,7 +152,7 @@
 		</div>
 	</section>
 
-	<section class="p-strip--dark is-deep">
+	<section class="p-strip--accent is-deep">
 		<div class="row">
 				<h2>Works on all your hardware</h2>
 				<ul class="p-list">
@@ -219,7 +217,7 @@
 				</ul>
 		</div>
 	</section>
-  <section class="p-strip-x-light pricing is-deep">
+  <section class="p-strip pricing is-deep">
     <div class="row">
       <div class="col-8">
         <h2>Pricing</h2>
@@ -268,22 +266,4 @@
       </div>
     </div>
   </section>
-<!-- News -->
-<section class="p-strip--light is-deep">
-  <div class="row">
-    <h2>The latest MAAS news</h2>
-    <div id="insights-cloud-feed" class="p-divider col-12">
-      {% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
-      {% for item in insights_feed %}
-      <article class="col-4 p-divider__block">
-        <h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
-        <footer>
-          <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
-        </footer>
-    </article>
-      {% endfor %}
-    </div>
-    <p><a aria-label="External link to find more MAAS news from Ubuntu Insights" href="https://insights.ubuntu.com/tag/maas" class="p-link--external">More MAAS news from Ubuntu Insights</a></p>
-  </div>
-</section>
 {% endblock %}

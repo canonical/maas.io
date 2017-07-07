@@ -3,6 +3,12 @@
 @mixin maas-p-navigation {
   .p-navigation {
     background: $color-x-dark;
+    margin-top: 0;
+
+    &__logo a {
+      height: 25px;
+      margin-top: 3px;
+    }
 
     .p-navigation__links {
 
@@ -28,6 +34,8 @@
       }
 
       .p-navigation__link a {
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: auto;
         background: $color-x-light;
         display: block;
         float: left;
