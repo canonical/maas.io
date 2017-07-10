@@ -12,7 +12,6 @@
 @import
 'patterns_card',
 'patterns_footer',
-'patterns_grid',
 'patterns_heading-icon',
 'patterns_hero',
 'patterns_inline-images',
@@ -25,7 +24,6 @@
 // patterns
 @include maas-p-card;
 @include maas-p-footer;
-@include maas-p-grid;
 @include maas-p-heading-icon;
 @include maas-p-hero;
 @include maas-p-inline-images;
