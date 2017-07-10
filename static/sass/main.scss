@@ -10,6 +10,7 @@
 
 // patterns
 @import
+'patterns_buttons',
 'patterns_card',
 'patterns_footer',
 'patterns_heading-icon',
@@ -22,6 +23,7 @@
 'patterns_strip';
 
 // patterns
+@include maas-p-buttons;
 @include maas-p-card;
 @include maas-p-footer;
 @include maas-p-heading-icon;
