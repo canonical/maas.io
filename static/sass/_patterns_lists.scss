@@ -2,6 +2,7 @@
   @include maas-p-is-ticked;
   @include maas-p-is-trisected;
   @include maas-p-list--split;
+  @include maas-p-list--bulleted;
 }
 
 // use a different tick
@@ -63,3 +64,10 @@
     }
   }
 }
+
+@mixin maas-p-list--bulleted {
+  .p-list--bulleted {
+    list-style-type: disc;
+  }
+}
+
