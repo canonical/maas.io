@@ -5,9 +5,9 @@
     background: $color-x-dark;
     margin-top: 0;
 
-    &__logo a {
-      height: 25px;
-      margin-top: 3px;
+    &__logo-img {
+      display: inline-block;
+      vertical-align: text-bottom;
     }
 
     .p-navigation__links {
@@ -60,6 +60,12 @@
           box-shadow: 0 -3px 0 $button-primary-color inset;
         }
       }
+    }
+
+    .p-link--external {
+      -moz-osx-font-smoothing: auto;
+      -webkit-font-smoothing: auto;
+      @include link-svg-icon($color-x-light);
     }
   }
 }
