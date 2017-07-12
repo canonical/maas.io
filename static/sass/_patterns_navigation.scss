@@ -63,9 +63,9 @@
     }
 
     .p-link--external {
+      @include link-svg-icon($color-x-light);
       -moz-osx-font-smoothing: auto;
       -webkit-font-smoothing: auto;
-      @include link-svg-icon($color-x-light);
     }
   }
 }
