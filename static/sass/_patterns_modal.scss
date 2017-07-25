@@ -1,8 +1,8 @@
 @mixin maas-p-modal {
   .venobox {
+    width: auto;
 
     &--expand {
-      display: block;
       margin: 0 auto 20px;
       overflow: visible;
       position: relative;
