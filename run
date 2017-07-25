@@ -184,7 +184,7 @@ django_run () {
     container_name="${1}"; shift
     extra_options="${1:-}"; shift
 
-    
+
 
     # Run Django using the docker image
     run_as_user ${container_name} \
@@ -235,7 +235,7 @@ case $run_command in
 
         # Run the serve container, publishing the port, and detaching if required
         django_run "${project}-serve" "--env PORT=${PORT} --publish ${PORT}:${PORT} ${detach} ${run_serve_docker_opts}" $*
-        
+
     ;;
     "stop")
         echo "Stopping all running containers for ${project}"
@@ -243,7 +243,7 @@ case $run_command in
         docker kill ${running_containers}
     ;;
     "watch")
-        
+
         node_install
         node_run "${project}-build" "" yarn run build
         node_run "${project}-watch" "" yarn run watch
@@ -251,7 +251,7 @@ case $run_command in
     "build")
         node_install
         node_run "${project}-build" "" yarn run build
-        
+
     ;;
     "test")
         node_install
@@ -264,7 +264,7 @@ case $run_command in
             --workdir `pwd` \
             --name "${project}-django-flake8" \
             --entrypoint flake8 \
-            ${django_image} --exclude '*env*'
+            ${django_image} --exclude '*env*' --exclude 'node_modules'
     ;;
     "clean")
         echo "Running 'clean' yarn script"
@@ -288,13 +288,13 @@ case $run_command in
         if [ -n "${containers_using_volume}" ]; then docker rm --force ${containers_using_volume}; fi
         docker volume rm --force ${yarn_cache_volume}
 
-        
+
         # Clean pip cache volume
         echo "Removing cache volume ${pip_cache_volume}"
         containers_using_volume=$(docker ps --quiet --all --filter "volume=${pip_cache_volume}")
         if [ -n "${containers_using_volume}" ]; then docker rm --force ${containers_using_volume}; fi
         docker volume rm --force ${pip_cache_volume}
-        
+
     ;;
     "django")
         expose_port=""
