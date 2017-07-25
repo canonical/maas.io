@@ -1,7 +1,6 @@
 // settings
 @import
-'settings_colors',
-'settings_grid';
+'settings_colors';
 
 // import vanilla-brochure-theme
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
@@ -10,6 +9,7 @@
 
 // patterns
 @import
+'patterns_buttons',
 'patterns_card',
 'patterns_footer',
 'patterns_heading-icon',
@@ -18,9 +18,11 @@
 'patterns_lists',
 'patterns_matrix',
 'patterns_modal',
-'patterns_navigation';
+'patterns_navigation',
+'patterns_strip';
 
 // patterns
+@include maas-p-buttons;
 @include maas-p-card;
 @include maas-p-footer;
 @include maas-p-heading-icon;
@@ -30,4 +32,5 @@
 @include maas-p-matrix;
 @include maas-p-modal;
 @include maas-p-navigation;
+@include maas-p-strip;
 

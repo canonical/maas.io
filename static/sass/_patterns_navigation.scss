@@ -3,6 +3,12 @@
 @mixin maas-p-navigation {
   .p-navigation {
     background: $color-x-dark;
+    margin-top: 0;
+
+    &__logo-img {
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
 
     .p-navigation__links {
 
@@ -28,6 +34,8 @@
       }
 
       .p-navigation__link a {
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: auto;
         background: $color-x-light;
         display: block;
         float: left;
@@ -52,6 +60,12 @@
           box-shadow: 0 -3px 0 $button-primary-color inset;
         }
       }
+    }
+
+    .p-link--external {
+      @include link-svg-icon($color-x-light);
+      -moz-osx-font-smoothing: auto;
+      -webkit-font-smoothing: auto;
     }
   }
 }
