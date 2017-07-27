@@ -1,23 +1,20 @@
-// Site spevcific Card patterns
+// Site specific Card patterns
 @mixin maas-p-card {
 
   .p-card {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
 
     &__footer {
-      background: #ddd;
       display: flex;
+      flex-direction: column;
       height: 100%;
-      margin-top: auto;
-
     }
 
     &__cta {
-      align-items: flex-end;
-      // same as padding on cards
-      padding-top: 1.25rem;
+      align-self: stretch;
       margin-top: auto;
+      padding-top: 1.25rem;
     }
   }
 }
