@@ -2,6 +2,7 @@
 @mixin maas-p-card {
 
   .p-card {
+    color: $color-dark;
     display: flex;
     flex-direction: column;
 
