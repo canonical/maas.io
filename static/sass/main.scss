@@ -19,7 +19,8 @@
 'patterns_matrix',
 'patterns_modal',
 'patterns_navigation',
-'patterns_strip';
+'patterns_strip',
+'patterns_takeunders';
 
 // patterns
 @include maas-p-buttons;
@@ -33,4 +34,5 @@
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-strip;
+@include maas-p-takeunders;
 
