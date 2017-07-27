@@ -2,7 +2,6 @@
 @mixin maas-p-takeunders {
   .p-takeunder {
     border-radius: .125rem;
-    color: $color-x-light;
     margin-right: -1 rem;
     padding: $sp-x-large;
 
@@ -10,15 +9,26 @@
       padding: $sp-x-large $sp-medium $sp-medium $sp-medium;
     }
 
-    a:link,
-    a:visited {
-      color: $color-x-light;
-    }
-  }
+    &.is-dark {
 
-  .p-navigation {
-    @media only screen and (max-width: $breakpoint-medium) {
-      border: 0;
+      color: $color-x-light;
+
+      a:link,
+      a:visited {
+        color: $color-x-light;
+      }
     }
+
+    &.is-light {
+
+      color: $color-dark;
+
+      a:link,
+      a:visited {
+        color: $color-dark;
+      }
+
+    }
+
   }
 }
