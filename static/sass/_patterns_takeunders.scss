@@ -1,0 +1,34 @@
+/// homepage takeunders
+@mixin maas-p-takeunders {
+  .p-takeunder {
+    border-radius: .125rem;
+    margin-right: -1 rem;
+    padding: $sp-x-large;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      padding: $sp-x-large $sp-medium $sp-medium $sp-medium;
+    }
+
+    &.is-dark {
+
+      color: $color-x-light;
+
+      a:link,
+      a:visited {
+        color: $color-x-light;
+      }
+    }
+
+    &.is-light {
+
+      color: $color-dark;
+
+      a:link,
+      a:visited {
+        color: $color-dark;
+      }
+
+    }
+
+  }
+}

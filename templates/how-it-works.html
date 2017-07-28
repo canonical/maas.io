@@ -26,10 +26,10 @@
     </div>
 </section>
 
-<section class="p-strip is-shallow">
+<section class="p-strip is-shallow u-hidden--small">
     <div class="row">
         <div class="col-12">
-            <img src="{{ ASSET_SERVER_URL }}d788fae0-maas.io-high-availability.svg" class="u-hidden--small" alt="High availability network diagram" />
+            <img src="{{ ASSET_SERVER_URL }}d788fae0-maas.io-high-availability.svg" alt="High availability network diagram" />
         </div>
     </div>
 </section>
@@ -64,10 +64,10 @@
         </div>
     </div>
 </section>
-<section class="p-strip">
+<section class="p-strip u-hidden--small">
     <div class="row">
             <div class="col-12">
-                <img src="{{ ASSET_SERVER_URL }}d1dc00ae-maas.io-physical-availability-zones.svg" class="u-hidden--small" alt="Availability zone diagram" />
+                <img src="{{ ASSET_SERVER_URL }}d1dc00ae-maas.io-physical-availability-zones.svg" alt="Availability zone diagram" />
             </div>
     </div>
 </section>
@@ -93,7 +93,8 @@
       <div class="col-5 u-hidden--medium u-hidden--small u-vertically-center">
         <img src="{{ ASSET_SERVER_URL }}b2cec06d-maas.io-node-lifecycle.svg" alt="Node lifecycle chart" />
       </div>
-      <div class="col-7">
+      <div class="col-7"><i></i>
+
           <h3 class="p-heading--five">New</h3>
           <p>New machines which PXE-boot on a MAAS network will be enlisted automatically if MAAS can detect their BMC parameters. The easiest way to enlist standard <abbr title="Intelligent Platform Management Interface">IPMI</abbr> servers is simply to PXE-boot them on the MAAS network.</p>
 
