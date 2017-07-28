@@ -1,0 +1,14 @@
+// Site spevcific Card patterns
+@mixin maas-p-buttons {
+
+  .p-button__icon {
+    display: inline-block;
+    height: 0;
+    margin-left: 6px;
+
+    &-img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,70 +1,68 @@
-<footer class="footer clearfix">
-    <div class="inner-wrapper">
-        <div class="footer__col">
-            <div class="four-col">
-                <h3 class="footer__title">MAAS</h3>
-                <ul class="no-bullets">
-                    <li>
-                        <a class="footer__link" href="/">Home</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" href="/install">Install</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" href="/how-it-works">How it works</a>
-                    </li>
-                    <li>
-                        <a class="footer__link external" href="http://docs.ubuntu.com/maas/">Docs</a>
-                    </li>
-                    <li>
-                        <a class="footer__link" href="/tour">Tour</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer__col">
-            <div class="four-col">
-                <h3 class="footer__title">Need help?</h3>
-                <ul class="no-bullets">
-                    <li>
-                        <a class="footer__link external" href="https://askubuntu.com/questions/tagged/maas">Ask Ubuntu</a>
-                    </li>
-                    <li>
-                        <a class="footer__link external" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
-                    </li>
-                    <li>
-                        <a class="footer__link external" href="https://lists.ubuntu.com/mailman/listinfo/maas-devel">Join the mailing list</a>
-                    </li>
-                    <li>
-                        <a href="/contact-us" class="footer__link">Commercial support</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="four-col last-col">
-                <h3 class="footer__title">Contribute</h3>
-                <ul class="no-bullets">
-                    <li>
-                        <a class="footer__link external" href="https://launchpad.net/maas">Launchpad</a>
-                    </li>
-                    <li>
-                        <a class="footer__link external" href="https://docs.ubuntu.com/maas/devel/en/contributing">Contribute to documentation</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <nav class="inner-wrapper clearfix">
-        <div class="footer__legal clearfix has-cookie">
-            <p class="twelve-col footer__legal-text">© 2017 Canonical Ltd. <a href="http://www.ubuntu.com">Ubuntu</a> and <a href="http://www.canonical.com">Canonical</a> are registered trademarks of Canonical Ltd.</p>
-            <ul class="twelve-col inline-list footer__bullets clear">
-                <li class="footer__bullets-item">
-                    <a class="footer__link" href="http://www.ubuntu.com/legal"><small>Legal information</small></a>
+<footer class="p-footer">
+    <div class="row">
+        <div class="col-4">
+            <h3 class="p-footer__title p-heading--six">MAAS</h3>
+            <ul class="p-footer__list p-list">
+                <li class="p-list__item">
+                    <a class="p-link--strong" href="/">Home</a>
                 </li>
-                <li class="footer__bullets-item">
-                    <a class="footer__link" href="https://github.com/ubuntudesign/maas.io/issues"><small>Report a bug on this site</small></a>
+                <li class="p-list__item">
+                    <a class="p-link--strong" href="/install">Install</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--strong" href="/how-it-works">How it works</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="http://docs.ubuntu.com/maas/">Docs</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--strong"  href="/tour">Tour</a>
                 </li>
             </ul>
-            <span class="accessibility-aid"><a class="footer__link" href="#">Got to the top of the page</a></span>
+        </div>
+
+        <div class="col-4">
+            <h3 class="p-footer__title p-heading--six">Need help?</h3>
+            <ul class="p-footer__list p-list">
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="https://askubuntu.com/questions/tagged/maas">Ask Ubuntu</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="http://webchat.freenode.net/?channels=maas">Chat with MAAS on freenode</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="https://lists.ubuntu.com/mailman/listinfo/maas-devel">Join the mailing list</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--strong" href="/contact-us">Commercial support</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-4">
+            <h3 class="p-footer__title p-heading--six">Contribute</h3>
+            <ul class="p-footer__list p-list">
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="https://launchpad.net/maas">Launchpad</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--external p-link--strong" href="https://docs.ubuntu.com/maas/devel/en/contributing">Contribute to documentation</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="row">
+        <div class="p-footer__legal has-cookie">
+            &copy; {% now "Y" %} Canonical Ltd. <a href="http://www.ubuntu.com">Ubuntu</a> and <a href="http://www.canonical.com">Canonical</a> are registered trademarks of Canonical Ltd.
+            <ul class="p-footer__links">
+                <li class="p-footer__item">
+                    <a class="p-footer__link" href="http://www.ubuntu.com/legal"><small>Legal information</small></a>
+                </li>
+                <li class="p-footer__item">
+                    <a class="p-footer__link" href="https://github.com/ubuntudesign/maas.io/issues"><small>Report a bug on this site</small></a>
+                </li>
+            </ul>
+            <span class="u-off-screen"><a href="#">Got to the top of the page</a></span>
         </div>
     </nav>
 </footer>

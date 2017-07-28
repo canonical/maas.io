@@ -1,0 +1,71 @@
+// site specific header styling
+
+@mixin maas-p-navigation {
+  .p-navigation {
+    background: $color-x-dark;
+    margin-top: 0;
+
+    &__logo-img {
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+
+    .p-navigation__links {
+
+      &:last-of-type {
+        border-right: 0;
+      }
+
+      .p-navigation__link {
+        border-left: 1px solid $color-mid-light;
+        display: block;
+        float: left;
+        padding: 0;
+        width: 50%;
+
+        @media (min-width: $breakpoint-navigation-threshold + 1) {
+          border-left: 0;
+          width: auto;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .p-navigation__link a {
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: auto;
+        background: $color-x-light;
+        display: block;
+        float: left;
+        font-weight: 300;
+        padding: .8rem 1.25rem;
+        width: 100%;
+
+        @media (min-width: $breakpoint-navigation-threshold + 1) {
+          background: transparent;
+        }
+
+        &:hover {
+          background: $color-light;
+          text-decoration: none;
+
+          @media (min-width: $breakpoint-navigation-threshold + 1) {
+            background: $button-primary-color;
+          }
+        }
+
+        &.active {
+          box-shadow: 0 -3px 0 $button-primary-color inset;
+        }
+      }
+    }
+
+    .p-link--external {
+      @include link-svg-icon($color-x-light);
+      -moz-osx-font-smoothing: auto;
+      -webkit-font-smoothing: auto;
+    }
+  }
+}

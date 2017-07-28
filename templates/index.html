@@ -8,111 +8,134 @@
 {% endblock %}
 
 {% block content %}
-	<!-- Hero banner -->
-	<section class="row row-hero">
-		<div class="inner-wrapper equal-height">
-			<div class="row-hero__text row-hero__col five-col">
-				<h2><img src="{{ ASSET_SERVER_URL }}33b96a7f-maas-logo.svg" alt="" class="row-hero__logo" itemprop="image" />Metal as a Service</h2>
-				<h1>Say hello to your physical cloud</h1>
-				<p class="row-hero__intro" itemprop="description">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
-				<div class="row-hero__button-group">
-					<a href="/install" class="row-hero__button button--positive button--inline-positive" itemprop="url" >Install MAAS</a>
-					<a class="row-hero__button button--neutral row-hero__button--video button--inline-neutral venobox" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the video' });">
-						<span>Watch the video</span>
-					</a>
-				</div>
-			</div>
-			<div class="six-col prepend-one last-col row-hero__image">
-				<img src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png" width="870" alt="">
-			</div>
-		</div>
-	</section>
+<!-- Hero banner -->
+<section class="u-image-position p-strip--image is-dark" style="overflow: hidden; background-color: #333; background-image:url('https://assets.ubuntu.com/v1/6e4b2b20-MAAS-hero-background.png')">
+  <div class="row u-equal-height u-vertically-center">
+    <div class="col-6">
+      <div class="p-heading-icon">
+          <div class="p-heading-icon__header">
+              <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}33b96a7f-maas-logo.svg" itemprop="image" alt="" />
+                <h1 class="p-heading--two p-heading-icon__title">Metal as a Service</h1>
+          </div>
+          <h2 class="p-heading--two">Say hello to your physical&nbsp;cloud</h2>
+          <p itemprop="description" class="p-heading--four">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
+      </div>
+        <p class="u-no-margin--top">
+          <a style="margin-right: 1rem;" aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url" >Install MAAS</a> <a aria-label="Watch the MAAS video on YouTube" class="p-button--neutral" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">Watch the video <span class="p-button__icon"><img class="p-button__icon-img" src="{{ ASSET_SERVER_URL }}17e7ea51-play-icon.svg" width="18" alt="Play" /></span></a></p>
+      </ul>
+    </div>
+    <img src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400"
+    srcset="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400 800w, {{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=750 1600w" class="u-hidden--small u-image-position--bottom u-image-position--right"
+    sizes="(min-width: 1200px) 100vw"
+    alt="MAAS screenshot showing Nodes" />
+  </div>
+</section>
+
 	<!-- Benifits of MAAS -->
-	<section class="row strip-white">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
-				<h2>Key features</h2>
-			</div>
-			<div class="equal-height divider--vertical divider--horizontal twelve-col">
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" class="no-margin" alt="Automation cog icon">&nbsp;&nbsp;
-						<a href="/tour#automation"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' });
-						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation &rsaquo;</a>
-					</h4>
-					<p>Automatic discovery and registration of every device on the network.</p>
-					<p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 4">IPv6</abbr>) automation.</p>
-				</div>
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#fast-deployment"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' });
-						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Fast deployment &rsaquo;</a>
-					</h4>
-					<p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
-					<p>Deploy linux distros in less than 5 minutes.</p>
-				</div>
-				<div class="four-col divider__col last-col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#configure-servers"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' });
-						   			dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">Machine configuration &rsaquo;</a>
-					</h4>
-					<p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
-					<p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
-				</div>
-			</div>
-			<div class="equal-height divider--vertical divider--horizontal twelve-col">
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" class="no-margin" width="32" alt="Chassis icon">&nbsp;&nbsp;
-						<a href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });" class="external">Chassis management</a>
-					</h4>
-					<p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
-					<p>Dynamic hardware resource management with Intel RSD.</p>
-				</div>
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#manage-network"
-						   onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">Network management &rsaquo;</a>
-					</h4>
-					<p>Observes and catalogs every IP address on the network (IPAM).</p>
-					<p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
-				</div>
-				<div class="four-col divider__col last-col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" class="no-margin">&nbsp;&nbsp;
-						<span>DevOps integration</span>
-					</h4>
-					<p>Integration with devops automation tools like <a href="http://conjure-up.io/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
-				</div>
-			</div>
-			<div class="equal-height divider--vertical twelve-col">
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Service tracking image" class="no-margin">&nbsp;&nbsp;
-						<a href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });">Service tracking &rsaquo;</a>
-					</h4>
-					<p>Monitors and tracks critical services to ensure proper opperations.</p>
-				</div>
-				<div class="four-col divider__col">
-					<h4 class="equal-height equal-height--mobile equal-height--align-middle">
-						<img src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" class="no-margin">&nbsp;&nbsp;
-						<span>Manage</span>
-					</h4>
-					<p>Comes with a <a href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
-				</div>
-			</div>
+	<section class="p-strip is-deep">
+		<div class="row">
+  		<div class="col-12">
+		    <h2 class="u-no-margin--bottom">Key features</h2>
+  		</div>
+		</div>
+		<div class="row">
+      <div class="col-12">
+        <ul class="p-matrix is-trisected">
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" alt="Automation cog icon">
+                  <h4 class="p-heading-icon__title">
+                    <a class="p-link--strong p-heading--five" aria-label="Learn more about automatic discovery and registration of every device on the network" href="/tour#automation" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation&nbsp;&rsaquo;</a>
+                  </h4>
+              </div>
+              <p>Automatic discovery and registration of every device on the network.</p>
+              <p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 6">IPv6</abbr>) automation.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" />
+                <h4 class="p-heading-icon__title">
+                  <a class="p-link--strong p-heading--five" href="/tour#fast-deployment" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Fast deployment&nbsp;&rsaquo;</a>
+                </h4>
+              </div>
+              <p>Zero-touch deployment of Ubuntu, CentOS, Windows, RHEL and SUSE.</p>
+              <p>Deploy linux distros in less than 5 minutes.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" />
+                <h4 class="p-heading-icon__title">
+                  <a class="p-link--strong p-heading--five" href="/tour#configure-servers" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">Machine configuration&nbsp;&rsaquo;</a>
+                </h4>
+              </div>
+              <p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
+              <p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" alt="Chassis icon" />
+                <h4 class="p-heading-icon__title">
+                  <a class="p-link--strong p-heading--five p-link--external" href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management</a>
+  						  </h4>
+              </div>
+              <p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
+              <p>Dynamic hardware resource management with Intel RSD.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" />
+                <h4 class="p-heading-icon__title">
+                  <a class="p-link--strong p-heading--five" href="/tour#manage-network" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">Network management&nbsp;&rsaquo;</a>
+                </h4>
+              </div>
+              <p>Observes and catalogs every IP address on the network (IPAM).</p>
+              <p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" />
+                <h4 class="p-heading-icon__title"><span class="p-heading--five">DevOps integration</span></h4>
+              </div>
+              <p>Integration with devops automation tools like <a href="https://conjure-up.io/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="p-link--external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="p-link--external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Service tracking image" />
+                <h4 class="p-heading-icon__title"><a class="p-link--strong p-heading--five" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });">Service tracking&nbsp;&rsaquo;</a></h4>
+              </div>
+              <p>Monitors and tracks critical services to ensure proper opperations.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" />
+                <h4 class="p-heading-icon__title"><a class="p-link--strong p-heading--five" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });"><span>Manage</span>&nbsp;&rsaquo;</a></h4>
+              </div>
+              <p>Comes with a <a aria-label="External link to go to MAAS API docs" href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a aria-label="External link to go to MAAS CLI docs" href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
+            </div>
+          </li>
+  			</ul>
+      </div>
 		</div>
 	</section>
-	<section class="row">
-		<div class="inner-wrapper padding-top--30">
-			<div class="six-col padding-bottom--30">
+
+	<section class="p-strip--light is-deep">
+		<div class="row">
+			<div class="col-6">
 				<h2>The smartest way to manage
 					<br /> bare metal</h2>
 				<p>MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer. Setup the RAID and Network configuration you want through the MAAS web UI or CLI, then press a button and come back in minutes to a fully-deployed
@@ -120,168 +143,170 @@
 				</p>
 				<p>MAAS is designed for devops at scale, in places where bare metal is the best way to run your app. Big data, private cloud, PAAS and HPC all thrive on MAAS.</p>
 			</div>
-			<div class="six-col last-col">
-				<ul class="inline-logos">
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}adac6928-ubuntu.svg"  width="150" alt="Ubuntu logo">
+			<div class="col-6">
+				<ul class="p-inline-images">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}adac6928-ubuntu.svg"  alt="Ubuntu logo">
 					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}30574235-windows-logo.svg" width="120" alt="Windows logo">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}30574235-windows-logo.svg" alt="Windows logo">
 					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}c69a8b3c-centos-logo.png" width="150" alt="CentOS logo">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}c69a8b3c-centos-logo.png" alt="CentOS logo">
 					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}eda6b94a-redhat-logo.svg" width="140" alt="Redhat logo">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}eda6b94a-redhat-logo.svg" alt="Redhat logo">
 					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}59190d38-suse_logo.svg" width="100" alt="Suse logo">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}59190d38-suse_logo.svg" alt="Suse logo">
 					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="row strip-dark row--works-on-all-your-hardware">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
+	<section class="p-strip--accent is-deep">
+		<div class="row">
+  		<div class="col-12">
 				<h2>Works on all your hardware</h2>
-			</div>
-			<div class="twelve-col">
-				<ul class="list__bullets">
-					<li class="four-col">Works on all certified servers from any major vendor</li>
-					<li class="four-col">Discovers servers in racks, chassis and data centre networks</li>
-					<li class="four-col last-col">Supports major system BMCs and chassis controllers</li>
+				<ul class="p-list">
+					<li class="p-list__item is-ticked col-4">Works on all certified servers from any major vendor</li>
+					<li class="p-list__item is-ticked col-4">Discovers servers in racks, chassis and data centre networks</li>
+					<li class="p-list__item is-ticked col-4">Supports major system BMCs and chassis controllers</li>
 				</ul>
-			</div>
-			<div class="twelve-col equal-height equal-height--align-middle">
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}b066f89f-ibm-logo.svg" width="100" alt="IBM logo">
-				</div>
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}94604e7b-lenovo.svg" width="140" alt="Lenovo logo">
-				</div>
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}46066f72-cisco-logo.svg" width="90" alt="Cisco logo">
-				</div>
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}6281079e-huawei.svg" alt="Huawei logo">
-				</div>
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}3e78e013-dell-logo.svg" alt="Dell logo">
-				</div>
-				<div class="two-col u-align--center last-col">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}3312c37a-quanta-logo.png" alt="Quanta logo">
-				</div>
-			</div>
-			<div class="twelve-col equal-height equal-height--align-middle">
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}17aa9d0e-hp-logo.svg" alt="HP logo">
-				</div>
-				<div class="two-col u-align--center">
-					<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}30b27b28-open-logo.png" alt="Open compute logo">
-				</div>
-			</div>
+  		</div>
 		</div>
-	</section>
-	<section class="row">
-		<div class="inner-wrapper">
-			<div class="twevle-col align-center">
-				<h3 class="caps-centered">MAAS is used by</h3>
-				<ul class="inline-logos">
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}477b9b52-microsoft-logo.svg" alt="Microsoft logo" />
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}df4150e2-nec-logo.svg" alt="NEC logo" />
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}040783dd-verizon-logo.png" alt="Verizon logo" />
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}0f6861b9-oil-logo.png" alt="OpenStack Interoperability Lab">
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}3c7e83fc-atandt-logo.svg" alt="AT&amp;T logo" />
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}a8e8aa9e-deutschetelekom-logo.svg" alt="Deutche Telekom logo" />
-					</li>
-					<li class="inline-logos__item">
-						<img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}73135672-ntt-logo.svg" width="110" alt="NTT logo" />
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section class="row strip-white pricing">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
-				<h2>Pricing</h2>
-				<p class="eight-col">MAAS is supported by Canonical under the <a href="http://www.ubuntu.com/management/ubuntu-advantage" class="external">Ubuntu Advantage</a> service program. Ubuntu Advantage MAAS includes tools that enable deployment of a wider range of operating systems, SLAs on support and high availability reference architectures.</p>
-			</div>
-			<div class="pricing twelve-col equal-height">
-				<div class="pricing__option four-col">
-					<h3 class="pricing__option-title">Self-supported</h3>
-					<h4 class="pricing__option-cost">Free</h4>
-					<div class="pricing__option-detail">
-						<ul class="list__bullets">
-							<li>Ubuntu and CentOS</li>
-						</ul>
-						<p><a href="/install">Install MAAS&nbsp;&rsaquo;</a></p>
-					</div>
-				</div>
-				<div class="pricing__option four-col">
-					<h3 class="pricing__option-title">Standard</h3>
-					<h4 class="pricing__option-cost">&dollar;5
-						<span class="pricing__option-unit">/ per server per month</span>
-					</h4>
-					<div class="pricing__option-detail">
-						<ul class="list__bullets">
-							<li>Ubuntu, CentOS, Windows, RHEL and SUSE</li>
-							<li>10x5 support on weekdays (US and Europe only)</li>
-						</ul>
-						<p><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
-					</div>
-				</div>
-				<div class="pricing__option four-col last-col">
-					<h3 class="pricing__option-title">Advanced</h3>
-					<h4 class="pricing__option-cost">&dollar;10
-						<span class="pricing__option-unit">/ per server per month</span>
-					</h4>
-					<div class="pricing__option-detail">
-						<ul class="list__bullets">
-							<li>Ubuntu, CentOS, Windows, RHEL and SUSE</li>
-							<li>24x7 support</li>
-						</ul>
-						<p><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
-
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="row">
+  		<div class="col-12">
+  			<ul class="p-inline-images">
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}b066f89f-ibm-logo.svg" alt="IBM logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}94604e7b-lenovo.svg" alt="Lenovo logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}46066f72-cisco-logo.svg" alt="Cisco logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}6281079e-huawei.svg" alt="Huawei logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}3e78e013-dell-logo.svg" alt="Dell logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}3312c37a-quanta-logo.png" alt="Quanta logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}17aa9d0e-hp-logo.svg" alt="HP logo">
+  				</li>
+  				<li class="p-inline-images__item">
+  					<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}30b27b28-open-logo.png" alt="Open compute logo">
+  				</li>
+  			</ul>
+		  </div>
+    </div>
 	</section>
 
-	<!-- News -->
-	<section class="row">
-		<div class="inner-wrapper">
-			<div class="twelve-col">
-				<h2>The latest MAAS news</h2>
-			</div>
-			<div id="insights-cloud-feed">
-				<div class="equal-height divider--vertical twelve-col">
-					{% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
-					{% for item in insights_feed %}
-						<article class="four-col divider__col {% if forloop.last %}last-col{% endif %}">
-							<h3><a href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
-							<footer>
-								<time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
-							</footer>
-						</article>
-					{% endfor %}
-				</div>
-			</div>
-			<p><a href="http://insights.ubuntu.com/tag/maas" class="external">More MAAS news from Ubuntu Insights</a></p>
+	<section class="p-strip--light is-deep">
+		<div class="row">
+  		<div class="col-12">
+				<h2 class="p-muted-heading u-align--center">MAAS is used by</h2>
+				<ul class="p-inline-images">
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}477b9b52-microsoft-logo.svg" alt="Microsoft logo" />
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}df4150e2-nec-logo.svg" alt="NEC logo" />
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}040783dd-verizon-logo.png" alt="Verizon logo" />
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}0f6861b9-oil-logo.png" alt="OpenStack Interoperability Lab">
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}3c7e83fc-atandt-logo.svg" alt="AT&amp;T logo" />
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}a8e8aa9e-deutschetelekom-logo.svg" alt="Deutche Telekom logo" />
+					</li>
+					<li class="p-inline-images__item">
+						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}73135672-ntt-logo.svg" alt="NTT logo" />
+					</li>
+				</ul>
+  		</div>
 		</div>
 	</section>
-	{% endblock %}
+  <section class="p-strip pricing is-deep">
+    <div class="row">
+      <div class="col-8">
+        <h2>Pricing</h2>
+        <p>MAAS is supported by Canonical under the <a href="https://www.ubuntu.com/management/ubuntu-advantage" class="p-link--external">Ubuntu Advantage</a> service program. Ubuntu Advantage MAAS includes tools that enable deployment of a wider range of operating systems, SLAs on support and high availability reference architectures.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="u-equal-height">
+        <div class="col-4 p-card">
+          <h3 class="p-heading--four">Self-supported</h3>
+          <h4 class="p-heading--two"><strong>Free</strong></h4>
+          <div class="p-card__footer">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Ubuntu and CentOS</li>
+            </ul>
+            <p class="p-card__cta"><a href="/install">Install MAAS&nbsp;&rsaquo;</a></p>
+          </div>
+        </div>
+        <div class="col-4 p-card">
+          <h3 class="p-heading--four">Standard</h3>
+          <h4 class="p-heading--two"><strong>&dollar;5</strong>
+              <span class="p-heading--six">/ per server per month</span>
+            </h4>
+          <div class="p-card__footer">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and SUSE</li>
+              <li class="p-list__item is-ticked">10x5 support on weekdays (US and Europe only)</li>
+            </ul>
+            <p class="p-card__cta"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
+          </div>
+        </div>
+        <div class="col-4 p-card">
+          <h3 class="p-heading--four">Advanced</h3>
+          <h4 class="p-heading--two"><strong>&dollar;10</strong>
+            <span class="p-heading--six">/ per server per month</span>
+          </h4>
+          <div class="p-card__footer">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and SUSE</li>
+              <li class="p-list__item is-ticked">24x7 support</li>
+            </ul>
+            <p class="p-card__cta"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- News -->
+<section class="p-strip--light is-deep">
+  <div class="row">
+    <div class="col-12">
+      <h2>The latest MAAS news</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div id="insights-cloud-feed" class="p-divider col-12">
+      {% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
+      {% for item in insights_feed %}
+      <article class="col-4 p-divider__block">
+        <h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
+        <footer>
+          <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
+        </footer>
+    </article>
+      {% endfor %}
+    </div>
+    <p><a aria-label="External link to find more MAAS news from Ubuntu Insights" href="https://insights.ubuntu.com/tag/maas" class="p-link--external">More MAAS news from Ubuntu Insights</a></p>
+  </div>
+</section>
+{% endblock %}

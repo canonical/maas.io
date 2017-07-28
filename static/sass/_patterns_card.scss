@@ -1,0 +1,22 @@
+// Site specific Card patterns
+@mixin maas-p-card {
+
+  .p-card {
+    // XXX issue with colors for cards in a strip--accent, will be removed once a fix for either https://github.com/vanilla-framework/vanilla-brochure-theme/issues/82 or https://github.com/vanilla-framework/vanilla-framework/issues/1113 has landed
+    color: $color-dark;
+    display: flex;
+    flex-direction: column;
+
+    &__footer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__cta {
+      align-self: stretch;
+      margin-top: auto;
+      padding-top: 1.25rem;
+    }
+  }
+}
