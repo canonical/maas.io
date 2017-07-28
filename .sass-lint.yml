@@ -3,6 +3,7 @@
 
 files:
   include: 'static/sass/**/*.s+(a|c)ss'
+
 rules:
   # Documentation: https://github.com/sasstools/sass-lint/tree/master/docs/rules
 

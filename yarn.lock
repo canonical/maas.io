@@ -1560,15 +1560,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-vanilla-brochure-theme@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/vanilla-brochure-theme/-/vanilla-brochure-theme-1.0.7.tgz#126f67e7cc9fff75053a28fd8bc41593348f7277"
+vanilla-brochure-theme@1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/vanilla-brochure-theme/-/vanilla-brochure-theme-1.0.9.tgz#698158ed3f65a21e292b6585651b51a421b67afd"
   dependencies:
-    vanilla-framework "1.3.x"
+    vanilla-framework "1.4.x"
 
-vanilla-framework@1.3.x:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.3.0.tgz#09400e78d9abc6e86aebc8e1bf01be9cca5af87a"
+vanilla-framework@1.4.x:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.4.2.tgz#255bc46ab509ba44a646c273d1816876d496f03b"
 
 verror@1.3.6:
   version "1.3.6"

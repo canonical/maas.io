@@ -3,7 +3,7 @@
   "description": "Static Django website blueprint ===",
   "scripts": {
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
-    "clean": "rm -rf node_modules yarn-error.log static/css, django-error.log cache.sqlite",
+    "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
     "build": "node-sass --include-path node_modules static/sass --output static/css"
   },
@@ -12,6 +12,6 @@
   "devDependencies": {
     "sass-lint": "^1.10.2",
     "node-sass": "^4.5.3",
-    "vanilla-brochure-theme": "1.0.7"
+    "vanilla-brochure-theme": "1.0.9"
   }
 }
