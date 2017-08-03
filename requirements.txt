@@ -1,9 +1,9 @@
 canonicalwebteam.versioned-static==1.0.1
+canonicalwebteam.yaml-redirects==1.0.2
 Django==1.11.1
 django-versioned-static-url==0.1
 django-static-root-finder==0.1
 django-asset-server-url==0.1
-django-yaml-redirects==0.5.4
 django-template-finder-view==0.2
 feedparser==5.2.1
 lockfile==0.12.2
