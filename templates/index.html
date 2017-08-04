@@ -1,7 +1,5 @@
 {% extends "base_index.html" %}
 
-{% load get_rss_feed from feeds %}
-
 {% block page_class %}homepage{% endblock %}
 {% block page-title %}| Metal as a Service{% endblock %}
 {% block head-extra %}
@@ -297,14 +295,18 @@
   <div class="row">
     <div id="insights-cloud-feed" class="p-divider col-12">
       {% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
-      {% for item in insights_feed %}
-      <article class="col-4 p-divider__block">
-        <h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
-        <footer>
-          <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
-        </footer>
-    </article>
-      {% endfor %}
+      {% if insights_feed %}
+        {% for item in insights_feed %}
+          <article class="col-4 p-divider__block">
+            <h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
+            <footer>
+              <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
+            </footer>
+          </article>
+        {% endfor %}
+      {% else %}
+        <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/maas.io/issues/new">file an issue</a>.</p>
+      {% endif %}
     </div>
     <p><a aria-label="External link to find more MAAS news from Ubuntu Insights" href="https://insights.ubuntu.com/tag/maas" class="p-link--external">More MAAS news from Ubuntu Insights</a></p>
   </div>
