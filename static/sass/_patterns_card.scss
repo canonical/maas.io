@@ -6,15 +6,18 @@
     color: $color-dark;
     display: flex;
     flex-direction: column;
+    min-height: 22rem;
 
     &__footer {
       display: flex;
+      flex-grow: 1;
       flex-direction: column;
       height: 100%;
     }
 
     &__cta {
       align-self: stretch;
+      height: 100%;
       margin-top: auto;
       padding-top: 1.25rem;
     }
