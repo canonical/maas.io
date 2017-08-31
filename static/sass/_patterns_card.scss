@@ -9,16 +9,15 @@
     min-height: 22rem;
 
     &__footer {
+      border: 0;
       display: flex;
-      flex-grow: 1;
-      flex-direction: column;
       height: 100%;
     }
 
     &__cta {
-      align-self: stretch;
-      height: 100%;
-      margin-top: auto;
+      align-items: flex-end;
+      display: flex;
+      flex: 1;
       padding-top: 1.25rem;
     }
   }
