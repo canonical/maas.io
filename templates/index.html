@@ -235,64 +235,98 @@
 				</ul>
   		</div>
 		</div>
-	</section>
-  <section class="p-strip pricing is-deep">
+  </section>
+  <section class="p-strip is-deep">
     <div class="row">
       <div class="col-8">
-        <h2>Pricing</h2>
-        <p>MAAS is supported by Canonical under the <a href="https://www.ubuntu.com/management/ubuntu-advantage" class="p-link--external">Ubuntu Advantage</a> service program. Ubuntu Advantage MAAS includes tools that enable deployment of a wider range of operating systems, SLAs on support and high availability reference architectures.</p>
+        <h2>Enterprise support for MAAS</h2>
+        <p>MAAS is freely available, open source software from Canonical. Many enterprises depend on MAAS to automate and optimize provisioning for production hardware.  Canonical offers Standard and Advanced support plans priced per-machine-per-month or, for large volume and public clouds with dynamic scale, we offer per-region pricing with flexible node ranges. </p>
       </div>
     </div>
+
     <div class="row">
-      <div class="u-equal-height">
-        <div class="col-4 p-card">
-          <div class="p-card__header">
-            <h3 class="p-heading--four">Self-supported</h3>
-            <h4 class="p-heading--two"><strong>Free</strong></h4>
-          </div>
-          <div class="p-card__content">
-            <ul class="p-list u-clearfix">
-              <li class="p-list__item is-ticked">Ubuntu and CentOS</li>
-            </ul>
-          </div>
-          <div class="p-card__footer">
-            <p class="p-card__cta u-clearfix"><a href="/install">Install MAAS&nbsp;&rsaquo;</a></p>
-          </div>
-        </div>
-        <div class="col-4 p-card">
-          <div class="p-card__header">
-            <h3 class="p-heading--four">Standard</h3>
-            <h4 class="p-heading--two"><strong>&dollar;5</strong>
-              <span class="p-heading--six">/ per server per month</span>
-            </h4>
-          </div>
-          <div class="p-card__content">
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and SUSE</li>
-              <li class="p-list__item is-ticked">10x5 support on weekdays (US and Europe only)</li>
-            </ul>
-          </div>
-          <div class="p-card__footer">
-            <p class="p-card__cta"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
-          </div>
-        </div>
-        <div class="col-4 p-card">
-          <div class="p-card__header">
-            <h3 class="p-heading--four">Advanced</h3>
-            <h4 class="p-heading--two"><strong>&dollar;10</strong>
-              <span class="p-heading--six">/ per server per month</span>
-            </h4>
-          </div>
-          <div class="p-card__content">
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and SUSE</li>
-              <li class="p-list__item is-ticked">24x7 support</li>
-            </ul>
-          </div>
-          <div class="p-card__footer">
-            <p class="p-card__cta"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
-          </div>
-        </div>
+      <div class="col-12" style="overflow-x: auto;">
+        <table style="width: 100%;">
+          <thead>
+            <tr>
+              <td class="u-align--center" style="width: 40%;">&nbsp;</td>
+              <th class="u-align--center" style="width: 20%;">Free</th>
+              <th class="u-align--center" style="width: 20%;">Standard</th>
+              <th class="u-align--center" style="width: 20%;">Advanced</th>
+            <tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Price per machine</td>
+              <td class="u-align--center">$0</td>
+              <td class="u-align--center">$5 per month</td>
+              <td class="u-align--center">
+                $10 per month<br />
+                <small>Or, unlimited machines $75,000 /year /region</small>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Phone and ticket support</td>
+              <td class="u-align--center">None</td>
+              <td class="u-align--center">8am - 6pm on weekdays</td>
+              <td class="u-align--center">24 hours a day, everyday</td>
+            </tr>
+
+            <tr>
+              <td>Ubuntu and CentOS deployment</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+
+            <tr>
+              <td>Landscape Management<br />
+              (for the MAAS servers)</td>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+
+            <tr>
+              <td>Livepatch<br />
+              (for the MAAS servers)</td>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+
+            <tr>
+              <td>Knowledge Base</td>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+
+            <tr>
+              <td>Windows, RHEL, SUSE, and custom image<br /> creation and deployment</td>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+
+            <tr>
+              <td>High availability (HA) support</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}32b180b1-tick.svg" alt="Yes"></td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td>&nbsp;</td>
+              <td class="u-align--center"><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
+              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </section>
