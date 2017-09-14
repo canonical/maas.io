@@ -10,6 +10,10 @@
       vertical-align: text-bottom;
     }
 
+    .p-navigation__toggle--close {
+      top: calc(50% - 3.75rem);
+    }
+
     .p-navigation__links {
 
       &:last-of-type {
@@ -56,8 +60,10 @@
           }
         }
 
-        &.active {
-          box-shadow: 0 -3px 0 $button-primary-color inset;
+        @media (min-width: $breakpoint-navigation-threshold) {
+          &.active {
+            box-shadow: 0 -3px 0 $button-primary-color inset;
+          }
         }
       }
     }
