@@ -26,7 +26,7 @@
                   <span class="p-list-step__bullet">1</span>
                   Setup your hardware
                 </h3>
-                <p class="p-list-step__content">You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard management controller">BMC</abbr>. It is recommended to have the MAAS server provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> and <abbr title="Domain name service">DNS</abbr> on a network the managed machines are connected to.</p>
+                <p class="p-list-step__content">You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard Management Controller">BMC</abbr>. It is recommended to have the MAAS server provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> and <abbr title="Domain Name Service">DNS</abbr> on a network the managed machines are connected to.</p>
               </li>
               <li class="p-list-step__item">
                 <h3 class="p-list-step__title">
@@ -71,10 +71,10 @@
                   Complete the first user configuration journey
                 </h3>
                 <div class="p-list-step__content">
-                  <p>Follow the instructions on screen to complete the first installation of MAAS. We recommended using the default values unless your installation has different requirements.</p>
+                  <p>Follow the instructions on screen to complete the first installation of MAAS. We recommend using the default values unless your installation has different requirements.</p>
                   <p>By the end of the journey you should have the following configured;</p>
                   <ul>
-                      <li>Region name</li>
+                      <li>Region name (MAAS name)</li>
                       <li>Ubuntu archive, Ubuntu extra architectures</li>
                       <li>Ubuntu images</li>
                       <li><abbr title="Secure shell">SSH</abbr> keys (for currently logged in user)</li>
@@ -85,13 +85,13 @@
               <li class="p-list-step__item">
                 <h3 class="p-list-step__title">
                   <span class="p-list-step__bullet">6</span>
-                  Turn on <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>
+                  Turn on DHCP
                 </h3>
                 <div class="p-list-step__content">
-                  <p>Go to the &ldquo;Subnets&rdquo; tab, and select the <abbr title="Virtual local area network">VLAN</abbr> for which you want to enable <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>&rdquo;.</p>
+                  <p>Go to the &ldquo;Subnets&rdquo; tab, and select the <abbr title="Virtual Local Area Network">VLAN</abbr> for which you want to enable DHCP, and on the &ldquo;Take action&rdquo; button select &ldquo;Provide DHCP&rdquo;.</p>
                   <ol>
-                      <li>Set the Rack controller that will manage <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>.</li>
-                      <li>Select the subnet where to create the <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> Dynamic range on.</li>
+                      <li>Set the Rack controller that will manage DHCP.</li>
+                      <li>Select the subnet where to create the DHCP Dynamic range on.</li>
                       <li>Fill in the details for the dynamic range.</li>
                   </ol>
                   <p><a href="{{ ASSET_SERVER_URL }}4fdbeb76-vlan-details.png" class="venobox venobox--expand" data-gall="installGallery" title="VLAN details page in an active MAAS">
@@ -109,7 +109,7 @@
                   <ol>
                       <li>Set all the servers to <abbr title="Preboot Execution Environment">PXE</abbr> boot</li>
                       <li>Boot each machine once. You should see these machines appear in MAAS</li>
-                      <li>If your machines do not have a <abbr title="Intelligent Platform Management Interface">IPMI</abbr> based <abbr title="Baseboard management controller">BMC</abbr>, proceed to edit them and enter their <abbr title="Baseboard management controller">BMC</abbr> details</li>
+                      <li>If your machines do not have a <abbr title="Intelligent Platform Management Interface">IPMI</abbr> based BMC, proceed to edit them and enter their BMC details</li>
                       <li>Select all the machines and &ldquo;Commission&rdquo; them using the &ldquo;Take action&rdquo; button</li>
                       <li>When machines have a &ldquo;Ready&rdquo; status you can start deploying</li>
                   </ol>
