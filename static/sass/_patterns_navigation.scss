@@ -3,11 +3,22 @@
 @mixin maas-p-navigation {
   .p-navigation {
     background: $color-x-dark;
+    border: 0;
     margin-top: 0;
 
     &__logo-img {
       display: inline-block;
       vertical-align: text-bottom;
+    }
+
+    .p-navigation__toggle--open,
+    .p-navigation__toggle--close,
+    .p-navigation__link {
+      color: $color-x-light;
+
+      &:visited {
+        color: $color-x-light;
+      }
     }
 
     .p-navigation__toggle--close {
@@ -49,6 +60,7 @@
 
         @media (min-width: $breakpoint-navigation-threshold + 1) {
           background: transparent;
+          color: $color-x-light;
         }
 
         &:hover {
@@ -66,12 +78,6 @@
           }
         }
       }
-    }
-
-    .p-link--external {
-      @include link-svg-icon($color-x-light);
-      -moz-osx-font-smoothing: auto;
-      -webkit-font-smoothing: auto;
     }
   }
 }

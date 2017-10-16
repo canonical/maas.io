@@ -15,8 +15,7 @@
 'patterns_matrix',
 'patterns_modal',
 'patterns_navigation',
-'patterns_takeunders',
-'patterns_strip';
+'patterns_takeunders';
 
 // patterns
 @include maas-p-buttons;
@@ -28,7 +27,6 @@
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
-@include maas-p-strip;
 
 /// XXX link svg mask fix
 .p-link--external::after {
