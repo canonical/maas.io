@@ -1,0 +1,10 @@
+// Site specific footer pattern styling
+
+@mixin maas-p-strip {
+  .p-strip--light,
+  .p-strip {
+    .p-link--external {
+      color: $color-link;
+    }
+  }
+}
