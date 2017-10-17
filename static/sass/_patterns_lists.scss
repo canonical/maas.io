@@ -11,7 +11,7 @@
     @warn '#{$color} is not a color.';
     @return false;
   }
-  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='22' viewBox='0 0 22 16'%3E%3Cpath fill='" + url-friendly-color($color) + "' d='M20.04.343l-.154.136-11.138 9.755-6.53-5.6-1.973 2.23 8.505 8.95L21.687 2.2 20.04.343zz' /%3E%3C/svg%3E");
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='22' viewBox='0 0 22 16'%3E%3Cpath fill='" + vf-url-friendly-color($color) + "' d='M20.04.343l-.154.136-11.138 9.755-6.53-5.6-1.973 2.23 8.505 8.95L21.687 2.2 20.04.343zz' /%3E%3C/svg%3E");
 }
 
 @mixin maas-p-is-ticked {
