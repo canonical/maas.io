@@ -61,6 +61,11 @@
           }
         }
 
+        .p-link--external {
+          -moz-osx-font-smoothing: auto;
+          -webkit-font-smoothing: auto;
+         }
+
         @media (min-width: $breakpoint-navigation-threshold) {
           &.active {
             box-shadow: 0 -3px 0 $button-primary-color inset;
