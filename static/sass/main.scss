@@ -11,6 +11,7 @@
 'patterns_footer',
 'patterns_heading-icon',
 'patterns_lists',
+'patterns_links',
 'patterns_modal',
 'patterns_navigation',
 'patterns_takeunders';
@@ -20,6 +21,7 @@
 @include maas-p-footer;
 @include maas-p-heading-icon;
 @include maas-p-lists;
+@include maas-p-links;
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
