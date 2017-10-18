@@ -1,0 +1,8 @@
+// site specific link styling
+
+@mixin maas-p-links {
+  // VF 1.6.0 is missing this
+  .p-link--external::after {
+    -webkit-mask-size: cover;
+  }
+}
