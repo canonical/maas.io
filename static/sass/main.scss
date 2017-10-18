@@ -12,6 +12,7 @@
 'patterns_heading-icon',
 'patterns_lists',
 'patterns_links',
+'patterns_matrix',
 'patterns_modal',
 'patterns_navigation',
 'patterns_takeunders';
@@ -22,6 +23,7 @@
 @include maas-p-heading-icon;
 @include maas-p-lists;
 @include maas-p-links;
+@include maas-p-matrix;
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
