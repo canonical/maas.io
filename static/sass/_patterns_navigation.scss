@@ -2,7 +2,7 @@
 
 @mixin maas-p-navigation {
   .p-navigation {
-    background: $color-x-dark;
+    border: 0;
     margin-top: 0;
 
     &__logo-img {
@@ -49,6 +49,7 @@
 
         @media (min-width: $breakpoint-navigation-threshold + 1) {
           background: transparent;
+          color: $color-x-light;
         }
 
         &:hover {
@@ -66,12 +67,6 @@
           }
         }
       }
-    }
-
-    .p-link--external {
-      @include link-svg-icon($color-x-light);
-      -moz-osx-font-smoothing: auto;
-      -webkit-font-smoothing: auto;
     }
   }
 }
