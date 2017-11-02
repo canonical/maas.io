@@ -30,3 +30,17 @@
 @include maas-p-takeunders;
 @include maas-p-row;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.p-heading--one,
+.p-heading--two,
+.p-heading--three,
+.p-heading--four,
+.p-heading--five,
+.p-heading--six {
+  line-height: 1.4;
+}
