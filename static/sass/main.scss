@@ -15,6 +15,7 @@
 'patterns_matrix',
 'patterns_modal',
 'patterns_navigation',
+'patterns_row',
 'patterns_takeunders';
 
 // patterns
@@ -27,3 +28,5 @@
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
+@include maas-p-row;
+
