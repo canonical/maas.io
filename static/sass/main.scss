@@ -16,7 +16,8 @@
 'patterns_modal',
 'patterns_navigation',
 'patterns_row',
-'patterns_takeunders';
+'patterns_takeunders',
+'patterns_inline-images';
 
 // patterns
 @include maas-p-buttons;
@@ -29,6 +30,7 @@
 @include maas-p-navigation;
 @include maas-p-takeunders;
 @include maas-p-row;
+@include maas-p-inline-images;
 
 h1,
 h2,
