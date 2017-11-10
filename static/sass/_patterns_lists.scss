@@ -3,6 +3,7 @@
   @include maas-p-is-trisected;
   @include maas-p-list--split;
   @include maas-p-list--bulleted;
+  @include maas-p-list-logos;
 }
 
 // use a different tick
@@ -14,10 +15,29 @@
   @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='22' viewBox='0 0 22 16'%3E%3Cpath fill='" + vf-url-friendly-color($color) + "' d='M20.04.343l-.154.136-11.138 9.755-6.53-5.6-1.973 2.23 8.505 8.95L21.687 2.2 20.04.343zz' /%3E%3C/svg%3E");
 }
 
+// use the vanilla tick but large (for A/B testing of homepage
+@function svg-tick-large($color) {
+  @if type-of($color) != 'color' {
+    @warn '#{$color} is not a color.';
+    @return false;
+  }
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 14 14'%3E%3Ccircle fill='" + vf-url-friendly-color($color) + "' cx='7' cy='7' r='7'/%3E%3Cpath fill='%23fff' d='M6.1 10.813L2.41 8.105l1.184-1.613L5.9 8.187l4.393-4.394 1.414 1.414z' /%3E%3C/svg%3E");
+}
+
 @mixin maas-p-is-ticked {
   .is-ticked {
     background-image: svg-tick($color-tick);
     padding-left: 35px;
+  }
+
+  &.is-large {
+    background-image: svg-tick-large($color-tick-large);
+    min-height: 2.3rem;
+    padding-left: 55px;
+
+    @media (max-width: $breakpoint-medium) {
+      padding: .5rem 0 .5rem 50px;
+    }
   }
 }
 
@@ -70,4 +90,31 @@
     list-style-type: disc;
   }
 }
+
+// taken from _patterns_logo-links.scss in snapcraft.io project
+@mixin maas-p-list-logos {
+
+  .p-list-logos {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .p-list-logos__item {
+      // by default (on mobile) use col-3 width (4 items in a row)
+      width: 23.54369%; // col-3
+
+      // on larger screens use col-2 width (6 items in a row)
+      @media screen and (min-width: $breakpoint-medium) {
+        width: 15.04854%; // col-2
+      }
+    }
+  }
+
+  .p-list-logos__item {
+    display: block;
+    margin-top: 0;
+  }
+}
+
 
