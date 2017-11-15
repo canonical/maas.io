@@ -1,0 +1,25 @@
+@mixin maas-p-row {
+  @include maas-p-row-bordered;
+}
+
+// row additions
+@mixin maas-p-row-bordered {
+  [class^='row'].is-bordered {
+    border-bottom: 1px solid $color-mid-dark;
+    padding-bottom: $sp-x-large;
+  }
+}
+
+.p-strip {
+  &--light {
+    [class^='row'].is-bordered {
+      border-bottom-color: $color-mid-light;
+    }
+  }
+
+  &--dark {
+    [class^='row'].is-bordered {
+      border-bottom-color: $color-light;
+    }
+  }
+}
