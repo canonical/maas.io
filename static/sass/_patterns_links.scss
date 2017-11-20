@@ -3,6 +3,8 @@
 @mixin maas-p-links {
   // VF 1.6.0 is missing this
   .p-link--external::after {
+    // sass-lint:disable no-vendor-prefixes
     -webkit-mask-size: cover;
+    // sass-lint:enable no-vendor-prefixes
   }
 }

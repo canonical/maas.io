@@ -12,10 +12,11 @@
 'patterns_heading-icon',
 'patterns_lists',
 'patterns_links',
-'patterns_matrix',
 'patterns_modal',
 'patterns_navigation',
-'patterns_takeunders';
+'patterns_row',
+'patterns_takeunders',
+'patterns_inline-images';
 
 // patterns
 @include maas-p-buttons;
@@ -23,7 +24,23 @@
 @include maas-p-heading-icon;
 @include maas-p-lists;
 @include maas-p-links;
-@include maas-p-matrix;
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
+@include maas-p-row;
+@include maas-p-inline-images;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.p-heading--one,
+.p-heading--two,
+.p-heading--three,
+.p-heading--four,
+.p-heading--five,
+.p-heading--six {
+  line-height: 1.4;
+}

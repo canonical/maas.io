@@ -22,8 +22,8 @@
           <a style="margin-right: 1rem;" aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url" >Install MAAS</a> <a aria-label="Watch the MAAS video on YouTube" class="p-button--neutral" data-type="youtube" data-autoplay="true" href="https://www.youtube.com/embed/eHfaiKlUYsM" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">Watch the video <span class="p-button__icon"><img class="p-button__icon-img" src="{{ ASSET_SERVER_URL }}17e7ea51-play-icon.svg" width="18" alt="Play" /></span></a></p>
       </ul>
     </div>
-    <img src="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400"
-    srcset="{{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=400 800w, {{ ASSET_SERVER_URL }}8ca2eab9-hero-ui-image.png?w=750 1600w" class="u-hidden--small u-image-position--bottom u-image-position--right"
+    <img src="{{ ASSET_SERVER_URL }}e28c83f4-hero-image.png?w=400"
+    srcset="{{ ASSET_SERVER_URL }}e28c83f4-hero-image.png?w=400 800w, {{ ASSET_SERVER_URL }}e28c83f4-hero-image.png?w=750 1600w" class="u-hidden--small u-image-position--bottom u-image-position--right"
     sizes="(min-width: 1200px) 100vw"
     alt="MAAS screenshot showing Nodes" />
   </div>
@@ -80,7 +80,7 @@
               <div class="p-heading-icon__header">
                 <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" alt="Chassis icon" />
                 <h4 class="p-heading-icon__title">
-                  <a class="p-link--strong p-heading--five p-link--external" href="https://docs.ubuntu.com/maas/2.2/en/intel-rsd" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management</a>
+                  <a class="p-link--strong p-heading--five p-link--external" href="https://docs.ubuntu.com/maas/2.3/en/nodes-comp-hw" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management</a>
   						  </h4>
               </div>
               <p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
@@ -102,6 +102,18 @@
           <li class="p-matrix__item">
             <div class="p-heading-icon">
               <div class="p-heading-icon__header">
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Hardware testing icon" />
+                <h4 class="p-heading-icon__title">
+                  <a class="p-link--strong p-heading--five" href="/tour#hardware-testing" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Hardware testing' });">Hardware testing&nbsp;&rsaquo;</a>
+  						  </h4>
+              </div>
+              <p>Run tests to get up to date information about your hardware&rsquo;s health.</p>
+              <p>Get key metrics for your component&rsquo;s performance.</p>
+            </div>
+          </li>
+          <li class="p-matrix__item">
+            <div class="p-heading-icon">
+              <div class="p-heading-icon__header">
                 <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" />
                 <h4 class="p-heading-icon__title"><span class="p-heading--five">DevOps integration</span></h4>
               </div>
@@ -111,10 +123,10 @@
           <li class="p-matrix__item">
             <div class="p-heading-icon">
               <div class="p-heading-icon__header">
-                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Service tracking image" />
+                <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}c4778eb5-service-tracking.svg" alt="Service tracking image" />
                 <h4 class="p-heading-icon__title"><a class="p-link--strong p-heading--five" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });">Service tracking&nbsp;&rsaquo;</a></h4>
               </div>
-              <p>Monitors and tracks critical services to ensure proper opperations.</p>
+              <p>Monitors and tracks critical services to ensure proper operations.</p>
             </div>
           </li>
           <li class="p-matrix__item">
@@ -123,7 +135,7 @@
                 <img class="p-heading-icon__img" src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" />
                 <h4 class="p-heading-icon__title"><a class="p-link--strong p-heading--five" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });"><span>Manage</span>&nbsp;&rsaquo;</a></h4>
               </div>
-              <p>Comes with a <a aria-label="External link to go to MAAS API docs" href="https://docs.ubuntu.com/maas/2.2/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a aria-label="External link to go to MAAS CLI docs" href="https://docs.ubuntu.com/maas/2.2/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
+              <p>Comes with a <a aria-label="External link to go to MAAS API docs" href="https://docs.ubuntu.com/maas/2.3/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a aria-label="External link to go to MAAS CLI docs" href="https://docs.ubuntu.com/maas/2.3/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
             </div>
           </li>
   			</ul>
@@ -154,9 +166,6 @@
 					</li>
 					<li class="p-inline-images__item">
 						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}eda6b94a-redhat-logo.svg" alt="Redhat logo">
-					</li>
-					<li class="p-inline-images__item">
-						<img class="p-inline-images__logo" src="{{ ASSET_SERVER_URL }}59190d38-suse_logo.svg" alt="Suse logo">
 					</li>
 				</ul>
 			</div>
@@ -206,7 +215,7 @@
     </div>
 	</section>
 
-	<section class="p-strip--light is-deep">
+  <section class="p-strip--light is-deep">
 		<div class="row">
   		<div class="col-12">
 				<h2 class="p-muted-heading u-align--center">MAAS is used by</h2>
