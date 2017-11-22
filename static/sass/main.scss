@@ -10,6 +10,7 @@
 'patterns_buttons',
 'patterns_footer',
 'patterns_heading-icon',
+'patterns_hero-video',
 'patterns_lists',
 'patterns_links',
 'patterns_modal',
@@ -22,6 +23,7 @@
 @include maas-p-buttons;
 @include maas-p-footer;
 @include maas-p-heading-icon;
+@include maas-p-hero-video;
 @include maas-p-lists;
 @include maas-p-links;
 @include maas-p-modal;

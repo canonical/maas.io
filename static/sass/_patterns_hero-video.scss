@@ -1,0 +1,18 @@
+@mixin maas-p-hero-video {
+
+  .p-hero-video {
+
+    &__video-container {
+      display: none;
+      margin-top: 0;
+    }
+
+    &__link.is-playing {
+      display: none;
+
+      ~ .p-hero-video__video-container {
+        display: inherit;
+      }
+    }
+  }
+}
