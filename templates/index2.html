@@ -15,11 +15,26 @@
       <p itemprop="description" class="p-heading--five">Complete automation of your physical servers for amazing data centre operational efficiency. On premises, open source and supported.</p>
       <p class="u-no-margin--top"><a style="margin-right: 1rem;" aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url" >Install MAAS</a> <a href="/how-it-works" class="p-button--neutral">See how it works</a></p>
     </div>
-    <div class="col-6">
-      <div class="u-embedded-media">
-        <iframe class="u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen></iframe>
+    <div class="col-6 p-hero-video">
+      <a href="#" aria-label="Watch the MAAS video on YouTube" class="p-hero-video__link"  onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">
+        <img src="{{ ASSET_SERVER_URL }}45146a8e-play-icon--white-on-black.svg" alt="" class="p-hero-video__play" />
+        <img src="{{ ASSET_SERVER_URL }}a7e4808f-MAAS-video-cover-cleaner.png" alt="" class="u-no-margin--top" />
+      </a>
+      <div class="p-hero-video__video-container u-embedded-media">
+        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var videoLink = document.querySelector('.p-hero-video__link');
+        var video = document.querySelector('.p-hero-video__video');
+        videoLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.classList.add('is-playing');
+          video.src += '?autoplay=1';
+        });
+      });
+    </script>
   </div>
 </section>
 
