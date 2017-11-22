@@ -14,5 +14,16 @@
         display: inherit;
       }
     }
+
+    &__link {
+      display: block;
+      position: relative;
+    }
+
+    &__play {
+      position: absolute;
+      right: calc(50% - 36px);
+      top: calc(50% - 36px);
+    }
   }
 }
