@@ -1,5 +1,5 @@
 canonicalwebteam.versioned-static==1.0.1
-canonicalwebteam.yaml-redirects==1.0.2
+canonicalwebteam.yaml-redirects==1.0.5
 canonicalwebteam.get-feeds==0.1.7
 Django==1.11.1
 django-versioned-static-url==0.1
