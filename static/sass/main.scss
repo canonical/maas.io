@@ -46,3 +46,29 @@ h6,
 .p-heading--six {
   line-height: 1.4;
 }
+
+// XXX Ant: 04.12.17 This can be removed when this is fixed
+// https://github.com/vanilla-framework/vanilla-framework/issues/1478
+.u-align--center {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    max-width: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &.u-align--center {
+    max-width: none;
+  }
+}
