@@ -13,7 +13,7 @@
     <div class="p-card col-4 u-no-margin--bottom">
       <h3 class="p-card__title">Looking for a little professional support?</h3>
       <p>If you are a small organisation, you can purchase packs of Ubuntu Advantage in our shop.</p>
-      <p><a href="https://buy.ubuntu.com" class="p-link--external">Visit the Ubuntu Advantage shop</a></p>
+      <p><a href="https://buy.ubuntu.com" class="p-link--external" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Visit the Ubuntu Advantage shop' });">Visit the Ubuntu Advantage shop</a></p>
     </div>
   </div>
 </section>
@@ -30,37 +30,37 @@
             <li class="mktFormReq mktField">
               <label for="FirstName" class="mktoLabel ">First name (required):
               </label>
-              <input required id="FirstName" name="FirstName" maxlength="255" type="text" class="mktoField   mktoRequired mktoInvalid">
+              <input required id="FirstName" name="FirstName" maxlength="255" type="text" class="mktoField mktoRequired mktoInvalid">
             </li>
 
             <li class="mktFormReq mktField">
               <label for="LastName" class="mktoLabel ">Last name (required):
               </label>
-              <input required id="LastName" name="LastName" maxlength="255" type="text" class="mktoField   mktoRequired">
+              <input required id="LastName" name="LastName" maxlength="255" type="text" class="mktoField mktoRequired">
             </li>
 
             <li class="mktFormReq mktField">
               <label for="Company" class="mktoLabel ">Company (required):
               </label>
-              <input required id="Company" name="Company" maxlength="255" type="text" class="mktoField   mktoRequired">
+              <input required id="Company" name="Company" maxlength="255" type="text" class="mktoField mktoRequired">
             </li>
 
             <li class="mktFormReq mktField">
               <label for="Email" class="mktoLabel ">Work email (required):
               </label>
-              <input required id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField  mktoRequired">
+              <input required id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField mktoRequired">
             </li>
 
             <li class="mktFormReq mktField">
               <label for="Phone" class="mktoLabel ">Phone number (required):
               </label>
-              <input required id="Phone" name="Phone" maxlength="255" type="tel" class="mktoField mktoTelField  mktoRequired">
+              <input required id="Phone" name="Phone" maxlength="255" type="tel" class="mktoField mktoTelField mktoRequired">
             </li>
 
             <li class="mktFormReq mktField">
               <label for="Country" class="mktoLabel ">Country (required):
               </label>
-              <select required id="Country" name="Country" class="mktoField  mktoRequired mktoValid">
+              <select required id="Country" name="Country" class="mktoField mktoRequired mktoValid">
                 <option value="">Select...</option>
                 <option value="FR">France</option>
                 <option value="DE">Germany</option>
@@ -321,7 +321,7 @@
             </li>
             <li class="mktoPlaceholder mktoPlaceholderState">
               <label for="State" class="mktoLabel mktoHasWidth">State (required):</label>
-              <select id="State" name="State" class="mktoField  mktoRequired mktFReq">
+              <select id="State" name="State" class="mktoField mktoRequired mktFReq">
                 <optgroup label="Select Province" value="SelectProvince">
                   <option value="AB">Alberta</option>
                   <option value="BC">British Columbia</option>
@@ -396,7 +396,7 @@
             <li class="mktFormReq mktField">
               <label for="Comments_from_lead__c" class="mktoLabel ">What would you like to talk to us about? (required)
               </label>
-              <textarea required id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" class="mktoField  mktoRequired" maxlength="2000"></textarea>
+              <textarea required id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" class="mktoField mktoRequired" maxlength="2000"></textarea>
             </li>
             <li class="mktField">
                 <input class="mktoField" value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
@@ -408,7 +408,7 @@
             </li>
             <li>All information provided will be handled in accordance with the Canonical <a aria-label="Read the Canonical privacy policy" href="http://www.ubuntu.com/legal" target="_blank">privacy policy</a>.</li>
             <li class="mktField">
-              <button type="submit" class="mktoButton p-button--positive">Submit</button>
+              <button type="submit" class="mktoButton p-button--positive" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal link', 'eventAction' : 'Click', 'eventLabel' : 'Submit contact us' });">Submit</button>
               </span>
               <input type="hidden" name="formid" class="mktoField " value="1337">
               <input type="hidden" name="lpId" class="mktoField " value="2313">
@@ -439,12 +439,12 @@
       <div class="p-card">
         <h3 class="p-card__title">Any questions? Call&nbsp;us</h3>
         <ul class="p-list--divided">
-          <li class="p-list__item">Americas <a href="tel:+18889861322" class="u-float--right">+1 888 9861322</a></li>
-          <li class="p-list__item">France <a href="tel:+33800914061" class="u-float--right">+33 800914061</a></li>
-          <li class="p-list__item">Germany <a href="tel:+498001838219" class="u-float--right">+49 800 1838219</a></li>
-          <li class="p-list__item">Japan <a href="tel:+81362053075" class="u-float--right">+81 3 6205 3075</a></li>
-          <li class="p-list__item">Spain <a href="tel:+34900833872" class="u-float--right">+34 900 833872</a></li>
-          <li class="p-list__item">UK and RoW <a href="tel:+448000588704" class="u-float--right">+44 800 0588704</a></li>
+          <li class="p-list__item">Americas <a href="tel:+18889861322" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'Americas' });" class="u-float--right">+1 888 9861322</a></li>
+          <li class="p-list__item">France <a href="tel:+33800914061" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'France' });" class="u-float--right">+33 800914061</a></li>
+          <li class="p-list__item">Germany <a href="tel:+498001838219" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'Germany' });" class="u-float--right">+49 800 1838219</a></li>
+          <li class="p-list__item">Japan <a href="tel:+81362053075" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'Japan' });" class="u-float--right">+81 3 6205 3075</a></li>
+          <li class="p-list__item">Spain <a href="tel:+34900833872" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'Spain' });" class="u-float--right">+34 900 833872</a></li>
+          <li class="p-list__item">UK and RoW <a href="tel:+448000588704" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Contact via telephone', 'eventAction' : 'Click', 'eventLabel' : 'UK and RoW' });" class="u-float--right">+44 800 0588704</a></li>
         </ul>
       </div>
     </div>
