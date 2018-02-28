@@ -415,19 +415,21 @@
 </section>
 
 <!-- News -->
-<section class="p-strip is-deep is-bordered">
+<section class="p-strip--light is-deep">
   <div class="row">
     <div class="col-12">
-      <h2>The latest MAAS news</h2>
+      <h2 class="p-link--external p-muted-heading">
+        <a class="p-link--strong" aria-label="External link to find more MAAS news from Ubuntu Insights" href="https://insights.ubuntu.com/tag/maas">The latest MAAS news</a>
+      </h2>
     </div>
   </div>
   <div class="row">
-    <div id="insights-cloud-feed" class="p-divider col-12">
+    <div id="insights-cloud-feed" class="p-divider">
       {% get_rss_feed "https://insights.ubuntu.com/tag/maas/feed" limit=3 as insights_feed %}
       {% if insights_feed %}
         {% for item in insights_feed %}
           <article class="col-4 p-divider__block">
-            <h3 class="p-heading--four"><a class="p-link--strong" href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
+            <h3 class="p-heading--four"><a href="{{ item.link }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'insights', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escapejs }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
             <footer>
               <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
             </footer>
@@ -437,7 +439,6 @@
         <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/maas.io/issues/new">file an issue</a>.</p>
       {% endif %}
     </div>
-    <p><a aria-label="External link to find more MAAS news from Ubuntu Insights" href="https://insights.ubuntu.com/tag/maas" class="p-link--external">More MAAS news from Ubuntu Insights</a></p>
   </div>
 </section>
 {% endblock %}
