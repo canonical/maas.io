@@ -72,3 +72,11 @@ p {
     max-width: none;
   }
 }
+
+// XXX Ant: 27.02.18 This can be removed when this is fixed
+// https://github.com/vanilla-framework/vanilla-framework/issues/1602
+abbr[title] {
+  border-bottom: .1em dotted;
+  cursor: help;
+  text-decoration: none;
+}
