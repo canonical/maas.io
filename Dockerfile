@@ -11,7 +11,7 @@ RUN pip3 install pipenv talisker
 # Import code, install code dependencies
 WORKDIR /srv
 ADD . .
-RUN pipenv install --system --deploy --three
+RUN pip install -r requirements.txt
 
 # Set git commit ID
 ARG COMMIT_ID
