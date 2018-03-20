@@ -64,24 +64,3 @@ TEMPLATES = [
         },
     },
 ]
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'error_file': {
-            'level': 'ERROR',
-            'filename': os.path.join(BASE_DIR, 'django-error.log'),
-            'class': 'logging.handlers.RotatingFileHandler',
-            'maxBytes': 1 * 1024 * 1024,
-            'backupCount': 2
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['error_file'],
-            'level': 'ERROR',
-            'propagate': True
-        }
-    }
-}
