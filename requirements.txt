@@ -1,0 +1,13 @@
+canonicalwebteam.versioned-static==1.0.1
+canonicalwebteam.yaml-redirects==1.0.5
+canonicalwebteam.get-feeds==0.1.7
+Django==1.11.1
+django-versioned-static-url==0.1
+django-static-root-finder==0.1
+django-asset-server-url==0.1
+django-template-finder-view==0.2
+feedparser==5.2.1
+lockfile==0.12.2
+requests==2.10.0
+requests-cache==0.4.12
+whitenoise==3.3.0
