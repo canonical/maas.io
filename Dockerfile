@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install --yes python3-pip
 # Python dependencies
 ENV LANG C.UTF-8
 RUN pip3 install --upgrade pip
-RUN pip3 install pipenv talisker
 
 # Import code, install code dependencies
 WORKDIR /srv
