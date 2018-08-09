@@ -1,13 +1,13 @@
 FROM ubuntu:bionic
 
+# Set up environment
+ENV LANG C.UTF-8
+WORKDIR /srv
+
 # System dependencies
 RUN apt-get update && apt-get install --yes python3-pip
 
-# Python dependencies
-ENV LANG C.UTF-8
-
 # Import code, install code dependencies
-WORKDIR /srv
 ADD . .
 RUN pip3 install -r requirements.txt
 
