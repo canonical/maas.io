@@ -11,4 +11,5 @@ lockfile==0.12.2
 requests==2.10.0
 requests-cache==0.4.12
 whitenoise==3.3.0
-talisker==0.9.6
+talisker==0.9.13
+gunicorn[gevent]

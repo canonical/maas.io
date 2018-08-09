@@ -5,7 +5,7 @@
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
-    "serve": "talisker.gunicorn webapp.wsgi --reload --timeout 9999 --access-logfile - --error-logfile - --bind 0.0.0.0:${PORT}",
+    "serve": "./entrypoint 0.0.0.0:${PORT}",
     "build": "node-sass --include-path node_modules static/sass --output static/css"
   },
   "author": "Canonical webteam",
