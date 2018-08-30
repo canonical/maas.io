@@ -2,5 +2,10 @@
 
 set -e
 
-talisker.gunicorn.gevent webapp.wsgi --reload --log-level debug --timeout 9999 --access-logfile - --workers 3 --worker-class gevent --error-logfile - --bind $1
+RUN_COMMAND="talisker.gunicorn.gevent webapp.wsgi --bind $1 --worker-class gevent --name talisker-`hostname`"
 
+if [ "${DJANGO_DEBUG}" = true ] || [ "${DJANGO_DEBUG}" = 1 ]; then
+    RUN_COMMAND="${RUN_COMMAND} --reload --log-level debug --timeout 9999"
+fi
+
+${RUN_COMMAND}
