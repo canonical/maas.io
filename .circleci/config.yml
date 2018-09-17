@@ -1,0 +1,42 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: canonicalwebteam/dev
+
+jobs:
+  python-tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: pip3 install -r requirements.txt
+      - run:
+          name: Run python tests
+          command: yarn test-py
+  python-lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Lint python code
+          command: yarn lint-py
+  scss-lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Lint sass
+          command: yarn lint-scss
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - scss-lint
+      - python-lint
+      - python-tests
