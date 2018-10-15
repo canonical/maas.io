@@ -1,0 +1,11 @@
+@mixin maas-p-matrix {
+  .p-matrix {
+    @include row;
+
+    &__item {
+      border: 0;
+      padding: unset;
+      width: unset;
+    }
+  }
+}
