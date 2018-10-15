@@ -1,6 +1,5 @@
 // settings
-@import
-'settings_colors';
+@import 'settings_colors';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
@@ -15,6 +14,7 @@
 'patterns_links',
 'patterns_modal',
 'patterns_navigation',
+'patterns-matrix',
 'patterns_row',
 'patterns_takeunders',
 'patterns_inline-images';
@@ -28,24 +28,10 @@
 @include maas-p-links;
 @include maas-p-modal;
 @include maas-p-navigation;
+@include maas-p-matrix;
 @include maas-p-takeunders;
 @include maas-p-row;
 @include maas-p-inline-images;
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.p-heading--one,
-.p-heading--two,
-.p-heading--three,
-.p-heading--four,
-.p-heading--five,
-.p-heading--six {
-  line-height: 1.4;
-}
 
 // XXX Ant: 04.12.17 This can be removed when this is fixed
 // https://github.com/vanilla-framework/vanilla-framework/issues/1478
@@ -73,10 +59,23 @@ p {
   }
 }
 
-// XXX Ant: 27.02.18 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1602
-abbr[title] {
-  border-bottom: .1em dotted;
-  cursor: help;
-  text-decoration: none;
+h1,
+.p-heading--one,
+h2,
+.p-heading--two {
+  font-weight: 100;
+}
+
+.p-icon--default {
+  height: auto;
+  margin-bottom: $spv-intra;
+  width: map-get($icon-sizes, social);
+}
+
+.clear--third {
+ .col-6 {
+   &:nth-child(3) {
+     margin-left: 0;
+   }
+ }
 }
