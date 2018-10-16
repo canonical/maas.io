@@ -15,7 +15,6 @@
 'patterns_modal',
 'patterns_navigation',
 'patterns-matrix',
-'patterns_row',
 'patterns_takeunders',
 'patterns_inline-images';
 
@@ -30,7 +29,6 @@
 @include maas-p-navigation;
 @include maas-p-matrix;
 @include maas-p-takeunders;
-@include maas-p-row;
 @include maas-p-inline-images;
 
 // XXX Ant: 04.12.17 This can be removed when this is fixed
@@ -70,12 +68,4 @@ h2,
   height: auto;
   margin-bottom: $spv-intra;
   width: map-get($icon-sizes, social);
-}
-
-.clear--third {
- .col-6 {
-   &:nth-child(3) {
-     margin-left: 0;
-   }
- }
 }
