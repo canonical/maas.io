@@ -69,3 +69,14 @@ h2,
   margin-bottom: $spv-intra;
   width: map-get($icon-sizes, social);
 }
+
+.u-min-margin--bottom {
+  &h2,
+  &.p-heading--two {
+    margin-bottom: $sp-unit - map-get($nudges, nudge--h2);
+  }
+
+  &[class^='.p-button'] {
+    margin-bottom: $spv-nudge-compensation;
+  }
+}
