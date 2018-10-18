@@ -14,7 +14,6 @@
 'patterns_links',
 'patterns_modal',
 'patterns_navigation',
-'patterns-matrix',
 'patterns_takeunders',
 'patterns_inline-images';
 
@@ -27,7 +26,6 @@
 @include maas-p-links;
 @include maas-p-modal;
 @include maas-p-navigation;
-@include maas-p-matrix;
 @include maas-p-takeunders;
 @include maas-p-inline-images;
 
@@ -76,7 +74,7 @@ h2,
     margin-bottom: $sp-unit - map-get($nudges, nudge--h2);
   }
 
-  &[class^='.p-button'] {
+  &[class^='p-button'] {
     margin-bottom: $spv-nudge-compensation;
   }
 }
