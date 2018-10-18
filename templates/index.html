@@ -44,7 +44,7 @@
 
 <section class="p-strip--light">
   <div class="row">
-    <h2>A selection of our customers</h2>
+    <h3 class="p-muted-heading">A selection of our customers</h2>
     <ul class="row">
       <li class="mobile-col-2 tablet-col-2 col-2">
         <img class="" src="{{ ASSET_SERVER_URL }}d8f890fb-logo-at%26t.svg" alt="AT&T logo">
@@ -168,123 +168,180 @@
   <div class="row">
     <h2>Key features</h2>
   </div>
-  <ul class="row" style="display: flex; flex-wrap: wrap;">
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" alt="Automation cog icon">
-        <h5>
-          <a class="p-link--strong" aria-label="Learn more about automatic discovery and registration of every device on the network" href="/tour#automation" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Automatic discovery and registration of every device on the network.</p>
-        <p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr>, <abbr title="HP Integrated Lights-Out">HPILO</abbr>, <abbr title="Dell Remote Access Controller">DRAC</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 6">IPv6</abbr>) automation.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" />
-        <h5>
-          <a class="p-link--strong" href="/tour#fast-deployment" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Fast deployment&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Zero-touch deployment of Ubuntu, CentOS, Windows and RHEL.</p>
-        <p>Deploy linux distros in less than 5 minutes.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" />
-        <h5>
-          <a class="p-link--strong" href="/tour#configure-servers" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">Machine configuration&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
-        <p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4 u-no-margin--left">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" alt="Chassis icon" />
-        <h5>
-          <a class=" p-link--external" href="https://docs.maas.io/en/nodes-comp-hw" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Chassis management</a>
-        </h5>
-        <p>Full chassis convergence, including Cisco UCS, HP Moonshot, Intel RSD and more.</p>
-        <p>Dynamic hardware resource management with Intel RSD.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" />
-        <h5>
-          <a class="p-link--strong" href="/tour#manage-network" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">Network management&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Observes and catalogs every IP address on the network (IPAM).</p>
-        <p>Built-in highly available DHCP (active-passive) and DNS (active-active).</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Hardware testing icon" />
-        <h5>
-          <a class="p-link--strong" href="/tour#hardware-testing" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Hardware testing' });">Hardware testing&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Run tests to get up to date information about your hardware&rsquo;s health.</p>
-        <p>Get key metrics for your component&rsquo;s performance.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4 u-no-margin--left">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" />
-        <h5><span>DevOps integration</span></h5>
-        <p>Integration with devops automation tools like <a href="https://conjure-up.io/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="p-link--external">conjure-up</a>, <a href="https://jujucharms.com/" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'DevOps integration' });" class="p-link--external">Juju</a>, Chef, Puppet, SALT, Ansible and more.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}c4778eb5-service-tracking.svg" alt="Service tracking image" />
-        <h5><a class="p-link--strong" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });">Service tracking&nbsp;&rsaquo;</a></h5>
-        <p>Monitors and tracks critical services to ensure proper operations.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}81ca0037-manage.svg" alt="Manage icon" />
-        <h5><a class="p-link--strong" href="/tour#hardware-tracking" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Service tracking' });"><span>Manage</span>&nbsp;&rsaquo;</a></h5>
-        <p>Comes with a <a aria-label="External link to go to MAAS API docs" href="https://docs.maas.io/en/api" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external">REST <abbr title="Application Programming Interface">API</abbr></a>, Web <abbr title="User Interface">UI</abbr> and <a aria-label="External link to go to MAAS CLI docs" href="https://docs.maas.io/maas/en/manage-cli" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'REST API, CLI' });" class="p-link--external"><abbr title="Command Line Interface">CLI</abbr></a>.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4 u-no-margin--left">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" alt="Automation cog icon">
-        <h5>
-          <a class="p-link--strong" aria-label="Learn more about automatic discovery and registration of every device on the network" href="/tour#automation" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Automatic discovery and registration of every device on the network.</p>
-        <p><abbr title="Baseboard Management Controller">BMC</abbr> (<abbr title="Intelligent Platform Management Interface">IPMI</abbr>, <abbr title="Active Management Techonology">AMT</abbr>, <abbr title="HP Integrated Lights-Out">HPILO</abbr>, <abbr title="Dell Remote Access Controller">DRAC</abbr> and more) and <abbr title="Preboot Execution Environment">PXE</abbr> (<abbr title="Internet Protocol version 4">IPv4</abbr> and <abbr title="Internet Protocol version 6">IPv6</abbr>) automation.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" />
-        <h5>
-          <a class="p-link--strong" href="/tour#fast-deployment" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Fast deployment&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Zero-touch deployment of Ubuntu, CentOS, Windows and RHEL.</p>
-        <p>Deploy linux distros in less than 5 minutes.</p>
-      </div>
-    </li>
-    <li class="tablet-col-3 col-4">
-      <div class="p-strip is-shallow u-no-padding--top">
-        <img class="p-icon--default" src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" />
-        <h5>
-          <a class="p-link--strong" href="/tour#configure-servers" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">Machine configuration&nbsp;&rsaquo;</a>
-        </h5>
-        <p>Configure the machine’s network interfaces with bridges, <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and more.</p>
-        <p>Create advanced filesystem layouts with <abbr title="Redundant array of independent disks">RAID</abbr>, <abbr title="Block Cache">bcache</abbr>, <abbr title="Logical Volume Management">LVM</abbr> and more.</p>
-      </div>
-    </li>
-  </ul>
+  <div class="row">
+    <ul class="p-matrix">
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}ebcacb5e-automation.svg" alt="Automation cog icon">
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five" aria-label="Learn more about automatic discovery and registration of every device on the network" href="/tour#automation" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Automatic discovery and registration of every network device.
+              <abbr title="Baseboard Management Controller">BMC</abbr> ops with
+              <abbr title="Intelligent Platform Management Interface">IPMI</abbr>,
+              <abbr title="Active Management Techonology">AMT</abbr> and other protocols.
+            </p>
+            <p>
+              <abbr title="Preboot Execution Environment">PXE</abbr> over
+              <abbr title="Internet Protocol version 4">IPv4</abbr> and
+              <abbr title="Internet Protocol version 6">IPv6</abbr>) networks.
+              APIs for DNS, DHCP, IPAM, server configuration and provisioning.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}9a00b936-fast-deployment.svg" alt="Deploymeny in the cloud icon" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five" href="/tour#fast-deployment" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Speed&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Zero-touch deployment of Ubuntu, CentOS, Windows and RHEL.</p>
+            <p>Full deployment time is approximately two boot cycles plus two minutes for disk imaging.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}5626be9e-chassis-mangement.svg" alt="Chassis icon" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five p-link--external" href="https://docs.maas.io/en/nodes-comp-hw" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Inventory</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Discover every PCI and USB device in every server. Inventory disk models and serial numbers. Provision machines based on specific inventory details.</p>
+            <p>Dynamic hardware resource management with Intel RSD.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five"
+              href="/tour#configure-servers" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">
+              Storage&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Create advanced filesystem layouts with
+              <abbr title="Redundant array of independent disks">RAID</abbr>,
+              <abbr title="Block Cache">bcache</abbr>,
+              <abbr title="Logical Volume Management">LVM</abbr>,
+            </p>
+            <p>ZFS and more. Automate storage configuration through APIs. Allocate servers based on storage.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}db3bdf2d-machine-configuration.svg" alt="Machine configuration icon" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five"
+              href="/tour#configure-servers" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about storage' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Machine configuration' });">
+              IPAM, DHCP, DNS&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Configure server network interfaces with bridges,
+              <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and addresses.</p>
+              <p>Integrated, best of breed, highly available, open source DHCP and DNS.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}125c9207-service-tracking.svg" alt="Hardware testing icon" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five" href="/tour#hardware-testing" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Hardware testing' });">
+            Hardware testing&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Run tests to get up to date information about hardware health.</p>
+            <p>Benchmark disk, RAM, CPU and network performance.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <span class="p-heading--five">DevOps on bare metal</span>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Integration with Chef, Puppet, SALT, Ansible, Conjure-up, and <a href="https://jujucharms.com/">Juju</a>.</p>
+            <p>REST API, CLI and Python bindings enable full lifecycle and project automation.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}4e80e2f4-network-management.svg" alt="Network management image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title">
+            <a class="p-link--strong p-heading--five" href="/tour#manage-network" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">
+            Network monitoring&nbsp;&rsaquo;</a>
+          </h4>
+          <div class="p-matrix__desc">
+            <p>Continuously observes network traffic, and catalogs every active IP address of unknown origin.</p>
+            <p>Discovers rogue devices, IPs and MAC addresses. Drives active scanning of network ranges.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}14939f84-devops-integration.svg" alt="DevOps image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title"><span class="p-heading--five">Authentication & Identity</span></h4>
+          <div class="p-matrix__desc">
+            <p>Integrate with LDAP, Active Directory or SAML for central identity management and single-sign-on across multiple MAAS regions.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}c4778eb5-service-tracking.svg" alt="Service tracking image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title"><span class="p-link--strong p-heading--five">
+          Composable systems</span></h4>
+          <div class="p-matrix__desc">
+            <p>Drive Cisco UCS, Intel RSD, HP Moonshot and more. Supports dynamic hardware composition with Intel RSD.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}c4778eb5-service-tracking.svg" alt="Service tracking image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title"><span class="p-link--strong p-heading--five">
+          Cloud metadata</span></h4>
+          <div class="p-matrix__desc">
+            <p>Reuse standard cloud operations with cloud-init and metadata services. Hybrid multicloud operations now include bare metal, with no change in applications.</p>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}c4778eb5-service-tracking.svg" alt="Service tracking image" />
+        <div class="p-matrix__content">
+          <h4 class="p-matrix__title"><span class="p-link--strong p-heading--five">
+          KVM Micro-cloud</span></h4>
+          <div class="p-matrix__desc">
+            <p>Designate servers to host KVM virtual machines to be dynamically provisioned alongside physical servers.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="p-strip--accent is-shallow">
+  <div class="row u-vertically-center">
+    <div class="col-10">
+      <h3 class="p-heading--two u-min-margin--bottom">Learn how to configure and install MAAS</h3>
+    </div>
+    <div class="col-2 u-vertically-center">
+      <a href="https://docs.snapcraft.io/build-snaps/languages" class="p-button--positive u-min-margin--bottom">Get Started</a>
+    </div>
+  </div>
 </section>
 
  <!-- Your future data center, available now -->
-<!--
+
 <div class="row">
   <hr>
 </div>
@@ -335,78 +392,16 @@
     </div>
   </div>
 </div>
--->
- <!-- Your future data center, available now -->
 
-<div class="row">
-  <hr>
-</div>
-<div class="p-strip">
-  <div class="row">
-      <h2>
-        Your future data center, available now
-      </h2>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h4>
-        Carrier-grade infrastructure DNS, DHCP and IPAM
-      </h4>
-      <p>
-        MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided.
-      </p>
-      <p>
-        Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant.
-      </p>
-      <p>
-        MAAS uses the Postgres SQL database which supports redundant and highly available scenarios.
-      </p>
-    </div>
-    <div class="col-6">
-      <h4>
-        Open source software-defined data center
-      </h4>
-      <p>
-        MAAS is an open source SDDC solution used by telcos, financial institutions, media companies and supercomputer admins to take care of all the low-level details.
-      </p>
-      <p>
-        PXE, IPMI, ILO and all the custom protocols needed for diverse vendor hardware support come together in one clean REST API with Python bindings for easy integration and automation.
-      </p>
-      <p>
-        It includes a full IPAM capabilities, providing a central database and REST API for all network addressing and naming information.
-      </p>
-    </div>
-  </div>
-  <div class="p-strip is-shallow">
-    <div class="row">
-      <div class="col-6">
-        <h4>
-          Devops on bare metal is easy with dynamic server provisioning
-        </h4>
-        <p>
-          Take devops to bare metal for apps like big data, kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.
-        </p>
-      </div>
-      <div class="col-6">
-        <h4>
-          KVM MicroCloud for Edge Computing
-        </h4>
-        <p>
-          MAAS provides a simple micro-cloud alongside physical provisioning, suitable for edge cloud operations.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <section class="p-strip p-strip--light">
   <div class="row">
-    <h2>Tackle your provisioning problems with MAAS</h2>
+    <h2>Tackle your provisioning problems <br class="u-hide--small u-hide--medium">with MAAS</h2>
   </div>
   <div class="row">
     <div class="hr"></div>
   </div>
-  <div class="row">
+  <div class="row is-bordered">
     <div class="col-4">
       <h3 class="p-heading--four u-no-margin--top u-no-padding--top">Automated operations</h3>
     </div>
@@ -622,16 +617,14 @@
     </div>
   </div>
 </section>
-<div class="row">
-  <hr>
-</div>
-<section class="p-strip is-deep">
+
+<section class="p-strip--accent is-shallow">
   <div class="row u-vertically-center">
-    <div class="col-8">
-      <h3 class="p-heading--two">Learn how to configure and install MAAS</h3>
+    <div class="col-10">
+      <h3 class="p-heading--two u-min-margin--bottom">Learn how to configure and install MAAS</h3>
     </div>
-    <div class="col-4">
-      <a href="https://docs.snapcraft.io/build-snaps/languages" class="p-button--positive">Get Started</a>
+    <div class="col-2 u-vertically-center">
+      <a href="https://docs.snapcraft.io/build-snaps/languages" class="p-button--positive u-min-margin--bottom">Get Started</a>
     </div>
   </div>
 </section>
@@ -639,8 +632,8 @@
 <section class="p-strip--light">
   <div class="row">
     <div class="col-12">
-      <h2 class="p-link--external">
-        <a class="" aria-label="External link to find more MAAS news from the Ubuntu blog" href="https://blog.ubuntu.com/tag/maas">The latest MAAS news</a>
+      <h2 class="p-link--external p-muted-heading">
+        <a class="p-link--strong" aria-label="External link to find more MAAS news from the Ubuntu blog" href="https://blog.ubuntu.com/tag/maas">The latest MAAS news</a>
       </h2>
     </div>
   </div>
