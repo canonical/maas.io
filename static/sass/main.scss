@@ -74,6 +74,11 @@ h2,
     margin-bottom: $sp-unit - map-get($nudges, nudge--h2);
   }
 
+  &h4,
+  &.p-heading--four {
+    margin-bottom: - map-get($nudges, nudge--h4); // the nudge on h4 is .05rem, so no need to subtract an sp-unit from it
+  }
+
   &[class^='p-button'] {
     margin-bottom: $spv-nudge-compensation;
   }
