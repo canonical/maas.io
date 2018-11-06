@@ -1,84 +1,57 @@
 // settings
-@import
-'settings_colors';
+@import 'settings_colors';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
 
 // patterns
 @import
-'patterns_buttons',
 'patterns_footer',
 'patterns_heading-icon',
 'patterns_hero-video',
 'patterns_lists',
-'patterns_links',
 'patterns_modal',
 'patterns_navigation',
-'patterns_row',
 'patterns_takeunders',
 'patterns_inline-images';
 
 // patterns
-@include maas-p-buttons;
 @include maas-p-footer;
 @include maas-p-heading-icon;
 @include maas-p-hero-video;
 @include maas-p-lists;
-@include maas-p-links;
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
-@include maas-p-row;
 @include maas-p-inline-images;
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 .p-heading--one,
-.p-heading--two,
-.p-heading--three,
-.p-heading--four,
-.p-heading--five,
-.p-heading--six {
-  line-height: 1.4;
-}
-
-// XXX Ant: 04.12.17 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1478
-.u-align--center {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    max-width: none;
-  }
-}
-
-h1,
 h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  &.u-align--center {
-    max-width: none;
-  }
+.p-heading--two {
+  font-weight: 100;
 }
 
-// XXX Ant: 27.02.18 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1602
-abbr[title] {
-  border-bottom: .1em dotted;
-  cursor: help;
-  text-decoration: none;
+.p-icon--default {
+  height: auto;
+  margin-bottom: $spv-intra;
+  width: map-get($icon-sizes, social);
+}
+
+.u-min-margin--bottom {
+  &h2,
+  &.p-heading--two {
+    margin-bottom: $sp-unit - map-get($nudges, nudge--h2);
+  }
+
+  &h4,
+  &.p-heading--four {
+    margin-bottom: - map-get($nudges, nudge--h4); // the nudge on h4 is .05rem, so no need to subtract an sp-unit from it
+  }
+
+  &[class^='p-button'] {
+    margin-bottom: $spv-nudge-compensation;
+  }
 }
 
 @media only screen and (max-width: $breakpoint-medium) {
@@ -86,4 +59,3 @@ abbr[title] {
     left: calc(90% - 30px);
   }
 }
-
