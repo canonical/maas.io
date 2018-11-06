@@ -1,81 +1,15 @@
 // site specific header styling
 
 @mixin maas-p-navigation {
-  .p-navigation {
-    border: 0;
-    margin-top: 0;
+  .p-navigation__link > a:hover {
+    background-color: $color-dark;
+  }
 
-    .row {
-      position: relative;
-    }
+  .p-navigation__link.is-selected {
+    @include vf-highlight-bar($color-navigation-active-bar, bottom, true);
 
-    &__logo-img {
-      display: inline-block;
-      vertical-align: text-bottom;
-    }
-
-    .p-navigation__toggle--close {
-      top: calc(50% - 3.75rem);
-    }
-
-    .p-navigation__links {
-
-      &:last-of-type {
-        border-right: 0;
-      }
-
-      .p-navigation__link {
-        border-left: 1px solid $color-mid-dark;
-        display: block;
-        float: left;
-        padding: 0;
-        width: 50%;
-
-        @media (min-width: $breakpoint-navigation-threshold + 1) {
-          width: auto;
-        }
-
-        &:hover {
-          text-decoration: none;
-        }
-
-        &--contact {
-          float: right;
-          position: absolute;
-          right: 0;
-        }
-      }
-
-      .p-navigation__link a {
-        -moz-osx-font-smoothing: auto;
-        -webkit-font-smoothing: auto;
-        background: $color-x-light;
-        display: block;
-        float: left;
-        font-weight: 300;
-        padding: .8rem 1.25rem;
-        width: 100%;
-
-        @media (min-width: $breakpoint-navigation-threshold + 1) {
-          background: transparent;
-          color: $color-x-light;
-        }
-
-        &:hover {
-          background: $color-light;
-          text-decoration: none;
-
-          @media (min-width: $breakpoint-navigation-threshold + 1) {
-            background: $button-primary-color;
-          }
-        }
-
-        @media (min-width: $breakpoint-navigation-threshold) {
-          &.active {
-            box-shadow: 0 -3px 0 $button-primary-color inset;
-          }
-        }
-      }
+    &::before {
+      top: inherit;
     }
   }
 }
