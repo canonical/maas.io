@@ -64,3 +64,13 @@ h2,
 p + p:not(.p-muted-heading) {
   margin-top: -#{$sp-unit};
 }
+
+.u-sv3--small::after {
+  @media only screen and (max-width: $breakpoint-medium) {
+    content: '';
+    display: block;
+    height: $px;
+    margin-top: ($sp-unit * 3) - $px;
+    position: relative;
+  }
+}
