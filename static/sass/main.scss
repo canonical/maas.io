@@ -64,3 +64,12 @@ h2,
 p + p:not(.p-muted-heading) {
   margin-top: -#{$sp-unit};
 }
+
+// XXX Caleb: Increase space between detailed stepped list items
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1917
+.p-stepped-list--detailed {
+  .p-list-step__content,
+  .p-list-step__title {
+    margin-bottom: $spv-inter--shallow-scaleable;
+  }
+}
