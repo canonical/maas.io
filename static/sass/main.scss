@@ -73,3 +73,9 @@ p + p:not(.p-muted-heading) {
     margin-bottom: $spv-inter--shallow-scaleable;
   }
 }
+
+// XXX Caleb: Vanilla bug, cuts off border from second strip onwards
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/2045
+[class^='p-strip'].is-bordered {
+  margin-bottom: inherit;
+}
