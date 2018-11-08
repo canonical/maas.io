@@ -10,10 +10,12 @@
                 <h1>Install MAAS</h1>
                 <p class="p-heading--four">Follow the instructions below to download, configure and install&nbsp;MAAS.</p>
             </div>
-            <div class="p-card col-5">
+            <div class="col-5 p-card u-no-margin--bottom">
                 <h3>Talk to our experts</h3>
                 <p>We make MAAS amazing, and we help people run critical infrastructure at scale with it. Contact us for more information or to discuss your specific needs.</p>
-                <p><a aria-label="Contact us for more information or to discuss your specific MAAS needs" href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
+                <div>
+                  <a aria-label="Contact us for more information or to discuss your specific MAAS needs" href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -41,14 +43,14 @@
                   Install MAAS
                 </h3>
                 <div class="p-list-step__content">
-                  <p class="p-code-snippet">
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo apt update" readonly="readonly">
                       <button class="p-code-snippet__action">Copy to clipboard</button>
-                  </p>
-                  <p class="p-code-snippet">
+                  </div>
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo apt install maas" readonly="readonly">
                       <button class="p-code-snippet__action">Copy to clipboard</button>
-                  </p>
+                  </div>
                 </div>
               </li>
               <li class="p-list-step__item">
@@ -58,10 +60,10 @@
                 </h3>
                 <div class="p-list-step__content">
                   <p>Create your admin credentials by typing.</p>
-                  <p class="p-code-snippet">
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo maas init" readonly="readonly">
                       <button class="p-code-snippet__action" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Completion', 'eventAction' : 'Click', 'eventLabel' : 'Install' });">Copy to clipboard</button>
-                  </p>
+                  </div>
                   <p>Login to the MAAS <abbr title="User interface">UI</abbr> at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
                 </div>
               </li>
