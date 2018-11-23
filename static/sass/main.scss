@@ -101,3 +101,8 @@ html {
 .global-nav__header-row.global-nav__row[style] {
   max-width: $width-base - $gutters-total !important;
 }
+@media only screen and (max-width: $breakpoint-medium) {
+  .usabilla_live_button_container { // sass-lint:disable-line class-name-format
+    left: calc(90% - 30px);
+  }
+}
