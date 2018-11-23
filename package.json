@@ -9,13 +9,17 @@
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "build": "node-sass --include-path node_modules static/sass --output static/css"
+    "build": "node-sass --include-path node_modules static/sass --output static/css && yarn run build-js",
+    "build-js": "mkdir -p static/js && cp node_modules/global-nav/dist/index.js static/js/global-nav.js"
   },
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "sass-lint": "^1.10.2",
     "node-sass": "^4.5.3",
+    "sass-lint": "^1.10.2",
     "vanilla-framework": "1.8.0"
+  },
+  "dependencies": {
+    "global-nav": "^1.1.4"
   }
 }
