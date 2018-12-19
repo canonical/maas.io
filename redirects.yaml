@@ -1,3 +1,4 @@
 docs: https://docs.maas.io/
 docs/(?P<docs>.*): http://docs.maas.io/{docs}
 get-started: "/install"
+index.html: "/"
