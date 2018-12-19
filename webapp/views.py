@@ -1,4 +1,4 @@
-from django_template_finder_view import TemplateFinder
+from canonicalwebteam.django_views import TemplateFinder
 from django.http import HttpResponseNotFound, HttpResponseServerError
 from django.template import loader
 
