@@ -10,10 +10,12 @@
                 <h1>Install MAAS</h1>
                 <p class="p-heading--four">Follow the instructions below to download, configure and install&nbsp;MAAS.</p>
             </div>
-            <div class="p-card col-5">
+            <div class="col-5 p-card u-no-margin--bottom">
                 <h3>Talk to our experts</h3>
                 <p>We make MAAS amazing, and we help people run critical infrastructure at scale with it. Contact us for more information or to discuss your specific needs.</p>
-                <p><a aria-label="Contact us for more information or to discuss your specific MAAS needs" href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></p>
+                <div>
+                  <a aria-label="Contact us for more information or to discuss your specific MAAS needs" href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -41,14 +43,14 @@
                   Install MAAS
                 </h3>
                 <div class="p-list-step__content">
-                  <p class="p-code-snippet">
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo apt update" readonly="readonly">
                       <button class="p-code-snippet__action">Copy to clipboard</button>
-                  </p>
-                  <p class="p-code-snippet">
+                  </div>
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo apt install maas" readonly="readonly">
                       <button class="p-code-snippet__action">Copy to clipboard</button>
-                  </p>
+                  </div>
                 </div>
               </li>
               <li class="p-list-step__item">
@@ -58,10 +60,10 @@
                 </h3>
                 <div class="p-list-step__content">
                   <p>Create your admin credentials by typing.</p>
-                  <p class="p-code-snippet">
+                  <div class="p-code-snippet">
                       <input class="p-code-snippet__input" value="sudo maas init" readonly="readonly">
                       <button class="p-code-snippet__action" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Completion', 'eventAction' : 'Click', 'eventLabel' : 'Install' });">Copy to clipboard</button>
-                  </p>
+                  </div>
                   <p>Login to the MAAS <abbr title="User interface">UI</abbr> at http://&lt;your.maas.ip&gt;:5240/MAAS/</p>
                 </div>
               </li>
@@ -79,8 +81,8 @@
                       <li>Ubuntu images</li>
                       <li><abbr title="Secure shell">SSH</abbr> keys (for currently logged in user)</li>
                   </ul>
-                  <p><a href="{{ ASSET_SERVER_URL }}2d4f9903-Complete+first+user+configuration.jpg" class="venobox venobox--expand" data-gall="installGallery" title="Initial screen of the first use journey">
-                    <img class="p-image--bordered" src="{{ ASSET_SERVER_URL }}2d4f9903-Complete+first+user+configuration.jpg?w=552"  alt="First user journey screenshot"></a></p>
+                  <p><a href="{{ ASSET_SERVER_URL }}0d7788a1-Complete+the+first+user+configuration+journey.png" class="venobox venobox--expand" data-gall="installGallery" title="Initial screen of the first use journey">
+                    <img class="p-image--bordered" src="{{ ASSET_SERVER_URL }}0d7788a1-Complete+the+first+user+configuration+journey.png?w=552"  alt="First user journey screenshot"></a></p>
                 </div>
               </li>
               <li class="p-list-step__item">
@@ -95,8 +97,8 @@
                       <li>Select the subnet where to create the DHCP Dynamic range on.</li>
                       <li>Fill in the details for the dynamic range.</li>
                   </ol>
-                  <p><a href="{{ ASSET_SERVER_URL }}ef8b9a5d-Turn+on+DHCP.jpg" class="venobox venobox--expand" data-gall="installGallery" title="VLAN details page in an active MAAS">
-                      <img class="p-image--bordered" src="{{ ASSET_SERVER_URL }}ef8b9a5d-Turn+on+DHCP.jpg?w=552" class="image--shadow" alt="VLAN details">
+                  <p><a href="{{ ASSET_SERVER_URL }}57bf7d7e-Turn+on+DHCP.png" class="venobox venobox--expand" data-gall="installGallery" title="VLAN details page in an active MAAS">
+                      <img class="p-image--bordered" src="{{ ASSET_SERVER_URL }}57bf7d7e-Turn+on+DHCP.png?w=552" class="image--shadow" alt="VLAN details">
                   </a></p>
                 </div>
               </li>
@@ -114,8 +116,8 @@
                       <li>Select all the machines and &ldquo;Commission&rdquo; them using the &ldquo;Take action&rdquo; button</li>
                       <li>When machines have a &ldquo;Ready&rdquo; status you can start deploying</li>
                   </ol>
-                  <p><a href="{{ ASSET_SERVER_URL }}5b3a3cd7-Turn+on+DHCP+Copy.jpg" class="venobox venobox--expand" data-gall="installGallery" title="The node listing page in MAAS">
-                      <img src="{{ ASSET_SERVER_URL }}5b3a3cd7-Turn+on+DHCP+Copy.jpg?w=552" class="p-image--bordered" alt="MAAS node listing">
+                  <p><a href="{{ ASSET_SERVER_URL }}18191366-Enlist+and+commission+servers.png" class="venobox venobox--expand" data-gall="installGallery" title="The node listing page in MAAS">
+                      <img src="{{ ASSET_SERVER_URL }}18191366-Enlist+and+commission+servers.png?w=552" class="p-image--bordered" alt="MAAS node listing">
                   </a></p>
                   <p><a class="p-link--external" href="https://docs.maas.io/en/">Refer to the user manual to get a more detailed guide in how to get up and running with MAAS</a></p>
                 </div>

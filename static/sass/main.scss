@@ -1,84 +1,43 @@
 // settings
-@import
-'settings_colors';
+@import 'settings_colors';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
 
 // patterns
 @import
-'patterns_buttons',
 'patterns_footer',
 'patterns_heading-icon',
 'patterns_hero-video',
 'patterns_lists',
-'patterns_links',
 'patterns_modal',
 'patterns_navigation',
-'patterns_row',
 'patterns_takeunders',
-'patterns_inline-images';
+'patterns_inline-images',
+'patterns_fluid-grid';
 
 // patterns
-@include maas-p-buttons;
 @include maas-p-footer;
 @include maas-p-heading-icon;
 @include maas-p-hero-video;
 @include maas-p-lists;
-@include maas-p-links;
 @include maas-p-modal;
 @include maas-p-navigation;
 @include maas-p-takeunders;
-@include maas-p-row;
 @include maas-p-inline-images;
+@include maas-p-fluid-grid;
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 .p-heading--one,
-.p-heading--two,
-.p-heading--three,
-.p-heading--four,
-.p-heading--five,
-.p-heading--six {
-  line-height: 1.4;
-}
-
-// XXX Ant: 04.12.17 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1478
-.u-align--center {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    max-width: none;
-  }
-}
-
-h1,
 h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  &.u-align--center {
-    max-width: none;
-  }
+.p-heading--two {
+  font-weight: 100;
 }
 
-// XXX Ant: 27.02.18 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1602
-abbr[title] {
-  border-bottom: .1em dotted;
-  cursor: help;
-  text-decoration: none;
+.p-icon--default {
+  height: auto;
+  margin-bottom: $spv-intra;
+  width: map-get($icon-sizes, social);
 }
 
 @media only screen and (max-width: $breakpoint-medium) {
@@ -87,3 +46,29 @@ abbr[title] {
   }
 }
 
+// XXX Caleb: Increase spacing between paragraphs by .5rem, to be upstreamed in Vanilla
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/2026
+p + p:not(.p-muted-heading) {
+  margin-top: -#{$sp-unit};
+}
+
+// XXX Caleb: Increase space between detailed stepped list items
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1917
+.p-stepped-list--detailed {
+  .p-list-step__content,
+  .p-list-step__title {
+    margin-bottom: $spv-inter--shallow-scaleable;
+  }
+}
+
+// XXX Caleb: Vanilla bug, cuts off border from second strip onwards
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/2045
+[class^='p-strip'].is-bordered {
+  margin-bottom: inherit;
+}
+
+// XXX Caleb: abbr pattern should have help cursor instead of pointer
+// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1962
+abbr[title] {
+  cursor: help;
+}
