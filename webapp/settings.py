@@ -33,7 +33,7 @@ INSTALLED_APPS = [
 
 ALLOWED_HOSTS = ['*']
 
-MIDDLEWARE_CLASSES = []
+MIDDLEWARE = []
 
 DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 ROOT_URLCONF = 'webapp.urls'
