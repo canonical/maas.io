@@ -1,6 +1,6 @@
 {
   "name": "ubuntu-maas",
-  "description": "Static Django website blueprint ===",
+  "description": "Static Django website blueprint",
   "scripts": {
     "test": "yarn run lint-scss && yarn run lint-py && yarn run test-py",
     "lint-py": "flake8 --exclude '*env*,node_modules'",
