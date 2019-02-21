@@ -9,70 +9,14 @@
 <!-- Hero banner -->
 <section class="u-image-position p-strip--image is-dark is-deep" style="overflow: hidden; background-color: #111; background-image:url('{{ ASSET_SERVER_URL }}d7047b19-maas+hero-background--no-left-edge.png'); background-size: 1440px 1440px; background-position: 50% 0; background-repeat: no-repeat;">
   <div class="row">
-    <div class="col-6">
+    <div class="col-8">
       <h1>Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
-      <p>Self-service, remote installation of Windows, CentOS and Ubuntu on real servers turns your data center into a bare metal cloud.</p>
+      <p>MAAS turns your real servers into a physical cloud. Detailed inventory and quick installation of Ubuntu, CentOS, Windows and VMWare ESXi. Optimised, on demand, at scale.</p>
       <p class="u-sv1">Welcome to metal-as-a-service.</p>
       <div>
         <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
         <a href="/how-it-works" class="p-button--neutral">See how it works</a>
       </div>
-    </div>
-    <div class="col-6 p-hero-video">
-      <a href="#" aria-label="Watch the MAAS video on YouTube" class="p-hero-video__link"  onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">
-        <img src="{{ ASSET_SERVER_URL }}45146a8e-play-icon--white-on-black.svg" alt="" class="p-hero-video__play" />
-        <img src="{{ ASSET_SERVER_URL }}a7e4808f-MAAS-video-cover-cleaner.png" alt="" class="u-no-margin--top" />
-      </a>
-      <div class="p-hero-video__video-container u-embedded-media">
-        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var videoLink = document.querySelector('.p-hero-video__link');
-        var video = document.querySelector('.p-hero-video__video');
-        videoLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.classList.add('is-playing');
-          video.src += '?autoplay=1';
-        });
-      });
-    </script>
-  </div>
-</section>
-
-<section class="p-strip is-shallow">
-  <div class="row">
-    <h2 class="p-muted-heading">Features</h2>
-  </div>
-  <div class="row u-equal-height">
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">Dashboard</li>
-        <li class="p-list__item is-ticked">Resource pools</li>
-        <li class="p-list__item is-ticked">Network discovery and configuration</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">KVM micro-clouds</li>
-        <li class="p-list__item is-ticked">Audit logs</li>
-        <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and ESXi installation</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">CLI and open API</li>
-        <li class="p-list__item is-ticked">Hardware testing</li>
-        <li class="p-list__item is-ticked">LDAP support</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">Flexible tagging</li>
-        <li class="p-list__item is-ticked">High Availability</li>
-        <li class="p-list__item is-ticked">X86, Z, Power and ARM64 architecture support</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -102,86 +46,6 @@
     </div>
   </div>
 </section>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>Real servers,<br />self-service</h2>
-    </div>
-    <div class="col-6">
-      <p>You run the data center, but your customers decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
-      <p>MAAS provides super-fast self-service provisioning of Windows, Ubuntu, CentOS and ESXi.</p>
-      <p>
-        <a href="https://pages.ubuntu.com/eBook-MAAS.html?source=maas_page&medium=Banner&campaign=MAAS_ebook&_ga=2.22106171.1851959601.1510602087-405342743.1460033629" class="p-link--external" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about server provisioning with MAAS' });">Learn more about server provisioning with MAAS</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="p-strip u-no-padding--top u-no-padding--bottom">
-  <div class="row">
-    <hr class="u-no-margin--bottom" />
-  </div>
-</div>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>Bare-metal,<br />cloud experience</h2>
-    </div>
-    <div class="col-6">
-      <p>MAAS implements all the standard features of a public cloud &mdash; like instance metadata and cloud-init. Your customers get complete control of the deployed machine.</p>
-      <p>Canonical created cloud-init and leads the project globally; we ensure that MAAS provides a first-class cloud experience for physical servers.</p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-6">
-      <h2>Storage</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h4>Inventory, testing and benchmarking</h4>
-      <p>MAAS detects and inventories all the disks, in every server. You’ll have a single database of every model and serial number.</p>
-      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycle, and learns about their performance.</p>
-    </div>
-    <div class="col-6">
-      <h4>RAID, LVM, Bcache, ZFS and more</h4>
-      <p>Auto-tagging of SSD and rotary disk types makes it easy to know which disks to use for each application.</p>
-      <p>Your users configure the storage of any server they control: RAID, LVM, Bcache and ZFS. Configure boot, applications and backup disks exactly where you want them &mdash; and get the installed machine, a few minutes later.</p>
-    </div>
-  </div>
-</section>
-
-<div class="p-strip--light u-no-padding--top u-no-padding--bottom">
-  <div class="row">
-    <hr class="u-no-margin--bottom" />
-  </div>
-</div>
-
-<div class="p-strip--light">
-  <div class="row">
-    <h2>Network</h2>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h4>Detection and configuration</h4>
-      <p>The most error-prone part of data center operations is the network.</p>
-      <p>MAAS enables rapid convergence on a correct network configuration &mdash; for every server, in every rack. All NICs are detected and inventoried when a machine is enlisted in MAAS.</p>
-      <p>Discover the topology of the network &mdash; which NIC is plugged into which port on which switch. MAAS tests access to specific VLANs from each NIC.</p>
-      <p>Network bonds and VLANs can be configured too. Set all significant network operating properties through MAAS &mdash; and then validate that configuration with ephemeral machine booting and testing.</p>
-    </div>
-    <div class="col-6">
-      <h4>Monitoring</h4>
-      <p>MAAS rack controllers provide local endpoints for all infrastructure services in the rack itself, and they also monitor the local network for rogue devices, IP addresses and MAC addresses.</p>
-      <p>Over time, you’ll know if there are ‘extra’ devices plugged into any fabric or VLAN that MAAS is asked to monitor.</p>
-      <p>Solve network mysteries faster with distributed network analysis and observation.</p>
-    </div>
-  </div>
-</div>
 
 <section class="p-strip">
   <div class="row">
@@ -336,6 +200,86 @@
   </div>
 </section>
 
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Real servers,<br />self-service</h2>
+    </div>
+    <div class="col-6">
+      <p>You run the data center, but your customers decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
+      <p>MAAS provides super-fast self-service provisioning of Windows, Ubuntu, CentOS and ESXi.</p>
+      <p>
+        <a href="https://pages.ubuntu.com/eBook-MAAS.html?source=maas_page&medium=Banner&campaign=MAAS_ebook&_ga=2.22106171.1851959601.1510602087-405342743.1460033629" class="p-link--external" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about server provisioning with MAAS' });">Learn more about server provisioning with MAAS</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="p-strip u-no-padding--top u-no-padding--bottom">
+  <div class="row">
+    <hr class="u-no-margin--bottom" />
+  </div>
+</div>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Bare-metal,<br />cloud experience</h2>
+    </div>
+    <div class="col-6">
+      <p>MAAS implements all the standard features of a public cloud &mdash; like instance metadata and cloud-init. Your customers get complete control of the deployed machine.</p>
+      <p>Canonical created cloud-init and leads the project globally; we ensure that MAAS provides a first-class cloud experience for physical servers based on x86, ARM64, POWER and Z architectures.</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-6">
+      <h2>Storage</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h4>Inventory, testing and benchmarking</h4>
+      <p>MAAS detects and inventories all the disks, in every server. You’ll have a single database of every model and serial number.</p>
+      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycle, and learns about their performance.</p>
+    </div>
+    <div class="col-6">
+      <h4>RAID, LVM, Bcache, ZFS and more</h4>
+      <p>Auto-tagging of SSD and rotary disk types makes it easy to know which disks to use for each application.</p>
+      <p>Your users configure the storage of any server they control: RAID, LVM, Bcache and ZFS. Configure boot, applications and backup disks exactly where you want them &mdash; and get the installed machine, a few minutes later.</p>
+    </div>
+  </div>
+</section>
+
+<div class="p-strip--light u-no-padding--top u-no-padding--bottom">
+  <div class="row">
+    <hr class="u-no-margin--bottom" />
+  </div>
+</div>
+
+<div class="p-strip--light">
+  <div class="row">
+    <h2>Network</h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h4>Detection and configuration</h4>
+      <p>The most error-prone part of data center operations is the network.</p>
+      <p>MAAS enables rapid convergence on a correct network configuration &mdash; for every server, in every rack. All NICs are detected and inventoried when a machine is enlisted in MAAS.</p>
+      <p>Discover the topology of the network &mdash; which NIC is plugged into which port on which switch. MAAS tests access to specific VLANs from each NIC.</p>
+      <p>Network bonds and VLANs can be configured too. Set all significant network operating properties through MAAS &mdash; and then validate that configuration with ephemeral machine booting and testing.</p>
+    </div>
+    <div class="col-6">
+      <h4>Monitoring</h4>
+      <p>MAAS rack controllers provide local endpoints for all infrastructure services in the rack itself, and they also monitor the local network for rogue devices, IP addresses and MAC addresses.</p>
+      <p>Over time, you’ll know if there are ‘extra’ devices plugged into any fabric or VLAN that MAAS is asked to monitor.</p>
+      <p>Solve network mysteries faster with distributed network analysis and observation.</p>
+    </div>
+  </div>
+</div>
+
 <section class="p-strip--accent is-shallow">
   <div class="row u-equal-height">
     <div class="col-10">
@@ -355,19 +299,15 @@
   <div class="row">
     <div class="col-6">
       <h4>Carrier-grade infrastructure DNS, DHCP and IPAM</h4>
-      <p>MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided.</p>
-      <p>Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant.</p>
-      <p>MAAS uses the Postgres SQL database which supports redundant and highly available scenarios.</p>
+      <p>MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided. Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant. MAAS uses the PostgresSQL database which supports redundant and highly available scenarios.</p>
       <h4>Devops on bare metal is easy with dynamic server provisioning</h4>
-      <p>Take devops to bare metal for apps like big data, Kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
+      <p>Take devops to bare metal for apps like big data, kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
     </div>
     <div class="col-6">
       <h4>Open source software-defined data center</h4>
-      <p>MAAS is an open source SDDC solution used by telcos, financial institutions, media companies and supercomputer admins to take care of all the low-level details.</p>
-      <p>PXE, IPMI, ILO and all the custom protocols needed for diverse vendor hardware support come together in one clean REST API with Python bindings for easy integration and automation.</p>
-      <p>It includes a full IPAM capabilities, providing a central database and REST API for all network addressing and naming information.</p>
+      <p>MAAS is an open source SDDC solution used by telcos, financial institutions, media companies and supercomputer admins to take care of all the low-level details. PXE, IPMI, ILO and all the custom protocols needed for diverse vendor hardware support come together in one clean REST API with Python bindings for easy integration and automation. It includes a full IPAM capabilities, providing a central database and REST API for all network addressing and naming information.</p>
       <h4>KVM MicroCloud for Edge Computing</h4>
-      <p>MAAS offers the ability to create lean, on-demand KVM-based micro-clouds on any of the leading architectures (x86_64, ARM64, ppc64el and s390x). This capability extends to a fine-grained control over KVM storage and networking configuration, thereby accelerating deployment of applications in any environment constrained by physical footprint or requiring dedicated VM-based workloads.</p>
+      <p>MAAS offers the ability to create lean, on-demand KVM-based micro-clouds on any of the leading architectures . This capability extends to a fine-grained control over KVM storage and networking configuration, thereby accelerating deployment of applications in any environment constrained by physical footprint or requiring dedicated VM-based workloads.</p>
     </div>
   </div>
 </section>
