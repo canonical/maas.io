@@ -13,18 +13,18 @@ class MaasTemplateFinder(TemplateFinder):
         context = super(MaasTemplateFinder, self).get_context_data(**kwargs)
 
         # Add level_* context variables
-        clean_path = self.request.path.strip('/')
-        for index, path, in enumerate(clean_path.split('/')):
+        clean_path = self.request.path.strip("/")
+        for index, path in enumerate(clean_path.split("/")):
             context["level_" + str(index + 1)] = path
 
         return context
 
 
 def custom_404(request):
-    t = loader.get_template('error/404.html')
-    return HttpResponseNotFound(t.render({'request_path': request.path}))
+    t = loader.get_template("error/404.html")
+    return HttpResponseNotFound(t.render({"request_path": request.path}))
 
 
 def custom_500(request):
-    t = loader.get_template('error/500.html')
+    t = loader.get_template("error/500.html")
     return HttpResponseServerError(t.render({}))

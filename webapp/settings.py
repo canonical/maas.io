@@ -21,46 +21,44 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # At this point you should ensure the SECRET_KEY environment variable is set
 # in the Production deployment with a secure key, e.g. from
 # http://www.miniwebtool.com/django-secret-key-generator/
-SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
+SECRET_KEY = os.environ.get("SECRET_KEY", "no_secret")
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
-    'canonicalwebteam',
-    'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
-    'webapp',
+    "whitenoise.runserver_nostatic",
+    "django.contrib.staticfiles",
+    "canonicalwebteam",
+    "webapp",
 ]
 
-ALLOWED_HOSTS = ['*']
+MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware"]
 
-MIDDLEWARE = []
+ALLOWED_HOSTS = ["*"]
 
-DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
-ROOT_URLCONF = 'webapp.urls'
-WSGI_APPLICATION = 'webapp.wsgi.application'
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
+ROOT_URLCONF = "webapp.urls"
+WSGI_APPLICATION = "webapp.wsgi.application"
+LANGUAGE_CODE = "en-us"
+TIME_ZONE = "UTC"
 USE_I18N = False
 USE_L10N = False
 USE_TZ = False
-STATIC_ROOT = 'static'
-STATIC_URL = '/static/'
-STATICFILES_FINDERS = ['django_static_root_finder.StaticRootFinder']
-ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
+STATICFILES_FINDERS = ["django_static_root_finder.StaticRootFinder"]
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_URL = "/static/"
+ASSET_SERVER_URL = "https://assets.ubuntu.com/v1/"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'builtins': [
-                'canonicalwebteam.get_feeds.templatetags',
-                'webapp.templatetags.utils',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "builtins": [
+                "canonicalwebteam.get_feeds.templatetags",
+                "webapp.templatetags.utils",
             ],
-            'context_processors': [
-                'django_asset_server_url.asset_server_url',
-            ],
+            "context_processors": ["django_asset_server_url.asset_server_url"],
         },
-    },
+    }
 ]
