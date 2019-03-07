@@ -1,11 +1,13 @@
 # Third party
 from django.conf.urls import url
-from canonicalwebteam import yaml_redirects
+from canonicalwebteam.yaml_responses.django_helpers import (
+    create_redirect_views,
+)
 
 # Local
 from .views import MaasTemplateFinder, custom_404, custom_500
 
-urlpatterns = yaml_redirects.create_views()
+urlpatterns = create_redirect_views()
 
 # Standard patterns
 urlpatterns += [
