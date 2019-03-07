@@ -9,7 +9,7 @@ urlpatterns = yaml_redirects.create_views()
 
 # Standard patterns
 urlpatterns += [
-    url(r'^(?P<template>.*)/?$', MaasTemplateFinder.as_view()),  # Fenchurch
+    url(r"^(?P<template>.*)/?$", MaasTemplateFinder.as_view())  # Fenchurch
 ]
 
 # Error handlers
