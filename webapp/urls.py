@@ -5,7 +5,7 @@ from canonicalwebteam.yaml_responses.django_helpers import (
 )
 
 # Local
-from .views import MaasTemplateFinder, custom_404, custom_500
+from .views import MaasTemplateFinder
 
 urlpatterns = create_redirect_views()
 
@@ -13,7 +13,3 @@ urlpatterns = create_redirect_views()
 urlpatterns += [
     url(r"^(?P<template>.*)/?$", MaasTemplateFinder.as_view())  # Fenchurch
 ]
-
-# Error handlers
-handler404 = custom_404
-handler500 = custom_500
