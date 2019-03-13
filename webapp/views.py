@@ -1,6 +1,4 @@
 from canonicalwebteam.django_views import TemplateFinder
-from django.http import HttpResponseNotFound, HttpResponseServerError
-from django.template import loader
 
 
 class MaasTemplateFinder(TemplateFinder):
@@ -18,13 +16,3 @@ class MaasTemplateFinder(TemplateFinder):
             context["level_" + str(index + 1)] = path
 
         return context
-
-
-def custom_404(request):
-    t = loader.get_template("error/404.html")
-    return HttpResponseNotFound(t.render({"request_path": request.path}))
-
-
-def custom_500(request):
-    t = loader.get_template("error/500.html")
-    return HttpResponseServerError(t.render({}))
