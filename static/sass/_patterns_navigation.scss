@@ -2,7 +2,7 @@
 
 @mixin maas-p-navigation {
   .p-navigation__link > a:hover {
-    background-color: $color-dark;
+    background-color: #2b2b2b; // match color of ubuntu.com nav
   }
 
   .p-navigation__link.is-selected {
@@ -11,5 +11,9 @@
     &::before {
       top: inherit;
     }
+  }
+
+  .p-navigation__image {
+    max-height: $sp-unit * 3;
   }
 }

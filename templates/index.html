@@ -6,43 +6,13 @@
 {% endblock %}
 
 {% block content %}
-<!-- Hero banner -->
-<section class="u-image-position p-strip--image is-dark is-deep" style="overflow: hidden; background-color: #111; background-image:url('{{ ASSET_SERVER_URL }}d7047b19-maas+hero-background--no-left-edge.png'); background-size: 1440px 1440px; background-position: 50% 0; background-repeat: no-repeat;">
+<section class="p-strip--dark is-slanted">
   <div class="row">
     <div class="col-8">
-      <h1>Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
-      <p>MAAS turns your real servers into a physical cloud. Detailed inventory and quick installation of Ubuntu, CentOS, Windows and VMWare ESXi. Optimised, on demand, at scale.</p>
+      <h1 class="u-sv-2">Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
+      <p>Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data center into a bare metal cloud.</p>
       <p class="u-sv1">Welcome to metal-as-a-service.</p>
-      <div>
-        <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
-        <a href="/how-it-works" class="p-button--neutral">See how it works</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <h3 class="p-muted-heading u-align-text--center">A selection of customers</h3>
-    <div class="p-fluid-grid">
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}d8f890fb-logo-at%26t.svg" alt="AT&T logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}4589dd76-logo-deutsche-telekom.svg" alt="Deutsche Telekom logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}c15698ab-logo-microsoft.svg" alt="Microsoft logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}e4aa11e6-logo-nec.svg" alt="NEC logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cd22a35e-logo-ntt.svg" alt="NTT logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cba50650-logo-verizon.svg"  alt="Verizon logo" />
-      </span>
+      <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
     </div>
   </div>
 </section>
@@ -199,6 +169,33 @@
     </ul>
   </div>
 </section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <p class="p-muted-heading">A selection of customers</p>
+    <div class="p-fluid-grid">
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}d8f890fb-logo-at%26t.svg" alt="AT&T logo" />
+      </span>
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}4589dd76-logo-deutsche-telekom.svg" alt="Deutsche Telekom logo" />
+      </span>
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}c15698ab-logo-microsoft.svg" alt="Microsoft logo" />
+      </span>
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}e4aa11e6-logo-nec.svg" alt="NEC logo" />
+      </span>
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}cd22a35e-logo-ntt.svg" alt="NTT logo" />
+      </span>
+      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
+        <img src="{{ ASSET_SERVER_URL }}cba50650-logo-verizon.svg"  alt="Verizon logo" />
+      </span>
+    </div>
+  </div>
+</section>
+
 
 <section class="p-strip">
   <div class="row">
@@ -407,7 +404,7 @@
   </div>
 </section>
 
-<section class="p-strip--accent u-no-padding--bottom">
+<section class="p-strip--accent">
   <div class="row">
     <div class="col-6">
       <h2>Deploy any OS image <br />on any hardware</h2>
@@ -416,22 +413,18 @@
       <p class="p-heading--four">MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer.</p>
     </div>
   </div>
-</section>
-
-<section class="p-strip--accent">
-  <div class="row">
-    <img src="{{ ASSET_SERVER_URL }}bc176a27-logos-os-and-hw.png?w=1400" alt="Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco" />
-  </div>
-</section>
-
-<section class="p-strip--accent">
-  <div class="row">
-      <ul class="p-list">
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
-      </ul>
-  </div>
+  <section class="p-strip">
+    <div class="row">
+      <img src="{{ ASSET_SERVER_URL }}c1fbdd2b-any-os-on-any-hardware.png" alt="Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco" />
+    </div>
+  </section>
+    <div class="row">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
+        </ul>
+    </div>
 </section>
 
 <section class="p-strip u-no-padding--bottom">
@@ -449,76 +442,76 @@
         <table style="min-width: 380px; width: 100%;">
           <thead>
             <tr>
-              <td class="u-align--center" style="width: 40%;">&nbsp;</td>
-              <th class="u-align--center" style="width: 20%;">Free</th>
-              <th class="u-align--center" style="width: 20%;">Standard</th>
-              <th class="u-align--center" style="width: 20%;">Advanced</th>
+              <td style="width: calc(48.35615% + 3.2877%);">&nbsp;</td>
+              <th style="width: 13.92692%;">Free</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Standard</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Advanced</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Price per machine enlisted in a MAAS plan</td>
-              <td class="u-align--center">$0</td>
-              <td class="u-align--center">$5 per month</td>
-              <td class="u-align--center">$10 per month</td>
+              <td>$0</td>
+              <td>$5 per month</td>
+              <td>$10 per month</td>
             </tr>
             <tr>
               <td>Price per region, per year (unlimited machines)</td>
-              <td class="u-align--center">-</td>
-              <td class="u-align--center">-</td>
-              <td class="u-align--center">Unlimited machines $75,000</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Unlimited machines $75,000</td>
             </tr>
             <tr>
               <td>Phone and ticket support</td>
-              <td class="u-align--center">None</td>
-              <td class="u-align--center">8am - 6pm on weekdays</td>
-              <td class="u-align--center">24 hours a day, everyday</td>
+              <td>None</td>
+              <td>8am - 6pm on weekdays</td>
+              <td>24 hours a day, everyday</td>
             </tr>
             <tr>
               <td>Ubuntu and CentOS deployment</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Landscape Management<br />
               (for the MAAS servers)</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Livepatch<br />
               (for the MAAS servers)</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Knowledge Base</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Windows, RHEL, and custom image<br /> creation and deployment</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>High availability (HA) support</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td>&nbsp;</td>
-              <td class="u-align--center"><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
-              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
-              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+              <td><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
+              <td><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+              <td><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
             </tr>
           </tfoot>
         </table>
