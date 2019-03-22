@@ -23,6 +23,17 @@
         <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen=""></iframe>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var videoLink = document.querySelector('.p-hero-video__link');
+        var video = document.querySelector('.p-hero-video__video');
+        videoLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.classList.add('is-playing');
+          video.src += '?autoplay=1';
+        });
+      });
+    </script>
   </div>
 </section>
 
