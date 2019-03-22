@@ -77,19 +77,19 @@ abbr[title] {
   cursor: help;
 }
 
-.u-no-margin--left-above-bp-l {
+.u-no-margin-from-bp-l--left {
   @media (min-width: $breakpoint-medium) {
     margin-left: 0;
   }
 }
 
-.u-no-margin--left-bp-m_bp-l {
+.u-no-margin-bp-s-to-bp-m--left {
   @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
     margin-left: 0;
   }
 }
 
-.u-no-margin--left-bp-s {
+.u-no-margin-up-to-bp-s--left {
   @media (max-width: $breakpoint-small) {
     margin-left: 0;
   }
