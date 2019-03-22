@@ -26,6 +26,7 @@
       bottom: $bleed;
       content: '';
       left: $bleed;
+      pointer-events: none;
       position: absolute;
       right: $bleed;
       top: $bleed;
