@@ -77,19 +77,19 @@ abbr[title] {
   cursor: help;
 }
 
-.u-no-margin-from-bp-l--left {
+.col-first--desktop {
   @media (min-width: $breakpoint-medium) {
     margin-left: 0;
   }
 }
 
-.u-no-margin-bp-s-to-bp-m--left {
+.col-first--tablet {
   @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
     margin-left: 0;
   }
 }
 
-.u-no-margin-up-to-bp-s--left {
+.col-first--mobile {
   @media (max-width: $breakpoint-small) {
     margin-left: 0;
   }
