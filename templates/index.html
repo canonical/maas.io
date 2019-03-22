@@ -173,29 +173,115 @@
 <section class="p-strip--light">
   <div class="row">
     <p class="p-muted-heading">A selection of customers</p>
-    <div class="p-fluid-grid">
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}d8f890fb-logo-at%26t.svg" alt="AT&T logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}4589dd76-logo-deutsche-telekom.svg" alt="Deutsche Telekom logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}c15698ab-logo-microsoft.svg" alt="Microsoft logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}e4aa11e6-logo-nec.svg" alt="NEC logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cd22a35e-logo-ntt.svg" alt="NTT logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cba50650-logo-verizon.svg"  alt="Verizon logo" />
-      </span>
-    </div>
+  </div>
+  <div class="row js-logo-strip">
   </div>
 </section>
 
+<script>
+  function fragmentFromString(htmlString) {
+    var temp = document.createElement('template');
+    temp.innerHTML = htmlString;
+    return temp.content;
+  }
+
+  var logoStripOneData = {
+    r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+    r1c2: { url: "252e2017-logo-ea.png", altText: "ea logo" },
+    r1c3: { url: "e7dd8cc4-logo-at%26t.png", alText: "AT&T logo" },
+    r1c4: { url: "add4119e-logo-sandia.png", alText: "SNL logo" },
+    r1c5: { url: "afb5991e-logo-ubisoft.png", alText: "ubisoft logo" },
+    r1c6: { url: "ab9074df-logo-tele2.png", alText: "tele2 logo" },
+    r2c1: { url: "56c03384-logo-nec.png", alText: "nec logo" },
+    r2c2: { url: "822701bb-logo-tmobile.png", alText: "tmobile logo" },
+    r2c3: { url: "673fa219-logo-ntt.png", alText: "ntt logo" },
+    r2c4: { url: "022f6f41-logo-bt.png", alText: "bt logo" },
+    r2c5: { url: "a59ea622-logo-liberty-global.png", alText: "liberty-global logo" },
+    r2c6: { url: "9bb88cf6-logo-barclays+copy.png", alText: "barclays logo" }
+  };
+
+  var logoStripTwoData = {
+    r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+    r1c2: { url: "bf709df8-logo-db.png", altText: "db logo" },
+    r1c3: { url: "22fe3811-logo-telefonica.png", alText: "telefonica logo" },
+    r1c4: { url: "01158ac3-logo-riot-games.png", alText: "riot games logo" },
+    r1c5: { url: "ab9074df-logo-tele2.png", alText: "tele2 logo" },
+    r1c6: { url: "589418ac-logo-telecom-italia.png", alText: "telecom italia logo" },
+    r2c1: { url: "56c03384-logo-nec.png", alText: "nec logo" },
+    r2c2: { url: "d2b3609c-logo-scania.png", alText: "scania logo" },
+    r2c3: { url: "c6f4a7ea-logo-radobank.png", alText: "radobank logo" },
+    r2c4: { url: "7e005642-logo-astrazeneca.png", alText: "astra zeneca logo" },
+    r2c5: { url: "d003393b-logo-telstra.png", alText: "telstra logo" },
+    r2c6: { url: "9bb88cf6-logo-barclays+copy.png", alText: "barclays logo" }
+  };
+
+  class makeLogoStrip {
+    constructor() {
+      this.target = document.querySelector('.js-logo-strip');
+      this.logoLiClassNames = {
+        mobile: "mobile-col-1",
+        tablet: "tablet-col-1",
+        desktop: "col-2"
+      };
+      this.logoLiMarginResetClassNames = {
+        mobileFirstCol: "u-no-margin--left-bp-s",
+        tabletFirstCol: "u-no-margin--left-bp-m_bp-l",
+        desktopFirstCol: "u-no-margin--left-above-bp-l"
+      };
+    }
+
+    create(logoStripData) {
+      var fragment = document.createDocumentFragment();
+
+      // for (var logo in logoStripData) {
+      var that = this;
+      Object.keys(logoStripData).forEach(function (key, index) {
+        var logoDatum = logoStripData[key],
+            resetClasses = {};
+
+        if(index % 4 == 0) {
+            resetClasses.key1 = that.logoLiMarginResetClassNames.mobileFirstCol;
+        } else if (index % 6 == 0) {
+            resetClasses.key1 = that.logoLiMarginResetClassNames.tabletFirstCol;
+            resetClasses.key2 = that.logoLiMarginResetClassNames.desktopFirstCol;
+        }
+
+        that.appendLogo(fragment, logoDatum, resetClasses);
+      });
+
+      this.target.appendChild(fragment);
+    }
+
+    appendLogo(parent, logoDatum, resetClasses) {
+      var logoWrapper = document.createElement('div');
+
+      for (var className in this.logoLiClassNames) {
+        logoWrapper.classList.add(this.logoLiClassNames[className]);
+      }
+
+      for (var className in resetClasses) {
+        logoWrapper.classList.add(resetClasses[className]);
+      }
+
+      logoWrapper.innerHTML = '<img src="{{ ASSET_SERVER_URL }}' + logoDatum.url + '" alt="' + logoDatum.altText + '"/>';
+      parent.appendChild(logoWrapper);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var localStorage = window.localStorage,
+      showAlternateStrip = localStorage.getItem('showAlternateStrip'),
+      logoStrip = new makeLogoStrip();
+
+    if (showAlternateStrip === null) {
+      localStorage.setItem('showAlternateStrip', 'true');
+      logoStrip.create(logoStripOneData);
+    } else {
+      localStorage.removeItem('showAlternateStrip');
+      logoStrip.create(logoStripTwoData);
+    }
+  });
+</script>
 
 <section class="p-strip">
   <div class="row">
