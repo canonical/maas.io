@@ -256,32 +256,32 @@
       var that = this;
       Object.keys(logoStripData).forEach(function (key, index) {
         var logoDatum = logoStripData[key],
-            resetClasses = {};
+            firstColClasses = {};
 
         if(index % 4 == 0) {
-            resetClasses.key1 = that.firstColClasses.mobileFirstCol;
+            firstColClasses.key1 = that.firstColClasses.mobileFirstCol;
         }
 
         if (index % 6 == 0) {
-            resetClasses.key1 = that.firstColClasses.tabletFirstCol;
-            resetClasses.key2 = that.firstColClasses.desktopFirstCol;
+            firstColClasses.key1 = that.firstColClasses.tabletFirstCol;
+            firstColClasses.key2 = that.firstColClasses.desktopFirstCol;
         }
 
-        that.appendLogo(fragment, logoDatum, resetClasses);
+        that.appendLogo(fragment, logoDatum, firstColClasses);
       });
 
       this.target.appendChild(fragment);
     }
 
-    appendLogo(parent, logoDatum, resetClasses) {
+    appendLogo(parent, logoDatum, firstColClasses) {
       var logoWrapper = document.createElement('div');
 
       for (var className in this.colClasses) {
         logoWrapper.classList.add(this.colClasses[className]);
       }
 
-      for (var className in resetClasses) {
-        logoWrapper.classList.add(resetClasses[className]);
+      for (var className in firstColClasses) {
+        logoWrapper.classList.add(firstColClasses[className]);
       }
 
       logoWrapper.innerHTML = '<img src="{{ ASSET_SERVER_URL }}' + logoDatum.url + '" alt="' + logoDatum.altText + '"/>';
