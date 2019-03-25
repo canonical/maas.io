@@ -291,14 +291,14 @@
   document.addEventListener('DOMContentLoaded', function () {
     var localStorage = window.localStorage,
       showAlternateStrip = localStorage.getItem('showAlternateStrip'),
-      logoStrip = new logoStrip();
+      alternatingLogoStrip = new logoStrip();
 
     if (showAlternateStrip === null) {
       localStorage.setItem('showAlternateStrip', 'true');
-      logoStrip.create(logoStripOneData);
+      alternatingLogoStrip.create(logoStripOneData);
     } else {
       localStorage.removeItem('showAlternateStrip');
-      logoStrip.create(logoStripTwoData);
+      alternatingLogoStrip.create(logoStripTwoData);
     }
   });
 </script>
