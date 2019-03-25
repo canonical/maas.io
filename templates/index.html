@@ -235,15 +235,15 @@
     r2c6: { url: "9bb88cf6-logo-barclays+copy.png", alText: "barclays logo" }
   };
 
-  class makeLogoStrip {
+  class logoStrip {
     constructor() {
       this.target = document.querySelector('.js-logo-strip');
-      this.logoLiClassNames = {
+      this.colClasses = {
         mobile: "mobile-col-1",
         tablet: "tablet-col-1",
         desktop: "col-2"
       };
-      this.logoLiMarginResetClassNames = {
+      this.firstColClasses = {
         mobileFirstCol:  "col-first--mobile",
         tabletFirstCol:  "col-first--tablet",
         desktopFirstCol: "col-first--desktop"
@@ -260,10 +260,10 @@
             resetClasses = {};
 
         if(index % 4 == 0) {
-            resetClasses.key1 = that.logoLiMarginResetClassNames.mobileFirstCol;
+            resetClasses.key1 = that.firstColClasses.mobileFirstCol;
         } else if (index % 6 == 0) {
-            resetClasses.key1 = that.logoLiMarginResetClassNames.tabletFirstCol;
-            resetClasses.key2 = that.logoLiMarginResetClassNames.desktopFirstCol;
+            resetClasses.key1 = that.firstColClasses.tabletFirstCol;
+            resetClasses.key2 = that.firstColClasses.desktopFirstCol;
         }
 
         that.appendLogo(fragment, logoDatum, resetClasses);
@@ -275,8 +275,8 @@
     appendLogo(parent, logoDatum, resetClasses) {
       var logoWrapper = document.createElement('div');
 
-      for (var className in this.logoLiClassNames) {
-        logoWrapper.classList.add(this.logoLiClassNames[className]);
+      for (var className in this.colClasses) {
+        logoWrapper.classList.add(this.colClasses[className]);
       }
 
       for (var className in resetClasses) {
@@ -291,7 +291,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     var localStorage = window.localStorage,
       showAlternateStrip = localStorage.getItem('showAlternateStrip'),
-      logoStrip = new makeLogoStrip();
+      logoStrip = new logoStrip();
 
     if (showAlternateStrip === null) {
       localStorage.setItem('showAlternateStrip', 'true');
