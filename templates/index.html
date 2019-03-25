@@ -244,16 +244,15 @@
         desktop: "col-2"
       };
       this.firstColClasses = {
-        mobileFirstCol:  "col-first--mobile",
-        tabletFirstCol:  "col-first--tablet",
-        desktopFirstCol: "col-first--desktop"
+        mobileFirstCol:  "u-first-col--mobile",
+        tabletFirstCol:  "u-first-col--tablet",
+        desktopFirstCol: "u-first-col--desktop"
       };
     }
 
     create(logoStripData) {
       var fragment = document.createDocumentFragment();
 
-      // for (var logo in logoStripData) {
       var that = this;
       Object.keys(logoStripData).forEach(function (key, index) {
         var logoDatum = logoStripData[key],
