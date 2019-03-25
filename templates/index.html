@@ -260,7 +260,9 @@
 
         if(index % 4 == 0) {
             resetClasses.key1 = that.firstColClasses.mobileFirstCol;
-        } else if (index % 6 == 0) {
+        }
+
+        if (index % 6 == 0) {
             resetClasses.key1 = that.firstColClasses.tabletFirstCol;
             resetClasses.key2 = that.firstColClasses.desktopFirstCol;
         }
