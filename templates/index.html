@@ -274,7 +274,8 @@
     }
 
     appendLogo(parent, logoDatum, firstColClasses) {
-      var logoWrapper = document.createElement('div');
+      var logoWrapper = document.createElement('div'),
+          logoImg = document.createElement('img');
 
       for (var className in this.colClasses) {
         logoWrapper.classList.add(this.colClasses[className]);
@@ -284,7 +285,9 @@
         logoWrapper.classList.add(firstColClasses[className]);
       }
 
-      logoWrapper.innerHTML = '<img src="{{ ASSET_SERVER_URL }}' + logoDatum.url + '" alt="' + logoDatum.altText + '"/>';
+      logoImg.setAttribute('src', '{{ ASSET_SERVER_URL }}' + logoDatum.url);
+      logoImg.setAttribute('alt', logoDatum.altText);
+      logoWrapper.appendChild(logoImg);
       parent.appendChild(logoWrapper);
     }
   }
