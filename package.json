@@ -20,6 +20,6 @@
     "vanilla-framework": "1.8.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "^2.0.5"
+    "@canonical/global-nav": "2.0.5"
   }
 }
