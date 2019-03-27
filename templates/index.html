@@ -191,21 +191,24 @@
 </section>
 
 <section class="p-strip--light">
-  <div class="row">
+    <div class="row">
     <p class="p-muted-heading">A selection of customers</p>
-  </div>
-  <div class="row js-logo-strip">
-  </div>
+    </div>
+    <div class="row js-logo-strip">
+        <noscript>
+            <div class="mobile-col-1 tablet-col-1 col-2 u-first-col--tablet u-first-col--desktop"><img src="https://assets.ubuntu.com/v1/4c6fb640-logo-verizon.png" alt="verizon logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/252e2017-logo-ea.png" alt="ea logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/e7dd8cc4-logo-at%26t.png" alt="AT&amp;T logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/add4119e-logo-sandia.png" alt="SNL logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--mobile"><img src="https://assets.ubuntu.com/v1/afb5991e-logo-ubisoft.png" alt="ubisoft logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/ab9074df-logo-tele2.png" alt="tele2 logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--tablet u-first-col--desktop"><img src="https://assets.ubuntu.com/v1/56c03384-logo-nec.png" alt="nec logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/822701bb-logo-tmobile.png" alt="tmobile logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--mobile"><img src="https://assets.ubuntu.com/v1/673fa219-logo-ntt.png" alt="ntt logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/022f6f41-logo-bt.png" alt="bt logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/a59ea622-logo-liberty-global.png" alt="liberty-global logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/9bb88cf6-logo-barclays+copy.png" alt="barclays logo"></div>
+        </noscript>
+    </div>
 </section>
 
 <script>
-  function fragmentFromString(htmlString) {
+function fragmentFromString(htmlString) {
     var temp = document.createElement('template');
     temp.innerHTML = htmlString;
     return temp.content;
   }
 
-  var logoStripOneData = {
+var logoStripOneData = {
     r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
     r1c2: { url: "252e2017-logo-ea.png", altText: "ea logo" },
     r1c3: { url: "e7dd8cc4-logo-at%26t.png", altText: "AT&T logo" },
@@ -220,7 +223,7 @@
     r2c6: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
   };
 
-  var logoStripTwoData = {
+var logoStripTwoData = {
     r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
     r1c2: { url: "bf709df8-logo-db.png", altText: "db logo" },
     r1c3: { url: "22fe3811-logo-telefonica.png", altText: "telefonica logo" },
@@ -235,76 +238,82 @@
     r2c6: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
   };
 
-  class logoStrip {
-    constructor() {
-      this.target = document.querySelector('.js-logo-strip');
-      this.colClasses = {
+var logoStripRevealingModule = (function() {
+    var target,
+        colClassesList,
+        firstColClassesList;
+
+    target = document.querySelector('.js-logo-strip');
+
+    colClassesList = {
         mobile: "mobile-col-1",
         tablet: "tablet-col-1",
         desktop: "col-2"
-      };
-      this.firstColClasses = {
+    };
+
+    firstColClassesList = {
         mobileFirstCol:  "u-first-col--mobile",
         tabletFirstCol:  "u-first-col--tablet",
         desktopFirstCol: "u-first-col--desktop"
-      };
-    }
+    };
 
-    create(logoStripData) {
-      var fragment = document.createDocumentFragment();
+    function appendLogo(parent, logoDatum, firstColClasses) {
+        var logoWrapper = document.createElement('div'),
+            logoImg = document.createElement('img');
 
-      var that = this;
-      Object.keys(logoStripData).forEach(function (key, index) {
-        var logoDatum = logoStripData[key],
-            firstColClasses = {};
-
-        if(index % 4 == 0) {
-            firstColClasses.key1 = that.firstColClasses.mobileFirstCol;
+        for (var className in colClassesList) {
+        logoWrapper.classList.add(colClassesList[className]);
         }
 
-        if (index % 6 == 0) {
-            firstColClasses.key1 = that.firstColClasses.tabletFirstCol;
-            firstColClasses.key2 = that.firstColClasses.desktopFirstCol;
-        }
-
-        that.appendLogo(fragment, logoDatum, firstColClasses);
-      });
-
-      this.target.appendChild(fragment);
-    }
-
-    appendLogo(parent, logoDatum, firstColClasses) {
-      var logoWrapper = document.createElement('div'),
-          logoImg = document.createElement('img');
-
-      for (var className in this.colClasses) {
-        logoWrapper.classList.add(this.colClasses[className]);
-      }
-
-      for (var className in firstColClasses) {
+        for (var className in firstColClasses) {
         logoWrapper.classList.add(firstColClasses[className]);
-      }
+        }
 
-      logoImg.setAttribute('src', '{{ ASSET_SERVER_URL }}' + logoDatum.url);
-      logoImg.setAttribute('alt', logoDatum.altText);
-      logoWrapper.appendChild(logoImg);
-      parent.appendChild(logoWrapper);
+        logoImg.setAttribute('src', '{{ ASSET_SERVER_URL }}' + logoDatum.url);
+        logoImg.setAttribute('alt', logoDatum.altText);
+        logoWrapper.appendChild(logoImg);
+        parent.appendChild(logoWrapper);
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', function () {
+    function publicCreate(logoStripData) {
+        var fragment = document.createDocumentFragment();
+
+        Object.keys(logoStripData).forEach(function (key, index) {
+            var logoDatum = logoStripData[key],
+                firstColClasses = {};
+
+            if(index % 4 == 0) {
+                firstColClasses.key1 = firstColClassesList.mobileFirstCol;
+            }
+
+            if (index % 6 == 0) {
+                firstColClasses.key1 = firstColClassesList.tabletFirstCol;
+                firstColClasses.key2 = firstColClassesList.desktopFirstCol;
+            }
+
+            appendLogo(fragment, logoDatum, firstColClasses);
+        });
+
+        target.appendChild(fragment);
+    }
+
+    return {
+        create: publicCreate
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
     var localStorage = window.localStorage,
-      showAlternateStrip = localStorage.getItem('showAlternateStrip'),
-      alternatingLogoStrip = new logoStrip();
+        showAlternateStrip = localStorage.getItem('showAlternateStrip');
 
     if (showAlternateStrip === null) {
-      localStorage.setItem('showAlternateStrip', 'true');
-      alternatingLogoStrip.create(logoStripOneData);
+        localStorage.setItem('showAlternateStrip', 'true');
+        logoStripRevealingModule.create(logoStripOneData);
     } else {
-      localStorage.removeItem('showAlternateStrip');
-      alternatingLogoStrip.create(logoStripTwoData);
+        localStorage.removeItem('showAlternateStrip');
+        logoStripRevealingModule.create(logoStripTwoData);
     }
-  });
+});
 </script>
 
 <section class="p-strip">
