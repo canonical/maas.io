@@ -1,11 +1,11 @@
 @mixin vf-p-strip-slanted {
   $assets-path: 'https://assets.ubuntu.com/v1/';
   $horizontal-edge-padding: $spv-inter--regular-scaleable;
-  $slanted-edge-padding: $horizontal-edge-padding * 2; // coloured area takes half the rectangle surface area; to visually compensate, we multiply it by 2
+  $slanted-edge-padding: $horizontal-edge-padding; // coloured area takes half the rectangle surface area; to visually compensate, we multiply it by 2
 
   [class^='p-strip'].is-slanted {
-    background-image: url('#{$assets-path}dd4bd1df-hero-bg-maas--nowhite.svg'); // b04b115e-hero-bg-snapcraft-1-clean.svg
-    background-position: 50% 50%;
+    background-image: url('#{$assets-path}127c8ba7-hero-bg-maas-2.svg');
+    background-position: 50% 47%;
     overflow: hidden;
     position: relative;
 
@@ -20,7 +20,6 @@
 
     &::after {
       $bleed: -3px; // stretch outside to compensate for aliasing; otherwise edge of image underneath becomes visible as you resize
-      background-image: url('#{$assets-path}9efd9fc5-hero-bg-mask-snapcraft--white-orange.svg');
       background-position: 100% 100%;
       background-repeat: no-repeat;
       bottom: $bleed;
