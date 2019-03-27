@@ -1,5 +1,7 @@
 // settings
-@import 'settings_colors';
+@import
+'settings_colors',
+'settings_grid';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
@@ -7,6 +9,7 @@
 // patterns
 @import
 'patterns_footer',
+'patterns_strips',
 'patterns_heading-icon',
 'patterns_hero-video',
 'patterns_lists',
@@ -14,7 +17,8 @@
 'patterns_navigation',
 'patterns_takeunders',
 'patterns_inline-images',
-'patterns_fluid-grid';
+'patterns_fluid-grid',
+'patterns_tables';
 
 // patterns
 @include maas-p-footer;
@@ -26,6 +30,8 @@
 @include maas-p-takeunders;
 @include maas-p-inline-images;
 @include maas-p-fluid-grid;
+@include maas-p-tables;
+@include vf-p-strip-slanted;
 
 h1,
 .p-heading--one,
@@ -71,4 +77,22 @@ p + p:not(.p-muted-heading) {
 // Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1962
 abbr[title] {
   cursor: help;
+}
+
+.u-first-col--mobile {
+  @media (max-width: $breakpoint-small) {
+    margin-left: 0;
+  }
+}
+
+.u-first-col--tablet {
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+    margin-left: 0;
+  }
+}
+
+.u-first-col--desktop {
+  @media (min-width: $breakpoint-medium) {
+    margin-left: 0;
+  }
 }

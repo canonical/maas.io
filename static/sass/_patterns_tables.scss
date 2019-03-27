@@ -1,0 +1,6 @@
+@mixin maas-p-tables {
+  //XXX Lyubomir Popov 21.03.2019 Backport to vanilla: tfoot is not styled in vanilla. It needs a border as any other row in a table
+  tfoot tr {
+    border-top: 1px solid $color-mid-light;
+  }
+}

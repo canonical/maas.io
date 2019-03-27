@@ -6,25 +6,21 @@
 {% endblock %}
 
 {% block content %}
-<!-- Hero banner -->
-<section class="u-image-position p-strip--image is-dark is-deep" style="overflow: hidden; background-color: #111; background-image:url('{{ ASSET_SERVER_URL }}d7047b19-maas+hero-background--no-left-edge.png'); background-size: 1440px 1440px; background-position: 50% 0; background-repeat: no-repeat;">
+<section class="p-strip--dark is-slanted">
   <div class="row">
     <div class="col-6">
-      <h1>Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
-      <p>Self-service, remote installation of Windows, CentOS and Ubuntu on real servers turns your data center into a bare metal cloud.</p>
+      <h1 class="u-sv-2">Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
+      <p>Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data center into a bare metal cloud.</p>
       <p class="u-sv1">Welcome to metal-as-a-service.</p>
-      <div>
-        <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
-        <a href="/how-it-works" class="p-button--neutral">See how it works</a>
-      </div>
+      <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
     </div>
     <div class="col-6 p-hero-video">
-      <a href="#" aria-label="Watch the MAAS video on YouTube" class="p-hero-video__link"  onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">
-        <img src="{{ ASSET_SERVER_URL }}45146a8e-play-icon--white-on-black.svg" alt="" class="p-hero-video__play" />
-        <img src="{{ ASSET_SERVER_URL }}a7e4808f-MAAS-video-cover-cleaner.png" alt="" class="u-no-margin--top" />
+      <a href="#" aria-label="Watch the MAAS video on YouTube" class="p-hero-video__link" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Video', 'eventAction' : 'Play', 'eventLabel' : 'Watch the MAAS video' });">
+        <img src="{{ ASSET_SERVER_URL }}45146a8e-play-icon--white-on-black.svg" alt="" class="p-hero-video__play">
+        <img src="{{ ASSET_SERVER_URL }}b5aa999c-servers-illustration.png" alt="" class="u-no-margin--top">
       </a>
       <div class="p-hero-video__video-container u-embedded-media">
-        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen></iframe>
+        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen=""></iframe>
       </div>
     </div>
     <script>
@@ -40,148 +36,6 @@
     </script>
   </div>
 </section>
-
-<section class="p-strip is-shallow">
-  <div class="row">
-    <h2 class="p-muted-heading">Features</h2>
-  </div>
-  <div class="row u-equal-height">
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">Dashboard</li>
-        <li class="p-list__item is-ticked">Resource pools</li>
-        <li class="p-list__item is-ticked">Network discovery and configuration</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">KVM micro-clouds</li>
-        <li class="p-list__item is-ticked">Audit logs</li>
-        <li class="p-list__item is-ticked">Ubuntu, CentOS, Windows, RHEL and ESXi installation</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">CLI and open API</li>
-        <li class="p-list__item is-ticked">Hardware testing</li>
-        <li class="p-list__item is-ticked">LDAP support</li>
-      </ul>
-    </div>
-    <div class="col-3">
-      <ul class="p-list--divided">
-        <li class="p-list__item is-ticked">Flexible tagging</li>
-        <li class="p-list__item is-ticked">High Availability</li>
-        <li class="p-list__item is-ticked">X86, Z, Power and ARM64 architecture support</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <h3 class="p-muted-heading u-align-text--center">A selection of customers</h3>
-    <div class="p-fluid-grid">
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}d8f890fb-logo-at%26t.svg" alt="AT&T logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}4589dd76-logo-deutsche-telekom.svg" alt="Deutsche Telekom logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}c15698ab-logo-microsoft.svg" alt="Microsoft logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}e4aa11e6-logo-nec.svg" alt="NEC logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cd22a35e-logo-ntt.svg" alt="NTT logo" />
-      </span>
-      <span class="p-logo-image p-fluid-grid__item--small u-align--center">
-        <img src="{{ ASSET_SERVER_URL }}cba50650-logo-verizon.svg"  alt="Verizon logo" />
-      </span>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>Real servers,<br />self-service</h2>
-    </div>
-    <div class="col-6">
-      <p>You run the data center, but your customers decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
-      <p>MAAS provides super-fast self-service provisioning of Windows, Ubuntu, CentOS and ESXi.</p>
-      <p>
-        <a href="https://pages.ubuntu.com/eBook-MAAS.html?source=maas_page&medium=Banner&campaign=MAAS_ebook&_ga=2.22106171.1851959601.1510602087-405342743.1460033629" class="p-link--external" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about server provisioning with MAAS' });">Learn more about server provisioning with MAAS</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="p-strip u-no-padding--top u-no-padding--bottom">
-  <div class="row">
-    <hr class="u-no-margin--bottom" />
-  </div>
-</div>
-
-<section class="p-strip">
-  <div class="row">
-    <div class="col-6">
-      <h2>Bare-metal,<br />cloud experience</h2>
-    </div>
-    <div class="col-6">
-      <p>MAAS implements all the standard features of a public cloud &mdash; like instance metadata and cloud-init. Your customers get complete control of the deployed machine.</p>
-      <p>Canonical created cloud-init and leads the project globally; we ensure that MAAS provides a first-class cloud experience for physical servers.</p>
-    </div>
-  </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-6">
-      <h2>Storage</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h4>Inventory, testing and benchmarking</h4>
-      <p>MAAS detects and inventories all the disks, in every server. You’ll have a single database of every model and serial number.</p>
-      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycle, and learns about their performance.</p>
-    </div>
-    <div class="col-6">
-      <h4>RAID, LVM, Bcache, ZFS and more</h4>
-      <p>Auto-tagging of SSD and rotary disk types makes it easy to know which disks to use for each application.</p>
-      <p>Your users configure the storage of any server they control: RAID, LVM, Bcache and ZFS. Configure boot, applications and backup disks exactly where you want them &mdash; and get the installed machine, a few minutes later.</p>
-    </div>
-  </div>
-</section>
-
-<div class="p-strip--light u-no-padding--top u-no-padding--bottom">
-  <div class="row">
-    <hr class="u-no-margin--bottom" />
-  </div>
-</div>
-
-<div class="p-strip--light">
-  <div class="row">
-    <h2>Network</h2>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h4>Detection and configuration</h4>
-      <p>The most error-prone part of data center operations is the network.</p>
-      <p>MAAS enables rapid convergence on a correct network configuration &mdash; for every server, in every rack. All NICs are detected and inventoried when a machine is enlisted in MAAS.</p>
-      <p>Discover the topology of the network &mdash; which NIC is plugged into which port on which switch. MAAS tests access to specific VLANs from each NIC.</p>
-      <p>Network bonds and VLANs can be configured too. Set all significant network operating properties through MAAS &mdash; and then validate that configuration with ephemeral machine booting and testing.</p>
-    </div>
-    <div class="col-6">
-      <h4>Monitoring</h4>
-      <p>MAAS rack controllers provide local endpoints for all infrastructure services in the rack itself, and they also monitor the local network for rogue devices, IP addresses and MAC addresses.</p>
-      <p>Over time, you’ll know if there are ‘extra’ devices plugged into any fabric or VLAN that MAAS is asked to monitor.</p>
-      <p>Solve network mysteries faster with distributed network analysis and observation.</p>
-    </div>
-  </div>
-</div>
 
 <section class="p-strip">
   <div class="row">
@@ -336,6 +190,212 @@
   </div>
 </section>
 
+<section class="p-strip--light">
+    <div class="row">
+    <p class="p-muted-heading">A selection of customers</p>
+    </div>
+    <div class="row js-logo-strip">
+        <noscript>
+            <div class="mobile-col-1 tablet-col-1 col-2 u-first-col--tablet u-first-col--desktop"><img src="https://assets.ubuntu.com/v1/4c6fb640-logo-verizon.png" alt="verizon logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/252e2017-logo-ea.png" alt="ea logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/e7dd8cc4-logo-at%26t.png" alt="AT&amp;T logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/add4119e-logo-sandia.png" alt="SNL logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--mobile"><img src="https://assets.ubuntu.com/v1/afb5991e-logo-ubisoft.png" alt="ubisoft logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/ab9074df-logo-tele2.png" alt="tele2 logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--tablet u-first-col--desktop"><img src="https://assets.ubuntu.com/v1/56c03384-logo-nec.png" alt="nec logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/822701bb-logo-tmobile.png" alt="tmobile logo"></div><div class="mobile-col-1 tablet-col-1 col-2 u-first-col--mobile"><img src="https://assets.ubuntu.com/v1/673fa219-logo-ntt.png" alt="ntt logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/022f6f41-logo-bt.png" alt="bt logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/a59ea622-logo-liberty-global.png" alt="liberty-global logo"></div><div class="mobile-col-1 tablet-col-1 col-2"><img src="https://assets.ubuntu.com/v1/9bb88cf6-logo-barclays+copy.png" alt="barclays logo"></div>
+        </noscript>
+    </div>
+</section>
+
+<script>
+function fragmentFromString(htmlString) {
+    var temp = document.createElement('template');
+    temp.innerHTML = htmlString;
+    return temp.content;
+  }
+
+var logoStripOneData = {
+    r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+    r1c2: { url: "252e2017-logo-ea.png", altText: "ea logo" },
+    r1c3: { url: "e7dd8cc4-logo-at%26t.png", altText: "AT&T logo" },
+    r1c4: { url: "add4119e-logo-sandia.png", altText: "SNL logo" },
+    r1c5: { url: "afb5991e-logo-ubisoft.png", altText: "ubisoft logo" },
+    r1c6: { url: "ab9074df-logo-tele2.png", altText: "tele2 logo" },
+    r2c1: { url: "56c03384-logo-nec.png", altText: "nec logo" },
+    r2c2: { url: "822701bb-logo-tmobile.png", altText: "tmobile logo" },
+    r2c3: { url: "673fa219-logo-ntt.png", altText: "ntt logo" },
+    r2c4: { url: "022f6f41-logo-bt.png", altText: "bt logo" },
+    r2c5: { url: "a59ea622-logo-liberty-global.png", altText: "liberty-global logo" },
+    r2c6: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
+  };
+
+var logoStripTwoData = {
+    r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+    r1c2: { url: "bf709df8-logo-db.png", altText: "db logo" },
+    r1c3: { url: "22fe3811-logo-telefonica.png", altText: "telefonica logo" },
+    r1c4: { url: "01158ac3-logo-riot-games.png", altText: "riot games logo" },
+    r1c5: { url: "ab9074df-logo-tele2.png", altText: "tele2 logo" },
+    r1c6: { url: "589418ac-logo-telecom-italia.png", altText: "telecom italia logo" },
+    r2c1: { url: "56c03384-logo-nec.png", altText: "nec logo" },
+    r2c2: { url: "d2b3609c-logo-scania.png", altText: "scania logo" },
+    r2c3: { url: "c6f4a7ea-logo-radobank.png", altText: "radobank logo" },
+    r2c4: { url: "7e005642-logo-astrazeneca.png", altText: "astra zeneca logo" },
+    r2c5: { url: "d003393b-logo-telstra.png", altText: "telstra logo" },
+    r2c6: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
+  };
+
+var logoStripRevealingModule = (function() {
+    var target,
+        colClassesList,
+        firstColClassesList;
+
+    target = document.querySelector('.js-logo-strip');
+
+    colClassesList = {
+        mobile: "mobile-col-1",
+        tablet: "tablet-col-1",
+        desktop: "col-2"
+    };
+
+    firstColClassesList = {
+        mobileFirstCol:  "u-first-col--mobile",
+        tabletFirstCol:  "u-first-col--tablet",
+        desktopFirstCol: "u-first-col--desktop"
+    };
+
+    function appendLogo(parent, logoDatum, firstColClasses) {
+        var logoWrapper = document.createElement('div'),
+            logoImg = document.createElement('img');
+
+        for (var className in colClassesList) {
+        logoWrapper.classList.add(colClassesList[className]);
+        }
+
+        for (var className in firstColClasses) {
+        logoWrapper.classList.add(firstColClasses[className]);
+        }
+
+        logoImg.setAttribute('src', '{{ ASSET_SERVER_URL }}' + logoDatum.url);
+        logoImg.setAttribute('alt', logoDatum.altText);
+        logoWrapper.appendChild(logoImg);
+        parent.appendChild(logoWrapper);
+    }
+
+    function publicCreate(logoStripData) {
+        var fragment = document.createDocumentFragment();
+
+        Object.keys(logoStripData).forEach(function (key, index) {
+            var logoDatum = logoStripData[key],
+                firstColClasses = {};
+
+            if(index % 4 == 0) {
+                firstColClasses.key1 = firstColClassesList.mobileFirstCol;
+            }
+
+            if (index % 6 == 0) {
+                firstColClasses.key1 = firstColClassesList.tabletFirstCol;
+                firstColClasses.key2 = firstColClassesList.desktopFirstCol;
+            }
+
+            appendLogo(fragment, logoDatum, firstColClasses);
+        });
+
+        target.appendChild(fragment);
+    }
+
+    return {
+        create: publicCreate
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var localStorage = window.localStorage,
+        showAlternateStrip = localStorage.getItem('showAlternateStrip');
+
+    if (showAlternateStrip === null) {
+        localStorage.setItem('showAlternateStrip', 'true');
+        logoStripRevealingModule.create(logoStripOneData);
+    } else {
+        localStorage.removeItem('showAlternateStrip');
+        logoStripRevealingModule.create(logoStripTwoData);
+    }
+});
+</script>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Real servers,<br />self-service</h2>
+    </div>
+    <div class="col-6">
+      <p>You run the data center, but your customers decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
+      <p>MAAS provides super-fast self-service provisioning of Windows, Ubuntu, CentOS and ESXi.</p>
+      <p>
+        <a href="https://pages.ubuntu.com/eBook-MAAS.html?source=maas_page&medium=Banner&campaign=MAAS_ebook&_ga=2.22106171.1851959601.1510602087-405342743.1460033629" class="p-link--external" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about server provisioning with MAAS' });">Learn more about server provisioning with MAAS</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="p-strip u-no-padding--top u-no-padding--bottom">
+  <div class="row">
+    <hr class="u-no-margin--bottom" />
+  </div>
+</div>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Bare-metal,<br />cloud experience</h2>
+    </div>
+    <div class="col-6">
+      <p>MAAS implements all the standard features of a public cloud &mdash; like instance metadata and cloud-init. Your customers get complete control of the deployed machine.</p>
+      <p>Canonical created cloud-init and leads the project globally; we ensure that MAAS provides a first-class cloud experience for physical servers based on x86, ARM64, POWER and Z architectures.</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-6">
+      <h2>Storage</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h4>Inventory, testing and benchmarking</h4>
+      <p>MAAS detects and inventories all the disks, in every server. You’ll have a single database of every model and serial number.</p>
+      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycle, and learns about their performance.</p>
+    </div>
+    <div class="col-6">
+      <h4>RAID, LVM, Bcache, ZFS and more</h4>
+      <p>Auto-tagging of SSD and rotary disk types makes it easy to know which disks to use for each application.</p>
+      <p>Your users configure the storage of any server they control: RAID, LVM, Bcache and ZFS. Configure boot, applications and backup disks exactly where you want them &mdash; and get the installed machine, a few minutes later.</p>
+    </div>
+  </div>
+</section>
+
+<div class="p-strip--light u-no-padding--top u-no-padding--bottom">
+  <div class="row">
+    <hr class="u-no-margin--bottom" />
+  </div>
+</div>
+
+<div class="p-strip--light">
+  <div class="row">
+    <h2>Network</h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h4>Detection and configuration</h4>
+      <p>The most error-prone part of data center operations is the network.</p>
+      <p>MAAS enables rapid convergence on a correct network configuration &mdash; for every server, in every rack. All NICs are detected and inventoried when a machine is enlisted in MAAS.</p>
+      <p>Discover the topology of the network &mdash; which NIC is plugged into which port on which switch. MAAS tests access to specific VLANs from each NIC.</p>
+      <p>Network bonds and VLANs can be configured too. Set all significant network operating properties through MAAS &mdash; and then validate that configuration with ephemeral machine booting and testing.</p>
+    </div>
+    <div class="col-6">
+      <h4>Monitoring</h4>
+      <p>MAAS rack controllers provide local endpoints for all infrastructure services in the rack itself, and they also monitor the local network for rogue devices, IP addresses and MAC addresses.</p>
+      <p>Over time, you’ll know if there are ‘extra’ devices plugged into any fabric or VLAN that MAAS is asked to monitor.</p>
+      <p>Solve network mysteries faster with distributed network analysis and observation.</p>
+    </div>
+  </div>
+</div>
+
 <section class="p-strip--accent is-shallow">
   <div class="row u-equal-height">
     <div class="col-10">
@@ -355,19 +415,15 @@
   <div class="row">
     <div class="col-6">
       <h4>Carrier-grade infrastructure DNS, DHCP and IPAM</h4>
-      <p>MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided.</p>
-      <p>Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant.</p>
-      <p>MAAS uses the Postgres SQL database which supports redundant and highly available scenarios.</p>
+      <p>MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided. Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant. MAAS uses the PostgresSQL database which supports redundant and highly available scenarios.</p>
       <h4>Devops on bare metal is easy with dynamic server provisioning</h4>
-      <p>Take devops to bare metal for apps like big data, Kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
+      <p>Take devops to bare metal for apps like big data, kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
     </div>
     <div class="col-6">
       <h4>Open source software-defined data center</h4>
-      <p>MAAS is an open source SDDC solution used by telcos, financial institutions, media companies and supercomputer admins to take care of all the low-level details.</p>
-      <p>PXE, IPMI, ILO and all the custom protocols needed for diverse vendor hardware support come together in one clean REST API with Python bindings for easy integration and automation.</p>
-      <p>It includes a full IPAM capabilities, providing a central database and REST API for all network addressing and naming information.</p>
+      <p>MAAS is an open source SDDC solution used by telcos, financial institutions, media companies and supercomputer admins to take care of all the low-level details. PXE, IPMI, ILO and all the custom protocols needed for diverse vendor hardware support come together in one clean REST API with Python bindings for easy integration and automation. It includes a full IPAM capabilities, providing a central database and REST API for all network addressing and naming information.</p>
       <h4>KVM MicroCloud for Edge Computing</h4>
-      <p>MAAS offers the ability to create lean, on-demand KVM-based micro-clouds on any of the leading architectures (x86_64, ARM64, ppc64el and s390x). This capability extends to a fine-grained control over KVM storage and networking configuration, thereby accelerating deployment of applications in any environment constrained by physical footprint or requiring dedicated VM-based workloads.</p>
+      <p>MAAS offers the ability to create lean, on-demand KVM-based micro-clouds on any of the leading architectures . This capability extends to a fine-grained control over KVM storage and networking configuration, thereby accelerating deployment of applications in any environment constrained by physical footprint or requiring dedicated VM-based workloads.</p>
     </div>
   </div>
 </section>
@@ -467,7 +523,7 @@
   </div>
 </section>
 
-<section class="p-strip--accent u-no-padding--bottom">
+<section class="p-strip--accent">
   <div class="row">
     <div class="col-6">
       <h2>Deploy any OS image <br />on any hardware</h2>
@@ -476,22 +532,18 @@
       <p class="p-heading--four">MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer.</p>
     </div>
   </div>
-</section>
-
-<section class="p-strip--accent">
-  <div class="row">
-    <img src="{{ ASSET_SERVER_URL }}bc176a27-logos-os-and-hw.png?w=1400" alt="Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco" />
-  </div>
-</section>
-
-<section class="p-strip--accent">
-  <div class="row">
-      <ul class="p-list">
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
-        <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
-      </ul>
-  </div>
+  <section class="p-strip">
+    <div class="row">
+      <img src="{{ ASSET_SERVER_URL }}c1fbdd2b-any-os-on-any-hardware.png" alt="Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco" />
+    </div>
+  </section>
+    <div class="row">
+        <ul class="p-list">
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
+        </ul>
+    </div>
 </section>
 
 <section class="p-strip u-no-padding--bottom">
@@ -509,76 +561,76 @@
         <table style="min-width: 380px; width: 100%;">
           <thead>
             <tr>
-              <td class="u-align--center" style="width: 40%;">&nbsp;</td>
-              <th class="u-align--center" style="width: 20%;">Free</th>
-              <th class="u-align--center" style="width: 20%;">Standard</th>
-              <th class="u-align--center" style="width: 20%;">Advanced</th>
+              <td style="width: calc(48.35615% + 3.2877%);">&nbsp;</td>
+              <th style="width: 13.92692%;">Free</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Standard</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Advanced</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Price per machine enlisted in a MAAS plan</td>
-              <td class="u-align--center">$0</td>
-              <td class="u-align--center">$5 per month</td>
-              <td class="u-align--center">$10 per month</td>
+              <td>$0</td>
+              <td>$5 per month</td>
+              <td>$10 per month</td>
             </tr>
             <tr>
               <td>Price per region, per year (unlimited machines)</td>
-              <td class="u-align--center">-</td>
-              <td class="u-align--center">-</td>
-              <td class="u-align--center">Unlimited machines $75,000</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Unlimited machines $75,000</td>
             </tr>
             <tr>
               <td>Phone and ticket support</td>
-              <td class="u-align--center">None</td>
-              <td class="u-align--center">8am - 6pm on weekdays</td>
-              <td class="u-align--center">24 hours a day, everyday</td>
+              <td>None</td>
+              <td>8am - 6pm on weekdays</td>
+              <td>24 hours a day, everyday</td>
             </tr>
             <tr>
               <td>Ubuntu and CentOS deployment</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Landscape Management<br />
               (for the MAAS servers)</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Livepatch<br />
               (for the MAAS servers)</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Knowledge Base</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Windows, RHEL, and custom image<br /> creation and deployment</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>High availability (HA) support</td>
               <td>&nbsp;</td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td class="u-align--center"><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td>&nbsp;</td>
-              <td class="u-align--center"><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
-              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
-              <td class="u-align--center"><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+              <td><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
+              <td><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
+              <td><a href="/contact-us" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
             </tr>
           </tfoot>
         </table>

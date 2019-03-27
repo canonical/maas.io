@@ -7,15 +7,19 @@
     "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
     "test-py": "python3 -m unittest discover tests",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
+    "copy-3rd-party-js": "mkdir -p static/js/modules/global-nav && cp node_modules/@canonical/global-nav/dist/index.js static/js/modules/global-nav",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "build": "node-sass --include-path node_modules static/sass --output static/css"
+    "build": "node-sass --include-path node_modules static/sass --output static/css && yarn run copy-3rd-party-js"
   },
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "sass-lint": "1.12.1",
     "node-sass": "4.11.0",
+    "sass-lint": "1.12.1",
     "vanilla-framework": "1.8.1"
+  },
+  "dependencies": {
+    "@canonical/global-nav": "^2.0.5"
   }
 }
