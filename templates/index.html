@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-6">
       <h1 class="u-sv-2">Very fast <br class="u-hide--small u-hide--medium" />server provisioning</h1>
-      <p>Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data center into a bare metal cloud.</p>
+      <p>Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data center into a bare-metal cloud.</p>
       <p class="u-sv1">Welcome to metal-as-a-service.</p>
       <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
     </div>
@@ -50,7 +50,7 @@
             <a class="p-link--strong p-heading--five" aria-label="Learn more about automatic discovery and registration of every device on the network" href="/tour#automation" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Automation' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about device discovery and subnet mapping' });">Automation&nbsp;&rsaquo;</a>
           </h4>
           <div class="p-matrix__desc">
-            <p>Automatic discovery and registration of every network device.
+            <p>Automatic discovery of every network device.
               <abbr title="Baseboard Management Controller">BMC</abbr> ops with
               <abbr title="Intelligent Platform Management Interface">IPMI</abbr>,
               <abbr title="Active Management Techonology">AMT</abbr> and other protocols.
@@ -83,7 +83,7 @@
             <a class="p-link--strong p-heading--five" href="/how-it-works#node-lifecycle" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Chassis management' });">Inventory&nbsp;&rsaquo;</a>
           </h4>
           <div class="p-matrix__desc">
-            <p>Discover every PCI and USB device in every server. Inventory disk models and serial numbers. Provision machines based on specific inventory details.</p>
+            <p>Discover every PCI and USB device in every server. Inventory disk models and serial numbers. Provision machines based on specific configuration details to optimize your applications.</p>
           </div>
         </div>
       </li>
@@ -110,7 +110,7 @@
           <div class="p-matrix__desc">
             <p>Configure server network interfaces with bridges,
               <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and addresses.</p>
-              <p>Integrated, best of breed, highly available, open source DHCP, and DNS.</p>
+              <p>Integrated, best of breed, highly available, open source DHCP and DNS.</p>
           </div>
         </div>
       </li>
@@ -130,7 +130,7 @@
         <img class="p-matrix__img" src="{{ ASSET_SERVER_URL }}77288bc2-MAAS_icon_DevOps+Integration.svg" alt="DevOps icon" />
         <div class="p-matrix__content">
           <h4 class="p-matrix__title">
-            <span class="p-heading--five">DevOps on bare metal</span>
+            <span class="p-heading--five">DevOps on bare-metal</span>
           </h4>
           <div class="p-matrix__desc">
             <p>Integration with Chef, Puppet, SALT, Ansible, Conjure-up, and <a class="p-link--external" href="https://jujucharms.com/">Juju</a>.</p>
@@ -173,7 +173,8 @@
         <div class="p-matrix__content">
           <h4 class="p-matrix__title"><span class="p-heading--five">Cloud metadata</span></h4>
           <div class="p-matrix__desc">
-            <p>Reuse standard cloud operations with cloud-init and metadata services. Hybrid multicloud operations now include bare metal, with no change in applications.</p>
+            <p>Reuse standard cloud operations with cloud-init and metadata services.</p>
+            <p>Hybrid multi-cloud operations now include bare metal, with no change in applications.</p>
           </div>
         </div>
       </li>
@@ -359,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-6">
       <h4>Inventory, testing and benchmarking</h4>
       <p>MAAS detects and inventories all the disks, in every server. You’ll have a single database of every model and serial number.</p>
-      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycle, and learns about their performance.</p>
+      <p>MAAS tests disks either non-destructively or destructively, with short or long write cycles, and learns about their performance.</p>
     </div>
     <div class="col-6">
       <h4>RAID, LVM, Bcache, ZFS and more</h4>
@@ -416,8 +417,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-6">
       <h4>Carrier-grade infrastructure DNS, DHCP and IPAM</h4>
       <p>MAAS integrates best-of-breed ISC DHCP and Bind9 DNS, and will operate these in high availability mode whenever redundant MAAS services are provided. Deploy the MAAS API services on two systems and you will have high availability API endpoints; deploy two rack controllers and all rack services are automatically redundant. MAAS uses the PostgresSQL database which supports redundant and highly available scenarios.</p>
-      <h4>Devops on bare metal is easy with dynamic server provisioning</h4>
-      <p>Take devops to bare metal for apps like big data, kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
+      <h4>Devops on bare-metal is easy with dynamic server provisioning</h4>
+      <p>Take devops to bare-metal for apps like big data, kubernetes, analytics, machine learning, private cloud, OpenStack, PAAS and HPC. The specialists love MAAS.</p>
     </div>
     <div class="col-6">
       <h4>Open source software-defined data center</h4>
@@ -508,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <h4 class="p-heading--five">Continuous integration (CI) testing</h4>
         </div>
         <div class="col-6">
-          <p>MAAS's API allows storage and networking to be rapidly reconfigured to match each test case, generating a clean bare metal environment for every run.</p>
+          <p>MAAS's API allows storage and networking to be rapidly reconfigured to match each test case, generating a clean bare-metal environment for every run.</p>
         </div>
       </div>
       <div class="row is-bordered">
