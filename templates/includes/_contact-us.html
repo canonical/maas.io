@@ -1,0 +1,231 @@
+{% load versioned_static  %}
+
+<div class="p-modal u-hide" id="contact-modal">
+  <div class="p-modal__dialog" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <header class="p-modal__header" style="display: block; border-bottom: 0;">
+      <button class="p-modal__close" aria-label="Close active modal" style="margin-left: -1rem">Close</button>
+      <hr />
+      <h2 class="p-modal__title" id="modal-title">Data center automation</h2>
+    </header>
+    <div class="js-pagination js-pagination--1">
+        <div class="js-formfield">
+        <h3 class="p-heading--five">What workloads and operations are important?</h3>
+        <div class="row u-no-padding">
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="workloads-and-operations-Windows">
+            <label for="workloads-and-operations-Windows">Windows</label>
+            <input type="checkbox" id="workloads-and-operations-Ubuntu">
+            <label for="workloads-and-operations-Ubuntu">Ubuntu</label>
+            <input type="checkbox" id="workloads-and-operations-CentOS">
+            <label for="workloads-and-operations-CentOS">CentOS</label>
+            <input type="checkbox" id="workloads-and-operations-ESXi">
+            <label for="workloads-and-operations-ESXi">ESXi</label>
+            <input type="checkbox" id="workloads-and-operations-KVM">
+            <label for="workloads-and-operations-KVM">KVM</label>
+            <input type="checkbox" id="workloads-and-operations-Private-cloud">
+            <label for="workloads-and-operations-Private-cloud">Private cloud</label>
+            <input type="checkbox" id="workloads-and-operations-Big-data">
+            <label for="workloads-and-operations-Big-data">Big-data</label>
+            <input type="checkbox" id="workloads-and-operations-HPC">
+            <label for="workloads-and-operations-HPC">HPC</label>
+          </div>
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="workloads-and-operations-Machine-learning">
+            <label for="workloads-and-operations-Machine-learning">Machine learning</label>
+            <input type="checkbox" id="workloads-and-operations-Server-inventory">
+            <label for="workloads-and-operations-Server-inventory">Server inventory</label>
+            <input type="checkbox" id="workloads-and-operations-Hardware-testing">
+            <label for="workloads-and-operations-Hardware-testing">Hardware testing</label>
+            <input type="checkbox" id="workloads-and-operations-Dynamic-provisioning">
+            <label for="workloads-and-operations-Dynamic-provisioning">Dynamic provisioning</label>
+            <input type="checkbox" id="workloads-and-operations-Network-monitoring">
+            <label for="workloads-and-operations-Network-monitoring">Network monitoring</label>
+            <input type="checkbox" id="workloads-and-operations-IPAM">
+            <label for="workloads-and-operations-IPAM">IPAM</label>
+            <input type="checkbox" id="workloads-and-operations-Switch-configuration">
+            <label for="workloads-and-operations-Switch-configuration">Switch configuration</label>
+            <input type="checkbox" id="workloads-and-operations-Security">
+            <label for="workloads-and-operations-Security">Security</label>
+            <input type="checkbox" id="workloads-and-operations-Compliance">
+            <label for="workloads-and-operations-Compliance">Compliance</label>
+          </div>
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="workloads-and-operations-CI/CD">
+            <label for="workloads-and-operations-CI/CD">CI/CD</label>
+            <input type="checkbox" id="workloads-and-operations-Build-farm">
+            <label for="workloads-and-operations-Build-farm">Build farm</label>
+            <input type="checkbox" id="workloads-and-operations-Analytics">
+            <label for="workloads-and-operations-Analytics">Analytics</label>
+            <input type="checkbox" id="workloads-and-operations-Storage">
+            <label for="workloads-and-operations-Storage">Storage</label>
+            <input type="checkbox" id="workloads-and-operations-Edge-cloud">
+            <label for="workloads-and-operations-Edge-cloud">Edge cloud</label>
+            <input type="checkbox" id="workloads-and-operations-Kubernetes">
+            <label for="workloads-and-operations-Kubernetes">Kubernetes</label>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <a class="p-button--positive pagination__link--next" href="">Next</a>
+      </div>
+    </div>
+
+    <div class="js-pagination js-pagination--2 u-hide">
+      <div class="js-formfield">
+        <h3 class="p-heading--five">What MAAS capabilities are important to you?</h3>
+        <div class="row u-no-padding">
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="MAAS-capabilities-IPMI">
+            <label for="MAAS-capabilities-IPMI">IPMI</label>
+            <input type="checkbox" id="MAAS-capabilities-Redfish">
+            <label for="MAAS-capabilities-Redfish">Redfish</label>
+            <input type="checkbox" id="MAAS-capabilities-AMT">
+            <label for="MAAS-capabilities-AMT">AMT</label>
+            <input type="checkbox" id="MAAS-capabilities-DHCP">
+            <label for="MAAS-capabilities-DHCP">DHCP</label>
+            <input type="checkbox" id="MAAS-capabilities-DNS">
+            <label for="MAAS-capabilities-DNS">DNS</label>
+            <input type="checkbox" id="MAAS-capabilities-PXE">
+            <label for="MAAS-capabilities-PXE">PXE</label>
+          </div>
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="MAAS-capabilities-Active-Directory">
+            <label for="MAAS-capabilities-Active-Directory">Active Directory</label>
+            <input type="checkbox" id="MAAS-capabilities-LDAP">
+            <label for="MAAS-capabilities-LDAP">LDAP</label>
+            <input type="checkbox" id="MAAS-capabilities-RBAC">
+            <label for="MAAS-capabilities-RBAC">RBAC</label>
+            <input type="checkbox" id="MAAS-capabilities-Audit-logs">
+            <label for="MAAS-capabilities-Audit-logs">Audit logs</label>
+            <input type="checkbox" id="MAAS-capabilities-REST-API">
+            <label for="MAAS-capabilities-REST-API">REST API</label>
+          </div>
+          <div class="col-4 u-sv3">
+            <input type="checkbox" id="MAAS-capabilities-Dashboard">
+            <label for="MAAS-capabilities-Dashboard">Dashboard</label>
+            <input type="checkbox" id="MAAS-capabilities-Network-discovery">
+            <label for="MAAS-capabilities-Network-discovery">Network discovery</label>
+            <input type="checkbox" id="MAAS-capabilities-Resource-pools">
+            <label for="MAAS-capabilities-Resource-pools">Resource pools</label>
+            <input type="checkbox" id="MAAS-capabilities-Storage">
+            <label for="MAAS-capabilities-Storage">Storage</label>
+          </div>
+        </div>
+      </div>
+      <div class="js-formfield">
+        <h3 class="p-heading--five">What are your platform preferences?</h3>
+        <div class="row u-no-padding u-equal-height">
+          <div class="col-6 u-sv3 u-align">
+            <p class="js-sub-section">Architecture</p>
+            <input type="checkbox" id="platform-preferences-Architecture-x86">
+            <label for="platform-preferences-Architecture-x86">x86</label>
+            <input type="checkbox" id="platform-preferences-Architecture-ARM64">
+            <label for="platform-preferences-Architecture-ARM64">ARM64</label>
+            <input type="checkbox" id="platform-preferences-Architecture-POWER">
+            <label for="platform-preferences-Architecture-POWER">POWER</label>
+            <input type="checkbox" id="platform-preferences-Architecture-Z">
+            <label for="platform-preferences-Architecture-Z">Z</label>
+          </div>
+          <div class="col-6 u-sv3 u-align">
+            <p class="js-sub-section">Vendor</p>
+            <input type="checkbox" id="platform-preferences-Vendor-Dell">
+            <label for="platform-preferences-Vendor-Dell">Dell</label>
+            <input type="checkbox" id="platform-preferences-Vendor-HPE">
+            <label for="platform-preferences-Vendor-HPE">HPE</label>
+            <input type="checkbox" id="platform-preferences-Vendor-Cisco">
+            <label for="platform-preferences-Vendor-Cisco">Cisco</label>
+            <input type="checkbox" id="platform-preferences-Vendor-Supermicro">
+            <label for="platform-preferences-Vendor-Supermicro">Supermicro</label>
+            <input type="checkbox" id="platform-preferences-Vendor-Lenovo">
+            <label for="platform-preferences-Vendor-Lenovo">Lenovo</label>
+            <input type="checkbox" id="platform-preferences-Vendor-Intel-RSD">
+            <label for="platform-preferences-Vendor-Intel-RSD">Intel RSD</label>
+            <div class="js-other-container u-align--bottom">
+              <input type="checkbox" class="js-other-container__checkbox" id="platform-preferences-Vendor-other">
+              <label for="platform-preferences-Vendor-other">Other</label>
+              <input type="text" id="platform-preferences-Vendor-other-specified" class="js-other-container__input" placeholder="Please specify" style="opacity: 0; margin-top: .25rem;" aria-label="Other Board">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <a class="pagination__link--previous p-button--neutral" href="">Previous</a>
+        <a class="pagination__link--next p-button--positive" href="">Next</a>
+      </div>
+    </div>
+
+    <div class="js-pagination js-pagination--3 u-hide">
+      <h3 class="p-heading--five">How should we get in touch?</h3>
+      <div class="row u-no-padding">
+        <div class="col-6">
+          <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm">
+            <ul class="p-list">
+              <li class="mktFormReq mktField p-list__item">
+                <label for="FirstName" class="mktoLabel">First name:</label>
+                <input required id="FirstName" name="FirstName" maxlength="255" type="text" class="mktoField mktoRequired" required="required" />
+              </li>
+              <li class="mktFormReq mktField p-list__item">
+                <label for="LastName" class="mktoLabel">Last name:</label>
+                <input required id="LastName" name="LastName" maxlength="255" type="text" class="mktoField mktoRequired" required="required" />
+              </li>
+              <li class="mktFormReq mktField p-list__item">
+                <label for="Email" class="mktoLabel">Email address:</label>
+                <input required id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField mktoRequired" required="required" />
+              </li>
+              <li class="mktField p-list__item">
+                <input class="mktoField" value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
+                <label class="mktoLabel mktoHasWidth" for="canonicalUpdatesOptIn">I agree to receive information about Canonical’s products and services.</label>
+              </li>
+              <li class="p-list__item">In submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy/contact">Canonical&rsquo;s Privacy Notice</a> and <a href="/legal/data-privacy">Privacy Policy</a>.</li>
+              <li class="p-list__item">
+                <div class="g-recaptcha" data-sitekey="6LfYBloUAAAAAINm0KzbEv6TP0boLsTEzpdrB8if" style="margin: 2rem 0;"></div>
+              </li>
+            </ul>
+
+            <div class="u-hide">
+              <h3>Your comments</h3>
+              <ul class="p-list">
+                <li class="mktFormReq mktField p-list__item">
+                  <label for="Comments_from_lead__c" class="mktoLabel">What would you like to talk to us about?</label>
+                  <textarea id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" class="mktoField" maxlength="2000"></textarea>
+                </li>
+              </ul>
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formValidation" value="" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" class="mktoField" value="1337" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="lpId" class="mktoField" value="2313" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="subId" class="mktoField" value="30" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="munchkinId" class="mktoField" value="066-EOV-335" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="lpurl" class="mktoField" value="//pages.ubuntu.com/Form-MAAS.iocontactus_desktopcontactuslandingpage.html?cr={creative}&amp;kw={keyword}" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="cr" class="mktoField" value="" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="kw" class="mktoField" value="" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="q" class="mktoField" value="" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="returnURL" value="http://maas.io/thank-you" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="retURL" value="http://maas.io/thank-you" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
+            </div>
+
+            <div class="pagination">
+              <a class="pagination__link--previous p-button--neutral" href="">Previous</a>
+              <button type="submit" class="pagination__link--next p-button--positive mktoButton" aria-label="Submit">Let's discuss</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-pagination js-pagination--4 u-hide">
+      <div class="row u-no-padding">
+        <div class="u-equal-height">
+          <div class="col-7">
+            <h3 class="p-heading--two">Thank you for enquiring about Ubuntu core</h3>
+            <p class="p-heading--four">A member of our team will be in touch within one working day.</p>
+          </div>
+          <div class="col-5 u-vertically-center u-align--center u-hide--small">
+            <img src="{{ ASSET_SERVER_URL }}cbae9a60-thank_you_orange_cmyk.svg" alt="smile" width="200" height="200">
+          </div>
+        </div>
+      </div>
+      <a class="js-close p-button--neutral" href="">Close</a>
+    </div>
+  </div>
+</div>
