@@ -18,7 +18,8 @@
 'patterns_takeunders',
 'patterns_inline-images',
 'patterns_fluid-grid',
-'patterns_tables';
+'patterns_tables',
+'patterns_contact-modal';
 
 // patterns
 @include maas-p-footer;
@@ -31,6 +32,7 @@
 @include maas-p-inline-images;
 @include maas-p-fluid-grid;
 @include maas-p-tables;
+@include maas-p-contact-modal;
 @include vf-p-strip-slanted;
 
 h1,
