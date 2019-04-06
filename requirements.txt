@@ -1,7 +1,7 @@
 canonicalwebteam.versioned-static==1.0.2
 canonicalwebteam.yaml-responses[django]==1.1.0
 canonicalwebteam.get-feeds==0.2.4
-Django==2.1.7
+Django==2.2
 django-versioned-static-url==0.8
 django-static-root-finder==0.3.1
 django-asset-server-url==0.1
