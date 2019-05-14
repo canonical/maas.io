@@ -263,11 +263,11 @@ var logoStripRevealingModule = (function() {
             logoImg = document.createElement('img');
 
         for (var className in colClassesList) {
-        logoWrapper.classList.add(colClassesList[className]);
+          logoWrapper.classList.add(colClassesList[className]);
         }
 
         for (var className in firstColClasses) {
-        logoWrapper.classList.add(firstColClasses[className]);
+          logoWrapper.classList.add(firstColClasses[className]);
         }
 
         logoImg.setAttribute('src', '{{ ASSET_SERVER_URL }}' + logoDatum.url);
@@ -283,13 +283,13 @@ var logoStripRevealingModule = (function() {
             var logoDatum = logoStripData[key],
                 firstColClasses = {};
 
-            if(index % 4 == 0) {
+            if (index % 4 == 0) {
                 firstColClasses.key1 = firstColClassesList.mobileFirstCol;
             }
 
             if (index % 6 == 0) {
-                firstColClasses.key1 = firstColClassesList.tabletFirstCol;
-                firstColClasses.key2 = firstColClassesList.desktopFirstCol;
+                firstColClasses.key2 = firstColClassesList.tabletFirstCol;
+                firstColClasses.key3 = firstColClassesList.desktopFirstCol;
             }
 
             appendLogo(fragment, logoDatum, firstColClasses);
