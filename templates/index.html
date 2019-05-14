@@ -281,15 +281,15 @@ var logoStripRevealingModule = (function() {
 
         Object.keys(logoStripData).forEach(function (key, index) {
             var logoDatum = logoStripData[key],
-                firstColClasses = {};
+                firstColClasses = [];
 
-            if (index % 4 == 0) {
-                firstColClasses.key1 = firstColClassesList.mobileFirstCol;
+            if (index % 4 === 0) {
+                firstColClasses.push(firstColClassesList.mobileFirstCol);
             }
 
             if (index % 6 == 0) {
-                firstColClasses.key2 = firstColClassesList.tabletFirstCol;
-                firstColClasses.key3 = firstColClassesList.desktopFirstCol;
+                firstColClasses.push(firstColClassesList.tabletFirstCol);
+                firstColClasses.push(firstColClassesList.desktopFirstCol);
             }
 
             appendLogo(fragment, logoDatum, firstColClasses);
