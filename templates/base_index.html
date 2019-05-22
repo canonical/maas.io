@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Product">
   <head>
-    <title itemprop="name">MAAS {% block page-title %}{% endblock %}</title>
-    {% include "includes/head.html" with css_file="css/main.css" %}
+    <title itemprop="name">MAAS {% block page_title %}{% endblock %}</title>
+    {% with css_file="css/main.css" %}
+      {% include "includes/head.html" %}
+    {% endwith %}
   </head>
   <body class="{% block page_class %}{% endblock %}">
     {% include "includes/tag_manager.html" %}
@@ -26,7 +28,7 @@
     {% include "includes/_contact-us.html" %}
     <script src="/static/js/dynamic-contact-form.js"></script>
 
-    {% block js-extra %}{% endblock %}
+    {% block js_extra %}{% endblock %}
   </body>
 </html>
 <!-- This comment was updated at 17:07 on 2016-01-26 -->

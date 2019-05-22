@@ -1,7 +1,7 @@
 MAAS website project
 ===
 
-This is the simple databaseless Django project behind <https://maas.io>.
+This is the simple Flask project behind <https://maas.io>.
 
 ## Local development
 
@@ -11,7 +11,7 @@ The simplest way to run the site locally is to first [install Docker](https://do
 ./run
 ```
 
-Once the containers are setup, you can visit <http://127.0.0.1:8004> in your browser.
+Once the containers are setup, you can visit <http://127.0.0.1:8006> in your browser.
 
 ### Building CSS
 

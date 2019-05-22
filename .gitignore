@@ -66,3 +66,5 @@ bzr-repo/
 *.sqlite
 *.*~
 .DS_store
+
+.webcache
