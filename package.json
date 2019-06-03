@@ -15,11 +15,11 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "node-sass": "4.11.0",
-    "sass-lint": "1.12.1",
+    "node-sass": "4.12.0",
+    "sass-lint": "1.13.1",
     "vanilla-framework": "1.8.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.0.6"
+    "@canonical/global-nav": "2.1.0"
   }
 }
