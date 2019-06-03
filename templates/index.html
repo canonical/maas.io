@@ -563,47 +563,38 @@ document.addEventListener('DOMContentLoaded', function () {
           <thead>
             <tr>
               <td style="width: calc(48.35615% + 3.2877%);">&nbsp;</td>
-              <th style="width: 13.92692%;">Free</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Free</th>
+              <th style="width: calc(13.92692% + 3.2877%);">Essential</th>
               <th style="width: calc(13.92692% + 3.2877%);">Standard</th>
               <th style="width: calc(13.92692% + 3.2877%);">Advanced</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Price per machine enlisted in a MAAS plan</td>
+              <td>Per managed machine - monthly</td>
               <td>$0</td>
-              <td>$5 per month</td>
-              <td>$10 per month</td>
+              <td>$3</td>
+              <td>$5</td>
+              <td>$10</td>
             </tr>
             <tr>
-              <td>Price per region, per year (unlimited machines)</td>
+              <td>Per managed machine - annual</td>
               <td>-</td>
-              <td>-</td>
-              <td>Unlimited machines $75,000</td>
+              <td>$30</td>
+              <td>$50</td>
+              <td>$100</td>
             </tr>
             <tr>
               <td>Phone and ticket support</td>
               <td>None</td>
-              <td>8am - 6pm on weekdays</td>
+              <td>None</td>
+              <td>Office hours</td>
               <td>24 hours a day, everyday</td>
             </tr>
             <tr>
               <td>Ubuntu and CentOS deployment</td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-            </tr>
-            <tr>
-              <td>Landscape Management<br />
-              (for the MAAS servers)</td>
-              <td>&nbsp;</td>
-              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
-            </tr>
-            <tr>
-              <td>Livepatch<br />
-              (for the MAAS servers)</td>
-              <td>&nbsp;</td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
@@ -612,10 +603,19 @@ document.addEventListener('DOMContentLoaded', function () {
               <td>&nbsp;</td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
             <tr>
               <td>Windows, RHEL, and custom image<br /> creation and deployment</td>
               <td>&nbsp;</td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+            </tr>
+            <tr>
+              <td>Role based access control (RBAC)</td>
+              <td>&nbsp;</td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
@@ -624,12 +624,14 @@ document.addEventListener('DOMContentLoaded', function () {
               <td>&nbsp;</td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
               <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
+              <td><img src="{{ ASSET_SERVER_URL }}aeec264b-green-tick.svg" width="16" alt="Yes" /></td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td>&nbsp;</td>
               <td><a href="/install">Install MAAS&nbsp;&rsaquo;</a></td>
+              <td><a href="/contact-us" class="js-invoke-modal" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
               <td><a href="/contact-us" class="js-invoke-modal" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
               <td><a href="/contact-us" class="js-invoke-modal" onClick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Interested in Professional', 'eventAction' : 'Click', 'eventLabel' : 'Contact Us' });">Contact us&nbsp;&rsaquo;</a></td>
             </tr>
