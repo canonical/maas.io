@@ -3,4 +3,38 @@
   tfoot tr {
     border-top: 1px solid $color-mid-light;
   }
+
+  td {
+    vertical-align: top;
+  }
+
+  $grid-margin: 3.2877%;
+
+  %col-width-2 {
+    width: 22.53423% + $grid-margin;
+  }
+
+  %col-width-4 {
+    width: 31.14153% + $grid-margin;
+  }
+
+  .maas-pricing-table {
+    th {
+      &:nth-child(1) {
+        @extend %col-width-4;
+      }
+
+      &:nth-child(1) {
+        @extend %col-width-2;
+      }
+
+      &:nth-child(1) {
+        @extend %col-width-2;
+      }
+
+      &:nth-child(1) {
+        @extend %col-width-2;
+      }
+    }
+  }
 }
