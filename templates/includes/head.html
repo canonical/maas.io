@@ -1,16 +1,15 @@
-{% load versioned_static %}
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="oJqEviYsw1FaDzCq7kzhewyJ2enm5vk9Q-prliavhjw" />
 <meta name="description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical." />
 <meta name="author" content="Canonical" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="icon" type="image/png" href="{{ ASSET_SERVER_URL }}6284d208-maas-favicon-16px.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="{{ ASSET_SERVER_URL }}5922a009-maas-favicon-32px.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/6284d208-maas-favicon-16px.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/5922a009-maas-favicon-32px.png" sizes="32x32" />
 
 <!-- stylesheets -->
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic%7CUbuntu+Mono' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static css_file %}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ versioned_static(css_file) }}" />
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ubuntucloud">
