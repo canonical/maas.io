@@ -14,7 +14,9 @@ $increase-font-size-on-larger-screens: false;
 'patterns_modal',
 'patterns_takeunders',
 'patterns_tables',
-'patterns_contact-modal';
+'patterns_contact-modal',
+'patterns_docs',
+'hljs';
 
 // patterns
 @include maas-p-hero-video;
@@ -24,6 +26,8 @@ $increase-font-size-on-larger-screens: false;
 @include maas-p-tables;
 @include maas-p-contact-modal;
 @include maas-p-strip-slanted;
+@include maas-docs;
+@include vf-p-strip-slanted;
 
 @media only screen and (max-width: $breakpoint-medium) {
   .usabilla_live_button_container { // sass-lint:disable-line class-name-format

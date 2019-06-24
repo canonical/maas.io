@@ -31,8 +31,8 @@
         <li class="p-navigation__link{% if level_1 == 'tour' %} is-selected" aria-current="page{% endif %}">
           <a href="/tour" dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tour' });>Tour</a>
         </li>
-        <li class="p-navigation__link">
-          <a class="p-link--external" href="https://docs.maas.io" aria-label="External link to the MAAS documentation website" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Docs' });>Docs</a>
+        <li class="p-navigation__link{% if document %} is-selected" aria-current="page{% endif %}">
+          <a href="/docs" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Docs' });>Docs</a>
         </li>
         <li class="p-navigation__link">
           <a class="p-link--external" href="https://discourse.maas.io" aria-label="External link to the MAAS discourse website" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });>Forum</a>
