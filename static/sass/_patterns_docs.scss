@@ -41,6 +41,11 @@
     .meta {
       display: none;
     }
+
+    details + p,
+    details + h3 {
+      margin-top: $sp-large;
+    }
   }
 
   .l-docs-row {
