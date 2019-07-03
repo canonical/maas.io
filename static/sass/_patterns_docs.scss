@@ -37,6 +37,10 @@
     @media only screen and (max-width: $breakpoint-navigation-threshold) {
       flex: auto;
     }
+
+    .meta {
+      display: none;
+    }
   }
 
   .l-docs-row {
