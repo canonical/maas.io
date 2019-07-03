@@ -1,52 +1,27 @@
 // settings
-@import
-'settings_colors',
-'settings_grid';
+@import 'settings_colors';
 
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
 
 // patterns
 @import
-'patterns_footer',
 'patterns_strips',
-'patterns_heading-icon',
 'patterns_hero-video',
 'patterns_lists',
 'patterns_modal',
-'patterns_navigation',
 'patterns_takeunders',
-'patterns_inline-images',
-'patterns_fluid-grid',
 'patterns_tables',
 'patterns_contact-modal';
 
 // patterns
-@include maas-p-footer;
-@include maas-p-heading-icon;
 @include maas-p-hero-video;
 @include maas-p-lists;
 @include maas-p-modal;
-@include maas-p-navigation;
 @include maas-p-takeunders;
-@include maas-p-inline-images;
-@include maas-p-fluid-grid;
 @include maas-p-tables;
 @include maas-p-contact-modal;
-@include vf-p-strip-slanted;
-
-h1,
-.p-heading--one,
-h2,
-.p-heading--two {
-  font-weight: 100;
-}
-
-.p-icon--default {
-  height: auto;
-  margin-bottom: $spv-intra;
-  width: map-get($icon-sizes, social);
-}
+@include maas-p-strip-slanted;
 
 @media only screen and (max-width: $breakpoint-medium) {
   .usabilla_live_button_container { // sass-lint:disable-line class-name-format
@@ -54,47 +29,11 @@ h2,
   }
 }
 
-// XXX Caleb: Increase spacing between paragraphs by .5rem, to be upstreamed in Vanilla
-// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/2026
-p + p:not(.p-muted-heading) {
-  margin-top: -#{$sp-unit};
-}
-
 // XXX Caleb: Increase space between detailed stepped list items
 // Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1917
 .p-stepped-list--detailed {
-  .p-list-step__content,
-  .p-list-step__title {
-    margin-bottom: $spv-inter--shallow-scaleable;
-  }
-}
-
-// XXX Caleb: Vanilla bug, cuts off border from second strip onwards
-// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/2045
-[class^='p-strip'].is-bordered {
-  margin-bottom: inherit;
-}
-
-// XXX Caleb: abbr pattern should have help cursor instead of pointer
-// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1962
-abbr[title] {
-  cursor: help;
-}
-
-.u-first-col--mobile {
-  @media (max-width: $breakpoint-small) {
-    margin-left: 0;
-  }
-}
-
-.u-first-col--tablet {
-  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
-    margin-left: 0;
-  }
-}
-
-.u-first-col--desktop {
-  @media (min-width: $breakpoint-medium) {
-    margin-left: 0;
+  .p-stepped-list__content,
+  .p-stepped-list__title {
+    margin-bottom: $spv-outer--shallow-scaleable;
   }
 }

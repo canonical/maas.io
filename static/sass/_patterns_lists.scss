@@ -1,9 +1,5 @@
 @mixin maas-p-lists {
   @include maas-p-is-ticked;
-  @include maas-p-is-trisected;
-  @include maas-p-list--split;
-  @include maas-p-list--bulleted;
-  @include maas-p-list-logos;
 }
 
 // use a different tick
@@ -25,6 +21,9 @@
 }
 
 @mixin maas-p-is-ticked {
+  $color-tick: #38b44a;
+  $color-tick-large: #0a8420;
+
   .is-ticked {
     background-image: svg-tick($color-tick);
     padding-left: 35px;
@@ -32,87 +31,12 @@
 
   .is-large {
     background-image: svg-tick-large($color-tick-large);
+    background-size: auto;
     min-height: 2.3rem;
     padding-left: 55px;
 
     @media (max-width: $breakpoint-medium) {
       padding: .5rem 0 .5rem 50px;
     }
-  }
-}
-
-@mixin maas-p-is-trisected {
-
-  [class*='p-list'] {
-
-    &.is-trisected {
-
-      @media (min-width: $breakpoint-medium) {
-        display: flex;
-        flex-wrap: wrap;
-
-        .p-list__item {
-          margin-right: 1rem;
-          width: calc(33.33% - .75rem);
-
-          &:nth-child(3n+3) {
-            margin-right: 0;
-          }
-
-          &:nth-last-child(0) {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-// remove border from last item
-@mixin maas-p-list--split {
-
-  [class*='p-list'] {
-
-    &.is-split {
-
-      @media (min-width: $breakpoint-medium) {
-
-        .p-list__item:last-of-type {
-          border-bottom: 0;
-        }
-      }
-    }
-  }
-}
-
-@mixin maas-p-list--bulleted {
-  .p-list--bulleted {
-    list-style-type: disc;
-  }
-}
-
-// taken from _patterns_logo-links.scss in snapcraft.io project
-@mixin maas-p-list-logos {
-
-  .p-list-logos {
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .p-list-logos__item {
-      // by default (on mobile) use col-3 width (4 items in a row)
-      width: 23.54369%; // col-3
-
-      // on larger screens use col-2 width (6 items in a row)
-      @media screen and (min-width: $breakpoint-medium) {
-        width: 15.04854%; // col-2
-      }
-    }
-  }
-
-  .p-list-logos__item {
-    display: block;
-    margin-top: 0;
   }
 }

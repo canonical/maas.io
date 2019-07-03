@@ -1,6 +1,6 @@
-@mixin vf-p-strip-slanted {
+@mixin maas-p-strip-slanted {
   $assets-path: 'https://assets.ubuntu.com/v1/';
-  $horizontal-edge-padding: $spv-inter--regular-scaleable;
+  $horizontal-edge-padding: $spv-outer--regular-scaleable;
   $slanted-edge-padding: $horizontal-edge-padding; // coloured area takes half the rectangle surface area; to visually compensate, we multiply it by 2
 
   [class^='p-strip'].is-slanted {
@@ -11,11 +11,11 @@
 
     @media (max-width: $breakpoint-large) {
       background-size: cover;
-      padding: $spv-inter--regular-scaleable 0 $slanted-edge-padding;
+      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
     }
     @media (min-width: $breakpoint-large) {
       background-size: 5000px 667px; // actual svg size
-      padding: $spv-inter--regular-scaleable 0 $slanted-edge-padding;
+      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
     }
 
     &::after {

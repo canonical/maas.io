@@ -1,4 +1,7 @@
 @mixin maas-p-modal {
+  $color-modal-overlay: rgba($color-x-dark, .85);
+  $color-modal-controls: rgba($color-x-dark, .2);
+
   .venobox {
     width: auto;
 
@@ -40,6 +43,7 @@
 
   // overlay: change here background color and opacity ----- */
   .vbox-overlay {
+    $color-modal-overlay: rgba($color-x-dark, .85);
     background: $color-modal-overlay;
     bottom: 0;
     height: auto;
