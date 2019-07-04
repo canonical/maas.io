@@ -37,3 +37,8 @@
     margin-bottom: $spv-outer--shallow-scaleable;
   }
 }
+
+.row.is-bordered::before {
+  left: 0;
+  width: 100%;
+}
