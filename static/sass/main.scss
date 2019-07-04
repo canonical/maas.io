@@ -42,5 +42,6 @@ $increase-font-size-on-larger-screens: false;
 
 .row.is-bordered::before   {
   left: 0;
+  margin-top: -5px;
   width: 100%;
 }
