@@ -1,6 +1,8 @@
 // settings
 @import 'settings_colors';
 
+$increase-font-size-on-larger-screens: false;
+
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
 
@@ -38,7 +40,7 @@
   }
 }
 
-.row.is-bordered::before {
+.row.is-bordered::before   {
   left: 0;
   width: 100%;
 }
