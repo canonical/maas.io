@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    $('.p-code-snippet').each(function() {
+    $('.p-code-copyable').each(function() {
       var self = $(this),
-          copyButton = self.find('.p-code-snippet__action'),
-          commandInput = self.find('.p-code-snippet__input');
+          copyButton = self.find('.p-code-copyable__action'),
+          commandInput = self.find('.p-code-copyable__input');
 
       if (copyButton && commandInput) {
         copyButton.on('click', function(e) {
