@@ -138,7 +138,7 @@
             <label for="platform-preferences-Vendor-Lenovo">Lenovo</label>
             <input type="checkbox" id="platform-preferences-Vendor-Intel-RSD">
             <label for="platform-preferences-Vendor-Intel-RSD">Intel RSD</label>
-            <div class="js-other-container u-align--bottom">
+            <div class="js-other-container">
               <input type="checkbox" class="js-other-container__checkbox" id="platform-preferences-Vendor-other">
               <label for="platform-preferences-Vendor-other">Other</label>
               <input type="text" id="platform-preferences-Vendor-other-specified" class="js-other-container__input" placeholder="Please specify" style="opacity: 0; margin-top: .25rem;" aria-label="Other Board">
@@ -156,7 +156,7 @@
       <h3 class="p-heading--five">How should we get in touch?</h3>
       <div class="row u-no-padding">
         <div class="col-6">
-          <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm">
+          <form class="modal-form marketo-form" action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_1337">
             <ul class="p-list">
               <li class="mktFormReq mktField p-list__item">
                 <label for="FirstName" class="mktoLabel">First name:</label>
@@ -172,9 +172,9 @@
               </li>
               <li class="mktField p-list__item">
                 <input class="mktoField" value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
-                <label class="mktoLabel mktoHasWidth" for="canonicalUpdatesOptIn">I agree to receive information about Canonical’s products and services.</label>
+                <label class="mktoLabel mktoHasWidth" for="canonicalUpdatesOptIn">Please send me information about Canonical’s products and services.</label>
               </li>
-              <li class="p-list__item">In submitting this form, I confirm that I have read and agree to <a href="/legal/data-privacy/contact">Canonical&rsquo;s Privacy Notice</a> and <a href="/legal/data-privacy">Privacy Policy</a>.</li>
+              <li class="p-list__item"><p>Submitting this form confirms that I have read and agree to <a href="/legal/data-privacy/contact">Canonical&rsquo;s Privacy Notice</a> and <a href="/legal/data-privacy">Privacy Policy</a>.</p></li>
               <li class="p-list__item">
                 <div class="g-recaptcha" data-sitekey="6LfYBloUAAAAAINm0KzbEv6TP0boLsTEzpdrB8if" style="margin: 2rem 0;"></div>
               </li>
@@ -190,6 +190,7 @@
               </ul>
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formValidation" value="" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" class="mktoField" value="1337" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formVid" class="mktoField" value="1337" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="lpId" class="mktoField" value="2313" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="subId" class="mktoField" value="30" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="munchkinId" class="mktoField" value="066-EOV-335" />
@@ -204,7 +205,7 @@
 
             <div class="pagination">
               <a class="pagination__link--previous p-button--neutral" href="">Previous</a>
-              <button type="submit" class="pagination__link--next p-button--positive mktoButton" aria-label="Submit">Let's discuss</a>
+              <button type="submit" class="pagination__link--next p-button--positive mktoButton" aria-label="Submit">Let's discuss</button>
             </div>
           </form>
         </div>
@@ -215,7 +216,7 @@
       <div class="row u-no-padding">
         <div class="u-equal-height">
           <div class="col-7">
-            <h3 class="p-heading--two">Thank you for enquiring about Ubuntu core</h3>
+            <h3 class="p-heading--two">Thank you for enquiring about MAAS</h3>
             <p class="p-heading--four">A member of our team will be in touch within one working day.</p>
           </div>
           <div class="col-5 u-vertically-center u-align--center u-hide--small">
@@ -227,3 +228,5 @@
     </div>
   </div>
 </div>
+<!-- form validation -->
+{% include "includes/_form-validation.html" %}
