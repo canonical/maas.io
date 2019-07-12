@@ -7,8 +7,6 @@ docs/(devel|2.6|stable|en|devel/en|stable/en|2.6/en)/(?P<path>.*): /docs/{path}
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?(?P<path>(/.*)?): https://old-docs.maas.io/{version}/en/{path}
 
 # Specific paths
-docs/api-authentication: /docs/api-authentication
-docs/contact-us: /docs/contact-us
 docs/contributing-build: /docs/building-the-docs
 docs/contributing-en-GB: /docs/language-details-contributing-to-juju-docs
 docs/contributing-git: /docs/working-with-git-and-github
