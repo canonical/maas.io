@@ -669,7 +669,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {% if insights_feed %}
           {% for item in insights_feed %}
             <article class="col-4 p-divider__block">
-              <h3 class="p-heading--four"><a href="{{ item.link.replace('admin.insights', 'blog') }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'blog', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escape }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
+              <h3 class="p-heading--four"><a href="{{ item.link.replace('admin.insights.ubuntu.com', 'ubuntu.com/blog') }}" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'blog', 'eventAction' : 'maas.io homepage news link', 'eventLabel' : '{{ item.title|escape }}', 'eventValue' : '{{ item.link }}' });">{{ item.title }}</a></h3>
               <footer>
                 <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime.strftime('%d %B %y') }}</time>
               </footer>
