@@ -3,5 +3,6 @@ canonicalwebteam.discourse-docs==0.5.0
 canonicalwebteam.flask_base==0.3.0
 canonicalwebteam.http==1.0.1
 canonicalwebteam.templatefinder==0.1.1
+canonicalwebteam.search==0.1.0
 flask==1.0.2
 feedparser==5.2.1
