@@ -25,7 +25,10 @@
     <script>canonicalGlobalNav.createNav({maxWidth: '72rem'});</script>
 
     <!-- Dynamic contact us-->
-    {% include "includes/_contact-us.html" %}
+    {% include "includes/_form-validation.html" %}
+
+    <!-- Set default Marketo information for contact form below-->
+    <div class="u-hide" id="contact-form-container" data-form-location="/includes/_contact-us" data-form-id="1337" data-lp-id="2313" data-return-url="http://maas.io/thank-you" data-lp-url="https://pages.ubuntu.com/Form-MAAS.iocontactus_desktopcontactuslandingpage.html"></div>
     <script src="/static/js/dynamic-contact-form.js"></script>
 
     {% block js_extra %}{% endblock %}
