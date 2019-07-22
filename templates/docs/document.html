@@ -1,6 +1,7 @@
 {% extends "base_index.html" %}
 
 {% block page_class %}docs{% endblock %}
+{% block content_class %}l-docs-wrapper{% endblock %}
 {% block page_title %}| {{ document.title }} {% endblock %}
 
 {% block content %}
@@ -15,15 +16,20 @@
   </section>
   <div class="l-docs">
     <aside class="l-docs-sidebar" id="navigation">
-      <i class="p-sidenav__toggle p-icon--menu u-hide--medium u-hide--large"></i>
+      <i class="p-sidenav__toggle p-icon--menu u-hide u-show--small"></i>
       <nav class="p-sidenav__body u-hide--small">
         {{ navigation | safe }}
       </nav>
     </aside>
     <main class="l-docs-content" id="main-content">
+      <div class="p-strip--light is-shallow l-docs-title">
+        <div class="l-docs-row">
+          <h1 class="u-no-margin--bottom l-docs-title__heading">{{ document.title }}</h1>
+        </div>
+      </div>
+
       <div class="p-strip is-shallow">
         <div class="l-docs-row">
-          <h1>{{ document.title }}</h1>
           {{ document.body_html | safe }}
         </div>
       </div>
