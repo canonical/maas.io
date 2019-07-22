@@ -1,0 +1,75 @@
+@mixin maas-l-docs {
+  $sidebar-width: 18rem;
+
+  .l-docs-wrapper {
+    border-bottom: $border;
+  }
+
+  .l-docs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: $grid-max-width;
+  }
+
+  .l-docs-title,
+  .l-docs-title[class^='p-strip'] {
+    @media only screen and (min-width: 1030px) {
+      background-color: transparent;
+      padding-bottom: 0;
+    }
+
+    @media only screen and (max-width: 1030px) {
+      background-color: transparent;
+      padding-bottom: 0;
+    }
+  }
+
+  .l-docs-title__heading {
+    border-bottom: 1px solid $color-mid-light;
+    padding-bottom: 1rem;
+  }
+
+  .l-docs-sidebar {
+    border-right: $border;
+    flex: 0 0 $sidebar-width;
+
+    @media only screen and (max-width: $breakpoint-navigation-threshold) {
+      border-right: 0;
+      flex: auto;
+      height: inherit;
+      overflow: hidden;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .l-docs-content {
+    flex: 5;
+    margin-top: 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-navigation-threshold) {
+      flex: auto;
+    }
+
+    .meta {
+      display: none;
+    }
+
+    details + p,
+    details + h3 {
+      margin-top: $sp-large;
+    }
+  }
+
+  .l-docs-row {
+    @extend .row;
+    margin-left: inherit;
+    padding: 0 $sp-xxx-large;
+
+    @media only screen and (max-width: $breakpoint-navigation-threshold) {
+      padding-left: $sph-inter--expanded;
+    }
+  }
+}

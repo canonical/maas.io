@@ -20,7 +20,8 @@
 'patterns_fluid-grid',
 'patterns_tables',
 'patterns_contact-modal',
-'patterns_docs',
+'layout_docs',
+'patterns_sidenav',
 'hljs';
 
 // patterns
@@ -35,7 +36,8 @@
 @include maas-p-fluid-grid;
 @include maas-p-tables;
 @include maas-p-contact-modal;
-@include maas-docs;
+@include maas-l-docs;
+@include maas-p-sidenav;
 @include vf-p-strip-slanted;
 
 h1,

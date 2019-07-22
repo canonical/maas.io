@@ -5,6 +5,8 @@
     <meta name="robots" content="noindex" />
 {% endblock %}
 
+{% block page_class %}docs{% endblock %}
+{% block content_class %}l-docs-wrapper{% endblock %}
 {% block title %}Search results{% if query %} for "{{query}}"{% endif %}{% endblock %}
 
 {% block content %}
