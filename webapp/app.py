@@ -36,6 +36,9 @@ app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 discourse_api = DiscourseAPI(base_url=DISCOURSE_BASE_URL)
+if app.debug:
+    discourse_api.session.adapters["https://"].timeout = 99
+
 discourse_docs = DiscourseDocs(
     api=discourse_api,
     index_topic_id=DOCS_TOPIC_ID,
