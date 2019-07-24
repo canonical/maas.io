@@ -1,0 +1,59 @@
+@mixin maas-p-sidenav {
+  .p-sidenav__toggle {
+    background-size: $sp-medium;
+    cursor: pointer;
+    float: right;
+    padding: $sp-x-large;
+  }
+
+  .p-sidenav__body {
+    // Fix p-sidebar-nav to understand
+    // h3 headings, and not require any classes on the <ul>s and <li>s
+    // Because the markup is pulled directly in from Discourse
+    padding: $sp-large / 2 $sp-large;
+
+    a,
+    a:visited {
+      color: #111;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #007aa6;
+      text-decoration: underline;
+    }
+
+    .is-active {
+      position: relative;
+
+      &::before {
+        background-color: #cdcdcd;
+        bottom: -.25rem;
+        content: '';
+        left: -1rem;
+        position: absolute;
+        top: -.25rem;
+        width: .1875rem;
+      }
+    }
+
+    ul {
+      margin-left: 0;
+      padding-left: 1rem;
+      margin-bottom: .625rem;
+    }
+
+    li {
+      padding-bottom: .125rem;
+      padding-top: .125rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 2;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

@@ -14,7 +14,10 @@ $increase-font-size-on-larger-screens: false;
 'patterns_modal',
 'patterns_takeunders',
 'patterns_tables',
-'patterns_contact-modal';
+'patterns_contact-modal',
+'layout_docs',
+'patterns_sidenav',
+'hljs';
 
 // patterns
 @include maas-p-hero-video;
@@ -24,6 +27,8 @@ $increase-font-size-on-larger-screens: false;
 @include maas-p-tables;
 @include maas-p-contact-modal;
 @include maas-p-strip-slanted;
+@include maas-l-docs;
+@include maas-p-sidenav;
 
 @media only screen and (max-width: $breakpoint-medium) {
   .usabilla_live_button_container { // sass-lint:disable-line class-name-format
@@ -40,8 +45,17 @@ $increase-font-size-on-larger-screens: false;
   }
 }
 
+// XXX Robin: Increase space between tables and following headings
+table + h2 {
+  padding-top: 1.6rem;
+}
+
 .row.is-bordered::before   {
   left: 0;
   margin-top: -5px;
   width: 100%;
+}
+
+.lightbox-wrapper {
+  margin-bottom: 1.1rem;
 }
