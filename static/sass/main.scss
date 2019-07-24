@@ -45,8 +45,17 @@ $increase-font-size-on-larger-screens: false;
   }
 }
 
+// XXX Robin: Increase space between tables and following headings
+table + h2 {
+  padding-top: 1.6rem;
+}
+
 .row.is-bordered::before   {
   left: 0;
   margin-top: -5px;
   width: 100%;
+}
+
+.lightbox-wrapper {
+  margin-bottom: 1.1rem;
 }
