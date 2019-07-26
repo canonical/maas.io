@@ -4,6 +4,15 @@
 {% block page_title %}| API {% endblock %}
 
 {% block content %}
+  <section id="search-docs" class="p-strip--image is-shallow" style="background-image: url('https://assets.ubuntu.com/v1/e54487e2-maas-docs-suru.png')">
+    <div class="row">
+      <form class="p-search-box u-no-margin--bottom" style="box-shadow: none" action="/docs/search">
+        <input type="search" class="p-search-box__input" name="q" {% if query %}value="{{ query }}"{% endif %} placeholder="Search documentation" required/>
+        <button type="reset" class="p-search-box__reset u-no-margin" alt="reset" style="right: 6.7rem"><i class="p-icon--close"></i></button>
+        <button type="submit" class="p-button--positive u-no-margin--bottom" style="margin-left: 1.5rem; width: auto" alt="search">Search</button>
+      </form>
+    </div>
+  </section>
   <div class="l-docs">
     <aside class="l-docs-sidebar" id="navigation">
       <i class="p-sidenav__toggle p-icon--menu u-hide--medium u-hide--large"></i>
@@ -35828,7 +35837,7 @@
 
     // Add active class to api link in sidenav and scroll to section
     var sidebar = document.querySelector(".l-docs-sidebar");
-    var anchor = sidebar.querySelector("a[href='/docs/api']");
+    var anchor = sidebar.querySelector("a[href='https://maas.io/docs/api']");
     var section = anchor.closest("ul");
     anchor.classList.add('is-active');
     sidebar.scrollTo(0, section.offsetTop - 40);
