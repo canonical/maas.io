@@ -1,0 +1,155 @@
+{% extends "base_index.html" %}
+
+{% block page_title %}| Register to download the ESXi packer-template{% endblock %}
+
+{% block content %}
+<section class="p-strip--image is-dark is-shallow" style="overflow: hidden; background-color: #333; background-image:url('https://assets.ubuntu.com/v1/6e4b2b20-MAAS-hero-background.png')">
+<!-- Lead capture form -->
+  <div class="row">
+    <div class="col-6">
+      <h2>Register to download the ESXi packer-template</h2>
+      <p>
+        We&rsquo;ll help you get the best from this new feature of MAAS.<br>
+        Let us know how we should get in touch.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="p-strip">
+  <div class="modal" id="esxi-modal">
+    <div class="modal__overlay">
+      <div class="row model-form">
+        <div class="col-6">
+          <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3392" class="marketo-form p-form">
+            <div class="p-form__group mktFormReq mktField">
+              <label for="FirstName" class="mktoLabel p-form__label" >First Name:</label>
+              <div class="p-form__control">
+                <input required id="FirstName" name="FirstName" maxlength="255" type="text" class="mktoField mktoRequired">
+              </div>
+            </div>
+            <div class="p-form__group mktFormReq mktField">
+              <label for="LastName" class="mktoLabel p-form__label">Last Name:</label>
+              <div class="p-form__control">
+                <input required id="LastName" name="LastName" maxlength="255" type="text" class="mktoField mktoRequired">
+              </div>
+            </div>
+            <div class="p-form__group mktFormReq mktField">
+              <label for="Email" class="mktoLabel p-form__label" >Email Address:</label>
+              <div class="p-form__control">
+                <input required id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField  mktoRequired" >
+              </div>
+            </div>
+            <div class="p-form__group mktField">
+              <input name="Marketing_opt_in__c" id="Marketing_opt_in__c" type="checkbox" value="yes" class="mktoField">
+              <label for="Marketing_opt_in__c" class="mktoLabel p-form__label" >I agree to receive information about Canonical's products and services. (Optional)</label>
+              <label for="Marketing_opt_in__c"></label>
+            </div>
+            <div class="p-form__group mktFormReq mktField">
+              <input required  name="Consent_to_Processing__c" id="Consent_to_Processing__c" type="checkbox" value="yes" class="mktoField">
+              <label for="Consent_to_Processing__c" class="mktoLabel p-form__label" >I agree to be contacted by Canonical about my experience with ESXi images in MAAS.</label>
+              <label for="Consent_to_Processing__c"></label>
+            </div>
+            <p>In submitting this form, I confirm that I have read and agree to <a href="https://www.ubuntu.com/legal/data-privacy">Canonical&rsquo;s Privacy Notice</a> and <a href="https://www.ubuntu.com/legal/data-privacy/esxi">Privacy Policy</a>.
+            <div class="p-form__group mktField">
+              <button type="button" class="mktoButton p-button--neutral close-modal">Cancel</button>
+              <button type="submit" class="mktoButton p-button--positive">Download template</button>
+            </div>
+            <input type="hidden" name="formid" class="mktoField" value="3392">
+            <input type="hidden" name="formVid" class="mktoField" value="3392">
+            <input type="hidden" name="munchkinId" class="mktoField" value="066-EOV-335">
+            <input type="hidden" name="download_asset_url" class="mktoField" value="https://assets.ubuntu.com/v1/f8e9fa9d-packer-maas-1.0.2.tar.xz">
+            <input type="hidden" name="returnURL" value="">
+            <input type="hidden" name="retURL" value="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row modal-success u-hide">
+    <div class="col-12">
+      <h2>Thank you for registering</h2>
+      <p>
+        <strong>Your download should start automatically</strong>.<br>
+        Problems? <a href="https://assets.ubuntu.com/v1/f8e9fa9d-packer-maas-1.0.2.tar.xz" class="no-icon">Download 'ESXi.iso.packer.template'</a>.
+      </p>
+    </div>
+  </div>
+<style>
+  .no-icon:after {
+    display: none;
+  }
+</style>
+<script src="https://assets.ubuntu.com/v1/4176b39e-serialize.js"></script>
+<script src="https://assets.ubuntu.com/v1/ec520d10-XMLHttpRequest.min.js"></script>
+<script src="https://assets.ubuntu.com/v1/6b7597df-event-listener-polyfill.js"></script>
+<script>
+  var backgroundSubmitHandlerClosure = function(event) {
+    event.preventDefault();
+    var marketoForm = document.getElementById(event.target.id);
+    marketoForm.action = "https://app-sjg.marketo.com/index.php/leadCapture/save2";
+    backgroundSubmit(marketoForm);
+  }
+
+  var backgroundSubmit = function(marketoForm) {
+    var request = new XMLHttpRequest();
+    var submitUrl = marketoForm.getAttribute('action');
+    var formData = serialize(marketoForm);
+    request.open("POST", submitUrl, true);
+
+    //Send the proper header information along with the request
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Send off the POST request
+    request.send(formData);
+
+    request.addEventListener("readystatechange", function() {
+      if (this.readyState === 4) {
+        showSuccessMessage();
+      }
+    });
+
+    // get the download asset if it exists
+    var download_asset_url = marketoForm.querySelector('input[name=download_asset_url]');
+    if (download_asset_url != null) {
+      download_asset_url = download_asset_url.value;
+    }
+
+    // deal with the post submit actions
+    afterSubmit(download_asset_url);
+  }
+
+  /**
+  * After submit has happened
+  * start download and send the user to the instructions page
+  */
+  var afterSubmit = function(download_asset_url) {
+    // Now start the download
+    if (download_asset_url) {
+      var downloadLink = document.createElement("a");
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+      downloadLink.href = download_asset_url;
+      downloadLink.setAttribute("download", download_asset_url);
+      downloadLink.setAttribute("target", "_blank");
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  }
+
+  // attach handler to all forms
+  let marketoForm = document.querySelectorAll("form[id^=mktoForm]");
+  marketoForm.forEach(function(form) {
+    form.addEventListener('submit', backgroundSubmitHandlerClosure);
+  });
+
+  function showSuccessMessage() {
+    document.querySelector(".modal-success").classList.remove("u-hide");
+    document.querySelector("#esxi-modal").classList.add("u-hide");
+  }
+
+  setupEventHandlers();
+</script>
+    </div>
+  </section>
+  <hr />
+  {% endblock %}
