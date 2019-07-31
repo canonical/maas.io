@@ -1,5 +1,5 @@
 get-started: "/install"
-index.html: "/"
+(?P<path>.*)/index(.html)?: "{path}"
 
 # Docs redirects
 docs/(devel|2.6|stable|en|devel/en|stable/en|2.6/en): /docs
