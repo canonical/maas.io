@@ -54,6 +54,7 @@
 
     // recaptcha test
     var recaptchaListElement = marketoForm.getElementsByClassName('g-recaptcha')[0];
+    if (!recaptchaListElement) { return; }
     var recaptchaWidgetId = recaptchaListElement.dataset.widgetId;
     var response = grecaptcha.getResponse(recaptchaWidgetId);
     var already_errored = document.getElementById('recaptcha-msg');
@@ -122,6 +123,7 @@
       downloadFrame.setAttribute("src", download_asset_url);
       downloadFrame.style.width = 0 + "px";
       downloadFrame.style.height = 0 + "px";
+      downloadFrame.style.position = "absolute";
       document.body.insertBefore(downloadFrame, document.body.childNodes[0]);
     }
 

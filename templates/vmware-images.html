@@ -4,7 +4,6 @@
 
 {% block content %}
 <section class="p-strip--image is-dark is-shallow" style="overflow: hidden; background-color: #333; background-image:url('https://assets.ubuntu.com/v1/6e4b2b20-MAAS-hero-background.png')">
-<!-- Lead capture form -->
   <div class="row">
     <div class="col-6">
       <h2>Register to download the ESXi packer-template</h2>
@@ -20,7 +19,7 @@
     <div class="modal__overlay">
       <div class="row model-form">
         <div class="col-6">
-          <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_3392" class="marketo-form p-form">
+          <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" class="mktoForm_3392 p-form">
             <div class="p-form__group mktFormReq mktField">
               <label for="FirstName" class="mktoLabel p-form__label" >First Name:</label>
               <div class="p-form__control">
@@ -70,86 +69,77 @@
       <h2>Thank you for registering</h2>
       <p>
         <strong>Your download should start automatically</strong>.<br>
-        Problems? <a href="https://assets.ubuntu.com/v1/f8e9fa9d-packer-maas-1.0.2.tar.xz" class="no-icon">Download 'ESXi.iso.packer.template'</a>.
+        Problems? <a href="https://assets.ubuntu.com/v1/f8e9fa9d-packer-maas-1.0.2.tar.xz">Download 'ESXi.iso.packer.template'</a>.
       </p>
     </div>
   </div>
-<style>
-  .no-icon:after {
-    display: none;
-  }
-</style>
-<script src="https://assets.ubuntu.com/v1/4176b39e-serialize.js"></script>
-<script src="https://assets.ubuntu.com/v1/ec520d10-XMLHttpRequest.min.js"></script>
-<script src="https://assets.ubuntu.com/v1/6b7597df-event-listener-polyfill.js"></script>
-<script>
-  var backgroundSubmitHandlerClosure = function(event) {
-    event.preventDefault();
-    var marketoForm = document.getElementById(event.target.id);
-    marketoForm.action = "https://app-sjg.marketo.com/index.php/leadCapture/save2";
-    backgroundSubmit(marketoForm);
-  }
+</section>
+<hr />
 
-  var backgroundSubmit = function(marketoForm) {
-    var request = new XMLHttpRequest();
-    var submitUrl = marketoForm.getAttribute('action');
-    var formData = serialize(marketoForm);
-    request.open("POST", submitUrl, true);
+  <script src="https://assets.ubuntu.com/v1/4176b39e-serialize.js"></script>
+  <script src="https://assets.ubuntu.com/v1/ec520d10-XMLHttpRequest.min.js"></script>
+  <script src="https://assets.ubuntu.com/v1/6b7597df-event-listener-polyfill.js"></script>
+  <script>
+    var backgroundSubmitHandlerClosure2 = function(event) {
+      event.preventDefault();
+      var marketoForm = form;
+      form.action = "https://app-sjg.marketo.com/index.php/leadCapture/save2";
+      backgroundSubmit2(marketoForm);
+    }
 
-    //Send the proper header information along with the request
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var backgroundSubmit2 = function(marketoForm) {
+      var request = new XMLHttpRequest();
+      var submitUrl = marketoForm.getAttribute('action');
+      var formData = serialize(marketoForm);
+      request.open("POST", submitUrl, true);
 
-    // Send off the POST request
-    request.send(formData);
+      //Send the proper header information along with the request
+      request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    request.addEventListener("readystatechange", function() {
-      if (this.readyState === 4) {
-        showSuccessMessage();
+      // Send off the POST request
+      request.send(formData);
+
+      request.addEventListener("readystatechange", function() {
+        if (this.readyState === 4) {
+          showSuccessMessage2();
+        }
+      });
+
+      // get the download asset if it exists
+      var download_asset_url = marketoForm.querySelector('input[name=download_asset_url]');
+      if (download_asset_url != null) {
+        download_asset_url = download_asset_url.value;
       }
-    });
 
-    // get the download asset if it exists
-    var download_asset_url = marketoForm.querySelector('input[name=download_asset_url]');
-    if (download_asset_url != null) {
-      download_asset_url = download_asset_url.value;
+      // deal with the post submit actions
+      afterSubmit(download_asset_url);
     }
 
-    // deal with the post submit actions
-    afterSubmit(download_asset_url);
-  }
-
-  /**
-  * After submit has happened
-  * start download and send the user to the instructions page
-  */
-  var afterSubmit = function(download_asset_url) {
-    // Now start the download
-    if (download_asset_url) {
-      var downloadLink = document.createElement("a");
-      downloadLink.style.display = "none";
-      document.body.appendChild(downloadLink);
-      downloadLink.href = download_asset_url;
-      downloadLink.setAttribute("download", download_asset_url);
-      downloadLink.setAttribute("target", "_blank");
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+    /**
+    * After submit has happened
+    * start download and send the user to the instructions page
+    */
+    var afterSubmit = function(download_asset_url) {
+      // Now start the download
+      if (download_asset_url) {
+        var downloadLink = document.createElement("a");
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.href = download_asset_url;
+        downloadLink.setAttribute("download", download_asset_url);
+        downloadLink.setAttribute("target", "_blank");
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      }
     }
-  }
 
-  // attach handler to all forms
-  let marketoForm = document.querySelectorAll("form[id^=mktoForm]");
-  marketoForm.forEach(function(form) {
-    form.addEventListener('submit', backgroundSubmitHandlerClosure);
-  });
+    // attach handler to all forms
+    var form = document.querySelector(".mktoForm_3392");
+    form.addEventListener('submit', backgroundSubmitHandlerClosure2);
 
-  function showSuccessMessage() {
-    document.querySelector(".modal-success").classList.remove("u-hide");
-    document.querySelector("#esxi-modal").classList.add("u-hide");
-  }
-
-  setupEventHandlers();
-</script>
-    </div>
-  </section>
-  <hr />
+    function showSuccessMessage2() {
+      document.querySelector(".modal-success").classList.remove("u-hide");
+      document.querySelector("#esxi-modal").classList.add("u-hide");
+    }
+  </script>
   {% endblock %}
