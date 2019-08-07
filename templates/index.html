@@ -645,13 +645,13 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="row">
     <div class="col-12">
       <h2 class="p-link--external p-muted-heading">
-        <a class="p-link--soft" aria-label="External link to find more MAAS news from the Ubuntu blog" href="https://ubuntu.com/blog/tag/maas">The latest MAAS news</a>
+        <a class="p-link--soft" aria-label="External link to find more MAAS news from the Ubuntu blog" href="https://ubuntu.com/blog/topics/maas">The latest MAAS news</a>
       </h2>
     </div>
   </div>
   <div class="row">
     <div id="insights-cloud-feed" class="p-divider">
-      {% with insights_feed = get_rss_feed("https://blog.ubuntu.com/tag/maas/feed", limit=3) %}
+      {% with insights_feed = get_rss_feed("https://admin.insights.ubuntu.com/tag/maas/feed", limit=3) %}
         {% if insights_feed %}
           {% for item in insights_feed %}
             <article class="col-4 p-divider__block">
