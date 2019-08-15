@@ -59,3 +59,34 @@ table + h2 {
 .lightbox-wrapper {
   margin-bottom: 1.1rem;
 }
+
+.p-heading-icon-block {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media only screen and (min-width: $breakpoint-medium) {
+    margin-bottom: 2rem;
+  }
+}
+
+.p-heading-icon-block__copy-block {
+  margin-top: -0.5rem;
+}
+
+.p-heading-icon-block__icon {
+  border-radius: 0;
+  height: auto;
+  margin-bottom: $spv-inner--small;
+  margin-right: $sph-inner;
+  padding-right: $sph-inner;
+  width: ($sp-unit * 5) + $sph-inner;
+}
+
+.u-indent {
+  @media only screen and (min-width: $breakpoint-medium) {
+    float: right;
+    width: calc(100% - 8.5rem);
+  }
+}
