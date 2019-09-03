@@ -1,8 +1,8 @@
-talisker[gunicorn]==0.14.3
+talisker[gunicorn]==0.15.0
 canonicalwebteam.discourse-docs==0.6.4
 canonicalwebteam.flask_base==0.3.1
 canonicalwebteam.http==1.0.1
-canonicalwebteam.templatefinder==0.1.2
-canonicalwebteam.search==0.1.0
-flask==1.0.4
+canonicalwebteam.templatefinder==0.2.0
+canonicalwebteam.search==0.2.0
+flask==1.1.1
 feedparser==5.2.1
