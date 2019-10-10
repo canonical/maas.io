@@ -12,6 +12,7 @@ from canonicalwebteam.discourse_docs import (
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from canonicalwebteam.search import build_search_view
+from canonicalwebteam import image_template
 
 from webapp.feeds import get_rss_feed
 
@@ -64,6 +65,11 @@ def internal_error(error):
 @app.context_processor
 def context():
     return dict(get_rss_feed=get_rss_feed)
+
+
+@app.context_processor
+def utility_processor():
+    return {"image": image_template}
 
 
 @app.route("/docs/api")
