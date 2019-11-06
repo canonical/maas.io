@@ -38,7 +38,7 @@ jobs:
       - checkout
       - run:
           name: Lint python code
-          command: yarn lint-py
+          command: yarn lint-python
   test-python:
     <<: *defaults
     steps:
