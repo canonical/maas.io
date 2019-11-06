@@ -2,10 +2,10 @@
   "name": "ubuntu-maas",
   "description": "Static Django website blueprint",
   "scripts": {
-    "test": "yarn run lint-scss && yarn run lint-py && yarn run test-py",
-    "lint-py": "flake8 --exclude '*env*,node_modules' && black --line-length 79 --check --exclude '(node_modules/.*|[^/]*env[0-9]?/.*)' .",
+    "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
+    "lint-python": "flake8 --exclude '*env*,node_modules' && black --line-length 79 --check --exclude '(node_modules/.*|[^/]*env[0-9]?/.*)' .",
     "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
-    "test-py": "python3 -m unittest discover tests",
+    "test-python": "python3 -m unittest discover tests",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "copy-3rd-party-js": "mkdir -p static/js/modules/global-nav && cp node_modules/@canonical/global-nav/dist/global-nav.js static/js/modules/global-nav",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
