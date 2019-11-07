@@ -1,6 +1,9 @@
 MAAS website project
 ===
 
+[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/maas.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/maas.io)
+[![Code coverage](https://codecov.io/gh/canonical-web-and-design/maas.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/maas.io)
+
 This is the simple Flask project behind <https://maas.io>.
 
 ## Local development
