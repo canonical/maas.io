@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block copy_doc_meta %}{% endblock %}
 
     <title itemprop="name">MAAS {% block page_title %}{% endblock %}</title>
     {% with css_file="css/main.css" %}
