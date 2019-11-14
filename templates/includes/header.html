@@ -35,7 +35,7 @@
           <a href="/docs" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Docs' });>Docs</a>
         </li>
         <li class="p-navigation__link">
-          <a class="p-link--external" href="https://discourse.maas.io" aria-label="External link to the MAAS discourse website" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });>Discourse</a>
+          <a href="https://discourse.maas.io" dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });>Discourse</a>
         </li>
         <li class="p-navigation__link{% if request.path.startswith('/contact-us') %} is-selected" aria-current="page{% endif %}">
           <a href="/contact-us" class="js-invoke-modal" dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Contact us' });>Contact us</a>
