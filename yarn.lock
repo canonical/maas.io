@@ -2,9 +2,12 @@
 # yarn lockfile v1
 
 
-"@canonical/global-nav@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.1.0.tgz#67b6a499a39ff8135e15fcc6a275cd1e29b504fa"
+"@canonical/global-nav@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.3.0.tgz#8a72aa4c82fb61a067454e1102350112ae8d5ba8"
+  integrity sha512-T6S3m762Oz1KNsf645a/1br5Vwa3jJ0ixvSfC/SHHP6eAuBk4QRScx1sv/kJlY7eDg0SLDox4LNTFyZPlJMxKw==
+  dependencies:
+    vanilla-framework "2.4.0"
 
 abbrev@1:
   version "1.1.0"
@@ -1623,6 +1626,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
+
+vanilla-framework@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.4.0.tgz#95fd15738ce72cbb30bb667ba255cc7e9ae3f13d"
+  integrity sha512-NacSE5eKsugHnKlWlwsfKm24cDpsmcer2RC0+PCmFz4US4BLrEanQ0mZUkXg3toEwue867FFvDB+I7jiKP+zow==
 
 vanilla-framework@2.4.1:
   version "2.4.1"

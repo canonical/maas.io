@@ -20,6 +20,6 @@
     "vanilla-framework": "2.4.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.1.0"
+    "@canonical/global-nav": "2.3.0"
   }
 }
