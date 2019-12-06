@@ -1,43 +1,40 @@
 @mixin maas-p-strip-slanted {
-  $assets-path: 'https://assets.ubuntu.com/v1/';
-  $horizontal-edge-padding: $spv-outer--regular-scaleable;
-  $slanted-edge-padding: $horizontal-edge-padding; // coloured area takes half the rectangle surface area; to visually compensate, we multiply it by 2
-
   [class^='p-strip'].is-slanted {
-    background-image: url('#{$assets-path}127c8ba7-hero-bg-maas-2.svg');
-    background-position: 50% 47%;
+    background-color: #111;
     overflow: hidden;
     position: relative;
 
     @media (max-width: $breakpoint-large) {
-      background-size: cover;
-      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
+      padding: $spv-outer--deep-scaleable * 0.5 0 $spv-outer--deep-scaleable;
     }
     @media (min-width: $breakpoint-large) {
-      background-size: 5000px 667px; // actual svg size
-      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
+      padding: $spv-outer--deep-scaleable 0 $spv-outer--deep-scaleable * 2;
     }
 
-    &::after {
-      $bleed: -3px; // stretch outside to compensate for aliasing; otherwise edge of image underneath becomes visible as you resize
-      background-position: 100% 100%;
-      background-repeat: no-repeat;
-      bottom: $bleed;
-      content: '';
-      left: $bleed;
-      pointer-events: none;
-      position: absolute;
-      right: $bleed;
-      top: $bleed;
-      z-index: 1;
+    // Generate golden ratio based angles in degrees and gradient color stops in percentages
+    $golden-ratio-angles: 3, 8;
+    $golden-ratio-percentages: 1, 2, 3;
 
-      @media only screen and (max-width: $breakpoint-large) {
-        background-size: auto $slanted-edge-padding;
-      }
-
-      @media only screen and (min-width: $breakpoint-large) {
-        background-size: 100%;
-      }
+    @each $i in $golden-ratio-angles {
+      --gr#{$i}: #{100/pow(1.618,$i)}deg;
     }
+
+    @each $i in $golden-ratio-percentages {
+      --g#{$i}: #{100/pow(1.618,$i)}%;
+    }
+
+    // magic number to make line go through center of video playback button
+    --g2a: 47.2%;
+
+    background-image:
+      linear-gradient(calc(-1 * var(--gr8)), #fff var(--g3), rgba(255, 255, 255, 0) calc(var(--g3) * 1.003)),
+      linear-gradient(var(--gr3), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g2)),
+      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g1)),
+      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2a), rgba(255, 255, 255, 0) var(--g2a)),
+      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g2))
+    ;
+
+    background-position: 50% 50%, var(--g2) 50%, 50% 50%, 50% 50%, var(--g2) 50%;
+    background-size: 5000px calc(103%);
   }
 }
