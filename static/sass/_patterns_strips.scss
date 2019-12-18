@@ -1,18 +1,18 @@
 @mixin maas-p-strip-slanted {
   [class^='p-strip'].is-slanted {
-    background-color: $color-x-dark;
+    background-color: hsl(320, 100%, 1%);
     overflow: hidden;
     position: relative;
 
-    @media (max-width: $breakpoint-large) {
+    @media (max-width: $breakpoint-medium) {
       padding: $spv-outer--deep-scaleable * 0.5 0 $spv-outer--deep-scaleable;
     }
-    @media (min-width: $breakpoint-large) {
-      padding: $spv-outer--deep-scaleable 0 $spv-outer--deep-scaleable * 2;
+    @media (min-width: $breakpoint-medium) {
+      padding: $spv-outer--deep-scaleable 0 $spv-outer--deep-scaleable * 1.5;
     }
 
     // Generate golden ratio based angles in degrees and gradient color stops in percentages
-    $golden-ratio-angles: 2, 3, 7;
+    $golden-ratio-angles: 2,3,7,8;
     $golden-ratio-percentages: 3;
 
     @each $i in $golden-ratio-angles {
@@ -24,21 +24,21 @@
     }
 
     // magic numbers to make lines go through center of video playback button
-    --g2a: 47.2%;
-    --g2b: 55.85%;
+    --g2a: 51%;
+    --g2b: 50.5%;
     --g2p: 26%;
 
     background-image:
-      linear-gradient(calc(var(--gr7) * 1), #99999900 var(--g2p), #f0f0f0ff var(--g2p)),
-      linear-gradient(calc(-1 * var(--gr7)), #fff var(--g3), transparent calc(var(--g3) * 1.003)),
-      linear-gradient(var(--gr2), #{transparentize(#262626, .6)} var(--g2b), transparent var(--g2b)),
-      linear-gradient(calc(var(--gr3) * -1), transparent var(--g2a), #{transparentize($color-mid-dark, .75)}  var(--g2a)),
-      linear-gradient(90deg, #333 0%, #111 33%, #000 100%)
+      linear-gradient(calc(var(--gr7) * 1), #f0f0f000 var(--g2p), #f0f0f0ff var(--g2p)), //light grey overlap
+      linear-gradient(calc(-1 * var(--gr7)), hsla(320, 0%, 100%, .33) 0%, hsla(0, 0%, 0%, 0) 62%), // background gradient
+      linear-gradient(calc(-1 * var(--gr8)), #fff var(--g3), transparent calc(var(--g3) * 1.003)), //white slant
+      linear-gradient(var(--gr2), hsla(0, 0%, 100%, 0.015) var(--g2b), transparent var(--g2b)),
+      linear-gradient(calc(var(--gr3) * -1), transparent var(--g2a), hsla(0, 0%, 100%, .05)  var(--g2a))
     ;
 
-    background-position: 50% 50%;
+    background-position: calc(50% + 286px) 50%;
     background-size: 5000px calc(103%);
-    background-blend-mode: multiply, normal, normal, normal;
+    background-blend-mode: darken, screen, normal, normal, normal;
     background-repeat: no-repeat;
   }
 }
