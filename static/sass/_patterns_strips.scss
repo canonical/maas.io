@@ -24,8 +24,8 @@
     }
 
     // magic numbers to make lines go through center of video playback button
-    --g2a: 51%;
-    --g2b: 50.5%;
+    --g2a: 46.5%;
+    --g2b: 55.5%;
     --g2p: 26%;
 
     background-image:
@@ -36,7 +36,7 @@
       linear-gradient(calc(var(--gr3) * -1), transparent var(--g2a), hsla(0, 0%, 100%, .05)  var(--g2a))
     ;
 
-    background-position: calc(50% + 286px) 50%;
+    background-position: 50% 50%;
     background-size: 5000px calc(103%);
     background-blend-mode: darken, screen, normal, normal, normal;
     background-repeat: no-repeat;
