@@ -26,7 +26,7 @@
     // magic numbers to make lines go through center of video playback button
     --g2a: 46.5%;
     --g2b: 55.5%;
-    --g2p: 26%;
+    --g2p: 31%;
 
     background-image:
       linear-gradient(calc(var(--gr7) * 1), #f0f0f000 var(--g2p), #f0f0f0ff var(--g2p)), //light grey overlap
