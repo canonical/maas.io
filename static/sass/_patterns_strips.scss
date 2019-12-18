@@ -1,6 +1,6 @@
 @mixin maas-p-strip-slanted {
   [class^='p-strip'].is-slanted {
-    background-color: #111;
+    background-color: $color-x-dark;
     overflow: hidden;
     position: relative;
 
@@ -12,8 +12,8 @@
     }
 
     // Generate golden ratio based angles in degrees and gradient color stops in percentages
-    $golden-ratio-angles: 3, 8;
-    $golden-ratio-percentages: 1, 2, 3;
+    $golden-ratio-angles: 2, 3, 7;
+    $golden-ratio-percentages: 3;
 
     @each $i in $golden-ratio-angles {
       --gr#{$i}: #{100/pow(1.618,$i)}deg;
@@ -23,18 +23,22 @@
       --g#{$i}: #{100/pow(1.618,$i)}%;
     }
 
-    // magic number to make line go through center of video playback button
+    // magic numbers to make lines go through center of video playback button
     --g2a: 47.2%;
+    --g2b: 55.85%;
+    --g2p: 26%;
 
     background-image:
-      linear-gradient(calc(-1 * var(--gr8)), #fff var(--g3), rgba(255, 255, 255, 0) calc(var(--g3) * 1.003)),
-      linear-gradient(var(--gr3), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g2)),
-      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g1)),
-      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2a), rgba(255, 255, 255, 0) var(--g2a)),
-      linear-gradient(calc(var(--gr3) * -1), rgba(31, 31, 31, 0.5) var(--g2), rgba(255, 255, 255, 0) var(--g2))
+      linear-gradient(calc(var(--gr7) * 1), #99999900 var(--g2p), #f0f0f0ff var(--g2p)),
+      linear-gradient(calc(-1 * var(--gr7)), #fff var(--g3), transparent calc(var(--g3) * 1.003)),
+      linear-gradient(var(--gr2), #{transparentize(#262626, .6)} var(--g2b), transparent var(--g2b)),
+      linear-gradient(calc(var(--gr3) * -1), transparent var(--g2a), #{transparentize($color-mid-dark, .75)}  var(--g2a)),
+      linear-gradient(90deg, #333 0%, #111 33%, #000 100%)
     ;
 
-    background-position: 50% 50%, var(--g2) 50%, 50% 50%, 50% 50%, var(--g2) 50%;
+    background-position: 50% 50%;
     background-size: 5000px calc(103%);
+    background-blend-mode: multiply, normal, normal, normal;
+    background-repeat: no-repeat;
   }
 }
