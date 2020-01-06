@@ -1,44 +1,14 @@
-@mixin maas-p-strip-slanted {
-  [class^='p-strip'].is-slanted {
-    background-color: hsl(320, 100%, 1%);
-    overflow: hidden;
-    position: relative;
-
-    @media (max-width: $breakpoint-medium) {
-      padding: $spv-outer--deep-scaleable * 0.5 0 $spv-outer--deep-scaleable;
-    }
-    @media (min-width: $breakpoint-medium) {
-      padding: $spv-outer--deep-scaleable 0 $spv-outer--deep-scaleable * 1.5;
-    }
-
-    // Generate golden ratio based angles in degrees and gradient color stops in percentages
-    $golden-ratio-angles: 2,3,7,8;
-    $golden-ratio-percentages: 3;
-
-    @each $i in $golden-ratio-angles {
-      --gr#{$i}: #{100/pow(1.618,$i)}deg;
-    }
-
-    @each $i in $golden-ratio-percentages {
-      --g#{$i}: #{100/pow(1.618,$i)}%;
-    }
-
-    // magic numbers to make lines go through center of video playback button
-    --g2a: 46.5%;
-    --g2b: 55.5%;
-    --g2p: 31%;
-
-    background-image:
-      linear-gradient(calc(var(--gr7) * 1), #f0f0f000 var(--g2p), #f0f0f0ff var(--g2p)), //light grey overlap
-      linear-gradient(calc(-1 * var(--gr7)), hsla(320, 0%, 100%, .33) 0%, hsla(0, 0%, 0%, 0) 62%), // background gradient
-      linear-gradient(calc(-1 * var(--gr8)), #fff var(--g3), transparent calc(var(--g3) * 1.003)), //white slant
-      linear-gradient(var(--gr2), hsla(0, 0%, 100%, 0.015) var(--g2b), transparent var(--g2b)),
-      linear-gradient(calc(var(--gr3) * -1), transparent var(--g2a), hsla(0, 0%, 100%, .05)  var(--g2a))
-    ;
-
-    background-position: 50% 50%;
-    background-size: 5000px calc(103%);
-    background-blend-mode: darken, screen, normal, normal, normal;
+@mixin maas-p-strip--dark {
+  .p-takeover--dark {
+    background-blend-mode: multiply, multiply, normal, normal;
+    background-color: #111;
+    background-image: linear-gradient(to bottom left, rgba(216, 216, 216, 0.54) 0, rgba(216, 216, 216, 0.54) 49.9%, transparent 50%), linear-gradient(to bottom right, rgba(228, 228, 228, 0.54) 0, rgba(228, 228, 228, 0.54) 49.9%, transparent 50%), linear-gradient(to top left, #fff 0%, #fff 49.3%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(201deg, #333 0%, #262626 46%, #111 90%);
+    color: #fff;
+    background-position: top right, top left, right bottom -1px, left top;
     background-repeat: no-repeat;
-  }
+    background-size: 74% 99.83%, 68% 91%, 103.8% 20.26%, 100% 99.8%;
+    margin: 0;
+    padding-bottom: 11rem;
+    padding-top: 6rem;
+}
 }
