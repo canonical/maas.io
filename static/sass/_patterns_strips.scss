@@ -14,21 +14,21 @@
     background-blend-mode: multiply, multiply, normal, normal;
     background-color: $color-dark;
     background-image: linear-gradient(to bottom left,
-        $color-suru-grey-1 0,
-        $color-suru-grey-1 49.9%, transparent 50%),
+      $color-suru-grey-1 0,
+      $color-suru-grey-1 49.9%, transparent 50%),
       linear-gradient(to bottom right,
-        $color-suru-grey-2 0,
-        $color-suru-grey-2 49.9%,
-        transparent 50%),
+      $color-suru-grey-2 0,
+      $color-suru-grey-2 49.9%,
+      transparent 50%),
       linear-gradient(to top left,
-        $color-x-light 0%,
-        $color-x-light 49.3%,
-        transparent 50%,
-        transparent 100%),
+      $color-x-light 0%,
+      $color-x-light 49.3%,
+      transparent 50%,
+      transparent 100%),
       linear-gradient(201deg,
-        $color-suru-grey-3 0%,
-        $color-suru-grey-4 46%,
-        $color-dark 90%
+      $color-suru-grey-3 0%,
+      $color-suru-grey-4 46%,
+      $color-dark 90%
     );
     color: $color-x-light;
     background-position: top right, top left, right bottom -1px, left top;
