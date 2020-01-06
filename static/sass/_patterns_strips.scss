@@ -1,9 +1,36 @@
 @mixin maas-p-strip--dark {
+  $color-suru-grey-1: rgba(216, 216, 216, 0.54);
+  $color-suru-grey-2: rgba(228, 228, 228, 0.54);
+  $color-suru-grey-3: #333;
+  $color-suru-grey-4: #262626;
+  $color-suru-grey-5: #171717;
+  $color-suru-grey-6: #181818;
+  $color-suru-grey-7: #2d2d2d;
+  $color-suru-grey-8: #383838;
+  $color-suru-grey-9: #2E2E2E;
+  $color-suru-grey-10: #393939;
+
   .p-takeover--dark {
     background-blend-mode: multiply, multiply, normal, normal;
-    background-color: #111;
-    background-image: linear-gradient(to bottom left, rgba(216, 216, 216, 0.54) 0, rgba(216, 216, 216, 0.54) 49.9%, transparent 50%), linear-gradient(to bottom right, rgba(228, 228, 228, 0.54) 0, rgba(228, 228, 228, 0.54) 49.9%, transparent 50%), linear-gradient(to top left, #fff 0%, #fff 49.3%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(201deg, #333 0%, #262626 46%, #111 90%);
-    color: #fff;
+    background-color: $color-dark;
+    background-image: linear-gradient(to bottom left,
+        $color-suru-grey-1 0,
+        $color-suru-grey-1 49.9%, transparent 50%),
+      linear-gradient(to bottom right,
+        $color-suru-grey-2 0,
+        $color-suru-grey-2 49.9%,
+        transparent 50%),
+      linear-gradient(to top left,
+        $color-x-light 0%,
+        $color-x-light 49.3%,
+        transparent 50%,
+        transparent 100%),
+      linear-gradient(201deg,
+        $color-suru-grey-3 0%,
+        $color-suru-grey-4 46%,
+        $color-dark 90%
+    );
+    color: $color-x-light;
     background-position: top right, top left, right bottom -1px, left top;
     background-repeat: no-repeat;
     background-size: 74% 99.83%, 68% 91%, 103.8% 20.26%, 100% 99.8%;
@@ -14,6 +41,13 @@
 
   .p-takeover--no-overlays {
     // copy of ubuntu.com's .p-takeover--compliance found at https://ubuntu.com/takeovers
-    background-image: linear-gradient(44deg, #171717 0%, #181818 9%, #262626 34%, #2D2D2D 67%, #383838 88%, #2E2E2E 100%, #393939 100%);
+    background-image: linear-gradient(44deg,
+      $color-suru-grey-5 0%,
+      $color-suru-grey-6 9%,
+      $color-suru-grey-4 34%,
+      $color-suru-grey-7 67%,
+      $color-suru-grey-8 88%,
+      $color-suru-grey-9 100%,
+      $color-suru-grey-10 100%);
   }
 }
