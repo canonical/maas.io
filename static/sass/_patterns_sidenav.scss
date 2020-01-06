@@ -14,12 +14,12 @@
 
     a,
     a:visited {
-      color: #111;
+      color: $color-dark;
       text-decoration: none;
     }
 
     a:hover {
-      color: #007aa6;
+      color: #$color-link;
       text-decoration: underline;
     }
 
@@ -27,7 +27,7 @@
       position: relative;
 
       &::before {
-        background-color: #cdcdcd;
+        background-color: $color-mid-light;
         bottom: -.25rem;
         content: '';
         left: -1rem;
@@ -38,9 +38,9 @@
     }
 
     ul {
+      margin-bottom: .625rem;
       margin-left: 0;
       padding-left: 1rem;
-      margin-bottom: .625rem;
     }
 
     li {
