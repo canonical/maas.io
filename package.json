@@ -17,7 +17,7 @@
   "devDependencies": {
     "node-sass": "4.13.0",
     "sass-lint": "1.13.1",
-    "vanilla-framework": "2.4.1"
+    "vanilla-framework": "2.5.0"
   },
   "dependencies": {
     "@canonical/global-nav": "2.3.0"
