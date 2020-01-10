@@ -27,12 +27,7 @@
           <h1 class="u-no-margin--bottom l-docs-title__heading">{{ document.title }}</h1>
         </div>
       </div>
-
-      <div class="p-strip is-shallow">
-        <div class="l-docs-row">
-          {{ document.body_html | safe }}
-        </div>
-      </div>
+      
       <div class="p-strip is-shallow u-no-padding--top">
         <div class="l-docs-row">
           <div class="p-notification--information">
@@ -41,6 +36,12 @@
               <a href="{{ forum_url }}{{ document.topic_path }}">Help improve this document in the forum</a>.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="p-strip is-shallow">
+        <div class="l-docs-row">
+          {{ document.body_html | safe }}
         </div>
       </div>
     </main>
