@@ -1,43 +1,53 @@
-@mixin maas-p-strip-slanted {
-  $assets-path: 'https://assets.ubuntu.com/v1/';
-  $horizontal-edge-padding: $spv-outer--regular-scaleable;
-  $slanted-edge-padding: $horizontal-edge-padding; // coloured area takes half the rectangle surface area; to visually compensate, we multiply it by 2
+@mixin maas-p-strip--dark {
+  $color-suru-grey-1: rgba(216, 216, 216, .54);
+  $color-suru-grey-2: rgba(228, 228, 228, .54);
+  $color-suru-grey-3: #333;
+  $color-suru-grey-4: #262626;
+  $color-suru-grey-5: #171717;
+  $color-suru-grey-6: #181818;
+  $color-suru-grey-7: #2d2d2d;
+  $color-suru-grey-8: #383838;
+  $color-suru-grey-9: #2e2e2e;
+  $color-suru-grey-10: #393939;
 
-  [class^='p-strip'].is-slanted {
-    background-image: url('#{$assets-path}127c8ba7-hero-bg-maas-2.svg');
-    background-position: 50% 47%;
-    overflow: hidden;
-    position: relative;
+  .p-takeover--dark {
+    background-blend-mode: multiply, multiply, normal, normal;
+    background-color: $color-dark;
+    background-image: linear-gradient(to bottom left,
+      $color-suru-grey-1 0,
+      $color-suru-grey-1 49.9%, transparent 50%),
+    linear-gradient(to bottom right,
+      $color-suru-grey-2 0,
+      $color-suru-grey-2 49.9%,
+      transparent 50%),
+    linear-gradient(to top left,
+      $color-x-light 0%,
+      $color-x-light 49.3%,
+      transparent 50%,
+      transparent 100%),
+    linear-gradient(201deg,
+      $color-suru-grey-3 0%,
+      $color-suru-grey-4 46%,
+      $color-dark 90%
+    );
+    background-position: top right, top left, right bottom -1px, left top;
+    background-repeat: no-repeat;
+    background-size: 74% 99.83%, 68% 91%, 103.8% 20.26%, 100% 99.8%;
+    color: $color-x-light;
+    margin: 0;
+    padding-bottom: 11rem;
+    padding-top: 6rem;
+  }
 
-    @media (max-width: $breakpoint-large) {
-      background-size: cover;
-      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
-    }
-    @media (min-width: $breakpoint-large) {
-      background-size: 5000px 667px; // actual svg size
-      padding: $spv-outer--regular-scaleable 0 $slanted-edge-padding;
-    }
-
-    &::after {
-      $bleed: -3px; // stretch outside to compensate for aliasing; otherwise edge of image underneath becomes visible as you resize
-      background-position: 100% 100%;
-      background-repeat: no-repeat;
-      bottom: $bleed;
-      content: '';
-      left: $bleed;
-      pointer-events: none;
-      position: absolute;
-      right: $bleed;
-      top: $bleed;
-      z-index: 1;
-
-      @media only screen and (max-width: $breakpoint-large) {
-        background-size: auto $slanted-edge-padding;
-      }
-
-      @media only screen and (min-width: $breakpoint-large) {
-        background-size: 100%;
-      }
-    }
+  .p-takeover--no-overlays {
+    // copy of ubuntu.com's .p-takeover--compliance found at https://ubuntu.com/takeovers
+    background-image: linear-gradient(44deg,
+      $color-suru-grey-5 0%,
+      $color-suru-grey-6 9%,
+      $color-suru-grey-4 34%,
+      $color-suru-grey-7 67%,
+      $color-suru-grey-8 88%,
+      $color-suru-grey-9 100%,
+      $color-suru-grey-10 100%);
   }
 }
