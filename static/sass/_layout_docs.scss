@@ -66,7 +66,6 @@
     @extend .row;
     margin-left: inherit;
     padding: 0 $sp-xxx-large;
-    padding-bottom: 0;
 
     @media only screen and (max-width: $breakpoint-navigation-threshold) {
       padding-left: $sph-outer--large;
@@ -74,7 +73,9 @@
   }
 
   .u-sticky--bottom {
-    bottom: 0;
-    position: sticky;
+    @media only screen and (min-width: $breakpoint-navigation-threshold) {
+      bottom: 0;
+      position: sticky;
+    }
   }
 }
