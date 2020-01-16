@@ -47,7 +47,6 @@
   .l-docs-content {
     flex: 5;
     margin-top: 0;
-    overflow: hidden;
 
     @media only screen and (max-width: $breakpoint-navigation-threshold) {
       flex: auto;
@@ -70,6 +69,13 @@
 
     @media only screen and (max-width: $breakpoint-navigation-threshold) {
       padding-left: $sph-outer--large;
+    }
+  }
+
+  .u-sticky--bottom {
+    @media only screen and (min-width: $breakpoint-navigation-threshold) {
+      bottom: 0;
+      position: sticky;
     }
   }
 }
