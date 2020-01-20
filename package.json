@@ -10,7 +10,9 @@
     "copy-3rd-party-js": "mkdir -p static/js/modules/global-nav && cp node_modules/@canonical/global-nav/dist/global-nav.js static/js/modules/global-nav",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "build": "node-sass --include-path node_modules static/sass --output static/css --output-style compressed && yarn run copy-3rd-party-js"
+    "build-css": "node-sass --include-path node_modules static/sass --output static/css --output-style compressed",
+    "build-js": "yarn run copy-3rd-party-js",
+    "build": "yarn run build-css && yarn run build-js"
   },
   "author": "Canonical webteam",
   "license": "LGPL v3",
