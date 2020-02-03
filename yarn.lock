@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@canonical/global-nav@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.3.0.tgz#8a72aa4c82fb61a067454e1102350112ae8d5ba8"
-  integrity sha512-T6S3m762Oz1KNsf645a/1br5Vwa3jJ0ixvSfC/SHHP6eAuBk4QRScx1sv/kJlY7eDg0SLDox4LNTFyZPlJMxKw==
+"@canonical/global-nav@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.0.tgz#8c86dab1bdd7e767575df34c766bece620df5ecd"
+  integrity sha512-ymyw0N3NX+1NptaRMGi9q31fgNQ0sRizukdqEIBi5fJGnIHGJ7qviYsfmob4EIHnSuVl9slIXyY1kVO1A+2vEA==
   dependencies:
-    vanilla-framework "2.4.0"
+    vanilla-framework "2.5.0"
 
 abbrev@1:
   version "1.1.0"
@@ -1069,10 +1069,10 @@ node-gyp@^3.8.0:
     tar "^2.0.0"
     which "1"
 
-node-sass@4.13.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.13.0.tgz#b647288babdd6a1cb726de4545516b31f90da066"
-  integrity sha512-W1XBrvoJ1dy7VsvTAS5q1V45lREbTlZQqFbiHb3R3OTTCma0XBtuG6xZ6Z4506nR4lmHPTqVRwxT6KgtWC97CA==
+node-sass@4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.13.1.tgz#9db5689696bb2eec2c32b98bfea4c7a2e992d0a3"
+  integrity sha512-TTWFx+ZhyDx1Biiez2nB0L3YrCZ/8oHagaDalbuBSlqXgUPsdkUSzJsVxeDO9LtPB49+Fh3WQl3slABo6AotNw==
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -1627,15 +1627,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-vanilla-framework@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.4.0.tgz#95fd15738ce72cbb30bb667ba255cc7e9ae3f13d"
-  integrity sha512-NacSE5eKsugHnKlWlwsfKm24cDpsmcer2RC0+PCmFz4US4BLrEanQ0mZUkXg3toEwue867FFvDB+I7jiKP+zow==
-
 vanilla-framework@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.5.0.tgz#b7f689d7583f4a215cde39b726091ffc2ec4f62a"
   integrity sha512-8dY70fTDo2v/Lw96nMRyhi5e74KUk1krcEHEd1qt/hzMzAfy2NYddENS1bZahEg7hoAY1TZc8mQJr+bVu4qW7w==
+
+vanilla-framework@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.6.0.tgz#67077333993824c2aec3578d44269b37ff862923"
+  integrity sha512-2vx8fe2hsEQYtEiUklqjBO+JL4cLDJVsE/t3b6fcfIRPJsmVq/kVrUSXDSq6LW/4wHhPfMAqeoMQFNdzCUwexA==
 
 verror@1.3.6:
   version "1.3.6"
