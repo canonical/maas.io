@@ -30,6 +30,7 @@ app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 doc_parser = DocParser(
     api=DiscourseAPI(base_url="https://discourse.maas.io/"),
+    category_id=5,
     index_topic_id=25,
     url_prefix="/docs",
 )
@@ -38,7 +39,6 @@ if app.debug:
 discourse_docs = DiscourseDocs(
     parser=doc_parser,
     document_template="docs/document.html",
-    category_id=5,
     url_prefix="/docs",
 )
 discourse_docs.init_app(app)
