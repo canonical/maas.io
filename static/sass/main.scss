@@ -17,7 +17,8 @@ $increase-font-size-on-larger-screens: false;
 'patterns_contact-modal',
 'layout_docs',
 'patterns_sidenav',
-'hljs';
+'hljs',
+'patterns_tutorials';
 
 // patterns
 @include maas-p-hero-video;
@@ -29,6 +30,7 @@ $increase-font-size-on-larger-screens: false;
 @include maas-p-strip--dark;
 @include maas-l-docs;
 @include maas-p-sidenav;
+@include maas-p-tutorials;
 
 @media only screen and (max-width: $breakpoint-medium) {
   .usabilla_live_button_container { // sass-lint:disable-line class-name-format
