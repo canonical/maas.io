@@ -1,5 +1,5 @@
 talisker[gunicorn]==0.15.0
-canonicalwebteam.discourse-docs==0.10.3
+canonicalwebteam.discourse-docs==0.11.0
 canonicalwebteam.flask_base==0.3.3
 canonicalwebteam.http==1.0.1
 canonicalwebteam.templatefinder==0.2.4

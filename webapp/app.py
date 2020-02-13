@@ -3,6 +3,7 @@ A Flask application for maas.io
 """
 
 import flask
+import math
 
 from canonicalwebteam.discourse_docs import (
     DiscourseDocs,
@@ -82,3 +83,62 @@ def api():
     return flask.render_template(
         "docs/api.html", navigation=doc_parser.navigation
     )
+
+
+url_prefix = "/tutorials"
+tutorials_docs_parser = DocParser(
+    api=DiscourseAPI(base_url="https://discourse.maas.io/"),
+    category_id=16,
+    index_topic_id=1289,
+    url_prefix=url_prefix,
+)
+tutorials_docs = DiscourseDocs(
+    parser=tutorials_docs_parser,
+    document_template="/tutorials/tutorial.html",
+    url_prefix=url_prefix,
+    blueprint_name="tutorials",
+)
+
+
+@app.route(url_prefix)
+def index():
+    page = flask.request.args.get("page", default=1, type=int)
+    topic = flask.request.args.get("topic", default=None, type=str)
+    sort = flask.request.args.get("sort", default=None, type=str)
+    posts_per_page = 15
+    tutorials_docs.parser.parse()
+    if not topic:
+        metadata = tutorials_docs.parser.metadata
+    else:
+        metadata = [
+            doc
+            for doc in tutorials_docs.parser.metadata
+            if topic in doc["categories"]
+        ]
+
+    if sort == "difficulty-desc":
+        metadata = sorted(
+            metadata, key=lambda k: k["difficulty"], reverse=True
+        )
+
+    if sort == "difficulty-asc" or not sort:
+        metadata = sorted(
+            metadata, key=lambda k: k["difficulty"], reverse=False
+        )
+
+    total_pages = math.ceil(len(metadata) / posts_per_page)
+
+    return flask.render_template(
+        "tutorials/index.html",
+        navigation=tutorials_docs.parser.navigation,
+        forum_url=tutorials_docs.parser.api.base_url,
+        metadata=metadata,
+        page=page,
+        topic=topic,
+        sort=sort,
+        posts_per_page=posts_per_page,
+        total_pages=total_pages,
+    )
+
+
+tutorials_docs.init_app(app)
