@@ -87,9 +87,9 @@ def api():
 
 url_prefix = "/tutorials"
 tutorials_docs_parser = DocParser(
-    api=DiscourseAPI(base_url="https://discourse.ubuntu.com/"),
-    category_id=34,
-    index_topic_id=13611,
+    api=DiscourseAPI(base_url="https://discourse.maas.io/"),
+    category_id=16,
+    index_topic_id=1289,
     url_prefix=url_prefix,
 )
 tutorials_docs = DiscourseDocs(
