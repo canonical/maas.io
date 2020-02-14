@@ -26,8 +26,20 @@
       {% endif %}
     {% endfor %}
   </div>
+</section>
 
-  {% if total_pages > 1 %}
+<section class="p-strip--light is-bordered is-shallow">
+  <div class="row">
+    <div class="col-12">
+      <p class="p-heading--three">Want to understand the core concepts and get a high-level overview of MAAS and its architecture?</p>
+      <p class="u-no-margin--bottom"><a href="/how-it-works" aria-label="Link to the how it works page on maas dot i o">Read how it works&nbsp;&rsaquo;</a></p>
+    </div>
+  </div>
+</section>
+
+
+{% if total_pages > 1 %}
+<section class="p-strip">
   <div class="u-fixed-width">
     <ol class="p-pagination u-align--center">
       {% set current_page = page %}
@@ -110,7 +122,7 @@
       {% endif %}
     </ol>
   </div>
-  {% endif %}
 </section>
+{% endif %}
 
 {% endblock %}
