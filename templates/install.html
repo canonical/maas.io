@@ -35,7 +35,7 @@
                 <h3 class="p-stepped-list__title">
                   Install Ubuntu Server
                 </h3>
-                <p class="p-stepped-list__content"><a aria-label="External link to download Ubuntu Server 16.04 LTS" href="http://www.ubuntu.com/download/server" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download Ubuntu Server', 'eventAction' : 'Click', 'eventLabel' : 'Download Ubuntu Server 16.04 LTS' });" class="p-link--external">Download Ubuntu Server 18.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
+                <p class="p-stepped-list__content"><a aria-label="External link to download Ubuntu Server 18.04 LTS" href="http://www.ubuntu.com/download/server" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download Ubuntu Server', 'eventAction' : 'Click', 'eventLabel' : 'Download Ubuntu Server 18.04 LTS' });" class="p-link--external">Download Ubuntu Server 18.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
               </li>
               <li class="p-stepped-list__item">
                 <h3 class="p-stepped-list__title">
@@ -43,11 +43,7 @@
                 </h3>
                 <div class="p-stepped-list__content">
                   <div class="p-code-copyable">
-                      <input class="p-code-copyable__input" value="sudo apt update" readonly="readonly">
-                      <button class="p-code-copyable__action">Copy to clipboard</button>
-                  </div>
-                  <div class="p-code-copyable">
-                      <input class="p-code-copyable__input" value="sudo apt install maas" readonly="readonly">
+                      <input class="p-code-copyable__input" value="sudo snap install maas --channel=2.7" readonly="readonly">
                       <button class="p-code-copyable__action">Copy to clipboard</button>
                   </div>
                 </div>
@@ -123,7 +119,7 @@
                       <img src="https://assets.ubuntu.com/v1/d3fba4c1-Screenshot+2019-06-06+at+10.47.34.png?w=552" alt="MAAS node listing" class="p-image--bordered" />
                     </a>
                   </p>
-                  <p><a class="p-link--external" href="https://docs.maas.io/en/">Refer to the user manual to get a more detailed guide in how to get up and running with MAAS</a></p>
+                  <p><a class="p-link--external" href="/docs/configuration-journey">Refer to the user manual to get a more detailed guide in how to get up and running with MAAS</a></p>
                 </div>
               </li>
             </ol>
