@@ -36,15 +36,8 @@ WORKDIR /srv
 RUN apt-get update && apt-get install --no-install-recommends --yes python3 python3-lib2to3 python3-pkg-resources
 ENV PATH="/root/.local/bin:${PATH}"
 
-# Copy python dependencies:
-# - copy site-packages from python-dependencies for any python3 version into temp dir
-# - make sure site-packages folder exists locally for current python3 version
-# - move dependencies into site-packages folder
-# - copy binaries from python-dependencies
-COPY --from=python-dependencies /root/.local/lib/python3.*/site-packages /tmp/site-packages
-RUN mkdir -p `python3 -m site --user-site` && \
-    mv /tmp/site-packages/* `python3 -m site --user-site` && \
-    rmdir /tmp/site-packages
+# Copy python dependencies
+COPY --from=python-dependencies /root/.local/lib/python3.8/site-packages /root/.local/lib/python3.8/site-packages
 COPY --from=python-dependencies /root/.local/bin /root/.local/bin
 
 # Import code, build assets
