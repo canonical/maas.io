@@ -19,7 +19,7 @@
   "devDependencies": {
     "node-sass": "4.13.1",
     "sass-lint": "1.13.1",
-    "vanilla-framework": "2.6.0"
+    "vanilla-framework": "2.8.0"
   },
   "dependencies": {
     "@canonical/global-nav": "2.4.0"
