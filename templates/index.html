@@ -193,122 +193,120 @@
 </section>
 
 <section class="p-strip--light">
-    <div class="row">
+  <div class="row">
     <p class="p-muted-heading">A selection of customers</p>
+  </div>
+  <div class="row js-logo-strip">
+  </div>
+  <noscript>
+    <div class="row">
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/4c6fb640-logo-verizon.png" alt="verizon logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/252e2017-logo-ea.png" alt="ea logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/e7dd8cc4-logo-at%26t.png" alt="AT&amp;T logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/add4119e-logo-sandia.png" alt="SNL logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/afb5991e-logo-ubisoft.png" alt="ubisoft logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/ab9074df-logo-tele2.png" alt="tele2 logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/56c03384-logo-nec.png" alt="nec logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/822701bb-logo-tmobile.png" alt="tmobile logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/673fa219-logo-ntt.png" alt="ntt logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/022f6f41-logo-bt.png" alt="bt logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/a59ea622-logo-liberty-global.png" alt="liberty-global logo"></div>
+      <div class="col-small-1 col-medium-1 col-2"><img src="https://assets.ubuntu.com/v1/9bb88cf6-logo-barclays+copy.png" alt="barclays logo"></div>
     </div>
-    <div class="row js-logo-strip">
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/4c6fb640-logo-verizon.png",
-            alt="verizon logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/bf709df8-logo-db.png",
-            alt="db logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/22fe3811-logo-telefonica.png",
-            alt="telefonica logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/ab9074df-logo-tele2.png",
-            alt="tele2 logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/589418ac-logo-telecom-italia.png",
-            alt="telecom italia logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/56c03384-logo-nec.png",
-            alt="nec logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/d2b3609c-logo-scania.png",
-            alt="scania logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/c6f4a7ea-logo-radobank.png",
-            alt="radobank logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/d003393b-logo-telstra.png",
-            alt="telstra logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-      <div class="col-small-1 col-medium-1 col-2">
-        {{
-          image(
-            url="https://assets.ubuntu.com/v1/9bb88cf6-logo-barclays+copy.png",
-            alt="barclays logo",
-            width="157",
-            height="157",
-            hi_def=True,
-          ) | safe
-        }}
-      </div>
-    </div>
+  </noscript>
 </section>
+
+<script>
+function fragmentFromString(htmlString) {
+  var temp = document.createElement('template');
+  temp.innerHTML = htmlString;
+  return temp.content;
+}
+
+var logoStripOneData = {
+  r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+  r1c2: { url: "252e2017-logo-ea.png", altText: "ea logo" },
+  r1c3: { url: "e7dd8cc4-logo-at%26t.png", altText: "AT&T logo" },
+  r1c4: { url: "add4119e-logo-sandia.png", altText: "SNL logo" },
+  r1c5: { url: "afb5991e-logo-ubisoft.png", altText: "ubisoft logo" },
+  r1c6: { url: "ab9074df-logo-tele2.png", altText: "tele2 logo" },
+  r2c1: { url: "56c03384-logo-nec.png", altText: "nec logo" },
+  r2c2: { url: "822701bb-logo-tmobile.png", altText: "tmobile logo" },
+  r2c3: { url: "673fa219-logo-ntt.png", altText: "ntt logo" },
+  r2c4: { url: "022f6f41-logo-bt.png", altText: "bt logo" },
+  r2c5: { url: "a59ea622-logo-liberty-global.png", altText: "liberty-global logo" },
+  r2c6: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
+};
+
+var logoStripTwoData = {
+  r1c1: { url: "4c6fb640-logo-verizon.png", altText: "verizon logo" },
+  r1c2: { url: "bf709df8-logo-db.png", altText: "db logo" },
+  r1c3: { url: "22fe3811-logo-telefonica.png", altText: "telefonica logo" },
+  r1c4: { url: "01158ac3-logo-riot-games.png", altText: "riot games logo" },
+  r1c5: { url: "ab9074df-logo-tele2.png", altText: "tele2 logo" },
+  r1c6: { url: "589418ac-logo-telecom-italia.png", altText: "telecom italia logo" },
+  r2c1: { url: "56c03384-logo-nec.png", altText: "nec logo" },
+  r2c2: { url: "d2b3609c-logo-scania.png", altText: "scania logo" },
+  r2c3: { url: "c6f4a7ea-logo-radobank.png", altText: "radobank logo" },
+  r2c4: { url: "d003393b-logo-telstra.png", altText: "telstra logo" },
+  r2c5: { url: "9bb88cf6-logo-barclays+copy.png", altText: "barclays logo" }
+};
+
+var logoStripRevealingModule = (function() {
+  var target,
+      colClassesList;
+
+  target = document.querySelector('.js-logo-strip');
+
+  colClassesList = {
+    mobile: "col-small-1",
+    tablet: "col-medium-1",
+    desktop: "col-2"
+  };
+
+  function appendLogo(parent, logoDatum) {
+    var logoWrapper = document.createElement('div'),
+        logoImg = document.createElement('img');
+
+    for (var className in colClassesList) {
+      logoWrapper.classList.add(colClassesList[className]);
+    }
+
+    logoImg.setAttribute('src', 'https://assets.ubuntu.com/v1/' + logoDatum.url);
+    logoImg.setAttribute('alt', logoDatum.altText);
+    logoWrapper.appendChild(logoImg);
+    parent.appendChild(logoWrapper);
+  }
+
+  function publicCreate(logoStripData) {
+    var fragment = document.createDocumentFragment();
+
+    Object.keys(logoStripData).forEach(function (key, index) {
+      var logoDatum = logoStripData[key];
+      appendLogo(fragment, logoDatum);
+    });
+
+    target.appendChild(fragment);
+  }
+
+  return {
+    create: publicCreate
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+  var localStorage = window.localStorage,
+      showAlternateStrip = localStorage.getItem('showAlternateStrip');
+
+  if (showAlternateStrip === null) {
+    localStorage.setItem('showAlternateStrip', 'true');
+    logoStripRevealingModule.create(logoStripOneData);
+  } else {
+    localStorage.removeItem('showAlternateStrip');
+    logoStripRevealingModule.create(logoStripTwoData);
+  }
+});
+</script>
 
 <section class="p-strip">
   <div class="row">
