@@ -1,7 +1,7 @@
 /// homepage takeunders
 @mixin maas-p-takeunders {
   .p-takeunder {
-    border-radius: .125rem;
+    border-radius: 0.125rem;
     margin-right: -1 rem;
     padding: $sp-x-large;
 
@@ -10,7 +10,6 @@
     }
 
     &.is-dark {
-
       color: $color-x-light;
 
       a:link,
@@ -20,14 +19,12 @@
     }
 
     &.is-light {
-
       color: $color-dark;
 
       a:link,
       a:visited {
         color: $color-dark;
       }
-
     }
 
     & + & {

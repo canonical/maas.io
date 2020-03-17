@@ -11,14 +11,16 @@
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
     "test-python": "python3 -m unittest discover tests",
-    "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
+    "lint-scss": "stylelint static/**/*.scss",
     "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css"
   },
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
     "node-sass": "4.13.1",
-    "sass-lint": "1.13.1",
+    "stylelint": "13.2.1",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-order": "4.0.0",
     "vanilla-framework": "2.8.0"
   },
   "dependencies": {
