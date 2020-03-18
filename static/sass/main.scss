@@ -8,17 +8,17 @@ $increase-font-size-on-larger-screens: false;
 
 // patterns
 @import
-'patterns_strips',
-'patterns_hero-video',
-'patterns_lists',
-'patterns_modal',
-'patterns_takeunders',
-'patterns_tables',
-'patterns_contact-modal',
-'layout_docs',
-'patterns_sidenav',
-'hljs',
-'patterns_tutorials';
+  'patterns_strips',
+  'patterns_hero-video',
+  'patterns_lists',
+  'patterns_modal',
+  'patterns_takeunders',
+  'patterns_tables',
+  'patterns_contact-modal',
+  'layout_docs',
+  'patterns_sidenav',
+  'hljs',
+  'patterns_tutorials';
 
 // patterns
 @include maas-p-hero-video;
@@ -52,7 +52,7 @@ table + h2 {
   padding-top: 1.6rem;
 }
 
-.row.is-bordered::before   {
+.row.is-bordered::before {
   left: 0;
   margin-top: -5px;
   width: 100%;
@@ -74,7 +74,7 @@ table + h2 {
 }
 
 .p-heading-icon-block__copy-block {
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
 }
 
 .p-heading-icon-block__icon {

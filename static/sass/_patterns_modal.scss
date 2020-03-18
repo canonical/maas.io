@@ -1,6 +1,6 @@
 @mixin maas-p-modal {
-  $color-modal-overlay: rgba($color-x-dark, .85);
-  $color-modal-controls: rgba($color-x-dark, .2);
+  $color-modal-overlay: rgba($color-x-dark, 0.85);
+  $color-modal-controls: rgba($color-x-dark, 0.2);
 
   .venobox {
     width: auto;
@@ -22,6 +22,7 @@
           repeat: no-repeat;
           size: 50%;
         }
+
         bottom: 15px;
         box-shadow: 0 5px 10px 0 $color-modal-controls;
         content: '';
@@ -43,7 +44,8 @@
 
   // overlay: change here background color and opacity ----- */
   .vbox-overlay {
-    $color-modal-overlay: rgba($color-x-dark, .85);
+    $color-modal-overlay: rgba($color-x-dark, 0.85);
+
     background: $color-modal-overlay;
     bottom: 0;
     height: auto;
@@ -75,7 +77,7 @@
   }
 
   @keyframes playload {
-    from { background-position:    0; }
+    from { background-position: 0; }
     to { background-position: -576px; }
   }
 

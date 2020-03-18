@@ -98,8 +98,11 @@
     }
   }
 
-  .p-tutorial__feedback-options {
+  .p-tutorial__feedback-icon {
+    cursor: pointer;
+  }
 
+  .p-tutorial__feedback-options {
     .p-inline-list__item {
       .has-color {
         display: none;
@@ -115,9 +118,5 @@
         }
       }
     }
-  }
-
-  .p-tutorial__feedback-icon {
-    cursor: pointer;
   }
 }
