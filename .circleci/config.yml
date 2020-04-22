@@ -3,6 +3,8 @@ version: 2
 defaults: &defaults
   docker:
     - image: canonicalwebteam/dev
+      environment:
+        SECRET_KEY: local_development_fake_key
 
 jobs:
   test-site:
