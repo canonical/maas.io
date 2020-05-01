@@ -17,13 +17,13 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "node-sass": "4.13.1",
-    "stylelint": "13.2.1",
+    "node-sass": "4.14.0",
+    "stylelint": "13.3.3",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.0.0",
-    "vanilla-framework": "2.8.0"
+    "vanilla-framework": "2.10.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.4.0"
+    "@canonical/global-nav": "2.4.1"
   }
 }
