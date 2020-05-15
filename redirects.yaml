@@ -8,5 +8,35 @@ docs/(devel|2.6|stable|en|devel/en|stable/en|2.6/en)/(?P<path>.*): /docs/{path}
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/?: https://old-docs.maas.io/{version}/en/
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/(?P<path>.+): https://old-docs.maas.io/{version}/en/{path}
 
+legacy/images: http://images.maas.io
+legacy/docs/networking.html$: https://old-docs.maas.io/2.1/en/installconfig-networking
+legacy/docs/ha.html$: https://old-docs.maas.io/2.1/en/manage-ha
+legacy/docs/install.html: https://old-docs.maas.io/2.1/en/installconfig-install
+legacy/docs/rack-configuration.html: https://old-docs.maas.io/2.1/en/installconfig-rack
+legacy/docs2.1/development/security.html: https://old-docs.maas.io/2.1/en/installconfig-webui
+legacy/docs(2.1|2.0)/releases.html: https://launchpad.net/maas/+series
+legacy/docs(?P<version>2.1|2.0)/changelog.html: https://old-docs.maas.io/{version}/en/release-notes
+legacy/docs(?P<version>2.1|2.0)/api.html: https://old-docs.maas.io/{version}/en/api
+legacy/docs(?P<version>2.1|2.0)/api_authentication.html: https://old-docs.maas.io/{version}/en/api
+legacy/docs(?P<version>2.1|2.0)/maascli.html: https://old-docs.maas.io/{version}/en/manage-cli
+legacy/docs(?P<version>2.1|2.0)/version.html: https://old-docs.maas.io/{version}/en/manage-cli
+legacy/docs(?P<version>2.1|2.0)/getting-help.html: https://old-docs.maas.io/{version}/en/troubleshoot-getting-help
+legacy/docs(?P<version>2.1|2.0)/troubleshooting.html: https://old-docs.maas.io/{version}/en/troubleshoot-faq
+legacy/docs(?P<version>2.1|2.0)/man/maas-region.8.html: https://old-docs.maas.io/{version}/en/manage-cli
+legacy/docs(?P<version>2.1|2.0)/man/maas.8.html: https://old-docs.maas.io/{version}/en/manage-cli
+legacy/docs(?P<version>2.1|2.0)/development/philosophy.html: https://old-docs.maas.io/{version}/en/intro-concepts
+legacy/docs(?P<version>2.1|2.0)/hacking.html: https://old-docs.maas.io/{version}/en/troubleshoot-faq
+legacy/docs(?P<version>2.1|2.0)/models.html: https://old-docs.maas.io/{version}/en/intro-concepts
+legacy/docs(?P<version>2.1|2.0)/development/building-packages.html: https://old-docs.maas.io/{version}/en/installconfig-package-install
+legacy/docs(?P<version>2.1|2.0)/development/cluster-registration.html: https://old-docs.maas.io/{version}/en/installconfig-rack
+legacy/docs(?P<version>2.1|2.0)/development/cluster-bootstrap.html: https://old-docs.maas.io/{version}/en/installconfig-rack
+legacy/docs(?P<version>2.1|2.0)/development/tagging.html: https://old-docs.maas.io/{version}/en/manage-cli-tags
+legacy/docs(?P<version>2.1|2.0)/development/preseeds.html: https://old-docs.maas.io/{version}/en/installconfig-nodes-deploy
+legacy/docs(?P<version>2.1|2.0)/development/metadata.html: https://old-docs.maas.io/{version}/en/troubleshoot-faq#maas-datasource
+legacy/docs(?P<version>2.1|2.0)/development/rpc.html: https://old-docs.maas.io/{version}/en/installconfig-rack
+legacy/docs(?P<version>2.1|2.0)/development/notes/.*: https://old-docs.maas.io/{version}/en/troubleshoot-faq
+legacy/docs(?P<version>2.1|2.0)/genindex.html: https://old-docs.maas.io/{version}/en/
+legacy/docs(?P<version>2.1|2.0)/search.html: https://old-docs.maas.io/{version}/en/
+
 # Deprecation notices
 deprecations/MD1: https://discourse.maas.io/t/1415
