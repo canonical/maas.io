@@ -9,6 +9,7 @@ docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/?: https://old-docs.maas.io/
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/(?P<path>.+): https://old-docs.maas.io/{version}/en/{path}
 
 legacy/images: http://images.maas.io
+legacy/images/(?P<path>.*): http://images.maas.io/{path}
 legacy/docs/networking.html$: https://old-docs.maas.io/2.1/en/installconfig-networking
 legacy/docs/ha.html$: https://old-docs.maas.io/2.1/en/manage-ha
 legacy/docs/install.html: https://old-docs.maas.io/2.1/en/installconfig-install
