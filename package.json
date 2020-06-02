@@ -2,6 +2,7 @@
   "name": "ubuntu-maas",
   "description": "Static Django website blueprint",
   "scripts": {
+    "start": "yarn run build && yarn run serve",    
     "build": "yarn run build-css && yarn run build-js",
     "build-css": "node-sass --include-path node_modules static/sass --output static/css --output-style compressed",
     "build-js": "yarn run copy-3rd-party-js",
