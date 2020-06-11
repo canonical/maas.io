@@ -20,14 +20,14 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "node-sass": "4.14.0",
-    "stylelint": "13.3.3",
+    "node-sass": "4.14.1",
+    "stylelint": "13.6.0",
     "stylelint-config-standard": "20.0.0",
-    "stylelint-order": "4.0.0",
-    "vanilla-framework": "2.10.1"
+    "stylelint-order": "4.1.0",
+    "vanilla-framework": "2.12.1"
   },
   "dependencies": {
     "@canonical/global-nav": "2.4.1",
-    "@canonical/latest-news": "1.0.1"
+    "@canonical/latest-news": "1.0.3"
   }
 }
