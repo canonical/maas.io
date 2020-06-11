@@ -4,6 +4,7 @@ A Flask application for maas.io
 
 import flask
 import math
+import talisker.requests
 
 from canonicalwebteam.discourse_docs import (
     DiscourseDocs,
@@ -29,8 +30,12 @@ template_finder_view = TemplateFinder.as_view("template_finder")
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
+session = talisker.requests.get_session()
+docs_discourse_api = DiscourseAPI(
+    base_url="https://discourse.maas.io/", session=session
+)
 doc_parser = DocParser(
-    api=DiscourseAPI(base_url="https://discourse.maas.io/"),
+    api=docs_discourse_api,
     index_topic_id=25,
     category_id=5,
     url_prefix="/docs",
@@ -86,8 +91,11 @@ def api():
 
 
 url_prefix = "/tutorials"
+tutorials_discourse_api = DiscourseAPI(
+    base_url="https://discourse.maas.io/", session=session
+)
 tutorials_docs_parser = DocParser(
-    api=DiscourseAPI(base_url="https://discourse.maas.io/"),
+    api=tutorials_discourse_api,
     category_id=16,
     index_topic_id=1289,
     url_prefix=url_prefix,
