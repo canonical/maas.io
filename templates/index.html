@@ -5,16 +5,25 @@
 {% block meta_copydoc %}https://docs.google.com/document/d/1Gv3_A3vW2k7U-0B0KVSHkEnGwgtIlDl5P1jGMSc8sqI/edit{% endblock meta_copydoc %}
 
 {% block content %}
-
+<div class="p-strip is-shallow">
+  <div class="row">
+    <div>
+      <strong>We’ve released MAAS 2.8.</strong> This version supports LXD VM hosts, faster UI and many bug fixes. Find out <a href="/docs/release-notes">what&rsquo;s new in 2.8</a>.
+    </div>
+  </div>
+</div>
 <section class="p-takeover--dark">
   <div class="row">
     <div class="col-7">
       <h1>Very fast server provisioning for your data centre</h1>
       <p>Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data centre into a bare metal cloud.</p>
       <p>Welcome to metal-as-a-service.</p>
-      <p style="display: flex">
-        <a aria-label="Find out how to install MAAS" href="/install" class="p-button--positive" itemprop="url">Install MAAS</a>
-        <span style="position: relative; top: .4rem; margin-right: 1rem;">or</span>
+      <p style="display: flex;">
+        <a aria-label="Find out how to install MAAS" href="/contact-us" class="js-invoke-modal p-button--positive" itemprop="url">Move to MAAS today</a>
+        <span class="u-hide--small" style="position: relative; top: .4rem; margin-right: 1rem;">or</span>
+        <a class="u-hide--small" href="https://snapcraft.io/maas"><img src="https://assets.ubuntu.com/v1/24140745-snap-store-badge-light-en.svg" alt="Get MAAS from the Snap store" style="height: 37px" /></a>
+      </p>
+      <p class="u-hide u-show--small">
         <a href="https://snapcraft.io/maas"><img src="https://assets.ubuntu.com/v1/24140745-snap-store-badge-light-en.svg" alt="Get MAAS from the Snap store" style="height: 37px" /></a>
       </p>
     </div>
@@ -58,8 +67,6 @@
               <abbr title="Baseboard Management Controller">BMC</abbr> ops with
               <abbr title="Intelligent Platform Management Interface">IPMI</abbr>,
               <abbr title="Active Management Techonology">AMT</abbr> and other protocols.
-            </p>
-            <p>
               <abbr title="Preboot Execution Environment">PXE</abbr> over
               <abbr title="Internet Protocol version 4">IPv4</abbr> and
               <abbr title="Internet Protocol version 6">IPv6</abbr> networks.
@@ -75,8 +82,7 @@
             <a class="p-link--strong p-heading--five" href="/tour#fast-deployment" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about images' }); dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Fast deployment' });">Speed&nbsp;&rsaquo;</a>
           </h4>
           <div class="p-matrix__desc">
-            <p>Zero-touch deployment of Ubuntu, CentOS, Windows and RHEL.</p>
-            <p>Full deployment time is approximately two boot cycles plus two minutes for disk imaging.</p>
+            <p>Zero-touch deployment of Ubuntu, CentOS, Windows and RHEL. Full deployment time is approximately two boot cycles plus two minutes for disk imaging.</p>
           </div>
         </div>
       </li>
@@ -113,8 +119,8 @@
           </h4>
           <div class="p-matrix__desc">
             <p>Configure server network interfaces with bridges,
-              <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and addresses.</p>
-              <p>Integrated, best of breed, highly available, open source DHCP and DNS.</p>
+              <abbr title="Virtual Local Area Network">VLAN</abbr>s, bonds and addresses.
+              Integrated, best of breed, highly available, open source DHCP and DNS.</p>
           </div>
         </div>
       </li>
@@ -125,8 +131,7 @@
             <a class="p-link--strong p-heading--five" href="/tour#hardware-testing" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Hardware testing' });">Hardware testing&nbsp;&rsaquo;</a>
           </h4>
           <div class="p-matrix__desc">
-            <p>Run tests to get up to date information about hardware health.</p>
-            <p>Benchmark disk, RAM, CPU and network performance.</p>
+            <p>Run tests to get up to date information about hardware health. Benchmark disk, RAM, CPU and network performance.</p>
           </div>
         </div>
       </li>
@@ -134,11 +139,10 @@
         <img class="p-matrix__img" src="https://assets.ubuntu.com/v1/77288bc2-MAAS_icon_DevOps+Integration.svg" alt="DevOps icon" />
         <div class="p-matrix__content">
           <h4 class="p-matrix__title">
-            <span class="p-heading--five">DevOps on bare-metal</span>
+            <span class="p-heading--five">DevOps on bare metal</span>
           </h4>
           <div class="p-matrix__desc">
-            <p>Integration with Chef, Puppet, SALT, Ansible, Conjure-up, and <a class="p-link--external" href="https://jujucharms.com/">Juju</a>.</p>
-            <p>REST API, CLI and Python bindings enable full lifecycle and project automation.</p>
+            <p>Integration with Ansible, Chef, Puppet, SALT, and <a class="p-link--external" href="https://juju.is/">Juju</a>. REST API, CLI and Python bindings enable full lifecycle and project automation.</p>
           </div>
         </div>
       </li>
@@ -149,8 +153,7 @@
             <a class="p-link--strong p-heading--five" href="/tour#manage-network" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Feature', 'eventAction' : 'Click', 'eventLabel' : 'Network management' });">Network monitoring&nbsp;&rsaquo;</a>
           </h4>
           <div class="p-matrix__desc">
-            <p>Continuously observes network traffic and catalogs every active IP address of unknown origin.</p>
-            <p>Discovers rogue devices, IPs and MAC addresses. Drives active scanning of network ranges.</p>
+            <p>Continuously observes network traffic and catalogs every active IP address of unknown origin. Discovers rogue devices, IPs and MAC addresses. Drives active scanning of network ranges.</p>
           </div>
         </div>
       </li>
@@ -177,8 +180,7 @@
         <div class="p-matrix__content">
           <h4 class="p-matrix__title"><span class="p-heading--five">Cloud metadata</span></h4>
           <div class="p-matrix__desc">
-            <p>Reuse standard cloud operations with cloud-init and metadata services.</p>
-            <p>Hybrid multi-cloud operations now include bare metal, with no change in applications.</p>
+            <p>Reuse standard cloud operations with cloud-init and metadata services. Hybrid multi-cloud operations now include bare metal, with no change in applications.</p>
           </div>
         </div>
       </li>
