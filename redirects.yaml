@@ -8,6 +8,7 @@ docs/(devel|2.6|stable|en|devel/en|stable/en|2.6/en)/(?P<path>.*): /docs/{path}
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/?: https://old-docs.maas.io/{version}/en/
 docs/(?P<version>2.5|2.4|2.3|2.2|2.1|2.0|1.9)(/en)?/(?P<path>.+): https://old-docs.maas.io/{version}/en/{path}
 
+legacy: "/"
 legacy/images: http://images.maas.io
 legacy/images/(?P<path>.*): http://images.maas.io/{path}
 legacy/docs/networking.html$: https://old-docs.maas.io/2.1/en/installconfig-networking
