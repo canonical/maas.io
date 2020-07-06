@@ -68,3 +68,6 @@ bzr-repo/
 .DS_store
 
 .webcache
+
+.venv
+.dotrun.json
