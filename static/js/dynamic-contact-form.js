@@ -92,7 +92,7 @@
       };
 
       if (submitButton) {
-        closeModal.addEventListener('click', function (e) {
+        submitButton.addEventListener('click', function (e) {
           ga('send', 'event', 'interactive-forms', 'submitted', window.location.pathname);
         });
       }
