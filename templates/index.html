@@ -33,7 +33,7 @@
         <img src="https://assets.ubuntu.com/v1/b5aa999c-servers-illustration.png" alt="" class="u-no-margin--top">
       </a>
       <div class="p-hero-video__video-container u-embedded-media">
-        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="https://www.youtube.com/embed/eHfaiKlUYsM" frameborder="0" allowfullscreen=""></iframe>
+        <iframe class="p-hero-video__video u-embedded-media__element" width="640" height="480" src="" frameborder="0" allowfullscreen=""></iframe>
       </div>
     </div>
     <script>
@@ -43,7 +43,7 @@
         videoLink.addEventListener('click', function(e) {
           e.preventDefault();
           this.classList.add('is-playing');
-          video.src += '?autoplay=1';
+          video.src = 'https://www.youtube.com/embed/eHfaiKlUYsM?autoplay=1';
         });
       });
     </script>
