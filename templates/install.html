@@ -27,15 +27,22 @@
             <ol class="p-stepped-list--detailed">
               <li class="p-stepped-list__item">
                 <h3 class="p-stepped-list__title">
-                  Set up your hardware
+                  Setup your hardware
                 </h3>
-                <p class="p-stepped-list__content">You need one small server for MAAS and at least one server which can be managed with a <abbr title="Baseboard Management Controller">BMC</abbr>. It is recommended to have the MAAS server provide <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> and <abbr title="Domain Name Service">DNS</abbr> on a network the managed machines are connected to.</p>
+                <div class="p-stepped-list__content">
+                  <p>You need:</p>
+                  <ol>
+                    <li>One small server for MAAS</li>
+                    <li>At least one server which can be managed with a BMC</li>
+                  </ol>
+                  <p>It is recommended to have the MAAS server provide DHCP and DNS on a network that the managed machines are connected to.</p>
+                </div>
               </li>
               <li class="p-stepped-list__item">
                 <h3 class="p-stepped-list__title">
                   Install Ubuntu Server
                 </h3>
-                <p class="p-stepped-list__content"><a aria-label="External link to download Ubuntu Server 18.04 LTS" href="http://www.ubuntu.com/download/server" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download Ubuntu Server', 'eventAction' : 'Click', 'eventLabel' : 'Download Ubuntu Server 18.04 LTS' });" class="p-link--external">Download Ubuntu Server 18.04 LTS</a> and follow the step-by-step installation instructions on your MAAS server.</p>
+                <p class="p-stepped-list__content"><a aria-label="External link to download Ubuntu Server 20.04 LTS" href="https://www.ubuntu.com/download/server" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Download Ubuntu Server', 'eventAction' : 'Click', 'eventLabel' : 'Download Ubuntu Server 20.04 LTS' });" class="p-link--external">Download Ubuntu Server 20.04 LTS</a> by choosing the Manual install option and follow the step-by-step installation instructions on your MAAS server.</p>
               </li>
               <li class="p-stepped-list__item">
                 <h3 class="p-stepped-list__title">
@@ -53,7 +60,7 @@
                   Create admin user
                 </h3>
                 <div class="p-stepped-list__content">
-                  <p>Create your admin credentials by typing.</p>
+                  <p>Create your admin credentials.</p>
                   <div class="p-code-copyable">
                       <input class="p-code-copyable__input" value="sudo maas init" readonly="readonly">
                       <button class="p-code-copyable__action" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Completion', 'eventAction' : 'Click', 'eventLabel' : 'Install' });">Copy to clipboard</button>
