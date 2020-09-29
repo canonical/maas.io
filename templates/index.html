@@ -5,11 +5,10 @@
 {% block meta_copydoc %}https://docs.google.com/document/d/1Gv3_A3vW2k7U-0B0KVSHkEnGwgtIlDl5P1jGMSc8sqI/edit{% endblock meta_copydoc %}
 
 {% block content %}
-<div class="p-strip is-shallow">
+<div class="p-strip--light is-shallow">
   <div class="row">
     <div>
-      <strong>We’ve released MAAS 2.8.</strong> This version supports LXD VM hosts, faster UI and many bug fixes. Find out <a href="/docs/release-notes">what&rsquo;s new in 2.8</a>.
-    </div>
+      <strong>MAAS 2.8 has been released</strong>, supporting LXD VM hosts, faster UI and many bug fixes. Find out <a href="/docs/release-notes">what&rsquo;s new in 2.8</a>. </div>
   </div>
 </div>
 <section class="p-takeover--dark">
@@ -37,10 +36,10 @@
       </div>
     </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         var videoLink = document.querySelector('.p-hero-video__link');
         var video = document.querySelector('.p-hero-video__video');
-        videoLink.addEventListener('click', function(e) {
+        videoLink.addEventListener('click', function (e) {
           e.preventDefault();
           this.classList.add('is-playing');
           video.src = 'https://www.youtube.com/embed/eHfaiKlUYsM?autoplay=1';
@@ -51,7 +50,90 @@
 </section>
 
 <section class="p-strip">
+  <div class="u-fixed-width">
+    <div class="p-strip is-shallow u-no-padding--top">
+      <h2>Data centre automation</h2>
+      <h4>Your next rack is a bare metal cloud.<br>Metal-As-A-Service (MAAS) provisioning with Windows, ESXi, Linux.</h4>
+    </div>
+    <ul class="p-list is-split">
+      <li class="p-list__item is-ticked">Bare metal cloud with on-demand servers</li>
+      <li class="p-list__item is-ticked">Remote edge cluster operations</li>
+      <li class="p-list__item is-ticked">Infrastructure monitoring and discovery</li>
+      <li class="p-list__item is-ticked">Ansible, Chef, Puppet, SALT, Juju integration</li>
+      <li class="p-list__item is-ticked">Super fast install from scratch</li>
+      <li class="p-list__item is-ticked">VMWare ESXi, Windows, CentOS, RHEL, Ubuntu</li>
+      <li class="p-list__item is-ticked">Custom images with pre-installed apps</li>
+      <li class="p-list__item is-ticked">Disk and network configuration</li>
+      <li class="p-list__item is-ticked">API-driven DHCP, DNS, PXE, IPAM</li>
+      <li class="p-list__item is-ticked">REST API for provisioning</li>
+      <li class="p-list__item is-ticked">LDAP user authentication</li>
+      <li class="p-list__item is-ticked">Role-based access control (RBAC)</li>
+      <li class="p-list__item is-ticked">Hardware testing and commissioning</li>
+    </ul>
+    <ul class="row u-no-margin--bottom p-strip is-shallow">
+      <li class="col-2 col-medium-1 col-small-1">
+        <img src="https://assets.ubuntu.com/v1/59dc9048-verizon.png" alt="Verizon logo">
+      </li>
+      <li class="col-2 col-medium-1 col-small-1">
+        <img src="https://assets.ubuntu.com/v1/88730cec-Telefonica.png" alt="Telefonica logo">
+      </li>
+      <li class="col-2 col-medium-1 col-small-1">
+        <img src="https://assets.ubuntu.com/v1/b8f78004-Tele2.png" alt="Tele2 logo">
+      </li>
+      <li class="col-2 col-medium-1 col-small-1">
+        <img src="https://assets.ubuntu.com/v1/e0fec57a-Telecom+Italia.png" alt="Telecom Italia logo">
+      </li>
+      <li class="col-2 col-medium-1 col-small-1 col-start-small-2">
+        <img src="https://assets.ubuntu.com/v1/08a27e4a-NEC.png" alt="NEC logo">
+      </li>
+      <li class="col-2 col-medium-1 col-small-1 col-start-small-3">
+        <img src="https://assets.ubuntu.com/v1/d44c4c5e-Barclays.png" alt="Barclays logo">
+      </li>
+    </ul>
+    <hr>
+    <div class="u-align--right">
+      <ul class="p-inline-list">
+        <li class="p-inline-list__item">
+          <a class="p-button--base js-invoke-modal" href="/contact-us" onclick="dataLayer.push({
+                'event': 'GAEvent',
+                'eventAction': 'Click' ,
+                'eventCategory': 'Data centre automation',
+                'eventLabel' : 'Contact us'
+              });"> Contact us </a>
+        </li>
+        <li class="p-inline-list__item u-no-margin--right">
+          <a class="p-button--positive u-no-margin--right" href="/install">Install today</a>
+        </li>
+      </ul>
+    </div>
+</div>
+</section>
+
+<section class="p-strip--light">
   <div class="row">
+    <div class="col-6">
+      <h2>Deploy any OS image <br>on any hardware</h2>
+    </div>
+    <div class="col-6">
+      <h4> MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer.<br>You can deploy: </h4>
+    </div>
+  </div>
+  <div class="p-strip">
+    <div class="row">
+      <img src="https://assets.ubuntu.com/v1/269a4755-MAAS-diagram-grey.svg" alt="Deploy Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco">
+    </div>
+  </div>
+    <div class="row">
+    <ul class="p-list row">
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
+          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
+        </ul>
+    </div>
+</section>
+
+<section class="p-strip">
+  <div class="u-fixed-width">
     <h2>Key features</h2>
   </div>
   <div class="row">
@@ -162,7 +244,7 @@
         <div class="p-matrix__content">
           <h4 class="p-matrix__title"><span class="p-heading--five">Authentication and Identity</span></h4>
           <div class="p-matrix__desc">
-            <p>Integrate with LDAP, Active Directory or SAML for central identity management and single-sign-on across multiple MAAS regions.</p>
+            <p>Integrate with LDAP, Active Directory or SAML for central identity management and single-sign-on (SSO) across multiple MAAS regions.</p>
           </div>
         </div>
       </li>
@@ -319,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2>Real servers,<br>self-service</h2>
     </div>
     <div class="col-6">
-      <p>You run the data centre, but your customers decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
+      <p>You run the data centre, but your end users decide what they want to do with the hardware. They love the cloud experience, but it’s more efficient for you to own the hardware.</p>
       <p>MAAS provides super-fast self-service provisioning of Windows, Ubuntu, CentOS and ESXi.</p>
       <p>
         <a href="https://pages.ubuntu.com/eBook-MAAS.html?source=maas_page&medium=Banner&campaign=MAAS_ebook&_ga=2.22106171.1851959601.1510602087-405342743.1460033629" class="p-link--external" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External link', 'eventAction' : 'Click', 'eventLabel' : 'Learn more about server provisioning with MAAS' });">Learn more about server provisioning with MAAS</a>
@@ -346,27 +428,29 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<section class="p-strip">
-  <div class="row">
-    <h2>Real world MAAS</h2>
+<section class="p-strip--light">
+  <div class="u-fixed-width">
+    <h2>Real-world MAAS</h2>
   </div>
-  <div class="row">
-    <div class="col-4">
-      <div class="p-heading-icon-block">
-        <img class="p-heading-icon-block__icon" src="https://assets.ubuntu.com/v1/0ae9bd9c-MAAS-Real+world+icon-Flexibility.svg" style="padding: 1rem 1rem 1rem 0;" />
-        <div class="p-heading-icon-block__copy-block">
-          <h5 class="u-no-margin--bottom">Flexibility</h5>
-          <p class="p-muted-heading u-no-margin--bottom">Edge</p>
+  <div class="p-strip is-shallow">
+    <div class="row">
+      <div class="col-4">
+        <div class="p-heading-icon-block">
+          <img class="p-heading-icon-block__icon" src="https://assets.ubuntu.com/v1/0ae9bd9c-MAAS-Real+world+icon-Flexibility.svg" style="padding: 1rem 1rem 1rem 0;" />
+          <div class="p-heading-icon-block__copy-block">
+            <h5 class="u-no-margin--bottom">Flexibility</h5>
+            <p class="p-muted-heading u-no-margin--bottom">Edge</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-4">
-      <h4><a href="https://ubuntu.com/blog/maas-2-5-growing-the-ecosystem-and-support-for-kvm-micro-clouds">MAAS KVM for micro-clouds and edge computing</a></h4>
-      <p>Blog post</p>
-    </div>
-    <div class="col-4">
-      <h4><a href="https://www.brighttalk.com/webcast/6793/362201/maas-at-the-edge-the-importance-of-bare-metal-provisioning-in-edge-computing">The importance of bare metal provisioning in edge computing</a></h4>
-      <p>Webinar</p>
+      <div class="col-4">
+        <h4><a class="p-link--external" href="https://ubuntu.com/blog/maas-2-5-growing-the-ecosystem-and-support-for-kvm-micro-clouds">MAAS KVM for micro-clouds and edge computing</a></h4>
+        <p>Blog post</p>
+      </div>
+      <div class="col-4">
+        <h4><a class="p-link--external" href="https://www.brighttalk.com/webcast/6793/362201/maas-at-the-edge-the-importance-of-bare-metal-provisioning-in-edge-computing">The importance of bare metal provisioning in edge computing</a></h4>
+        <p>Webinar</p>
+      </div>
     </div>
   </div>
   <div class="row" style="overflow:hidden;">
@@ -407,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<section class="p-strip--light">
+<section class="p-strip">
   <div class="row">
     <div class="col-6">
       <h2>Storage</h2>
@@ -426,12 +510,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </div>
 </section>
-
-<div class="p-strip--light u-no-padding--top u-no-padding--bottom">
-  <div class="row">
-    <hr class="u-no-margin--bottom" />
-  </div>
-</div>
 
 <div class="p-strip--light">
   <div class="row">
@@ -461,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <br class="u-hide--medium u-hide--large" />
     </div>
     <div class="col-2 u-vertically-center">
-      <a class="p-button--positive p-link--external u-no-margin--bottom" href="https://docs.maas.io">Get Started</a>
+      <a class="p-button--positive u-no-margin--bottom" href="/how-it-works">How it works</a>
     </div>
   </div>
 </section>
@@ -488,13 +566,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <section class="p-strip p-strip--light">
-  <div class="row">
+  <div class="row p-strip is-shallow u-no-padding--top">
     <h2>Tackle your provisioning problems with MAAS</h2>
   </div>
   <div class="row">
-    <hr />
-  </div>
-  <div class="row">
+    <hr>
     <div class="col-4">
       <h3 class="p-heading--four u-no-margin--top u-no-padding--top">Automated operations</h3>
     </div>
@@ -538,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <h4 class="p-heading--five">Automated repurposing</h4>
         </div>
         <div class="col-6">
-          <p>MAAS helps you run different workloads at different times, using the same or different base operatings systems, at both large and small scales.</p>
+          <p>MAAS helps you run different workloads at different times, using the same or different base operating systems, at both large and small scales.</p>
         </div>
       </div>
       <div class="row is-bordered">
@@ -587,29 +663,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<section class="p-strip--accent">
-  <div class="row">
-    <div class="col-6">
-      <h2>Deploy any OS image <br>on any hardware</h2>
-    </div>
-    <div class="col-6">
-      <p class="p-heading--four">MAAS delivers the fastest OS installation times in the industry thanks to its optimised image-based installer.</p>
-    </div>
-  </div>
-  <div class="p-strip">
-    <div class="row">
-      <img src="https://assets.ubuntu.com/v1/88da7e22-any+os+on+any+hardware+-+esxi.png" alt="Ubuntu, Redhat, CentOS, Windows on IBM, HP, Lenovo, Quanta Cloud Technology, Dell, Open Compute Project, Huawei, Cisco" />
-    </div>
-  </div>
-    <div class="row">
-    <ul class="p-list row">
-          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Works on all certified servers from any major vendor</li>
-          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Discovers servers in racks, chassis and data centre networks</li>
-          <li class="p-list__item is-ticked is-large col-4 p-heading--five u-no-margin--top">Supports major system BMCs and chassis controllers</li>
-        </ul>
-    </div>
-</section>
-
 <section class="p-strip u-no-padding--bottom">
   <div class="row">
     <div class="col-6">
@@ -633,13 +686,6 @@ document.addEventListener('DOMContentLoaded', function () {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Per managed machine - monthly</td>
-              <td>$0</td>
-              <td>$3</td>
-              <td>$5</td>
-              <td>$10</td>
-            </tr>
             <tr>
               <td>Per managed machine - annual</td>
               <td>&ndash;</td>
@@ -698,12 +744,12 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<section class="p-strip--light is-bordered">
+<section class="p-strip--light">
   <div class="row">
     <div class="col-12">
-      <h2 class="p-link--external p-muted-heading">
+      <h3 class="p-link--external p-muted-heading">
         <a class="p-link--soft" aria-label="External link to find more MAAS news from the Ubuntu blog" href="https://ubuntu.com/blog/topics/maas">The latest MAAS news</a>
-      </h2>
+      </h3>
       <div id="latest-articles" class="row">
         <div style="min-height: 9.1rem"><i class="p-icon--spinner u-animation--spin">Loading...</i></div>
       </div>
