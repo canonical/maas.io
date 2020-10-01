@@ -4,4 +4,4 @@ canonicalwebteam.http==1.0.3
 canonicalwebteam.templatefinder==1.0.0
 canonicalwebteam.search==0.2.1
 canonicalwebteam.image-template==1.1.0
-feedparser==5.2.1
+feedparser==6.0.1
