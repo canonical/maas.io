@@ -24,10 +24,10 @@
     "stylelint": "13.7.2",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
-    "vanilla-framework": "2.12.1"
+    "vanilla-framework": "2.19.1"
   },
   "dependencies": {
-    "@canonical/global-nav": "2.4.1",
-    "@canonical/latest-news": "1.0.3"
+    "@canonical/global-nav": "2.4.3",
+    "@canonical/latest-news": "1.0.4"
   }
 }
