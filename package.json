@@ -21,7 +21,7 @@
   "license": "LGPL v3",
   "devDependencies": {
     "node-sass": "4.14.1",
-    "stylelint": "13.6.0",
+    "stylelint": "13.7.2",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
     "vanilla-framework": "2.12.1"
