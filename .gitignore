@@ -71,3 +71,6 @@ bzr-repo/
 
 .venv
 .dotrun.json
+
+# JS modules copied from node_modules
+static/js/modules/*
