@@ -191,17 +191,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@canonical/global-nav@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.1.tgz#c30c2c8e6e1b81a037ee9ff566f5ef7c07803435"
-  integrity sha512-NLtlv8ODbPrGK14FaBoFj2Hmr9EKfwnvcwu6kHatel+osDs1IIL6TwhEwqWeufEGdfPQdCAFhS7oX24gdBGVwA==
+"@canonical/global-nav@2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.3.tgz#9d552bad1968537c4b952747b27d5d3db21cf327"
+  integrity sha512-8ttxoViIlE16dKBIcuVsvBF2GhsJbC/c7fxLf93EXmn5DKoUYf+rjyhXvEDaRGCtTAnS4finwBwMMo7nQFOSEA==
   dependencies:
-    vanilla-framework "2.8.0"
+    vanilla-framework "2.13.0"
 
-"@canonical/latest-news@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-1.0.3.tgz#afa0d05604d2078a38eae7929dac2e41bf219d2a"
-  integrity sha512-zGYOskwnTkHe3H7n3HhhLLtwi8ufqkgfgQvpS5I4KQZ9hjn7J4X9lQtDArlWvb/TlD3m2+2JykRacFaRUeZeKw==
+"@canonical/latest-news@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-1.0.4.tgz#08ffda58e0f9edd1dc2dd075b64973842c7b7537"
+  integrity sha512-9V9vz46udbDKSp81mwsmZmpe2olEtv4TVDLdKyH1lpsDAZBzPbGd2laFx/EOkWL/Ky6PJMgI38IM0hEFrelOAw==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -2847,15 +2847,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@2.12.1:
-  version "2.12.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.12.1.tgz#45a5265acd5cac55089322aaa1d03bd2da2334dd"
-  integrity sha512-y6O3EODqpTDp5DZG2pGP3HjMbGOOeslu4jCDRhfWtzI9znxG3D8eSlIPjjxkgTsxALup5mMuScmS9RWlbdF7cA==
+vanilla-framework@2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.13.0.tgz#ac73e745150bcef183eb35e3ee47f3fd079ddd3e"
+  integrity sha512-EuxlGxO4SmCGL4GVzcye5aas2HGVqRhPxlTHg84Lfw1e1E4F/Coxs78i3xxkPGw3LOcfea0KU096ar1PnLNuXQ==
 
-vanilla-framework@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.8.0.tgz#ec20ed3bf4fc2f1ce2d42075edb7a58c26f56982"
-  integrity sha512-fIxO7/BtCmj7aMAFCxxk19fqRB9HVZBv1typ7YL4AEiJhq8Za3qDCLuxjiSP0tFvKzXUtrI7y4KGHYMrFIevKg==
+vanilla-framework@2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.19.1.tgz#f071deed5504a5fe2104d6d9b087ce654e190881"
+  integrity sha512-y79SKAwertvgHVAf1PbGxiq6QvVxNI78txilSgESx80HUWBrooT1nXCDUuHC/ySGEq+JUpmVIv0PrmXXilYWdg==
 
 verror@1.10.0:
   version "1.10.0"
