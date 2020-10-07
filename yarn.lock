@@ -191,6 +191,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@canonical/cookie-policy@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.4.tgz#c2d6d990dc0993344a9bf5c244374e3f51fe34f1"
+  integrity sha512-pI65cRFh9xU2xo3d9R8ifGbQoH72tk3p8xh/4ANuj9kREeh9G/gcim/iHQS7IffSocHT9l6ZtUXBcQ12m/CBMw==
+
 "@canonical/global-nav@2.4.3":
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.3.tgz#9d552bad1968537c4b952747b27d5d3db21cf327"

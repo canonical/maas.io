@@ -6,6 +6,9 @@ $increase-font-size-on-larger-screens: false;
 // import vanilla-brochure-theme
 @import 'vanilla-framework/scss/build';
 
+// import cookie policy
+@import "@canonical/cookie-policy/build/css/cookie-policy";
+
 // patterns
 @import
   'patterns_strips',

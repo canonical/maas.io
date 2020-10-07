@@ -59,6 +59,9 @@
           <a href="https://www.ubuntu.com/legal"><small>Legal information</small></a>
         </li>
         <li class="p-inline-list__item">
+          <a class="p-footer__link js-revoke-cookie-manager" href=""><small>Manage your tracker settings</small></a>
+        </li>
+        <li class="p-inline-list__item">
           <a href="https://github.com/canonical-web-and-design/maas.io/issues/new/"><small>Report a bug on this site</small></a>
         </li>
       </ul>
@@ -68,9 +71,12 @@
 </footer>
 
 <script src="/static/js/modules/global-nav/global-nav.js"></script>
+<script src="/static/js/modules/cookie-policy/cookie-policy.js"></script>
 <script>
   canonicalGlobalNav.createNav({
     maxWidth: '72rem',
     hiring: 'https://canonical.com/careers/2313885',
   });
+
+  cpNs.cookiePolicy();
 </script>
