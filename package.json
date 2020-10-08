@@ -2,12 +2,13 @@
   "name": "ubuntu-maas",
   "description": "Static Django website blueprint",
   "scripts": {
-    "start": "yarn run build && yarn run serve",    
+    "start": "yarn run build && yarn run serve",
     "build": "yarn run build-css && yarn run build-js",
     "build-css": "node-sass --include-path node_modules static/sass --output static/css --output-style compressed",
     "build-js": "yarn run copy-3rd-party-js",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
-    "copy-3rd-party-js": "yarn run copy-global-nav && yarn run copy-latest-news",
+    "copy-3rd-party-js": "yarn run copy-global-nav && yarn run copy-latest-news && yarn run copy-cookie-policy",
+    "copy-cookie-policy": "mkdir -p static/js/modules/cookie-policy && cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/modules/cookie-policy",
     "copy-global-nav": "mkdir -p static/js/modules/global-nav && cp node_modules/@canonical/global-nav/dist/global-nav.js static/js/modules/global-nav",
     "copy-latest-news": "mkdir -p static/js/modules/latest-news && cp node_modules/@canonical/latest-news/dist/latest-news.js static/js/modules/latest-news",
     "lint-python": "flake8 --exclude '*env*,node_modules' && black --line-length 79 --check --exclude '(node_modules/.*|[^/]*env[0-9]?/.*)' .",
@@ -27,6 +28,7 @@
     "vanilla-framework": "2.19.1"
   },
   "dependencies": {
+    "@canonical/cookie-policy": "3.0.4",
     "@canonical/global-nav": "2.4.3",
     "@canonical/latest-news": "1.0.4"
   }
