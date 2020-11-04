@@ -1,4 +1,5 @@
-get-started: "/install"
+get-started: "/docs/installation"
+install: "/docs/installation"
 index(.html)?: "/"
 (?P<path>.+)/index(.html)?: "{path}"
 
