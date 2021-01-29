@@ -1425,11 +1425,11 @@
 <p>This functionality is only available to administrators.</p>
 <p>This endpoint has been deprecated in favor of the node-script endpoint.</p>
 </blockquote>
-<h4 id="delete-maasapi2.0commissioning-scriptsname"><code>DELETE /MAAS/api/2.0/commissioning-scripts/{name}</code></h4>
+<p><code>DELETE /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
 <p>Delete a commissioning script.</p>
-<h4 id="get-maasapi2.0commissioning-scriptsname"><code>GET /MAAS/api/2.0/commissioning-scripts/{name}</code></h4>
+<p><code>GET /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
 <p>Read a commissioning script.</p>
-<h4 id="put-maasapi2.0commissioning-scriptsname"><code>PUT /MAAS/api/2.0/commissioning-scripts/{name}</code></h4>
+<p><code>PUT /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
 <p>Update a commissioning script.</p>
 <h3 id="commissioning-scripts">Commissioning scripts</h3>
 <p>Manage custom commissioning scripts.</p>
@@ -1437,9 +1437,9 @@
 <p>This functionality is only available to administrators.</p>
 <p>This endpoint has been deprecated in favor of the node-scripts endpoint.</p>
 </blockquote>
-<h4 id="get-maasapi2.0commissioning-scripts"><code>GET /MAAS/api/2.0/commissioning-scripts/</code></h4>
+<p><code>GET /MAAS/api/2.0/commissioning-scripts/</code></p>
 <p>List commissioning scripts.</p>
-<h4 id="post-maasapi2.0commissioning-scripts"><code>POST /MAAS/api/2.0/commissioning-scripts/</code></h4>
+<p><code>POST /MAAS/api/2.0/commissioning-scripts/</code></p>
 <p>Create a new commissioning script.</p>
 <p>Each commissioning script is identified by a unique name.</p>
 <p>By convention the name should consist of a two-digit number, a dash, and a brief descriptive identifier consisting only of ASCII characters. You don't need to follow this convention, but not doing so opens you up to risks w.r.t. encoding and ordering. The name must not contain any whitespace, quotes, or apostrophes.</p>
@@ -20499,21 +20499,21 @@
 <blockquote>
 <p>This endpoint is deprecated. Use the new 'subnet' endpoint instead.</p>
 </blockquote>
-<h4 id="delete-maasapi2.0networksname"><code>DELETE /MAAS/api/2.0/networks/{name}/</code></h4>
+<p><code>DELETE /MAAS/api/2.0/networks/{name}/</code></p>
 <p>Delete network definition.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<h4 id="get-maasapi2.0networksname"><code>GET /MAAS/api/2.0/networks/{name}/</code></h4>
+<p><code>GET /MAAS/api/2.0/networks/{name}/</code></p>
 <p>Read network definition.</p>
-<h4 id="get-maasapi2.0networksname-oplist_connected_macs"><code>GET /MAAS/api/2.0/networks/{name}/ op=list_connected_macs</code></h4>
+<p><code>GET /MAAS/api/2.0/networks/{name}/ op=list_connected_macs</code></p>
 <p>Returns the list of MAC addresses connected to this network.</p>
 <p>Only MAC addresses for nodes visible to the requesting user are returned.</p>
-<h4 id="post-maasapi2.0networksname-opconnect_macs"><code>POST /MAAS/api/2.0/networks/{name}/ op=connect_macs</code></h4>
+<p><code>POST /MAAS/api/2.0/networks/{name}/ op=connect_macs</code></p>
 <p>Connect the given MAC addresses to this network.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<h4 id="post-maasapi2.0networksname-opdisconnect_macs"><code>POST /MAAS/api/2.0/networks/{name}/ op=disconnect_macs</code></h4>
+<p><code>POST /MAAS/api/2.0/networks/{name}/ op=disconnect_macs</code></p>
 <p>Disconnect the given MAC addresses from this network.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<h4 id="put-maasapi2.0networksname"><code>PUT /MAAS/api/2.0/networks/{name}/</code></h4>
+<p><code>PUT /MAAS/api/2.0/networks/{name}/</code></p>
 <p>Update network definition.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
 <dl>
@@ -20538,14 +20538,14 @@
 <blockquote>
 <p>This endpoint is deprecated. Use the new 'subnets' endpoint instead.</p>
 </blockquote>
-<h4 id="get-maasapi2.0networks"><code>GET /MAAS/api/2.0/networks/</code></h4>
+<p><code>GET /MAAS/api/2.0/networks/</code></p>
 <p>List networks.</p>
 <dl>
 <dt>param node</dt>
 <dd><p>Optionally, nodes which must be attached to any returned networks. If more than one node is given, the result will be restricted to networks that these nodes have in common.</p>
 </dd>
 </dl>
-<h4 id="post-maasapi2.0networks"><code>POST /MAAS/api/2.0/networks/</code></h4>
+<p><code>POST /MAAS/api/2.0/networks/</code></p>
 <p>Define a network.</p>
 <p>This endpoint is no longer available. Use the 'subnets' endpoint instead.</p>
 <h3 id="node">Node</h3>
@@ -24945,7 +24945,7 @@
 <pre><code>This method is reserved for admin users.</code></pre>
 <p>&nbsp;</p>
 </details>
-<h4 id="get-maasapi2.0podsid"><code>GET /MAAS/api/2.0/pods/{id}/</code></h4>
+<p><code>GET /MAAS/api/2.0/pods/{id}/</code></p>
 <details>
 <summary><code>GET /MAAS/api/2.0/pods/{id}/?op=parameters</code></summary>
 <p>This returns a pod's configuration parameters. For some types of pod, this will include private information such as passwords and secret keys.</p>
@@ -34817,22 +34817,6 @@
 }</code></pre>
 <p>&nbsp;</p>
 </details>
-<h3 id="virtual-machine">Virtual Machine</h3>
-<p>Manage individual virtual machines.</p>
-<blockquote>
-<p>A virtual machine is identified by its id.</p>
-</blockquote>
-<h4 id="get-maasapi2.0virtual-machinesid"><code>GET /MAAS/api/2.0/virtual-machines/{id}</code></h4>
-<p>GET request. Return a single model instance.</p>
-<h3 id="virtual-machines">Virtual Machines</h3>
-<p>Manage a collection of virtual machines.</p>
-<blockquote>
-<p>A virtual machine is identified by its id.</p>
-</blockquote>
-<h4 id="get-maasapi2.0virtual-machines"><code>GET /MAAS/api/2.0/virtual-machines/</code></h4>
-<p>GET request. List all model instances ordered by name.</p>
-<h4 id="post-maasapi2.0virtual-machines"><code>POST /MAAS/api/2.0/virtual-machines/</code></h4>
-<p>POST request. Create a new instance of the model.</p>
 <h3 id="vlan">VLAN</h3>
 <p>Manage a VLAN on a fabric.</p>
 <details>
@@ -35021,7 +35005,7 @@
 <pre><code>This method is reserved for admin users.</code></pre>
 <p>&nbsp;</p>
 </details>
-<h4 id="get-maasapi2.0podsid-1"><code>GET /MAAS/api/2.0/pods/{id}/</code></h4>
+<p><code>GET /MAAS/api/2.0/pods/{id}/</code></p>
 <details>
 <summary><code>GET /MAAS/api/2.0/pods/{id}/?op=parameters</code></summary>
 <p>This returns a pod's configuration parameters. For some types of pod, this will include private information such as passwords and secret keys.</p>
