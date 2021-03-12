@@ -1,28 +1,21 @@
 """
 A Flask application for maas.io
 """
+from datetime import timedelta
 
 import flask
-import math
-
-import talisker.requests
-from datetime import timedelta
 from requests_cache import CachedSession
+import talisker.requests
 
-from canonicalwebteam.discourse_docs import (
-    DiscourseDocs,
-    DocParser,
-    DiscourseAPI,
-)
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
-from canonicalwebteam.search import build_search_view
 from canonicalwebteam import image_template
-from webapp.blog.views import init_blog
 
+from webapp.blog.views import init_blog
 from webapp.feeds import get_rss_feed
-from webapp.doc_parser import FastDocParser
 from webapp.openapi_parser import parse_openapi, read_yaml_from_url
+from webapp.views.docs import init_docs
+from webapp.views.tutorials import init_tutorials
 
 from http.client import responses
 
@@ -37,7 +30,6 @@ template_finder_view = TemplateFinder.as_view("template_finder")
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
-session = talisker.requests.get_session()
 docs_session = CachedSession(
     "docs_cache",
     backend="sqlite",
@@ -48,43 +40,8 @@ docs_session = CachedSession(
     match_headers=False,
     stale_if_error=True,
 )
-openapi_session = CachedSession(
-    "openapi_cache",
-    backend="sqlite",
-    cache_control=False,
-    expire_after=timedelta(days=1),
-    allowable_methods=["GET"],
-    allowable_codes=[200, 404, 302, 301],
-    match_headers=False,
-    stale_if_error=True,
-)
-
-docs_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=docs_session
-)
-doc_parser = FastDocParser(
-    api=docs_discourse_api,
-    index_topic_id=25,
-    url_prefix="/docs",
-)
-if app.debug:
-    doc_parser.api.session.adapters["https://"].timeout = 99
-discourse_docs = DiscourseDocs(
-    parser=doc_parser,
-    document_template="docs/document.html",
-    url_prefix="/docs",
-)
-discourse_docs.init_app(app)
-
-
-# Search
-app.add_url_rule(
-    "/docs/search",
-    "docs-search",
-    build_search_view(
-        session=session, site="maas.io/docs", template_path="docs/search.html"
-    ),
-)
+# talisker-ify the cached session, for metrics, logs etc.
+talisker.requests.configure(docs_session)
 
 
 @app.errorhandler(429)
@@ -107,12 +64,29 @@ def internal_error(error):
 
 @app.context_processor
 def context():
-    return dict(get_rss_feed=get_rss_feed)
+    return {"get_rss_feed": get_rss_feed}
 
 
 @app.context_processor
 def utility_processor():
     return {"image": image_template}
+
+
+openapi_session = CachedSession(
+    "openapi_cache",
+    backend="sqlite",
+    cache_control=False,
+    expire_after=timedelta(days=1),
+    allowable_methods=["GET"],
+    allowable_codes=[200, 404, 302, 301],
+    match_headers=False,
+    stale_if_error=True,
+)
+
+# talisker-ify the cached session, for metrics, logs etc.
+talisker.requests.configure(openapi_session)
+
+docs = init_docs(app, "/docs", session=docs_session)
 
 
 @app.route("/docs/api")
@@ -127,76 +101,17 @@ def api():
         "https://raw.githubusercontent.com"
         "/maas/maas-openapi-yaml/main/openapi2.yaml"
     )
-    definition = read_yaml_from_url(definition_url, openapi_session)
+    definition = read_yaml_from_url(definition_url, session=openapi_session)
     openapi = parse_openapi(definition)
 
-    doc_parser.parse()
+    docs.parser.parse()
     return flask.render_template(
         "docs/api.html",
-        navigation=doc_parser.navigation,
+        navigation=docs.parser.navigation,
         openapi=openapi,
         responses=responses,
     )
 
 
-url_prefix = "/tutorials"
-tutorials_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=session
-)
-tutorials_docs_parser = DocParser(
-    api=tutorials_discourse_api,
-    category_id=16,
-    index_topic_id=1289,
-    url_prefix=url_prefix,
-)
-tutorials_docs = DiscourseDocs(
-    parser=tutorials_docs_parser,
-    document_template="/tutorials/tutorial.html",
-    url_prefix=url_prefix,
-    blueprint_name="tutorials",
-)
-
-
-@app.route(url_prefix)
-def index():
-    page = flask.request.args.get("page", default=1, type=int)
-    topic = flask.request.args.get("topic", default=None, type=str)
-    sort = flask.request.args.get("sort", default=None, type=str)
-    posts_per_page = 15
-    tutorials_docs.parser.parse()
-    if not topic:
-        metadata = tutorials_docs.parser.metadata
-    else:
-        metadata = [
-            doc
-            for doc in tutorials_docs.parser.metadata
-            if topic in doc["categories"]
-        ]
-
-    if sort == "difficulty-desc":
-        metadata = sorted(
-            metadata, key=lambda k: k["difficulty"], reverse=True
-        )
-
-    if sort == "difficulty-asc" or not sort:
-        metadata = sorted(
-            metadata, key=lambda k: k["difficulty"], reverse=False
-        )
-
-    total_pages = math.ceil(len(metadata) / posts_per_page)
-
-    return flask.render_template(
-        "tutorials/index.html",
-        navigation=tutorials_docs.parser.navigation,
-        forum_url=tutorials_docs.parser.api.base_url,
-        metadata=metadata,
-        page=page,
-        topic=topic,
-        sort=sort,
-        posts_per_page=posts_per_page,
-        total_pages=total_pages,
-    )
-
-
-tutorials_docs.init_app(app)
 init_blog(app, "/blog")
+init_tutorials(app, "/tutorials", session=docs_session)
