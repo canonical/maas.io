@@ -11,6 +11,16 @@ env:
       key: google-custom-search-key
       name: google-api
 
+  - name: DISCOURSE_API_KEY
+    secretKeyRef:
+      key: maas-api-key
+      name: discourse-api
+
+  - name: DISCOURSE_API_USERNAME
+    secretKeyRef:
+      key: maas-api-username
+      name: discourse-api
+
 extraHosts:
   - domain: docs.maas.io
   - domain: maas.ubuntu.com

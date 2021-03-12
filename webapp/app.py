@@ -1,15 +1,18 @@
 """
 A Flask application for maas.io
 """
+from os import getenv
 
 import flask
 import math
 import talisker.requests
 
-from canonicalwebteam.discourse_docs import (
-    DiscourseDocs,
-    DocParser,
+from canonicalwebteam.discourse import (
     DiscourseAPI,
+    DocParser,
+    Docs,
+    Tutorials,
+    TutorialParser,
 )
 from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
@@ -18,6 +21,8 @@ from canonicalwebteam import image_template
 
 from webapp.feeds import get_rss_feed
 
+DISCOURSE_API_KEY = getenv("DISCOURSE_API_KEY")
+DISCOURSE_API_USERNAME = getenv("DISCOURSE_API_USERNAME")
 
 app = FlaskBase(
     __name__,
@@ -29,34 +34,6 @@ app = FlaskBase(
 template_finder_view = TemplateFinder.as_view("template_finder")
 app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
-
-session = talisker.requests.get_session()
-docs_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=session
-)
-doc_parser = DocParser(
-    api=docs_discourse_api,
-    index_topic_id=25,
-    url_prefix="/docs",
-)
-if app.debug:
-    doc_parser.api.session.adapters["https://"].timeout = 99
-discourse_docs = DiscourseDocs(
-    parser=doc_parser,
-    document_template="docs/document.html",
-    url_prefix="/docs",
-)
-discourse_docs.init_app(app)
-
-
-# Search
-app.add_url_rule(
-    "/docs/search",
-    "docs-search",
-    build_search_view(
-        session=session, site="maas.io/docs", template_path="docs/search.html"
-    ),
-)
 
 
 @app.errorhandler(404)
@@ -79,69 +56,88 @@ def utility_processor():
     return {"image": image_template}
 
 
-@app.route("/docs/api")
-def api():
-    """
-    Show the static api page
-    """
+session = talisker.requests.get_session()
 
-    doc_parser.parse()
-    return flask.render_template(
-        "docs/api.html", navigation=doc_parser.navigation
-    )
-
-
-url_prefix = "/tutorials"
-tutorials_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=session
+# Discourse docs and tutorials
+discourse_api = DiscourseAPI(
+    base_url="https://discourse.maas.io",
+    session=session,
+    api_key=DISCOURSE_API_KEY,
+    api_username=DISCOURSE_API_USERNAME,
+    get_topics_query_id=2,
 )
-tutorials_docs_parser = DocParser(
-    api=tutorials_discourse_api,
-    category_id=16,
-    index_topic_id=1289,
-    url_prefix=url_prefix,
+
+tutorials_url_prefix = "/tutorials"
+tutorials_index_topic_id = 1289
+
+Docs(
+    parser=DocParser(
+        api=discourse_api,
+        index_topic_id=4315,
+        url_prefix="/docs",
+        tutorials_index_topic_id=tutorials_index_topic_id,
+        tutorials_url_prefix=tutorials_url_prefix,
+    ),
+    document_template="docs/document.html",
+    url_prefix="/docs",
+).init_app(app)
+
+# Search
+app.add_url_rule(
+    "/docs/search",
+    "docs-search",
+    build_search_view(
+        session=session, site="maas.io/docs", template_path="docs/search.html"
+    ),
 )
-tutorials_docs = DiscourseDocs(
-    parser=tutorials_docs_parser,
+
+tutorials_docs = Tutorials(
+    parser=TutorialParser(
+        api=discourse_api,
+        index_topic_id=tutorials_index_topic_id,
+        url_prefix=tutorials_url_prefix,
+    ),
     document_template="/tutorials/tutorial.html",
-    url_prefix=url_prefix,
+    url_prefix=tutorials_url_prefix,
     blueprint_name="tutorials",
 )
 
 
-@app.route(url_prefix)
+@app.route(tutorials_url_prefix)
 def index():
     page = flask.request.args.get("page", default=1, type=int)
     topic = flask.request.args.get("topic", default=None, type=str)
     sort = flask.request.args.get("sort", default=None, type=str)
     posts_per_page = 15
+
     tutorials_docs.parser.parse()
+    tutorials_docs.parser.parse_topic(tutorials_docs.parser.index_topic)
+
     if not topic:
-        metadata = tutorials_docs.parser.metadata
+        tutorials = tutorials_docs.parser.tutorials
     else:
-        metadata = [
+        tutorials = [
             doc
-            for doc in tutorials_docs.parser.metadata
+            for doc in tutorials_docs.parser.tutorials
             if topic in doc["categories"]
         ]
 
     if sort == "difficulty-desc":
-        metadata = sorted(
-            metadata, key=lambda k: k["difficulty"], reverse=True
+        tutorials = sorted(
+            tutorials, key=lambda k: k["difficulty"], reverse=True
         )
 
     if sort == "difficulty-asc" or not sort:
-        metadata = sorted(
-            metadata, key=lambda k: k["difficulty"], reverse=False
+        tutorials = sorted(
+            tutorials, key=lambda k: k["difficulty"], reverse=False
         )
 
-    total_pages = math.ceil(len(metadata) / posts_per_page)
+    total_pages = math.ceil(len(tutorials) / posts_per_page)
 
     return flask.render_template(
         "tutorials/index.html",
-        navigation=tutorials_docs.parser.navigation,
         forum_url=tutorials_docs.parser.api.base_url,
-        metadata=metadata,
+        tutorials=tutorials,
         page=page,
         topic=topic,
         sort=sort,
