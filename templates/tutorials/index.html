@@ -12,12 +12,14 @@
 
 <section class="p-strip is-shallow">
   <div class="row u-equal-height">
-    {% for item in metadata %}
+    {% for item in tutorials %}
       {% if loop.index <= posts_per_page * page and loop.index >= posts_per_page * page - posts_per_page + 1 %}
         <div class="col-4 col-medium-3 p-card">
           <div class="p-card__content">
-            <h3 class="p-heading--4">
-              {{ item.topic | safe }}
+            <h3 class="p-heading--four">
+              <a href="{{ item.link }}">
+                {{ item.title | safe }}
+              </a>
             </h3>
             <p>{{ item.summary | safe }}</p>
           </div>
