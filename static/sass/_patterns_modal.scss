@@ -62,20 +62,6 @@
 
   // preloader - choose between CIRCLE, IOS, DOTS, QUADS
 
-  // circle preloader
-  .vbox-preloader {
-    background-image: url('preload-circle.png');
-    height: 32px;
-    left: 50%;
-    margin-left: -16px;
-    margin-top: -16px;
-    overflow: hidden;
-    position: fixed;
-    text-indent: -100px;
-    top: 50%;
-    width: 32px;
-  }
-
   @keyframes playload {
     from { background-position: 0; }
     to { background-position: -576px; }
