@@ -25,11 +25,11 @@
     "stylelint": "13.12.0",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
-    "vanilla-framework": "2.27.0"
+    "vanilla-framework": "2.31.0"
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.2.0",
-    "@canonical/global-nav": "2.4.5",
+    "@canonical/global-nav": "2.5.0",
     "@canonical/latest-news": "1.2.0"
   }
 }
