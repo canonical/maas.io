@@ -27,27 +27,6 @@ $increase-font-size-on-larger-screens: false;
 @include maas-p-sidenav;
 @include maas-p-tutorials;
 
-@media only screen and (max-width: $breakpoint-medium) {
-  .usabilla_live_button_container {
-    // sass-lint:disable-line class-name-format
-    left: calc(90% - 30px);
-  }
-}
-
-// XXX Caleb: Increase space between detailed stepped list items
-// Issue: https://github.com/vanilla-framework/vanilla-framework/issues/1917
-.p-stepped-list--detailed {
-  .p-stepped-list__content,
-  .p-stepped-list__title {
-    margin-bottom: $spv-outer--shallow-scaleable;
-  }
-}
-
-// XXX Robin: Increase space between tables and following headings
-table + h2 {
-  padding-top: 1.6rem;
-}
-
 .row.is-bordered::before {
   left: 0;
   margin-top: -5px;
@@ -92,4 +71,10 @@ table + h2 {
 .p-navigation__banner {
   background-color: #e95420;
   padding-left: 1rem;
+}
+
+// XXX Ant: This fixes an issue with the use of dark navigation.
+// Issue: https://github.com/canonical-web-and-design/vanilla-framework/issues/3846
+.p-navigation.is-dark {
+  background-color: $color-navigation-background;
 }
