@@ -4,7 +4,7 @@
   "scripts": {
     "start": "yarn run build && yarn run serve",
     "build": "yarn run build-css && yarn run build-js",
-    "build-css": "node-sass --include-path node_modules static/sass --output static/css --output-style compressed",
+    "build-css": "sass static/sass/main.scss static/css/main.css --load-path=node_modules --style=compressed && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "yarn run copy-3rd-party-js",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
     "copy-3rd-party-js": "yarn run copy-global-nav && yarn run copy-latest-news && yarn run copy-cookie-policy",
@@ -16,15 +16,17 @@
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
     "test-python": "python3 -m unittest discover tests",
     "lint-scss": "stylelint static/**/*.scss",
-    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css"
+    "watch": "sass static/sass/main.scss static/css/main.css --load-path=node_modules --style=compressed --watch && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'"
   },
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "node-sass": "5.0.0",
+    "autoprefixer": "10.2.1",
+    "sass": "1.27.0",
     "stylelint": "13.12.0",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
+    "postcss": "8.2.10",
     "vanilla-framework": "2.32.0"
   },
   "dependencies": {
