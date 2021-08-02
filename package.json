@@ -27,7 +27,7 @@
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
     "postcss": "8.2.10",
-    "vanilla-framework": "2.33.0"
+    "vanilla-framework": "2.33.1"
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.3.0",
