@@ -14,22 +14,40 @@ jobs:
       - name: Install linkchecker
         run: sudo pip install LinkChecker
 
+      - name: Write linkchecker config file
+        run: |
+          mkdir -p ~/.linkchecker
+          cat > ~/.linkchecker/linkcheckerrc <<EOF
+          [checking]
+          timeout=1000
+          
+          [filtering]
+          nofollow=!https:\/\/maas.io\/docs\/
+          checkextern=1
+          ignore=
+            https://res\.cloudinary\.com
+            .*&start=
+            /q_auto
+            /fl_sanitize
+            /w_
+            /h_
+            https://assets\.ubuntu\.com"
+            https?://.*example\.com"
+            https://my\.registry:port"
+          
+          [output]
+          status=0
+          warnings=0
+          EOF
       - name: Run linkchecker
         run: |
-          linkchecker --no-follow-url '!https:\/\/maas.io\/docs\/' \
-            --ignore-url "https://res\.cloudinary\.com" \
-            --ignore-url '.*&start=' --ignore-url /q_auto \
-            --ignore-url /fl_sanitize \
-            --ignore-url /w_ \
-            --ignore-url /h_ \
-            --ignore-url "https://assets\.ubuntu\.com" \
-            --ignore-url "https?://.*example\.com" \
-            --ignore-url "https://my\.registry:port" \
-            --check-extern \
-            --no-status \
-            --timeout 1000 \
-            --no-warnings https://maas.io/docs
+          linkchecker https://maas.io/docs
 
       - name: Send message on failure
         if: failure()
-        run: curl -X POST -F "workflow=${GITHUB_WORKFLOW}" -F "repo_name=${GITHUB_REPOSITORY}" -F "action_id=${GITHUB_RUN_ID}" ${{ secrets.BOT_URL }}?room=docs
+        run: |
+          curl -X POST \
+            -F "workflow=${GITHUB_WORKFLOW}" \
+            -F "repo_name=${GITHUB_REPOSITORY}" \
+            -F "action_id=${GITHUB_RUN_ID}" \
+            ${{ secrets.BOT_URL }}?room=docs
