@@ -19,7 +19,7 @@ jobs:
           mkdir -p ~/.linkchecker
           cat > ~/.linkchecker/linkcheckerrc <<EOF
           [checking]
-          timeout=1000
+          maxrequestspersecond=5
           
           [filtering]
           nofollow=!https:\/\/maas.io\/docs\/
