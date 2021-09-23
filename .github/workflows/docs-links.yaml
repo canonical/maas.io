@@ -14,7 +14,20 @@ jobs:
         run: sudo pip install LinkChecker
 
       - name: Run linkchecker
-        run: linkchecker --no-follow-url '!https:\/\/maas.io\/docs\/' --ignore-url "https://res\.cloudinary\.com" --ignore-url '.*&start=' --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_ --ignore-url /h_ --ignore-url "https://assets\.ubuntu\.com" --ignore-url "https?://.*example\.com" --ignore-url "https://my\.registry:port" --check-extern --no-status --no-warnings https://maas.io/docs
+        run: |
+          linkchecker --no-follow-url '!https:\/\/maas.io\/docs\/' \
+            --ignore-url "https://res\.cloudinary\.com" \
+            --ignore-url '.*&start=' --ignore-url /q_auto \
+            --ignore-url /fl_sanitize \
+            --ignore-url /w_ \
+            --ignore-url /h_ \
+            --ignore-url "https://assets\.ubuntu\.com" \
+            --ignore-url "https?://.*example\.com" \
+            --ignore-url "https://my\.registry:port" \
+            --check-extern /
+            --no-status /
+            --timeout 1000 \
+            --no-warnings https://maas.io/docs
 
       - name: Send message on failure
         if: failure()
