@@ -2,7 +2,7 @@ name: docs links on maas.io/docs
 
 on:
   schedule:
-    - cron: "0 13 * * 1"
+    - cron: "0 13 * * *"
 
 jobs:
   check-links:
