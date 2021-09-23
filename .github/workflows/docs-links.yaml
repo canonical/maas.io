@@ -20,6 +20,7 @@ jobs:
           cat > ~/.linkchecker/linkcheckerrc <<EOF
           [checking]
           maxrequestspersecond=5
+          timeout=49
           
           [filtering]
           nofollow=!https:\/\/maas.io\/docs\/
