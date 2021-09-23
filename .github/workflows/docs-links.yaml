@@ -24,8 +24,8 @@ jobs:
             --ignore-url "https://assets\.ubuntu\.com" \
             --ignore-url "https?://.*example\.com" \
             --ignore-url "https://my\.registry:port" \
-            --check-extern /
-            --no-status /
+            --check-extern \
+            --no-status \
             --timeout 1000 \
             --no-warnings https://maas.io/docs
 
