@@ -31,9 +31,9 @@ jobs:
             /fl_sanitize
             /w_
             /h_
-            https://assets\.ubuntu\.com"
-            https?://.*example\.com"
-            https://my\.registry:port"
+            https://assets\.ubuntu\.com
+            https?://.*example\.com
+            https://my\.registry:port
           
           [output]
           status=0
