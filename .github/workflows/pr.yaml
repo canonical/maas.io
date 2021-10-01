@@ -107,4 +107,4 @@ inclusive-naming-check:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         reporter: github-pr-check
-        fail-on-error: true
+        fail-on-error: false
