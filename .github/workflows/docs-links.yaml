@@ -1,5 +1,4 @@
 name: docs links on maas.io/docs
-
 on:
   schedule:
     - cron: "0 13 * * *"
@@ -7,41 +6,27 @@ on:
 
 jobs:
   check-links:
-    if: github.repository == 'canonical-web-and-design/maas.io'
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Install linkchecker
         run: sudo pip install LinkChecker
 
       - name: Write linkchecker config file
         run: |
           mkdir -p ~/.linkchecker
-          cat > ~/.linkchecker/linkcheckerrc <<EOF
-          [checking]
-          maxrequestspersecond=5
-          
-          [filtering]
-          nofollow=!https:\/\/maas.io\/docs\/
-          checkextern=1
-          ignore=
-            https://res\.cloudinary\.com
-            .*&start=
-            /q_auto
-            /fl_sanitize
-            /w_
-            /h_
-            https://assets\.ubuntu\.com
-            https?://.*example\.com
-            https://my\.registry:port
-          
-          [output]
-          status=0
-          warnings=0
-          EOF
+          cp scripts/linkcheckerrc ~/.linkchecker/
+
       - name: Run linkchecker
+        continue-on-error: true
         run: |
-          linkchecker https://maas.io/docs
+          linkchecker https://maas.io/docs > ~/.linkchecker/linkchecker-out.txt
+
+      - name: Parse linkchecker output
+        run: |
+          scripts/runDocsLinkchecker
 
       - name: Send message on failure
         if: failure()

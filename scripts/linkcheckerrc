@@ -1,0 +1,20 @@
+[checking]
+maxrequestspersecond=5
+
+[filtering]
+nofollow=!https:\/\/maas.io\/docs\/
+checkextern=1
+ignore=
+  https://res\.cloudinary\.com
+  .*&start=
+  /q_auto
+  /fl_sanitize
+  /w_
+  /h_
+  https://assets\.ubuntu\.com
+  https?://.*example\.com
+  https://my\.registry:port
+
+[output]
+status=0
+warnings=0
