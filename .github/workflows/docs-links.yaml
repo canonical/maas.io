@@ -26,7 +26,7 @@ jobs:
 
       - name: Parse linkchecker output
         run: |
-          scripts/runDocsLinkchecker
+          scripts/parseDocsLinkcheckerOutput
 
       - name: Send message on failure
         if: failure()
