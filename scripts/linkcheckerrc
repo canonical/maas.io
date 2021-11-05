@@ -1,5 +1,5 @@
 [checking]
-maxrequestspersecond=5
+maxrequestspersecond=1
 
 [filtering]
 nofollow=!https:\/\/maas.io\/docs\/
