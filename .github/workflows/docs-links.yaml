@@ -1,7 +1,5 @@
 name: docs links on maas.io/docs
 on:
-  schedule:
-    - cron: "0 13 * * *"
   workflow_dispatch:
 
 jobs:
