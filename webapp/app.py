@@ -73,7 +73,7 @@ tutorials_index_topic_id = 1289
 Docs(
     parser=DocParser(
         api=discourse_api,
-        index_topic_id=4315,
+        index_topic_id=5510,
         url_prefix="/docs",
         tutorials_index_topic_id=tutorials_index_topic_id,
         tutorials_url_prefix=tutorials_url_prefix,
