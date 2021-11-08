@@ -4,7 +4,10 @@ A Flask application for maas.io
 
 import flask
 import math
+
 import talisker.requests
+from datetime import timedelta
+from requests_cache import CachedSession
 
 from canonicalwebteam.discourse_docs import (
     DiscourseDocs,
@@ -31,8 +34,19 @@ app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 session = talisker.requests.get_session()
+docs_session = CachedSession(
+    "docs_cache",
+    backend="sqlite",
+    cache_control=False,
+    expire_after=timedelta(days=7),
+    allowable_methods=["GET"],
+    allowable_codes=(200, 404, 301, 302),
+    match_headers=False,
+    stale_if_error=True,
+)
+
 docs_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=session
+    base_url="https://discourse.maas.io/", session=docs_session
 )
 doc_parser = DocParser(
     api=docs_discourse_api,
