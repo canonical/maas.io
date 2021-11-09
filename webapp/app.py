@@ -20,7 +20,7 @@ from canonicalwebteam.search import build_search_view
 from canonicalwebteam import image_template
 
 from webapp.feeds import get_rss_feed
-
+from webapp.doc_parser import FastDocParser
 
 app = FlaskBase(
     __name__,
@@ -38,9 +38,9 @@ docs_session = CachedSession(
     "docs_cache",
     backend="sqlite",
     cache_control=False,
-    expire_after=timedelta(days=7),
+    expire_after=timedelta(days=1),
     allowable_methods=["GET"],
-    allowable_codes=(200, 404, 301, 302),
+    allowable_codes=[200, 404, 302, 301],
     match_headers=False,
     stale_if_error=True,
 )
@@ -48,7 +48,7 @@ docs_session = CachedSession(
 docs_discourse_api = DiscourseAPI(
     base_url="https://discourse.maas.io/", session=docs_session
 )
-doc_parser = DocParser(
+doc_parser = FastDocParser(
     api=docs_discourse_api,
     index_topic_id=25,
     url_prefix="/docs",
