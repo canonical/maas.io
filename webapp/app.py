@@ -4,7 +4,10 @@ A Flask application for maas.io
 
 import flask
 import math
+
 import talisker.requests
+from datetime import timedelta
+from requests_cache import CachedSession
 
 from canonicalwebteam.discourse_docs import (
     DiscourseDocs,
@@ -17,7 +20,7 @@ from canonicalwebteam.search import build_search_view
 from canonicalwebteam import image_template
 
 from webapp.feeds import get_rss_feed
-
+from webapp.doc_parser import FastDocParser
 
 app = FlaskBase(
     __name__,
@@ -31,10 +34,21 @@ app.add_url_rule("/", view_func=template_finder_view)
 app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 
 session = talisker.requests.get_session()
-docs_discourse_api = DiscourseAPI(
-    base_url="https://discourse.maas.io/", session=session
+docs_session = CachedSession(
+    "docs_cache",
+    backend="sqlite",
+    cache_control=False,
+    expire_after=timedelta(days=1),
+    allowable_methods=["GET"],
+    allowable_codes=[200, 404, 302, 301],
+    match_headers=False,
+    stale_if_error=True,
 )
-doc_parser = DocParser(
+
+docs_discourse_api = DiscourseAPI(
+    base_url="https://discourse.maas.io/", session=docs_session
+)
+doc_parser = FastDocParser(
     api=docs_discourse_api,
     index_topic_id=25,
     url_prefix="/docs",
