@@ -9,7 +9,6 @@
       {% include "includes/head.html" %}
     {% endwith %}
     {% if self.meta_copydoc() %}<meta name="copydoc" content="{% block meta_copydoc %}{% endblock %}">{% endif %}
-    {% block page_description %}{% endblock %}
     {% block extra_meta %}{% endblock %}
 
     {% if self.meta_image %}
