@@ -1,0 +1,9 @@
+<li class="p-list__item" style="margin-bottom: 0.75rem">
+  <p class="p-muted-heading">{{ article.group.name }}</p>
+  <h5 class="u-no-margin--bottom">
+    <a href="/blog/{{ article.slug }}">
+      {{ article.title.rendered|safe }}
+    </a>
+  </h5>
+  <p><em>by {{ article.author.name }} on {{ article.date }}</em></p>
+</li>

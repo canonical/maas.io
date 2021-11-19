@@ -12,7 +12,8 @@ $increase-font-size-on-larger-screens: false;
 // patterns
 @import "patterns_strips", "patterns_lists", "patterns_modal",
   "patterns_takeunders", "patterns_tables", "patterns_contact-modal",
-  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials";
+  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials",
+  "patterns_cards";
 
 // patterns
 @include maas-p-lists;
@@ -24,6 +25,7 @@ $increase-font-size-on-larger-screens: false;
 @include maas-l-docs;
 @include maas-p-sidenav;
 @include maas-p-tutorials;
+@include maas-p-cards;
 
 .row.is-bordered::before {
   left: 0;

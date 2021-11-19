@@ -18,6 +18,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from canonicalwebteam.templatefinder import TemplateFinder
 from canonicalwebteam.search import build_search_view
 from canonicalwebteam import image_template
+from webapp.blog.views import init_blog
 
 from webapp.feeds import get_rss_feed
 from webapp.doc_parser import FastDocParser
@@ -165,3 +166,4 @@ def index():
 
 
 tutorials_docs.init_app(app)
+init_blog(app, "/blog")
