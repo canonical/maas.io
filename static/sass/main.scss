@@ -2,6 +2,7 @@
 @import "settings_colors";
 
 $increase-font-size-on-larger-screens: false;
+$breakpoint-navigation-threshold: 960px;
 
 // import vanilla-brochure-theme
 @import "vanilla-framework/scss/build";
@@ -13,7 +14,7 @@ $increase-font-size-on-larger-screens: false;
 @import "patterns_strips", "patterns_hero-video", "patterns_lists",
   "patterns_modal", "patterns_takeunders", "patterns_tables",
   "patterns_contact-modal", "layout_docs", "patterns_sidenav", "hljs",
-  "patterns_tutorials";
+  "patterns_tutorials", "patterns_cards";
 
 // patterns
 @include maas-p-hero-video;
@@ -26,6 +27,7 @@ $increase-font-size-on-larger-screens: false;
 @include maas-l-docs;
 @include maas-p-sidenav;
 @include maas-p-tutorials;
+@include maas-p-cards;
 
 .row.is-bordered::before {
   left: 0;
@@ -68,9 +70,15 @@ $increase-font-size-on-larger-screens: false;
   }
 }
 
-.p-navigation__banner {
-  background-color: #e95420;
-  padding-left: 1rem;
+.p-navigation__row {
+  @media screen and (min-width: $breakpoint-navigation-threshold) {
+    padding: 0 1.5rem;
+  }
+
+  .p-navigation__banner {
+    background-color: #e95420;
+    padding-left: 1rem;
+  }
 }
 
 // XXX Ant: This fixes an issue with the use of dark navigation.

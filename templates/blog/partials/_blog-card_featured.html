@@ -1,0 +1,20 @@
+<article class="col-8 p-blog-card" itemtype="http://schema.org/BlogPosting">
+  {% if article.group %}
+  <div class="u-sv2 blog-p-card__header--{{ article.group.slug }}">
+    <h5 class="p-muted-heading">{{ article.group.name }}</h5>
+    <hr />
+  </div>
+  {% endif %}
+  {% if article.image and article.image.source_url %}
+  <a href="/blog/{{ article.slug }}" aria-hidden="true" tabindex="-1">
+    <img src="{{ article.image.source_url }}" alt="{{ article.image.alt }}" />
+  </a>
+  {% endif %}
+  <h2>
+    <a href="/blog/{{ article.slug }}" class="p-link--soft">{{ article.title.rendered|safe }}</a>
+  </h2>
+  <p class="u-no-margin--bottom"><em>by {{ article.author.name }} on {{ article.date }}</em></p>
+  {% if not article.image %}
+    <p class="u-no-padding--bottom">{{ article.excerpt.raw }}</p>
+  {% endif %}
+</article>
