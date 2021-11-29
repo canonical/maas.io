@@ -10,11 +10,13 @@ $increase-font-size-on-larger-screens: false;
 @import "@canonical/cookie-policy/build/css/cookie-policy";
 
 // patterns
-@import "patterns_strips", "patterns_lists", "patterns_modal",
-  "patterns_takeunders", "patterns_tables", "patterns_contact-modal",
-  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials";
+@import "patterns_strips", "patterns_hero-video", "patterns_lists",
+  "patterns_modal", "patterns_takeunders", "patterns_tables",
+  "patterns_contact-modal", "layout_docs", "patterns_sidenav", "hljs",
+  "patterns_tutorials";
 
 // patterns
+@include maas-p-hero-video;
 @include maas-p-lists;
 @include maas-p-modal;
 @include maas-p-takeunders;
