@@ -21,10 +21,10 @@
   <body class="{% block page_class %}{% endblock %}">
     {% include "includes/header.html" %}
 
-    <div class="u-no-margin--top {% block content_class %}{% endblock %}" id="main-content">
+    <main class="u-no-margin--top {% block content_class %}{% endblock %}" id="main-content">
       {% include "includes/banner.html" %}
       {% block content %}{% endblock %}
-    </div>
+    </main>
 
     {% include "includes/footer.html" %}
 
