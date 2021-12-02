@@ -1,0 +1,294 @@
+{% extends "base_index.html" %}
+
+{% block page_title %} | Understand MAAS:Resources{% endblock %}
+
+{% block page_description %}
+A collection of useful and educational links to articles and information about
+MAAS (Metal as a Service). Learn more about bare metal clouds from some of the
+industry’s best.
+{% endblock %}
+ 
+{% block meta_copydoc %}
+https://docs.google.com/document/d/1OXio660sPmWUllHW0CO8Dl24p6E6Jasl7be8szP6z-k/edit
+{% endblock meta_copydoc %}
+
+{% block content %}
+<section class="p-strip--image is-dark p-takeover--no-overlays">
+  <div class="row u-equal-height u-vertically-center">
+    <div class="col-4">
+      <span>MAAS 3.1</span>
+      <h1>Understand MAAS: Resources</h1>
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col-6 col-start-large-2">
+          <p>
+            Explore a collection of useful resources that help you understand
+            and evaluate MAAS.
+          </p>
+          <p>
+            Whitepapers, blogs, customer presentations, webinars, and more are
+            conveniently collected here. We’ll guide you through what each
+            resource is about, and add more to this page over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-deep u-no-padding--bottom">
+  <div class="row">
+    <div class="col-12">
+      <h2>Customer presentations</h2>
+    </div>
+  </div>
+
+  <article class="p-strip is-shallow">
+    <div class="row">
+      <div class="col-4">
+        <h3 id="building-the-datacenter" class="p-heading--4">
+          Building the datacenter
+        </h3>
+        <p class="p-heading--5">
+          Implementing self-service for large-scale operations - T-Mobile
+        </p>
+        <p>
+          In this talk by Joshua McClintock, MTS, Systems Design Engineering,
+          T-Mobile, you’ll hear about how he built a self-service portal using
+          MAAS to allow people to order servers like burgers.
+        </p>
+        <p>
+          One of the best talks to understand one of the greatest benefits of
+          MAAS - faster time-to-delivery.
+        </p>
+        <a
+          aria-describedby="building-the-datacenter"
+          href="https://youtu.be/dSZqax12Q7A"
+        >
+          Watch the presentation
+        </a>
+      </div>
+      <div class="col-8">
+        <div class="u-embedded-media u-hide--small">
+          <iframe
+            width="560"
+            height="302"
+            src="https://www.youtube.com/embed/dSZqax12Q7A?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="p-strip is-shallow">
+    <div class="row">
+      <div class="col-4">
+        <h3 id="how-roblox">
+          How Roblox went from Windows to Ubuntu in seven days for edge compute
+          nodes
+        </h3>
+        <p>
+          Roblox is a gaming platform for 100 million kids all over the world,
+          and to serve them must deploy edge compute globally for low latency
+          gaming experiences. This means imaging, managing and rebuilding
+          thousands of servers.
+        </p>
+        <p>
+          In this talk, Rob Cameron, Roblox Technical Director for Cloud
+          Services, shares how they migrated servers from Windows to Linux for
+          approximately 200K containerised workloads in a seven-day timeframe,
+          leveraging MAAS for the path to full orchestration. This is another
+          example of MAAS enabling faster time-to-delivery.
+        </p>
+        <a aria-describedby="how-roblox" href="https://youtu.be/SwlU4U-BWRo">
+          Watch the presentation
+        </a>
+      </div>
+      <div class="col-8">
+        <div class="u-embedded-media u-hide--small">
+          <iframe
+            width="560"
+            height="302"
+            src="https://www.youtube.com/embed/SwlU4U-BWRo?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="p-strip is-deep u-no-padding--bottom">
+  <div class="row">
+    <hr class="is-muted" />
+    <div class="col-12">
+      <h2>Blogs</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>
+        <a href="https://ubuntu.com/blog/topics/maas"
+          >All Canonical blogs related to MAAS are here.</a
+        >
+        This rich set of content covers everything from high-level product
+        announcements to hands-on technical guides that dig into more
+        complicated topics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-deep u-no-padding--bottom">
+  <div class="row">
+    <hr class="is-muted" />
+    <div class="col-12">
+      <h2>Expert Classes</h2>
+    </div>
+  </div>
+  <article class="row">
+    <div class="col-4">
+      <h3 class="p-heading--4">Exploring MAAS with LXD</h3>
+    </div>
+    <div class="col-4">
+      <p>
+        Stéphane Graber, Engineering Manager for LXD,
+        <a href="https://www.youtube.com/watch?v=b_bdVfG47G4">
+          shows us how to install MAAS inside a LXD container
+        </a>
+        and see how it can be used to deploy LXD virtual machines, provide DNS
+        and IP management for LXD instances and more!
+      </p>
+      <p>
+        This is an excellent video for those that want to understand more about
+        LXD and MAAS.
+      </p>
+    </div>
+    <div class="col-4">
+      <div class="u-embedded-media">
+        <iframe
+          width="560"
+          height="302"
+          src="https://www.youtube.com/embed/b_bdVfG47G4?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </article>
+
+  <article class="row">
+    <div class="col-4">
+      <h3 class="p-heading--4">Bare metal Kubernetes hands on tutorial</h3>
+    </div>
+    <div class="col-4">
+      <p>
+        Anton Smith, Product Manager for MAAS takes you hands-on to
+        <a href="https://www.youtube.com/watch?v=pPBqDzedjw0">
+          build your own simulated bare metal Kubernetes cluster</a
+        >
+        using just a single computer.
+      </p>
+      <p>
+        Along the way, you’ll get to use and learn about some Linux networking,
+        MAAS, LXD, Ceph, Juju and Kubernetes, and at the end deploy an
+        application to your new K8s cluster.
+      </p>
+      <p>
+        This video is great for understanding the different possibilities
+        enabled by MAAS, Juju, and Charms.
+      </p>
+    </div>
+    <div class="col-4">
+      <div class="u-embedded-media">
+        <iframe
+          width="560"
+          height="302"
+          src="https://www.youtube.com/embed/pPBqDzedjw0?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="p-strip is-deep u-no-padding--bottom">
+  <div class="row">
+    <hr class="is-muted" />
+    <div class="col-12">
+      <h2>Community</h2>
+    </div>
+  </div>
+
+  <article class="row">
+    <div class="col-4">
+      <h3 class="p-heading--4">Using the MAAS CLI</h3>
+    </div>
+    <div class="col-4">
+      <p>
+        <a href="https://stormrider.io/maas-cli-1.html">Follow Stormrider</a> as
+        he uses the CLI to get MAAS setup and perform various machine related
+        tasks. This is a good example of step-by-step usage of the CLI and a
+        great way to learn.
+      </p>
+    </div>
+  </article>
+
+  <article class="row">
+    <div class="col-4">
+      <h3 class="p-heading--4">Bare metal Kubernetes hands on tutorial</h3>
+    </div>
+    <div class="col-4">
+      <p>
+        In this
+        <a
+          href="https://www.spectrocloud.com/webinars/managing-bare-metal-k8s-like-any-other-cluster/"
+          >webinar</a
+        >, you will learn about how to overcome the challenge of running
+        Kubernetes directly on bare metal servers and benefit from performance
+        and cost efficiencies, without having to treat those environments as
+        “special projects”. Combining CNCF’s Cluster API and Canonical’s
+        Metal-as-a-Service (MaaS), Saad and Joep will introduce an architecture
+        that will enable any team to deploy and treat bare metal Kubernetes
+        clusters just like any other cluster in their container environment.
+      </p>
+    </div>
+  </article>
+
+  <article class="row">
+    <div class="col-4">
+      <h3 class="p-heading--4">Bare metal Kubernetes hands on tutorial</h3>
+    </div>
+    <div class="col-4">
+      <p>
+        Community member
+        <a href="https://ssbostan.medium.com/">Saeid Bostandoust</a> has written
+        a tool called MAASTA, that lets you interact with a MAAS server cloud
+        using Terraform and Ansible, just the same way as you would interact
+        with a public cloud.
+      </p>
+      <p>
+        The <a href="https://github.com/ssbostan/maasta">repository</a> is here,
+        and
+        <a
+          href="https://itnext.io/maas-terraform-ansible-integration-adb57e09caf2"
+          >an introduction to the project can be found here.</a
+        >
+      </p>
+    </div>
+  </article>
+</section>
+{% endblock %}

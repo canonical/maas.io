@@ -31,6 +31,10 @@
         <li class="p-navigation__link{% if request.path.startswith('/tutorials') %} is-selected" aria-current="page{% endif %}">
           <a href="/tutorials" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tutorials' });">Tutorials</a>
         </li>
+        <li class="p-navigation__link{% if request.path.startswith('/resources') %} is-selected" aria-current="page{% endif %}">
+          <a href="/resources"
+            onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Resources' });">Resources</a>
+        </li>
         <li class="p-navigation__link">
           <a href="https://discourse.maas.io" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });">Discourse</a>
         </li>
