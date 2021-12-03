@@ -130,6 +130,51 @@ https://docs.google.com/document/d/1OXio660sPmWUllHW0CO8Dl24p6E6Jasl7be8szP6z-k/
   <div class="row">
     <hr class="is-muted" />
     <div class="col-12">
+      <h2>Must reads</h2>
+    </div>
+  </div>
+
+  <div id="latest-articles" class="row">
+    <div style="min-height: 9.1rem">
+      <i class="p-icon--spinner u-animation--spin">Loading...</i>
+    </div>
+  </div>
+
+  <template style="display:none" id="articles-template">
+    <article class="p-strip">
+      <div class="row">
+        <div class="col-4">
+          <h3 class="p-heading--4">
+            <a class="article-title article-link">Read the blog post</a>
+          </h3>
+        </div>
+        <div class="col-4 article-excerpt">
+        </div>
+        <div class="col-4 article-image"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="{{ versioned_static('js/modules/latest-news/latest-news.js') }}"></script>
+  <script>
+    canonicalLatestNews.fetchLatestNews(
+      {
+        articlesContainerSelector: "#latest-articles",
+        articleTemplateSelector: "#articles-template",
+        limit: "3",
+        hostname: "maas.io",
+        gtmEventLabel: "maas.io resources",
+        tagId: 1304 // MAAS tag ID
+      }
+    )
+  </script>
+
+</section>
+
+<section class="p-strip is-deep u-no-padding--bottom">
+  <div class="row">
+    <hr class="is-muted" />
+    <div class="col-12">
       <h2>Blogs</h2>
     </div>
   </div>
