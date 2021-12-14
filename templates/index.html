@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<section class="p-strip u-no-padding--bottom">
+<section class="p-strip is-bordered u-no-padding--bottom">
   <div class="row">
     <div class="col-6">
       <h2>Enterprise support <br class="u-hide--small" />for MAAS</h2>
@@ -739,41 +739,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </div>
   </div>
-</section>
-
-<section class="p-strip--light">
-  <div class="row">
-    <div class="col-12">
-      <h3 class="p-muted-heading">
-        <a class="p-link--soft" aria-label="Link to find more MAAS news from the MAAS blog" href="/blog">The latest MAAS news</a>
-      </h3>
-      <div id="latest-articles" class="row">
-        <div style="min-height: 9.1rem"><i class="p-icon--spinner u-animation--spin">Loading...</i></div>
-      </div>
-    </div>
-  </div>
-
-  <template style="display:none" id="articles-template">
-    <div class="col-4 p-divider__block">
-      <h3 class="p-heading--four"><a class="article-link article-title"></a></h3>
-      <footer>
-        <time pubdate datetime="POST_UPDATED" class="article-time"></time>
-      </footer>
-    </div>
-  </template>
-
-  <script src="{{ versioned_static('js/modules/latest-news/latest-news.js') }}"></script>
-  <script>
-    canonicalLatestNews.fetchLatestNews(
-      {
-        articlesContainerSelector: "#latest-articles",
-        articleTemplateSelector: "#articles-template",
-        hostname: "maas.io",
-        gtmEventLabel: "maas.io homepage",
-        tagId: 1304 // MAAS tag ID
-      }
-    )
-  </script>
 </section>
 
 {% endblock %}
