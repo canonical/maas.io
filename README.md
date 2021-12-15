@@ -6,15 +6,17 @@ MAAS website project
 
 This is the simple Flask project behind <https://maas.io>.
 
-## Local development
+## Development
 
-The simplest way to run the site locally is to first [install Docker](https://docs.docker.com/engine/installation/) (on Linux you may need to [add your user to the `docker` group](https://docs.docker.com/engine/installation/linux/linux-postinstall/)), and then use the `./run` script:
+The simplest way to run the site is with [the `dotrun` snap](https://github.com/canonical-web-and-design/dotrun/):
 
-``` bash
-./run
+```bash
+dotrun
 ```
 
-Once the containers are setup, you can visit <http://127.0.0.1:8006> in your browser.
+Afterwards the website will be available at <http://localhost:8006>.
+
+When you start changing files, the server should reload and make the changes available immediately.
 
 ### Building CSS
 
