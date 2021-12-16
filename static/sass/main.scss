@@ -11,13 +11,12 @@ $breakpoint-navigation-threshold: 960px;
 @import "@canonical/cookie-policy/build/css/cookie-policy";
 
 // patterns
-@import "patterns_strips", "patterns_hero-video", "patterns_lists",
-  "patterns_modal", "patterns_takeunders", "patterns_tables",
-  "patterns_contact-modal", "layout_docs", "patterns_sidenav", "hljs",
-  "patterns_tutorials", "patterns_cards";
+@import "patterns_strips", "patterns_lists", "patterns_modal",
+  "patterns_takeunders", "patterns_tables", "patterns_contact-modal",
+  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials",
+  "patterns_cards";
 
 // patterns
-@include maas-p-hero-video;
 @include maas-p-lists;
 @include maas-p-modal;
 @include maas-p-takeunders;
