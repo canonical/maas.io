@@ -1,5 +1,5 @@
-get-started: "/docs/installation"
-install: "/docs/installation"
+get-started: "/docs/snap/3.1/ui/maas-installation"
+install: "/docs/snap/3.1/ui/maas-installation"
 index(.html)?: "/"
 (?P<path>.+)/index(.html)?: "{path}"
 
