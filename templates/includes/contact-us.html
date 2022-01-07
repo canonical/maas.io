@@ -155,23 +155,23 @@
       <h3 class="p-heading--five">How should we get in touch?</h3>
       <div class="row u-no-padding">
         <div class="col-6">
-          <form class="modal-form marketo-form" action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_1337">
+          <form class="modal-form" action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_1337">
             <ul class="p-list">
-              <li class="mktFormReq mktField p-list__item">
-                <label for="FirstName" class="mktoLabel">First name:</label>
-                <input required id="FirstName" name="FirstName" maxlength="255" type="text" class="mktoField mktoRequired" required="required" />
+              <li class="p-list__item">
+                <label for="firstName">First name:</label>
+                <input required id="firstName" name="firstName" maxlength="255" type="text" required="required" />
               </li>
-              <li class="mktFormReq mktField p-list__item">
-                <label for="LastName" class="mktoLabel">Last name:</label>
-                <input required id="LastName" name="LastName" maxlength="255" type="text" class="mktoField mktoRequired" required="required" />
+              <li class="p-list__item">
+                <label for="lastName">Last name:</label>
+                <input required id="lastName" name="lastName" maxlength="255" type="text" required="required" />
               </li>
-              <li class="mktFormReq mktField p-list__item">
-                <label for="Email" class="mktoLabel">Email address:</label>
-                <input required id="Email" name="Email" maxlength="255" type="email" class="mktoField mktoEmailField mktoRequired" required="required" />
+              <li class="p-list__item">
+                <label for="email">Email address:</label>
+                <input required id="email" name="email" maxlength="255" type="email" required="required" />
               </li>
-              <li class="mktField p-list__item">
-                <input class="mktoField" value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
-                <label class="mktoLabel mktoHasWidth" for="canonicalUpdatesOptIn">Please send me information about Canonical’s products and services.</label>
+              <li class="p-list__item">
+                <input value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
+                <label for="canonicalUpdatesOptIn">Please send me information about Canonical’s products and services.</label>
               </li>
               <li class="p-list__item"><p>Submitting this form confirms that I have read and agree to <a href="/legal/data-privacy/contact">Canonical&rsquo;s Privacy Notice</a> and <a href="/legal/data-privacy">Privacy Policy</a>.</p></li>
               <li class="p-list__item">
@@ -182,29 +182,19 @@
             <div class="u-hide">
               <h3>Your comments</h3>
               <ul class="p-list">
-                <li class="mktFormReq mktField p-list__item">
-                  <label for="Comments_from_lead__c" class="mktoLabel">What would you like to talk to us about?</label>
-                  <textarea id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" class="mktoField" maxlength="2000"></textarea>
+                <li class="p-list__item">
+                  <label for="Comments_from_lead__c">What would you like to talk to us about?</label>
+                  <textarea id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" maxlength="2000"></textarea>
                 </li>
               </ul>
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formValidation" value="" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" class="mktoField" value="1337" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formVid" class="mktoField" value="1337" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="lpId" class="mktoField" value="2313" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="subId" class="mktoField" value="30" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="munchkinId" class="mktoField" value="066-EOV-335" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="lpurl" class="mktoField" value="//pages.ubuntu.com/Form-MAAS.iocontactus_desktopcontactuslandingpage.html?cr={creative}&amp;kw={keyword}" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="cr" class="mktoField" value="" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="kw" class="mktoField" value="" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="q" class="mktoField" value="" />
+              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" value="1337" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="returnURL" value="http://maas.io/thank-you" />
-              <input type="hidden" aria-hidden="true" aria-label="hidden field" name="retURL" value="http://maas.io/thank-you" />
               <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
             </div>
 
             <div class="pagination">
               <a class="pagination__link--previous p-button--neutral" href="">Previous</a>
-              <button type="submit" class="pagination__link--next p-button--positive mktoButton" aria-label="Submit">Let's discuss</button>
+              <button type="submit" class="pagination__link--next p-button--positive" aria-label="Submit">Let's discuss</button>
             </div>
           </form>
         </div>
