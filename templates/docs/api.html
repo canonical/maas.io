@@ -1082,6 +1082,7 @@
 <p><strong>size</strong> (<em>String</em>): Required. The size of the resource in bytes.</p>
 <p><strong>title</strong> (<em>String</em>): Optional. Title for the boot resource.</p>
 <p><strong>filetype</strong> (<em>String</em>): Optional. Filetype for uploaded content. (Default: <code>tgz</code>. Supported: <code>tgz</code>, <code>tbz</code>, <code>txz</code>, <code>ddtgz</code>, <code>ddtbz</code>, <code>ddtxz</code>, <code>ddtar</code>, <code>ddbz2</code>, <code>ddgz</code>, <code>ddxz</code>, <code>ddraw</code>)</p>
+<p><strong>base_image</strong> (<em>String</em>): Optional. The Base OS image a custom image is built on top of. Only required for custom image.</p>
 <p><strong>content</strong> (<em>String</em>): Optional. Image content. Note: this is not a normal parameter, but an <code>application/octet-stream</code> file upload.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -1419,23 +1420,32 @@
 }</code></pre>
 <p>&nbsp;</p>
 </details>
-<h3 id="commissioning-script">Commissioning script</h3>
+<h3 id="commissioning-script-deprecated">Commissioning script (deprecated)</h3>
 <p>Manage a custom commissioning script.</p>
 <p>This functionality is only available to administrators.</p>
 <p>This endpoint has been deprecated in favor of the node-script endpoint.</p>
-<p><code>DELETE /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
+<details>
+<summary><code>DELETE /MAAS/api/2.0/commissioning-scripts/{name}</code></summary>
 <p>Delete a commissioning script.</p>
-<p><code>GET /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
+</details>
+<details>
+<summary><code>GET /MAAS/api/2.0/commissioning-scripts/{name}</code></summary>
 <p>Read a commissioning script.</p>
-<p><code>PUT /MAAS/api/2.0/commissioning-scripts/{name}</code></p>
+</details>
+<details>
+<summary><code>PUT /MAAS/api/2.0/commissioning-scripts/{name}</code></summary>
 <p>Update a commissioning script.</p>
-<h3 id="commissioning-scripts">Commissioning scripts</h3>
+</details>
+<h3 id="commissioning-scripts-deprecated">Commissioning scripts (deprecated)</h3>
 <p>Manage custom commissioning scripts.</p>
 <p>This functionality is only available to administrators.</p>
 <p>This endpoint has been deprecated in favor of the node-scripts endpoint.</p>
-<p><code>GET /MAAS/api/2.0/commissioning-scripts/</code></p>
+<details>
+<summary><code>GET /MAAS/api/2.0/commissioning-scripts/</code></summary>
 <p>List commissioning scripts.</p>
-<p><code>POST /MAAS/api/2.0/commissioning-scripts/</code></p>
+</details>
+<details>
+<summary><code>POST /MAAS/api/2.0/commissioning-scripts/</code></summary>
 <p>Create a new commissioning script.</p>
 <p>Each commissioning script is identified by a unique name.</p>
 <p>By convention the name should consist of a two-digit number, a dash, and a brief descriptive identifier consisting only of ASCII characters. You don't need to follow this convention, but not doing so opens you up to risks w.r.t. encoding and ordering. The name must not contain any whitespace, quotes, or apostrophes.</p>
@@ -1450,6 +1460,7 @@
 <dd><p>A script file, to be uploaded in binary form. Note: this is not a normal parameter, but a file upload. Its filename is ignored; MAAS will know it by the name you pass to the request.</p>
 </dd>
 </dl>
+</details>
 <h3 id="dhcp-snippet">DHCP Snippet</h3>
 <p>Manage an individual DHCP snippet.</p>
 <p>The DHCP snippet is identified by its id.</p>
@@ -1531,7 +1542,6 @@
         &quot;error&quot;: &quot;&quot;,
         &quot;netboot&quot;: true,
         &quot;license_key&quot;: null,
-        &quot;creation_type&quot;: 1,
         &quot;boot_interface&quot;: null,
         &quot;boot_cluster_ip&quot;: null,
         &quot;boot_disk&quot;: null,
@@ -1540,6 +1550,7 @@
         &quot;default_user&quot;: &quot;&quot;,
         &quot;install_rackd&quot;: false,
         &quot;install_kvm&quot;: false,
+        &quot;register_vmhost&quot;: false,
         &quot;enable_ssh&quot;: false,
         &quot;skip_bmc_config&quot;: false,
         &quot;skip_networking&quot;: false,
@@ -1709,7 +1720,6 @@
         &quot;error&quot;: &quot;&quot;,
         &quot;netboot&quot;: true,
         &quot;license_key&quot;: null,
-        &quot;creation_type&quot;: 1,
         &quot;boot_interface&quot;: null,
         &quot;boot_cluster_ip&quot;: null,
         &quot;boot_disk&quot;: null,
@@ -1718,6 +1728,7 @@
         &quot;default_user&quot;: &quot;&quot;,
         &quot;install_rackd&quot;: false,
         &quot;install_kvm&quot;: false,
+        &quot;register_vmhost&quot;: false,
         &quot;enable_ssh&quot;: false,
         &quot;skip_bmc_config&quot;: false,
         &quot;skip_networking&quot;: false,
@@ -1910,6 +1921,7 @@
 <p><strong>enabled</strong> (<em>Boolean</em>): Optional. Whether or not the snippet is currently enabled.</p>
 <p><strong>node</strong> (<em>String</em>): Optional. The node this snippet applies to. Cannot be used with subnet or global_snippet.</p>
 <p><strong>subnet</strong> (<em>String</em>): Optional. The subnet this snippet applies to. Cannot be used with node or global_snippet.</p>
+<p><strong>iprange</strong> (<em>String</em>): Optional. The iprange within a subnet this snippet applies to. Must also provide a subnet value.</p>
 <p><strong>global_snippet</strong> (<em>Boolean</em>): Optional. Whether or not this snippet is to be applied globally. Cannot be used with node or subnet.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -2696,7 +2708,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/g8xyqs/blockdevices/76/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;testing_status&quot;: 2,
     &quot;default_gateways&quot;: {
         &quot;ipv4&quot;: {
@@ -2970,9 +2981,14 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/devices/{system_id}/?op=set_owner_data</code></summary>
+<p>Deprecated, use set-workload-annotations instead.</p>
+<p>&nbsp;</p>
+</details>
+<details>
+<summary><code>POST /MAAS/api/2.0/devices/{system_id}/?op=set_workload_annotations</code></summary>
 <p>Set key=value data for the current owner.</p>
 <p>Pass any key=value form data to this method to add, modify, or remove. A key is removed when the value for that key is set to an empty string.</p>
-<p>This operation will not remove any previous keys unless explicitly passed with an empty string. All owner data is removed when the machine is no longer allocated to a user.</p>
+<p>This operation will not remove any previous keys unless explicitly passed with an empty string. All workload annotations are removed when the machine is no longer allocated to a user.</p>
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>key</strong> (<em>String</em>): Required. <code>key</code> can be any string value.</p>
@@ -3110,6 +3126,7 @@
 <p><strong>not_pod</strong> (<em>String</em>): Optional. Only nodes that don't belong to a specified pod will be returned.</p>
 <p><strong>pod_type</strong> (<em>String</em>): Optional. Only nodes that belong to a pod of the specified type will be returned.</p>
 <p><strong>not_pod_type</strong> (<em>String</em>): Optional. Only nodes that don't belong a pod of the specified type will be returned.</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return nodes which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -3912,6 +3929,7 @@
 <p><strong>name</strong> (<em>String</em>): Required. Name of the domain.</p>
 <p><strong>authoritative</strong> (<em>String</em>): Optional. True if we are authoritative for this domain.</p>
 <p><strong>ttl</strong> (<em>String</em>): Optional. The default TTL for this domain.</p>
+<p><strong>forward_dns_servers</strong> (<em>String</em>): Optional. List of IP addresses for forward DNS servers when MAAS is not authoritative for this domain.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -3981,6 +3999,7 @@
 <hr />
 <p><strong>name</strong> (<em>String</em>): Required. Name of the domain.</p>
 <p><strong>authoritative</strong> (<em>String</em>): Optional. Class type of the domain.</p>
+<p><strong>forward_dns_servers</strong> (<em>String</em>): Optional. List of forward dns server IP addresses when MAAS is not authorititative.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -6764,7 +6783,7 @@
 <dd><p>Default operating system used for deployment.</p>
 </dd>
 <dt>default_storage_layout</dt>
-<dd><p>Default storage layout. Storage layout that is applied to a node when it is commissioned. Available choices are: 'bcache' (Bcache layout), 'blank' (No storage (blank) layout), 'flat' (Flat layout), 'lvm' (LVM layout), 'vmfs6' (VMFS6 layout).</p>
+<dd><p>Default storage layout. Storage layout that is applied to a node when it is commissioned. Available choices are: 'bcache' (Bcache layout), 'blank' (No storage (blank) layout), 'custom' (Custom layout (from commissioning storage config)), 'flat' (Flat layout), 'lvm' (LVM layout), 'vmfs6' (VMFS6 layout), 'vmfs7' (VMFS7 layout).</p>
 </dd>
 <dt>disk_erase_with_quick_erase</dt>
 <dd><p>Use quick erase by default when erasing disks.. This is not a secure erase; it wipes only the beginning and end of each disk.</p>
@@ -6809,7 +6828,7 @@
 <dd><p>MAAS IPMI user.. The name of the IPMI user that MAAS automatically creates during enlistment/commissioning.</p>
 </dd>
 <dt>maas_auto_ipmi_user_privilege_level</dt>
-<dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'USER' (User), 'OPERATOR' (Operator), 'ADMIN' (Administrator).</p>
+<dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'ADMIN' (Administrator), 'OPERATOR' (Operator), 'USER' (User).</p>
 </dd>
 <dt>maas_internal_domain</dt>
 <dd><p>Domain name used by MAAS for internal mapping of MAAS provided services.. This domain should not collide with an upstream domain provided by the set upstream DNS.</p>
@@ -6937,7 +6956,7 @@
 <dd><p>Default operating system used for deployment.</p>
 </dd>
 <dt>default_storage_layout</dt>
-<dd><p>Default storage layout. Storage layout that is applied to a node when it is commissioned. Available choices are: 'bcache' (Bcache layout), 'blank' (No storage (blank) layout), 'flat' (Flat layout), 'lvm' (LVM layout), 'vmfs6' (VMFS6 layout).</p>
+<dd><p>Default storage layout. Storage layout that is applied to a node when it is commissioned. Available choices are: 'bcache' (Bcache layout), 'blank' (No storage (blank) layout), 'custom' (Custom layout (from commissioning storage config)), 'flat' (Flat layout), 'lvm' (LVM layout), 'vmfs6' (VMFS6 layout), 'vmfs7' (VMFS7 layout).</p>
 </dd>
 <dt>disk_erase_with_quick_erase</dt>
 <dd><p>Use quick erase by default when erasing disks.. This is not a secure erase; it wipes only the beginning and end of each disk.</p>
@@ -6982,7 +7001,7 @@
 <dd><p>MAAS IPMI user.. The name of the IPMI user that MAAS automatically creates during enlistment/commissioning.</p>
 </dd>
 <dt>maas_auto_ipmi_user_privilege_level</dt>
-<dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'USER' (User), 'OPERATOR' (Operator), 'ADMIN' (Administrator).</p>
+<dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'ADMIN' (Administrator), 'OPERATOR' (Operator), 'USER' (User).</p>
 </dd>
 <dt>maas_internal_domain</dt>
 <dd><p>Domain name used by MAAS for internal mapping of MAAS provided services.. This domain should not collide with an upstream domain provided by the set upstream DNS.</p>
@@ -7534,7 +7553,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/g8xyqs/blockdevices/76/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;testing_status&quot;: 2,
     &quot;default_gateways&quot;: {
         &quot;ipv4&quot;: {
@@ -7623,6 +7641,7 @@
 <pre><code>Not Found</code></pre>
 <p>&nbsp;</p>
 </details>
+<p><code>GET /MAAS/api/2.0/machines/{system_id}/ op=get_token</code></p>
 <details>
 <summary><code>GET /MAAS/api/2.0/machines/{system_id}/?op=power_parameters</code></summary>
 <p>Gets power parameters for a given system_id, if any. For some types of power control this will include private information such as passwords and secret keys.</p>
@@ -7919,7 +7938,6 @@
     &quot;volume_groups&quot;: [],
     &quot;cpu_test_status&quot;: 2,
     &quot;status&quot;: 4,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;cpu_speed&quot;: 0,
     &quot;current_commissioning_result_id&quot;: 21,
     &quot;status_message&quot;: &quot;desc-SRem4v&quot;,
@@ -8690,7 +8708,6 @@
     &quot;owner_data&quot;: {},
     &quot;hwe_kernel&quot;: null,
     &quot;status_name&quot;: &quot;Commissioning&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_installation_result_id&quot;: null,
     &quot;power_state&quot;: &quot;off&quot;,
     &quot;cpu_count&quot;: 1,
@@ -8940,6 +8957,7 @@
 <p><strong>comment</strong> (<em>String</em>): Optional. Optional comment for the event log.</p>
 <p><strong>install_rackd</strong> (<em>Boolean</em>): Optional. If true, the rack controller will be installed on this machine.</p>
 <p><strong>install_kvm</strong> (<em>Boolean</em>): Optional. If true, KVM will be installed on this machine and added to MAAS.</p>
+<p><strong>register_vmhost</strong> (<em>Boolean</em>): Optional. If true, the machine will be registered as a LXD VM host in MAAS.</p>
 <p><strong>ephemeral_deploy</strong> (<em>Boolean</em>): Optional. If true, machine will be deployed ephemerally even if it has disks.</p>
 <p><strong>vcenter_registration</strong> (<em>Boolean</em>): Optional. If false, do not send globally defined VMware vCenter credentials to the machine.</p>
 <p><strong>Success</strong></p>
@@ -9272,7 +9290,6 @@
     &quot;ip_addresses&quot;: [],
     &quot;other_test_status_name&quot;: &quot;Passed&quot;,
     &quot;status_name&quot;: &quot;Allocated&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;storage_test_status_name&quot;: &quot;Failed&quot;,
     &quot;memory_test_status_name&quot;: &quot;Passed&quot;,
     &quot;netboot&quot;: true,
@@ -9471,7 +9488,6 @@
     &quot;owner_data&quot;: {},
     &quot;hwe_kernel&quot;: null,
     &quot;status_name&quot;: &quot;Exiting rescue mode&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_installation_result_id&quot;: null,
     &quot;power_state&quot;: &quot;on&quot;,
     &quot;cpu_count&quot;: 1,
@@ -10415,7 +10431,6 @@
         &quot;172.16.4.21&quot;,
         &quot;172.16.3.79&quot;
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;special_filesystems&quot;: [],
     &quot;memory_test_status&quot;: 2,
     &quot;other_test_status&quot;: 2,
@@ -10708,7 +10723,6 @@
     &quot;locked&quot;: false,
     &quot;min_hwe_kernel&quot;: null,
     &quot;cpu_count&quot;: 3,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_commissioning_result_id&quot;: 21,
     &quot;current_installation_result_id&quot;: null,
     &quot;raids&quot;: [],
@@ -11415,7 +11429,6 @@
     ],
     &quot;netboot&quot;: true,
     &quot;status_name&quot;: &quot;Ready&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;interface_test_status_name&quot;: &quot;Unknown&quot;,
     &quot;interface_test_status&quot;: -1,
     &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/machines/thr3am/&quot;
@@ -12348,7 +12361,6 @@
     &quot;current_commissioning_result_id&quot;: 21,
     &quot;virtualblockdevice_set&quot;: [],
     &quot;commissioning_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;address_ttl&quot;: null,
     &quot;commissioning_status_name&quot;: &quot;Passed&quot;,
     &quot;distro_series&quot;: &quot;&quot;,
@@ -12428,7 +12440,6 @@
     &quot;osystem&quot;: &quot;ubuntu&quot;,
     &quot;cpu_test_status_name&quot;: &quot;Unknown&quot;,
     &quot;testing_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;bios_boot_method&quot;: &quot;pxe&quot;,
     &quot;boot_interface&quot;: {
         &quot;vlan&quot;: {
@@ -12845,7 +12856,6 @@
     &quot;osystem&quot;: &quot;ubuntu&quot;,
     &quot;cpu_test_status_name&quot;: &quot;Unknown&quot;,
     &quot;testing_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;bios_boot_method&quot;: &quot;pxe&quot;,
     &quot;boot_interface&quot;: {
         &quot;vlan&quot;: {
@@ -13252,7 +13262,7 @@
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>{system_id}</strong> (<em>String</em>): Required. The machines's system_id.</p>
-<p><strong>comment</strong> (<em>String</em>): Required. Optional comment for the event log.</p>
+<p><strong>comment</strong> (<em>String</em>): Optional. Optional comment for the event log.</p>
 <p><strong>erase</strong> (<em>Boolean</em>): Optional. Erase the disk when releasing.</p>
 <p><strong>secure_erase</strong> (<em>Boolean</em>): Optional. Use the drive's secure erase feature if available. In some cases, this can be much faster than overwriting the drive. Some drives implement secure erasure by overwriting themselves so this could still be slow.</p>
 <p><strong>quick_erase</strong> (<em>Boolean</em>): Optional. Wipe 2MiB at the start and at the end of the drive to make data recovery inconvenient and unlikely to happen by accident. This is not secure.</p>
@@ -13325,7 +13335,6 @@
     &quot;current_commissioning_result_id&quot;: 21,
     &quot;system_id&quot;: &quot;thr3am&quot;,
     &quot;commissioning_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;raids&quot;: [],
     &quot;node_type_name&quot;: &quot;Machine&quot;,
     &quot;memory_test_status_name&quot;: &quot;Passed&quot;,
@@ -14248,7 +14257,6 @@
     &quot;owner_data&quot;: {},
     &quot;hwe_kernel&quot;: null,
     &quot;status_name&quot;: &quot;Entering rescue mode&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_installation_result_id&quot;: null,
     &quot;power_state&quot;: &quot;on&quot;,
     &quot;cpu_count&quot;: 1,
@@ -14649,7 +14657,6 @@
     &quot;cpu_test_status&quot;: 2,
     &quot;other_test_status&quot;: 2,
     &quot;owner&quot;: null,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;power_state&quot;: &quot;on&quot;,
     &quot;zone&quot;: {
         &quot;name&quot;: &quot;zone-north&quot;,
@@ -15223,7 +15230,6 @@
         &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/resourcepool/0/&quot;
     },
     &quot;ip_addresses&quot;: [],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;other_test_status&quot;: 2,
     &quot;storage_test_status_name&quot;: &quot;Passed&quot;,
     &quot;cpu_count&quot;: 3,
@@ -15477,7 +15483,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/thr3am/blockdevices/20/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;status&quot;: 4,
     &quot;other_test_status_name&quot;: &quot;Passed&quot;,
     &quot;node_type&quot;: 0,
@@ -15621,21 +15626,7 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/machines/{system_id}/?op=set_owner_data</code></summary>
-<p>Set key=value data for the current owner.</p>
-<p>Pass any key=value form data to this method to add, modify, or remove. A key is removed when the value for that key is set to an empty string.</p>
-<p>This operation will not remove any previous keys unless explicitly passed with an empty string. All owner data is removed when the machine is no longer allocated to a user.</p>
-<p><strong>Parameters</strong></p>
-<hr />
-<p><strong>key</strong> (<em>String</em>): Required. <code>key</code> can be any string value.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 204</p>
-<p><strong>Error</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 404</p>
-<p><em>Content</em> : The requested node is not found.</p>
-<p><em>HTTP Status Code</em> : 403</p>
-<p><em>Content</em> : The user does not have set the zone.</p>
+<p>Deprecated, use set-workload-annotations instead.</p>
 <p>&nbsp;</p>
 </details>
 <details>
@@ -15646,10 +15637,10 @@
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>{system_id}</strong> (<em>String</em>): Required. The machines's system_id.</p>
-<p><strong>storage_layout</strong> (<em>String</em>): Required. Storage layout for the machine: <code>flat</code>, <code>lvm</code>, <code>bcache</code>, <code>vmfs6</code>, or <code>blank</code>.</p>
-<p><strong>boot_size</strong> (<em>String</em>): Optional. All layouts. Size of the boot partition (e.g. 512M, 1G).</p>
-<p><strong>root_size</strong> (<em>String</em>): Optional. All layouts. Size of the root partition (e.g. 24G).</p>
-<p><strong>root_device</strong> (<em>String</em>): Optional. All layouts. Physical block device to place the root partition (e.g. /dev/sda).</p>
+<p><strong>storage_layout</strong> (<em>String</em>): Required. Storage layout for the machine: <code>flat</code>, <code>lvm</code>, <code>bcache</code>, <code>vmfs6</code>, <code>vmfs7</code>, <code>custom</code> or <code>blank</code>.</p>
+<p><strong>boot_size</strong> (<em>String</em>): Optional. Size of the boot partition (e.g. 512M, 1G).</p>
+<p><strong>root_size</strong> (<em>String</em>): Optional. Size of the root partition (e.g. 24G).</p>
+<p><strong>root_device</strong> (<em>String</em>): Optional. Physical block device to place the root partition (e.g. /dev/sda).</p>
 <p><strong>vg_name</strong> (<em>String</em>): Optional. LVM only. Name of created volume group.</p>
 <p><strong>lv_name</strong> (<em>String</em>): Optional. LVM only. Name of created logical volume.</p>
 <p><strong>lv_size</strong> (<em>String</em>): Optional. LVM only. Size of created logical volume.</p>
@@ -15697,7 +15688,6 @@
     &quot;owner_data&quot;: {},
     &quot;hwe_kernel&quot;: null,
     &quot;status_name&quot;: &quot;Commissioning&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_installation_result_id&quot;: null,
     &quot;power_state&quot;: &quot;off&quot;,
     &quot;cpu_count&quot;: 1,
@@ -15934,6 +15924,25 @@
 <p>&nbsp;</p>
 </details>
 <details>
+<summary><code>POST /MAAS/api/2.0/machines/{system_id}/?op=set_workload_annotations</code></summary>
+<p>Set key=value data for the current owner.</p>
+<p>Pass any key=value form data to this method to add, modify, or remove. A key is removed when the value for that key is set to an empty string.</p>
+<p>This operation will not remove any previous keys unless explicitly passed with an empty string. All workload annotations are removed when the machine is no longer allocated to a user.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>key</strong> (<em>String</em>): Required. <code>key</code> can be any string value.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 204</p>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404</p>
+<p><em>Content</em> : The requested node is not found.</p>
+<p><em>HTTP Status Code</em> : 403</p>
+<p><em>Content</em> : The user does not have set the zone.</p>
+<p>&nbsp;</p>
+</details>
+<details>
 <summary><code>POST /MAAS/api/2.0/machines/{system_id}/?op=test</code></summary>
 <p>Begins the testing process for a given node.</p>
 <p>A node in the 'ready', 'allocated', 'deployed', 'broken', or any failed state may run tests. If testing is started and successfully passes from 'broken' or any failed state besides 'failed commissioning' the node will be returned to a ready state. Otherwise the node will return to the state it was when testing started.</p>
@@ -15981,7 +15990,6 @@
         &quot;id&quot;: 1,
         &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/zones/default/&quot;
     },
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_commissioning_result_id&quot;: 6,
     &quot;current_testing_result_id&quot;: 49,
     &quot;osystem&quot;: &quot;ubuntu&quot;,
@@ -17060,7 +17068,6 @@
         &quot;172.16.4.21&quot;,
         &quot;172.16.3.79&quot;
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;special_filesystems&quot;: [],
     &quot;memory_test_status&quot;: 2,
     &quot;other_test_status&quot;: 2,
@@ -18230,7 +18237,6 @@
     &quot;current_commissioning_result_id&quot;: 21,
     &quot;virtualblockdevice_set&quot;: [],
     &quot;commissioning_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;address_ttl&quot;: null,
     &quot;commissioning_status_name&quot;: &quot;Passed&quot;,
     &quot;distro_series&quot;: &quot;&quot;,
@@ -18620,7 +18626,6 @@
     &quot;ip_addresses&quot;: [],
     &quot;other_test_status_name&quot;: &quot;Passed&quot;,
     &quot;status_name&quot;: &quot;Allocated&quot;,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;storage_test_status_name&quot;: &quot;Failed&quot;,
     &quot;memory_test_status_name&quot;: &quot;Passed&quot;,
     &quot;netboot&quot;: true,
@@ -18799,6 +18804,7 @@
 <p><strong>not_pod</strong> (<em>String</em>): Optional. Only nodes that don't belong to a specified pod will be returned.</p>
 <p><strong>pod_type</strong> (<em>String</em>): Optional. Only nodes that belong to a pod of the specified type will be returned.</p>
 <p><strong>not_pod_type</strong> (<em>String</em>): Optional. Only nodes that don't belong a pod of the specified type will be returned.</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return nodes which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -19154,7 +19160,8 @@
 <details>
 <summary><code>POST /MAAS/api/2.0/machines/</code></summary>
 <p>Create a new machine.</p>
-<p>Adding a server to MAAS wipes its disks and re-installs its operating system, in the event that it PXE boots. In anonymous enlistment (and when the enlistment is done by a non-admin), the machine is held in the "New" state for approval by a MAAS admin.</p>
+<p>Adding a server to MAAS will (by default) cause the machine to network boot into an ephemeral environment to collect hardware information.</p>
+<p>In anonymous enlistment (and when the enlistment is done by a non-admin), the machine is held in the "New" state for approval by a MAAS admin.</p>
 <p>The minimum data required is:</p>
 <p>architecture=&lt;arch string&gt; (e.g. "i386/generic") mac_addresses=&lt;value&gt; (e.g. "aa:bb:cc:dd:ee:ff")</p>
 <p><strong>Parameters</strong></p>
@@ -19169,6 +19176,7 @@
 <p><strong>power_type</strong> (<em>String</em>): Optional. A power management type, if applicable (e.g. "virsh", "ipmi").</p>
 <p><strong>power_parameters_{param}</strong> (<em>String</em>): Optional. The parameter(s) for the power_type. Note that this is dynamic as the available parameters depend on the selected value of the Machine's power_type. <a href="#power-types">Power types</a> section for a list of the available power parameters for each power type.</p>
 <p><strong>commission</strong> (<em>Boolean</em>): Optional. Request the newly created machine to be created with status set to COMMISSIONING. Machines will wait for COMMISSIONING results and not time out. Machines created by administrators will be commissioned unless set to false.</p>
+<p><strong>deployed</strong> (<em>Boolean</em>): Optional. Request the newly created machine to be created with status set to DEPLOYED. Setting this to true implies commissioning=false, meaning that the machine won't go through the commissioning process.</p>
 <p><strong>enable_ssh</strong> (<em>Int</em>): Optional. Whether to enable SSH for the commissioning environment using the user's SSH key(s). '1' == True, '0' == False.</p>
 <p><strong>skip_bmc_config</strong> (<em>Int</em>): Optional. Whether to skip re-configuration of the BMC for IPMI based machines. '1' == True, '0' == False.</p>
 <p><strong>skip_networking</strong> (<em>Int</em>): Optional. Whether to skip re-configuring the networking on the machine after the commissioning has completed. '1' == True, '0' == False.</p>
@@ -19226,7 +19234,6 @@
     },
     &quot;cache_sets&quot;: [],
     &quot;ip_addresses&quot;: [],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;cpu_count&quot;: 0,
     &quot;special_filesystems&quot;: [],
     &quot;other_test_status_name&quot;: &quot;Unknown&quot;,
@@ -19376,9 +19383,11 @@
 <hr />
 <p><strong>chassis_type</strong> (<em>String</em>): Required. The type of hardware:</p>
 <ul>
+<li><code>hmcz</code>: IBM Hardware Management Console (HMC) for Z</li>
 <li><code>mscm</code>: Moonshot Chassis Manager.</li>
 <li><code>msftocs</code>: Microsoft OCS Chassis Manager.</li>
 <li><code>powerkvm</code>: Virtual Machines on Power KVM, managed by Virsh.</li>
+<li><code>proxmox</code>: Virtual Machines managed by Proxmox</li>
 <li><code>recs_box</code>: Christmann RECS|Box servers.</li>
 <li><code>sm15k</code>: Seamicro 1500 Chassis.</li>
 <li><code>ucsm</code>: Cisco UCS Manager.</li>
@@ -19386,14 +19395,17 @@
 <li><code>vmware</code> is the type for virtual machines managed by VMware.</li>
 </ul>
 <p><strong>hostname</strong> (<em>String</em>): Required. The URL, hostname, or IP address to access the chassis.</p>
-<p><strong>username</strong> (<em>String</em>): Optional. The username used to access the chassis. This field is required for the recs_box, seamicro15k, vmware, mscm, msftocs, and ucsm chassis types.</p>
-<p><strong>password</strong> (<em>String</em>): Optional. The password used to access the chassis. This field is required for the <code>recs_box</code>, <code>seamicro15k</code>, <code>vmware</code>, <code>mscm</code>, <code>msftocs</code>, and <code>ucsm</code> chassis types.</p>
+<p><strong>username</strong> (<em>String</em>): Optional. The username used to access the chassis. This field is required for the recs_box, seamicro15k, vmware, mscm, msftocs, ucsm, and hmcz chassis types.</p>
+<p><strong>password</strong> (<em>String</em>): Optional. The password used to access the chassis. This field is required for the <code>recs_box</code>, <code>seamicro15k</code>, <code>vmware</code>, <code>mscm</code>, <code>msftocs</code>, <code>ucsm</code>, and <code>hmcz</code> chassis types.</p>
 <p><strong>accept_all</strong> (<em>String</em>): Optional. If true, all enlisted machines will be commissioned.</p>
 <p><strong>rack_controller</strong> (<em>String</em>): Optional. The system_id of the rack controller to send the add chassis command through. If none is specifed MAAS will automatically determine the rack controller to use.</p>
 <p><strong>domain</strong> (<em>String</em>): Optional. The domain that each new machine added should use.</p>
-<p><strong>prefix_filter</strong> (<em>String</em>): Optional. (<code>virsh</code>, <code>vmware</code>, <code>powerkvm</code> only.) Filter machines with supplied prefix.</p>
-<p><strong>power_control</strong> (<em>String</em>): Optional. (<code>seamicro15k</code> only) The power_control to use, either ipmi (default), restapi, or restapi2. The following are optional if you are adding a recs_box, vmware or msftocs chassis.</p>
-<p><strong>port</strong> (<em>Int</em>): Optional. (<code>recs_box</code>, <code>vmware</code>, <code>msftocs</code> only) The port to use when accessing the chassis. The following are optioanl if you are adding a vmware chassis:</p>
+<p><strong>prefix_filter</strong> (<em>String</em>): Optional. (<code>virsh</code>, <code>vmware</code>, <code>powerkvm</code>, <code>proxmox</code>, <code>hmcz</code> only.) Filter machines with supplied prefix.</p>
+<p><strong>power_control</strong> (<em>String</em>): Optional. (<code>seamicro15k</code> only) The power_control to use, either ipmi (default), restapi, or restapi2. The following are optional if you are adding a proxmox chassis.</p>
+<p><strong>token_name</strong> (<em>String</em>): Optional. The name the authentication token to be used instead of a password.</p>
+<p><strong>token_secret</strong> (<em>String</em>): Optional. The token secret to be used in combination with the power_token_name used in place of a password.</p>
+<p><strong>verify_ssl</strong> (<em>Boolean</em>): Optional. Whether SSL connections should be verified. The following are optional if you are adding a recs_box, vmware or msftocs chassis.</p>
+<p><strong>port</strong> (<em>Int</em>): Optional. (<code>recs_box</code>, <code>vmware</code>, <code>msftocs</code> only) The port to use when accessing the chassis. The following are optional if you are adding a vmware chassis:</p>
 <p><strong>protocol</strong> (<em>String</em>): Optional. (<code>vmware</code> only) The protocol to use when accessing the VMware chassis (default: https). :return: A string containing the chassis powered on by which rack controller.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -19482,6 +19494,7 @@
 <p><strong>bridge_all</strong> (<em>Boolean</em>): Optional. Optionally create a bridge interface for every configured interface on the machine. The created bridges will be removed once the machine is released. (Default: False)</p>
 <p><strong>bridge_stp</strong> (<em>Boolean</em>): Optional. Optionally turn spanning tree protocol on or off for the bridges created on every configured interface. (Default: off)</p>
 <p><strong>bridge_fd</strong> (<em>Int</em>): Optional. Optionally adjust the forward delay to time seconds. (Default: 15)</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return a node which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>dry_run</strong> (<em>Boolean</em>): Optional. Optional boolean to indicate that the machine should not actually be acquired (this is for support/troubleshooting, or users who want to see which machine would match a constraint, without acquiring a machine). Defaults to False.</p>
 <p><strong>verbose</strong> (<em>Boolean</em>): Optional. Optional boolean to indicate that the user would like additional verbosity in the constraints_by_type field (each constraint will be prefixed by <code>verbose_</code>, and contain the full data structure that indicates which machine(s) matched).</p>
 <p><strong>Success</strong></p>
@@ -19502,7 +19515,6 @@
     },
     &quot;status_name&quot;: &quot;Allocated&quot;,
     &quot;disable_ipv4&quot;: false,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;other_test_status&quot;: 2,
     &quot;pool&quot;: {
         &quot;name&quot;: &quot;default&quot;,
@@ -20490,24 +20502,35 @@
 <p><em>Content</em> : The given parameters were not correct.</p>
 <p>&nbsp;</p>
 </details>
-<h3 id="network">Network</h3>
+<h3 id="network-deprecated">Network (deprecated)</h3>
 <p>Manage a network.</p>
 <p>This endpoint is deprecated. Use the new 'subnet' endpoint instead.</p>
-<p><code>DELETE /MAAS/api/2.0/networks/{name}/</code></p>
+<details>
+<summary><code>DELETE /MAAS/api/2.0/networks/{name}/</code></summary>
 <p>Delete network definition.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<p><code>GET /MAAS/api/2.0/networks/{name}/</code></p>
+</details>
+<details>
+<summary><code>GET /MAAS/api/2.0/networks/{name}/</code></summary>
 <p>Read network definition.</p>
-<p><code>GET /MAAS/api/2.0/networks/{name}/ op=list_connected_macs</code></p>
+</details>
+<details>
+<summary><code>GET /MAAS/api/2.0/networks/{name}/ op=list_connected_macs</code></summary>
 <p>Returns the list of MAC addresses connected to this network.</p>
 <p>Only MAC addresses for nodes visible to the requesting user are returned.</p>
-<p><code>POST /MAAS/api/2.0/networks/{name}/ op=connect_macs</code></p>
+</details>
+<details>
+<summary><code>POST /MAAS/api/2.0/networks/{name}/ op=connect_macs</code></summary>
 <p>Connect the given MAC addresses to this network.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<p><code>POST /MAAS/api/2.0/networks/{name}/ op=disconnect_macs</code></p>
+</details>
+<details>
+<summary><code>POST /MAAS/api/2.0/networks/{name}/ op=disconnect_macs</code></summary>
 <p>Disconnect the given MAC addresses from this network.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
-<p><code>PUT /MAAS/api/2.0/networks/{name}/</code></p>
+</details>
+<details>
+<summary><code>PUT /MAAS/api/2.0/networks/{name}/</code></summary>
 <p>Update network definition.</p>
 <p>This endpoint is no longer available. Use the 'subnet' endpoint instead.</p>
 <dl>
@@ -20527,19 +20550,915 @@
 <dd><p>Detailed description of the network for the benefit of users and administrators.</p>
 </dd>
 </dl>
+</details>
 <h3 id="networks">Networks</h3>
 <p>Manage the networks.</p>
 <p>This endpoint is deprecated. Use the new 'subnets' endpoint instead.</p>
-<p><code>GET /MAAS/api/2.0/networks/</code></p>
+<details>
+<summary><code>GET /MAAS/api/2.0/networks/</code></summary>
 <p>List networks.</p>
 <dl>
 <dt>param node</dt>
 <dd><p>Optionally, nodes which must be attached to any returned networks. If more than one node is given, the result will be restricted to networks that these nodes have in common.</p>
 </dd>
 </dl>
-<p><code>POST /MAAS/api/2.0/networks/</code></p>
+</details>
+<details>
+<summary><code>POST /MAAS/api/2.0/networks/</code></summary>
 <p>Define a network.</p>
 <p>This endpoint is no longer available. Use the 'subnets' endpoint instead.</p>
+</details>
+<h3 id="node-device">Node Device</h3>
+<p>View a specific NodeDevice from a Node.</p>
+<details>
+<summary><code>DELETE /MAAS/api/2.0/nodes/{system_id}/devices/{id}/</code></summary>
+<p>Delete a node device with the given system_id and id. If the device is still present in the system it will be recreated when the node is commissioned.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>{system_id}</strong> (<em>String</em>): Required. A system_id</p>
+<p><strong>{id}</strong> (<em>String</em>): Required. A node device id.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 204</p>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404</p>
+<p><em>Content</em></p>
+<pre><code>Not Found</code></pre>
+<p>&nbsp;</p>
+</details>
+<details>
+<summary><code>GET /MAAS/api/2.0/nodes/{system_id}/devices/{id}/</code></summary>
+<p>Return a node device with the given system_id and node device id.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>{system_id}</strong> (<em>String</em>): Required. A system_id.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. A node device id.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 200</p>
+<p><em>JSON</em></p>
+<pre><code>{
+    &quot;bus&quot;: 1,
+    &quot;hardware_type&quot;: 0,
+    &quot;physical_blockdevice&quot;: null,
+    &quot;physical_interface&quot;: null,
+    &quot;vendor_id&quot;: &quot;1af4&quot;,
+    &quot;product_id&quot;: &quot;1003&quot;,
+    &quot;vendor_name&quot;: &quot;Red Hat, Inc.&quot;,
+    &quot;product_name&quot;: &quot;Virtio console&quot;,
+    &quot;commissioning_driver&quot;: &quot;virtio-pci&quot;,
+    &quot;bus_number&quot;: 0,
+    &quot;device_number&quot;: 6,
+    &quot;pci_address&quot;: &quot;0000:00:06.0&quot;,
+    &quot;bus_name&quot;: &quot;PCIE&quot;,
+    &quot;numa_node&quot;: 0,
+    &quot;hardware_type_name&quot;: &quot;Node&quot;,
+    &quot;system_id&quot;: &quot;wr8xmb&quot;,
+    &quot;id&quot;: 12,
+    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/wr8xmb/devices/12/&quot;
+}</code></pre>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404</p>
+<p><em>Content</em></p>
+<pre><code>Not Found</code></pre>
+<p>&nbsp;</p>
+</details>
+<h3 id="node-devices">Node Devices</h3>
+<p>View NodeDevices from a Node.</p>
+<details>
+<summary><code>GET /MAAS/api/2.0/nodes/{system_id}/devices/</code></summary>
+<p>Return a list of devices attached to the node given by a system_id.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>{system_id}</strong> (<em>String</em>): Required. The node's system_id.</p>
+<p><strong>bus</strong> (<em>String</em>): Optional. Only return devices attached to the specified bus. Can be PCIE or USB. Defaults to all.</p>
+<p><strong>hardware_type</strong> (<em>String</em>): Optional. Only return scripts for the given hardware type. Can be <code>node</code>, <code>cpu</code>, <code>memory</code>, <code>storage</code> or <code>gpu</code>. Defaults to all.</p>
+<p><strong>vendor_id</strong> (<em>String</em>): Optional. Only return devices which have the specified vendor id.</p>
+<p><strong>product_id</strong> (<em>String</em>): Optional. Only return devices which have the specified product id.</p>
+<p><strong>vendor_name</strong> (<em>String</em>): Optional. Only return devices which have the specified vendor_name.</p>
+<p><strong>product_name</strong> (<em>String</em>): Optional. Only return devices which have the specified product_name.</p>
+<p><strong>commissioning_driver</strong> (<em>String</em>): Optional. Only return devices which use the specified driver when commissioning.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 200</p>
+<p><em>JSON</em></p>
+<pre><code>[
+    {
+        &quot;status_name&quot;: &quot;Passed&quot;,
+        &quot;status&quot;: 2,
+        &quot;type_name&quot;: &quot;Commissioning&quot;,
+        &quot;id&quot;: 21,
+        &quot;runtime&quot;: &quot;306 days, 20:34:46&quot;,
+        &quot;ended&quot;: &quot;Tue, 07 Nov 2017 15:59:57 -0000&quot;,
+        &quot;type&quot;: 0,
+        &quot;results&quot;: [
+            {
+                &quot;id&quot;: 342,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-00-support-info&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 19 Mar 2017 20:38:06 -0000&quot;,
+                &quot;ended&quot;: &quot;Sun, 19 Mar 2017 21:41:34 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:03:28&quot;,
+                &quot;starttime&quot;: 1489955886,
+                &quot;endtime&quot;: 1489959694,
+                &quot;estimated_runtime&quot;: &quot;1:03:28&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: false
+            },
+            {
+                &quot;id&quot;: 344,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-01-cpuinfo&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 11 Jan 2017 23:18:54 -0000&quot;,
+                &quot;ended&quot;: &quot;Thu, 12 Jan 2017 00:03:24 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:44:30&quot;,
+                &quot;starttime&quot;: 1484176734,
+                &quot;endtime&quot;: 1484179404,
+                &quot;estimated_runtime&quot;: &quot;0:44:30&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: false
+            },
+            {
+                &quot;id&quot;: 343,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-01-lshw&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 15 Oct 2017 08:12:05 -0000&quot;,
+                &quot;ended&quot;: &quot;Sun, 15 Oct 2017 10:07:54 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:55:49&quot;,
+                &quot;starttime&quot;: 1508055125,
+                &quot;endtime&quot;: 1508062074,
+                &quot;estimated_runtime&quot;: &quot;1:55:49&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: false
+            },
+            {
+                &quot;id&quot;: 345,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-02-virtuality&quot;,
+                &quot;status&quot;: 3,
+                &quot;status_name&quot;: &quot;Failed&quot;,
+                &quot;exit_status&quot;: 1,
+                &quot;started&quot;: &quot;Tue, 09 May 2017 14:02:19 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 09 May 2017 15:08:21 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:06:02&quot;,
+                &quot;starttime&quot;: 1494338539,
+                &quot;endtime&quot;: 1494342501,
+                &quot;estimated_runtime&quot;: &quot;1:06:02&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: true
+            },
+            {
+                &quot;id&quot;: 346,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-03-install-lldpd&quot;,
+                &quot;status&quot;: 3,
+                &quot;status_name&quot;: &quot;Failed&quot;,
+                &quot;exit_status&quot;: 1,
+                &quot;started&quot;: &quot;Tue, 07 Nov 2017 15:05:05 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 07 Nov 2017 15:59:57 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:54:52&quot;,
+                &quot;starttime&quot;: 1510067105,
+                &quot;endtime&quot;: 1510070397,
+                &quot;estimated_runtime&quot;: &quot;0:54:52&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: true
+            },
+            {
+                &quot;id&quot;: 347,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-04-list-modaliases&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Fri, 20 Oct 2017 03:01:06 -0000&quot;,
+                &quot;ended&quot;: &quot;Fri, 20 Oct 2017 05:21:25 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:20:19&quot;,
+                &quot;starttime&quot;: 1508468466,
+                &quot;endtime&quot;: 1508476885,
+                &quot;estimated_runtime&quot;: &quot;2:20:19&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: false
+            },
+            {
+                &quot;id&quot;: 348,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-05-dhcp-unconfigured-ifaces&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 05 Jul 2017 10:52:49 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 05 Jul 2017 10:53:55 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:01:06&quot;,
+                &quot;starttime&quot;: 1499251969,
+                &quot;endtime&quot;: 1499252035,
+                &quot;estimated_runtime&quot;: &quot;0:01:06&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: false
+            },
+            {
+                &quot;id&quot;: 349,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-06-get-fruid-api-data&quot;,
+                &quot;status&quot;: 3,
+                &quot;status_name&quot;: &quot;Failed&quot;,
+                &quot;exit_status&quot;: 1,
+                &quot;started&quot;: &quot;Wed, 04 Jan 2017 19:25:11 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 04 Jan 2017 19:33:04 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:07:53&quot;,
+                &quot;starttime&quot;: 1483557911,
+                &quot;endtime&quot;: 1483558384,
+                &quot;estimated_runtime&quot;: &quot;0:07:53&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null,
+                &quot;suppressed&quot;: true
+            },
+            {
+                &quot;id&quot;: 350,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-07-block-devices&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sat, 06 May 2017 05:07:50 -0000&quot;,
+                &quot;ended&quot;: &quot;Sat, 06 May 2017 06:05:59 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:58:09&quot;,
+                &quot;starttime&quot;: 1494047270,
+                &quot;endtime&quot;: 1494050759,
+                &quot;estimated_runtime&quot;: &quot;0:58:09&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 351,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;00-maas-08-serial-ports&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Thu, 02 Mar 2017 01:01:37 -0000&quot;,
+                &quot;ended&quot;: &quot;Thu, 02 Mar 2017 03:35:40 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:34:03&quot;,
+                &quot;starttime&quot;: 1488416497,
+                &quot;endtime&quot;: 1488425740,
+                &quot;estimated_runtime&quot;: &quot;2:34:03&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 352,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;99-maas-02-capture-lldp&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 04 Oct 2017 09:27:49 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 04 Oct 2017 09:34:31 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:06:42&quot;,
+                &quot;starttime&quot;: 1507109269,
+                &quot;endtime&quot;: 1507109671,
+                &quot;estimated_runtime&quot;: &quot;0:06:42&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 353,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;99-maas-03-network-interfaces&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Tue, 14 Mar 2017 12:40:35 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 14 Mar 2017 15:06:36 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:26:01&quot;,
+                &quot;starttime&quot;: 1489495235,
+                &quot;endtime&quot;: 1489503996,
+                &quot;estimated_runtime&quot;: &quot;2:26:01&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 354,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;99-maas-04-network-interfaces-with-sriov&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Tue, 05 Sep 2017 14:09:44 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 05 Sep 2017 14:53:53 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:44:09&quot;,
+                &quot;starttime&quot;: 1504620584,
+                &quot;endtime&quot;: 1504623233,
+                &quot;estimated_runtime&quot;: &quot;0:44:09&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: null,
+                &quot;script_revision_id&quot;: null
+            }
+        ],
+        &quot;started&quot;: &quot;Wed, 04 Jan 2017 19:25:11 -0000&quot;,
+        &quot;last_ping&quot;: null,
+        &quot;system_id&quot;: &quot;thr3am&quot;,
+        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/thr3am/results/21/&quot;
+    },
+    {
+        &quot;status_name&quot;: &quot;Passed&quot;,
+        &quot;status&quot;: 2,
+        &quot;type_name&quot;: &quot;Testing&quot;,
+        &quot;id&quot;: 22,
+        &quot;runtime&quot;: &quot;348 days, 6:51:37&quot;,
+        &quot;ended&quot;: &quot;Tue, 19 Dec 2017 00:23:41 -0000&quot;,
+        &quot;type&quot;: 2,
+        &quot;results&quot;: [
+            {
+                &quot;id&quot;: 374,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;7z&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 19 Mar 2017 23:33:01 -0000&quot;,
+                &quot;ended&quot;: &quot;Mon, 20 Mar 2017 01:16:59 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:43:58&quot;,
+                &quot;starttime&quot;: 1489966381,
+                &quot;endtime&quot;: 1489972619,
+                &quot;estimated_runtime&quot;: &quot;1:43:58&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: 14,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 368,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Tue, 10 Jan 2017 00:25:57 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 10 Jan 2017 02:26:53 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:00:56&quot;,
+                &quot;starttime&quot;: 1484007957,
+                &quot;endtime&quot;: 1484015213,
+                &quot;estimated_runtime&quot;: &quot;2:00:56&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-mSnL9L&quot;,
+                            &quot;name&quot;: &quot;name-xE9mtJ&quot;,
+                            &quot;physical_blockdevice_id&quot;: 18,
+                            &quot;serial&quot;: &quot;serial-jBitFU&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 12,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 370,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Mon, 03 Jul 2017 18:26:21 -0000&quot;,
+                &quot;ended&quot;: &quot;Mon, 03 Jul 2017 18:50:59 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:24:38&quot;,
+                &quot;starttime&quot;: 1499106381,
+                &quot;endtime&quot;: 1499107859,
+                &quot;estimated_runtime&quot;: &quot;0:24:38&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-5btVsu&quot;,
+                            &quot;name&quot;: &quot;name-VhlrVi&quot;,
+                            &quot;physical_blockdevice_id&quot;: 20,
+                            &quot;serial&quot;: &quot;serial-SE3O1p&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 12,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 369,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 04 Jan 2017 17:32:04 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 04 Jan 2017 18:06:45 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:34:41&quot;,
+                &quot;starttime&quot;: 1483551124,
+                &quot;endtime&quot;: 1483553205,
+                &quot;estimated_runtime&quot;: &quot;0:34:41&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-OHzOYI&quot;,
+                            &quot;name&quot;: &quot;name-EjgNwC&quot;,
+                            &quot;physical_blockdevice_id&quot;: 19,
+                            &quot;serial&quot;: &quot;serial-5EZFik&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 12,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 373,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks-destructive&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 04 Oct 2017 03:19:13 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 04 Oct 2017 05:19:30 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:00:17&quot;,
+                &quot;starttime&quot;: 1507087153,
+                &quot;endtime&quot;: 1507094370,
+                &quot;estimated_runtime&quot;: &quot;2:00:17&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-5btVsu&quot;,
+                            &quot;name&quot;: &quot;name-VhlrVi&quot;,
+                            &quot;physical_blockdevice_id&quot;: 20,
+                            &quot;serial&quot;: &quot;serial-SE3O1p&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 13,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 372,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks-destructive&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 23 Jul 2017 20:55:47 -0000&quot;,
+                &quot;ended&quot;: &quot;Sun, 23 Jul 2017 23:38:04 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:42:17&quot;,
+                &quot;starttime&quot;: 1500843347,
+                &quot;endtime&quot;: 1500853084,
+                &quot;estimated_runtime&quot;: &quot;2:42:17&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-OHzOYI&quot;,
+                            &quot;name&quot;: &quot;name-EjgNwC&quot;,
+                            &quot;physical_blockdevice_id&quot;: 19,
+                            &quot;serial&quot;: &quot;serial-5EZFik&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 13,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 371,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;badblocks-destructive&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Mon, 18 Dec 2017 22:06:01 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 19 Dec 2017 00:23:41 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:17:40&quot;,
+                &quot;starttime&quot;: 1513634761,
+                &quot;endtime&quot;: 1513643021,
+                &quot;estimated_runtime&quot;: &quot;2:17:40&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-mSnL9L&quot;,
+                            &quot;name&quot;: &quot;name-xE9mtJ&quot;,
+                            &quot;physical_blockdevice_id&quot;: 18,
+                            &quot;serial&quot;: &quot;serial-jBitFU&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 13,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 365,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;internet-connectivity&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sat, 01 Apr 2017 03:04:52 -0000&quot;,
+                &quot;ended&quot;: &quot;Sat, 01 Apr 2017 03:12:08 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:07:16&quot;,
+                &quot;starttime&quot;: 1491015892,
+                &quot;endtime&quot;: 1491016328,
+                &quot;estimated_runtime&quot;: &quot;0:07:16&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: 6,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 364,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;memtester&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Wed, 19 Apr 2017 09:22:38 -0000&quot;,
+                &quot;ended&quot;: &quot;Wed, 19 Apr 2017 10:43:25 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:20:47&quot;,
+                &quot;starttime&quot;: 1492593758,
+                &quot;endtime&quot;: 1492598605,
+                &quot;estimated_runtime&quot;: &quot;1:20:47&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: 5,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 361,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-conveyance&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sat, 18 Mar 2017 10:19:52 -0000&quot;,
+                &quot;ended&quot;: &quot;Sat, 18 Mar 2017 12:47:57 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:28:05&quot;,
+                &quot;starttime&quot;: 1489832392,
+                &quot;endtime&quot;: 1489841277,
+                &quot;estimated_runtime&quot;: &quot;2:28:05&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-mSnL9L&quot;,
+                            &quot;name&quot;: &quot;name-xE9mtJ&quot;,
+                            &quot;physical_blockdevice_id&quot;: 18,
+                            &quot;serial&quot;: &quot;serial-jBitFU&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 4,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 362,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-conveyance&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Thu, 07 Sep 2017 01:11:18 -0000&quot;,
+                &quot;ended&quot;: &quot;Thu, 07 Sep 2017 03:02:21 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:51:03&quot;,
+                &quot;starttime&quot;: 1504746678,
+                &quot;endtime&quot;: 1504753341,
+                &quot;estimated_runtime&quot;: &quot;1:51:03&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-OHzOYI&quot;,
+                            &quot;name&quot;: &quot;name-EjgNwC&quot;,
+                            &quot;physical_blockdevice_id&quot;: 19,
+                            &quot;serial&quot;: &quot;serial-5EZFik&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 4,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 363,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-conveyance&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Fri, 15 Sep 2017 21:40:34 -0000&quot;,
+                &quot;ended&quot;: &quot;Fri, 15 Sep 2017 23:16:21 -0000&quot;,
+                &quot;runtime&quot;: &quot;1:35:47&quot;,
+                &quot;starttime&quot;: 1505511634,
+                &quot;endtime&quot;: 1505517381,
+                &quot;estimated_runtime&quot;: &quot;1:35:47&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-5btVsu&quot;,
+                            &quot;name&quot;: &quot;name-VhlrVi&quot;,
+                            &quot;physical_blockdevice_id&quot;: 20,
+                            &quot;serial&quot;: &quot;serial-SE3O1p&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 4,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 358,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-short&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Fri, 20 Jan 2017 06:36:01 -0000&quot;,
+                &quot;ended&quot;: &quot;Fri, 20 Jan 2017 07:21:22 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:45:21&quot;,
+                &quot;starttime&quot;: 1484894161,
+                &quot;endtime&quot;: 1484896882,
+                &quot;estimated_runtime&quot;: &quot;0:45:21&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-mSnL9L&quot;,
+                            &quot;name&quot;: &quot;name-xE9mtJ&quot;,
+                            &quot;physical_blockdevice_id&quot;: 18,
+                            &quot;serial&quot;: &quot;serial-jBitFU&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 2,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 359,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-short&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Tue, 20 Jun 2017 19:17:09 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 20 Jun 2017 19:59:22 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:42:13&quot;,
+                &quot;starttime&quot;: 1497986229,
+                &quot;endtime&quot;: 1497988762,
+                &quot;estimated_runtime&quot;: &quot;0:42:13&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-OHzOYI&quot;,
+                            &quot;name&quot;: &quot;name-EjgNwC&quot;,
+                            &quot;physical_blockdevice_id&quot;: 19,
+                            &quot;serial&quot;: &quot;serial-5EZFik&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 2,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 360,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-short&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 26 Feb 2017 09:37:07 -0000&quot;,
+                &quot;ended&quot;: &quot;Sun, 26 Feb 2017 09:44:53 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:07:46&quot;,
+                &quot;starttime&quot;: 1488101827,
+                &quot;endtime&quot;: 1488102293,
+                &quot;estimated_runtime&quot;: &quot;0:07:46&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-5btVsu&quot;,
+                            &quot;name&quot;: &quot;name-VhlrVi&quot;,
+                            &quot;physical_blockdevice_id&quot;: 20,
+                            &quot;serial&quot;: &quot;serial-SE3O1p&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 2,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 355,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-validate&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sat, 26 Aug 2017 12:32:16 -0000&quot;,
+                &quot;ended&quot;: &quot;Sat, 26 Aug 2017 14:45:18 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:13:02&quot;,
+                &quot;starttime&quot;: 1503750736,
+                &quot;endtime&quot;: 1503758718,
+                &quot;estimated_runtime&quot;: &quot;2:13:02&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-mSnL9L&quot;,
+                            &quot;name&quot;: &quot;name-xE9mtJ&quot;,
+                            &quot;physical_blockdevice_id&quot;: 18,
+                            &quot;serial&quot;: &quot;serial-jBitFU&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 1,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 356,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-validate&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Tue, 06 Jun 2017 13:03:30 -0000&quot;,
+                &quot;ended&quot;: &quot;Tue, 06 Jun 2017 13:47:00 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:43:30&quot;,
+                &quot;starttime&quot;: 1496754210,
+                &quot;endtime&quot;: 1496756820,
+                &quot;estimated_runtime&quot;: &quot;0:43:30&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-OHzOYI&quot;,
+                            &quot;name&quot;: &quot;name-EjgNwC&quot;,
+                            &quot;physical_blockdevice_id&quot;: 19,
+                            &quot;serial&quot;: &quot;serial-5EZFik&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 1,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 357,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;smartctl-validate&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sun, 16 Jul 2017 19:10:54 -0000&quot;,
+                &quot;ended&quot;: &quot;Sun, 16 Jul 2017 21:35:40 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:24:46&quot;,
+                &quot;starttime&quot;: 1500232254,
+                &quot;endtime&quot;: 1500240940,
+                &quot;estimated_runtime&quot;: &quot;2:24:46&quot;,
+                &quot;parameters&quot;: {
+                    &quot;storage&quot;: {
+                        &quot;argument_format&quot;: &quot;{path}&quot;,
+                        &quot;type&quot;: &quot;storage&quot;,
+                        &quot;value&quot;: {
+                            &quot;id_path&quot;: null,
+                            &quot;model&quot;: &quot;model-5btVsu&quot;,
+                            &quot;name&quot;: &quot;name-VhlrVi&quot;,
+                            &quot;physical_blockdevice_id&quot;: 20,
+                            &quot;serial&quot;: &quot;serial-SE3O1p&quot;
+                        }
+                    }
+                },
+                &quot;script_id&quot;: 1,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 366,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;stress-ng-memory-long&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Sat, 08 Apr 2017 03:39:23 -0000&quot;,
+                &quot;ended&quot;: &quot;Sat, 08 Apr 2017 03:50:36 -0000&quot;,
+                &quot;runtime&quot;: &quot;0:11:13&quot;,
+                &quot;starttime&quot;: 1491622763,
+                &quot;endtime&quot;: 1491623436,
+                &quot;estimated_runtime&quot;: &quot;0:11:13&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: 9,
+                &quot;script_revision_id&quot;: null
+            },
+            {
+                &quot;id&quot;: 367,
+                &quot;created&quot;: &quot;Thu, 06 Dec 2018 20:41:55 -0000&quot;,
+                &quot;updated&quot;: &quot;Thu, 06 Dec 2018 20:41:56 -0000&quot;,
+                &quot;name&quot;: &quot;stress-ng-memory-short&quot;,
+                &quot;status&quot;: 2,
+                &quot;status_name&quot;: &quot;Passed&quot;,
+                &quot;exit_status&quot;: 0,
+                &quot;started&quot;: &quot;Thu, 19 Oct 2017 19:45:46 -0000&quot;,
+                &quot;ended&quot;: &quot;Thu, 19 Oct 2017 22:18:36 -0000&quot;,
+                &quot;runtime&quot;: &quot;2:32:50&quot;,
+                &quot;starttime&quot;: 1508442346,
+                &quot;endtime&quot;: 1508451516,
+                &quot;estimated_runtime&quot;: &quot;2:32:50&quot;,
+                &quot;parameters&quot;: {},
+                &quot;script_id&quot;: 10,
+                &quot;script_revision_id&quot;: null
+            }
+        ],
+        &quot;started&quot;: &quot;Wed, 04 Jan 2017 17:32:04 -0000&quot;,
+        &quot;last_ping&quot;: null,
+        &quot;system_id&quot;: &quot;thr3am&quot;,
+        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/thr3am/results/22/&quot;
+    }
+]</code></pre>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404</p>
+<p><em>Content</em></p>
+<pre><code>Not Found</code></pre>
+<p>&nbsp;</p>
+</details>
 <h3 id="node">Node</h3>
 <p>Manage an individual Node.</p>
 <p>The Node is identified by its system_id.</p>
@@ -21001,7 +21920,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/g8xyqs/blockdevices/76/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;testing_status&quot;: 2,
     &quot;default_gateways&quot;: {
         &quot;ipv4&quot;: {
@@ -23732,6 +24650,7 @@
 <p><strong>not_pod</strong> (<em>String</em>): Optional. Only nodes that don't belong to a specified pod will be returned.</p>
 <p><strong>pod_type</strong> (<em>String</em>): Optional. Only nodes that belong to a pod of the specified type will be returned.</p>
 <p><strong>not_pod_type</strong> (<em>String</em>): Optional. Only nodes that don't belong a pod of the specified type will be returned.</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return nodes which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -24887,7 +25806,7 @@
 <hr />
 <p><strong>{system_id}</strong> (<em>String</em>): Required. The system_id.</p>
 <p><strong>{device_id}</strong> (<em>Int</em>): Required. The block device_id.</p>
-<p><strong>size</strong> (<em>Int</em>): Optional. The size of the partition. If not specified, all available space will be used.</p>
+<p><strong>size</strong> (<em>Int</em>): Optional. The size of the partition in bytes. If not specified, all available space will be used.</p>
 <p><strong>uuid</strong> (<em>String</em>): Optional. UUID for the partition. Only used if the partition table type for the block device is GPT.</p>
 <p><strong>bootable</strong> (<em>Boolean</em>): Optional. If the partition should be marked bootable.</p>
 <p><strong>Success</strong></p>
@@ -24916,14 +25835,15 @@
 <p>&nbsp;</p>
 </details>
 <h3 id="pod">Pod</h3>
-<p>Manage an individual pod.</p>
-<p>A pod is identified by its id.</p>
+<p>Manage an individual Pod.</p>
+<p>The /pod/ API endpoint is deprecated. Please use the /vm-host/ one instead.</p>
 <details>
 <summary><code>DELETE /MAAS/api/2.0/pods/{id}/</code></summary>
-<p>Deletes a pod with the given pod ID.</p>
+<p>Deletes a VM host with the given ID.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
+<p><strong>decompose</strong> (<em>Boolean</em>): Optional. Whether to also also decompose all machines in the VM host on removal. If not provided, machines will not be removed.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 204</p>
@@ -24940,11 +25860,11 @@
 <p><code>GET /MAAS/api/2.0/pods/{id}/</code></p>
 <details>
 <summary><code>GET /MAAS/api/2.0/pods/{id}/?op=parameters</code></summary>
-<p>This returns a pod's configuration parameters. For some types of pod, this will include private information such as passwords and secret keys.</p>
+<p>This returns a VM host's configuration parameters. For some types of VM host, this will include private information such as passwords and secret keys.</p>
 <p>Note: This method is reserved for admin users.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -24964,10 +25884,10 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/pods/{id}/?op=add_tag</code></summary>
-<p>Adds a tag to a given pod.</p>
+<p>Adds a tag to a given VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>tag</strong> (<em>String</em>): Required. The tag to add.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -25051,7 +25971,7 @@
         }
     ],
     &quot;type&quot;: &quot;virsh&quot;,
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/3/&quot;
+    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/3/&quot;
 }</code></pre>
 <p><strong>Error</strong></p>
 <hr />
@@ -25065,7 +25985,7 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/pods/{id}/?op=compose</code></summary>
-<p>Compose a new machine from a pod.</p>
+<p>Compose a new machine from a VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>cores</strong> (<em>Int</em>): Optional. The minimum number of CPU cores.</p>
@@ -25073,8 +25993,8 @@
 <p><strong>hugepages_backed</strong> (<em>Boolean</em>): Optional. Whether to request hugepages backing for the machine.</p>
 <p><strong>pinned_cores</strong> (<em>Int</em>): Optional. List of host CPU cores to pin the VM to. If this is passed, the "cores" parameter is ignored.</p>
 <p><strong>cpu_speed</strong> (<em>Int</em>): Optional. The minimum CPU speed, specified in MHz.</p>
-<p><strong>architecture</strong> (<em>String</em>): Optional. The architecture of the new machine (e.g. amd64). This must be an architecture the pod supports.</p>
-<p><strong>storage</strong> (<em>String</em>): Optional. A list of storage constraint identifiers in the form <code>label:size(tag,tag,...), label:size(tag,tag,...)</code>. For more information please see the CLI pod management page of the official MAAS documentation.</p>
+<p><strong>architecture</strong> (<em>String</em>): Optional. The architecture of the new machine (e.g. amd64). This must be an architecture the VM host supports.</p>
+<p><strong>storage</strong> (<em>String</em>): Optional. A list of storage constraint identifiers in the form <code>label:size(tag,tag,...), label:size(tag,tag,...)</code>. For more information please see the CLI VM host management page of the official MAAS documentation.</p>
 <p><strong>interfaces</strong> (<em>String</em>): Optional. A labeled constraint map associating constraint labels with desired interface properties. MAAS will assign interfaces that match the given interface properties.</p>
 <p>Format: <code>label:key=value,key=value,...</code></p>
 <p>Keys:</p>
@@ -25118,10 +26038,10 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/pods/{id}/?op=refresh</code></summary>
-<p>Performs pod discovery and updates all discovered information and discovered machines.</p>
+<p>Performs VM host discovery and updates all discovered information and discovered machines.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Optional. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Optional. The VM host's ID.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>JSON</em></p>
@@ -25201,10 +26121,10 @@
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/pods/{id}/?op=remove_tag</code></summary>
-<p>Removes a given tag from a pod.</p>
+<p>Removes a given tag from a VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>tag</strong> (<em>String</em>): Required. The tag to add.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -25300,21 +26220,21 @@
 </details>
 <details>
 <summary><code>PUT /MAAS/api/2.0/pods/{id}/</code></summary>
-<p>Update a specific pod by ID.</p>
-<p>Note: A pod's 'type' cannot be updated. The pod must be deleted and re-added to change the type.</p>
+<p>Update a specific VM host by ID.</p>
+<p>Note: A VM host's 'type' cannot be updated. The VM host must be deleted and re-added to change the type.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>URL String</em>): Required. The pod's ID.</p>
-<p><strong>name</strong> (<em>String</em>): Optional. The pod's name.</p>
-<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool associated with this pod -- composed machines will be assigned to this resource pool by default.</p>
+<p><strong>{id}</strong> (<em>URL String</em>): Required. The VM host's ID.</p>
+<p><strong>name</strong> (<em>String</em>): Optional. The VM host's name.</p>
+<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool associated with this VM host -- composed machines will be assigned to this resource pool by default.</p>
 <p><strong>cpu_over_commit_ratio</strong> (<em>Int</em>): Optional. CPU overcommit ratio (0-10)</p>
 <p><strong>memory_over_commit_ratio</strong> (<em>Int</em>): Optional. CPU overcommit ratio (0-10)</p>
-<p><strong>default_storage_pool</strong> (<em>String</em>): Optional. Default KVM storage pool to use when the pod has storage pools.</p>
-<p><strong>power_address</strong> (<em>String</em>): Optional. Address for power control of the pod.</p>
-<p><strong>power_pass</strong> (<em>String</em>): Optional. Password for access to power control of the pod.</p>
-<p><strong>zone</strong> (<em>String</em>): Optional. The pod's zone.</p>
-<p><strong>default_macvlan_mode</strong> (<em>String</em>): Optional. Default macvlan mode for pods that use it: bridge, passthru, private, vepa.</p>
-<p><strong>tags</strong> (<em>String</em>): Optional. Tag or tags (command separated) associated with the pod.</p>
+<p><strong>default_storage_pool</strong> (<em>String</em>): Optional. Default KVM storage pool to use when the VM host has storage pools.</p>
+<p><strong>power_address</strong> (<em>String</em>): Optional. Address for power control of the VM host.</p>
+<p><strong>power_pass</strong> (<em>String</em>): Optional. Password for access to power control of the VM host.</p>
+<p><strong>zone</strong> (<em>String</em>): Optional. The VM host's zone.</p>
+<p><strong>default_macvlan_mode</strong> (<em>String</em>): Optional. Default macvlan mode for VM hosts that use it: bridge, passthru, private, vepa.</p>
+<p><strong>tags</strong> (<em>String</em>): Optional. Tag or tags (command separated) associated with the VM host.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -25381,19 +26301,20 @@
         &quot;memory&quot;: 15916,
         &quot;local_storage&quot;: 47751942144
     },
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/1/&quot;
+    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/1/&quot;
 }</code></pre>
 <p><strong>Error</strong></p>
 <hr />
-<p><em>HTTP Status Code</em> : 404 -- The pod's ID was not found.</p>
-<p><em>HTTP Status Code</em> : 403 -- The current user does not have permission to update the pod.</p>
+<p><em>HTTP Status Code</em> : 404 -- The VM host's ID was not found.</p>
+<p><em>HTTP Status Code</em> : 403 -- The current user does not have permission to update the VM host.</p>
 <p>&nbsp;</p>
 </details>
 <h3 id="pods">Pods</h3>
-<p>Manage the collection of all the pod in the MAAS.</p>
+<p>Manage the collection of all the pods in the MAAS.</p>
+<p>The /pods/ API endpoint is deprecated. Please use the /vm-hosts/ one instead.</p>
 <details>
 <summary><code>GET /MAAS/api/2.0/pods/</code></summary>
-<p>Get a listing of all pods.</p>
+<p>Get a listing of all VM hosts.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -25475,24 +26396,25 @@
             }
         ],
         &quot;type&quot;: &quot;virsh&quot;,
-        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/3/&quot;
+        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/3/&quot;
     }
 ]</code></pre>
 <p>&nbsp;</p>
 </details>
 <details>
 <summary><code>POST /MAAS/api/2.0/pods/</code></summary>
-<p>Create or discover a new pod.</p>
+<p>Create or discover a new VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>type</strong> (<em>String</em>): Required. The type of pod to create: <code>rsd</code> or <code>virsh</code>.</p>
-<p><strong>power_address</strong> (<em>String</em>): Required. Address that gives MAAS access to the pod's power control. For example: <code>qemu+ssh://172.16.99.2/system</code>.</p>
-<p><strong>power_user</strong> (<em>String</em>): Required. Username to use for power control of the pod. Required for <code>rsd</code> pods or <code>virsh</code> pods that do not have SSH set up for public-key authentication.</p>
-<p><strong>power_pass</strong> (<em>String</em>): Required. Password to use for power control of the pod. Required for <code>rsd</code> pods or <code>virsh</code> pods that do not have SSH set up for public-key authentication.</p>
-<p><strong>name</strong> (<em>String</em>): Optional. The new pod's name.</p>
-<p><strong>zone</strong> (<em>String</em>): Optional. The new pod's zone.</p>
-<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool the new pod will belong to. Machines composed from this pod will be assigned to this resource pool by default.</p>
-<p><strong>tags</strong> (<em>String</em>): Optional. A tag or list of tags ( comma delimited) to assign to the new pod.</p>
+<p><strong>type</strong> (<em>String</em>): Required. The type of VM host to create: <code>lxd</code> or <code>virsh</code>.</p>
+<p><strong>power_address</strong> (<em>String</em>): Required. Address that gives MAAS access to the VM host power control. For example, for virsh <code>qemu+ssh://172.16.99.2/system</code> For <code>lxd</code>, this is just the address of the host.</p>
+<p><strong>power_user</strong> (<em>String</em>): Required. Username to use for power control of the VM host. Required for <code>virsh</code> VM hosts that do not have SSH set up for public-key authentication.</p>
+<p><strong>power_pass</strong> (<em>String</em>): Required. Password to use for power control of the VM host. Required <code>virsh</code> VM hosts that do not have SSH set up for public-key authentication and for <code>lxd</code> if the MAAS certificate is not registered already in the LXD server.</p>
+<p><strong>name</strong> (<em>String</em>): Optional. The new VM host's name.</p>
+<p><strong>zone</strong> (<em>String</em>): Optional. The new VM host's zone.</p>
+<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool the new VM host will belong to. Machines composed from this VM host will be assigned to this resource pool by default.</p>
+<p><strong>tags</strong> (<em>String</em>): Optional. A tag or list of tags ( comma delimited) to assign to the new VM host.</p>
+<p><strong>project</strong> (<em>String</em>): Optional. For <code>lxd</code> VM hosts, the project that MAAS will manage. If not provided, the <code>default</code> project will be used. If a nonexistent name is given, a new project with that name will be created.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -25571,7 +26493,7 @@
 <pre><code>This method is reserved for admin users.</code></pre>
 <p><em>HTTP Status Code</em> : 503</p>
 <p><em>Content</em></p>
-<pre><code>Failed talking to pod: Failed to login to virsh console.</code></pre>
+<pre><code>Failed talking to VM host: Failed to authenticate to the VM host.</code></pre>
 <p>&nbsp;</p>
 </details>
 <h3 id="rackcontroller">RackController</h3>
@@ -26039,7 +26961,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/g8xyqs/blockdevices/76/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;testing_status&quot;: 2,
     &quot;default_gateways&quot;: {
         &quot;ipv4&quot;: {
@@ -26231,7 +27152,6 @@
     &quot;osystem&quot;: &quot;ubuntu&quot;,
     &quot;cpu_test_status_name&quot;: &quot;Unknown&quot;,
     &quot;testing_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;bios_boot_method&quot;: &quot;pxe&quot;,
     &quot;boot_interface&quot;: {
         &quot;vlan&quot;: {
@@ -26648,7 +27568,6 @@
     &quot;osystem&quot;: &quot;ubuntu&quot;,
     &quot;cpu_test_status_name&quot;: &quot;Unknown&quot;,
     &quot;testing_status&quot;: 2,
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;bios_boot_method&quot;: &quot;pxe&quot;,
     &quot;boot_interface&quot;: {
         &quot;vlan&quot;: {
@@ -27093,7 +28012,6 @@
         &quot;id&quot;: 1,
         &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/zones/default/&quot;
     },
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;current_commissioning_result_id&quot;: 6,
     &quot;current_testing_result_id&quot;: 49,
     &quot;osystem&quot;: &quot;ubuntu&quot;,
@@ -27964,6 +28882,7 @@
 <p><strong>not_pod</strong> (<em>String</em>): Optional. Only nodes that don't belong to a specified pod will be returned.</p>
 <p><strong>pod_type</strong> (<em>String</em>): Optional. Only nodes that belong to a pod of the specified type will be returned.</p>
 <p><strong>not_pod_type</strong> (<em>String</em>): Optional. Only nodes that don't belong a pod of the specified type will be returned.</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return nodes which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -28948,7 +29867,6 @@
             &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/g8xyqs/blockdevices/76/&quot;
         }
     ],
-    &quot;iscsiblockdevice_set&quot;: [],
     &quot;testing_status&quot;: 2,
     &quot;default_gateways&quot;: {
         &quot;ipv4&quot;: {
@@ -29343,6 +30261,7 @@
 <p><strong>not_pod</strong> (<em>String</em>): Optional. Only nodes that don't belong to a specified pod will be returned.</p>
 <p><strong>pod_type</strong> (<em>String</em>): Optional. Only nodes that belong to a pod of the specified type will be returned.</p>
 <p><strong>not_pod_type</strong> (<em>String</em>): Optional. Only nodes that don't belong a pod of the specified type will be returned.</p>
+<p><strong>devices</strong> (<em>String</em>): Optional. Only return nodes which have one or more devices containing the following constraints in the format key=value[,key2=value2[,...]] Each key can be one of the following: - <code>vendor_id</code>: The device vendor id - <code>product_id</code>: The device product id - <code>vendor_name</code>: The device vendor name, not case sensative - <code>product_name</code>: The device product name, not case sensative - <code>commissioning_driver</code>: The device uses this driver during commissioning.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -29865,9 +30784,7 @@
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>key</strong> (<em>String</em>): Required. A public SSH key should be provided in the request payload as form data with the name 'key':</p>
-<blockquote>
-<p>key: "key-type public-key-data"</p>
-</blockquote>
+<p><code>key: "key-type public-key-data"</code></p>
 <ul>
 <li><code>key-type</code>: ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521, ssh-dss, ssh-ed25519, ssh-rsa</li>
 <li><code>public key data</code>: Base64-encoded key data.</li>
@@ -29890,9 +30807,7 @@
 <hr />
 <p><strong>keysource</strong> (<em>String</em>): Required. The source of the keys to import should be provided in the request payload as form data:</p>
 <p>E.g.</p>
-<blockquote>
-<p>source:user</p>
-</blockquote>
+<p><code>source:user</code></p>
 <ul>
 <li><code>source</code>: lp (Launchpad), gh (GitHub)</li>
 <li><code>user</code>: User login</li>
@@ -29987,9 +30902,7 @@
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>key</strong> (<em>String</em>): Required. An SSL key should be provided in the request payload as form data with the name 'key':</p>
-<blockquote>
-<p>key: "key data"</p>
-</blockquote>
+<p><code>key: "key data"</code></p>
 <ul>
 <li><code>key data</code>: The contents of a pem file.</li>
 </ul>
@@ -31620,8 +32533,7 @@
 <p><strong>allow_proxy</strong> (<em>Int</em>): Optional. Configure maas-proxy to allow requests from this subnet. '0' == False, '1' == True.</p>
 <p><strong>dns_servers</strong> (<em>String</em>): Optional. Comma-seperated list of DNS servers for this subnet.</p>
 <p><strong>managed</strong> (<em>Int</em>): Optional. In MAAS 2.0+, all subnets are assumed to be managed by default.</p>
-<p>Only managed subnets allow DHCP to be enabled on their related dynamic ranges. (Thus, dynamic ranges become "informational only"; an indication that another DHCP server is currently handling them, or that MAAS will handle them when the subnet is enabled for management.)</p>
-<p>Managed subnets do not allow IP allocation by default. The meaning of a "reserved" IP range is reversed for an unmanaged subnet. (That is, for managed subnets, "reserved" means "MAAS cannot allocate any IP address within this reserved block". For unmanaged subnets, "reserved" means "MAAS must allocate IP addresses only from reserved IP ranges."</p>
+<p><strong>disabled_boot_architectures</strong> (<em>String</em>): Optional. A comma or space seperated list of boot architectures which will not be responded to by isc-dhcpd. Values may be the MAAS name for the boot architecture, the IANA hex value, or the isc-dhcpd octet. Only managed subnets allow DHCP to be enabled on their related dynamic ranges. (Thus, dynamic ranges become "informational only"; an indication that another DHCP server is currently handling them, or that MAAS will handle them when the subnet is enabled for management.) Managed subnets do not allow IP allocation by default. The meaning of a "reserved" IP range is reversed for an unmanaged subnet. (That is, for managed subnets, "reserved" means "MAAS cannot allocate any IP address within this reserved block". For unmanaged subnets, "reserved" means "MAAS must allocate IP addresses only from reserved IP ranges."</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -31918,8 +32830,7 @@
 <p><strong>allow_proxy</strong> (<em>Int</em>): Optional. Configure maas-proxy to allow requests from this subnet. '0' == False, '1' == True.</p>
 <p><strong>dns_servers</strong> (<em>String</em>): Optional. Comma-seperated list of DNS servers for this subnet.</p>
 <p><strong>managed</strong> (<em>Int</em>): Optional. In MAAS 2.0+, all subnets are assumed to be managed by default.</p>
-<p>Only managed subnets allow DHCP to be enabled on their related dynamic ranges. (Thus, dynamic ranges become "informational only"; an indication that another DHCP server is currently handling them, or that MAAS will handle them when the subnet is enabled for management.)</p>
-<p>Managed subnets do not allow IP allocation by default. The meaning of a "reserved" IP range is reversed for an unmanaged subnet. (That is, for managed subnets, "reserved" means "MAAS cannot allocate any IP address within this reserved block". For unmanaged subnets, "reserved" means "MAAS must allocate IP addresses only from reserved IP ranges."</p>
+<p><strong>disabled_boot_architectures</strong> (<em>String</em>): Optional. A comma or space seperated list of boot architectures which will not be responded to by isc-dhcpd. Values may be the MAAS name for the boot architecture, the IANA hex value, or the isc-dhcpd octet. Only managed subnets allow DHCP to be enabled on their related dynamic ranges. (Thus, dynamic ranges become "informational only"; an indication that another DHCP server is currently handling them, or that MAAS will handle them when the subnet is enabled for management.) Managed subnets do not allow IP allocation by default. The meaning of a "reserved" IP range is reversed for an unmanaged subnet. (That is, for managed subnets, "reserved" means "MAAS cannot allocate any IP address within this reserved block". For unmanaged subnets, "reserved" means "MAAS must allocate IP addresses only from reserved IP ranges."</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -31988,7 +32899,7 @@
     &quot;name&quot;: &quot;virtual&quot;,
     &quot;definition&quot;: &quot;&quot;,
     &quot;comment&quot;: &quot;&quot;,
-    &quot;kernel_opts&quot;: null,
+    &quot;kernel_opts&quot;: &quot;&quot;,
     &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/tags/virtual/&quot;
 }</code></pre>
 <p><strong>Error</strong></p>
@@ -32574,7 +33485,6 @@
                 &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/ssqcgt/interfaces/99/&quot;
             }
         ],
-        &quot;iscsiblockdevice_set&quot;: [],
         &quot;node_type&quot;: 0,
         &quot;memory_test_status_name&quot;: &quot;Failed&quot;,
         &quot;bcaches&quot;: [],
@@ -33612,7 +34522,6 @@
                 &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/nodes/ssqcgt/interfaces/99/&quot;
             }
         ],
-        &quot;iscsiblockdevice_set&quot;: [],
         &quot;node_type&quot;: 0,
         &quot;memory_test_status_name&quot;: &quot;Failed&quot;,
         &quot;bcaches&quot;: [],
@@ -34642,7 +35551,7 @@
         &quot;name&quot;: &quot;virtual&quot;,
         &quot;definition&quot;: &quot;&quot;,
         &quot;comment&quot;: &quot;&quot;,
-        &quot;kernel_opts&quot;: null,
+        &quot;kernel_opts&quot;: &quot;&quot;,
         &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/tags/virtual/&quot;
     }
 ]</code></pre>
@@ -34656,7 +35565,7 @@
 <p><strong>name</strong> (<em>String</em>): Required. The new tag name. Because the name will be used in urls, it should be short.</p>
 <p><strong>comment</strong> (<em>String</em>): Optional. A description of what the the tag will be used for in natural language.</p>
 <p><strong>definition</strong> (<em>String</em>): Optional. An XPATH query that is evaluated against the hardware_details stored for all nodes (i.e. the output of <code>lshw -xml</code>).</p>
-<p><strong>kernel_opts</strong> (<em>String</em>): Optional. Nodes associated with this tag will add this string to their kernel options when booting. The value overrides the global <code>kernel_opts</code> setting. If more than one tag is associated with a node, the one with the lower alphabetical name will be picked. For example, <code>01-my-tag</code> will be chosen instead of <code>99-tag-name</code>.</p>
+<p><strong>kernel_opts</strong> (<em>String</em>): Optional. Nodes associated with this tag will add this string to their kernel options when booting. The value overrides the global <code>kernel_opts</code> setting. If more than one tag is associated with a node, command line will be concatenated from all associated tags, in alphabetic tag name order.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>JSON</em></p>
@@ -34809,18 +35718,6 @@
 }</code></pre>
 <p>&nbsp;</p>
 </details>
-<h3 id="virtual-machine">Virtual Machine</h3>
-<p>Manage individual virtual machines.</p>
-<p>A virtual machine is identified by its id.</p>
-<p><code>GET /MAAS/api/2.0/virtual-machines/{id}</code></p>
-<p>GET request. Return a single model instance.</p>
-<h3 id="virtual-machines">Virtual Machines</h3>
-<p>Manage a collection of virtual machines.</p>
-<p>A virtual machine is identified by its id.</p>
-<p><code>GET /MAAS/api/2.0/virtual-machines/</code></p>
-<p>GET request. List all model instances ordered by name.</p>
-<p><code>POST /MAAS/api/2.0/virtual-machines/</code></p>
-<p>POST request. Create a new instance of the model.</p>
 <h3 id="vlan">VLAN</h3>
 <p>Manage a VLAN on a fabric.</p>
 <details>
@@ -34987,15 +35884,16 @@
 <pre><code>Not Found</code></pre>
 <p>&nbsp;</p>
 </details>
-<h3 id="vmhost">VmHost</h3>
-<p>Manage an individual vm-host.</p>
-<p>A vm-host is identified by its id.</p>
+<h3 id="virtual-machine-cluster">Virtual Machine Cluster</h3>
+<p>Read operations for the VM Cluster object</p>
+<p>A VM Cluster is identified by its id</p>
 <details>
-<summary><code>DELETE /MAAS/api/2.0/pods/{id}/</code></summary>
-<p>Deletes a pod with the given pod ID.</p>
+<summary><code>DELETE /MAAS/api/2.0/vm-clusters/{id}</code></summary>
+<p>Deletes a VM cluster with the given ID.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM cluster's ID.</p>
+<p><strong>decompose</strong> (<em>Boolean</em>): Optional. Whether to also also decompose all machines in the VM cluster on removal. If not provided, machines will not be removed.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 204</p>
@@ -35009,14 +35907,116 @@
 <pre><code>This method is reserved for admin users.</code></pre>
 <p>&nbsp;</p>
 </details>
-<p><code>GET /MAAS/api/2.0/pods/{id}/</code></p>
+<p><code>GET /MAAS/api/2.0/vm-clusters/{id}</code></p>
 <details>
-<summary><code>GET /MAAS/api/2.0/pods/{id}/?op=parameters</code></summary>
-<p>This returns a pod's configuration parameters. For some types of pod, this will include private information such as passwords and secret keys.</p>
+<summary><code>PUT /MAAS/api/2.0/vm-clusters/{id}</code></summary>
+<p>Update a specific VMCluster by ID.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>{id}</strong> (<em>URL String</em>): Required. The VMCluster's ID.</p>
+<p><strong>name</strong> (<em>String</em>): Optional. The VMCluster's name.</p>
+<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool associated with this VM Cluster -- this change is propagated to VMHosts</p>
+<p><strong>zone</strong> (<em>String</em>): Optional. The VMCluster's zone.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 200</p>
+<p><em>JSON</em></p>
+<pre><code>{
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;my-cluster&quot;,
+    &quot;project&quot;: &quot;my-project&quot;,
+    &quot;vmhost_count&quot;: 3,
+    &quot;vm_count&quot;: 5,
+    &quot;total&quot;: {
+        &quot;cores&quot;: 8,
+        &quot;memory&quot;: 1024,
+        &quot;storage&quot;: 4096
+    },
+    &quot;available&quot;: {
+        &quot;cores&quot;: 8,
+        &quot;memory&quot;: 1024,
+        &quot;storage&quot;: 4096
+    },
+    &quot;used&quot;: {
+        &quot;cores&quot;: 0,
+        &quot;memory&quot;: 0,
+        &quot;storage&quot;: 0
+    },
+    &quot;version&quot;: &quot;4.17&quot;
+}</code></pre>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404 -- The VMCluster's ID was not found.</p>
+<p><em>HTTP Status Code</em> : 403 -- The current user does not have permission to update the VMCluster.</p>
+<p>&nbsp;</p>
+</details>
+<h3 id="virtual-machine-clusters">Virtual Machine Clusters</h3>
+<p>Read operations for the VM Clusters collection</p>
+<details>
+<summary><code>GET /MAAS/api/2.0/vm-clusters/</code></summary>
+<p>Get a listing of all VM Clusters</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 200</p>
+<p><em>JSON</em></p>
+<pre><code>[
+    {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;my-cluster&quot;,
+        &quot;project&quot;: &quot;my-project&quot;,
+        &quot;vmhost_count&quot;: 3,
+        &quot;vm_count&quot;: 5,
+        &quot;total&quot;: {
+            &quot;cores&quot;: 8,
+            &quot;memory&quot;: 1024,
+            &quot;storage&quot;: 4096
+        },
+        &quot;available&quot;: {
+            &quot;cores&quot;: 8,
+            &quot;memory&quot;: 1024,
+            &quot;storage&quot;: 4096
+        },
+        &quot;used&quot;: {
+            &quot;cores&quot;: 0,
+            &quot;memory&quot;: 0,
+            &quot;storage&quot;: 0
+        },
+        &quot;version&quot;: &quot;4.17&quot;
+    }
+]</code></pre>
+<p>&nbsp;</p>
+</details>
+<h3 id="virtual-machine-host">Virtual machine host</h3>
+<p>Manage an individual VM host.</p>
+<p>A VM host is identified by its id.</p>
+<details>
+<summary><code>DELETE /MAAS/api/2.0/vm-hosts/{id}/</code></summary>
+<p>Deletes a VM host with the given ID.</p>
+<p><strong>Parameters</strong></p>
+<hr />
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
+<p><strong>decompose</strong> (<em>Boolean</em>): Optional. Whether to also also decompose all machines in the VM host on removal. If not provided, machines will not be removed.</p>
+<p><strong>Success</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 204</p>
+<p><strong>Error</strong></p>
+<hr />
+<p><em>HTTP Status Code</em> : 404</p>
+<p><em>Content</em></p>
+<pre><code>Not Found</code></pre>
+<p><em>HTTP Status Code</em> : 403</p>
+<p><em>Content</em></p>
+<pre><code>This method is reserved for admin users.</code></pre>
+<p>&nbsp;</p>
+</details>
+<p><code>GET /MAAS/api/2.0/vm-hosts/{id}/</code></p>
+<details>
+<summary><code>GET /MAAS/api/2.0/vm-hosts/{id}/?op=parameters</code></summary>
+<p>This returns a VM host's configuration parameters. For some types of VM host, this will include private information such as passwords and secret keys.</p>
 <p>Note: This method is reserved for admin users.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -35035,11 +36035,11 @@
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>POST /MAAS/api/2.0/pods/{id}/?op=add_tag</code></summary>
-<p>Adds a tag to a given pod.</p>
+<summary><code>POST /MAAS/api/2.0/vm-hosts/{id}/?op=add_tag</code></summary>
+<p>Adds a tag to a given VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>tag</strong> (<em>String</em>): Required. The tag to add.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -35123,7 +36123,7 @@
         }
     ],
     &quot;type&quot;: &quot;virsh&quot;,
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/3/&quot;
+    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/3/&quot;
 }</code></pre>
 <p><strong>Error</strong></p>
 <hr />
@@ -35136,8 +36136,8 @@
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>POST /MAAS/api/2.0/pods/{id}/?op=compose</code></summary>
-<p>Compose a new machine from a pod.</p>
+<summary><code>POST /MAAS/api/2.0/vm-hosts/{id}/?op=compose</code></summary>
+<p>Compose a new machine from a VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
 <p><strong>cores</strong> (<em>Int</em>): Optional. The minimum number of CPU cores.</p>
@@ -35145,8 +36145,8 @@
 <p><strong>hugepages_backed</strong> (<em>Boolean</em>): Optional. Whether to request hugepages backing for the machine.</p>
 <p><strong>pinned_cores</strong> (<em>Int</em>): Optional. List of host CPU cores to pin the VM to. If this is passed, the "cores" parameter is ignored.</p>
 <p><strong>cpu_speed</strong> (<em>Int</em>): Optional. The minimum CPU speed, specified in MHz.</p>
-<p><strong>architecture</strong> (<em>String</em>): Optional. The architecture of the new machine (e.g. amd64). This must be an architecture the pod supports.</p>
-<p><strong>storage</strong> (<em>String</em>): Optional. A list of storage constraint identifiers in the form <code>label:size(tag,tag,...), label:size(tag,tag,...)</code>. For more information please see the CLI pod management page of the official MAAS documentation.</p>
+<p><strong>architecture</strong> (<em>String</em>): Optional. The architecture of the new machine (e.g. amd64). This must be an architecture the VM host supports.</p>
+<p><strong>storage</strong> (<em>String</em>): Optional. A list of storage constraint identifiers in the form <code>label:size(tag,tag,...), label:size(tag,tag,...)</code>. For more information please see the CLI VM host management page of the official MAAS documentation.</p>
 <p><strong>interfaces</strong> (<em>String</em>): Optional. A labeled constraint map associating constraint labels with desired interface properties. MAAS will assign interfaces that match the given interface properties.</p>
 <p>Format: <code>label:key=value,key=value,...</code></p>
 <p>Keys:</p>
@@ -35189,11 +36189,11 @@
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>POST /MAAS/api/2.0/pods/{id}/?op=refresh</code></summary>
-<p>Performs pod discovery and updates all discovered information and discovered machines.</p>
+<summary><code>POST /MAAS/api/2.0/vm-hosts/{id}/?op=refresh</code></summary>
+<p>Performs VM host discovery and updates all discovered information and discovered machines.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Optional. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Optional. The VM host's ID.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>JSON</em></p>
@@ -35272,11 +36272,11 @@
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>POST /MAAS/api/2.0/pods/{id}/?op=remove_tag</code></summary>
-<p>Removes a given tag from a pod.</p>
+<summary><code>POST /MAAS/api/2.0/vm-hosts/{id}/?op=remove_tag</code></summary>
+<p>Removes a given tag from a VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The pod's ID.</p>
+<p><strong>{id}</strong> (<em>Int</em>): Required. The VM host's ID.</p>
 <p><strong>tag</strong> (<em>String</em>): Required. The tag to add.</p>
 <p><strong>Success</strong></p>
 <hr />
@@ -35371,22 +36371,22 @@
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>PUT /MAAS/api/2.0/pods/{id}/</code></summary>
-<p>Update a specific pod by ID.</p>
-<p>Note: A pod's 'type' cannot be updated. The pod must be deleted and re-added to change the type.</p>
+<summary><code>PUT /MAAS/api/2.0/vm-hosts/{id}/</code></summary>
+<p>Update a specific VM host by ID.</p>
+<p>Note: A VM host's 'type' cannot be updated. The VM host must be deleted and re-added to change the type.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>{id}</strong> (<em>URL String</em>): Required. The pod's ID.</p>
-<p><strong>name</strong> (<em>String</em>): Optional. The pod's name.</p>
-<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool associated with this pod -- composed machines will be assigned to this resource pool by default.</p>
+<p><strong>{id}</strong> (<em>URL String</em>): Required. The VM host's ID.</p>
+<p><strong>name</strong> (<em>String</em>): Optional. The VM host's name.</p>
+<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool associated with this VM host -- composed machines will be assigned to this resource pool by default.</p>
 <p><strong>cpu_over_commit_ratio</strong> (<em>Int</em>): Optional. CPU overcommit ratio (0-10)</p>
 <p><strong>memory_over_commit_ratio</strong> (<em>Int</em>): Optional. CPU overcommit ratio (0-10)</p>
-<p><strong>default_storage_pool</strong> (<em>String</em>): Optional. Default KVM storage pool to use when the pod has storage pools.</p>
-<p><strong>power_address</strong> (<em>String</em>): Optional. Address for power control of the pod.</p>
-<p><strong>power_pass</strong> (<em>String</em>): Optional. Password for access to power control of the pod.</p>
-<p><strong>zone</strong> (<em>String</em>): Optional. The pod's zone.</p>
-<p><strong>default_macvlan_mode</strong> (<em>String</em>): Optional. Default macvlan mode for pods that use it: bridge, passthru, private, vepa.</p>
-<p><strong>tags</strong> (<em>String</em>): Optional. Tag or tags (command separated) associated with the pod.</p>
+<p><strong>default_storage_pool</strong> (<em>String</em>): Optional. Default KVM storage pool to use when the VM host has storage pools.</p>
+<p><strong>power_address</strong> (<em>String</em>): Optional. Address for power control of the VM host.</p>
+<p><strong>power_pass</strong> (<em>String</em>): Optional. Password for access to power control of the VM host.</p>
+<p><strong>zone</strong> (<em>String</em>): Optional. The VM host's zone.</p>
+<p><strong>default_macvlan_mode</strong> (<em>String</em>): Optional. Default macvlan mode for VM hosts that use it: bridge, passthru, private, vepa.</p>
+<p><strong>tags</strong> (<em>String</em>): Optional. Tag or tags (command separated) associated with the VM host.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -35453,19 +36453,19 @@
         &quot;memory&quot;: 15916,
         &quot;local_storage&quot;: 47751942144
     },
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/1/&quot;
+    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/1/&quot;
 }</code></pre>
 <p><strong>Error</strong></p>
 <hr />
-<p><em>HTTP Status Code</em> : 404 -- The pod's ID was not found.</p>
-<p><em>HTTP Status Code</em> : 403 -- The current user does not have permission to update the pod.</p>
+<p><em>HTTP Status Code</em> : 404 -- The VM host's ID was not found.</p>
+<p><em>HTTP Status Code</em> : 403 -- The current user does not have permission to update the VM host.</p>
 <p>&nbsp;</p>
 </details>
-<h3 id="vmhosts">VmHosts</h3>
-<p>Manage the collection of all the vm-hosts in the MAAS.</p>
+<h3 id="virtual-machine-hosts">Virtual machine hosts</h3>
+<p>Manage the collection of all the VM hosts in MAAS.</p>
 <details>
-<summary><code>GET /MAAS/api/2.0/pods/</code></summary>
-<p>Get a listing of all pods.</p>
+<summary><code>GET /MAAS/api/2.0/vm-hosts/</code></summary>
+<p>Get a listing of all VM hosts.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -35547,24 +36547,25 @@
             }
         ],
         &quot;type&quot;: &quot;virsh&quot;,
-        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/pods/3/&quot;
+        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/vm-hosts/3/&quot;
     }
 ]</code></pre>
 <p>&nbsp;</p>
 </details>
 <details>
-<summary><code>POST /MAAS/api/2.0/pods/</code></summary>
-<p>Create or discover a new pod.</p>
+<summary><code>POST /MAAS/api/2.0/vm-hosts/</code></summary>
+<p>Create or discover a new VM host.</p>
 <p><strong>Parameters</strong></p>
 <hr />
-<p><strong>type</strong> (<em>String</em>): Required. The type of pod to create: <code>rsd</code> or <code>virsh</code>.</p>
-<p><strong>power_address</strong> (<em>String</em>): Required. Address that gives MAAS access to the pod's power control. For example: <code>qemu+ssh://172.16.99.2/system</code>.</p>
-<p><strong>power_user</strong> (<em>String</em>): Required. Username to use for power control of the pod. Required for <code>rsd</code> pods or <code>virsh</code> pods that do not have SSH set up for public-key authentication.</p>
-<p><strong>power_pass</strong> (<em>String</em>): Required. Password to use for power control of the pod. Required for <code>rsd</code> pods or <code>virsh</code> pods that do not have SSH set up for public-key authentication.</p>
-<p><strong>name</strong> (<em>String</em>): Optional. The new pod's name.</p>
-<p><strong>zone</strong> (<em>String</em>): Optional. The new pod's zone.</p>
-<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool the new pod will belong to. Machines composed from this pod will be assigned to this resource pool by default.</p>
-<p><strong>tags</strong> (<em>String</em>): Optional. A tag or list of tags ( comma delimited) to assign to the new pod.</p>
+<p><strong>type</strong> (<em>String</em>): Required. The type of VM host to create: <code>lxd</code> or <code>virsh</code>.</p>
+<p><strong>power_address</strong> (<em>String</em>): Required. Address that gives MAAS access to the VM host power control. For example, for virsh <code>qemu+ssh://172.16.99.2/system</code> For <code>lxd</code>, this is just the address of the host.</p>
+<p><strong>power_user</strong> (<em>String</em>): Required. Username to use for power control of the VM host. Required for <code>virsh</code> VM hosts that do not have SSH set up for public-key authentication.</p>
+<p><strong>power_pass</strong> (<em>String</em>): Required. Password to use for power control of the VM host. Required <code>virsh</code> VM hosts that do not have SSH set up for public-key authentication and for <code>lxd</code> if the MAAS certificate is not registered already in the LXD server.</p>
+<p><strong>name</strong> (<em>String</em>): Optional. The new VM host's name.</p>
+<p><strong>zone</strong> (<em>String</em>): Optional. The new VM host's zone.</p>
+<p><strong>pool</strong> (<em>String</em>): Optional. The name of the resource pool the new VM host will belong to. Machines composed from this VM host will be assigned to this resource pool by default.</p>
+<p><strong>tags</strong> (<em>String</em>): Optional. A tag or list of tags ( comma delimited) to assign to the new VM host.</p>
+<p><strong>project</strong> (<em>String</em>): Optional. For <code>lxd</code> VM hosts, the project that MAAS will manage. If not provided, the <code>default</code> project will be used. If a nonexistent name is given, a new project with that name will be created.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -35643,7 +36644,7 @@
 <pre><code>This method is reserved for admin users.</code></pre>
 <p><em>HTTP Status Code</em> : 503</p>
 <p><em>Content</em></p>
-<pre><code>Failed talking to pod: Failed to login to virsh console.</code></pre>
+<pre><code>Failed talking to VM host: Failed to authenticate to the VM host.</code></pre>
 <p>&nbsp;</p>
 </details>
 <h3 id="vmfs-datastore">VMFS datastore</h3>
@@ -36367,6 +37368,7 @@
 <li>power_address (IP for APC PDU).</li>
 <li>node_outlet (APC PDU node outlet number (1-16)).</li>
 <li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
+<li>pdu_type (PDU type). Choices: 'RPDU' (rPDU), 'MASTERSWITCH' (masterswitch) Default: 'RPDU'.</li>
 </ul>
 <h3 id="dli-digital-loggers-inc.-pdu">dli (Digital Loggers, Inc. PDU)</h3>
 <p>Power parameters:</p>
@@ -36383,7 +37385,7 @@
 <li>node_outlet (Eaton PDU node outlet number (1-24)).</li>
 <li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
 </ul>
-<h3 id="hmc-ibm-hardware-management-console-hmc">hmc (IBM Hardware Management Console (HMC))</h3>
+<h3 id="hmc-ibm-hardware-management-console-hmc-for-powerpc">hmc (IBM Hardware Management Console (HMC) for PowerPC)</h3>
 <p>Power parameters:</p>
 <ul>
 <li>power_address (IP for HMC).</li>
@@ -36391,6 +37393,14 @@
 <li>power_pass (HMC password).</li>
 <li>server_name (HMC Managed System server name).</li>
 <li>lpar (HMC logical partition).</li>
+</ul>
+<h3 id="hmcz-ibm-hardware-management-console-hmc-for-z">hmcz (IBM Hardware Management Console (HMC) for Z)</h3>
+<p>Power parameters:</p>
+<ul>
+<li>power_address (HMC Address).</li>
+<li>power_user (HMC username).</li>
+<li>power_pass (HMC password).</li>
+<li>power_partition_name (HMC partition name).</li>
 </ul>
 <h3 id="ipmi-ipmi">ipmi (IPMI)</h3>
 <p>Power parameters:</p>
@@ -36529,15 +37539,10 @@
 <ul>
 <li>power_address (LXD address).</li>
 <li>instance_name (Instance name).</li>
+<li>project (LXD project). Default: 'default'.</li>
 <li>password (LXD password (optional)).</li>
-</ul>
-<h3 id="rsd-rack-scale-design">rsd (Rack Scale Design)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Address).</li>
-<li>power_user (User).</li>
-<li>power_pass (Password).</li>
-<li>node_id (Node ID).</li>
+<li>certificate (LXD certificate (optional)).</li>
+<li>key (LXD private key (optional)).</li>
 </ul>
 <h3 id="virsh-virsh-virtual-systems">virsh (Virsh (virtual systems))</h3>
 <p>Power parameters:</p>
@@ -36553,15 +37558,10 @@
 <ul>
 <li>power_address (LXD address).</li>
 <li>instance_name (Instance name).</li>
+<li>project (LXD project). Default: 'default'.</li>
 <li>password (LXD password (optional)).</li>
-</ul>
-<h3 id="rsd-rack-scale-design-1">rsd (Rack Scale Design)</h3>
-<p>Parameters:</p>
-<ul>
-<li>power_address (Address).</li>
-<li>power_user (User).</li>
-<li>power_pass (Password).</li>
-<li>node_id (Node ID).</li>
+<li>certificate (LXD certificate (optional)).</li>
+<li>key (LXD private key (optional)).</li>
 </ul>
 <h3 id="virsh-virsh-virtual-systems-1">virsh (Virsh (virtual systems))</h3>
 <p>Parameters:</p>
