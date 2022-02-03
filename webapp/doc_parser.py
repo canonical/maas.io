@@ -36,7 +36,9 @@ class FastDocParser(DocParser):
         self.warnings = url_warnings + redirect_warnings
 
         # Get body and navigation HTML
-        self.index_document = self.parse_topic(index_topic)
+        self.index_document = self.parse_topic(
+            index_topic, topic_soup=raw_index_soup
+        )
         index_soup = BeautifulSoup(
             self.index_document["body_html"], features="lxml"
         )
@@ -168,7 +170,7 @@ class FastDocParser(DocParser):
 
         return BeautifulSoup(preamble_html, features="lxml")
 
-    def parse_topic(self, topic):
+    def parse_topic(self, topic, topic_soup=None):
         """
         Parse a topic object from the Discourse API
         and return document data:
@@ -186,9 +188,10 @@ class FastDocParser(DocParser):
 
         topic_path = f"/t/{topic['slug']}/{topic['id']}"
 
-        topic_soup = BeautifulSoup(
-            topic["post_stream"]["posts"][0]["cooked"], features="lxml"
-        )
+        if topic_soup is None:
+            topic_soup = BeautifulSoup(
+                topic["post_stream"]["posts"][0]["cooked"], features="lxml"
+            )
 
         soup = self._process_topic_soup(topic_soup)
         self._replace_lightbox(soup)
