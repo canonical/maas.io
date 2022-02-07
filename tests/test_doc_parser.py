@@ -9,6 +9,47 @@ import requests
 from canonicalwebteam.discourse_docs import DiscourseAPI
 from webapp.doc_parser import FastDocParser
 
+EXAMPLE_CONTENT = (
+    "<p>Some homepage content</p>"
+    "<h1>Navigation</h1>"
+    "<ul>"
+    '<li><a href="/t/page-a/10">Page A</a></li>'
+    '<li><a href="/t/b-page/12">B page</a></li>'
+    "</ul>"
+    "<h1>URLs</h1>"
+    '<details open="">'
+    "<summary>Mapping table</summary>"
+    '<div class="md-table">'
+    "<table>"
+    "<thead><tr>"
+    "<th>Topic</th><th>Path</th></tr></thead>"
+    "<tbody><tr>"
+    '<td><a href="https://discourse.example.com/t/'
+    'page-a/10">Page A</a></td>'
+    "<td>/a</td>"
+    "</tr><tr>"
+    '<td><a href="https://discourse.example.com/t/'
+    'page-z/26">Page Z</a></td>'
+    "<td>/page-z</td>"
+    "</tr></tbody></table>"
+    "</div></details>"
+    "<h1>Redirects</h1>"
+    '<details open="">'
+    "<summary>Mapping table</summary>"
+    '<div class="md-table">'
+    "<table>"
+    "<thead><tr>"
+    "<th>Topic</th><th>Path</th></tr></thead>"
+    "<tbody>"
+    "<tr><td>/redir-a</td><td>/a</td></tr>"
+    "<tr>"
+    "  <td>/example/page</td>"
+    "  <td>https://example.com/page</td>"
+    "</tr>"
+    "</tr></tbody></table>"
+    "</div></details>"
+)
+
 
 class TestFastDocParser(unittest.TestCase):
     def setUp(self):
@@ -36,46 +77,7 @@ class TestFastDocParser(unittest.TestCase):
                         "posts": [
                             {
                                 "id": 3434,
-                                "cooked": (
-                                    "<p>Some homepage content</p>"
-                                    "<h1>Navigation</h1>"
-                                    "<ul>"
-                                    '<li><a href="/t/page-a/10">Page A</a></li>'
-                                    '<li><a href="/t/b-page/12">B page</a></li>'
-                                    "</ul>"
-                                    "<h1>URLs</h1>"
-                                    '<details open="">'
-                                    "<summary>Mapping table</summary>"
-                                    '<div class="md-table">'
-                                    "<table>"
-                                    "<thead><tr>"
-                                    "<th>Topic</th><th>Path</th></tr></thead>"
-                                    "<tbody><tr>"
-                                    '<td><a href="https://discourse.example.com/t/'
-                                    'page-a/10">Page A</a></td>'
-                                    "<td>/a</td>"
-                                    "</tr><tr>"
-                                    '<td><a href="https://discourse.example.com/t/'
-                                    'page-z/26">Page Z</a></td>'
-                                    "<td>/page-z</td>"
-                                    "</tr></tbody></table>"
-                                    "</div></details>"
-                                    "<h1>Redirects</h1>"
-                                    '<details open="">'
-                                    "<summary>Mapping table</summary>"
-                                    '<div class="md-table">'
-                                    "<table>"
-                                    "<thead><tr>"
-                                    "<th>Topic</th><th>Path</th></tr></thead>"
-                                    "<tbody>"
-                                    "<tr><td>/redir-a</td><td>/a</td></tr>"
-                                    "<tr>"
-                                    "  <td>/example/page</td>"
-                                    "  <td>https://example.com/page</td>"
-                                    "</tr>"
-                                    "</tr></tbody></table>"
-                                    "</div></details>"
-                                ),
+                                "cooked": EXAMPLE_CONTENT,
                                 "updated_at": "2018-10-02T12:45:44.259Z",
                             }
                         ]
@@ -135,13 +137,14 @@ class TestFastDocParser(unittest.TestCase):
     def test_url_map(self):
         self.assertEqual(
             self.parser.url_map,
-            {10: "/a",
-             26: "/page-z",
-             34: "/",
-             "/": 34,
-             "/a": 10,
-             "/page-z": 26
-             }
+            {
+                10: "/a",
+                26: "/page-z",
+                34: "/",
+                "/": 34,
+                "/a": 10,
+                "/page-z": 26,
+            },
         )
 
         self.assertEqual(self.parser.warnings, [])
