@@ -27,15 +27,15 @@
     <meta name="twitter:site" content="@ubuntucloud">
     <meta name="twitter:creator" content="@ubuntucloud">
     <meta name="twitter:domain" content="maas.io">
-    <meta name="twitter:title" content="Metal as a Service | MAAS">
-    <meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
+    <meta name="twitter:title" content="{% block twitter_title %}Metal as a Service | MAAS{% endblock %}">
+    {% block twitter_description %}<meta name="twitter:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">{% endblock %}
     <meta name="twitter:image" content="https://assets.ubuntu.com/v1/85274a82-maas-social-banner.png">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maas.io/">
     <meta property="og:site_name" content="MAAS">
-    <meta property="og:title" content="Metal as a Service | MAAS">
-    <meta property="og:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">
+    <meta property="og:title" content="{% block og_title %}Metal as a Service | MAAS{% endblock %}">
+    {% block og_description %}<meta property="og:description" content="MAAS (Metal as a Service) offers cloud style provisioning for physical servers. It is open source and free to use, with commercial support available from Canonical.">{% endblock %}
     <meta property="og:image" content="https://assets.ubuntu.com/v1/85274a82-maas-social-banner.png">
 
     {% if self.meta_copydoc() %}<meta name="copydoc" content="{% block meta_copydoc %}{% endblock %}">{% endif %}
