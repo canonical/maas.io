@@ -6,7 +6,7 @@
 
 
 {% block content %}
-  <section id="search-docs" class="p-strip--image is-shallow" style="background-image: url('https://assets.ubuntu.com/v1/e54487e2-maas-docs-suru.png')">
+  <section id="search-docs" class="p-strip--light is-shallow">
     <div class="row">
       <form class="p-search-box u-no-margin--bottom" action="/docs/search">
         <input type="search" class="p-search-box__input" name="q" {% if query %}value="{{ query }}"{% endif %} placeholder="Search documentation" required/>
