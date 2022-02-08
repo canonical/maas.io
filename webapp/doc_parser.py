@@ -1,7 +1,9 @@
 # Standard library
 from canonicalwebteam.discourse_docs import DocParser
+from canonicalwebteam.discourse_docs.parsers import TOPIC_URL_MATCH
 
 import re
+from urllib.parse import urlparse
 
 # Packages
 import dateutil.parser
@@ -39,11 +41,10 @@ class FastDocParser(DocParser):
         self.index_document = self.parse_topic(
             index_topic, topic_soup=raw_index_soup
         )
-        index_soup = BeautifulSoup(
-            self.index_document["body_html"], features="lxml"
-        )
-        self.index_document["body_html"] = str(
-            self._get_preamble(index_soup, break_on_title="Navigation")
+        index_soup = self.index_document.pop("body_soup")
+
+        self.index_document["body_html"] = self._get_preamble(
+            index_soup, break_on_title="Navigation"
         )
 
         # Parse navigation
@@ -55,6 +56,91 @@ class FastDocParser(DocParser):
             self.metadata = self._parse_metadata(
                 self._replace_links(raw_index_soup, topics)
             )
+
+    def _parse_url_map(self, index_soup):
+        """
+        Given the HTML soup of an index topic
+        extract the URL mappings from the "URLs" section.
+
+        The URLs section should contain a table of
+        "Topic" to "Path" mappings
+        (extra markup around this table doesn't matter)
+        e.g.:
+
+        <h1>URLs</h1>
+        <details>
+            <summary>Mapping table</summary>
+            <table>
+            <tr><th>Topic</th><th>Path</th></tr>
+            <tr>
+                <td><a href="https://forum.example.com/t/page/10">Page</a></td>
+                <td>/cool-page</td>
+            </tr>
+            <tr>
+                <td>
+                  <a href="https://forum.example.com/t/place/11">Place</a>
+                </td>
+                <td>/cool-place</td>
+            </tr>
+            </table>
+        </details>
+
+        This will typically be generated in Discourse from Markdown similar to
+        the following:
+
+        # URLs
+
+        [details=Mapping table]
+        | Topic | Path |
+        | -- | -- |
+        | https://forum.example.com/t/place/11| /cool-page |
+        | https://forum.example.com/t/place/11  | /cool-place |
+
+        """
+        url_soup = self._get_section(index_soup, "URLs", "details")
+
+        url_map = {}
+        warnings = []
+
+        if url_soup:
+            for row in url_soup.tbody("tr"):
+                row_contents = row("td")
+                topic = row_contents[0]
+                path_td = row_contents[-1]
+                topic_a = topic.a
+
+                if not topic_a or not path_td:
+                    warnings.append("Could not parse URL map item {item}")
+                    continue
+
+                topic_url = topic_a.get("href", "")
+                topic_path = urlparse(topic_url).path
+                topic_match = TOPIC_URL_MATCH.match(topic_path)
+
+                pretty_path = path_td.text
+
+                if not topic_match or not pretty_path.startswith(
+                    self.url_prefix
+                ):
+                    warnings.append("Could not parse URL map item {item}")
+                    continue
+
+                topic_id = int(topic_match.groupdict()["topic_id"])
+
+                url_map[pretty_path] = topic_id
+
+        # Add the reverse mappings as well, for efficiency
+        ids_to_paths = dict(reversed(pair) for pair in url_map.items())
+        url_map.update(ids_to_paths)
+
+        # Add the homepage path
+        home_path = self.url_prefix
+        if home_path != "/" and home_path.endswith("/"):
+            home_path = home_path.rstrip("/")
+        url_map[home_path] = self.index_topic_id
+        url_map[self.index_topic_id] = home_path
+
+        return url_map, warnings
 
     def _replace_notifications(self, soup):
         """
@@ -153,22 +239,17 @@ class FastDocParser(DocParser):
 
     def _get_preamble(self, soup, break_on_title):
         """
-        Given a BeautifulSoup HTML document,
-        separate out the HTML at the start, up to
-        the heading defined in `break_on_title`,
-        and return it as a BeautifulSoup object
+        Given a BeautifulSoup HTML document, separate out the HTML
+        at the start, up to the heading defined in `break_on_title`,
+        and return it.
         """
 
-        heading = soup.find(re.compile("^h[1-6]$"), text=break_on_title)
+        heading = soup.find(HEADER_REGEX, text=break_on_title)
 
         if not heading:
             return soup
 
-        preamble_elements = heading.fetchPreviousSiblings()
-        preamble_elements.reverse()
-        preamble_html = "".join(map(str, preamble_elements))
-
-        return BeautifulSoup(preamble_html, features="lxml")
+        return "".join(map(str, reversed(list(heading.previous_siblings))))
 
     def parse_topic(self, topic, topic_soup=None):
         """
@@ -198,6 +279,7 @@ class FastDocParser(DocParser):
 
         return {
             "title": topic["title"],
+            "body_soup": soup,
             "body_html": str(soup),
             "updated": humanize.naturaltime(
                 updated_datetime.replace(tzinfo=None)
@@ -205,7 +287,7 @@ class FastDocParser(DocParser):
             "topic_path": topic_path,
         }
 
-    def _get_section(self, soup, title_text):
+    def _get_section(self, soup, title_text, content_tag=None):
         """
         Given some HTML soup and the text of a title within it,
         get the content between that title and the next title
@@ -229,6 +311,8 @@ class FastDocParser(DocParser):
             return None
 
         heading_tag = heading.name
+        if content_tag:
+            return heading.find_next_sibling(content_tag)
         section_html = html.split(str(heading))[1]
 
         if f"<{heading_tag}>" in html:
