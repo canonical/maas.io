@@ -3,6 +3,14 @@
 {% block page_class %}tour{% endblock %}
 {% block page_title %}| Tour{% endblock %}
 {% block meta_copydoc %}https://docs.google.com/document/d/1KcYwNK0pJyiDVEDq4vTpv6BX_rpSDnxUxtAvAnsRKyw/edit{% endblock meta_copydoc %}
+{% block js_extra %}
+<script src="/static/js/modules/venobox/venobox.min.js"></script>
+<script>
+  (function() {
+    new VenoBox();
+  })();
+</script>
+{% endblock %}
 
 
 {% block content %}
