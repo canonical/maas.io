@@ -216,7 +216,7 @@ docs/manage-kvm-host-networking: /docs/snap/3.1/ui/how-to-manage-vm-hosts
 docs/manage-kvm-intro: /docs/snap/3.1/ui/vm-hosting 
 docs/manage-kvm-storage: /docs/snap/3.1/ui/vm-hosting
 docs/manage-libmaas: /docs/snap/3.1/ui/api-client 
-docs/manage-maas-security: /docs/security: /docs/snap/3.1/ui/hardening-your-maas-installation 
+docs/manage-maas-security: /docs/snap/3.1/ui/hardening-your-maas-installation 
 docs/manage-pods-webui: /docs/snap/3.1/ui/vm-hosting 
 docs/manage-prometheus-metrics: /docs/snap/3.1/ui/prometheus-metrics 
 docs/manage-repos: /docs/deb/3.1/ui/maas-installation
@@ -244,7 +244,7 @@ docs/nodes-power-types: /docs/snap/3.1/ui/power-management
 docs/nodes-resource-pools: /docs/snap/3.1/ui/about-machines
 docs/nodes-scripts: /docs/snap/3.1/ui/how-to-deploy-machines
 docs/nodes-scripts-cli: /docs/cli-testing-scripts 
-docs/nodes-tags: /docs/tags: /docs/snap/3.1/cli/about-tags
+docs/nodes-tags: /docs/snap/3.1/cli/about-tags
 docs/non-snap-maas-installs: /docs/deb/3.1/ui/maas-installation 
 docs/ntp: /docs/snap/3.1/ui/ntp-services 
 docs/package-repositories: /docs/deb/3.1/ui/maas-installation
@@ -260,6 +260,7 @@ docs/release-notes-all: /docs/historical-release-notes
 docs/resource-pools: /docs/snap/3.1/ui/about-machines
 docs/security: /docs/snap/3.1/ui/hardening-your-maas-installation 
 docs/select-and-import-images: /docs/snap/3.1/ui/select-and-import-images 
+docs/tags: /docs/snap/3.1/cli/about-tags
 
 legacy: "/"
 legacy/images: http://images.maas.io
