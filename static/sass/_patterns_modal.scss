@@ -46,10 +46,10 @@
   .vbox-overlay {
     $color-modal-overlay: rgba($color-x-dark, 0.85);
 
-    display: flex;
     align-items: center;
     background: $color-modal-overlay;
     bottom: 0;
+    display: flex;
     height: auto;
     left: 0;
     margin-top: 0;
