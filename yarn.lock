@@ -2234,6 +2234,11 @@ vanilla-framework@2.37.1:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.37.1.tgz#4063fb21aa3b9c99e0ada4a052326b24df1ee06e"
   integrity sha512-GEV/9BHfGnCeTpycdrT976uX0WGdKHnDOAwtaTuZZW6zwM+M/Za+E2q0yTpvoldzWtpksiFIIAk2VCuKjfjaqA==
 
+venobox@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/venobox/-/venobox-2.0.4.tgz#742a624edf1f023ecad592cc1a6767c68937b1eb"
+  integrity sha512-+AMA5+Y/Ul9uSUk0I4lYG0DLVJDZmRq1TWXr51jZSz+zPyLWx4Uxwh68W9nYoqqWFrsWJiZPVpr1xzYYSjQlDw==
+
 vfile-message@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/vfile-message/-/vfile-message-2.0.4.tgz#5b43b88171d409eae58477d13f23dd41d52c371a"

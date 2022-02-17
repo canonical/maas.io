@@ -7,10 +7,11 @@
     "build-css": "sass static/sass/main.scss static/css/main.css --load-path=node_modules --style=compressed && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "build-js": "yarn run copy-3rd-party-js",
     "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite _site/ build/ .jekyll-metadata",
-    "copy-3rd-party-js": "yarn run copy-global-nav && yarn run copy-latest-news && yarn run copy-cookie-policy",
+    "copy-3rd-party-js": "yarn run copy-global-nav && yarn run copy-latest-news && yarn run copy-cookie-policy && yarn run copy-venobox",
     "copy-cookie-policy": "mkdir -p static/js/modules/cookie-policy && cp node_modules/@canonical/cookie-policy/build/js/cookie-policy.js static/js/modules/cookie-policy",
     "copy-global-nav": "mkdir -p static/js/modules/global-nav && cp node_modules/@canonical/global-nav/dist/global-nav.js static/js/modules/global-nav",
     "copy-latest-news": "mkdir -p static/js/modules/latest-news && cp node_modules/@canonical/latest-news/dist/latest-news.js static/js/modules/latest-news",
+    "copy-venobox": "mkdir -p static/js/modules/venobox && cp node_modules/venobox/dist/venobox.min.js static/js/modules/venobox/venobox.min.js",
     "lint-python": "flake8 --exclude '*env*,node_modules' && black --line-length 79 --check --exclude '(node_modules/.*|[^/]*env[0-9]?/.*)' .",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
@@ -33,6 +34,7 @@
     "postcss": "8.4.6",
     "postcss-cli": "9.1.0",
     "sass": "1.49.7",
-    "vanilla-framework": "2.37.1"
+    "vanilla-framework": "2.37.1",
+    "venobox": "2.0.4"
   }
 }

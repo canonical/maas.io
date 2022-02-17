@@ -3,6 +3,14 @@
 {% block page_class %}tour{% endblock %}
 {% block page_title %}| Tour{% endblock %}
 {% block meta_copydoc %}https://docs.google.com/document/d/1KcYwNK0pJyiDVEDq4vTpv6BX_rpSDnxUxtAvAnsRKyw/edit{% endblock meta_copydoc %}
+{% block js_extra %}
+<script src="/static/js/modules/venobox/venobox.min.js"></script>
+<script>
+  (function() {
+    new VenoBox();
+  })();
+</script>
+{% endblock %}
 
 
 {% block content %}
@@ -21,7 +29,7 @@
         <div class="p-divider">
             <div class="col-4 p-divider__block">
                 <div class="u-sv2">
-                    <a class="u-align--center venobox venobox--expand vbox-item" href="https://assets.ubuntu.com/v1/952c8938-overview-of-kvms.png" data-gall="tourGallery" title="Create custom VMs with KVM Micro-clouds" aria-label="Modal link to view larger screenshot of create custom VMs with KVM Micro-clouds">
+                    <a class="u-align--center venobox venobox--expand" href="https://assets.ubuntu.com/v1/952c8938-overview-of-kvms.png" data-gall="tourGallery" title="Create custom VMs with KVM Micro-clouds" aria-label="Modal link to view larger screenshot of create custom VMs with KVM Micro-clouds">
                         <img class="p-image--bordered" src="https://assets.ubuntu.com/v1/952c8938-overview-of-kvms.png?h=172" alt="Screenshot of create custom VMs with KVM Micro-clouds"  height="192">
                     </a>
                 </div>
@@ -65,7 +73,7 @@
         <div class="p-divider">
             <div class="col-4 p-divider__block">
                 <div class="u-sv2">
-                    <a class="u-align--center venobox venobox--expand vbox-item" href="https://assets.ubuntu.com/v1/4c793634-Unattended+server+discovery.png" data-gall="tourGallery" title="MAAS node listing page" aria-label="Modal link to view larger screenshot of the node listing">
+                    <a class="u-align--center venobox venobox--expand" href="https://assets.ubuntu.com/v1/4c793634-Unattended+server+discovery.png" data-gall="tourGallery" title="MAAS node listing page" aria-label="Modal link to view larger screenshot of the node listing">
                         <img src="https://assets.ubuntu.com/v1/4c793634-Unattended+server+discovery.png?w=360" alt="Screenshot of node listing" class="p-image--bordered" />
                     </a>
                 </div>
@@ -213,7 +221,7 @@
         <div class="p-divider">
             <div class="col-4 p-divider__block">
                 <div class="u-sv2">
-                    <a class="u-align--center venobox venobox--expand vbox-item" href="https://assets.ubuntu.com/v1/9d059ff4-check-your-data-centre-health.png" data-gall="tourGallery" title="MAAS node listing page" aria-label="Modal link to view larger screenshot of the node listing">
+                    <a class="u-align--center venobox venobox--expand" href="https://assets.ubuntu.com/v1/9d059ff4-check-your-data-centre-health.png" data-gall="tourGallery" title="MAAS node listing page" aria-label="Modal link to view larger screenshot of the node listing">
                         <img src="https://assets.ubuntu.com/v1/9d059ff4-check-your-data-centre-health.png?h=225" alt="Screenshot of node listing" class="p-image--bordered" />
                     </a>
                 </div>
@@ -221,7 +229,7 @@
             </div>
             <div class="col-4 p-divider__block">
                 <div class="u-sv2">
-                    <a class="u-align--center venobox venobox--expand vbox-item" href="https://assets.ubuntu.com/v1/b39748ba-Keep+an+eye+on+your+hardware+-+Machine+details+page.png" data-gall="tourGallery" title="MAAS machine details page" aria-label="Modal link to view larger screenshot of the machine details">
+                    <a class="u-align--center venobox venobox--expand" href="https://assets.ubuntu.com/v1/b39748ba-Keep+an+eye+on+your+hardware+-+Machine+details+page.png" data-gall="tourGallery" title="MAAS machine details page" aria-label="Modal link to view larger screenshot of the machine details">
                         <img src="https://assets.ubuntu.com/v1/b39748ba-Keep+an+eye+on+your+hardware+-+Machine+details+page.png?h=225" alt="Screenshot of machine details" class="p-image--bordered" />
                     </a>
                 </div>
@@ -230,7 +238,7 @@
             </div>
             <div class="col-4 p-divider__block">
                 <div class="u-sv2">
-                    <a class="u-align--center venobox venobox--expand vbox-item" href="https://assets.ubuntu.com/v1/5040a772-Access+all+historical+testing+data.png" data-gall="tourGallery" title="MAAS machine hardware tests" aria-label="Modal link to view larger screenshot of the machine hardware tests">
+                    <a class="u-align--center venobox venobox--expand" href="https://assets.ubuntu.com/v1/5040a772-Access+all+historical+testing+data.png" data-gall="tourGallery" title="MAAS machine hardware tests" aria-label="Modal link to view larger screenshot of the machine hardware tests">
                         <img src="https://assets.ubuntu.com/v1/5040a772-Access+all+historical+testing+data.png?h=225" alt="Screenshot of machine hardware tests" class="p-image--bordered" />
                     </a>
                 </div>

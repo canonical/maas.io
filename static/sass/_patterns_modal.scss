@@ -46,8 +46,10 @@
   .vbox-overlay {
     $color-modal-overlay: rgba($color-x-dark, 0.85);
 
+    align-items: center;
     background: $color-modal-overlay;
     bottom: 0;
+    display: flex;
     height: auto;
     left: 0;
     margin-top: 0;
@@ -125,7 +127,6 @@
     background: $color-dark;
     bottom: 0;
     color: $color-x-light;
-    display: none;
     float: left;
     font-size: 1rem;
     height: auto;
@@ -210,7 +211,6 @@
   }
 
   .vbox-container {
-    background: $color-x-dark;
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 15px;
