@@ -2,12 +2,14 @@
 from canonicalwebteam.discourse_docs import DocParser
 from canonicalwebteam.discourse_docs.parsers import TOPIC_URL_MATCH
 
+from functools import cached_property
 import re
 from urllib.parse import urlparse
 
 # Packages
 import dateutil.parser
 import humanize
+import validators
 from bs4 import BeautifulSoup, NavigableString
 from jinja2 import Template
 
@@ -56,6 +58,85 @@ class FastDocParser(DocParser):
             self.metadata = self._parse_metadata(
                 self._replace_links(raw_index_soup, topics)
             )
+
+    def _parse_redirect_map(self, index_soup):
+        """
+        Given the HTML soup of an index topic
+        extract the redirect mappings from the "Redirects" section.
+
+        The URLs section should contain a table of
+        "Path" to "Location" mappings
+        (extra markup around this table doesn't matter)
+        e.g.:
+
+        <h1>Redirects</h1>
+        <details>
+            <summary>Mapping table</summary>
+            <table>
+            <tr><th>Path</th><th>Location</th></tr>
+            <tr>
+                <td>/my-funky-path</td>
+                <td>/cool-page</td>
+            </tr>
+            <tr>
+                <td>/some/other/path</td>
+                <td>https://example.com/cooler-place</td>
+            </tr>
+            </table>
+        </details>
+
+        This will typically be generated in Discourse from Markdown similar to
+        the following:
+
+        # Redirects
+
+        [details=Mapping table]
+        | Path | Path |
+        | -- | -- |
+        | /my-funky-path | /cool-page |
+        | /some/other/path | https://example.com/cooler-place |
+        """
+
+        redirect_soup = self._get_section(index_soup, "Redirects", "details")
+        redirect_map = {}
+        warnings = []
+
+        if redirect_soup:
+            for row in redirect_soup.select("tr:has(td)"):
+                path_cell = row.select_one("td:first-child")
+                location_cell = row.select_one("td:last-child")
+
+                if not path_cell or not location_cell:
+                    warnings.append(
+                        f"Could not parse redirect map {path_cell}"
+                    )
+                    continue
+
+                path = path_cell.text
+                location = location_cell.text
+
+                if not path.startswith(self.url_prefix):
+                    warnings.append(f"Could not parse redirect map for {path}")
+                    continue
+
+                if not (
+                    location.startswith(self.url_prefix)
+                    or validators.url(location, public=True)
+                ):
+                    warnings.append(
+                        f"Redirect map location {location} is invalid"
+                    )
+                    continue
+
+                if path in self.url_map:
+                    warnings.append(
+                        f"Redirect path {path} clashes with URL map"
+                    )
+                    continue
+
+                redirect_map[path] = location
+
+        return redirect_map, warnings
 
     def _parse_url_map(self, index_soup):
         """
@@ -142,6 +223,17 @@ class FastDocParser(DocParser):
 
         return url_map, warnings
 
+    @cached_property
+    def notification_template(self):
+        notification_html = (
+            "<div class='{{ notification_class }}'>"
+            "<div class='p-notification__response'>"
+            "{{ contents | safe }}"
+            "</div></div>"
+        )
+
+        return Template(notification_html)
+
     def _replace_notifications(self, soup):
         """
         Given some BeautifulSoup of a document,
@@ -167,14 +259,6 @@ class FastDocParser(DocParser):
             </div>
         """
 
-        notification_html = (
-            "<div class='{{ notification_class }}'>"
-            "<div class='p-notification__response'>"
-            "{{ contents | safe }}"
-            "</div></div>"
-        )
-
-        notification_template = Template(notification_html)
         for note_string in soup.findAll(text=re.compile("ⓘ ")):
             first_paragraph = note_string.parent
             blockquote = first_paragraph.parent
@@ -197,7 +281,7 @@ class FastDocParser(DocParser):
                     r"^\n?<p([^>]*)>ⓘ +", r"<p\1>", notification_html
                 )
 
-                notification = notification_template.render(
+                notification = self.notification_template.render(
                     notification_class="p-notification",
                     contents=notification_html,
                 )
@@ -226,7 +310,7 @@ class FastDocParser(DocParser):
                 if isinstance(first_item, NavigableString):
                     first_item.replace_with(first_item.lstrip(" "))
 
-                notification = notification_template.render(
+                notification = self.notification_template.render(
                     notification_class="p-notification--caution",
                     contents=blockquote.encode_contents().decode("utf-8"),
                 )
@@ -262,7 +346,6 @@ class FastDocParser(DocParser):
                     (e.g. "3 days ago")
         - forum_link: The link to the original forum post
         """
-
         updated_datetime = dateutil.parser.parse(
             topic["post_stream"]["posts"][0]["updated_at"]
         )
@@ -304,18 +387,17 @@ class FastDocParser(DocParser):
 
         <p>Content</p>
         """
-        html = str(soup)
         heading = soup.find(HEADER_REGEX, text=title_text)
 
         if not heading:
             return None
 
-        heading_tag = heading.name
         if content_tag:
             return heading.find_next_sibling(content_tag)
+        html = str(soup)
         section_html = html.split(str(heading))[1]
 
-        if f"<{heading_tag}>" in html:
-            section_html = section_html.split(f"<{heading_tag}>")[0]
+        if f"<{heading.name}>" in html:
+            section_html = section_html.split(f"<{heading.name}>")[0]
 
         return BeautifulSoup(section_html, features="lxml")
