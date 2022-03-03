@@ -4,6 +4,7 @@ A Flask application for maas.io
 
 import flask
 import math
+import socket
 
 import talisker.requests
 from datetime import timedelta
@@ -62,6 +63,14 @@ discourse_docs = DiscourseDocs(
     url_prefix="/docs",
 )
 discourse_docs.init_app(app)
+
+
+@app.route("/docs/_cache_clear")
+def cache_clear():
+    cached_urls = len(list(docs_session.cache.urls))
+    docs_session.cache.clear()
+    hostname = socket.gethostname()
+    return f"{hostname}: OK, all {cached_urls} URL(s) ☢🚀 from the cache", 410
 
 
 # Search
