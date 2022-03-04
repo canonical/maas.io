@@ -51,7 +51,7 @@ docs_discourse_api = DiscourseAPI(
 )
 doc_parser = FastDocParser(
     api=docs_discourse_api,
-    index_topic_id=25,
+    index_topic_id=4668,
     url_prefix="/docs",
 )
 if app.debug:
