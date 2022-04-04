@@ -363,7 +363,6 @@ docs/custom-node-setup-preseed: /docs/snap/3.1/ui/how-to-customise-machines
 docs/dhcp: /docs/snap/3.1/ui/how-to-manage-dhcp
 docs/disk-erasure: /docs/snap/3.1/ui/how-to-manage-machines
 docs/explore-maas: /docs/snap/3.1/ui/maas-installation 
-docs/get-started-with-maas: /docs/snap/3.1/ui/give-me-an-example-of-maas 
 docs/getting-help: /docs/snap/3.1/ui/getting-help 
 docs/hardware-test-scripts: /docs/snap/3.1/ui/hardware-test-scripts-reference 
 docs/hardware-testing: /docs/snap/3.1/ui/how-to-deploy-machines
