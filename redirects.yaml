@@ -200,7 +200,7 @@ docs/deb/2.9/ui/audit-event-logs: /docs/audit-event-log-reference
 docs/deb/2.9/ui/availability-zones: /docs/how-to-manage-availability-zones
 docs/deb/2.9/ui/backup: /docs/how-to-back-up-maas
 docs/deb/2.9/ui/block-devices: /docs/storage
-docs/deb/2.9/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/deb/2.9/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/deb/2.9/ui/commissioning-logs: /docs/commissioning-log-reference
 docs/deb/2.9/ui/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/deb/2.9/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -399,7 +399,7 @@ docs/deb/3.0/ui/audit-event-logs: /docs/audit-event-log-reference
 docs/deb/3.0/ui/availability-zones: /docs/how-to-manage-availability-zones
 docs/deb/3.0/ui/backup: /docs/how-to-back-up-maas
 docs/deb/3.0/ui/block-devices: /docs/about-machines
-docs/deb/3.0/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/deb/3.0/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/deb/3.0/ui/commissioning-logs: /docs/commissioning-log-reference
 docs/deb/3.0/ui/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/deb/3.0/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -629,7 +629,7 @@ docs/snap/2.9/cli/audit-event-logs: /docs/audit-event-log-reference
 docs/snap/2.9/cli/availability-zones: /docs/how-to-manage-availability-zones
 docs/snap/2.9/cli/backup: /docs/how-to-back-up-maas
 docs/snap/2.9/cli/block-devices: /docs/storage
-docs/snap/2.9/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/snap/2.9/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/snap/2.9/cli/commissioning-logs: /docs/commissioning-log-reference
 docs/snap/2.9/cli/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/snap/2.9/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -726,7 +726,7 @@ docs/snap/2.9/ui/audit-event-logs: /docs/audit-event-log-reference
 docs/snap/2.9/ui/availability-zones: /docs/how-to-manage-availability-zones
 docs/snap/2.9/ui/backup: /docs/how-to-back-up-maas
 docs/snap/2.9/ui/block-devices: /docs/storage
-docs/snap/2.9/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/snap/2.9/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/snap/2.9/ui/commissioning-logs: /docs/commissioning-log-reference
 docs/snap/2.9/ui/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/snap/2.9/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -823,7 +823,7 @@ docs/snap/3.0/cli/audit-event-logs: /docs/audit-event-log-reference
 docs/snap/3.0/cli/availability-zones: /docs/how-to-manage-availability-zones
 docs/snap/3.0/cli/backup: /docs/how-to-back-up-maas
 docs/snap/3.0/cli/block-devices: /docs/storage
-docs/snap/3.0/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/snap/3.0/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/snap/3.0/cli/commissioning-logs: /docs/commissioning-log-reference
 docs/snap/3.0/cli/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/snap/3.0/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -921,7 +921,7 @@ docs/snap/3.0/ui/audit-event-logs: /docs/audit-event-log-reference
 docs/snap/3.0/ui/availability-zones: /docs/how-to-manage-availability-zones
 docs/snap/3.0/ui/backup: /docs/how-to-back-up-maas
 docs/snap/3.0/ui/block-devices: /docs/storage
-docs/snap/3.0/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/snap/3.0/ui/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/snap/3.0/ui/commissioning-logs: /docs/commissioning-log-reference
 docs/snap/3.0/ui/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/snap/3.0/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
