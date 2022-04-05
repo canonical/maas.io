@@ -102,7 +102,7 @@ docs/deb/2.9/cli/audit-event-logs: /docs/audit-event-log-reference
 docs/deb/2.9/cli/availability-zones: /docs/how-to-manage-availability-zones
 docs/deb/2.9/cli/backup: /docs/how-to-back-up-maas
 docs/deb/2.9/cli/block-devices: /docs/how-to-manage-machines
-docs/deb/2.9/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/deb/2.9/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/deb/2.9/cli/commissioning-logs: /docs/commissioning-log-reference
 docs/deb/2.9/cli/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/deb/2.9/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
@@ -301,7 +301,7 @@ docs/deb/3.0/cli/audit-event-logs: /docs/audit-event-log-reference
 docs/deb/3.0/cli/availability-zones: /docs/how-to-manage-availability-zones
 docs/deb/3.0/cli/backup: /docs/how-to-back-up-maas
 docs/deb/3.0/cli/block-devices: /docs/storage
-docs/deb/3.0/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-scripts-reference
+docs/deb/3.0/cli/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference
 docs/deb/3.0/cli/commissioning-logs: /docs/commissioning-log-reference
 docs/deb/3.0/cli/commissioning-scripts-reference: /docs/commissioning-script-reference
 docs/deb/3.0/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
