@@ -1,5 +1,5 @@
-get-started: "/docs/snap/3.1/ui/maas-installation"
-install: "/docs/snap/3.1/ui/maas-installation"
+get-started: "/docs/how-to-install-maas"
+install: "/docs/how-to-install-maas"
 index(.html)?: "/"
 (?P<path>.+)/index(.html)?: "{path}"
 
@@ -1298,7 +1298,6 @@ docs/ntp: /docs/how-to-set-up-ntp
 docs/package-repositories: /docs/how-to-install-maas
 docs/partitions: /docs/how-to-manage-machines
 docs/pods: /docs/about-vm-hosting 
-docs/postgresql-ha-hot-standby: /docs/postgresql-ha-hot-standby 
 docs/prometheus-metrics: /docs/how-to-set-up-maas-metrics 
 docs/proxy: /docs/how-to-manage-proxies 
 docs/rack-controller: /docs/how-to-manage-racks 
