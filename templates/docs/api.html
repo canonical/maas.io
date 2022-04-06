@@ -42,7 +42,7 @@
 <p>POST and PUT are different. Your request should have MIME type "multipart/form-data"; each part represents one parameter (for POST) or attribute (for PUT). Each part is named after the parameter or attribute it contains, and its contents are the conveyed value.</p>
 <p>All parameters are in text form. If you need to submit binary data to the API, don't send it as any MIME binary format; instead, send it as a plain text part containing base64-encoded data.</p>
 <p>Most resources offer a choice of GET or POST operations. In those cases these methods will take one special parameter, called <span class="title-ref">op</span>, to indicate what it is you want to do.</p>
-<p>For example, to list all machines, you might GET "/MAAS/api/2.0/machines".</p>
+<p>For example, to list all machines, you might GET "/MAAS/api/2.0/machines/".</p>
 <h2 id="operations">Operations</h2>
 <h3 id="logged-in-user">Logged-in user</h3>
 <p>Manage the current logged-in user.</p>
