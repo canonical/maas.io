@@ -14,19 +14,19 @@
       .p-modal__dialog {
         margin-bottom: 0;
 
-        @media (min-width: $breakpoint-medium + 100px) {
-          max-width: $breakpoint-medium;
-          min-width: $breakpoint-medium;
+        @media (min-width: $breakpoint-large + 100px) {
+          max-width: $breakpoint-large;
+          min-width: $breakpoint-large;
         }
       }
 
       .p-modal__header {
         border-bottom: 1px solid $color-mid-light;
-        margin-bottom: $spv-inner--large;
+        margin-bottom: $spv--large;
       }
 
       .p-modal__title {
-        margin-bottom: $spv-inner--small;
+        margin-bottom: $spv--small;
       }
 
       &.thank-you {
@@ -39,7 +39,7 @@
         }
       }
 
-      @media only screen and (min-width: $breakpoint-medium) {
+      @media only screen and (min-width: $breakpoint-large) {
         .u-align {
           padding-bottom: 70px;
 

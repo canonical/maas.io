@@ -69,7 +69,7 @@
     padding: 0 $sp-xxx-large;
 
     @media only screen and (max-width: $breakpoint-navigation-threshold) {
-      padding-left: $sph-outer--large;
+      padding-left: $sph--large + $sph--small;
     }
   }
 

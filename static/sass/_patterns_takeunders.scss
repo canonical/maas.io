@@ -5,7 +5,7 @@
     margin-right: -1 rem;
     padding: $sp-x-large;
 
-    @media only screen and (min-width: $breakpoint-medium) {
+    @media only screen and (min-width: $breakpoint-large) {
       padding: $sp-x-large $sp-medium $sp-medium $sp-medium;
     }
 
@@ -28,8 +28,8 @@
     }
 
     & + & {
-      @media only screen and (max-width: $breakpoint-medium) {
-        margin-top: $spv-outer--medium;
+      @media only screen and (max-width: $breakpoint-large) {
+        margin-top: $spv--large;
       }
     }
   }
