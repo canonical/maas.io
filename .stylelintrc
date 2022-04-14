@@ -1,22 +1,31 @@
 {
-  "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-order"
-  ],
-  "ignoreFiles": ["static/sass/_hljs.scss"],
+  "extends": ["stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-order"],
   "rules": {
+    "no-invalid-position-at-import-rule": null,
+    "scss/comment-no-empty": null,
+    "scss/no-global-function-names": null,
+    "scss/operator-no-unspaced": null,
+
+    "function-url-scheme-allowed-list": ["data"],
+    "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+
+    "max-nesting-depth": 3,
+
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-import-partial-extension": "never",
+
     "order/properties-alphabetical-order": true,
-    "at-rule-no-unknown": [ true, {
-      "ignoreAtRules": [
-        "extend",
-        "include",
-        "mixin",
-        "for",
-        "function",
-        "if",
-        "warn",
-        "return"
-        ]
-    } ],
+    "no-descending-specificity": [true, {"severity": "warning"}],
+
+    "property-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "at-rule-no-vendor-prefix": true
   }
 }
