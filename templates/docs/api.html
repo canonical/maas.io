@@ -4626,142 +4626,6 @@
 }</code></pre>
 <p>&nbsp;</p>
 </details>
-<h3 id="fan-network">Fan Network</h3>
-<p>Manage Fan Network.</p>
-<details>
-<summary><code>DELETE /MAAS/api/2.0/fannetworks/{id}/</code></summary>
-<p>Deletes a fan network with the given id.</p>
-<p><strong>Parameters</strong></p>
-<hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The fan network id.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 204</p>
-<p><strong>Error</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 404</p>
-<p><em>Content</em></p>
-<pre><code>Not Found</code></pre>
-<p>&nbsp;</p>
-</details>
-<details>
-<summary><code>GET /MAAS/api/2.0/fannetworks/{id}/</code></summary>
-<p>Read a fan network with the given id.</p>
-<p><strong>Parameters</strong></p>
-<hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The fan network id.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 200</p>
-<p><em>JSON</em></p>
-<pre><code>{
-    &quot;name&quot;: &quot;fannetwork&quot;,
-    &quot;overlay&quot;: &quot;172.0.0.0/8&quot;,
-    &quot;underlay&quot;: &quot;172.16.0.0/16&quot;,
-    &quot;dhcp&quot;: null,
-    &quot;host_reserve&quot;: 1,
-    &quot;bridge&quot;: null,
-    &quot;off&quot;: false,
-    &quot;id&quot;: 1,
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/fannetworks/1/&quot;
-}</code></pre>
-<p><strong>Error</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 404</p>
-<p><em>Content</em></p>
-<pre><code>Not Found</code></pre>
-<p>&nbsp;</p>
-</details>
-<details>
-<summary><code>PUT /MAAS/api/2.0/fannetworks/{id}/</code></summary>
-<p>Update a fan network with the given id.</p>
-<p><strong>Parameters</strong></p>
-<hr />
-<p><strong>{id}</strong> (<em>Int</em>): Required. The fan network id.</p>
-<p><strong>name</strong> (<em>String</em>): Optional. Name of the fan network.</p>
-<p><strong>overlay</strong> (<em>String</em>): Optional. The overlay network.</p>
-<p><strong>underlay</strong> (<em>String</em>): Optional. The underlay network.</p>
-<p><strong>dhcp</strong> (<em>Boolean</em>): Optional. Configure DHCP server for overlay network.</p>
-<p><strong>host_reserve</strong> (<em>Int</em>): Optional. The number of IP addresses to reserve for host.</p>
-<p><strong>bridge</strong> (<em>String</em>): Optional. Override bridge name.</p>
-<p><strong>off</strong> (<em>Boolean</em>): Optional. Put this fan network in the configuration, but disable it.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 200</p>
-<p><em>JSON</em></p>
-<pre><code>{
-    &quot;name&quot;: &quot;fannetwork&quot;,
-    &quot;overlay&quot;: &quot;172.0.0.0/8&quot;,
-    &quot;underlay&quot;: &quot;172.16.0.0/16&quot;,
-    &quot;dhcp&quot;: null,
-    &quot;host_reserve&quot;: 1,
-    &quot;bridge&quot;: &quot;br1&quot;,
-    &quot;off&quot;: false,
-    &quot;id&quot;: 1,
-    &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/fannetworks/1/&quot;
-}</code></pre>
-<p><strong>Error</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 404</p>
-<p><em>Content</em></p>
-<pre><code>Not Found</code></pre>
-<p>&nbsp;</p>
-</details>
-<h3 id="fan-networks">Fan Networks</h3>
-<p>Manage Fan Networks.</p>
-<details>
-<summary><code>GET /MAAS/api/2.0/fannetworks/</code></summary>
-<p>List all fan networks.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 200</p>
-<p><em>JSON</em></p>
-<pre><code>[
-    {
-        &quot;name&quot;: &quot;fannetwork&quot;,
-        &quot;overlay&quot;: &quot;172.0.0.0/8&quot;,
-        &quot;underlay&quot;: &quot;172.16.0.0/16&quot;,
-        &quot;dhcp&quot;: null,
-        &quot;host_reserve&quot;: 1,
-        &quot;bridge&quot;: null,
-        &quot;off&quot;: false,
-        &quot;id&quot;: 1,
-        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/fannetworks/1/&quot;
-    }
-]</code></pre>
-<p>&nbsp;</p>
-</details>
-<details>
-<summary><code>POST /MAAS/api/2.0/fannetworks/</code></summary>
-<p>Create a fan network</p>
-<p><strong>Parameters</strong></p>
-<hr />
-<p><strong>name</strong> (<em>String</em>): Required. Name of the fan network.</p>
-<p><strong>overlay</strong> (<em>String</em>): Required. The overlay network.</p>
-<p><strong>underlay</strong> (<em>String</em>): Required. The underlay network.</p>
-<p><strong>dhcp</strong> (<em>Boolean</em>): Optional. Configure DHCP server for overlay network.</p>
-<p><strong>host_reserve</strong> (<em>Int</em>): Optional. The number of IP addresses to reserve for host.</p>
-<p><strong>bridge</strong> (<em>String</em>): Optional. Override bridge name.</p>
-<p><strong>off</strong> (<em>Boolean</em>): Optional. Put this fan network in the configuration, but disable it.</p>
-<p><strong>Success</strong></p>
-<hr />
-<p><em>HTTP Status Code</em> : 200</p>
-<p><em>JSON</em></p>
-<pre><code>[
-    {
-        &quot;name&quot;: &quot;fannetwork&quot;,
-        &quot;overlay&quot;: &quot;172.0.0.0/8&quot;,
-        &quot;underlay&quot;: &quot;172.16.0.0/16&quot;,
-        &quot;dhcp&quot;: null,
-        &quot;host_reserve&quot;: 1,
-        &quot;bridge&quot;: null,
-        &quot;off&quot;: false,
-        &quot;id&quot;: 1,
-        &quot;resource_uri&quot;: &quot;/MAAS/api/2.0/fannetworks/1/&quot;
-    }
-]</code></pre>
-<p>&nbsp;</p>
-</details>
 <h3 id="file">File</h3>
 <p>Manage a FileStorage object.</p>
 <p>The file is identified by its filename and owner.</p>
@@ -6815,11 +6679,17 @@
 <dt>force_v1_network_yaml</dt>
 <dd><p>Always use the legacy v1 YAML (rather than Netplan format, also known as v2 YAML) when composing the network configuration for a machine..</p>
 </dd>
+<dt>hardware_sync_interval</dt>
+<dd><p>Hardware Sync Interval. The interval to send hardware info to MAAS fromhardware sync enabled machines, in systemd time span syntax.</p>
+</dd>
 <dt>http_proxy</dt>
 <dd><p>Proxy for APT or YUM and HTTP/HTTPS. This will be passed onto provisioned nodes to use as a proxy for APT or YUM traffic. MAAS also uses the proxy for downloading boot images. If no URL is provided, the built-in MAAS proxy will be used.</p>
 </dd>
 <dt>kernel_opts</dt>
 <dd><p>Boot parameters to pass to the kernel by default.</p>
+</dd>
+<dt>maas_auto_ipmi_cipher_suite_id</dt>
+<dd><p>MAAS IPMI Default Cipher Suite ID. The default IPMI cipher suite ID to use when connecting to the BMC via ipmitools Available choices are: '' (freeipmi-tools default), '12' (12 - HMAC-MD5::MD5-128::AES-CBC-128), '17' (17 - HMAC-SHA256::HMAC_SHA256_128::AES-CBC-128), '3' (3 - HMAC-SHA1::HMAC-SHA1-96::AES-CBC-128), '8' (8 - HMAC-MD5::HMAC-MD5-128::AES-CBC-128).</p>
 </dd>
 <dt>maas_auto_ipmi_k_g_bmc_key</dt>
 <dd><p>The IPMI K_g key to set during BMC configuration.. This IPMI K_g BMC key is used to encrypt all IPMI traffic to a BMC. Once set, all clients will REQUIRE this key upon being commissioned. Any current machines that were previously commissioned will not require this key until they are recommissioned.</p>
@@ -6829,6 +6699,9 @@
 </dd>
 <dt>maas_auto_ipmi_user_privilege_level</dt>
 <dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'ADMIN' (Administrator), 'OPERATOR' (Operator), 'USER' (User).</p>
+</dd>
+<dt>maas_auto_ipmi_workaround_flags</dt>
+<dd><p>IPMI Workaround Flags. The default workaround flag (-W options) to use for ipmipower commands Available choices are: '' (None), 'authcap' (Authcap), 'endianseq' (Endianseq), 'forcepermsg' (Forcepermsg), 'idzero' (Idzero), 'integritycheckvalue' (Integritycheckvalue), 'intel20' (Intel20), 'ipmiping' (Ipmiping), 'nochecksumcheck' (Nochecksumcheck), 'opensesspriv' (Opensesspriv), 'sun20' (Sun20), 'supermicro20' (Supermicro20), 'unexpectedauth' (Unexpectedauth).</p>
 </dd>
 <dt>maas_internal_domain</dt>
 <dd><p>Domain name used by MAAS for internal mapping of MAAS provided services.. This domain should not collide with an upstream domain provided by the set upstream DNS.</p>
@@ -6875,6 +6748,12 @@
 <dt>prometheus_push_interval</dt>
 <dd><p>Interval of how often to send data to Prometheus (default: to 60 minutes).. The internal of how often MAAS will send stats to Prometheus in minutes.</p>
 </dd>
+<dt>promtail_enabled</dt>
+<dd><p>Enable streaming logs to Promtail.. Whether to stream logs to Promtail</p>
+</dd>
+<dt>promtail_port</dt>
+<dd><p>TCP port of the Promtail Push API.. Defines the TCP port of the Promtail push API where MAAS will stream logs to.</p>
+</dd>
 <dt>release_notifications</dt>
 <dd><p>Enable or disable notifications for new MAAS releases..</p>
 </dd>
@@ -6883,6 +6762,12 @@
 </dd>
 <dt>subnet_ip_exhaustion_threshold_count</dt>
 <dd><p>If the number of free IP addresses on a subnet becomes less than or equal to this threshold, an IP exhaustion warning will appear for that subnet.</p>
+</dd>
+<dt>tls_cert_expiration_notification_enabled</dt>
+<dd><p>Notify when the certificate is due to expire. Enable/Disable notification about certificate expiration.</p>
+</dd>
+<dt>tls_cert_expiration_notification_interval</dt>
+<dd><p>Certificate expiration reminder (days). Configure notification when certificate is due to expire in (days).</p>
 </dd>
 <dt>upstream_dns</dt>
 <dd><p>Upstream DNS used to resolve domains not managed by this MAAS (space-separated IP addresses). Only used when MAAS is running its own DNS server. This value is used as the value of 'forwarders' in the DNS server config.</p>
@@ -6988,11 +6873,17 @@
 <dt>force_v1_network_yaml</dt>
 <dd><p>Always use the legacy v1 YAML (rather than Netplan format, also known as v2 YAML) when composing the network configuration for a machine..</p>
 </dd>
+<dt>hardware_sync_interval</dt>
+<dd><p>Hardware Sync Interval. The interval to send hardware info to MAAS fromhardware sync enabled machines, in systemd time span syntax.</p>
+</dd>
 <dt>http_proxy</dt>
 <dd><p>Proxy for APT or YUM and HTTP/HTTPS. This will be passed onto provisioned nodes to use as a proxy for APT or YUM traffic. MAAS also uses the proxy for downloading boot images. If no URL is provided, the built-in MAAS proxy will be used.</p>
 </dd>
 <dt>kernel_opts</dt>
 <dd><p>Boot parameters to pass to the kernel by default.</p>
+</dd>
+<dt>maas_auto_ipmi_cipher_suite_id</dt>
+<dd><p>MAAS IPMI Default Cipher Suite ID. The default IPMI cipher suite ID to use when connecting to the BMC via ipmitools Available choices are: '' (freeipmi-tools default), '12' (12 - HMAC-MD5::MD5-128::AES-CBC-128), '17' (17 - HMAC-SHA256::HMAC_SHA256_128::AES-CBC-128), '3' (3 - HMAC-SHA1::HMAC-SHA1-96::AES-CBC-128), '8' (8 - HMAC-MD5::HMAC-MD5-128::AES-CBC-128).</p>
 </dd>
 <dt>maas_auto_ipmi_k_g_bmc_key</dt>
 <dd><p>The IPMI K_g key to set during BMC configuration.. This IPMI K_g BMC key is used to encrypt all IPMI traffic to a BMC. Once set, all clients will REQUIRE this key upon being commissioned. Any current machines that were previously commissioned will not require this key until they are recommissioned.</p>
@@ -7002,6 +6893,9 @@
 </dd>
 <dt>maas_auto_ipmi_user_privilege_level</dt>
 <dd><p>MAAS IPMI privilege level. The default IPMI privilege level to use when creating the MAAS user and talking IPMI BMCs Available choices are: 'ADMIN' (Administrator), 'OPERATOR' (Operator), 'USER' (User).</p>
+</dd>
+<dt>maas_auto_ipmi_workaround_flags</dt>
+<dd><p>IPMI Workaround Flags. The default workaround flag (-W options) to use for ipmipower commands Available choices are: '' (None), 'authcap' (Authcap), 'endianseq' (Endianseq), 'forcepermsg' (Forcepermsg), 'idzero' (Idzero), 'integritycheckvalue' (Integritycheckvalue), 'intel20' (Intel20), 'ipmiping' (Ipmiping), 'nochecksumcheck' (Nochecksumcheck), 'opensesspriv' (Opensesspriv), 'sun20' (Sun20), 'supermicro20' (Supermicro20), 'unexpectedauth' (Unexpectedauth).</p>
 </dd>
 <dt>maas_internal_domain</dt>
 <dd><p>Domain name used by MAAS for internal mapping of MAAS provided services.. This domain should not collide with an upstream domain provided by the set upstream DNS.</p>
@@ -7048,6 +6942,12 @@
 <dt>prometheus_push_interval</dt>
 <dd><p>Interval of how often to send data to Prometheus (default: to 60 minutes).. The internal of how often MAAS will send stats to Prometheus in minutes.</p>
 </dd>
+<dt>promtail_enabled</dt>
+<dd><p>Enable streaming logs to Promtail.. Whether to stream logs to Promtail</p>
+</dd>
+<dt>promtail_port</dt>
+<dd><p>TCP port of the Promtail Push API.. Defines the TCP port of the Promtail push API where MAAS will stream logs to.</p>
+</dd>
 <dt>release_notifications</dt>
 <dd><p>Enable or disable notifications for new MAAS releases..</p>
 </dd>
@@ -7056,6 +6956,12 @@
 </dd>
 <dt>subnet_ip_exhaustion_threshold_count</dt>
 <dd><p>If the number of free IP addresses on a subnet becomes less than or equal to this threshold, an IP exhaustion warning will appear for that subnet.</p>
+</dd>
+<dt>tls_cert_expiration_notification_enabled</dt>
+<dd><p>Notify when the certificate is due to expire. Enable/Disable notification about certificate expiration.</p>
+</dd>
+<dt>tls_cert_expiration_notification_interval</dt>
+<dd><p>Certificate expiration reminder (days). Configure notification when certificate is due to expire in (days).</p>
 </dd>
 <dt>upstream_dns</dt>
 <dd><p>Upstream DNS used to resolve domains not managed by this MAAS (space-separated IP addresses). Only used when MAAS is running its own DNS server. This value is used as the value of 'forwarders' in the DNS server config.</p>
@@ -8960,6 +8866,7 @@
 <p><strong>register_vmhost</strong> (<em>Boolean</em>): Optional. If true, the machine will be registered as a LXD VM host in MAAS.</p>
 <p><strong>ephemeral_deploy</strong> (<em>Boolean</em>): Optional. If true, machine will be deployed ephemerally even if it has disks.</p>
 <p><strong>vcenter_registration</strong> (<em>Boolean</em>): Optional. If false, do not send globally defined VMware vCenter credentials to the machine.</p>
+<p><strong>enable_hw_sync</strong> (<em>Boolean</em>): Optional. If true, machine will be deployed with a small agent periodically pushing hardware data to detect any change in devices.</p>
 <p><strong>Success</strong></p>
 <hr />
 <p><em>HTTP Status Code</em> : 200</p>
@@ -37413,6 +37320,7 @@
 <li>k_g (K_g BMC key).</li>
 <li>cipher_suite_id (Cipher Suite ID). Choices: '17' (17 - HMAC-SHA256::HMAC_SHA256_128::AES-CBC-128), '3' (3 - HMAC-SHA1::HMAC-SHA1-96::AES-CBC-128), '' (freeipmi-tools default), '8' (8 - HMAC-MD5::HMAC-MD5-128::AES-CBC-128), '12' (12 - HMAC-MD5::MD5-128::AES-CBC-128) Default: '3'.</li>
 <li>privilege_level (Privilege Level). Choices: 'USER' (User), 'OPERATOR' (Operator), 'ADMIN' (Administrator) Default: 'OPERATOR'.</li>
+<li>workaround_flags (Workaround Flags). Choices: 'opensesspriv' (Opensesspriv), 'authcap' (Authcap), 'idzero' (Idzero), 'unexpectedauth' (Unexpectedauth), 'forcepermsg' (Forcepermsg), 'endianseq' (Endianseq), 'intel20' (Intel20), 'supermicro20' (Supermicro20), 'sun20' (Sun20), 'nochecksumcheck' (Nochecksumcheck), 'integritycheckvalue' (Integritycheckvalue), 'ipmiping' (Ipmiping), '' (None) Default: '['opensesspriv']'.</li>
 <li>mac_address (Power MAC).</li>
 </ul>
 <h3 id="manual-manual">manual (Manual)</h3>
