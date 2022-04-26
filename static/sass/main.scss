@@ -45,7 +45,7 @@ $breakpoint-navigation-threshold: 960px;
   flex-wrap: wrap;
   width: 100%;
 
-  @media only screen and (min-width: $breakpoint-medium) {
+  @media only screen and (min-width: $breakpoint-large) {
     margin-bottom: 2rem;
   }
 }
@@ -57,14 +57,14 @@ $breakpoint-navigation-threshold: 960px;
 .p-heading-icon-block__icon {
   border-radius: 0;
   height: auto;
-  margin-bottom: $spv-inner--small;
-  margin-right: $sph-inner;
-  padding-right: $sph-inner;
-  width: ($sp-unit * 5) + $sph-inner;
+  margin-bottom: $spv--small;
+  margin-right: $sph--large;
+  padding-right: $sph--large;
+  width: ($sp-unit * 5) + $sph--large;
 }
 
 .u-indent {
-  @media only screen and (min-width: $breakpoint-medium) {
+  @media only screen and (min-width: $breakpoint-large) {
     float: right;
     width: calc(100% - 8.5rem);
   }

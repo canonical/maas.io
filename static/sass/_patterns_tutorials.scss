@@ -85,7 +85,7 @@
   .p-tutorial__pagination-item--prev {
     @extend %p-tutorial-pagination-item;
 
-    .p-icon--contextual-menu {
+    .p-icon--chevron-down {
       transform: rotate(90deg);
     }
   }
@@ -93,7 +93,7 @@
   .p-tutorial__pagination-item--next {
     @extend %p-tutorial-pagination-item;
 
-    .p-icon--contextual-menu {
+    .p-icon--chevron-down {
       transform: rotate(-90deg);
     }
   }

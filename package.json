@@ -23,9 +23,9 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "stylelint": "13.13.1",
-    "stylelint-config-standard": "20.0.0",
-    "stylelint-order": "4.1.0"
+    "stylelint": "14.6.1",
+    "stylelint-config-recommended-scss": "5.0.2",
+    "stylelint-order": "5.0.0"
   },
   "dependencies": {
     "autoprefixer": "10.4.2",
@@ -36,7 +36,7 @@
     "postcss": "8.4.6",
     "postcss-cli": "9.1.0",
     "sass": "1.49.7",
-    "vanilla-framework": "2.37.1",
+    "vanilla-framework": "3.2.0",
     "venobox": "2.0.4"
   }
 }
