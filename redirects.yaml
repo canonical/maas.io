@@ -125,7 +125,7 @@ docs/deb/2.9/cli/high-availability: /docs/how-to-enable-high-availability
 docs/deb/2.9/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/2.9/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/2.9/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/2.9/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/2.9/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/2.9/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/2.9/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -141,7 +141,7 @@ docs/deb/2.9/cli/images: /docs/about-images
 docs/deb/2.9/cli/installation-tech-reference: /docs/how-to-install-maas
 docs/deb/2.9/cli/installation: /docs/how-to-install-maas
 docs/deb/2.9/cli/interactive-search: /docs/how-to-search-maas
-docs/deb/2.9/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/2.9/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/2.9/cli/kernel-boot-options: /docs/how-to-customise-machines
 docs/deb/2.9/cli/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -156,7 +156,7 @@ docs/deb/2.9/cli/maas-tags: /docs/about-tags-and-annotations
 docs/deb/2.9/cli/machines: /docs/about-machines
 docs/deb/2.9/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/deb/2.9/cli/manage-machines: /docs/how-to-manage-machines
-docs/deb/2.9/cli/managing-dhcp: /docs/how-to-manage-dhcp
+docs/deb/2.9/cli/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/2.9/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/2.9/cli/network-testing: /docs/how-to-manage-machines
@@ -223,7 +223,7 @@ docs/deb/2.9/ui/high-availability: /docs/how-to-enable-high-availability
 docs/deb/2.9/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/2.9/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/2.9/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/2.9/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/2.9/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/2.9/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/2.9/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -239,7 +239,7 @@ docs/deb/2.9/ui/images: /docs/about-images
 docs/deb/2.9/ui/installation-tech-reference: /docs/how-to-install-maas
 docs/deb/2.9/ui/installation: /docs/how-to-install-maas
 docs/deb/2.9/ui/interactive-search: /docs/how-to-search-maas
-docs/deb/2.9/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/2.9/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/2.9/ui/kernel-boot-options: /docs/how-to-customise-machines
 docs/deb/2.9/ui/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -254,7 +254,7 @@ docs/deb/2.9/ui/maas-tags: /docs/about-tags
 docs/deb/2.9/ui/machines: /docs/about-machines
 docs/deb/2.9/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/deb/2.9/ui/manage-machines: /docs/how-to-manage-machines
-docs/deb/2.9/ui/managing-dhcp: /docs/how-to-manage-dhcp
+docs/deb/2.9/ui/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/2.9/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/2.9/ui/network-testing: /docs/how-to-test-machines
@@ -324,7 +324,7 @@ docs/deb/3.0/cli/high-availability: /docs/how-to-enable-high-availability
 docs/deb/3.0/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/3.0/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/3.0/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/3.0/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.0/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/3.0/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/3.0/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -339,7 +339,7 @@ docs/deb/3.0/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.0/cli/images: /docs/about-images
 docs/deb/3.0/cli/installation-tech-reference: /docs/how-to-install-maas
 docs/deb/3.0/cli/interactive-search: /docs/how-to-search-maas
-docs/deb/3.0/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/3.0/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/3.0/cli/kernel-boot-options: /docs/how-to-customise-machines
 docs/deb/3.0/cli/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -355,7 +355,7 @@ docs/deb/3.0/cli/machine-logs: /docs/maas-logging-reference
 docs/deb/3.0/cli/machines: /docs/about-machines
 docs/deb/3.0/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/deb/3.0/cli/manage-machines: /docs/how-to-manage-machines
-docs/deb/3.0/cli/managing-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.0/cli/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/3.0/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/3.0/cli/network-testing: /docs/how-to-test-machines
@@ -422,7 +422,7 @@ docs/deb/3.0/ui/high-availability: /docs/how-to-enable-high-availability
 docs/deb/3.0/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/3.0/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/3.0/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/3.0/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.0/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/3.0/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/3.0/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -437,7 +437,7 @@ docs/deb/3.0/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.0/ui/images: /docs/about-images
 docs/deb/3.0/ui/installation-tech-reference: /docs/how-to-install-maas
 docs/deb/3.0/ui/interactive-search: /docs/how-to-search-maas
-docs/deb/3.0/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/3.0/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/3.0/ui/kernel-boot-options: /docs/how-to-customise-machines
 docs/deb/3.0/ui/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -453,7 +453,7 @@ docs/deb/3.0/ui/machine-logs: /docs/maas-logging-reference
 docs/deb/3.0/ui/machines: /docs/about-machines
 docs/deb/3.0/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/deb/3.0/ui/manage-machines: /docs/how-to-manage-machines
-docs/deb/3.0/ui/managing-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.0/ui/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/3.0/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/3.0/ui/network-testing: /docs/how-to-test-machines
@@ -513,7 +513,7 @@ docs/deb/3.1/cli/high-availability: /docs/how-to-enable-high-availability
 docs/deb/3.1/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/3.1/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/3.1/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/3.1/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.1/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.1/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/3.1/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/3.1/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -526,7 +526,7 @@ docs/deb/3.1/cli/how-to-use-network-tags: /docs/how-to-use-network-tags
 docs/deb/3.1/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.1/cli/images: /docs/about-images
 docs/deb/3.1/cli/interactive-search: /docs/how-to-search-maas
-docs/deb/3.1/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/3.1/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.1/cli/local-image-mirror: /doc/how-to-mirror-images-locally
 docs/deb/3.1/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.1/cli/maas-image-builder: /docs/how-to-build-maas-images
@@ -578,7 +578,7 @@ docs/deb/3.1/ui/high-availability: /docs/how-to-enable-high-availability
 docs/deb/3.1/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/deb/3.1/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/deb/3.1/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/deb/3.1/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/deb/3.1/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/deb/3.1/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/deb/3.1/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/deb/3.1/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -591,7 +591,7 @@ docs/deb/3.1/ui/how-to-use-network-tags: /docs/how-to-use-network-tags
 docs/deb/3.1/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.1/ui/images: /docs/about-images
 docs/deb/3.1/ui/interactive-search: /docs/how-to-search-maas
-docs/deb/3.1/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/deb/3.1/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.1/ui/local-image-mirror: /doc/how-to-mirror-images-locally
 docs/deb/3.1/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.1/ui/maas-image-builder: /docs/how-to-build-maas-images
@@ -652,7 +652,7 @@ docs/snap/2.9/cli/high-availability: /docs/how-to-enable-high-availability
 docs/snap/2.9/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/2.9/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/2.9/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/2.9/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/2.9/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/2.9/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/2.9/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -668,7 +668,7 @@ docs/snap/2.9/cli/images: /docs/about-images
 docs/snap/2.9/cli/installation-tech-reference: /docs/how-to-install-maas
 docs/snap/2.9/cli/installation: /docs/how-to-install-maas
 docs/snap/2.9/cli/interactive-search: /docs/how-to-search-maas
-docs/snap/2.9/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/2.9/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/2.9/cli/kernel-boot-options: /docs/how-to-customise-machines
 docs/snap/2.9/cli/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -682,7 +682,7 @@ docs/snap/2.9/cli/maas-tags: /docs/about-tags
 docs/snap/2.9/cli/machines: /docs/about-machines
 docs/snap/2.9/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/snap/2.9/cli/manage-machines: /docs/how-to-manage-machines
-docs/snap/2.9/cli/managing-dhcp: /docs/how-to-manage-dhcp
+docs/snap/2.9/cli/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/2.9/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/2.9/cli/network-testing: /docs/how-to-test-machines
@@ -749,7 +749,7 @@ docs/snap/2.9/ui/high-availability: /docs/how-to-enable-high-availability
 docs/snap/2.9/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/2.9/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/2.9/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/2.9/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/2.9/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/2.9/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/2.9/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -765,7 +765,7 @@ docs/snap/2.9/ui/images: /docs/about-images
 docs/snap/2.9/ui/installation-tech-reference: /docs/how-to-install-maas
 docs/snap/2.9/ui/installation: /docs/how-to-install-maas
 docs/snap/2.9/ui/interactive-search: /docs/how-to-search-maas
-docs/snap/2.9/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/2.9/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/2.9/ui/kernel-boot-options: /docs/how-to-customise-machines
 docs/snap/2.9/ui/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -779,7 +779,7 @@ docs/snap/2.9/ui/maas-tags: /docs/about-tags
 docs/snap/2.9/ui/machines: /docs/about-machines
 docs/snap/2.9/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/snap/2.9/ui/manage-machines: /docs/how-to-manage-machines
-docs/snap/2.9/ui/managing-dhcp: /docs/how-to-manage-dhcp
+docs/snap/2.9/ui/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/2.9/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/2.9/ui/network-testing: /docs/how-to-test-machines
@@ -846,7 +846,7 @@ docs/snap/3.0/cli/high-availability: /docs/how-to-enable-high-availability
 docs/snap/3.0/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/3.0/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/3.0/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/3.0/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.0/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/3.0/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/3.0/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -861,7 +861,7 @@ docs/snap/3.0/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.0/cli/images: /docs/about-images
 docs/snap/3.0/cli/installation-tech-reference: /docs/how-to-install-maas
 docs/snap/3.0/cli/interactive-search: /docs/how-to-search-maas
-docs/snap/3.0/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/3.0/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/3.0/cli/kernel-boot-options: /docs/how-to-customise-machines
 docs/snap/3.0/cli/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -877,7 +877,7 @@ docs/snap/3.0/cli/machine-logs: /docs/maas-logging-reference
 docs/snap/3.0/cli/machines: /docs/about-machines
 docs/snap/3.0/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/snap/3.0/cli/manage-machines: /docs/how-to-manage-machines
-docs/snap/3.0/cli/managing-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.0/cli/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/3.0/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/3.0/cli/network-testing: /docs/how-to-test-machines
@@ -944,7 +944,7 @@ docs/snap/3.0/ui/high-availability: /docs/how-to-enable-high-availability
 docs/snap/3.0/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/3.0/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/3.0/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/3.0/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.0/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/3.0/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/3.0/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -959,7 +959,7 @@ docs/snap/3.0/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.0/ui/images: /docs/about-images
 docs/snap/3.0/ui/installation-tech-reference: /docs/how-to-install-maas
 docs/snap/3.0/ui/interactive-search: /docs/how-to-search-maas
-docs/snap/3.0/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/3.0/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/3.0/ui/kernel-boot-options: /docs/how-to-customise-machines
 docs/snap/3.0/ui/local-image-mirror: /doc/how-to-mirror-images-locally
@@ -976,7 +976,7 @@ docs/snap/3.0/ui/machine-logs: /docs/maas-logging-reference
 docs/snap/3.0/ui/machines: /docs/about-machines
 docs/snap/3.0/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
 docs/snap/3.0/ui/manage-machines: /docs/how-to-manage-machines
-docs/snap/3.0/ui/managing-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.0/ui/managing-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/3.0/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/3.0/ui/network-testing: /docs/how-to-test-machines
@@ -1034,7 +1034,7 @@ docs/snap/3.1/cli/high-availability: /docs/how-to-enable-high-availability
 docs/snap/3.1/cli/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/3.1/cli/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/3.1/cli/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/3.1/cli/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.1/cli/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.1/cli/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/3.1/cli/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/3.1/cli/how-to-manage-tags: /docs/how-to-manage-tags
@@ -1047,7 +1047,7 @@ docs/snap/3.1/cli/how-to-use-network-tags: /docs/how-to-use-network-tags
 docs/snap/3.1/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.1/cli/images: /docs/about-images
 docs/snap/3.1/cli/interactive-search: /docs/how-to-search-maas
-docs/snap/3.1/cli/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/3.1/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.1/cli/local-image-mirror: /doc/how-to-mirror-images-locally
 docs/snap/3.1/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.1/cli/maas-image-builder: /docs/how-to-build-maas-images
@@ -1099,7 +1099,7 @@ docs/snap/3.1/ui/high-availability: /docs/how-to-enable-high-availability
 docs/snap/3.1/ui/how-to-commission-machines: /docs/how-to-deploy-machines#heading--how-to-commission-a-machine
 docs/snap/3.1/ui/how-to-customise-machines: /docs/how-to-customise-machines
 docs/snap/3.1/ui/how-to-deploy-machines: /docs/how-to-deploy-machines
-docs/snap/3.1/ui/how-to-manage-dhcp: /docs/how-to-manage-dhcp
+docs/snap/3.1/ui/how-to-manage-dhcp: /docs/how-to-manage-ip-addresses
 docs/snap/3.1/ui/how-to-manage-machines: /docs/how-to-manage-machines
 docs/snap/3.1/ui/how-to-manage-networks: /docs/how-to-manage-networks
 docs/snap/3.1/ui/how-to-manage-tags: /docs/how-to-manage-tags
@@ -1112,7 +1112,7 @@ docs/snap/3.1/ui/how-to-use-network-tags: /docs/how-to-use-network-tags
 docs/snap/3.1/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.1/ui/images: /docs/about-images
 docs/snap/3.1/ui/interactive-search: /docs/how-to-search-maas
-docs/snap/3.1/ui/ip-ranges: /docs/how-to-manage-ip-ranges
+docs/snap/3.1/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.1/ui/local-image-mirror: /doc/how-to-mirror-images-locally
 docs/snap/3.1/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.1/ui/maas-image-builder: /docs/how-to-build-maas-images
@@ -1151,7 +1151,7 @@ docs/availability-zones: /docs/how-to-manage-availability-zones
 docs/backup: /docs/how-to-back-up-maas 
 docs/block-devices: /docs/about-machines
 docs/bmc-power-types: /docs/power-management-reference 
-docs/cli-dhcp-snippet-management: /docs/how-to-manage-dhcp 
+docs/cli-dhcp-snippet-management: /docs/how-to-manage-ip-addresses
 docs/cli-resource-pool-management: /docs/about-machines
 docs/cli-tag-management: /docs/about-tags-and-annotations 
 docs/commission-nodes: /docs/how-to-deploy-machines 
@@ -1170,7 +1170,7 @@ docs/creating-and-deleting-machines: /docs/how-to-manage-vms
 docs/creating-and-deleting-new-vms: /docs/how-to-manage-vms 
 docs/custom-machine-setup: /docs/how-to-customise-machines 
 docs/custom-node-setup-preseed: /docs/how-to-customise-machines
-docs/dhcp: /docs/how-to-manage-dhcp
+docs/dhcp: /docs/how-to-manage-ip-addresses
 docs/disk-erasure: /docs/how-to-manage-machines
 docs/explore-maas: /docs/how-to-install-maas 
 docs/getting-help: /docs/how-to-get-help
@@ -1192,8 +1192,8 @@ docs/installconfig-install: /docs/how-to-install-maas
 docs/installconfig-iso-install: /docs/how-to-install-maas 
 docs/installconfig-lxd-install: /docs/how-to-use-lxd
 docs/installconfig-network-dev-discovery: /docs/about-networking
-docs/installconfig-network-dhcp: /docs/how-to-manage-dhcp 
-docs/installconfig-network-ipranges: /docs/how-to-manage-ip-ranges 
+docs/installconfig-network-dhcp: /docs/how-to-manage-ip-addresses
+docs/installconfig-network-ipranges: /docs/how-to-manage-ip-addresses
 docs/installconfig-network-ipv6: /docs/about-networking
 docs/installconfig-network-ntp: /docs/how-to-set-up-ntp 
 docs/installconfig-network-proxy: /docs/how-to-manage-proxies 
@@ -1224,7 +1224,7 @@ docs/intro-requirements: /docs/how-to-install-maas
 docs/intro-to-vm-hosting: /docs/about-vm-hosting 
 docs/intro-what-is-maas: /docs/about-maas 
 docs/introduction-to-controllers: /docs/about-controllers 
-docs/ip-ranges: /docs/how-to-manage-ip-ranges 
+docs/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/ipv6: /docs/about-networking
 docs/kernel-boot-options: /docs/how-to-customise-machines 
 docs/kvm-host-networking: /docs/how-to-manage-vm-hosts 
@@ -1249,7 +1249,7 @@ docs/manage-cli: /docs/how-to-use-the-maas-cli
 docs/manage-cli-advanced: /docs/how-to-use-the-maas-cli 
 docs/manage-cli-common: /docs/how-to-use-the-maas-cli 
 docs/manage-cli-comp-hw: /docs/how-to-manage-vms 
-docs/manage-cli-dhcp-snippets: /docs/how-to-manage-dhcp 
+docs/manage-cli-dhcp-snippets: /docs/how-to-manage-ip-addresses
 docs/manage-cli-images: /docs/about-images 
 docs/manage-cli-interfaces: /docs/how-to-manage-machine-interfaces 
 docs/manage-cli-kernels: /docs/how-to-customise-machines 
