@@ -161,7 +161,7 @@ docs/deb/2.9/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/2.9/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/2.9/cli/network-testing: /docs/how-to-manage-machines
 docs/deb/2.9/cli/networking: /docs/about-networking
-docs/deb/2.9/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/2.9/cli/ntp-services: /docs/how-to-manage-networks
 docs/deb/2.9/cli/partitions: /docs/how-to-manage-machines
 docs/deb/2.9/cli/power-management: /docs/power-management-reference
 docs/deb/2.9/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -259,7 +259,7 @@ docs/deb/2.9/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/2.9/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/2.9/ui/network-testing: /docs/how-to-test-machines
 docs/deb/2.9/ui/networking: /docs/about-networking
-docs/deb/2.9/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/2.9/ui/ntp-services: /docs/how-to-manage-networks
 docs/deb/2.9/ui/partitions: /docs/storage
 docs/deb/2.9/ui/power-management: /docs/power-management-reference
 docs/deb/2.9/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -360,7 +360,7 @@ docs/deb/3.0/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/3.0/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/3.0/cli/network-testing: /docs/how-to-test-machines
 docs/deb/3.0/cli/networking: /docs/about-networking
-docs/deb/3.0/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/3.0/cli/ntp-services: /docs/how-to-manage-networks
 docs/deb/3.0/cli/partitions: /docs/storage
 docs/deb/3.0/cli/power-management: /docs/power-management-reference
 docs/deb/3.0/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -458,7 +458,7 @@ docs/deb/3.0/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/deb/3.0/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/deb/3.0/ui/network-testing: /docs/how-to-test-machines
 docs/deb/3.0/ui/networking: /docs/about-networking
-docs/deb/3.0/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/3.0/ui/ntp-services: /docs/how-to-manage-networks
 docs/deb/3.0/ui/partitions: /docs/storage
 docs/deb/3.0/ui/power-management: /docs/power-management-reference
 docs/deb/3.0/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -534,7 +534,7 @@ docs/deb/3.1/cli/maas-installation: /docs/how-to-install-maas
 docs/deb/3.1/cli/maas-logging: /docs/maas-logging-reference
 docs/deb/3.1/cli/maas-requirements: /docs/how-to-install-maas
 docs/deb/3.1/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
-docs/deb/3.1/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/3.1/cli/ntp-services: /docs/how-to-manage-networks
 docs/deb/3.1/cli/power-management: /docs/power-management-reference
 docs/deb/3.1/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
 docs/deb/3.1/cli/proxy: /docs/how-to-manage-proxies
@@ -599,7 +599,7 @@ docs/deb/3.1/ui/maas-installation: /docs/how-to-install-maas
 docs/deb/3.1/ui/maas-logging: /docs/maas-logging-reference
 docs/deb/3.1/ui/maas-requirements: /docs/how-to-install-maas
 docs/deb/3.1/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
-docs/deb/3.1/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/deb/3.1/ui/ntp-services: /docs/how-to-manage-networks
 docs/deb/3.1/ui/power-management: /docs/power-management-reference
 docs/deb/3.1/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
 docs/deb/3.1/ui/proxy: /docs/how-to-manage-proxies
@@ -687,7 +687,7 @@ docs/snap/2.9/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/2.9/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/2.9/cli/network-testing: /docs/how-to-test-machines
 docs/snap/2.9/cli/networking: /docs/about-networking
-docs/snap/2.9/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/2.9/cli/ntp-services: /docs/how-to-manage-networks
 docs/snap/2.9/cli/partitions: /docs/storage
 docs/snap/2.9/cli/power-management: /docs/power-management-reference
 docs/snap/2.9/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -784,7 +784,7 @@ docs/snap/2.9/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/2.9/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/2.9/ui/network-testing: /docs/how-to-test-machines
 docs/snap/2.9/ui/networking: /docs/about-networking
-docs/snap/2.9/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/2.9/ui/ntp-services: /docs/how-to-manage-networks
 docs/snap/2.9/ui/partitions: /docs/storage
 docs/snap/2.9/ui/power-management: /docs/power-management-reference
 docs/snap/2.9/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -882,7 +882,7 @@ docs/snap/3.0/cli/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/3.0/cli/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/3.0/cli/network-testing: /docs/how-to-test-machines
 docs/snap/3.0/cli/networking: /docs/about-networking
-docs/snap/3.0/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/3.0/cli/ntp-services: /docs/how-to-manage-networks
 docs/snap/3.0/cli/partitions: /docs/storage
 docs/snap/3.0/cli/power-management: /docs/power-management-reference
 docs/snap/3.0/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -981,7 +981,7 @@ docs/snap/3.0/ui/managing-stp: /docs/about-networking#heading--about-stp
 docs/snap/3.0/ui/network-discovery: /docs/about-networking#heading--about-network-discovery
 docs/snap/3.0/ui/network-testing: /docs/how-to-test-machines
 docs/snap/3.0/ui/networking: /docs/about-networking
-docs/snap/3.0/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/3.0/ui/ntp-services: /docs/how-to-manage-networks
 docs/snap/3.0/ui/partitions: /docs/storage
 docs/snap/3.0/ui/power-management: /docs/power-management-reference
 docs/snap/3.0/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
@@ -1055,7 +1055,7 @@ docs/snap/3.1/cli/maas-installation: /docs/how-to-install-maas
 docs/snap/3.1/cli/maas-logging: /docs/maas-logging-reference
 docs/snap/3.1/cli/maas-requirements: /docs/how-to-install-maas
 docs/snap/3.1/cli/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
-docs/snap/3.1/cli/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/3.1/cli/ntp-services: /docs/how-to-manage-networks
 docs/snap/3.1/cli/power-management: /docs/power-management-reference
 docs/snap/3.1/cli/prometheus-metrics: /docs/how-to-set-up-maas-metrics
 docs/snap/3.1/cli/proxy: /docs/how-to-manage-proxies
@@ -1120,7 +1120,7 @@ docs/snap/3.1/ui/maas-installation: /docs/how-to-install-maas
 docs/snap/3.1/ui/maas-logging: /docs/maas-logging-reference
 docs/snap/3.1/ui/maas-requirements: /docs/how-to-install-maas
 docs/snap/3.1/ui/manage-machine-interfaces: /docs/how-to-manage-machine-interfaces
-docs/snap/3.1/ui/ntp-services: /docs/how-to-set-up-ntp-services
+docs/snap/3.1/ui/ntp-services: /docs/how-to-manage-networks
 docs/snap/3.1/ui/power-management: /docs/power-management-reference
 docs/snap/3.1/ui/prometheus-metrics: /docs/how-to-set-up-maas-metrics
 docs/snap/3.1/ui/proxy: /docs/how-to-manage-proxies
@@ -1195,7 +1195,7 @@ docs/installconfig-network-dev-discovery: /docs/about-networking
 docs/installconfig-network-dhcp: /docs/how-to-manage-dhcp 
 docs/installconfig-network-ipranges: /docs/how-to-manage-ip-ranges 
 docs/installconfig-network-ipv6: /docs/about-networking
-docs/installconfig-network-ntp: /docs/how-to-set-up-ntp 
+docs/installconfig-network-ntp: /docs/how-to-manage-networks 
 docs/installconfig-network-proxy: /docs/how-to-manage-proxies 
 docs/installconfig-network-ssl: /docs/how-to-enable-tls-encryption 
 docs/installconfig-network-stp: /docs/about-networking
@@ -1294,7 +1294,7 @@ docs/nodes-scripts: /docs/how-to-deploy-machines
 docs/nodes-scripts-cli: /docs/hardware-testing-scripts-reference 
 docs/nodes-tags: /docs/about-tags-and-annotations
 docs/non-snap-maas-installs: /docs/how-to-install-maas 
-docs/ntp: /docs/how-to-set-up-ntp 
+docs/ntp: /docs/how-to-manage-networks 
 docs/package-repositories: /docs/how-to-install-maas
 docs/partitions: /docs/how-to-manage-machines
 docs/pods: /docs/about-vm-hosting 
