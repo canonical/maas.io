@@ -177,7 +177,7 @@ docs/deb/2.9/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/2.9/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/2.9/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/2.9/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/2.9/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/2.9/cli/using-image-streams: /docs/how-to-import-images
 docs/deb/2.9/cli/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/deb/2.9/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/2.9/cli/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -275,7 +275,7 @@ docs/deb/2.9/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/2.9/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/2.9/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/2.9/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/2.9/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/2.9/ui/using-image-streams: /docs/how-to-import-images
 docs/deb/2.9/ui/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/deb/2.9/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/2.9/ui/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -376,7 +376,7 @@ docs/deb/3.0/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/3.0/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/3.0/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.0/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/3.0/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/3.0/cli/using-image-streams: /docs/how-to-import-images
 docs/deb/3.0/cli/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/deb/3.0/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/3.0/cli/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -474,7 +474,7 @@ docs/deb/3.0/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/3.0/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/3.0/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.0/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/3.0/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/3.0/ui/using-image-streams: /docs/how-to-import-images
 docs/deb/3.0/ui/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/deb/3.0/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/3.0/ui/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -546,7 +546,7 @@ docs/deb/3.1/cli/tips-tricks-and-traps: /docs/tips-and-tricks
 docs/deb/3.1/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/3.1/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.1/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/3.1/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/3.1/cli/using-image-streams: /docs/how-to-import-images
 docs/deb/3.1/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/3.1/cli/vm-hosting: /docs/about-vm-hosting
 docs/deb/3.1/cli/vmware-images: /docs/how-to-manage-vmware-images
@@ -611,7 +611,7 @@ docs/deb/3.1/ui/tips-tricks-and-traps: /docs/tips-and-tricks
 docs/deb/3.1/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/deb/3.1/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.1/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/deb/3.1/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/deb/3.1/ui/using-image-streams: /docs/how-to-import-images
 docs/deb/3.1/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/deb/3.1/ui/vm-hosting: /docs/about-vm-hosting
 docs/deb/3.1/ui/vmware-images: /docs/how-to-manage-vmware-images
@@ -703,7 +703,7 @@ docs/snap/2.9/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/2.9/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/2.9/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/2.9/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/2.9/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/2.9/cli/using-image-streams: /docs/how-to-import-images
 docs/snap/2.9/cli/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/snap/2.9/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/2.9/cli/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -800,7 +800,7 @@ docs/snap/2.9/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/2.9/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/2.9/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/2.9/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/2.9/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/2.9/ui/using-image-streams: /docs/how-to-import-images
 docs/snap/2.9/ui/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/snap/2.9/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/2.9/ui/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -898,7 +898,7 @@ docs/snap/3.0/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/3.0/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/3.0/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.0/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/3.0/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/3.0/cli/using-image-streams: /docs/how-to-import-images
 docs/snap/3.0/cli/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/snap/3.0/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/3.0/cli/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -997,7 +997,7 @@ docs/snap/3.0/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/3.0/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/3.0/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.0/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/3.0/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/3.0/ui/using-image-streams: /docs/how-to-import-images
 docs/snap/3.0/ui/using-lxd-projects-with-maas: /docs/how-to-use-lxd
 docs/snap/3.0/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/3.0/ui/vm-host-networking: /docs/how-to-manage-vm-hosts
@@ -1067,7 +1067,7 @@ docs/snap/3.1/cli/tips-tricks-and-traps: /docs/tips-and-tricks
 docs/snap/3.1/cli/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/3.1/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.1/cli/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/3.1/cli/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/3.1/cli/using-image-streams: /docs/how-to-import-images
 docs/snap/3.1/cli/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/3.1/cli/vm-hosting: /docs/about-vm-hosting
 docs/snap/3.1/cli/vmware-images: /docs/how-to-manage-vmware-images
@@ -1132,7 +1132,7 @@ docs/snap/3.1/ui/tips-tricks-and-traps: /docs/tips-and-tricks
 docs/snap/3.1/ui/troubleshooting: /doc/how-to-troubleshoot-maas
 docs/snap/3.1/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.1/ui/user-accounts: /docs/how-to-manage-user-accounts
-docs/snap/3.1/ui/using-image-streams: /docs/how-to-use-image-streams
+docs/snap/3.1/ui/using-image-streams: /docs/how-to-import-images
 docs/snap/3.1/ui/using-maas-in-an-air-gapped-environment: /docs/how-to-use-maas-in-an-air-gapped-environment
 docs/snap/3.1/ui/vm-hosting: /docs/about-vm-hosting
 docs/snap/3.1/ui/vmware-images: /docs/how-to-manage-vmware-images
