@@ -73,6 +73,7 @@ app.add_url_rule(
         site="maas.io/docs",
         template_path="docs/search.html",
         site_restricted_search=True,
+        search_engine_id="fdc2d22def1453cf1",
     ),
 )
 
