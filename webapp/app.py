@@ -69,7 +69,10 @@ app.add_url_rule(
     "/docs/search",
     "docs-search",
     build_search_view(
-        session=session, site="maas.io/docs", template_path="docs/search.html"
+        session=session,
+        site="maas.io/docs",
+        template_path="docs/search.html",
+        site_restricted_search=True,
     ),
 )
 
