@@ -19,7 +19,7 @@ When you start changing files, the server should reload and make the changes ava
 
 ### Building CSS
 
-For working on [Sass files](_sass), you may want to dynamically watch for changes to rebuild the CSS whenever something changes.
+For working on [Sass files](static/sass), you may want to dynamically watch for changes to rebuild the CSS whenever something changes.
 
 To setup the watcher, open a new terminal window and run:
 
@@ -28,4 +28,4 @@ To setup the watcher, open a new terminal window and run:
 ```
 
 # Deploy
-You can find the deployment config in the deploy folder.
+You can find the deployment config in [konf/site.yaml](konf/site.yaml)
