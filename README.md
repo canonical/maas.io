@@ -28,4 +28,4 @@ To setup the watcher, open a new terminal window and run:
 ```
 
 # Deploy
-You can find the deployment config in the deploy folder.
+You can find the deployment config in [konf/site.yaml](konf/site.yaml)
