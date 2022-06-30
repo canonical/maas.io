@@ -36,7 +36,7 @@
     "postcss": "8.4.6",
     "postcss-cli": "9.1.0",
     "sass": "1.49.7",
-    "vanilla-framework": "3.5.0",
+    "vanilla-framework": "3.6.0",
     "venobox": "2.0.4"
   }
 }
