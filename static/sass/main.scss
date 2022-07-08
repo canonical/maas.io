@@ -35,10 +35,6 @@ $breakpoint-navigation-threshold: 960px;
   width: 100%;
 }
 
-.lightbox-wrapper {
-  margin-bottom: 1.1rem;
-}
-
 .p-heading-icon-block {
   align-items: flex-start;
   display: flex;
@@ -68,21 +64,4 @@ $breakpoint-navigation-threshold: 960px;
     float: right;
     width: calc(100% - 8.5rem);
   }
-}
-
-.p-navigation__row {
-  @media screen and (min-width: $breakpoint-navigation-threshold) {
-    padding: 0 1.5rem;
-  }
-
-  .p-navigation__banner {
-    background-color: #e95420;
-    padding-left: 1rem;
-  }
-}
-
-// XXX Ant: This fixes an issue with the use of dark navigation.
-// Issue: https://github.com/canonical-web-and-design/vanilla-framework/issues/3846
-.p-navigation.is-dark {
-  background-color: $color-navigation-background;
 }
