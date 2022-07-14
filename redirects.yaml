@@ -1344,3 +1344,4 @@ legacy/docs(?P<version>2.1|2.0)/search.html: https://old-docs.maas.io/{version}/
 # Deprecation notices
 deprecations/MD1: https://discourse.maas.io/t/1415
 deprecations/MD2: https://discourse.maas.io/t/4236
+deprecations/MD3: https://discourse.maas.io/t/6216
