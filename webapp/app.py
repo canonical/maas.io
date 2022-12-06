@@ -28,9 +28,9 @@ from http.client import responses
 from urllib import request
 from yaml import load
 try:
-  from yaml import CLoader as Loader
+    from yaml import CLoader as Loader
 except ImportError:
-  from yaml import Loader
+    from yaml import Loader
 
 app = FlaskBase(
     __name__,
@@ -109,7 +109,8 @@ def api():
     Show the static api page
     """
 
-    definition = request.urlopen("https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml")
+    definition = request.urlopen(
+        "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml")
     loaded_definition = load(definition, Loader)
     tagged_definition = {}
 
@@ -117,10 +118,12 @@ def api():
         for method in loaded_definition["paths"][endpoint]:
             if method != "parameters":
                 try:
-                    if { endpoint: loaded_definition["paths"][endpoint]} not in tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]]:
-                        tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]] = [*tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]], { endpoint: loaded_definition["paths"][endpoint]}]
+                    if {endpoint: loaded_definition["paths"][endpoint]} not in tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]]:
+                        tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]] = [
+                            *tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]], {endpoint: loaded_definition["paths"][endpoint]}]
                 except KeyError:
-                    tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]] = [{ endpoint: loaded_definition["paths"][endpoint]}]
+                    tagged_definition[loaded_definition["paths"][endpoint][method]["tags"][0]] = [
+                        {endpoint: loaded_definition["paths"][endpoint]}]
 
     doc_parser.parse()
     return flask.render_template(
