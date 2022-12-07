@@ -25,7 +25,7 @@ from webapp.doc_parser import FastDocParser
 
 from http.client import responses
 
-from urllib import request
+from urllib import request, error
 from yaml import load
 
 try:
@@ -110,9 +110,13 @@ def api():
     Show the static api page
     """
 
-    # definition = request.urlopen(
-    #     "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml")
-    definition = open("openapi2.yaml")
+    try:
+        definition = request.urlopen(
+            "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml"
+        )
+    except error.HTTPError or error.URLError:
+        # Fall back to local yaml file if hosted yaml is unreachable
+        definition = open("openapi2.yaml")
     loaded_definition = load(definition, Loader)
     tagged_definition = {}
 
