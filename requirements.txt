@@ -9,3 +9,4 @@ feedparser==6.0.8
 requests-cache==0.9.1
 lxml==4.9.1
 cchardet==2.1.7; platform_machine != 'aarch64'
+pyyaml==6.0
