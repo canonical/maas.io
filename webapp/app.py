@@ -110,13 +110,14 @@ def api():
     Show the static api page
     """
 
+    base_url = "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main"
+    yaml_file = "openapi2.yaml"
+
     try:
-        definition = request.urlopen(
-            "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml"
-        )
+        definition = request.urlopen(f"{base_url}/{yaml_file}")
     except error.HTTPError or error.URLError:
         # Fall back to local yaml file if hosted yaml is unreachable
-        definition = open("openapi2.yaml")
+        definition = open(yaml_file)
     loaded_definition = load(definition, Loader)
     tagged_definition = {}
 
