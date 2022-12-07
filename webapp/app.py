@@ -109,8 +109,9 @@ def api():
     Show the static api page
     """
 
-    definition = request.urlopen(
-        "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml")
+    # definition = request.urlopen(
+    #     "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main/openapi2.yaml")
+    definition = open("openapi2.yaml")
     loaded_definition = load(definition, Loader)
     tagged_definition = {}
 
