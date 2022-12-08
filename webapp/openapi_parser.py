@@ -14,7 +14,7 @@ def parse_openapi(definition: str, location_type: str):
         location_type (str): Definition file location type ('url' or 'file')
 
       Returns:
-        dict: A dictionary of tags, each tag containing a list of API 
+        dict: A dictionary of tags, each tag containing a list of API
         endpoints (as dicts)
     """
     if location_type == "url":
