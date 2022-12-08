@@ -106,7 +106,7 @@ def api():
     definition_url = (
         "https://raw.githubusercontent.com"
         "/maas/maas-openapi-yaml/main/openapi2.yaml"
-        )
+    )
     openapi = parse_openapi(definition_url)
 
     doc_parser.parse()
