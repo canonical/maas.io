@@ -1,5 +1,5 @@
 import unittest
-from webapp.openapi_parser import parse_openapi
+from webapp.openapi_parser import parse_openapi, read_yaml_from_file
 
 
 class TestOpenApiParser(unittest.TestCase):
@@ -41,7 +41,8 @@ class TestOpenApiParser(unittest.TestCase):
             ]
         }
 
-        output = parse_openapi("tests/openapi_example.yaml", "file")
+        definition = read_yaml_from_file("tests/openapi_example.yaml")
+        output = parse_openapi(definition)
         self.assertEqual(output, EXPECTED_OUTPUT)
 
 

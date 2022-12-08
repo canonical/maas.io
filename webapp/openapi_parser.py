@@ -3,26 +3,18 @@ from yaml import load
 from yaml import Loader
 
 
-def parse_openapi(definition: str, location_type: str, session):
+def parse_openapi(definition):
     """
     Takes an OpenAPI definition in YAML and returns it as a dictionary, with
     endpoints grouped by tags.
 
       Parameters:
-        definition (str): The path to the definition file (local or hosted)
-        location_type (str): Definition file location type ('url' or 'file')
-        session: Session from talisker.requests.get_sesssion()
+        definition: The OpenAPI YAML defintion (loaded from file or URL)
 
       Returns:
         dict: A dictionary of tags, each tag containing a list of API
         endpoints (as dicts)
     """
-    if location_type == "url":
-        definition = session.get(definition).text
-    elif location_type == "file":
-        definition = open(definition)
-    else:
-        raise ValueError("Arg 'type' must be either 'file' or 'url'")
     loaded_definition = load(definition, Loader)
 
     tagged_definition = defaultdict(list)
@@ -35,3 +27,9 @@ def parse_openapi(definition: str, location_type: str, session):
                     tagged_definition[tag].append({endpoint: methods})
 
     return tagged_definition
+
+def read_yaml_from_url(url: str, session):
+    return session.get(url).text
+
+def read_yaml_from_file(filename: str):
+    return open(filename)

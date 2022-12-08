@@ -22,7 +22,7 @@ from webapp.blog.views import init_blog
 
 from webapp.feeds import get_rss_feed
 from webapp.doc_parser import FastDocParser
-from webapp.openapi_parser import parse_openapi
+from webapp.openapi_parser import parse_openapi, read_yaml_from_url
 
 from http.client import responses
 
@@ -113,13 +113,14 @@ def api():
     Show the API reference page
     """
 
-    # TODO: Add better caching for this file once work on the following is complete:
+    # TODO: Add better caching for this file once the following is complete:
     # https://docs.google.com/document/d/1vCdC7BV53ncOTpWHd2nX5NbwvUH5fDwy-RQGlWpWhXk/edit
     definition_url = (
         "https://raw.githubusercontent.com"
         "/maas/maas-openapi-yaml/main/openapi2.yaml"
     )
-    openapi = parse_openapi(definition_url, "url", openapi_session)
+    definition = read_yaml_from_url(definition_url, openapi_session)
+    openapi = parse_openapi(definition)
 
     doc_parser.parse()
     return flask.render_template(
