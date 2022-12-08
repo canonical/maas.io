@@ -103,6 +103,8 @@ def api():
     Show the API reference page
     """
 
+    # TODO: Add caching for this file once work on the following is complete:
+    # https://docs.google.com/document/d/1vCdC7BV53ncOTpWHd2nX5NbwvUH5fDwy-RQGlWpWhXk/edit
     definition_url = (
         "https://raw.githubusercontent.com"
         "/maas/maas-openapi-yaml/main/openapi2.yaml"
