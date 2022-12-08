@@ -28,8 +28,10 @@ def parse_openapi(definition):
 
     return tagged_definition
 
+
 def read_yaml_from_url(url: str, session):
     return session.get(url).text
+
 
 def read_yaml_from_file(filename: str):
     return open(filename)
