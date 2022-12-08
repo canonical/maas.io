@@ -5,14 +5,14 @@ from yaml import Loader
 
 
 def parse_openapi(definition: str, location_type: str):
-    '''
+    """
     Takes an OpenAPI definition in YAML and returns it as a dictionary, with
     endpoints grouped by tags.
 
       Parameters:
         definition (str): The path to the definition file (either local or hosted)
         location_type (str): Definition file location type (either 'url' or 'file')
-      
+
       Returns:
         dict: A dictionary of tags, each tag containing a list of API endpoints (as dicts)
 
@@ -38,10 +38,10 @@ def parse_openapi(definition: str, location_type: str):
               summary: Create an authorisation token
               tags:
               - Logged-in user
-        
-      
+
+
       will return as:
-        
+
         {
           "Logged-in user": [
             {
@@ -71,16 +71,13 @@ def parse_openapi(definition: str, location_type: str):
             }
           ]
         }
-        
-
-
-    '''
+    """
     if location_type == "file":
-      definition = request.urlopen(definition)
+        definition = request.urlopen(definition)
     elif location_type == "url":
-      definition = open(definition)
+        definition = open(definition)
     else:
-      raise ValueError("Arg 'type' must be either 'file' or 'url'")
+        raise ValueError("Arg 'type' must be either 'file' or 'url'")
     loaded_definition = load(definition, Loader)
     tagged_definition = {}
 
