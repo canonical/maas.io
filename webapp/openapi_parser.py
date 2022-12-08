@@ -3,13 +3,13 @@ from yaml import load
 from yaml import Loader
 
 
-def parse_openapi(definition):
+def parse_openapi(definition: str):
     """
     Takes an OpenAPI definition in YAML and returns it as a dictionary, with
     endpoints grouped by tags.
 
       Parameters:
-        definition: The OpenAPI YAML defintion (loaded from file or URL)
+        definition (string): The OpenAPI YAML defintion (loaded from file or URL)
 
       Returns:
         dict: A dictionary of tags, each tag containing a list of API
@@ -29,9 +29,9 @@ def parse_openapi(definition):
     return tagged_definition
 
 
-def read_yaml_from_url(url: str, session):
+def read_yaml_from_url(url: str, session) -> str:
     return session.get(url).text
 
 
-def read_yaml_from_file(filename: str):
-    return open(filename)
+def read_yaml_from_file(filename: str) -> str:
+    return open(filename).read()
