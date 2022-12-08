@@ -10,71 +10,16 @@ def parse_openapi(definition: str, location_type: str):
     endpoints grouped by tags.
 
       Parameters:
-        definition (str): The path to the definition file (either local or hosted)
-        location_type (str): Definition file location type (either 'url' or 'file')
+        definition (str): The path to the definition file (local or hosted)
+        location_type (str): Definition file location type ('url' or 'file')
 
       Returns:
-        dict: A dictionary of tags, each tag containing a list of API endpoints (as dicts)
-
-      Example:
-
-        info:
-          version: 2.0.0
-        openapi: 3.0.0
-        paths:
-          /account/op-create_authorisation_token:
-            post:
-              description: Create an authorisation OAuth token and OAuth consumer.
-              operationId: AccountHandler_create_authorisation_token
-              responses:
-                '200':
-                  content:
-                    application/json:
-                      schema:
-                        additionalProperties: true
-                        type: object
-                  description: 'A JSON object containing: ``token_key``, ``token_secret``,
-                    ``consumer_key``, and ``name``.'
-              summary: Create an authorisation token
-              tags:
-              - Logged-in user
-
-
-      will return as:
-
-        {
-          "Logged-in user": [
-            {
-              "/account/op-create_authorisation_token": {
-                "post": {
-                  "description": "Create an authorisation OAuth token and OAuth consumer.",
-                  "operationId": "AccountHandler_create_authorisation_token",
-                  "responses": {
-                    "200": {
-                      "content": {
-                        "application/json": {
-                          "schema": {
-                            "additionalProperties": true,
-                            "type": "object"
-                          }
-                        }
-                      },
-                      "description": "A JSON object containing: ``token_key``, ``token_secret``, ``consumer_key``, and ``name``."
-                    }
-                  },
-                  "summary": "Create an authorisation token",
-                  "tags": [
-                    "Logged-in user"
-                  ]
-                }
-              }
-            }
-          ]
-        }
+        dict: A dictionary of tags, each tag containing a list of API 
+        endpoints (as dicts)
     """
-    if location_type == "file":
+    if location_type == "url":
         definition = request.urlopen(definition)
-    elif location_type == "url":
+    elif location_type == "file":
         definition = open(definition)
     else:
         raise ValueError("Arg 'type' must be either 'file' or 'url'")
