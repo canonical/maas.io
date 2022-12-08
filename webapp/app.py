@@ -48,6 +48,16 @@ docs_session = CachedSession(
     match_headers=False,
     stale_if_error=True,
 )
+openapi_session = CachedSession(
+    "openapi_cache",
+    backend="sqlite",
+    cache_control=False,
+    expire_after=timedelta(days=1),
+    allowable_methods=["GET"],
+    allowable_codes=[200, 404, 302, 301],
+    match_headers=False,
+    stale_if_error=True,
+)
 
 docs_discourse_api = DiscourseAPI(
     base_url="https://discourse.maas.io/", session=docs_session
@@ -103,13 +113,13 @@ def api():
     Show the API reference page
     """
 
-    # TODO: Add caching for this file once work on the following is complete:
+    # TODO: Add better caching for this file once work on the following is complete:
     # https://docs.google.com/document/d/1vCdC7BV53ncOTpWHd2nX5NbwvUH5fDwy-RQGlWpWhXk/edit
     definition_url = (
         "https://raw.githubusercontent.com"
         "/maas/maas-openapi-yaml/main/openapi2.yaml"
     )
-    openapi = parse_openapi(definition_url, "url")
+    openapi = parse_openapi(definition_url, "url", openapi_session)
 
     doc_parser.parse()
     return flask.render_template(
