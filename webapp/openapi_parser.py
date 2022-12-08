@@ -11,19 +11,19 @@ def parse_openapi(url: str):
 
     for endpoint in loaded_definition["paths"]:
         for method in loaded_definition["paths"][endpoint]:
-          if method != "parameters":
-              tag = loaded_definition["paths"][endpoint][method]["tags"][0]
-              if tag in tagged_definition:
-                  if {
-                      endpoint: loaded_definition["paths"][endpoint]
-                  } not in tagged_definition[tag]:
-                      tagged_definition[tag] = [
-                          *tagged_definition[tag],
-                          {endpoint: loaded_definition["paths"][endpoint]},
-                      ]
-              else:
-                  tagged_definition[tag] = [
-                      {endpoint: loaded_definition["paths"][endpoint]}
-                  ]
+            if method != "parameters":
+                tag = loaded_definition["paths"][endpoint][method]["tags"][0]
+                if tag in tagged_definition:
+                    if {
+                        endpoint: loaded_definition["paths"][endpoint]
+                    } not in tagged_definition[tag]:
+                        tagged_definition[tag] = [
+                            *tagged_definition[tag],
+                            {endpoint: loaded_definition["paths"][endpoint]},
+                        ]
+                else:
+                    tagged_definition[tag] = [
+                        {endpoint: loaded_definition["paths"][endpoint]}
+                    ]
 
     return tagged_definition
