@@ -41,7 +41,7 @@ class TestOpenApiParser(unittest.TestCase):
             ]
         }
 
-        output = parse_openapi("tests/example.yaml", "file")
+        output = parse_openapi("tests/openapi_example.yaml", "file")
         self.assertEqual(output, EXPECTED_OUTPUT)
 
 
