@@ -9,7 +9,7 @@ def parse_openapi(definition: str):
     endpoints grouped by tags.
 
       Parameters:
-        definition (string): The OpenAPI YAML defintion (loaded from file or URL)
+        definition (str): The OpenAPI YAML defintion (loaded from file or URL)
 
       Returns:
         dict: A dictionary of tags, each tag containing a list of API
