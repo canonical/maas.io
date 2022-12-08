@@ -21,6 +21,9 @@ def parse_openapi(definition: str):
 
     for endpoint, methods in loaded_definition["paths"].items():
         for method, definition in methods.items():
+            # Parameters are grouped on the same level as methods
+            # in the YAML, so we need to exclude this when checking
+            # for tags, since methods have tags but parameters do not
             if method != "parameters":
                 tag = definition["tags"][0]
                 if {endpoint: methods} not in tagged_definition[tag]:
