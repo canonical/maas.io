@@ -22,16 +22,9 @@ from webapp.blog.views import init_blog
 
 from webapp.feeds import get_rss_feed
 from webapp.doc_parser import FastDocParser
+from webapp.openapi_parser import parse_openapi
 
 from http.client import responses
-
-from urllib import request, error
-from yaml import load
-
-try:
-    from yaml import CLoader as Loader
-except ImportError:
-    from yaml import Loader
 
 app = FlaskBase(
     __name__,
@@ -107,51 +100,20 @@ def utility_processor():
 @app.route("/docs/api")
 def api():
     """
-    Show the static api page
+    Show the API reference page
     """
 
-    base_url = "https://raw.githubusercontent.com/maas/maas-openapi-yaml/main"
-    yaml_file = "openapi2.yaml"
-
-    try:
-        definition = request.urlopen(f"{base_url}/{yaml_file}")
-    except error.HTTPError or error.URLError:
-        # Fall back to local yaml file if hosted yaml is unreachable
-        definition = open(yaml_file)
-    loaded_definition = load(definition, Loader)
-    tagged_definition = {}
-
-    for endpoint in loaded_definition["paths"]:
-        for method in loaded_definition["paths"][endpoint]:
-            if method != "parameters":
-                try:
-                    if {
-                        endpoint: loaded_definition["paths"][endpoint]
-                    } not in tagged_definition[
-                        loaded_definition["paths"][endpoint][method]["tags"][0]
-                    ]:
-                        tagged_definition[
-                            loaded_definition["paths"][endpoint][method][
-                                "tags"
-                            ][0]
-                        ] = [
-                            *tagged_definition[
-                                loaded_definition["paths"][endpoint][method][
-                                    "tags"
-                                ][0]
-                            ],
-                            {endpoint: loaded_definition["paths"][endpoint]},
-                        ]
-                except KeyError:
-                    tagged_definition[
-                        loaded_definition["paths"][endpoint][method]["tags"][0]
-                    ] = [{endpoint: loaded_definition["paths"][endpoint]}]
+    definition_url = (
+        "https://raw.githubusercontent.com"
+        "/maas/maas-openapi-yaml/main/openapi2.yaml"
+        )
+    openapi = parse_openapi(definition_url)
 
     doc_parser.parse()
     return flask.render_template(
         "docs/api.html",
         navigation=doc_parser.navigation,
-        openapi=tagged_definition,
+        openapi=openapi,
         responses=responses,
     )
 
