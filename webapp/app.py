@@ -22,6 +22,9 @@ from webapp.blog.views import init_blog
 
 from webapp.feeds import get_rss_feed
 from webapp.doc_parser import FastDocParser
+from webapp.openapi_parser import parse_openapi, read_yaml_from_url
+
+from http.client import responses
 
 app = FlaskBase(
     __name__,
@@ -37,6 +40,16 @@ app.add_url_rule("/<path:subpath>", view_func=template_finder_view)
 session = talisker.requests.get_session()
 docs_session = CachedSession(
     "docs_cache",
+    backend="sqlite",
+    cache_control=False,
+    expire_after=timedelta(days=1),
+    allowable_methods=["GET"],
+    allowable_codes=[200, 404, 302, 301],
+    match_headers=False,
+    stale_if_error=True,
+)
+openapi_session = CachedSession(
+    "openapi_cache",
     backend="sqlite",
     cache_control=False,
     expire_after=timedelta(days=1),
@@ -97,12 +110,24 @@ def utility_processor():
 @app.route("/docs/api")
 def api():
     """
-    Show the static api page
+    Show the API reference page
     """
+
+    # TODO: Add better caching for this file once the following is complete:
+    # https://docs.google.com/document/d/1vCdC7BV53ncOTpWHd2nX5NbwvUH5fDwy-RQGlWpWhXk/edit
+    definition_url = (
+        "https://raw.githubusercontent.com"
+        "/maas/maas-openapi-yaml/main/openapi2.yaml"
+    )
+    definition = read_yaml_from_url(definition_url, openapi_session)
+    openapi = parse_openapi(definition)
 
     doc_parser.parse()
     return flask.render_template(
-        "docs/api.html", navigation=doc_parser.navigation
+        "docs/api.html",
+        navigation=doc_parser.navigation,
+        openapi=openapi,
+        responses=responses,
     )
 
 
