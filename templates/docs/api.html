@@ -57,7 +57,7 @@
             {%else%}
               <summary><code>{{method.upper()}} /MAAS/api/2.0{{endpoint}}</code>: {{item[endpoint][method]["summary"]}}</summary>
             {%endif%}
-            <p>{{item[endpoint][method]["description"]}}</p>
+            <p><md-block>{{item[endpoint][method]["description"]}}</md-block></p>
             <p>Operation ID: <code>{{item[endpoint][method]["operationId"]}}</code></p>
             {%if "parameters" in item[endpoint][method]%}
               <p><strong>Parameters</strong></p>
@@ -84,7 +84,7 @@
             <p><strong>Responses</strong></p>
             <hr />
             {%for response in item[endpoint][method]["responses"]%}
-              <p><md-block><code>HTTP {{response}} {{responses[response | int].upper()}}</code>: {{item[endpoint][method]["responses"][response]["description"]}}</md-block></p>
+              <p><md-block><a style="text-decoration: none; color: black; cursor: initial;" href={{"https://http.cat/" + response}}><code>HTTP {{response}} {{responses[response | int].upper()}}</code></a>: {{item[endpoint][method]["responses"][response]["description"]}}</md-block></p>
               <p>Content type: {%for content_type in item[endpoint][method]["responses"][response]["content"]%}{{content_type}} {{item[endpoint][method]["responses"][response]["content"][content_type]["schema"]["type"]}}{%endfor%}</p>
             {%endfor%}
           </details>
