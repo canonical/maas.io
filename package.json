@@ -24,19 +24,19 @@
   "author": "Canonical webteam",
   "license": "LGPL v3",
   "devDependencies": {
-    "stylelint": "14.6.1",
+    "stylelint": "14.16.1",
     "stylelint-config-recommended-scss": "5.0.2",
     "stylelint-order": "5.0.0"
   },
   "dependencies": {
-    "autoprefixer": "10.4.2",
+    "autoprefixer": "10.4.13",
     "@canonical/cookie-policy": "3.4.0",
     "@canonical/global-nav": "2.7.0",
     "@canonical/latest-news": "1.4.1",
     "@canonical/discourse-rad-parser": "1.0.1",
-    "postcss": "8.4.6",
+    "postcss": "8.4.20",
     "postcss-cli": "9.1.0",
-    "sass": "1.49.7",
+    "sass": "1.57.1",
     "vanilla-framework": "3.8.2",
     "venobox": "2.0.4"
   }
