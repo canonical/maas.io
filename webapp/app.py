@@ -88,7 +88,7 @@ app.add_url_rule(
 
 
 @app.errorhandler(429)
-def not_found_error(error):
+def too_many_requests(error):
     return (
         flask.render_template("429.html", description=error.description),
         429,
