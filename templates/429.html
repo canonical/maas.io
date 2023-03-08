@@ -1,0 +1,19 @@
+{% extends "base_index.html" %}
+
+{% block page_class %}429{% endblock %}
+{% block page_title %}Too many requests | 429{% endblock %}
+
+{% block content %}
+<section class="p-strip--light is-deep">
+    <div class="row">
+        <div class="col-6">
+            <h1 >429:</h1>
+            <h2>Too many requests</h2>
+            <p>{{ description }}</p>
+        </div>
+        <div class="col-6">
+            <img src="https://assets.ubuntu.com/v1/93f03c89-404-servers.svg" alt="404 servers">
+        </div>
+    </div>
+</section>
+{% endblock %}
