@@ -54,8 +54,8 @@
   </section>
 
   <section class="p-strip u-extra-space">
-    <div class="row">
-      <aside class="col-3">
+    <div class="l-docs">
+      <aside class="col-3 l-docs-sidebar">
         {% if versions | length > 1 %}
         <label for="version-select" class="u-hide">Version</label>
         <select name="version-select" id="version-select" onChange="window.location.href=this.value">
@@ -100,8 +100,8 @@
         </div>
       </nav>
       </aside>
-      <main class="col-9" id="main-content">
-        <h1>{{ document.title }}</h1>
+      <main class="col-9 l-docs-content" id="content-section">
+        <h1 class="l-docs-title__heading">{{ document.title }}</h1>
         {{ document.body_html | safe }}
         <hr />
         <p><i>Last updated {{ document.updated }}.</i></p>
