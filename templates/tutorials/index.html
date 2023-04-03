@@ -13,19 +13,17 @@
 <section class="p-strip is-shallow">
   <div class="row u-equal-height">
     {% for item in tutorials %}
-      {% if loop.index <= posts_per_page * page and loop.index >= posts_per_page * page - posts_per_page + 1 %}
-        <div class="col-4 col-medium-3 p-card">
-          <div class="p-card__content">
-            <h3 class="p-heading--four">
-              <a href="{{ item.link }}">
-                {{ item.title | safe }}
-              </a>
-            </h3>
-            <p>{{ item.summary | safe }}</p>
-          </div>
-          <p>Difficulty: <span class="p-tutorials-meter p-tutorials-meter--{{ item.difficulty }}">{{ item.difficulty }} out of 5</span></p>
-        </div>
-      {% endif %}
+      <div class="col-4 col-medium-3 p-card">
+	<div class="p-card__content">
+	  <h3 class="p-heading--4">
+	    <a href="{{ item.link }}">
+	      {{ item.title | safe }}
+	    </a>
+	  </h3>
+	  <p>{{ item.summary | safe }}</p>
+	</div>
+	<p>Difficulty: <span class="p-tutorials-meter p-tutorials-meter--{{ item.difficulty }}">{{ item.difficulty }} out of 5</span></p>
+      </div>
     {% endfor %}
   </div>
 </section>
@@ -38,93 +36,5 @@
     </div>
   </div>
 </section>
-
-
-{% if total_pages > 1 %}
-<section class="p-strip">
-  <div class="u-fixed-width">
-    <ol class="p-pagination u-align--center">
-      {% set current_page = page %}
-      {% if current_page > 1 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link--previous" href="/tutorials?page={{ current_page - 1 }}" title="Previous page">
-            <i class="p-icon--chevron-down">Previous page</i>
-          </a>
-        </li>
-      {% else %}
-        <li class="p-pagination__item">
-          <span class="p-pagination__link--previous is-disabled"><i class="p-icon--chevron-down">Previous page</i></span>
-        </li>
-      {% endif %}
-
-      {# always show 5 pages in pagination #}
-      {% if current_page > 4 and current_page == total_pages %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page - 4 }}">{{ current_page - 4 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page > 3 and current_page >= total_pages - 1 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page - 3 }}">{{ current_page - 3 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page > 2 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page - 2 }}">{{ current_page - 2 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page > 1 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page - 1 }}">{{ current_page - 1 }}</a>
-        </li>
-      {% endif %}
-
-      <!-- current page -->
-      <li class="p-pagination__item">
-        <a class="p-pagination__link is-active" href="/tutorials?page={{ current_page }}">{{ current_page }}</a>
-      </li>
-
-      {% if current_page < total_pages %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page + 1 }}">{{ current_page + 1 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page < total_pages - 1 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page + 2 }}">{{ current_page + 2 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page < total_pages - 2 and current_page <= 2 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page + 3 }}">{{ current_page + 3 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page < total_pages - 3 and current_page == 1 %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link" href="/tutorials?page={{ current_page + 4 }}">{{ current_page + 4 }}</a>
-        </li>
-      {% endif %}
-
-      {% if current_page != total_pages %}
-        <li class="p-pagination__item">
-          <a class="p-pagination__link--next" href="/tutorials?page={{ current_page + 1 }}" title="Next page">
-            <i class="p-icon--chevron-down">Next page</i>
-          </a>
-        </li>
-      {% else %}
-        <li class="p-pagination__item">
-          <span class="p-pagination__link--next is-disabled"><i class="p-icon--chevron-down">Next page</i></span>
-        </li>
-      {% endif %}
-    </ol>
-  </div>
-</section>
-{% endif %}
 
 {% endblock %}
