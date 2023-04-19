@@ -43,6 +43,8 @@ docs_session = CachedSession(
 # talisker-ify the cached session, for metrics, logs etc.
 talisker.requests.configure(docs_session)
 
+session = talisker.requests.get_session()
+
 
 @app.errorhandler(429)
 def too_many_requests(error):
@@ -114,4 +116,4 @@ def api():
 
 
 init_blog(app, "/blog")
-init_tutorials(app, "/tutorials", session=docs_session)
+init_tutorials(app, "/tutorials", session)
