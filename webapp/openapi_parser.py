@@ -37,4 +37,5 @@ def read_yaml_from_url(url: str, session) -> str:
 
 
 def read_yaml_from_file(filename: str) -> str:
-    return open(filename).read()
+    with open(filename) as fh:
+        return fh.read()
