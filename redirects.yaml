@@ -1138,24 +1138,24 @@ docs/snap/3.1/ui/vm-hosting: /docs/about-vm-hosting
 docs/snap/3.1/ui/vmware-images: /docs/how-to-manage-vmware-images
 docs/snap/3.1/ui/whats-new-in-maas: /docs/whats-new-in-maas
 docs/snap/3.1/ui/writing-guide: /docs/how-to-help-improve-the-doc
-/docs/snap/2.7/cli/how-to-upgrade-maas: /docs/how-to-upgrade-maas 
-/docs/snap/2.7/cli/installation-tech-reference: /docs/snap/2.7/cli/installation: 
-/docs/snap/2.7/cli/interactive-search: /docs/how-to-find-machines 
-/docs/snap/2.7/ui/how-to-upgrade-maas: /docs/how-to-upgrade-maas 
-/docs/snap/2.7/ui/installation-tech-reference: /docs/snap/ui/ui/installation 
-/docs/snap/2.7/ui/interactive-search: /docs/how-to-find-machines 
-/docs/snap/2.8/cli/how-to-upgrade-maas: /docs/how-to-upgrade-maas 
-/docs/snap/2.8/cli/installation-tech-reference: /docs/snap/2.8/cli/installation: 
-/docs/snap/2.8/cli/interactive-search: /docs/how-to-find-machines 
-/docs/snap/2.8/ui/how-to-upgrade-maas: /docs/how-to-upgrade-maas 
-/docs/snap/2.8/ui/installation-tech-reference: /docs/snap/2.8/ui/installation: 
-/docs/snap/2.8/ui/interactive-search: /docs/how-to-find-machines 
-/docs/snap/2.9/cli/how-to-work-with-tags: /docs/how-to-tag-machiness 
-/docs/snap/2.9/ui/how-to-work-with-tags: /docs/how-to-tag-machines 
-/docs/snap/3.0/cli/how-to-work-with-tags: /docs/how-to-tag-machines 
-/docs/snap/3.0/ui/how-to-work-with-tags: /docs/how-to-tag-machines 
-/docs/snap/3.1/cli/how-to-work-with-tags: /docs/how-to-tag-machines 
-/docs/snap/3.1/ui/how-to-work-with-tags: /docs/how-to-tag-machines 
+/docs/snap/2.7/cli/how-to-upgrade-maas: /docs/how-to-upgrade-maas
+/docs/snap/2.7/cli/installation-tech-reference: /docs/snap/2.7/cli/installation
+/docs/snap/2.7/cli/interactive-search: /docs/how-to-find-machines
+/docs/snap/2.7/ui/how-to-upgrade-maas: /docs/how-to-upgrade-maas
+/docs/snap/2.7/ui/installation-tech-reference: /docs/snap/ui/ui/installation
+/docs/snap/2.7/ui/interactive-search: /docs/how-to-find-machines
+/docs/snap/2.8/cli/how-to-upgrade-maas: /docs/how-to-upgrade-maas
+/docs/snap/2.8/cli/installation-tech-reference: /docs/snap/2.8/cli/installation
+/docs/snap/2.8/cli/interactive-search: /docs/how-to-find-machines
+/docs/snap/2.8/ui/how-to-upgrade-maas: /docs/how-to-upgrade-maas
+/docs/snap/2.8/ui/installation-tech-reference: /docs/snap/2.8/ui/installation
+/docs/snap/2.8/ui/interactive-search: /docs/how-to-find-machines
+/docs/snap/2.9/cli/how-to-work-with-tags: /docs/how-to-tag-machiness
+/docs/snap/2.9/ui/how-to-work-with-tags: /docs/how-to-tag-machines
+/docs/snap/3.0/cli/how-to-work-with-tags: /docs/how-to-tag-machines
+/docs/snap/3.0/ui/how-to-work-with-tags: /docs/how-to-tag-machines
+/docs/snap/3.1/cli/how-to-work-with-tags: /docs/how-to-tag-machines
+/docs/snap/3.1/ui/how-to-work-with-tags: /docs/how-to-tag-machines
 
 # MAAS plain URL redirects: maps older URLs to Diataxis forms
 
