@@ -64,3 +64,17 @@ $breakpoint-navigation-threshold: 960px;
     width: calc(100% - 8.5rem);
   }
 }
+
+// header styles
+@media only screen and (min-width: $breakpoint-navigation-threshold) {
+  .p-navigation__items {
+    flex: 1;
+  }
+}
+
+.global-nav {
+  .global-nav__dropdown-toggle {
+    margin-left: auto;
+    order: 1;
+  }
+}
