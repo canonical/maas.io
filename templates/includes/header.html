@@ -14,35 +14,38 @@
     </div>
 
     <nav class="p-navigation__nav" aria-label="main">
-      <ul id="main-navigation" class="p-navigation__items u-clearfix">
-        <li class="p-navigation__item">
-          <a class="p-navigation__link" href="/install" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Install' });">Install</a>
-        </li>
+      <ul id="main-navigation" class="global-nav p-navigation__items u-clearfix">
         <li class="p-navigation__item{% if request.path.startswith('/how-it-works') %} is-selected" aria-current="page{% endif %}">
           <a class="p-navigation__link" href="/how-it-works" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation'
             , 'eventAction' : 'Click' , 'eventLabel' : 'How it works' });">How it works</a>
         </li>
-        <li class="p-navigation__item{% if request.path.startswith('/tour') %} is-selected" aria-current="page{% endif %}">
-          <a class="p-navigation__link" href="/tour" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tour' });">Tour</a>
+        <li class="p-navigation__item">
+          <a class="p-navigation__link" href="/install" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Install' });">Install</a>
         </li>
         <li class="p-navigation__item{% if request.path.startswith('/docs') %} is-selected" aria-current="page{% endif %}">
           <a class="p-navigation__link" href="/docs" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Docs' });">Docs</a>
         </li>
-        <li class="p-navigation__item{% if request.path.startswith('/blog') %} is-selected" aria-current="page{% endif %}">
-          <a class="p-navigation__link" href="/blog" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Blog' });">Blog</a>
-        </li>
-        <li class="p-navigation__item{% if request.path.startswith('/tutorials') %} is-selected" aria-current="page{% endif %}">
-          <a class="p-navigation__link" href="/tutorials" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tutorials' });">Tutorials</a>
-        </li>
-        <li class="p-navigation__item{% if request.path.startswith('/resources') %} is-selected" aria-current="page{% endif %}">
-          <a class="p-navigation__link" href="/resources"
-            onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Resources' });">Resources</a>
+
+        <li class="p-navigation__item--dropdown-toggle" id="learn">
+          <a href="#learn-menu" aria-controls="learn-menu" class="p-navigation__link">Learn</a>
+          <ul class="p-navigation__dropdown" id="learn-menu" aria-hidden="true">
+            <li>
+              <a class="p-navigation__dropdown-item" href="/tour" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tour' });">Features</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="/tutorials" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Tutorials' });">Tutorials</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="/resources"
+            onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Resources' });">Understand MAAS</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="/blog" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Blog' });">Blog</a>
+            </li>
+          </ul>
         </li>
         <li class="p-navigation__item">
-          <a class="p-navigation__link" href="https://discourse.maas.io" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });">Discourse</a>
-        </li>
-        <li class="p-navigation__item{% if request.path.startswith('/contact-us') %} is-selected" aria-current="page{% endif %}">
-          <a class="p-navigation__link" href="/contact-us" class="js-invoke-modal" onclick="dataLayer.push({'event' : 'GAEvent' , 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Contact us' });">Contact us</a>
+          <a class="p-navigation__link" href="https://discourse.maas.io" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Main navigation' , 'eventAction' : 'Click' , 'eventLabel' : 'Discourse' });">Forum</a>
         </li>
       </ul>
     </nav>

@@ -31,7 +31,7 @@
   "dependencies": {
     "autoprefixer": "10.4.13",
     "@canonical/cookie-policy": "3.4.0",
-    "@canonical/global-nav": "2.7.0",
+    "@canonical/global-nav": "3.2.4",
     "@canonical/latest-news": "1.4.1",
     "@canonical/discourse-rad-parser": "1.0.1",
     "postcss": "8.4.20",
