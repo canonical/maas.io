@@ -1,6 +1,6 @@
 {% extends "base_index.html" %}
 
-{% block page_title %}{{ article.title.rendered|safe }}{% endblock %}
+{% block page_title %}blog | {{ article.title.rendered|safe }}{% endblock %}
 {% block page_description %}{{ article.excerpt.raw }}{% endblock %}
 {% if article.image and article.image.source_url %}
   {% block meta_image %}{{ article.image.source_url }}{% endblock %}
