@@ -110,7 +110,7 @@ docs/deb/2.9/cli/configuration-journey: /docs/how-to-install-maas
 docs/deb/2.9/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/2.9/cli/contact-us: /docs/how-to-contact-us
 docs/deb/2.9/cli/controllers: /docs/about-controllers
-docs/deb/2.9/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/2.9/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/2.9/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/2.9/cli/custom-machine-setup: /docs/how-to-customise-machines
 docs/deb/2.9/cli/deploy-machines: /docs/how-to-deploy-machines
@@ -144,7 +144,7 @@ docs/deb/2.9/cli/interactive-search: /docs/how-to-search-maas
 docs/deb/2.9/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/2.9/cli/kernel-boot-options: /docs/how-to-customise-machines
-docs/deb/2.9/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/2.9/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/2.9/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/2.9/cli/maas-communication: /docs/about-controllers
 docs/deb/2.9/cli/maas-documentation: /docs/maas-documentation
@@ -173,7 +173,7 @@ docs/deb/2.9/cli/subnet-management: /docs/about-networking
 docs/deb/2.9/cli/tags-and-annotations: /docs/about-tags-and-annotations
 docs/deb/2.9/cli/test-logs: /docs/test-log-reference
 docs/deb/2.9/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/2.9/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/2.9/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/2.9/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/2.9/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/2.9/cli/user-accounts: /docs/how-to-manage-user-accounts
@@ -208,7 +208,7 @@ docs/deb/2.9/ui/configuration-journey: /docs/how-to-install-maas
 docs/deb/2.9/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/2.9/ui/contact-us: /docs/how-to-contact-us
 docs/deb/2.9/ui/controllers: /docs/about-controllers
-docs/deb/2.9/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/2.9/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/2.9/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/2.9/ui/custom-machine-setup: /docs/how-to-customise-machines
 docs/deb/2.9/ui/deploy-machines: /docs/how-to-deploy-machines
@@ -242,7 +242,7 @@ docs/deb/2.9/ui/interactive-search: /docs/how-to-search-maas
 docs/deb/2.9/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/2.9/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/2.9/ui/kernel-boot-options: /docs/how-to-customise-machines
-docs/deb/2.9/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/2.9/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/2.9/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/2.9/ui/maas-communication: /docs/about-controllers
 docs/deb/2.9/ui/maas-documentation: /docs/maas-documentation
@@ -271,7 +271,7 @@ docs/deb/2.9/ui/subnet-management: /docs/about-networking
 docs/deb/2.9/ui/tags-and-annotations: /docs/about-tags
 docs/deb/2.9/ui/test-logs: /docs/test-log-reference
 docs/deb/2.9/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/2.9/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/2.9/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/2.9/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/2.9/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/2.9/ui/user-accounts: /docs/how-to-manage-user-accounts
@@ -309,7 +309,7 @@ docs/deb/3.0/cli/configuration-journey: /docs/how-to-install-maas
 docs/deb/3.0/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/3.0/cli/contact-us: /docs/how-to-contact-us
 docs/deb/3.0/cli/controllers: /docs/about-controllers
-docs/deb/3.0/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/3.0/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/3.0/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/3.0/cli/custom-machine-setup: /docs/how-to-customise-machines
 docs/deb/3.0/cli/deploy-machines: /docs/how-to-deploy-machines
@@ -342,7 +342,7 @@ docs/deb/3.0/cli/interactive-search: /docs/how-to-search-maas
 docs/deb/3.0/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/3.0/cli/kernel-boot-options: /docs/how-to-customise-machines
-docs/deb/3.0/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/3.0/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/3.0/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.0/cli/maas-communication: /docs/about-controllers
 docs/deb/3.0/cli/maas-documentation: /docs/maas-documentation
@@ -372,7 +372,7 @@ docs/deb/3.0/cli/subnet-management: /docs/about-networking
 docs/deb/3.0/cli/tags-and-annotations: /docs/about-tags
 docs/deb/3.0/cli/test-logs: /docs/test-log-reference
 docs/deb/3.0/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/3.0/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/3.0/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/3.0/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/3.0/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.0/cli/user-accounts: /docs/how-to-manage-user-accounts
@@ -407,7 +407,7 @@ docs/deb/3.0/ui/configuration-journey: /docs/how-to-install-maas
 docs/deb/3.0/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/3.0/ui/contact-us: /docs/how-to-contact-us
 docs/deb/3.0/ui/controllers: /docs/about-controllers
-docs/deb/3.0/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/3.0/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/3.0/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/3.0/ui/custom-machine-setup: /docs/how-to-customise-machines
 docs/deb/3.0/ui/deploy-machines: /docs/how-to-deploy-machines
@@ -440,7 +440,7 @@ docs/deb/3.0/ui/interactive-search: /docs/how-to-search-maas
 docs/deb/3.0/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/deb/3.0/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/deb/3.0/ui/kernel-boot-options: /docs/how-to-customise-machines
-docs/deb/3.0/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/3.0/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/3.0/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.0/ui/maas-communication: /docs/about-controllers
 docs/deb/3.0/ui/maas-documentation: /docs/maas-documentation
@@ -470,7 +470,7 @@ docs/deb/3.0/ui/subnet-management: /docs/about-networking
 docs/deb/3.0/ui/tags-and-annotations: /docs/about-tags
 docs/deb/3.0/ui/test-logs: /docs/test-log-reference
 docs/deb/3.0/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/3.0/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/3.0/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/3.0/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/deb/3.0/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.0/ui/user-accounts: /docs/how-to-manage-user-accounts
@@ -502,7 +502,7 @@ docs/deb/3.1/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
 docs/deb/3.1/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/3.1/cli/contact-us: /docs/how-to-contact-us
 docs/deb/3.1/cli/controllers: /docs/about-controllers
-docs/deb/3.1/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/3.1/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/3.1/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/3.1/cli/event-logs: /docs/event-log-reference
 docs/deb/3.1/cli/getting-help: /docs/how-to-get-help
@@ -527,7 +527,7 @@ docs/deb/3.1/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.1/cli/images: /docs/about-images
 docs/deb/3.1/cli/interactive-search: /docs/how-to-search-maas
 docs/deb/3.1/cli/ip-ranges: /docs/how-to-manage-ip-addresses
-docs/deb/3.1/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/3.1/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/3.1/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.1/cli/maas-image-builder: /docs/how-to-create-custom-images
 docs/deb/3.1/cli/maas-installation: /docs/how-to-install-maas
@@ -543,7 +543,7 @@ docs/deb/3.1/cli/region-controllers: /docs/how-to-manage-controllers
 docs/deb/3.1/cli/select-and-import-images: /docs/how-to-import-images
 docs/deb/3.1/cli/test-logs: /docs/test-log-reference
 docs/deb/3.1/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/3.1/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/3.1/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/3.1/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.1/cli/user-accounts: /docs/how-to-manage-user-accounts
 docs/deb/3.1/cli/using-image-streams: /docs/how-to-import-images
@@ -567,7 +567,7 @@ docs/deb/3.1/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
 docs/deb/3.1/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/deb/3.1/ui/contact-us: /docs/how-to-contact-us
 docs/deb/3.1/ui/controllers: /docs/about-controllers
-docs/deb/3.1/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/deb/3.1/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/deb/3.1/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/deb/3.1/ui/event-logs: /docs/event-log-reference
 docs/deb/3.1/ui/getting-help: /docs/how-to-get-help
@@ -592,7 +592,7 @@ docs/deb/3.1/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/deb/3.1/ui/images: /docs/about-images
 docs/deb/3.1/ui/interactive-search: /docs/how-to-search-maas
 docs/deb/3.1/ui/ip-ranges: /docs/how-to-manage-ip-addresses
-docs/deb/3.1/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/deb/3.1/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/deb/3.1/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/deb/3.1/ui/maas-image-builder: /docs/how-to-create-custom-images
 docs/deb/3.1/ui/maas-installation: /docs/how-to-install-maas
@@ -608,7 +608,7 @@ docs/deb/3.1/ui/region-controllers: /docs/how-to-manage-controllers
 docs/deb/3.1/ui/select-and-import-images: /docs/how-to-import-images
 docs/deb/3.1/ui/test-logs: /docs/test-log-reference
 docs/deb/3.1/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/deb/3.1/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/deb/3.1/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/deb/3.1/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/deb/3.1/ui/user-accounts: /docs/how-to-manage-user-accounts
 docs/deb/3.1/ui/using-image-streams: /docs/how-to-import-images
@@ -637,7 +637,7 @@ docs/snap/2.9/cli/configuration-journey: /docs/how-to-install-maas
 docs/snap/2.9/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/2.9/cli/contact-us: /docs/how-to-contact-us
 docs/snap/2.9/cli/controllers: /docs/about-controllers
-docs/snap/2.9/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/2.9/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/2.9/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/2.9/cli/custom-machine-setup: /docs/how-to-customise-machines
 docs/snap/2.9/cli/deploy-machines: /docs/how-to-deploy-machines
@@ -671,7 +671,7 @@ docs/snap/2.9/cli/interactive-search: /docs/how-to-search-maas
 docs/snap/2.9/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/2.9/cli/kernel-boot-options: /docs/how-to-customise-machines
-docs/snap/2.9/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/2.9/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/2.9/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/2.9/cli/maas-communication: /docs/about-controllers
 docs/snap/2.9/cli/maas-image-builder: /docs/how-to-create-custom-images
@@ -699,7 +699,7 @@ docs/snap/2.9/cli/subnet-management: /docs/about-networking
 docs/snap/2.9/cli/tags-and-annotations: /docs/about-tags
 docs/snap/2.9/cli/test-logs: /docs/test-log-reference
 docs/snap/2.9/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/2.9/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/2.9/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/2.9/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/2.9/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/2.9/cli/user-accounts: /docs/how-to-manage-user-accounts
@@ -734,7 +734,7 @@ docs/snap/2.9/ui/configuration-journey: /docs/how-to-install-maas
 docs/snap/2.9/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/2.9/ui/contact-us: /docs/how-to-contact-us
 docs/snap/2.9/ui/controllers: /docs/about-controllers
-docs/snap/2.9/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/2.9/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/2.9/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/2.9/ui/custom-machine-setup: /docs/how-to-customise-machines
 docs/snap/2.9/ui/deploy-machines: /docs/how-to-deploy-machines
@@ -768,7 +768,7 @@ docs/snap/2.9/ui/interactive-search: /docs/how-to-search-maas
 docs/snap/2.9/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/2.9/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/2.9/ui/kernel-boot-options: /docs/how-to-customise-machines
-docs/snap/2.9/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/2.9/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/2.9/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/2.9/ui/maas-communication: /docs/about-controllers
 docs/snap/2.9/ui/maas-image-builder: /docs/how-to-create-custom-images
@@ -796,7 +796,7 @@ docs/snap/2.9/ui/subnet-management: /docs/about-networking
 docs/snap/2.9/ui/tags-and-annotations: /docs/about-tags
 docs/snap/2.9/ui/test-logs: /docs/test-log-reference
 docs/snap/2.9/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/2.9/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/2.9/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/2.9/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/2.9/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/2.9/ui/user-accounts: /docs/how-to-manage-user-accounts
@@ -831,7 +831,7 @@ docs/snap/3.0/cli/configuration-journey: /docs/how-to-install-maas
 docs/snap/3.0/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/3.0/cli/contact-us: /docs/how-to-contact-us
 docs/snap/3.0/cli/controllers: /docs/about-controllers
-docs/snap/3.0/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/3.0/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/3.0/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/3.0/cli/custom-machine-setup: /docs/how-to-customise-machines
 docs/snap/3.0/cli/deploy-machines: /docs/how-to-deploy-machines
@@ -864,7 +864,7 @@ docs/snap/3.0/cli/interactive-search: /docs/how-to-search-maas
 docs/snap/3.0/cli/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/cli/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/3.0/cli/kernel-boot-options: /docs/how-to-customise-machines
-docs/snap/3.0/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/3.0/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/3.0/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.0/cli/maas-communication: /docs/about-controllers
 docs/snap/3.0/cli/maas-documentation: /docs/maas-documentation
@@ -894,7 +894,7 @@ docs/snap/3.0/cli/subnet-management: /docs/about-networking
 docs/snap/3.0/cli/tags-and-annotations: /docs/about-tags
 docs/snap/3.0/cli/test-logs: /docs/test-log-reference
 docs/snap/3.0/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/3.0/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/3.0/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/3.0/cli/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/3.0/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.0/cli/user-accounts: /docs/how-to-manage-user-accounts
@@ -929,7 +929,7 @@ docs/snap/3.0/ui/configuration-journey: /docs/how-to-install-maas
 docs/snap/3.0/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/3.0/ui/contact-us: /docs/how-to-contact-us
 docs/snap/3.0/ui/controllers: /docs/about-controllers
-docs/snap/3.0/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/3.0/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/3.0/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/3.0/ui/custom-machine-setup: /docs/how-to-customise-machines
 docs/snap/3.0/ui/deploy-machines: /docs/how-to-deploy-machines
@@ -962,7 +962,7 @@ docs/snap/3.0/ui/interactive-search: /docs/how-to-search-maas
 docs/snap/3.0/ui/ip-ranges: /docs/how-to-manage-ip-addresses
 docs/snap/3.0/ui/ipv6-addressing: /docs/about-networking#heading--about-ipv6
 docs/snap/3.0/ui/kernel-boot-options: /docs/how-to-customise-machines
-docs/snap/3.0/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/3.0/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/3.0/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.0/ui/maas-communication: /docs/about-controllers
 docs/snap/3.0/ui/maas-documentation: /docs/maas-documentation
@@ -993,7 +993,7 @@ docs/snap/3.0/ui/subnet-management: /docs/about-networking
 docs/snap/3.0/ui/tags-and-annotations: /docs/about-tags
 docs/snap/3.0/ui/test-logs: /docs/test-log-reference
 docs/snap/3.0/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/3.0/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/3.0/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/3.0/ui/ubuntu-kernels: /docs/how-to-customise-machines
 docs/snap/3.0/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.0/ui/user-accounts: /docs/how-to-manage-user-accounts
@@ -1023,7 +1023,7 @@ docs/snap/3.1/cli/concepts-and-terms: /docs/maas-concepts-and-terms-reference
 docs/snap/3.1/cli/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/3.1/cli/contact-us: /docs/how-to-contact-us
 docs/snap/3.1/cli/controllers: /docs/about-controllers
-docs/snap/3.1/cli/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/3.1/cli/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/3.1/cli/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/3.1/cli/event-logs: /docs/event-log-reference
 docs/snap/3.1/cli/getting-help: /docs/how-to-get-help
@@ -1048,7 +1048,7 @@ docs/snap/3.1/cli/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.1/cli/images: /docs/about-images
 docs/snap/3.1/cli/interactive-search: /docs/how-to-search-maas
 docs/snap/3.1/cli/ip-ranges: /docs/how-to-manage-ip-addresses
-docs/snap/3.1/cli/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/3.1/cli/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/3.1/cli/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.1/cli/maas-image-builder: /docs/how-to-create-custom-images
 docs/snap/3.1/cli/maas-installation: /docs/how-to-install-maas
@@ -1064,7 +1064,7 @@ docs/snap/3.1/cli/region-controllers: /docs/how-to-manage-controllers
 docs/snap/3.1/cli/select-and-import-images: /docs/how-to-import-images
 docs/snap/3.1/cli/test-logs: /docs/test-log-reference
 docs/snap/3.1/cli/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/3.1/cli/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/3.1/cli/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/3.1/cli/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.1/cli/user-accounts: /docs/how-to-manage-user-accounts
 docs/snap/3.1/cli/using-image-streams: /docs/how-to-import-images
@@ -1088,7 +1088,7 @@ docs/snap/3.1/ui/concepts-and-terms: /docs/maas-concepts-and-terms-reference
 docs/snap/3.1/ui/configuring-tls-encryption: /docs/how-to-enable-tls-encryption
 docs/snap/3.1/ui/contact-us: /docs/how-to-contact-us
 docs/snap/3.1/ui/controllers: /docs/about-controllers
-docs/snap/3.1/ui/creating-a-custom-ubuntu-image: how-to-create-custom-images
+docs/snap/3.1/ui/creating-a-custom-ubuntu-image: /docs/how-to-create-custom-images
 docs/snap/3.1/ui/creating-and-deleting-vms: /docs/how-to-manage-vms
 docs/snap/3.1/ui/event-logs: /docs/event-log-reference
 docs/snap/3.1/ui/getting-help: /docs/how-to-get-help
@@ -1113,7 +1113,7 @@ docs/snap/3.1/ui/how-to-use-storage-tags: /docs/how-to-use-storage-tags
 docs/snap/3.1/ui/images: /docs/about-images
 docs/snap/3.1/ui/interactive-search: /docs/how-to-search-maas
 docs/snap/3.1/ui/ip-ranges: /docs/how-to-manage-ip-addresses
-docs/snap/3.1/ui/local-image-mirror: /doc/how-to-mirror-images-locally
+docs/snap/3.1/ui/local-image-mirror: /docs/how-to-mirror-images-locally
 docs/snap/3.1/ui/maas-cli: /docs/how-to-use-the-maas-cli
 docs/snap/3.1/ui/maas-image-builder: /docs/how-to-create-custom-images
 docs/snap/3.1/ui/maas-installation: /docs/how-to-install-maas
@@ -1129,7 +1129,7 @@ docs/snap/3.1/ui/region-controllers: /docs/how-to-manage-controllers
 docs/snap/3.1/ui/select-and-import-images: /docs/how-to-import-images
 docs/snap/3.1/ui/test-logs: /docs/test-log-reference
 docs/snap/3.1/ui/tips-tricks-and-traps: /docs/tips-and-tricks
-docs/snap/3.1/ui/troubleshooting: /doc/how-to-troubleshoot-maas
+docs/snap/3.1/ui/troubleshooting: /docs/how-to-troubleshoot-maas
 docs/snap/3.1/ui/upgrading-maas: /docs/how-to-upgrade-maas
 docs/snap/3.1/ui/user-accounts: /docs/how-to-manage-user-accounts
 docs/snap/3.1/ui/using-image-streams: /docs/how-to-import-images
