@@ -1175,7 +1175,6 @@ docs/cli-tag-management: /docs/about-tags-and-annotations
 docs/commission-nodes: /docs/how-to-deploy-machines 
 docs/commissioning-and-hardware-testing-scripts: /docs/commissioning-script-reference  
 docs/commissioning-logs: /docs/commissioning-log-reference 
-docs/commissioning-scripts-reference: /docs/commissioning-script-reference 
 docs/concepts-and-terms: /docs/maas-concepts-and-terms-reference 
 docs/configuration-journey: /docs/how-to-install-maas
 docs/configure-networking: /docs/how-to-manage-networks 
