@@ -72,7 +72,9 @@ bzr-repo/
 .venv
 .dotrun.json
 
-cypress/screenshots/**/*.png
-
 # JS modules copied from node_modules
 static/js/modules/*
+
+# cypress
+cypress/screenshots
+cypress/videos
