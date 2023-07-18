@@ -74,3 +74,7 @@ bzr-repo/
 
 # JS modules copied from node_modules
 static/js/modules/*
+
+# cypress
+cypress/screenshots
+cypress/videos
