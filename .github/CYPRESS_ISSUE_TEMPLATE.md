@@ -6,4 +6,4 @@ assignees: ''
 
 ---
 
-[maas.io e2e test failed](<https://github.com/{{> env.REPO }}/actions/runs/{{ env.RUN_ID }}) on the {{ env.BRANCH_NAME }} branch.
+[maas.io e2e test failed](https://github.com/{{ env.REPO }}/actions/runs/{{ env.RUN_ID }}) for the {{ env.BRANCH_NAME }} branch.
