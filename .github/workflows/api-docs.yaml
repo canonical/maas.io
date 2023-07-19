@@ -11,10 +11,10 @@ jobs:
       - name: Get branch name
         uses: nelonoel/branch-name@v1.0.1
       - name: Run Cypress docs tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           browser: chrome
-          config: baseUrl=http://maas.io/
+          config: baseUrl=https://maas.io/
           spec: "cypress/e2e/**/*.{js,jsx,ts,tsx}"
       - name: Create issue on failure
         if: failure()
