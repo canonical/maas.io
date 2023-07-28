@@ -1,7 +1,5 @@
 name: API Docs
-on:
-  schedule:
-    - cron: "0 10 * * 1-5" # At 10:00 every day-of-week from Monday through Friday.
+on: push
 jobs:
   api-docs:
     name: maas.io/docs/api
@@ -14,7 +12,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: chrome
-          config: baseUrl=https://maas.io/
+          config: baseUrl=http://maas.io/
           spec: "cypress/e2e/**/*.{js,jsx,ts,tsx}"
       - name: Create issue on failure
         if: failure()
