@@ -7,7 +7,7 @@ context("/docs/api", () => {
 
   it("displays side navigation correctly", () => {
     cy.get(".p-side-navigation__drawer").should("not.be.visible");
-    cy.findByRole("link", { name: /Toggle side navigation/ }).click();
+    cy.findAllByRole("link", { name: /Toggle side navigation/ }).first().click();
     cy.get(".p-side-navigation__drawer").should("be.visible");
     cy.get(".p-side-navigation__drawer")
       .findAllByRole("link")
@@ -15,7 +15,6 @@ context("/docs/api", () => {
   });
 
   it("displays content correctly", () => {
-    cy.visit("/docs/api");
     cy.findByRole("heading", { level: 1, name: "MAAS API" }).should("exist");
     cy.findByRole("heading", { level: 2, name: "Operations" }).should("exist");
   });
