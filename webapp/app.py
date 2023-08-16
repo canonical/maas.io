@@ -127,7 +127,7 @@ def gomod(subpath):
     if flask.request.query_string == b"go-get=1":
         return flask.render_template("gomod.html"), 200
 
-    return flask.abort(404)
+    flask.abort(404)
 
 
 init_blog(app, "/blog")
