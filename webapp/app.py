@@ -115,5 +115,20 @@ def api():
     )
 
 
+@app.route("/core", defaults={"subpath": None})
+@app.route("/core/<path:subpath>")
+def gomod(subpath):
+    """
+    Return metadata for Go package manager
+    That allows to do things like `go get maas.io/core/src/maasagent`
+    by using Git repository at https://code.launchpad.net/maas
+    """
+
+    if flask.request.query_string == b"go-get=1":
+        return flask.render_template("gomod.html"), 200
+
+    flask.abort(404)
+
+
 init_blog(app, "/blog")
 init_tutorials(app, "/tutorials", session)
