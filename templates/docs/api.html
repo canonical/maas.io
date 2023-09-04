@@ -156,12 +156,10 @@
               {%endfor%}
             {%endif%}
             {%if "requestBody" in item[endpoint][method]%}
-              {%if "parameters" not in item[endpoint] and "parameters" not in item[endpoint][method]%}
-                <p><strong>Parameters</strong></p>
-                <hr />
-              {%endif%}
-              {%for property in item[endpoint][method]["requestBody"]["content"]["application/json"]["schema"]["properties"]%}
-                <p><md-block><code>{{property}}</code> (<em>{{item[endpoint][method]["requestBody"]["content"]["application/json"]["schema"]["properties"][property]["type"]}}</em>): {%if property in item[endpoint][method]["requestBody"]["content"]["application/json"]["schema"]["required"]%}Required{%else%}Optional{%endif%}. {{item[endpoint][method]["requestBody"]["content"]["application/json"]["schema"]["properties"][property]["description"].replace(" -", "\n -")}}</md-block></p>
+              <p><strong>Request body (multipart/form-data)</strong></p>
+              <hr />
+              {%for property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"]%}
+                <p><md-block><code>{{property}}</code> (<em>{{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["type"]}}</em>): {%if property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["required"]%}Required{%else%}Optional{%endif%}. {{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["description"].replace(" -", "\n -")}}</md-block></p>
               {%endfor%}
             {%endif%}
             <p><strong>Responses</strong></p>
