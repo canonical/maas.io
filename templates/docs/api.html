@@ -146,7 +146,7 @@
               <p><strong>Parameters</strong></p>
               <hr />
               {%for param in item[endpoint][method]["parameters"]%}
-                <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%} {{param["description"]}}</p>
+                <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%} <md-block>{{param["description"]}}</md-block></p>
               {%endfor%}
             {%elif "parameters" in item[endpoint]%}
               <p><strong>Parameters</strong></p>
