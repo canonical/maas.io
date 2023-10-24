@@ -28,7 +28,7 @@ def init_tutorials(app, url_prefix, session):
 
     @app.route(url_prefix)
     def index():
-        tutorials_discourse.parser.ensure_parsed()
+        tutorials_discourse.parser.parse()
         tutorials_discourse.parser.parse_topic(
             tutorials_discourse.parser.index_topic
         )
