@@ -13,8 +13,7 @@ $l-documentation-sidebar-width: 18rem;
 
 // patterns
 @import "patterns_strips", "patterns_lists", "patterns_modal",
-  "patterns_takeunders", "patterns_tables", "patterns_contact-modal",
-  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials",
+  "patterns_takeunders", "patterns_tables", "patterns_contact-modal", "patterns_sidenav", "hljs", "patterns_tutorials",
   "patterns_cards";
 
 // patterns
@@ -23,7 +22,6 @@ $l-documentation-sidebar-width: 18rem;
 @include maas-p-tables;
 @include maas-p-contact-modal;
 @include maas-p-strip--dark;
-// @include maas-l-docs;
 @include maas-p-sidenav;
 @include maas-p-tutorials;
 @include maas-p-cards;
