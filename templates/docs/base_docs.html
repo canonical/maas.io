@@ -69,7 +69,7 @@
           {% set active = docs_version == version['path'] %}
           <option value="{{ version_paths[version['path']] }}"{% if active %} selected{% endif %}>{{ version['version'] }}</option>
         {% endfor %}
-        <select>
+        </select>
       {% endif %}
 
       <nav data-js="navigation" class="p-side-navigation" id="{{ navigation['path'] or 'default' }}" style="margin-top: 0.5rem">
