@@ -1,570 +1,300 @@
-{% extends "base_index.html" %}
+{% extends "docs/base_docs.html" %}
 
-{% block page_class %}docs{% endblock %}
-{% block content_class %}l-docs-wrapper{% endblock %}
 {% block page_title %}| API {% endblock %}
 {% block twitter_title %}API{% endblock %}
-{% block twitter_description %}{% endblock %}
 {% block og_title %}API{% endblock %}
-{% block og_description %}{% endblock %}
-
-{% macro create_navigation(nav_items, expandable=False, expanded=False) %}
-  <ul class="p-side-navigation__list">
-    {% for element in nav_items %}
-    <li class="p-side-navigation__item">
-      {% if element.navlink_href %}
-      <a
-        class="p-side-navigation__link {% if expandable and element.children %}is-expandable{% endif %}"
-        href="{{ element.navlink_href }}"
-        {% if expandable and element.children %}aria-expanded={% if expanded or element.is_active %}"true"{% else %}"false"{% endif %}{% endif %}
-        {% if element.is_active and not element.navlink_fragment %}aria-current="page"{% endif %}
-      >{{ element.navlink_text }}</a>
-      {% else %}
-        <strong
-          class="p-side-navigation__text {% if expandable and element.children %}is-expandable{% endif %}"
-          {% if expandable and element.children %}aria-expanded={% if expanded %}"true"{% else %}"false"{% endif %}{% endif %}
-          {% if element.is_active %}aria-current="page"{% endif %}
-        >{{ element.navlink_text }}</strong>
-      {% endif %}
-
-      {% if expandable %}
-        {% if element.children %}
-            <button class="p-side-navigation__expand" aria-expanded={% if element.is_active or element.has_active_child %}"true"{% else %}"false"{% endif %} aria-label="show submenu for {{ element.navlink_text }}"></button>
-        {% endif %}
-        {{ create_navigation(element.children, expandable, element.is_active or element.has_active_child) }}
-      {% else %}
-        {% if element.children %}
-          {{ create_navigation(element.children, expandable) }}
-        {% endif %}
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-{% endmacro %}
 
 {% block content %}
-  <section id="search-docs" class="p-strip--light is-shallow">
-    <div class="row">
-      <form class="p-search-box u-no-margin--bottom" action="/docs/search">
-        <input type="search" class="p-search-box__input" name="q" {% if query %}value="{{ query }}"{% endif %} placeholder="Search documentation" required/>
-        <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close">Close</i></button>
-        <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search">Search</i></button>
-      </form>
-    </div>
-  </section>
+<div class="l-docs__main u-text-max-width" id="content-section">
+  <main class="u-fixed-width">
+    <div class="p-strip u-no-padding--top">
+      <h1 id="maas-api">MAAS API</h1>
+      <p>Restful MAAS API.</p>
+      <p>This is the documentation for the API that lets you control and query MAAS. The API is "Restful", which means that you access it through normal HTTP requests.</p>
+      <h2 id="api-versions">API versions</h2>
+      <p>At any given time, MAAS may support multiple versions of its API. The version number is included in the API's URL, e.g. /api/2.0/</p>
+      <p>For now, 2.0 is the only supported version.</p>
+      <p>The current API version number can be retrieved by issuing a GET to "/api/version/". Accessing an old or unknown API version URL will result in a "410 GONE" being returned, along with a descriptive error message. Both the error message and the api version are returned as plaintext.</p>
+      <h2 id="http-methods-and-parameter-passing">HTTP methods and parameter-passing</h2>
+      <p>The following HTTP methods are available for accessing the API:</p>
+      <ul>
+      <li>GET (for information retrieval and queries),</li>
+      <li>POST (for asking the system to do things),</li>
+      <li>PUT (for updating objects), and</li>
+      <li>DELETE (for deleting objects).</li>
+      </ul>
+      <p>All methods except DELETE may take parameters, but they are not all passed in the same way. GET parameters are passed in the URL, as is normal with a GET: "/item/?foo=bar" passes parameter "foo" with value "bar".</p>
+      <p>POST and PUT are different. Your request should have MIME type "multipart/form-data"; each part represents one parameter (for POST) or attribute (for PUT). Each part is named after the parameter or attribute it contains, and its contents are the conveyed value.</p>
+      <p>All parameters are in text form. If you need to submit binary data to the API, don't send it as any MIME binary format; instead, send it as a plain text part containing base64-encoded data.</p>
+      <p>Most resources offer a choice of GET or POST operations. In those cases these methods will take one special parameter, called <span class="title-ref">op</span>, to indicate what it is you want to do.</p>
+      <p>For example, to list all machines, you might GET "/MAAS/api/2.0/machines/".</p>
 
-  <div class="l-docs">
-    <aside class="col-3 l-docs-sidebar">
-      {% if versions | length > 1 %}
-      <label for="version-select" class="u-hide">Version</label>
-      <select name="version-select" id="version-select" onChange="window.location.href=this.value">
-      {% for version in versions %}
-        {% set active = docs_version == version['path'] %}
-        <option value="{{ version_paths[version['path']] }}"{% if active %} selected{% endif %}>{{ version['version'] }}</option>
-      {% endfor %}
-      <select>
-      {% endif %}
-
-      <div class="row">
-	<div class="p-strip is-shallow">
-	  <nav data-js="navigation" class="p-side-navigation" id="{{ navigation['path'] or 'default' }}">
-	  <a href="#{{ navigation['path'] or 'default' }}" class="p-side-navigation__toggle js-drawer-toggle" aria-controls="{{ navigation['path'] or 'default' }}">
-	    Toggle side navigation
-	  </a>
-	  <div class="p-side-navigation__overlay js-drawer-toggle" aria-controls="{{ navigation['path'] or 'default' }}"></div>
-	  <div class="p-side-navigation__drawer">
-	    <div class="p-side-navigation__drawer-header">
-	      <a href="#" class="p-side-navigation__toggle--in-drawer js-drawer-toggle" aria-controls="{{ navigation['path'] or 'default' }}">
-		Toggle side navigation
-	      </a>
-	    </div>
-	    {% for nav_group in navigation.nav_items %}
-	    {% if not nav_group.hidden %}
-	      {% if nav_group.navlink_text %}
-		{% if nav_group.navlink_href %}
-		<h3 class="p-side-navigation__heading--linked">
-		  <a class="p-side-navigation__link" href="{{ nav_group.navlink_href }}" {% if nav_group.is_active %}aria-current="page"{% endif %}>
-		    {{ nav_group.navlink_text }}
-		  </a>
-		</h3>
-		{% else %}
-		  <h3 class="p-side-navigation__heading">{{ nav_group.navlink_text }}</h3>
-		{% endif %}
-	      {% endif %}
-	      {#
-		Use `create_navigation(nav_group.children)` for a default, fully expanded navigation.
-		Use `create_navigation(nav_group.children, expandable=True)` for the nested nav levels to expand only when parent page is active.
-	      #}
-	      {{ create_navigation(nav_group.children, expandable=True) }}
-	    {% endif %}
-	  {% endfor %}
-	  </div>
-	</nav>
-      </div>
-    </div>
-    </aside>
-    <main class="col-9 l-docs-content" id="content-section">
-      <div class="p-strip--light is-shallow l-docs-title">
-        <div class="l-docs-row row">
-<h1 id="maas-api">MAAS API</h1>
-<p>Restful MAAS API.</p>
-<p>This is the documentation for the API that lets you control and query MAAS. The API is "Restful", which means that you access it through normal HTTP requests.</p>
-<h2 id="api-versions">API versions</h2>
-<p>At any given time, MAAS may support multiple versions of its API. The version number is included in the API's URL, e.g. /api/2.0/</p>
-<p>For now, 2.0 is the only supported version.</p>
-<p>The current API version number can be retrieved by issuing a GET to "/api/version/". Accessing an old or unknown API version URL will result in a "410 GONE" being returned, along with a descriptive error message. Both the error message and the api version are returned as plaintext.</p>
-<h2 id="http-methods-and-parameter-passing">HTTP methods and parameter-passing</h2>
-<p>The following HTTP methods are available for accessing the API:</p>
-<ul>
-<li>GET (for information retrieval and queries),</li>
-<li>POST (for asking the system to do things),</li>
-<li>PUT (for updating objects), and</li>
-<li>DELETE (for deleting objects).</li>
-</ul>
-<p>All methods except DELETE may take parameters, but they are not all passed in the same way. GET parameters are passed in the URL, as is normal with a GET: "/item/?foo=bar" passes parameter "foo" with value "bar".</p>
-<p>POST and PUT are different. Your request should have MIME type "multipart/form-data"; each part represents one parameter (for POST) or attribute (for PUT). Each part is named after the parameter or attribute it contains, and its contents are the conveyed value.</p>
-<p>All parameters are in text form. If you need to submit binary data to the API, don't send it as any MIME binary format; instead, send it as a plain text part containing base64-encoded data.</p>
-<p>Most resources offer a choice of GET or POST operations. In those cases these methods will take one special parameter, called <span class="title-ref">op</span>, to indicate what it is you want to do.</p>
-<p>For example, to list all machines, you might GET "/MAAS/api/2.0/machines/".</p>
-
-<h2 id="operations">Operations</h2>
-{%for tag in openapi%}
-  <h3>{{tag}}</h3>
-  {%for item in openapi[tag]%}
-    {%for endpoint in item%}
-      {%for method in item[endpoint]%}
-        {%if method != "parameters"%}
-          <details>
-            {%if item[endpoint][method]["deprecated"] == True%}
-              <summary><s><code>{{method.upper()}} /MAAS/api/2.0{{endpoint}}</code>: {{item[endpoint][method]["summary"]}}</s></summary>
-            {%else%}
-              <summary><code>{{method.upper()}} /MAAS/api/2.0{{endpoint}}</code>: {{item[endpoint][method]["summary"]}}</summary>
-            {%endif%}
-            <p><md-block>{{item[endpoint][method]["description"]}}</md-block></p>
-            <p>Operation ID: <code>{{item[endpoint][method]["operationId"]}}</code></p>
-            {%if "parameters" in item[endpoint][method]%}
-              <p><strong>Parameters</strong></p>
-              <hr />
-              {%for param in item[endpoint][method]["parameters"]%}
-                <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%} <md-block>{{param["description"]}}</md-block></p>
-              {%endfor%}
-            {%elif "parameters" in item[endpoint]%}
-              <p><strong>Parameters</strong></p>
-              <hr />
-              {%for param in item[endpoint]["parameters"]%}
-                <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%}</p>
-              {%endfor%}
-            {%endif%}
-            {%if "requestBody" in item[endpoint][method]%}
-              <p><strong>Request body (multipart/form-data)</strong></p>
-              <hr />
-              {%for property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"]%}
-                <p><md-block><code>{{property}}</code> (<em>{{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["type"]}}</em>): {%if property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["required"]%}Required{%else%}Optional{%endif%}. {{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["description"].replace(" -", "\n -")}}</md-block></p>
-              {%endfor%}
-            {%endif%}
-            <p><strong>Responses</strong></p>
-            <hr />
-            {%for response in item[endpoint][method]["responses"]%}
-              <p><md-block><a style="text-decoration: none; color: black; cursor: initial;" href={{"https://http.cat/" + response}}><code>HTTP {{response}} {{responses[response | int].upper()}}</code></a>: {{item[endpoint][method]["responses"][response]["description"]}}</md-block></p>
-              <p>Content type: {%for content_type in item[endpoint][method]["responses"][response]["content"]%}{{content_type}} {{item[endpoint][method]["responses"][response]["content"][content_type]["schema"]["type"]}}{%endfor%}</p>
+      <h2 id="operations">Operations</h2>
+      {%for tag in openapi%}
+        <h3>{{tag}}</h3>
+        {%for item in openapi[tag]%}
+          {%for endpoint in item%}
+            {%for method in item[endpoint]%}
+              {%if method != "parameters"%}
+                <details>
+                  {%if item[endpoint][method]["deprecated"] == True%}
+                    <summary><s><code>{{method.upper()}} /MAAS/api/2.0{{endpoint}}</code>: {{item[endpoint][method]["summary"]}}</s></summary>
+                  {%else%}
+                    <summary><code>{{method.upper()}} /MAAS/api/2.0{{endpoint}}</code>: {{item[endpoint][method]["summary"]}}</summary>
+                  {%endif%}
+                  <p><md-block>{{item[endpoint][method]["description"]}}</md-block></p>
+                  <p>Operation ID: <code>{{item[endpoint][method]["operationId"]}}</code></p>
+                  {%if "parameters" in item[endpoint][method]%}
+                    <p><strong>Parameters</strong></p>
+                    <hr />
+                    {%for param in item[endpoint][method]["parameters"]%}
+                      <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%} <md-block>{{param["description"]}}</md-block></p>
+                    {%endfor%}
+                  {%elif "parameters" in item[endpoint]%}
+                    <p><strong>Parameters</strong></p>
+                    <hr />
+                    {%for param in item[endpoint]["parameters"]%}
+                      <p><code>&#123;{{param["name"]}}&#125;</code> (<em>{{param["schema"]["type"]}}</em>): {%if param["required"] == True%} Required. {%else%} Optional.{%endif%}</p>
+                    {%endfor%}
+                  {%endif%}
+                  {%if "requestBody" in item[endpoint][method]%}
+                    <p><strong>Request body (multipart/form-data)</strong></p>
+                    <hr />
+                    {%for property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"]%}
+                      <p><md-block><code>{{property}}</code> (<em>{{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["type"]}}</em>): {%if property in item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["required"]%}Required{%else%}Optional{%endif%}. {{item[endpoint][method]["requestBody"]["content"]["multipart/form-data"]["schema"]["properties"][property]["description"].replace(" -", "\n -")}}</md-block></p>
+                    {%endfor%}
+                  {%endif%}
+                  <p><strong>Responses</strong></p>
+                  <hr />
+                  {%for response in item[endpoint][method]["responses"]%}
+                    <p><md-block><a style="text-decoration: none; color: black; cursor: initial;" href={{"https://http.cat/" + response}}><code>HTTP {{response}} {{responses[response | int].upper()}}</code></a>: {{item[endpoint][method]["responses"][response]["description"]}}</md-block></p>
+                    <p>Content type: {%for content_type in item[endpoint][method]["responses"][response]["content"]%}{{content_type}} {{item[endpoint][method]["responses"][response]["content"][content_type]["schema"]["type"]}}{%endfor%}</p>
+                  {%endfor%}
+                </details>
+              {%endif%}
             {%endfor%}
-          </details>
-        {%endif%}
+          {%endfor%}
+        {%endfor%}
       {%endfor%}
-    {%endfor%}
-  {%endfor%}
-{%endfor%}
 
-<h2 id="power-types">Power types</h2>
-<p>This is the list of the supported power types and their associated power parameters. Note that the list of usable power types for a particular rack controller might be a subset of this list if the rack controller in question is from an older version of MAAS.</p>
-<h3 id="amt-intel-amt">amt (Intel AMT)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_pass (Power password).</li>
-<li>power_address (Power address).</li>
-</ul>
-<h3 id="apc-american-power-conversion-apc-pdu">apc (American Power Conversion (APC) PDU)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (IP for APC PDU).</li>
-<li>node_outlet (APC PDU node outlet number (1-16)).</li>
-<li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
-<li>pdu_type (PDU type). Choices: 'RPDU' (rPDU), 'MASTERSWITCH' (masterswitch) Default: 'RPDU'.</li>
-</ul>
-<h3 id="dli-digital-loggers-inc.-pdu">dli (Digital Loggers, Inc. PDU)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>outlet_id (Outlet ID).</li>
-<li>power_address (Power address).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-</ul>
-<h3 id="eaton-eaton-pdu">eaton (Eaton PDU)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (IP for Eaton PDU).</li>
-<li>node_outlet (Eaton PDU node outlet number (1-24)).</li>
-<li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
-</ul>
-<h3 id="hmc-ibm-hardware-management-console-hmc-for-powerpc">hmc (IBM Hardware Management Console (HMC) for PowerPC)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (IP for HMC).</li>
-<li>power_user (HMC username).</li>
-<li>power_pass (HMC password).</li>
-<li>server_name (HMC Managed System server name).</li>
-<li>lpar (HMC logical partition).</li>
-</ul>
-<h3 id="hmcz-ibm-hardware-management-console-hmc-for-z">hmcz (IBM Hardware Management Console (HMC) for Z)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (HMC Address).</li>
-<li>power_user (HMC username).</li>
-<li>power_pass (HMC password).</li>
-<li>power_partition_name (HMC partition name).</li>
-</ul>
-<h3 id="ipmi-ipmi">ipmi (IPMI)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_driver (Power driver). Choices: 'LAN' (LAN [IPMI 1.5]), 'LAN_2_0' (LAN_2_0 [IPMI 2.0]) Default: 'LAN_2_0'.</li>
-<li>power_boot_type (Power boot type). Choices: 'auto' (Automatic), 'legacy' (Legacy boot), 'efi' (EFI boot) Default: 'auto'.</li>
-<li>power_address (IP address).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-<li>k_g (K_g BMC key).</li>
-<li>cipher_suite_id (Cipher Suite ID). Choices: '17' (17 - HMAC-SHA256::HMAC_SHA256_128::AES-CBC-128), '3' (3 - HMAC-SHA1::HMAC-SHA1-96::AES-CBC-128), '' (freeipmi-tools default), '8' (8 - HMAC-MD5::HMAC-MD5-128::AES-CBC-128), '12' (12 - HMAC-MD5::MD5-128::AES-CBC-128) Default: '3'.</li>
-<li>privilege_level (Privilege Level). Choices: 'USER' (User), 'OPERATOR' (Operator), 'ADMIN' (Administrator) Default: 'OPERATOR'.</li>
-<li>workaround_flags (Workaround Flags). Choices: 'opensesspriv' (Opensesspriv), 'authcap' (Authcap), 'idzero' (Idzero), 'unexpectedauth' (Unexpectedauth), 'forcepermsg' (Forcepermsg), 'endianseq' (Endianseq), 'intel20' (Intel20), 'supermicro20' (Supermicro20), 'sun20' (Sun20), 'nochecksumcheck' (Nochecksumcheck), 'integritycheckvalue' (Integritycheckvalue), 'ipmiping' (Ipmiping), '' (None) Default: '['opensesspriv']'.</li>
-<li>mac_address (Power MAC).</li>
-</ul>
-<h3 id="manual-manual">manual (Manual)</h3>
-<p>Power parameters:</p>
-<h3 id="moonshot-hp-moonshot---ilo4-ipmi">moonshot (HP Moonshot - iLO4 (IPMI))</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Power address).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-<li>power_hwaddress (Power hardware address).</li>
-</ul>
-<h3 id="mscm-hp-moonshot---ilo-chassis-manager">mscm (HP Moonshot - iLO Chassis Manager)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (IP for MSCM CLI API).</li>
-<li>power_user (MSCM CLI API user).</li>
-<li>power_pass (MSCM CLI API password).</li>
-<li>node_id (Node ID - Must adhere to cXnY format (X=cartridge number, Y=node number).).</li>
-</ul>
-<h3 id="msftocs-microsoft-ocs---chassis-manager">msftocs (Microsoft OCS - Chassis Manager)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Power address).</li>
-<li>power_port (Power port).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-<li>blade_id (Blade ID (Typically 1-24)).</li>
-</ul>
-<h3 id="nova-openstack-nova">nova (OpenStack Nova)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>nova_id (Host UUID).</li>
-<li>os_tenantname (Tenant name).</li>
-<li>os_username (Username).</li>
-<li>os_password (Password).</li>
-<li>os_authurl (Auth URL).</li>
-</ul>
-<h3 id="openbmc-openbmc-power-driver">openbmc (OpenBMC Power Driver)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (OpenBMC address).</li>
-<li>power_user (OpenBMC user).</li>
-<li>power_pass (OpenBMC password).</li>
-</ul>
-<h3 id="proxmox-proxmox">proxmox (Proxmox)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Proxmox host name or IP).</li>
-<li>power_user (Proxmox username, including realm).</li>
-<li>power_pass (Proxmox password, required if a token name and secret aren't given).</li>
-<li>power_token_name (Proxmox API token name).</li>
-<li>power_token_secret (Proxmox API token secret).</li>
-<li>power_vm_name (Node ID).</li>
-<li>power_verify_ssl (Verify SSL connections with system CA certificates). Choices: 'n' (No), 'y' (Yes) Default: 'n'.</li>
-</ul>
-<h3 id="recs_box-christmann-recsbox-power-driver">recs_box (Christmann RECS|Box Power Driver)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>node_id (Node ID).</li>
-<li>power_address (Power address).</li>
-<li>power_port (Power port).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-</ul>
-<h3 id="redfish-redfish">redfish (Redfish)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Redfish address).</li>
-<li>power_user (Redfish user).</li>
-<li>power_pass (Redfish password).</li>
-<li>node_id (Node ID).</li>
-</ul>
-<h3 id="sm15k-seamicro-15000">sm15k (SeaMicro 15000)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>system_id (System ID).</li>
-<li>power_address (Power address).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-<li>power_control (Power control type). Choices: 'ipmi' (IPMI), 'restapi' (REST API v0.9), 'restapi2' (REST API v2.0) Default: 'ipmi'.</li>
-</ul>
-<h3 id="ucsm-cisco-ucs-manager">ucsm (Cisco UCS Manager)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>uuid (Server UUID).</li>
-<li>power_address (URL for XML API).</li>
-<li>power_user (API user).</li>
-<li>power_pass (API password).</li>
-</ul>
-<h3 id="vmware-vmware">vmware (VMware)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_vm_name (VM Name (if UUID unknown)).</li>
-<li>power_uuid (VM UUID (if known)).</li>
-<li>power_address (VMware IP).</li>
-<li>power_user (VMware username).</li>
-<li>power_pass (VMware password).</li>
-<li>power_port (VMware API port (optional)).</li>
-<li>power_protocol (VMware API protocol (optional)).</li>
-</ul>
-<h3 id="webhook-webhook">webhook (Webhook)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_on_uri (URI to power on the node).</li>
-<li>power_off_uri (URI to power off the node).</li>
-<li>power_query_uri (URI to query the nodes power status).</li>
-<li>power_on_regex (Regex to confirm the node is on). Default: 'status.<em>:.</em>running'.</li>
-<li>power_off_regex (Regex to confirm the node is off). Default: 'status.<em>:.</em>stopped'.</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-<li>power_token (Power token, will be used in place of power_user and power_pass).</li>
-<li>power_verify_ssl (Verify SSL connections with system CA certificates). Choices: 'n' (No), 'y' (Yes) Default: 'n'.</li>
-</ul>
-<h3 id="wedge-facebooks-wedge">wedge (Facebook's Wedge)</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (IP address).</li>
-<li>power_user (Power user).</li>
-<li>power_pass (Power password).</li>
-</ul>
-<h3 id="lxd-lxd-virtual-systems">lxd (LXD (virtual systems))</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (LXD address).</li>
-<li>instance_name (Instance name).</li>
-<li>project (LXD project). Default: 'default'.</li>
-<li>password (LXD password (optional)).</li>
-<li>certificate (LXD certificate (optional)).</li>
-<li>key (LXD private key (optional)).</li>
-</ul>
-<h3 id="virsh-virsh-virtual-systems">virsh (Virsh (virtual systems))</h3>
-<p>Power parameters:</p>
-<ul>
-<li>power_address (Address).</li>
-<li>power_pass (Password (optional)).</li>
-<li>power_id (Virsh VM ID).</li>
-</ul>
-<h2 id="pod-types">Pod types</h2>
-<p>This is the list of the supported pod types and their associated parameters. Note that the list of usable pod types for a particular rack controller might be a subset of this list if the rack controller in question is from an older version of MAAS.</p>
-<h3 id="lxd-lxd-virtual-systems-1">lxd (LXD (virtual systems))</h3>
-<p>Parameters:</p>
-<ul>
-<li>power_address (LXD address).</li>
-<li>instance_name (Instance name).</li>
-<li>project (LXD project). Default: 'default'.</li>
-<li>password (LXD password (optional)).</li>
-<li>certificate (LXD certificate (optional)).</li>
-<li>key (LXD private key (optional)).</li>
-</ul>
-<h3 id="virsh-virsh-virtual-systems-1">virsh (Virsh (virtual systems))</h3>
-<p>Parameters:</p>
-<ul>
-<li>power_address (Address).</li>
-<li>power_pass (Password (optional)).</li>
-<li>power_id (Virsh VM ID).</li>
-</ul>
-        </div>
-      </div>
-    </main>
-  </div>
-{% endblock %}
-{% block js_extra %}
-  <script src="/static/js/highlight.pack.js"></script>
-  <script>
-  hljs.initHighlightingOnLoad();
-  window.addEventListener("DOMContentLoaded", function() {
-  // Based on Vanilla side navigation example
-  // Should be moved out from the template as part of a given project JS
-  /**
-    Toggles the expanded/collapsed classed on side navigation element.
-    @param {HTMLElement} sideNavigation The side navigation element.
-    @param {Boolean} show Whether to show or hide the drawer.
-  */
-  function toggleDrawer(sideNavigation, show) {
-    const toggleButtonOutsideDrawer = sideNavigation.querySelector(
-      ".p-side-navigation__toggle"
-    );
-    const toggleButtonInsideDrawer = sideNavigation.querySelector(
-      ".p-side-navigation__toggle--in-drawer"
-    );
-
-    if (sideNavigation) {
-      if (show) {
-        sideNavigation.classList.remove("is-drawer-collapsed");
-        sideNavigation.classList.add("is-drawer-expanded");
-
-        toggleButtonInsideDrawer.focus();
-        toggleButtonOutsideDrawer.setAttribute("aria-expanded", true);
-        toggleButtonInsideDrawer.setAttribute("aria-expanded", true);
-      } else {
-        sideNavigation.classList.remove("is-drawer-expanded");
-        sideNavigation.classList.add("is-drawer-collapsed");
-
-        toggleButtonOutsideDrawer.focus();
-        toggleButtonOutsideDrawer.setAttribute("aria-expanded", false);
-        toggleButtonInsideDrawer.setAttribute("aria-expanded", false);
-      }
-    }
-  }
-
-  // throttle util (for window resize event)
-  var throttle = function (fn, delay) {
-    var timer = null;
-    return function () {
-      var context = this,
-        args = arguments;
-      clearTimeout(timer);
-      timer = setTimeout(function () {
-        fn.apply(context, args);
-      }, delay);
-    };
-  };
-
-  /**
-    Attaches event listeners for the side navigation toggles
-    @param {HTMLElement} sideNavigation The side navigation element.
-  */
-  function setupSideNavigation(sideNavigation) {
-    var toggles = [].slice.call(
-      sideNavigation.querySelectorAll(".js-drawer-toggle")
-    );
-    var drawerEl = sideNavigation.querySelector(".p-side-navigation__drawer");
-
-    // hide navigation drawer on small screens
-    sideNavigation.classList.add("is-drawer-hidden");
-
-    // setup drawer element
-    drawerEl.addEventListener("animationend", () => {
-      if (!sideNavigation.classList.contains("is-drawer-expanded")) {
-        sideNavigation.classList.add("is-drawer-hidden");
-      }
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        toggleDrawer(sideNavigation, false);
-      }
-    });
-
-    // setup toggle buttons
-    toggles.forEach(function (toggle) {
-      toggle.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        if (sideNavigation) {
-          sideNavigation.classList.remove("is-drawer-hidden");
-          toggleDrawer(
-            sideNavigation,
-            !sideNavigation.classList.contains("is-drawer-expanded")
-          );
-        }
-      });
-    });
-
-    // hide side navigation drawer when screen is resized
-    window.addEventListener(
-      "resize",
-      throttle(function () {
-        toggles.forEach((toggle) => {
-          return toggle.setAttribute("aria-expanded", false);
-        });
-        // remove expanded/collapsed class names to avoid unexpected animations
-        sideNavigation.classList.remove("is-drawer-expanded");
-        sideNavigation.classList.remove("is-drawer-collapsed");
-        sideNavigation.classList.add("is-drawer-hidden");
-      }, 10)
-    );
-  }
-
-  /**
-    Attaches event listeners for all the side navigations in the document.
-    @param {String} sideNavigationSelector The CSS selector matching side navigation elements.
-  */
-  function setupSideNavigations(sideNavigationSelector) {
-    // Setup all side navigations on the page.
-    var sideNavigations = [].slice.call(
-      document.querySelectorAll(sideNavigationSelector)
-    );
-
-    sideNavigations.forEach(setupSideNavigation);
-  }
-
-  setupSideNavigations('.p-side-navigation, [class*="p-side-navigation--"]');
-
-  // Setup expandable side navigation
-
-  var expandToggles = document.querySelectorAll(".p-side-navigation__expand");
-  var navigationLinks = document.querySelectorAll(".p-side-navigation__link");
-
-  // setup default values of aria-expanded for the toggle button, list title and list itself
-  const setup = (toggle) => {
-    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-    if (!isExpanded) {
-      toggle.setAttribute("aria-expanded", isExpanded);
-    }
-    const item = toggle.closest(".p-side-navigation__item");
-    const link = item.querySelector(".p-side-navigation__link");
-    const nestedList = item.querySelector(".p-side-navigation__list");
-    if (!link?.hasAttribute("aria-expanded")) {
-      link.setAttribute("aria-expanded", isExpanded);
-    }
-    if (!nestedList?.hasAttribute("aria-expanded")) {
-      nestedList.setAttribute("aria-expanded", isExpanded);
-    }
-  };
-
-  const handleToggle = (e) => {
-    const item = e.currentTarget.closest(".p-side-navigation__item");
-    const button = item.querySelector(".p-side-navigation__expand");
-    const link = item.querySelector(".p-side-navigation__link");
-    const nestedList = item.querySelector(".p-side-navigation__list");
-    [button, link, nestedList].forEach((el) =>
-      el.setAttribute(
-        "aria-expanded",
-        el.getAttribute("aria-expanded") === "true" ? "false" : "true"
-      )
-    );
-  };
-
-  expandToggles.forEach((toggle) => {
-    setup(toggle);
-    toggle.addEventListener("click", (e) => {
-      handleToggle(e);
-    });
-  });
-  });
-  </script>
-  <script src="/static/js/modules/discourse-rad-parser/discourse-rad-parser.js"></script>
-  <script>
-    drpNs.DiscourseRADParser();
-  </script>
-{% endblock %}
+      <h2 id="power-types">Power types</h2>
+      <p>This is the list of the supported power types and their associated power parameters. Note that the list of usable power types for a particular rack controller might be a subset of this list if the rack controller in question is from an older version of MAAS.</p>
+      <h3 id="amt-intel-amt">amt (Intel AMT)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_pass (Power password).</li>
+      <li>power_address (Power address).</li>
+      </ul>
+      <h3 id="apc-american-power-conversion-apc-pdu">apc (American Power Conversion (APC) PDU)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (IP for APC PDU).</li>
+      <li>node_outlet (APC PDU node outlet number (1-16)).</li>
+      <li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
+      <li>pdu_type (PDU type). Choices: 'RPDU' (rPDU), 'MASTERSWITCH' (masterswitch) Default: 'RPDU'.</li>
+      </ul>
+      <h3 id="dli-digital-loggers-inc.-pdu">dli (Digital Loggers, Inc. PDU)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>outlet_id (Outlet ID).</li>
+      <li>power_address (Power address).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      </ul>
+      <h3 id="eaton-eaton-pdu">eaton (Eaton PDU)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (IP for Eaton PDU).</li>
+      <li>node_outlet (Eaton PDU node outlet number (1-24)).</li>
+      <li>power_on_delay (Power ON outlet delay (seconds)). Default: '5'.</li>
+      </ul>
+      <h3 id="hmc-ibm-hardware-management-console-hmc-for-powerpc">hmc (IBM Hardware Management Console (HMC) for PowerPC)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (IP for HMC).</li>
+      <li>power_user (HMC username).</li>
+      <li>power_pass (HMC password).</li>
+      <li>server_name (HMC Managed System server name).</li>
+      <li>lpar (HMC logical partition).</li>
+      </ul>
+      <h3 id="hmcz-ibm-hardware-management-console-hmc-for-z">hmcz (IBM Hardware Management Console (HMC) for Z)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (HMC Address).</li>
+      <li>power_user (HMC username).</li>
+      <li>power_pass (HMC password).</li>
+      <li>power_partition_name (HMC partition name).</li>
+      </ul>
+      <h3 id="ipmi-ipmi">ipmi (IPMI)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_driver (Power driver). Choices: 'LAN' (LAN [IPMI 1.5]), 'LAN_2_0' (LAN_2_0 [IPMI 2.0]) Default: 'LAN_2_0'.</li>
+      <li>power_boot_type (Power boot type). Choices: 'auto' (Automatic), 'legacy' (Legacy boot), 'efi' (EFI boot) Default: 'auto'.</li>
+      <li>power_address (IP address).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      <li>k_g (K_g BMC key).</li>
+      <li>cipher_suite_id (Cipher Suite ID). Choices: '17' (17 - HMAC-SHA256::HMAC_SHA256_128::AES-CBC-128), '3' (3 - HMAC-SHA1::HMAC-SHA1-96::AES-CBC-128), '' (freeipmi-tools default), '8' (8 - HMAC-MD5::HMAC-MD5-128::AES-CBC-128), '12' (12 - HMAC-MD5::MD5-128::AES-CBC-128) Default: '3'.</li>
+      <li>privilege_level (Privilege Level). Choices: 'USER' (User), 'OPERATOR' (Operator), 'ADMIN' (Administrator) Default: 'OPERATOR'.</li>
+      <li>workaround_flags (Workaround Flags). Choices: 'opensesspriv' (Opensesspriv), 'authcap' (Authcap), 'idzero' (Idzero), 'unexpectedauth' (Unexpectedauth), 'forcepermsg' (Forcepermsg), 'endianseq' (Endianseq), 'intel20' (Intel20), 'supermicro20' (Supermicro20), 'sun20' (Sun20), 'nochecksumcheck' (Nochecksumcheck), 'integritycheckvalue' (Integritycheckvalue), 'ipmiping' (Ipmiping), '' (None) Default: '['opensesspriv']'.</li>
+      <li>mac_address (Power MAC).</li>
+      </ul>
+      <h3 id="manual-manual">manual (Manual)</h3>
+      <p>Power parameters:</p>
+      <h3 id="moonshot-hp-moonshot---ilo4-ipmi">moonshot (HP Moonshot - iLO4 (IPMI))</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (Power address).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      <li>power_hwaddress (Power hardware address).</li>
+      </ul>
+      <h3 id="mscm-hp-moonshot---ilo-chassis-manager">mscm (HP Moonshot - iLO Chassis Manager)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (IP for MSCM CLI API).</li>
+      <li>power_user (MSCM CLI API user).</li>
+      <li>power_pass (MSCM CLI API password).</li>
+      <li>node_id (Node ID - Must adhere to cXnY format (X=cartridge number, Y=node number).).</li>
+      </ul>
+      <h3 id="msftocs-microsoft-ocs---chassis-manager">msftocs (Microsoft OCS - Chassis Manager)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (Power address).</li>
+      <li>power_port (Power port).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      <li>blade_id (Blade ID (Typically 1-24)).</li>
+      </ul>
+      <h3 id="nova-openstack-nova">nova (OpenStack Nova)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>nova_id (Host UUID).</li>
+      <li>os_tenantname (Tenant name).</li>
+      <li>os_username (Username).</li>
+      <li>os_password (Password).</li>
+      <li>os_authurl (Auth URL).</li>
+      </ul>
+      <h3 id="openbmc-openbmc-power-driver">openbmc (OpenBMC Power Driver)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (OpenBMC address).</li>
+      <li>power_user (OpenBMC user).</li>
+      <li>power_pass (OpenBMC password).</li>
+      </ul>
+      <h3 id="proxmox-proxmox">proxmox (Proxmox)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (Proxmox host name or IP).</li>
+      <li>power_user (Proxmox username, including realm).</li>
+      <li>power_pass (Proxmox password, required if a token name and secret aren't given).</li>
+      <li>power_token_name (Proxmox API token name).</li>
+      <li>power_token_secret (Proxmox API token secret).</li>
+      <li>power_vm_name (Node ID).</li>
+      <li>power_verify_ssl (Verify SSL connections with system CA certificates). Choices: 'n' (No), 'y' (Yes) Default: 'n'.</li>
+      </ul>
+      <h3 id="recs_box-christmann-recsbox-power-driver">recs_box (Christmann RECS|Box Power Driver)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>node_id (Node ID).</li>
+      <li>power_address (Power address).</li>
+      <li>power_port (Power port).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      </ul>
+      <h3 id="redfish-redfish">redfish (Redfish)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (Redfish address).</li>
+      <li>power_user (Redfish user).</li>
+      <li>power_pass (Redfish password).</li>
+      <li>node_id (Node ID).</li>
+      </ul>
+      <h3 id="sm15k-seamicro-15000">sm15k (SeaMicro 15000)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>system_id (System ID).</li>
+      <li>power_address (Power address).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      <li>power_control (Power control type). Choices: 'ipmi' (IPMI), 'restapi' (REST API v0.9), 'restapi2' (REST API v2.0) Default: 'ipmi'.</li>
+      </ul>
+      <h3 id="ucsm-cisco-ucs-manager">ucsm (Cisco UCS Manager)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>uuid (Server UUID).</li>
+      <li>power_address (URL for XML API).</li>
+      <li>power_user (API user).</li>
+      <li>power_pass (API password).</li>
+      </ul>
+      <h3 id="vmware-vmware">vmware (VMware)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_vm_name (VM Name (if UUID unknown)).</li>
+      <li>power_uuid (VM UUID (if known)).</li>
+      <li>power_address (VMware IP).</li>
+      <li>power_user (VMware username).</li>
+      <li>power_pass (VMware password).</li>
+      <li>power_port (VMware API port (optional)).</li>
+      <li>power_protocol (VMware API protocol (optional)).</li>
+      </ul>
+      <h3 id="webhook-webhook">webhook (Webhook)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_on_uri (URI to power on the node).</li>
+      <li>power_off_uri (URI to power off the node).</li>
+      <li>power_query_uri (URI to query the nodes power status).</li>
+      <li>power_on_regex (Regex to confirm the node is on). Default: 'status.<em>:.</em>running'.</li>
+      <li>power_off_regex (Regex to confirm the node is off). Default: 'status.<em>:.</em>stopped'.</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      <li>power_token (Power token, will be used in place of power_user and power_pass).</li>
+      <li>power_verify_ssl (Verify SSL connections with system CA certificates). Choices: 'n' (No), 'y' (Yes) Default: 'n'.</li>
+      </ul>
+      <h3 id="wedge-facebooks-wedge">wedge (Facebook's Wedge)</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (IP address).</li>
+      <li>power_user (Power user).</li>
+      <li>power_pass (Power password).</li>
+      </ul>
+      <h3 id="lxd-lxd-virtual-systems">lxd (LXD (virtual systems))</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (LXD address).</li>
+      <li>instance_name (Instance name).</li>
+      <li>project (LXD project). Default: 'default'.</li>
+      <li>password (LXD password (optional)).</li>
+      <li>certificate (LXD certificate (optional)).</li>
+      <li>key (LXD private key (optional)).</li>
+      </ul>
+      <h3 id="virsh-virsh-virtual-systems">virsh (Virsh (virtual systems))</h3>
+      <p>Power parameters:</p>
+      <ul>
+      <li>power_address (Address).</li>
+      <li>power_pass (Password (optional)).</li>
+      <li>power_id (Virsh VM ID).</li>
+      </ul>
+      <h2 id="pod-types">Pod types</h2>
+      <p>This is the list of the supported pod types and their associated parameters. Note that the list of usable pod types for a particular rack controller might be a subset of this list if the rack controller in question is from an older version of MAAS.</p>
+      <h3 id="lxd-lxd-virtual-systems-1">lxd (LXD (virtual systems))</h3>
+      <p>Parameters:</p>
+      <ul>
+      <li>power_address (LXD address).</li>
+      <li>instance_name (Instance name).</li>
+      <li>project (LXD project). Default: 'default'.</li>
+      <li>password (LXD password (optional)).</li>
+      <li>certificate (LXD certificate (optional)).</li>
+      <li>key (LXD private key (optional)).</li>
+      </ul>
+      <h3 id="virsh-virsh-virtual-systems-1">virsh (Virsh (virtual systems))</h3>
+      <p>Parameters:</p>
+      <ul>
+      <li>power_address (Address).</li>
+      <li>power_pass (Password (optional)).</li>
+      <li>power_id (Virsh VM ID).</li>
+      </ul>
+    </div>
+  </main>
+</div>
+{% endblock content %}

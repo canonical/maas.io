@@ -1,95 +1,120 @@
-<footer class="p-strip">
-  <div class="row">
-    <div class="col-4">
-      <h3 class="p-heading--4">MAAS</h3>
-      <ul class="p-list">
-        <li class="p-list__item">
-          <a href="/">Home</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/install">Install MAAS</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/how-it-works">How it works</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/tour">Tour</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/docs">Docs</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/tutorials">Tutorials</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/contact-us">Contact us</a>
-        </li>
-        <li class="p-list__item">
-          <a href="/support">Support</a>
-        </li>
-      </ul>
-    </div>
+{% macro footer_content() %}
+<div class="row">
+  <div class="col-4">
+    <h3 class="p-heading--4">MAAS</h3>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <a href="/">Home</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/install">Install MAAS</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/how-it-works">How it works</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/tour">Tour</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/docs">Docs</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/tutorials">Tutorials</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/contact-us">Contact us</a>
+      </li>
+      <li class="p-list__item">
+        <a href="/support">Support</a>
+      </li>
+    </ul>
+  </div>
 
-    <div class="col-4">
-      <h3 class="p-heading--4">Need help?</h3>
-      <ul class="p-list">
-        <li class="p-list__item">
-          <a href="https://discourse.maas.io/">Discourse</a>
-        </li>
-        <li class="p-list__item">
-          <a class="js-invoke-modal" href="/contact-us">Commercial support</a>
-        </li>
-      </ul>
-    </div>
+  <div class="col-4">
+    <h3 class="p-heading--4">Need help?</h3>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <a href="https://discourse.maas.io/">Discourse</a>
+      </li>
+      <li class="p-list__item">
+        <a class="js-invoke-modal" href="/contact-us">Commercial support</a>
+      </li>
+    </ul>
+  </div>
 
-    <div class="col-4">
-      <h3 class="p-heading--4">Contribute</h3>
-      <ul class="p-list">
-        <li class="p-list__item">
-          <a href="https://launchpad.net/maas"
-            >Launchpad</a
-          >
-        </li>
-        <li class="p-list__item">
-          <a href="https://discourse.maas.io/c/docs"
-            >Contribute to documentation</a
-          >
-        </li>
-      </ul>
+  <div class="col-4">
+    <h3 class="p-heading--4">Contribute</h3>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <a href="https://launchpad.net/maas"
+          >Launchpad</a
+        >
+      </li>
+      <li class="p-list__item">
+        <a href="https://discourse.maas.io/c/docs"
+          >Contribute to documentation</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+<nav class="row">
+  <div class="has-cookie">
+    <p>
+      {% if not is_docs %}
+      &copy; {{ now("%Y") }} Canonical Ltd.
+      {% endif %}
+      <a href="https://www.ubuntu.com">Ubuntu</a> and
+      <a href="https://www.canonical.com">Canonical</a> are registered
+      trademarks of Canonical Ltd.
+    </p>
+    <ul class="p-inline-list--middot">
+      <li class="p-inline-list__item">
+        <a href="https://www.ubuntu.com/legal"
+          ><small>Legal information</small></a
+        >
+      </li>
+      <li class="p-inline-list__item">
+        <a class="p-footer__link js-revoke-cookie-manager" href=""
+          ><small>Manage your tracker settings</small></a
+        >
+      </li>
+      <li class="p-inline-list__item">
+        <a
+          href="https://github.com/canonical-web-and-design/maas.io/issues/new/"
+          ><small>Report a bug on this site</small></a
+        >
+      </li>
+    </ul>
+    <span class="u-off-screen"
+      ><a href="#">Go to the top of the page</a></span
+    >
+  </div>
+</nav>
+{% endmacro %}
+
+{% if is_docs %}
+<footer class="p-footer p-strip">
+  <div class="l-docs__subgrid">
+    <div class="l-docs__sidebar">
+      <div class="u-fixed-width">
+        <p>© {{ now("%Y") }} Canonical Ltd.</p>
+      </div>
+    </div>
+    <div class="l-docs__main">
+
+      {{ footer_content() }}
+
     </div>
   </div>
-  <nav class="row">
-    <div class="has-cookie">
-      <p>
-        &copy; {{ now("%Y") }} Canonical Ltd.
-        <a href="https://www.ubuntu.com">Ubuntu</a> and
-        <a href="https://www.canonical.com">Canonical</a> are registered
-        trademarks of Canonical Ltd.
-      </p>
-      <ul class="p-inline-list--middot">
-        <li class="p-inline-list__item">
-          <a href="https://www.ubuntu.com/legal"
-            ><small>Legal information</small></a
-          >
-        </li>
-        <li class="p-inline-list__item">
-          <a class="p-footer__link js-revoke-cookie-manager" href=""
-            ><small>Manage your tracker settings</small></a
-          >
-        </li>
-        <li class="p-inline-list__item">
-          <a
-            href="https://github.com/canonical-web-and-design/maas.io/issues/new/"
-            ><small>Report a bug on this site</small></a
-          >
-        </li>
-      </ul>
-      <span class="u-off-screen"
-        ><a href="#">Go to the top of the page</a></span
-      >
-    </div>
-  </nav>
 </footer>
+{% else %}
+<footer class="p-footer p-strip">
+
+  {{ footer_content() }}
+
+</footer>
+{% endif %}
 
 <script src="/static/js/modules/global-nav/global-nav.js"></script>
 <script src="/static/js/modules/cookie-policy/cookie-policy.js"></script>

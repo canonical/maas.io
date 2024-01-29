@@ -2,7 +2,7 @@
 @import "settings_colors";
 
 $increase-font-size-on-larger-screens: false;
-$breakpoint-navigation-threshold: 960px;
+$l-documentation-sidebar-width: 18rem;
 
 // import vanilla-brochure-theme
 @import "vanilla-framework/scss/build";
@@ -13,8 +13,7 @@ $breakpoint-navigation-threshold: 960px;
 
 // patterns
 @import "patterns_strips", "patterns_lists", "patterns_modal",
-  "patterns_takeunders", "patterns_tables", "patterns_contact-modal",
-  "layout_docs", "patterns_sidenav", "hljs", "patterns_tutorials",
+  "patterns_takeunders", "patterns_tables", "patterns_contact-modal", "patterns_sidenav", "hljs", "patterns_tutorials",
   "patterns_cards";
 
 // patterns
@@ -23,7 +22,6 @@ $breakpoint-navigation-threshold: 960px;
 @include maas-p-tables;
 @include maas-p-contact-modal;
 @include maas-p-strip--dark;
-@include maas-l-docs;
 @include maas-p-sidenav;
 @include maas-p-tutorials;
 @include maas-p-cards;
@@ -77,4 +75,27 @@ $breakpoint-navigation-threshold: 960px;
     margin-left: auto;
     order: 1;
   }
+}
+
+.p-navigation__banner {
+  padding-left: 0;
+}
+
+// TODO: to be removed when properly fixed on Vanilla side
+// https://github.com/canonical/vanilla-framework/issues/4898
+@media screen and (min-width: $breakpoint-navigation-threshold) {
+  // align navigation items with grid in docs layout
+  .l-docs__subgrid .p-navigation__row {
+    padding-left: 0.5rem;
+  }
+}
+
+.l-docs__header {
+  .p-navigation__banner {
+    padding-left: 1.5rem;
+  }
+}
+
+.l-docs__footer {
+  border-top: 1.5px solid #d9d9d9;
 }

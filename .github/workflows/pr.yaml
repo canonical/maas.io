@@ -23,13 +23,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install Dotrun
         uses: canonical/install-dotrun@main
 
       - name: Install dependencies
-        run: dotrun install
+        run: |
+          sudo chmod -R 777 .
+          dotrun install
 
       - name: Build assets
         run: dotrun build
@@ -42,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: yarn install --immutable
@@ -56,16 +58,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install node dependencies
-        run: yarn install --immutable
+      - name: Install dotrun
+        uses: canonical/install-dotrun@main
 
-      - name: Install python dependencies
+      - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          sudo pip3 install flake8 black
+          sudo chmod -R 777 .
+          dotrun install
+
+      - name: Build assets
+        run: dotrun build
 
       - name: Lint python
-        run: yarn lint-python
+        run: dotrun lint-python
 
   test-python:
     runs-on: ubuntu-20.04

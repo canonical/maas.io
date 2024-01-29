@@ -50,6 +50,7 @@
 
   </head>
   <body class="{% block page_class %}{% endblock %}">
+    {% block body %}
     {% include "includes/header.html" %}
 
     <main class="u-no-margin--top {% block content_class %}{% endblock %}" id="main-content">
@@ -59,6 +60,6 @@
     {% include "includes/footer.html" %}
 
     {% block js_extra %}{% endblock %}
+    {% endblock body %}
   </body>
 </html>
-<!-- This comment was updated at 17:07 on 2016-01-26 -->
