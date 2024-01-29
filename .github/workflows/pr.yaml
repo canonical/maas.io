@@ -70,7 +70,7 @@ jobs:
         run: dotrun build
 
       - name: Lint python
-        run: yarn lint-python
+        run: dotrun lint-python
 
   test-python:
     runs-on: ubuntu-20.04
