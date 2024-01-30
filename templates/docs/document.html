@@ -5,28 +5,27 @@
 {% block twitter_title %}{{ document.title }}{% endblock twitter_title %}
 {% block og_title %}{{ document.title }}{% endblock og_title %}
 
+{% block title %}
+  <h1>{{ document.title }}</h1>
+{% endblock %}
+
 {% block content %}
 
 <div class="l-docs__main u-text-max-width">
   <main class="u-fixed-width">
-    <div class="p-strip is-shallow u-no-padding--top">
+    <div class="p-section--shallow">
       <div class="u-fixed-width">
-        <h1 class="l-docs-title__heading u-no-margin--bottom">{{ document.title }}</h1>
-      </div>
-    </div>
-    <div class="p-strip is-shallow">
-      <div class="l-docs-row row">
         {{ document.body_html | safe }}
       </div>
     </div>
-    <div class="p-strip is-shallow u-no-padding--bottom">
-      <div class="l-docs-row row">
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
         <hr />
         <p><i>Last updated {{ document.updated }}.</i></p>
       </div>
     </div>
-    <div class="p-strip is-shallow u-no-padding--bottom u-sticky--bottom">
-      <div class="l-docs-row row">
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
         <div class="p-notification--information">
           <div class="p-notification__content">
             <p class="p-notification__message">

@@ -110,6 +110,14 @@
     </div>
   </div>
 
+  <div class="l-docs__title">
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
+        {% block title %}{% endblock %}
+      </div>
+    </div>
+  </div>
+
   {% if document is defined and document.headings_map is defined and document.headings_map|length > 0 %}
 
   <div class="l-docs__meta">
