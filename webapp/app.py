@@ -101,7 +101,7 @@ def api():
     # https://docs.google.com/document/d/1vCdC7BV53ncOTpWHd2nX5NbwvUH5fDwy-RQGlWpWhXk/edit
     definition_url = (
         "https://raw.githubusercontent.com"
-        "/maas/maas-openapi-yaml/main/openapi.yaml"
+        "/canonical/maas-openapi-yaml/main/openapi.yaml"
     )
     definition = read_yaml_from_url(definition_url, session=openapi_session)
     openapi = parse_openapi(definition)
