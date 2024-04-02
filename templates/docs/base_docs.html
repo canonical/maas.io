@@ -4,8 +4,8 @@
 {% set is_docs = True %}
 
 {% block body %}
-
 {% macro create_navigation(nav_items, expandable=False, expanded=False) %}
+
 {% if request.path == '/docs/api' %}
 {% set expanded = False %}
 {% endif %}
@@ -123,6 +123,17 @@
   <div class="l-docs__meta">
     <div class="l-docs__sticky-container">
       <aside class="p-table-of-contents">
+        <nav class="p-table-of-contents__nav p-tabs" aria-label="MAAS interface">
+          <ul class="p-tabs__list" role="tablist">
+            <li class="p-tabs__item" role="presentation">
+              <a href="?view=ui" class="p-tabs__link" id="ui-tab" role="tab" aria-controls="ui-tab-panel"
+                aria-selected="true">UI</a>
+            </li>
+            <li class="p-tabs__item" role="presentation">
+              <a href="?view=cli" class="p-tabs__link" id="cli-tab" role="tab" aria-controls="cli-tab-panel">CLI</a>
+            </li>
+          </ul>
+        </nav>
         <div class="p-table-of-contents__section">
           <h4 class="p-table-of-contents__header">On this page</h4>
           <nav class="p-table-of-contents__nav" aria-label="Table of contents">
@@ -315,6 +326,151 @@
   <script src="/static/js/modules/discourse-rad-parser/discourse-rad-parser.js"></script>
   <script>
     drpNs.DiscourseRADParser();
+  </script>
+  <script>
+    function preparePage() {
+      const contentElements = document.querySelectorAll('.l-docs__main *');
+      const navigationElements = document.querySelectorAll('.p-table-of-contents *');
+      const uiRegex = /\(\d*\.*\d*\+*\s*UI\)/;
+      const cliRegex = /\(\d*\.*\d*\+*\s*CLI\)/;
+
+      let hasUiContent = false;
+      let hasCliContent = false;
+
+      contentElements.forEach(element => {
+        if (element.tagName === 'H2') {
+          const textContent = element.textContent;
+          if (uiRegex.test(textContent)) {
+            element.setAttribute('data-view', 'ui');
+          } else if (cliRegex.test(textContent)) {
+            element.setAttribute('data-view', 'cli');
+          }
+        }
+      });
+
+      navigationElements.forEach(element => {
+        if (element.tagName === 'LI') {
+          const link = element.querySelector('a');
+          if (link) {
+            const textContent = link.textContent;
+            if (uiRegex.test(textContent)) {
+              link.setAttribute('data-view', 'ui');
+              hasUiContent = true;
+            } else if (cliRegex.test(textContent)) {
+              link.setAttribute('data-view', 'cli');
+              hasCliContent = true;
+            }
+          }
+        }
+      });
+
+      const tabElements = document.querySelectorAll('.p-tabs__link');
+      tabElements.forEach(tab => {
+        const tabId = tab.getAttribute('href').slice(1);
+        if ((tabId === 'ui' && !hasUiContent) || (tabId === 'cli' && !hasCliContent)) {
+          tab.parentElement.setAttribute('hidden', 'true');
+        }
+      });
+    }
+
+    function initTabs() {
+      const tabs = document.querySelectorAll('.p-tabs__link');
+      document.addEventListener('click', e => {
+        const tab = e.target.closest('.p-tabs__link');
+        if (!tab) return;
+
+        e.preventDefault();
+
+        const tabs = document.querySelectorAll('.p-tabs__link');
+        tabs.forEach(tab => {
+          tab.setAttribute('aria-selected', 'false');
+        });
+
+        // Activate the selected tab
+        tab.setAttribute('aria-selected', 'true');
+
+        // Update the URL search parameters
+        const tabId = new URLSearchParams(tab.getAttribute('href')).get("view");
+        const searchParams = new URLSearchParams(window.location.search);
+        searchParams.set('view', tabId);
+        const newUrl = `${window.location.pathname}?${searchParams.toString()}${window.location.hash ? window.location.hash : ''}`;
+        window.history.pushState(null, '', newUrl);
+        appendViewToNavigationLinks();
+
+        filterContent(tabId);
+      });
+      setActiveTabFromSearch();
+    }
+
+    function setActiveTabFromSearch() {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tabId = searchParams.get('view') || 'ui';
+      const tab = document.querySelector(`.p-tabs__link[href="?view=${tabId}"]`);
+
+      if (tab && !tab.parentElement.hasAttribute('hidden')) {
+        tab.click();
+      } else {
+        const visibleTabs = document.querySelectorAll('.p-tabs__link:not([hidden])');
+        if (visibleTabs.length > 0) {
+          visibleTabs[0].click();
+        }
+      }
+      appendViewToNavigationLinks();
+    }
+
+    window.addEventListener('popstate', setActiveTabFromSearch);
+
+    function filterContent(id) {
+      const contentElements = document.querySelectorAll('.l-docs__main *');
+      const navigationElements = document.querySelectorAll('.p-table-of-contents *');
+
+      let toggleVisibility = false;
+      navigationElements.forEach(element => {
+        if (element.tagName === 'LI') {
+          const link = element.querySelector('a');
+          if (link) {
+            const view = link.getAttribute('data-view');
+            if (view && view !== id) {
+              element.setAttribute('hidden', 'true');
+            } else {
+              element.removeAttribute('hidden');
+            }
+          }
+        }
+      });
+
+      contentElements.forEach(element => {
+        if (element.tagName === 'H2') {
+          const view = element.getAttribute('data-view');
+          if (view && view !== id) {
+            element.setAttribute('hidden', 'true');
+            toggleVisibility = true;
+          } else {
+            element.removeAttribute('hidden');
+            toggleVisibility = false;
+          }
+        } else if (toggleVisibility && !(element.tagName === 'H2')) {
+          element.setAttribute('hidden', 'true');
+        } else if (!toggleVisibility) {
+          element.removeAttribute('hidden');
+        }
+      });
+    }
+
+    function appendViewToNavigationLinks() {
+      const navigationLinks = document.querySelectorAll('.p-side-navigation__link');
+      navigationLinks.forEach(link => {
+          const currentView = new URLSearchParams(window.location.search).get('view') || 'ui';
+          const linkUrl = new URL(link.getAttribute('href'), window.location.origin);
+          linkUrl.searchParams.set('view', currentView);
+          link.setAttribute('href', linkUrl.toString());
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      preparePage();
+      initTabs();
+    });
   </script>
 {% endblock js_extra %}
 {% endblock body %}
