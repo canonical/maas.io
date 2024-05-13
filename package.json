@@ -36,7 +36,7 @@
     "@canonical/global-nav": "3.2.4",
     "@canonical/latest-news": "1.4.1",
     "autoprefixer": "10.4.19",
-    "postcss": "8.4.20",
+    "postcss": "8.4.31",
     "postcss-cli": "9.1.0",
     "sass": "1.77.1",
     "vanilla-framework": "4.5.1",
