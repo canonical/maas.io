@@ -25,7 +25,7 @@
   "license": "LGPL v3",
   "devDependencies": {
     "@testing-library/cypress": "9.0.0",
-    "cypress": "12.12.0",
+    "cypress": "12.17.4",
     "stylelint": "14.16.1",
     "stylelint-config-recommended-scss": "5.0.2",
     "stylelint-order": "5.0.0"
@@ -35,11 +35,11 @@
     "@canonical/discourse-rad-parser": "1.0.1",
     "@canonical/global-nav": "3.2.4",
     "@canonical/latest-news": "1.4.1",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.19",
     "postcss": "8.4.20",
     "postcss-cli": "9.1.0",
-    "sass": "1.57.1",
+    "sass": "1.77.1",
     "vanilla-framework": "4.5.1",
-    "venobox": "2.0.4"
+    "venobox": "2.1.8"
   }
 }
