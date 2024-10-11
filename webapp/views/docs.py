@@ -10,6 +10,7 @@ from canonicalwebteam.search import build_search_view
 DISCOURSE_API_KEY = getenv("DISCOURSE_API_KEY")
 DISCOURSE_API_USERNAME = getenv("DISCOURSE_API_USERNAME")
 
+
 def init_docs(app, url_prefix: str, session) -> Docs:
     """Initialise Docs attaching to Discourse."""
     discourse_docs = Docs(
