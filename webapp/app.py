@@ -1,6 +1,7 @@
 """
 A Flask application for maas.io
 """
+
 from datetime import timedelta
 
 import flask
