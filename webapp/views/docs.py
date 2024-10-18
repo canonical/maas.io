@@ -36,6 +36,7 @@ def init_docs(app, url_prefix: str, session) -> Docs:
         "/docs/search",
         "docs-search",
         build_search_view(
+            app=app,
             session=session,
             site="maas.io/docs",
             template_path="docs/search.html",
