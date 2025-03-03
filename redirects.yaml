@@ -1363,4 +1363,5 @@ deprecations/MD1: https://discourse.maas.io/t/1415
 deprecations/MD2: https://discourse.maas.io/t/4236
 deprecations/MD3: https://discourse.maas.io/t/6216
 deprecations/MD4: https://discourse.maas.io/t/7440
-deprecations/MD5: /docs/how-to-upgrade-from-postgresql-v14-to-v16
+deprecations/MD5: https://discourse.maas.io/t/10203
+deprecations/MD6: https://discourse.maas.io/t/11245
