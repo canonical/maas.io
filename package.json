@@ -31,15 +31,15 @@
     "stylelint-order": "5.0.0"
   },
   "dependencies": {
-    "@canonical/cookie-policy": "3.4.0",
-    "@canonical/discourse-rad-parser": "1.0.1",
-    "@canonical/global-nav": "3.2.4",
-    "@canonical/latest-news": "1.4.1",
+    "@canonical/cookie-policy": "3.6.5",
+    "@canonical/discourse-rad-parser": "1.0.2",
+    "@canonical/global-nav": "3.6.4",
+    "@canonical/latest-news": "1.5.0",
     "autoprefixer": "10.4.19",
     "postcss": "8.4.31",
     "postcss-cli": "9.1.0",
     "sass": "1.77.1",
-    "vanilla-framework": "4.5.1",
+    "vanilla-framework": "4.23.2",
     "venobox": "2.1.8"
   }
 }
