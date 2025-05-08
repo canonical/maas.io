@@ -2,7 +2,7 @@
 
 # Build stage: Install python dependencies
 # ===
-FROM ubuntu:focal AS python-dependencies
+FROM ubuntu:noble AS python-dependencies
 RUN apt-get update && apt-get install --no-install-recommends --yes python3-pip python3-setuptools
 COPY requirements.txt /tmp/requirements.txt
 ARG DISABLE_PIP_VERSION_CHECK=1
@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip3 install --user --requirement
 
 # Build stage: Install yarn dependencies
 # ===
-FROM node:14 AS yarn-dependencies
+FROM node:24 AS yarn-dependencies
 WORKDIR /srv
 COPY . .
 RUN --mount=type=cache,target=/usr/local/share/.cache/yarn yarn install --production
@@ -28,7 +28,7 @@ RUN yarn run build-js
 
 # Build the production image
 # ===
-FROM ubuntu:focal
+FROM ubuntu:noble
 
 ENV LANG C.UTF-8
 WORKDIR /srv
