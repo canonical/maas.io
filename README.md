@@ -1,3 +1,6 @@
+## DEPRECATED
+The content of maas.io has moved to https://canonical.com/maas
+
 MAAS website project
 ===
 
