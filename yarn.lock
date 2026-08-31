@@ -68,6 +68,11 @@
   resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-1.4.1.tgz#dcdd445ac2268a54cf60f2f8c725b6bdeb285d71"
   integrity sha512-lwrikCj0Y11X8Ln8D+elp6Ri3mYjMjsAOJtadNEFzhBrgmg8TVGYJjOdwy8TvRaxy7fHnvVajIKAYWX44Tfj6w==
 
+"@canonical/latest-news@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-2.3.1.tgz#d860da49047f8072f1c6a6b083ab81f6c508492c"
+  integrity sha512-i1YLScjNnOP/9B9xTdcRK9fq+d9NXg0FCsWVbAAp40TJMh1x+YiSvB7wLDH53+iP1YgwpaNUcLcpoGb8qF17Bw==
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
