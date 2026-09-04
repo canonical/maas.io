@@ -5,13 +5,13 @@ on:
 jobs:
   api-docs:
     name: maas.io/docs/api
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@main
       - name: Get branch name
         uses: nelonoel/branch-name@v1.0.1
       - name: Run Cypress docs tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v7.4.3
         with:
           browser: chrome
           config: baseUrl=http://maas.io/
